@@ -46,7 +46,7 @@ gulp.task('clean', () => {
 gulp.task('watch', ['default'], () => {
   gulp.watch(['./src/scss/**/*.scss'], ['build-sass']);
   gulp.watch(['./src/fonts/**/*'], ['copy-fonts']);
-  gulp.watch(['./src/*.html'], ['copy-html']);
+  gulp.watch(['./*.html'], ['copy-html']);
 });
 
 gulp.task('serve', ['watch'], () => {
