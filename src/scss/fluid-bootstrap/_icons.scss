@@ -1,0 +1,12 @@
+i {
+  * {
+    font-family: $font-family-base;
+  }
+
+  .badge {
+    position: relative;
+    top: -7px;
+    left: -7px;
+    border: white 1px solid;
+  }
+}

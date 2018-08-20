@@ -5,8 +5,7 @@
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
-@import 'custom-variables';
-@import '../../node_modules/bootstrap/scss/bootstrap';
-@import 'hwx-fluid-theme/*';
 
-@import 'demo-page-style';
+@function theme-icon($key: "default") {
+  @return map-get($theme-icon, $key);
+}
