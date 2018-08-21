@@ -5,7 +5,7 @@
   "homepage": "http://productdesign.hortonworks.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hortonworks/fluid-bootstrap-theme",
+    "url": "https://github.com/hortonworks/fluid-bootstrap-theme"
   },
   "contributors": [
     "Jason Golieb",
@@ -26,16 +26,16 @@
   "devDependencies": {
     "autoprefixer": "^8.2.0",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-clean-css": "^3.9.3",
+    "gulp-connect": "^5.5.0",
     "gulp-livereload": "^3.8.1",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "*",
-    "gulp-serve": "^1.4.0",
     "gulp-sass": "^4.0.1",
     "gulp-sass-glob-import": "^0.1.0",
-    "gulp-scss-lint": "^0.6.1",
-    "gulp-server-livereload": "^1.9.2",
+    "gulp-scss-lint": "^0.7.0",
+    "gulp-serve": "^1.4.0",
     "gulp-sourcemaps": "^2.6.4"
   }
 }
