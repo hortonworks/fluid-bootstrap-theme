@@ -5,7 +5,7 @@
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
-var gulp  = require('gulp'),
+var gulp = require('gulp'),
   sass = require('gulp-sass'),
   sourcemaps = require('gulp-sourcemaps'),
   cleanCss = require('gulp-clean-css'),
@@ -14,20 +14,22 @@ var gulp  = require('gulp'),
   autoprefixer = require('autoprefixer'),
   bulkSass = require('gulp-sass-glob-import'),
   del = require('del'),
-  server = require('gulp-server-livereload');
+  connect = require('gulp-connect');
 
-gulp.task('copy-html', () => {
-  return gulp.src(['./*.html'])
-    .pipe(gulp.dest('./dist/'));
-});
+gulp.task('copy-html', () =>
+  gulp.src(['./*.html'])
+    .pipe(gulp.dest('./dist/'))
+    .pipe(connect.reload())
+);
 
-gulp.task('copy-fonts', () => {
-  return gulp.src(['./src/fonts/**/*', './node_modules/font-awesome/fonts/fontawesome-webfont.*'])
-    .pipe(gulp.dest('./dist/fonts/'));
-});
+gulp.task('copy-fonts', () => 
+  gulp.src(['./src/fonts/**/*', './node_modules/font-awesome/fonts/fontawesome-webfont.*'])
+    .pipe(gulp.dest('./dist/fonts/'))
+    .pipe(connect.reload())
+);
 
-gulp.task('build-sass', () => {
-  return gulp.src(['./src/scss/**/*.scss', './node_modules/font-awesome/scss/*.scss'])
+gulp.task('build-sass', () =>
+  gulp.src(['./src/scss/**/*.scss', './node_modules/font-awesome/scss/*.scss'])
     .pipe(bulkSass())
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -36,25 +38,25 @@ gulp.task('build-sass', () => {
     .pipe(gulp.dest('./dist/css/'))
     .pipe(cleanCss())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('./dist/css/'));
-});
+    .pipe(gulp.dest('./dist/css/'))
+    .pipe(connect.reload())
+);
 
-gulp.task('clean', () => {
-  return del(['./dist']);
-});
+gulp.task('clean', () => del(['./dist']));
 
-gulp.task('watch', ['default'], () => {
-  gulp.watch(['./src/scss/**/*.scss'], ['build-sass']);
-  gulp.watch(['./src/fonts/**/*'], ['copy-fonts']);
-  gulp.watch(['./*.html'], ['copy-html']);
-});
+gulp.task('build', gulp.series('build-sass', 'copy-fonts', 'copy-html'));
 
-gulp.task('serve', ['watch'], () => {
-  gulp.src('./dist/')
-    .pipe(server({
-      livereload: true,
-      open: true
-    }));
-});
+gulp.task('watch-sass', () => gulp.watch(['./src/scss/**/*.scss'], gulp.series('build-sass')));
+gulp.task('watch-fonts', () => gulp.watch(['./src/fonts/**/*'], gulp.series('copy-fonts')));
+gulp.task('watch-html', () => gulp.watch(['./*.html'], gulp.series('copy-html')));
 
-gulp.task('default', ['build-sass', 'copy-fonts', 'copy-html'], () => {});
+gulp.task('watch', gulp.parallel('watch-sass', 'watch-fonts', 'watch-html'));
+
+gulp.task('connect', () => connect.server({
+    root: 'dist',
+    port: 8000,
+    livereload: true
+  })
+);
+
+gulp.task('default', gulp.parallel('watch', 'connect'));

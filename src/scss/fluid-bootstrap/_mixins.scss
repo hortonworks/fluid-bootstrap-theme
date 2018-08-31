@@ -5,12 +5,7 @@
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
-:root {
-  @each $color, $value in $grays {
-    --#{$color}: #{$value};
-  }
 
-  @each $color, $value in $priority-colors {
-    --priority-#{$color}: #{$value};
-  }
-}
+ @mixin content-icon {
+   font-familty: 'FontAwesome';
+ }
