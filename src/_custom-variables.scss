@@ -1,0 +1,14 @@
+$fluid-icon-success: $fa-var-check-circle;
+$fluid-icon-warning: $fa-var-exclamation-circle;
+$fluid-icon-danger:  $fa-var-times-circle;
+
+$theme-icons: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-icons: map-merge(
+  (
+    "success": $fluid-icon-success,
+    "warning": $fluid-icon-warning,
+    "danger": $fluid-icon-danger,
+  ),
+  $theme-icons
+);

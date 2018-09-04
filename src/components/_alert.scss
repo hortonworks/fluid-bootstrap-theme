@@ -49,7 +49,7 @@
     border-color: theme-color-level($color, $alert-border-level);
 
     .alert-header, &:before {
-      color: theme-color(#{$color});
+      color: $value;
     }
   }
 }
@@ -62,20 +62,10 @@
   }
 }
 
-.alert-success {
-  &:before {
-    content: $fa-var-check-circle;
-  }
-}
-
-.alert-warning {
-  &:before {
-    content: $fa-var-exclamation-circle;
-  }
-}
-
-.alert-danger {
-  &:before {
-    content: $fa-var-times-circle;
+@each $icon, $value in $theme-icons {
+  .alert-#{$icon} {
+    &:before {
+      content: $value;
+    }
   }
 }

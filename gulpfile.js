@@ -29,7 +29,7 @@ gulp.task('copy-fonts', () =>
 );
 
 gulp.task('build-sass', () =>
-  gulp.src(['./src/scss/**/*.scss', './node_modules/font-awesome/scss/*.scss'])
+  gulp.src(['./src/**/*.scss', './node_modules/font-awesome/scss/*.scss'])
     .pipe(bulkSass())
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -46,7 +46,7 @@ gulp.task('clean', () => del(['./dist']));
 
 gulp.task('build', gulp.series('build-sass', 'copy-fonts', 'copy-html'));
 
-gulp.task('watch-sass', () => gulp.watch(['./src/scss/**/*.scss'], gulp.series('build-sass')));
+gulp.task('watch-sass', () => gulp.watch(['./src/**/*.scss'], gulp.series('build-sass')));
 gulp.task('watch-fonts', () => gulp.watch(['./src/fonts/**/*'], gulp.series('copy-fonts')));
 gulp.task('watch-html', () => gulp.watch(['./*.html'], gulp.series('copy-html')));
 
