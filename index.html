@@ -1494,283 +1494,149 @@ of all or any part of the contents of this file is strictly prohibited.
           </div>
         </div>
         <div class="container">
-          <form>
-            <div class="row px-5">
-              <div class="col-md-6">
-                <h3 class="mt-5">Text fields</h3>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" type="text" placeholder="Readonly input" readonly="">
-                </div>
-                <div class="form-group">
-                  <input type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="Readonly input as plain text">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Disabled input" disabled="">
-                </div>
-                <div class="form-group">
-                  <label for="validText">Valid input</label>
-                  <input type="text" class="form-control is-valid" id="validText" value="Valid input">
-                </div>
-                <div class="form-group">
-                  <label for="invalidText">Invalid input</label>
-                  <input type="text" class="form-control is-invalid" id="invalidText" value="Invalid input">
-                  <div class="invalid-feedback">Please provide a valid value.</div>
-                </div>
-                <div class="form-group">
-                  <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" type="text" placeholder="Default input">
-                </div>
-                <div class="form-group">
-                  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-group-lg">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">$</div>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <div class="input-group-append">
-                      <div class="input-group-text">.00</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">$</div>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <div class="input-group-append">
-                      <div class="input-group-text">.00</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <button class="btn btn-secondary" type="button">Hate it</button>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Product name" aria-label="Product name">
-                    <div class="input-group-append">
-                      <button class="btn btn-secondary" type="button">Love it</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group">
-                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                    <div class="input-group-append">
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                        <div role="separator" class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
+          <div class="form-row">
+            <div class="col">
+              <form novalidate>
+                <fieldset>
+                  <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Text Inputs with Validation</legend>
+                    <div class="col-sm-10">  
+                      <div class="form-group form-row">
+                        <div class="col-sm-6">
+                          <label for="exampleFormControlInput1">Inline Feedback (passing validation)</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                          <div class="valid-feedback inline-feedback">This entry is valid.</div>
+                        </div>
                       </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput2">Block Feedback (failing validation)</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com" required>
+                        <div class="invalid-feedback">This entry is invalid.</div>
+                      </div>
+                      <button class="btn btn-primary" type="submit">Validate</button>
+                      <script>
+                        // Example starter JavaScript for disabling form submissions if there are invalid fields
+                        (function() {
+                          'use strict';
+                          window.addEventListener('load', function() {
+                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                            var forms = document.getElementsByTagName('form');
+                            // Loop over them and prevent submission
+                            var validation = Array.prototype.filter.call(forms, function(form) {
+                              form.addEventListener('submit', function(event) {
+                                if (form.checkValidity() === false) {
+                                  event.preventDefault();
+                                  event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                              }, false);
+                            });
+                          }, false);
+                        })();
+                      </script>
                     </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Example textarea</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <h3 class="mt-5">Layouts</h3>
+                </fieldset>
+              </form>
+              <form novalidate>
+                <fieldset>
+                  <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">More Text Input Examples</legend>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput3">Disabled Field</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com" disabled>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput4">Button Add-On</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                          <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" id="button-addon2">Button</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput5">Dropdown Add-On</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="exampleFormControlInput5" aria-label="Text input with dropdown button">
+                          <div class="input-group-append">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                              <div role="separator" class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+                </fieldset>
+              </form>   
+              <form novalidate> <!-- The novalidate attribute is critical to ensure that validation styles are applied. -->
                 <div class="form-group">
                   <div class="row">
-                    <div class="col">
-                      <input type="text" class="form-control" placeholder="Row / input 1">
-                    </div>
-                    <div class="col">
-                      <input type="text" class="form-control" placeholder="Row / input 2">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="form-row">
-                    <div class="col">
-                      <input type="text" class="form-control" placeholder="Form row / input 1">
-                    </div>
-                    <div class="col">
-                      <input type="text" class="form-control" placeholder="Form row / input 2">
+                    <legend class="col-form-label col-sm-2 pt-0">Select Menus</legend>
+                    <div class="col-sm-10">
+                      <select>
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
                     </div>
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label for="inputEmail3" class="col-sm-4 col-form-label">Horizontal</label>
-                  <div class="col-sm-8">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="form layout">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="form-inline">
-                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Inline input 1">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">@</div>
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Checkboxes</legend>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                          Default checkbox
+                        </label>
                       </div>
-                      <input type="text" class="form-control" placeholder="Inline input 2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                        <label class="form-check-label" for="defaultCheck2">
+                          Disabled checkbox
+                        </label>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <div class="form-inline">
-                    <div class="form-group">
-                      <label for="inputPassword6">Password</label>
-                      <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
-                      <small id="passwordHelpInline" class="text-muted">Must be 8-20 characters long.</small>
+                </fieldset>
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                    <div class="col-sm-10">
+                      <div class="form-radio">
+                        <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        <label class="form-radio-label" for="gridRadios1">
+                          First radio
+                        </label>
+                      </div>
+                      <div class="form-radio">
+                        <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-radio-label" for="gridRadios2">
+                          Second radio
+                        </label>
+                      </div>
+                      <div class="form-radio disabled">
+                        <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                        <label class="form-radio-label" for="gridRadios3">
+                          Third disabled radio
+                        </label>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <h3 class="mt-5">Selects</h3>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Example select</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect2">Example multiple select</label>
-                  <select multiple="" class="form-control" id="exampleFormControlSelect2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <select class="form-control form-control-lg">
-                    <option>Large select</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <select class="form-control">
-                    <option>Default select</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <select class="form-control form-control-sm">
-                    <option>Small select</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <select class="custom-select">
-                    <option selected="">Custom select</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-                <h3 class="mt-5">Checkboxes</h3>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="">
-                  <label class="form-check-label">
-                    Option one is this and that—be sure to include why it's great
-                  </label>
-                </div>
-                <div class="form-check disabled">
-                  <input class="form-check-input" type="checkbox" value="" disabled="">
-                  <label class="form-check-label">
-                    Option two is disabled
-                  </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1" checked="checked">
-                  <label class="custom-control-label" for="customCheck1">Checked custom checkbox</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck2">
-                  <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck3" disabled="">
-                  <label class="custom-control-label" for="customCheck3">Disabled custom checkbox</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input is-valid" id="customCheck4">
-                  <label class="custom-control-label" for="customCheck4">Valid checkbox</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input is-invalid" id="customCheck5">
-                  <label class="custom-control-label" for="customCheck5">Invalid checkbox</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                  <label class="form-check-label" for="inlineCheckbox1">1</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                  <label class="form-check-label" for="inlineCheckbox2">2</label>
-                </div>
-                <div class="form-check form-check-inline disabled">
-                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled="">
-                  <label class="form-check-label" for="inlineCheckbox3">3</label>
-                </div>
-                <h3 class="mt-5">Radio buttons</h3>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
-                  <label class="form-check-label" for="exampleRadios1">Option one is this and that—be sure to include why it's great</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  <label class="form-check-label" for="exampleRadios2">Option two can be something else and selecting it will deselect option one</label>
-                </div>
-                <div class="form-check disabled">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled="">
-                  <label class="form-check-label" for="exampleRadios3">Option three is disabled</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" name="custom-radio-group" class="custom-control-input" id="exampleCustomRadios1" checked="">
-                  <label class="custom-control-label" for="exampleCustomRadios1">Custom radio one</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" name="custom-radio-group" class="custom-control-input" id="exampleCustomRadios2">
-                  <label class="custom-control-label" for="exampleCustomRadios2">Custom radio two</label>
-                </div>
-                <div class="custom-control custom-radio disabled">
-                  <input type="radio" class="custom-control-input" id="exampleCustomRadios3" disabled="">
-                  <label class="custom-control-label" for="exampleCustomRadios3">Disabled custom radio</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input is-valid" id="exampleCustomRadios4">
-                  <label class="custom-control-label" for="exampleCustomRadios4">Valid radio</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input is-invalid" id="exampleCustomRadios5">
-                  <label class="custom-control-label" for="exampleCustomRadios5">Invalid radio</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                  <label class="form-check-label" for="inlineRadio1">1</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                  <label class="form-check-label" for="inlineRadio2">2</label>
-                </div>
-                <div class="form-check form-check-inline disabled">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled="">
-                  <label class="form-check-label" for="inlineRadio3">3</label>
-                </div>
-              </div>
+                </fieldset>
+              </form>
             </div>
-          </form>
+          </div>
         </div>
       </section>
       <section class="mb-5 pt-5" id="navs">

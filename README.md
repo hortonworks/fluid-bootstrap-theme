@@ -5,19 +5,16 @@ or your company and Hortonworks, Inc, any use, reproduction,
 modification, redistribution, sharing, lending or other exploitation
 of all or any part of the contents of this file is strictly prohibited.
 -->
-# Fluid Bootstrap 4 Theme
+# Fluid Bootstrap Theme
 
 ## Getting started
 
-2. Clone this repo
-3. Run `npm install`
-4. Run `gulp serve`
+1. Clone this repo
+2. Run `npm install`
+3. Run `gulp`
+4. Open http://localhost:8000
 
-A browser tab will be opened with a live preview of the theme. Changing files will trigger a rebuild and the live preview will be refreshed.
-
-**Bootstrap**
-
-- <https://github.com/twbs/bootstrap/>
+Changing files will trigger a rebuild and the live preview will be refreshed.
 
 ## Copyright and license
 

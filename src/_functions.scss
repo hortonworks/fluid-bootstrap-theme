@@ -6,6 +6,6 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-@function theme-icon($key: "default") {
-  @return map-get($theme-icon, $key);
+@function theme-icon($key) {
+  @return map-get($theme-icons, $key);
 }
