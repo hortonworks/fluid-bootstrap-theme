@@ -15,40 +15,9 @@
 // Icons
 //
 
-$fluid-icon-default: '';
-$fluid-icon-success: '';
-$fluid-icon-warning: '';
-$fluid-icon-danger:  '';
-$fluid-icon-close:   '';
-
-$theme-icons: ();
-// stylelint-disable-next-line scss/dollar-variable-default
-$theme-icons: map-merge(
-  (
-    "default": $fluid-icon-default,
-    "success": $fluid-icon-success,
-    "warning": $fluid-icon-warning,
-    "danger": $fluid-icon-danger,
-    "close": $fluid-icon-close,
-  ),
-  $theme-icons
-);
-
 //
 // Color system
 //
-
-$white:    #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
-$black:    #000;
 
 //Fluid grays
 $fluid-gray-1: #ccc;
@@ -56,19 +25,31 @@ $fluid-gray-2: #999;
 $fluid-gray-3: #666;
 $fluid-gray-4: #333;
 
-$grays: ();
+$white:    #fff;
+$gray-100: $fluid-gray-1;
+$gray-200: $fluid-gray-1;
+$gray-300: $fluid-gray-1;
+$gray-400: $fluid-gray-2;
+$gray-500: $fluid-gray-2;
+$gray-600: $fluid-gray-3;
+$gray-700: $fluid-gray-3;
+$gray-800: $fluid-gray-4;
+$gray-900: $fluid-gray-4;
+$black:    #000;
+
+$grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $grays: map-merge(
   (
-    "100": $fluid-gray-1,
-    "200": $fluid-gray-1,
-    "300": $fluid-gray-2,
-    "400": $fluid-gray-2,
-    "500": $fluid-gray-2,
-    "600": $fluid-gray-3,
-    "700": $fluid-gray-3,
-    "800": $fluid-gray-4,
-    "900": $fluid-gray-4
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
   ),
   $grays
 );
@@ -87,10 +68,11 @@ $cyan:        #17a2b8;
 //Fluid colors
 $fluid-green:   #3fae2a;
 $fluid-default: $fluid-gray-2;
+$fluid-active:  $blue;
 $fluid-bg:      #ececec;
 $fluid-nav:     #313d54;
 
-$colors: ();
+$colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $colors: map-merge(
   (
@@ -121,6 +103,7 @@ $danger:        $red;
 $light:         $fluid-bg;
 $dark:          $fluid-nav;
 $default:       $fluid-default;
+$active:        $fluid-active;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -134,7 +117,8 @@ $theme-colors: map-merge(
     "danger":     $danger,
     "light":      $light,
     "dark":       $dark,
-    "default":    $default
+    "default":    $default,
+    "active":     $active
   ),
   $theme-colors
 );
@@ -278,7 +262,7 @@ $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
 $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 
 $component-active-color:      $white !default;
-$component-active-bg:         theme-color("primary") !default;
+$component-active-bg:         theme-color("active");
 
 $caret-width:                 .3em !default;
 
@@ -524,9 +508,10 @@ $custom-forms-transition:               background-color .15s ease-in-out, borde
 $custom-control-gutter:                 1.5rem !default;
 $custom-control-spacer-x:               1rem !default;
 
-$custom-control-indicator-size:         1rem !default;
-$custom-control-indicator-bg:           $gray-300 !default;
-$custom-control-indicator-bg-size:      50% 50% !default;
+$custom-control-indicator-size:         $font-size-base * .625; //10px
+$custom-control-indicator-border:       $gray-300 1px solid;
+$custom-control-indicator-bg:           $white;
+$custom-control-indicator-bg-size:      60% 60%;
 $custom-control-indicator-box-shadow:   inset 0 .25rem .25rem rgba($black, .1) !default;
 
 $custom-control-indicator-disabled-bg:          $gray-200 !default;

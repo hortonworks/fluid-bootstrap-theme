@@ -1,0 +1,75 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+.form-control {
+  &:disabled {
+    border: none;
+  }
+}
+
+.valid-feedback, .invalid-feedback {
+  color: theme-color("default");
+
+  &:before {
+    font-family: "FontAwesome";
+    margin-right: 5px;
+  }
+}
+
+.inline-feedback {
+  position: absolute;
+  left: 100%;
+  bottom: .6rem; //9.6px
+}
+
+.valid-feedback:before {
+  content: theme-icon("success");
+  color: theme-color("success");
+}
+
+.invalid-feedback:before {
+  content: theme-icon("danger");
+  color: theme-color("danger");
+}
+
+// Make all <select> dropdowns themed
+select {
+  @extend .custom-select;
+}
+
+ // Make all checkboxes and radios themed
+.form-check, .form-radio {
+  @extend .custom-control;
+
+  .form-check-input, .form-radio-input {
+    @extend .custom-control-input;
+
+    &:checked + .form-check-label, &:checked + .form-radio-label,
+    &:disabled + .form-check-label, &:disabled + .form-radio-label {
+      &:before {
+        border: none;
+      }
+    }
+  }
+
+  .form-check-label, .form-radio-label {
+    @extend .custom-control-label;
+
+    &:before {
+      border: $custom-control-indicator-border;
+    }
+  }
+}
+
+.form-check {
+  @extend .custom-checkbox;
+}
+
+.form-radio {
+  @extend .custom-radio;
+}
