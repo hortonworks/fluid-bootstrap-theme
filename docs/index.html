@@ -1970,16 +1970,41 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
         <div class="container">
           <div class="row px-5">
-            <div class="col-md-6">
-              <h3 class="mt-5">Popovers</h3>
-              <button type="button" class="btn btn-primary my-5" data-toggle="popover" title="" data-content="And here's some amazing content. It's very engaging. Right?" id="popover-toggler" data-original-title="Popover title" aria-describedby="popover157229">
-              Toggle popover
+            <div class="col-md-12">
+              <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                Popover on left
+              </button>
+
+              <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                Popover on top
+              </button>
+
+              <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+              sagittis lacus vel augue laoreet rutrum faucibus.">
+                Popover on bottom
+              </button>
+
+              <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                Popover on right
               </button>
             </div>
-            <div class="col-md-6">
+          </div>
+        </div>
+        <div class="container">
+          <div class="row px-5">
+            <div class="col-md-12">
               <h3 class="mt-5">Tooltips</h3>
-              <button type="button" class="btn btn-primary my-5" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right">
-              Tooltip on right
+              <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+                Tooltip on left
+              </button>
+              <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                Tooltip on top
+              </button>
+              <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+                Tooltip on bottom
+              </button>
+              <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+                Tooltip on right
               </button>
             </div>
           </div>
@@ -2089,6 +2114,12 @@ of all or any part of the contents of this file is strictly prohibited.
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="popover"]').popover();
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
 
   </body>
 </html>

@@ -16,22 +16,25 @@ var gulp = require('gulp'),
   del = require('del'),
   connect = require('gulp-connect');
 
-gulp.task('copy-html', () =>
-  gulp.src(['./*.html'])
-    // .pipe(gulp.dest('./dist/'))
+var fonts_src = './node_modules/font-awesome/fonts/fontawesome-webfont.*';
+var sass_src = ['./src/**/*.scss', './node_modules/font-awesome/scss/*.scss'];
+var html_src = './*.html';
+
+gulp.task('copy-html', () => 
+  gulp.src(html_src)
     .pipe(gulp.dest('./docs/'))
     .pipe(connect.reload())
 );
 
 gulp.task('copy-fonts', () =>
-  gulp.src(['./src/fonts/**/*', './node_modules/font-awesome/fonts/fontawesome-webfont.*'])
+  gulp.src(fonts_src)
     .pipe(gulp.dest('./dist/fonts/'))
     .pipe(gulp.dest('./docs/fonts/'))
     .pipe(connect.reload())
 );
 
 gulp.task('build-sass', () =>
-  gulp.src(['./src/**/*.scss', './node_modules/font-awesome/scss/*.scss'])
+  gulp.src(sass_src)
     .pipe(bulkSass())
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -41,6 +44,7 @@ gulp.task('build-sass', () =>
     .pipe(gulp.dest('./docs/css/'))
     .pipe(cleanCss())
     .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('./dist/css/'))
     .pipe(gulp.dest('./docs/css/'))
     .pipe(connect.reload())
 );
@@ -48,11 +52,10 @@ gulp.task('build-sass', () =>
 gulp.task('clean', () => del(['./dist']));
 
 gulp.task('build', gulp.series('build-sass', 'copy-fonts', 'copy-html'));
-gulp.task('build', gulp.series('build-sass', 'copy-fonts', 'copy-html'));
 
-gulp.task('watch-sass', () => gulp.watch(['./src/**/*.scss'], gulp.series('build-sass')));
-gulp.task('watch-fonts', () => gulp.watch(['./src/fonts/**/*'], gulp.series('copy-fonts')));
-gulp.task('watch-html', () => gulp.watch(['./*.html'], gulp.series('copy-html')));
+gulp.task('watch-sass', () => gulp.watch(sass_src, { ignoreInitial: false }, gulp.series('build-sass')));
+gulp.task('watch-fonts', () => gulp.watch(fonts_src, { ignoreInitial: false }, gulp.series('copy-fonts')));
+gulp.task('watch-html', () => gulp.watch(html_src, { ignoreInitial: false }, gulp.series('copy-html')));
 
 gulp.task('watch', gulp.parallel('watch-sass', 'watch-fonts', 'watch-html'));
 
