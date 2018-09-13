@@ -19,23 +19,17 @@
 // Color system
 //
 
-//Fluid grays
-$fluid-gray-1: #ccc;
-$fluid-gray-2: #999;
-$fluid-gray-3: #666;
-$fluid-gray-4: #333;
-
-$white:    #fff;
-$gray-100: $fluid-gray-1;
-$gray-200: $fluid-gray-1;
-$gray-300: $fluid-gray-1;
-$gray-400: $fluid-gray-2;
-$gray-500: $fluid-gray-2;
-$gray-600: $fluid-gray-3;
-$gray-700: $fluid-gray-3;
-$gray-800: $fluid-gray-4;
-$gray-900: $fluid-gray-4;
-$black:    #000;
+$white:    #fff !default;
+$gray-100: #fbfbfb;
+$gray-200: #f6f6f6;
+$gray-300: #ececec;   //Background
+$gray-400: #d1d1d1;
+$gray-500: #b5b5b5;
+$gray-600: #999999;   //Light Text
+$gray-700: #666666;   //Default
+$gray-800: #4c4c4c;
+$gray-900: #333333;   //Dark Text
+$black:    #000 !default;
 
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -54,22 +48,22 @@ $grays: map-merge(
   $grays
 );
 
-$blue:        #1491c1;
-$indigo:      #6610f2;
-$purple:      #6f42c1;
-$pink:        #e83e8c;
-$red:         #ef6162;
-$orange:      #e98a40;
-$yellow:      #ffc107;
-$green:       #1eb475;
-$teal:        #20c997;
-$cyan:        #17a2b8;
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #ef6162;
+$orange:  #e98a40;
+$yellow:  #ffc107 !default;
+$green:   #1eb475;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
 
 //Fluid colors
 $fluid-green:   #3fae2a;
-$fluid-default: $fluid-gray-2;
-$fluid-active:  $blue;
-$fluid-bg:      #ececec;
+$fluid-blue:    #1491c1; //Link
+$fluid-default: $gray-700;
+$fluid-bg:      $gray-300;
 $fluid-nav:     #313d54;
 
 $colors: () !default;
@@ -87,8 +81,8 @@ $colors: map-merge(
     "teal":       $teal,
     "cyan":       $cyan,
     "white":      $white,
-    "gray":       $gray-600,
-    "gray-dark":  $gray-800
+    "gray":       $gray-700, //changed from default
+    "gray-dark":  $gray-900  //changed from default
   ),
   $colors
 );
@@ -96,14 +90,14 @@ $colors: map-merge(
 $primary:       $fluid-green;
 $secondary:     $fluid-default;
 $success:       $green;
-$info:          $blue;
-$link:          $blue;
+$info:          $fluid-blue;
+$link:          $fluid-blue;
 $warning:       $orange;
 $danger:        $red;
 $light:         $fluid-bg;
 $dark:          $fluid-nav;
 $default:       $fluid-default;
-$active:        $fluid-active;
+$active:        $blue;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -112,13 +106,12 @@ $theme-colors: map-merge(
     "primary":    $primary,
     "secondary":  $secondary,
     "success":    $success,
-    "info":       $link,
+    "info":       $info,
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
     "dark":       $dark,
-    "default":    $default,
-    "active":     $active
+    "default":    $default //added
   ),
   $theme-colors
 );
@@ -262,7 +255,7 @@ $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
 $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 
 $component-active-color:      $white !default;
-$component-active-bg:         theme-color("active");
+$component-active-bg:         $active;
 
 $caret-width:                 .3em !default;
 
@@ -767,11 +760,11 @@ $card-columns-margin:               $card-spacer-y !default;
 
 // Tooltips
 
-$tooltip-bg:                        $fluid-gray-3;
+$tooltip-bg:                        $gray-700;
 
 // Popovers
 
-$popover-bg:                        $fluid-gray-3;
+$popover-bg:                        $gray-700;
 $popover-body-color:                $white;
 $popover-border-radius:             $border-radius;
 $popover-border-color:              $popover-bg;
@@ -900,8 +893,8 @@ $breadcrumb-item-padding:           .5rem !default;
 $breadcrumb-margin-bottom:          1rem !default;
 
 $breadcrumb-bg:                     initial;
-$breadcrumb-divider-color:          $fluid-gray-1;
-$breadcrumb-active-color:           $fluid-gray-1;
+$breadcrumb-divider-color:          gray("400");
+$breadcrumb-active-color:           gray("400");
 $breadcrumb-divider:                quote("/") !default;
 
 $breadcrumb-border-radius:          $border-radius !default;

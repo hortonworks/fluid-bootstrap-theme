@@ -10,10 +10,10 @@
   font-size: $font-size-base * 1.25; // 20px
 
   &.active {
-    color: $fluid-gray-4;
+    color: gray("900");
   }
 
   a {
-    color: $fluid-gray-2;
+    color: gray("600");
   }
 }
