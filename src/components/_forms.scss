@@ -6,9 +6,17 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+label {
+  color: $label-color;
+}
+
 .form-control {
   &:disabled {
     border: none;
+  }
+
+  &:focus, &:active {
+    box-shadow: 0 0 0 $btn-focus-width rgba($fluid-active, .5) !important;
   }
 }
 
@@ -48,6 +56,12 @@ select {
 
   .form-check-input, .form-radio-input {
     @extend .custom-control-input;
+
+    &:checked + .form-check-label, &:checked + .form-radio-label {
+      &:before {
+        background-color: $blue;
+      }
+    }
 
     &:checked + .form-check-label, &:checked + .form-radio-label,
     &:disabled + .form-check-label, &:disabled + .form-radio-label {
