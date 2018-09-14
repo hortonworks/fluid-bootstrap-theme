@@ -1,19 +1,15 @@
 /*
- * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
  * Except as expressly permitted in a written agreement between you
  * or your company and Hortonworks, Inc, any use, reproduction,
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-.breadcrumb-item {
-  font-size: $font-size-base * 2.0;
+html {
+  font-size: 14px;
+}
 
-  &.active {
-    color: gray("900");
-  }
-
-  a {
-    color: gray("600");
-  }
+body {
+  font-size: $font-size-base * 1.4;
 }
