@@ -20,11 +20,15 @@
   }
   
   &.btn-default {
-    @extend .btn-outline-secondary;
+    @extend .btn-outline-default;
   }
   
   &.btn-link {
     color: $link-color;
     border-color: transparent;
+  }
+
+  &:focus, &:active {
+    box-shadow: 0 0 0 $btn-focus-width rgba($fluid-active, .5) !important;
   }
 }
