@@ -1,0 +1,188 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+.navbar {
+  position: fixed !important;
+  height: 100% !important;
+  width: $navbar-width;
+  margin: 0;
+  padding: 0;
+  flex-direction: column !important;
+  justify-content: flex-start;
+  align-items: unset;
+  background-color: $fluid-navbar-bg !important;
+  overflow: hidden;
+  @include transition($transition-collapse-all);
+
+  &.collapsing {
+    @extend .collapse;
+  }
+
+  &.collapse {
+
+    & ~ * {
+      @include transition($transition-collapse-all);
+    }
+  
+    &.show ~ *:not(.popover):not(.tooltip):not(.modal) {
+      margin-left: $navbar-width;
+    }
+  
+    &:not(.show) {
+      display: flex;
+      width: $navbar-width-sm;
+
+      & ~ * {
+        margin-left: $navbar-width-sm;
+      }
+
+      .navbar-brand {
+        i:first-child,
+        .fa:first-child {
+          margin-right: $font-size-base * 1.6;
+        }
+      }
+    
+      .navbar-nav .nav-link {
+        height: $font-size-base * 5.0;
+
+        i:first-child,
+        .fa:first-child {
+          width: $font-size-base * 1.9;
+          margin-right: $font-size-base * 1.6;
+          font-size: $font-size-base * 1.9;
+        }
+      }
+
+      .navbar-toggler-icon:before {
+        content: $fa-var-angle-double-right;
+      }
+    }
+  }
+
+  * {
+    flex-direction: column !important;
+    flex-shrink: 0;
+    align-items: unset;
+  }
+
+  .navbar-nav .nav-link {
+    position: relative;
+    height: $font-size-base * 3.8;
+    padding-left: $font-size-base * 1.6;
+    padding-top: $font-size-base * 1.2;
+    padding-bottom: $font-size-base * 1.2;
+    line-height: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    @include transition($transition-collapse-all);
+
+    &:hover,
+    &:active, &.active {
+      color: $fluid-navbar-active !important;
+      background-color: $fluid-navbar-active-bg;
+    }
+
+    &:active, &.active {
+      &:before {
+        position: absolute;
+        left: -.5rem;
+        top: 50%;
+        border: solid transparent;
+        border-width: 1rem;
+        border-left-color: theme-color("primary");
+        content: " ";
+        transform: translateY(-50%);
+      }
+    }
+  
+    i:first-child,
+    .fa:first-child {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: $font-size-base * 1.6;
+      margin-right: $font-size-base * .8;
+      font-size: $font-size-base * 1.6;
+      vertical-align: text-top;
+      @include transition($transition-collapse-all);
+    }
+  }
+}
+
+.navbar-brand {
+  position: relative;
+  height: $font-size-base * 6.0;
+  margin: 0;
+  margin-bottom: 5px;
+  padding-left: $font-size-base * 1.25;
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  color: $fluid-navbar-brand !important;
+  background-color: $fluid-navbar-brand-bg;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: $font-size-base * 6.0;
+  @include transition($transition-collapse-all);
+
+  &:hover,
+  &:active, &.active {
+    color: $fluid-navbar-brand-hover !important;
+    background-color: $fluid-navbar-brand-hover-bg;
+  }
+
+  i:first-child,
+  .fa:first-child {
+    position: relative;
+    width: $font-size-base * 2.5;
+    margin-right: $font-size-base * .8;
+    flex-shrink: 0;
+    font-size: $font-size-base * 2.5;
+    @include transition($transition-collapse-all);
+  }
+}
+
+.navbar-toggler {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  height: $font-size-base * 4.8;
+  display: initial !important;
+  background-color: $fluid-navbar-brand-bg;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0px -15px 50px 5px #313544; // Create a fade out effect as menu items overflow vertically
+  z-index: 999;
+
+  &:hover,
+  &:active {
+    background-color: $fluid-navbar-active-bg;
+    
+    .navbar-toggler-icon:before {
+      color: $fluid-navbar-active;
+    }
+  }
+
+  &:focus {
+    outline-style: none;
+  }
+
+  .navbar-toggler-icon {
+    background-image: unset;
+    line-height: $font-size-base * 4.8;
+
+    &:before {
+      content: $fa-var-angle-double-left;
+      font-family: 'FontAwesome';
+      font-size: $font-size-base * 2.0;
+      color: theme-color("primary");
+    }
+  }
+}
