@@ -18,13 +18,13 @@
 $white:    #fff !default;
 $gray-100: #fbfbfb;
 $gray-200: #f6f6f6;
-$gray-300: #ececec;   //Background
+$gray-300: #ececec;   // Background
 $gray-400: #d1d1d1;
 $gray-500: #b5b5b5;
-$gray-600: #999999;   //Light Text
-$gray-700: #666666;   //Default
+$gray-600: #999999;   // Light Text
+$gray-700: #666666;   // Default
 $gray-800: #4c4c4c;
-$gray-900: #333333;   //Dark Text
+$gray-900: #333333;   // Dark Text
 $black:    #000 !default;
 
 $grays: () !default;
@@ -55,14 +55,22 @@ $green:  #1eb475;
 $teal:   #20c997 !default;
 $cyan:   #17a2b8 !default;
 
-//Fluid colors
-$fluid-green:     #3fae2a;
-$fluid-active:    #007bff; //this is the default blue value, but we only want to use it for active glows
-$fluid-default:     $gray-600;
-$fluid-text-light:  $gray-600;
-$fluid-text:        $gray-700;
-$fluid-text-dark:   $gray-900;
-$fluid-nav:       #313d54;
+// Fluid colors
+$fluid-green:            #3fae2a;
+$fluid-active:           #007bff; // This is Bootstrap's original $blue value, but we only want to use it for active glows
+$fluid-default:          $gray-600;
+$fluid-text-light:       $gray-600;
+$fluid-text:             $gray-700;
+$fluid-text-dark:        $gray-900;
+
+// Fluid navbar colors
+$fluid-navbar-bg:             #313544;
+$fluid-navbar-brand:          rgba(255,255,255,.75);
+$fluid-navbar-brand-hover:      $white;
+$fluid-navbar-brand-hover-bg: #304e73;
+$fluid-navbar-brand-bg:       #313d54;
+$fluid-navbar-active:           $white;
+$fluid-navbar-active-bg:      #414354;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -95,7 +103,6 @@ $warning:       $orange;
 $danger:        $red;
 $light:         $gray-300;
 $dark:          $gray-900;
-$nav:           $fluid-nav;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -110,7 +117,6 @@ $theme-colors: map-merge(
     "danger":     $danger,
     "light":      $light,
     "dark":       $dark,
-    "nav":        $nav //added
   ),
   $theme-colors
 );
@@ -262,7 +268,7 @@ $caret-width:                 .3em !default;
 $transition-base:             all .2s ease-in-out !default;
 $transition-fade:             opacity .15s linear !default;
 $transition-collapse:         height .35s ease !default;
-
+$transition-collapse-all:     all .35s ease, color 0s, background-color 0s; // Added to enable animating movement of other elements when navbar collapses
 
 // Fonts
 //
@@ -275,8 +281,8 @@ $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              .714285714285714rem; // 10px
-$font-size-lg:                ($font-size-base * 1.25) !default;
-$font-size-sm:                ($font-size-base * .875) !default;
+$font-size-lg:                $font-size-base * 1.8;
+$font-size-sm:                $font-size-base * 1.25;
 
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
@@ -309,7 +315,7 @@ $display3-weight:             300 !default;
 $display4-weight:             300 !default;
 $display-line-height:         $headings-line-height !default;
 
-$lead-font-size:              ($font-size-base * 1.25) !default;
+$lead-font-size:              $font-size-base * 1.8;
 $lead-font-weight:            300 !default;
 
 $small-font-size:             80% !default;
@@ -317,7 +323,7 @@ $small-font-size:             80% !default;
 $text-muted:                  $gray-600 !default;
 
 $blockquote-small-color:      $gray-600 !default;
-$blockquote-font-size:        ($font-size-base * 1.25) !default;
+$blockquote-font-size:        $font-size-base * 1.8;
 
 $hr-border-color:             rgba($black, .1) !default;
 $hr-border-width:             $border-width !default;
@@ -694,6 +700,11 @@ $navbar-light-disabled-color:       rgba($black, .3) !default;
 $navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
 $navbar-light-toggler-border-color: rgba($black, .1) !default;
 
+// Fluid Navbar
+
+$navbar-width:                      $font-size-base * 20.0;
+$navbar-width-sm:                   $font-size-base * 5.0;
+
 // Pagination
 
 $pagination-padding-y:              .5rem !default;
@@ -858,7 +869,7 @@ $alert-color-level:                 0;
 // Progress bars
 
 $progress-height:                   1rem !default;
-$progress-font-size:                ($font-size-base * .75) !default;
+$progress-font-size:                $font-size-base;
 $progress-bg:                       $gray-200 !default;
 $progress-border-radius:            $border-radius !default;
 $progress-box-shadow:               inset 0 .1rem .1rem rgba($black, .1) !default;
@@ -948,7 +959,7 @@ $carousel-transition:               transform .6s ease !default; // Define trans
 
 // Close
 
-$close-font-size:                   $font-size-base * 1.5 !default;
+$close-font-size:                   $font-size-base * 2.1;
 $close-font-weight:                 $font-weight-bold !default;
 $close-color:                       $black !default;
 $close-text-shadow:                 0 1px 0 $white !default;
