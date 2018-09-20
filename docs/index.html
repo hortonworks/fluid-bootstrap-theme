@@ -99,13 +99,19 @@ of all or any part of the contents of this file is strictly prohibited.
             Modals
           </a>
         </div>
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="https://getbootstrap.com/docs/4.0/" target="_blank">
+        <div class="navbar-nav collapsed" data-toggle="collapse" data-target="#navbarItemsToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation items">
+          <a class="nav-item nav-link" href="#navbarItemsToggle">
             <span class="fa fa-book"></span>
+            Resources
+          </a>
+        </div>
+        <div id="navbarItemsToggle" class="navbar-nav collapse">
+          <a class="nav-item nav-link" href="https://getbootstrap.com/docs/4.0/" target="_blank">
+            <span class="fa"></span>
             Bootstrap Documentation
           </a>
           <a class="nav-item nav-link" href="https://github.com/juzraai/bootstrap4-test-page">
-            <span class="fa fa-github"></span>
+            <span class="fa"></span>
             Source Code
           </a>
         </div>
@@ -1932,6 +1938,21 @@ of all or any part of the contents of this file is strictly prohibited.
       $(function () {
         $('[data-toggle="popover"]').popover();
         $('[data-toggle="tooltip"]').tooltip();
+      });
+
+      $(function () {
+        $('.navbar').on('hidden.bs.collapse', function (event) {
+          if (event.target === event.currentTarget) {
+            $(this).find('.navbar-nav.collapse').css('margin-bottom', function () {
+              return `${this.children.length * -38}px`;
+            });
+          }
+        });
+        $('.navbar').on('shown.bs.collapse', function (event) {
+          if (event.target === event.currentTarget) {
+            $(this).find('.navbar-nav.collapse').css('margin-bottom', '0');
+          }
+        });
       });
     </script>
 

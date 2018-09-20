@@ -16,7 +16,6 @@
   justify-content: flex-start;
   align-items: unset;
   background-color: $fluid-navbar-bg !important;
-  overflow: hidden;
   @include transition($transition-collapse-all);
 
   &.collapsing {
@@ -48,14 +47,60 @@
         }
       }
     
-      .navbar-nav .nav-link {
-        height: $font-size-base * 5.0;
+      .navbar-nav {
+        overflow: hidden;
 
-        i:first-child,
-        .fa:first-child {
-          width: $font-size-base * 1.9;
-          margin-right: $font-size-base * 1.6;
-          font-size: $font-size-base * 1.9;
+        &.collapsing {
+          @extend .collapse;
+        }
+
+        &.collapse {
+          position: absolute;
+          left: $font-size-base * 5.0;
+          top: $font-size-base * -5.0;
+          width: $navbar-width - ($font-size-base * 2.5);
+          background-color: $fluid-navbar-bg;
+          overflow: visible;
+          transition: none;
+          
+          &.show {
+            display: none;
+          }
+
+          .nav-link {
+            height: $font-size-base * 3.8;
+            overflow: hidden;
+
+            i:first-child,
+            .fa:first-child {
+              width: 0;
+              margin: 0;
+            }
+          }
+        }
+
+        &[data-toggle="collapse"] {
+          
+          &:hover + .navbar-nav.collapse,
+          &:hover + .navbar-nav.collapsing,
+          & + .navbar-nav.collapse:hover  {
+            display: initial;
+          }
+        }
+
+        .nav-link {
+          height: $font-size-base * 5.0;
+
+          &:after {
+            display: none;
+          }
+
+          i:first-child,
+          .fa:first-child {
+            width: $font-size-base * 1.9;
+            margin-right: $font-size-base * 1.6;
+            font-size: $font-size-base * 1.9;
+          }
         }
       }
 
@@ -71,25 +116,41 @@
     align-items: unset;
   }
 
-  .navbar-nav .nav-link {
-    position: relative;
-    height: $font-size-base * 3.8;
-    padding-left: $font-size-base * 1.6;
-    padding-top: $font-size-base * 1.2;
-    padding-bottom: $font-size-base * 1.2;
-    line-height: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    @include transition($transition-collapse-all);
+  .navbar-nav {
 
-    &:hover,
-    &:active, &.active {
-      color: $fluid-navbar-active !important;
-      background-color: $fluid-navbar-active-bg;
+    &[data-toggle="collapse"] {
+      
+      .nav-link:after {
+        position: relative;
+        float: right;
+        top: 50%;
+        content: $fa-var-angle-up;
+        font-family: 'FontAwesome';
+        font-size: $font-size-base * 2.0;
+      }
+
+      &.collapsed .nav-link:after {
+        content: $fa-var-angle-down;
+      }
     }
 
-    &:active, &.active {
-      &:before {
+    .nav-link {
+      position: relative;
+      height: $font-size-base * 3.8;
+      padding-left: $font-size-base * 1.6;
+      padding-top: $font-size-base * 1.2;
+      padding-bottom: $font-size-base * 1.2;
+      line-height: 0;
+      white-space: nowrap;
+      @include transition($transition-collapse-all);
+
+      &:hover,
+      &:active, &.active {
+        color: $fluid-navbar-active !important;
+        background-color: $fluid-navbar-active-bg;
+      }
+
+      &.active:before {
         position: absolute;
         left: -.5rem;
         top: 50%;
@@ -99,18 +160,18 @@
         content: " ";
         transform: translateY(-50%);
       }
-    }
-  
-    i:first-child,
-    .fa:first-child {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      width: $font-size-base * 1.6;
-      margin-right: $font-size-base * .8;
-      font-size: $font-size-base * 1.6;
-      vertical-align: text-top;
-      @include transition($transition-collapse-all);
+    
+      i:first-child,
+      .fa:first-child {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        width: $font-size-base * 1.6;
+        margin-right: $font-size-base * .8;
+        font-size: $font-size-base * 1.6;
+        vertical-align: text-top;
+        @include transition($transition-collapse-all);
+      }
     }
   }
 }
@@ -129,6 +190,7 @@
   text-transform: uppercase;
   white-space: nowrap;
   line-height: $font-size-base * 6.0;
+  overflow: hidden;
   @include transition($transition-collapse-all);
 
   &:hover,
@@ -148,6 +210,10 @@
   }
 }
 
+.navbar-collapse {
+  position: relative;
+}
+
 .navbar-toggler {
   position: absolute;
   bottom: 0;
@@ -158,8 +224,18 @@
   background-color: $fluid-navbar-brand-bg;
   border: none;
   border-radius: 0;
-  box-shadow: 0px -15px 50px 5px #313544; // Create a fade out effect as menu items overflow vertically
   z-index: 999;
+
+  // Create a fade out effect as menu items overflow vertically
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    height: $font-size-base * 5.0;
+    width: 100%;
+    content: " ";
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, $fluid-navbar-bg 100%);
+  }
 
   &:hover,
   &:active {
