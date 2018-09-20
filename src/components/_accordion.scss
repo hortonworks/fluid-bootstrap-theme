@@ -18,7 +18,7 @@
       cursor: pointer;
 
       &:after {
-        content: $fa-var-angle-down;
+        content: $fa-var-angle-up;
         font-family: 'FontAwesome';
         font-size: $font-size-base * 2.0;
         color: $link;
@@ -26,7 +26,7 @@
       }
 
       &.collapsed:after {
-        content: $fa-var-angle-up;
+        content: $fa-var-angle-down;
       }
     }
   }
