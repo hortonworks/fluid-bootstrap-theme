@@ -6,6 +6,10 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
- @mixin content-icon {
-   font-familty: 'FontAwesome';
- }
+html {
+  font-size: 14px;
+}
+
+body {
+  font-size: $font-size-base * 1.4;
+}

@@ -6,9 +6,19 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+label {
+  color: $label-color;
+}
+
 .form-control {
+  font-size: $font-size-base * 1.4;
+
   &:disabled {
     border: none;
+  }
+
+  &:focus, &:active {
+    box-shadow: 0 0 0 $btn-focus-width rgba($fluid-active, .5) !important;
   }
 }
 
@@ -23,8 +33,16 @@
 
 .inline-feedback {
   position: absolute;
+  margin-top: 0;
+  margin-left: 5px;
   left: 100%;
-  bottom: .6rem; //9.6px
+  bottom: ($input-padding-y * 2 + $input-line-height * $font-size-base * 1.4) / 2;
+  transform: translateY(50%);
+  padding-left: 15px;
+
+  &:before {
+    margin-left: -15px;
+  }
 }
 
 .valid-feedback:before {
@@ -40,6 +58,8 @@
 // Make all <select> dropdowns themed
 select {
   @extend .custom-select;
+
+  height: initial;
 }
 
  // Make all checkboxes and radios themed
@@ -48,6 +68,12 @@ select {
 
   .form-check-input, .form-radio-input {
     @extend .custom-control-input;
+
+    &:checked + .form-check-label, &:checked + .form-radio-label {
+      &:before {
+        background-color: $blue;
+      }
+    }
 
     &:checked + .form-check-label, &:checked + .form-radio-label,
     &:disabled + .form-check-label, &:disabled + .form-radio-label {
