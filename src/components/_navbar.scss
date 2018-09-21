@@ -55,7 +55,7 @@
         }
 
         &.collapse {
-          position: absolute;
+          position: relative;
           left: $font-size-base * 5.0;
           top: $font-size-base * -5.0;
           width: $navbar-width - ($font-size-base * 2.5);
