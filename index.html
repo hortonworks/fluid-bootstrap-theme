@@ -16,103 +16,115 @@ of all or any part of the contents of this file is strictly prohibited.
     <link rel="stylesheet" href="css/fluid-bootstrap.css">
   </head>
   <body data-spy="scroll" data-target="#my-navbar" data-offset="100">
+    <nav id="navbarToggle" class="navbar navbar-expand-sm navbar-dark bg-dark collapse show">
+      <a class="navbar-brand" href="#top">
+        <i class="fa fa-globe"></i>
+        <div style="line-height: 1.15">Fluid<br />Bootstrap</div>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="my-navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#typography">
+            <span class="fa fa-paragraph"></span>
+            Typography
+          </a>
+          <a class="nav-item nav-link" href="#accordion">
+            <span class="fa fa-angle-down"></span>
+            Accordion
+          </a>
+          <a class="nav-item nav-link" href="#alerts">
+            <span class="fa fa-bell"></span>
+            Alerts
+          </a>
+          <a class="nav-item nav-link" href="#badges">
+            <span class="fa fa-info-circle"></span>
+            Badges
+          </a>
+          <a class="nav-item nav-link" href="#breadcrumbs">
+            <span class="fa">/</span>
+            Breadcrumbs
+          </a>
+          <a class="nav-item nav-link" href="#buttons">
+            <span class="fa fa-square"></span>
+            Buttons
+          </a>  
+          <a class="nav-item nav-link" href="#pagination">
+            <span class="fa fa-file-text"></span>
+            Pagination
+          </a>  
+          <a class="nav-item nav-link" href="#images">
+            <span class="fa fa-picture-o"></span>
+            Images
+          </a>
+          <a class="nav-item nav-link" href="#tables">
+            <span class="fa fa-table"></span>
+            Tables
+          </a>
+          <a class="nav-item nav-link" href="#list-groups">
+            <span class="fa fa-list-ul"></span>
+            List Groups
+          </a>
+          <a class="nav-item nav-link" href="#jumbotrons">
+            <span class="fa fa-bookmark"></span>
+            Jumbotrons
+          </a>
+          <a class="nav-item nav-link" href="#cards">
+            <span class="fa fa-square-o"></span>
+            Cards
+          </a>
+          <a class="nav-item nav-link" href="#forms">
+            <span class="fa fa-pencil"></span>
+            Forms
+          </a>
+          <a class="nav-item nav-link" href="#navbar">
+            <span class="fa fa-angle-double-left"></span>
+            Navbar
+          </a>
+          <a class="nav-item nav-link" href="#tabs">
+            <span class="fa fa-folder"></span>
+            Tabs
+          </a>
+          <a class="nav-item nav-link" href="#popovers">
+            <span class="fa fa-commenting"></span>
+            Popovers
+          </a>
+          <a class="nav-item nav-link" href="#progress-bars">
+            <span class="fa fa-spinner"></span>
+            Progress Bars
+          </a>
+          <a class="nav-item nav-link" href="#modals">
+            <span class="fa fa-window-restore"></span>
+            Modals
+          </a>
+        </div>
+        <div class="navbar-nav collapsed" data-toggle="collapse" data-target="#navbarItemsToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation items">
+          <a class="nav-item nav-link" href="#navbarItemsToggle">
+            <span class="fa fa-book"></span>
+            Resources
+          </a>
+        </div>
+        <div id="navbarItemsToggle" class="navbar-nav collapse">
+          <a class="nav-item nav-link" href="https://getbootstrap.com/docs/4.0/" target="_blank">
+            <span class="fa"></span>
+            Bootstrap Documentation
+          </a>
+          <a class="nav-item nav-link" href="https://github.com/juzraai/bootstrap4-test-page">
+            <span class="fa"></span>
+            Source Code
+          </a>
+        </div>
+      </div>
+    </nav>
     <header class="bg-dark text-light pt-5 pb-5">
       <div class="container">
         <h6 class="display-3">Fluid Bootstrap 4 Theme Test Page</h6>
       </div>
     </header>
-    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#my-navbar" aria-controls="my-navbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="my-navbar">
-          <div class="navbar-nav mr-auto">
-            <a class="nav-item nav-link" href="#typography" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Typography">
-              <span class="fa fa-paragraph mx-2"></span>
-              <span class="d-md-none">Typography</span>
-            </a>
-            <a class="nav-item nav-link" href="#accordion" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Accordion">
-              <span class="fa fa-angle-down mx-2"></span>
-              <span class="d-md-none">Accordion</span>
-            </a>
-            <a class="nav-item nav-link" href="#alerts" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Alerts">
-              <span class="fa fa-bell mx-2"></span>
-              <span class="d-md-none">Alerts</span>
-            </a>
-            <a class="nav-item nav-link" href="#badges" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Badges">
-              <span class="fa fa-info-circle mx-2"></span>
-              <span class="d-md-none">Badges</span>
-            </a>
-            <a class="nav-item nav-link" href="#breadcrumbs" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Breadcrumbs">
-              <span class="fa mx-2">/</span>
-              <span class="d-md-none">Breadcrumbs</span>
-            </a>
-            <a class="nav-item nav-link" href="#buttons" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Buttons">
-                <span class="fa fa-square mx-2"></span>
-                <span class="d-md-none">Buttons</span>
-            </a>  
-            <a class="nav-item nav-link" href="#pagination" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Pagination">
-              <span class="fa fa-file-text mx-2"></span>
-              <span class="d-md-none">Pagination</span>
-            </a>  
-            <a class="nav-item nav-link" href="#images" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Images">
-              <span class="fa fa-picture-o mx-2"></span>
-              <span class="d-md-none">Images</span>
-            </a>
-            <a class="nav-item nav-link" href="#tables" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tables">
-              <span class="fa fa-table mx-2"></span>
-              <span class="d-md-none">Tables</span>
-            </a>
-            <a class="nav-item nav-link" href="#list-groups" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="List groups">
-              <span class="fa fa-list-ul mx-2"></span>
-              <span class="d-md-none">List groups</span>
-            </a>
-            <a class="nav-item nav-link" href="#jumbotrons" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Jumbotrons">
-              <span class="fa fa-bookmark mx-2"></span>
-              <span class="d-md-none">Jumbotrons</span>
-            </a>
-            <a class="nav-item nav-link" href="#cards" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cards">
-              <span class="fa fa-square-o mx-2"></span>
-              <span class="d-md-none">Cards</span>
-            </a>
-            <a class="nav-item nav-link" href="#forms" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Forms">
-              <span class="fa fa-pencil mx-2"></span>
-              <span class="d-md-none">Forms</span>
-            </a>
-            <a class="nav-item nav-link" href="#navs" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Navs">
-              <span class="fa fa-bars mx-2"></span>
-              <span class="d-md-none">Navs</span>
-            </a>
-            <a class="nav-item nav-link" href="#popovers" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Popovers">
-              <span class="fa fa-commenting mx-2"></span>
-              <span class="d-md-none">Popovers</span>
-            </a>
-            <a class="nav-item nav-link" href="#progress-bars" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Progress bars">
-              <span class="fa fa-spinner mx-2"></span>
-              <span class="d-md-none">Progress bars</span>
-            </a>
-            <a class="nav-item nav-link" href="#modals" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modals">
-              <span class="fa fa-window-restore mx-2"></span>
-              <span class="d-md-none">Modals</span>
-            </a>
-          </div>
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" href="https://getbootstrap.com/docs/4.0/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Bootstrap documentation">
-              <span class="fa fa-book mx-2"></span>
-              <span class="d-md-none">Bootstrap documentation</span>
-            </a>
-            <a class="nav-item nav-link" href="https://github.com/juzraai/bootstrap4-test-page" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Source code">
-              <span class="fa fa-github mx-2"></span>
-              <span class="d-md-none">Source code</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
     <main>
       <section class="mb-5 pt-5" id="typography">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -346,7 +358,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="accordion">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -402,7 +414,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="alerts">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -474,7 +486,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="badges">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -523,7 +535,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="breadcrumbs">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -567,7 +579,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="buttons">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -649,7 +661,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="pagination">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -687,7 +699,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="images">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -747,7 +759,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="tables">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -1063,7 +1075,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="list-groups">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -1150,7 +1162,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="jumbotrons">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -1189,7 +1201,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="cards">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -1497,7 +1509,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="forms">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -1660,21 +1672,16 @@ of all or any part of the contents of this file is strictly prohibited.
           </div>
         </div>
       </section>
-      <section class="mb-5 pt-5" id="navs">
-        <div class="row bg-light py-4 mb-5">
+      <section class="mb-5 pt-5" id="navbar">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
-                <span class="fa fa-bars mr-1"></span>
-                Navs
+                <span class="fa fa-angle-double-left mr-1"></span>
+                Navbar
               </h2>
               <h2>
                 <a href="https://getbootstrap.com/docs/4.0/components/navbar/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Navbar docs"><span class="fa fa-book fw"></span></a>
-                <a href="https://getbootstrap.com/docs/4.0/components/navs/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Navs' docs"><span class="fa fa-book fw"></span></a>
-                <a href="https://getbootstrap.com/docs/4.0/components/breadcrumb/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Breadcrumb docs"><span class="fa fa-book fw"></span></a>
-                <a href="https://getbootstrap.com/docs/4.0/components/dropdowns/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Dropdown docs"><span class="fa fa-book fw"></span></a>
-                <a href="https://getbootstrap.com/docs/4.0/components/scrollspy/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Scrollspy docs"><span class="fa fa-book fw"></span></a>
-                <a href="https://getbootstrap.com/docs/4.0/utilities/position/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Position docs"><span class="fa fa-book fw"></span></a>
                 <a href="#top" class="ml-3"><span class="fa fa-chevron-up fw"></span></a>
               </h2>
             </div>
@@ -1683,232 +1690,34 @@ of all or any part of the contents of this file is strictly prohibited.
         <div class="container">
           <div class="row px-5">
             <div class="col-12">
-              <h3 class="mt-5">Navbars</h3>
-              <nav class="navbar navbar-expand-lg navbar-dark bg-primary my-2">
-                <a class="navbar-brand" href="javascript:void(0);">Brand</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar-primary">
-                  <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                    <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                    <div class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                      </div>
-                    </div>
-                    <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-                  </div>
-                  <span class="navbar-text ml-2 mr-auto">Text</span>
-                  <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
-              <nav class="navbar navbar-expand-lg navbar-dark bg-secondary my-2">
-                <a class="navbar-brand" href="javascript:void(0);">Brand</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-secondary" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar-secondary">
-                  <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                    <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                    <div class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                      </div>
-                    </div>
-                    <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-                  </div>
-                  <span class="navbar-text ml-2 mr-auto">Text</span>
-                  <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
-              <nav class="navbar navbar-expand-lg navbar-dark bg-success my-2">
-                <a class="navbar-brand" href="javascript:void(0);">Brand</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-success" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar-success">
-                  <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                    <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                    <div class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                      </div>
-                    </div>
-                    <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-                  </div>
-                  <span class="navbar-text ml-2 mr-auto">Text</span>
-                  <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
-              <nav class="navbar navbar-expand-lg navbar-dark bg-danger my-2">
-                <a class="navbar-brand" href="javascript:void(0);">Brand</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-danger" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar-danger">
-                  <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                    <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                    <div class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                      </div>
-                    </div>
-                    <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-                  </div>
-                  <span class="navbar-text ml-2 mr-auto">Text</span>
-                  <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
-              <nav class="navbar navbar-expand-lg navbar-light bg-warning my-2">
-                <a class="navbar-brand" href="javascript:void(0);">Brand</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-warning" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar-warning">
-                  <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                    <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                    <div class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                      </div>
-                    </div>
-                    <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-                  </div>
-                  <span class="navbar-text ml-2 mr-auto">Text</span>
-                  <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
-              <nav class="navbar navbar-expand-lg navbar-dark bg-info my-2">
-                <a class="navbar-brand" href="javascript:void(0);">Brand</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-info" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar-info">
-                  <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                    <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                    <div class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                      </div>
-                    </div>
-                    <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-                  </div>
-                  <span class="navbar-text ml-2 mr-auto">Text</span>
-                  <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
-              <nav class="navbar navbar-expand-lg navbar-light bg-light my-2">
-                <a class="navbar-brand" href="javascript:void(0);">Brand</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-light" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar-light">
-                  <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                    <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                    <div class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                      </div>
-                    </div>
-                    <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-                  </div>
-                  <span class="navbar-text ml-2 mr-auto">Text</span>
-                  <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
-              <nav class="navbar navbar-expand-lg navbar-dark bg-dark my-2">
-                <a class="navbar-brand" href="javascript:void(0);">Brand</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-dark" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar-dark">
-                  <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                    <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                    <div class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                      </div>
-                    </div>
-                    <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-                  </div>
-                  <span class="navbar-text ml-2 mr-auto">Text</span>
-                  <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
+              <p>The navbar on the left side of this demo is an example of the Fluid Bootstrap navbar. It uses standard Bootstrap markup and classes with the following exceptions:</p>
             </div>
+            <div class="col-12">
+              <dl class="row">
+                <dt class="col-3">Brand area content</dt>
+                <dd class="col-9">Bootstrap does not make any assumptions about what goes in the brand area. If you use only text, Fluid Bootstrap will style it appropriately in expanded mode, but it will be clipped when the navbar is collapsed. Fluid prefers that you use an icon followed by text (although the font size and number of lines is not specified). In that case, Fluid Bootstrap ensures that the icon/text combination is displayed correctly in both expanded and collapsed modes.</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mb-5 pt-5" id="tabs">
+        <div class="bg-light py-4 mb-5">
+          <div class="container">
+            <div class="d-flex justify-content-between">
+              <h2>
+                <span class="fa fa-folder mr-1"></span>
+                Tabs
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/navs/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Navs' docs"><span class="fa fa-book fw"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-chevron-up fw"></span></a>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row px-5">
             <div class="col-md-6">
               <h3 class="mt-5">Tabs</h3>
               <div class="nav nav-tabs">
@@ -1961,20 +1770,11 @@ of all or any part of the contents of this file is strictly prohibited.
                 <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
               </div>
             </div>
-            <div class="col-12">
-              <h3 class="mt-5">Breadcrumbs</h3>
-              <nav class="breadcrumb">
-                <a class="breadcrumb-item" href="javascript:void(0);">Home</a>
-                <a class="breadcrumb-item" href="javascript:void(0);">Library</a>
-                <a class="breadcrumb-item" href="javascript:void(0);">Data</a>
-                <span class="breadcrumb-item active">Bootstrap</span>
-              </nav>
-            </div>
           </div>
         </div>
       </section>
       <section class="mb-5 pt-5" id="popovers">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -2031,7 +1831,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="progress-bars">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -2087,7 +1887,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </section>
       <section class="mb-5 pt-5" id="modals">
-        <div class="row bg-light py-4 mb-5">
+        <div class="bg-light py-4 mb-5">
           <div class="container">
             <div class="d-flex justify-content-between">
               <h2>
@@ -2138,6 +1938,21 @@ of all or any part of the contents of this file is strictly prohibited.
       $(function () {
         $('[data-toggle="popover"]').popover();
         $('[data-toggle="tooltip"]').tooltip();
+      });
+
+      $(function () {
+        $('.navbar').on('hidden.bs.collapse', function (event) {
+          if (event.target === event.currentTarget) {
+            $(this).find('.navbar-nav.collapse').css('margin-bottom', function () {
+              return `${this.children.length * -38}px`;
+            });
+          }
+        });
+        $('.navbar').on('shown.bs.collapse', function (event) {
+          if (event.target === event.currentTarget) {
+            $(this).find('.navbar-nav.collapse').css('margin-bottom', '0');
+          }
+        });
       });
     </script>
 
