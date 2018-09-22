@@ -24,7 +24,7 @@
 
   &.collapse {
 
-    & > * {
+    & ~ *:not(.popover):not(.tooltip):not(.modal) {
       @include transition($transition-collapse-all);
     }
 
