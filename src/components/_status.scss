@@ -11,10 +11,10 @@
   top: 50%;
   transform: translateY(-50%);
   content: " ";
-  width: $font-size-base * .8;
-  height: $font-size-base * .8;
-  margin-right: $font-size-base * .5;
-  border-radius: $font-size-base * .4;
+  width: $size-base * .8;
+  height: $size-base * .8;
+  margin-right: $size-base * .5;
+  border-radius: $size-base * .4;
 }
 
 @each $color, $value in $theme-colors {

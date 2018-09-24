@@ -146,6 +146,18 @@ $enable-grid-classes:       true !default;
 $enable-print-styles:       true !default;
 
 
+// Sizing
+//
+// We need a base unit for specifying the sizes that is mathematically compatible with rems but still easy to use.
+// Setting the size base to 10px in rems give us the unit we need because we can use intuitive multipliers.
+// For example:
+//   $size-base *   .8  =   8px
+//   $size-base *  1.6  =  16px
+//   $size-base * 10.0  = 100px
+
+$size-base: .714285714285714rem; // 10px based on a rem size of 14px
+
+
 // Spacing
 //
 // Control the default styling of most Bootstrap elements by modifying these
@@ -192,7 +204,7 @@ $body-color:                $fluid-text;
 //
 // Style anchor elements.
 
-$link-color:                theme-color("info");
+$link-color:                $blue;
 $link-decoration:           none !default;
 $link-hover-color:          darken($link-color, 15%) !default;
 $link-hover-decoration:     underline !default;
@@ -281,7 +293,7 @@ $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberati
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
-$font-size-base:              .714285714285714rem; // 10px
+$font-size-base:              $size-base;
 $font-size-lg:                $font-size-base * 1.8;
 $font-size-sm:                $font-size-base * 1.25;
 
@@ -502,7 +514,7 @@ $custom-forms-transition:               background-color .15s ease-in-out, borde
 $custom-control-gutter:                 1.5rem !default;
 $custom-control-spacer-x:               1rem !default;
 
-$custom-control-indicator-size:         $font-size-base; // 10px
+$custom-control-indicator-size:         $size-base;
 $custom-control-indicator-border:       $gray-300 1px solid;
 $custom-control-indicator-bg:           $white;
 $custom-control-indicator-bg-size:      60% 60%;
@@ -703,8 +715,8 @@ $navbar-light-toggler-border-color: rgba($black, .1) !default;
 
 // Fluid Navbar
 
-$navbar-width:                      $font-size-base * 20.0;
-$navbar-width-sm:                   $font-size-base * 5.0;
+$navbar-width:                      $size-base * 20.0;
+$navbar-width-sm:                   $size-base * 5.0;
 
 // Pagination
 
