@@ -6,18 +6,19 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-.popover {
-  @include box-shadow($box-shadow-sm);
-  .arrow {
-    margin: 0 $border-radius;
-  }
-  &.popover-no-arrow {
-    .arrow {
-      display: none;
-    }
-  }
+.status:before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: " ";
+  width: $font-size-base * .8;
+  height: $font-size-base * .8;
+  margin-right: $font-size-base * .5;
+  border-radius: $font-size-base * .4;
 }
 
-.popover-header {
-  font-size: $font-size-base * 1.4;
+@each $color, $value in $theme-colors {
+  .status-#{$color}:before {
+    background-color: $value;
+  }
 }

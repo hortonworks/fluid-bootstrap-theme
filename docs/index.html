@@ -16,11 +16,49 @@ of all or any part of the contents of this file is strictly prohibited.
     <link rel="stylesheet" href="css/fluid-bootstrap.css">
   </head>
   <body data-spy="scroll" data-target="#my-navbar" data-offset="100">
-    <nav id="navbarToggle" class="navbar navbar-expand-sm navbar-dark bg-dark collapse show">
-      <a class="navbar-brand" href="#top">
-        <i class="fa fa-globe"></i>
+    <nav id="navbarToggle" class="navbar navbar-expand-sm collapse show">
+      <a class="navbar-brand collapsed" href="#top" data-toggle="collapse" data-target="#navbarBrandToggle" aria-controls="navbarBrandToggle" aria-expanded="true" aria-label="Toggle product navigation">
+        <i class="fa fa-cube"></i>
         <div style="line-height: 1.15">Fluid<br />Bootstrap</div>
       </a>
+      <div id="navbarBrandToggle" class="brand-menu collapse">
+        <a class="brand-menu-item">
+          <i class="fa fa-cube"></i>
+          Product 1
+        </a>
+        <a class="brand-menu-item">
+          <i class="fa fa-cube"></i>
+          Product 2
+        </a>
+        <a class="brand-menu-item">
+          <i class="fa fa-cube"></i>
+          Product 3
+        </a>
+        <a class="brand-menu-item">
+          <i class="fa fa-cube"></i>
+          Product 4
+        </a>
+        <a class="brand-menu-item">
+          <i class="fa fa-cube"></i>
+          Product 5
+        </a>
+        <a class="brand-menu-item">
+          <i class="fa fa-cube"></i>
+          Product 6
+        </a>
+        <a class="brand-menu-item">
+          <i class="fa fa-cube"></i>
+          Product 7
+        </a>
+        <a class="brand-menu-item">
+          <i class="fa fa-cube"></i>
+          Product 8
+        </a>
+        <a class="brand-menu-item">
+          <i class="fa fa-cube"></i>
+          Product 9
+        </a>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -100,17 +138,25 @@ of all or any part of the contents of this file is strictly prohibited.
           </a>
         </div>
         <div class="navbar-nav collapsed" data-toggle="collapse" data-target="#navbarItemsToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation items">
-          <a class="nav-item nav-link" href="#navbarItemsToggle">
-            <span class="fa fa-book"></span>
-            Resources
-          </a>
+          <div class="nav-item dropdown">
+            <a class="nav-link" href="#navbarItemsToggle">
+              <span class="fa fa-book"></span>
+              Resources
+            </a>
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
         </div>
         <div id="navbarItemsToggle" class="navbar-nav collapse">
-          <a class="nav-item nav-link" href="https://getbootstrap.com/docs/4.0/" target="_blank">
+          <a class="nav-item nav-link status status-success" href="https://getbootstrap.com/docs/4.0/" target="_blank">
             <span class="fa"></span>
             Bootstrap Documentation
           </a>
-          <a class="nav-item nav-link" href="https://github.com/juzraai/bootstrap4-test-page">
+          <a class="nav-item nav-link status status-danger" href="https://github.com/juzraai/bootstrap4-test-page">
             <span class="fa"></span>
             Source Code
           </a>
@@ -1942,14 +1988,16 @@ of all or any part of the contents of this file is strictly prohibited.
 
       $(function () {
         $('.navbar').on('hidden.bs.collapse', function (event) {
-          if (event.target === event.currentTarget) {
+          if (!event.target.classList.contains("brand-menu") // exclude the brand menu from this behavior
+            && event.target === event.currentTarget) {
             $(this).find('.navbar-nav.collapse').css('margin-bottom', function () {
               return `${this.children.length * -38}px`;
             });
           }
         });
         $('.navbar').on('shown.bs.collapse', function (event) {
-          if (event.target === event.currentTarget) {
+          if (!event.target.classList.contains("brand-menu") // exclude the brand menu from this behavior
+            && event.target === event.currentTarget) {
             $(this).find('.navbar-nav.collapse').css('margin-bottom', '0');
           }
         });

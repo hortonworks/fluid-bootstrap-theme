@@ -7,7 +7,8 @@
  */
 
 .alert {
-  box-shadow: 1px 1px 5px 0 gray("600");
+  //box-shadow: 1px 1px 5px 0 gray("600");
+  box-shadow: $box-shadow;
   font-size: $font-size-base * 1.2;
   
   & > div {
