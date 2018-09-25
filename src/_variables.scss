@@ -11,6 +11,14 @@
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
+
+// $root-font-size is assigned as the font-size of the root <html> element in _reboot.scss, 
+// which means that it is used as the basis for all sizes specified in rems.
+// When you need to specify a size in px, use the px() function instead. 
+// It converts pixels to rems using the value of $root-font-size.
+$root-font-size: 14px;
+
+
 //
 // Color system
 //
@@ -146,18 +154,6 @@ $enable-grid-classes:       true !default;
 $enable-print-styles:       true !default;
 
 
-// Sizing
-//
-// We need a base unit for specifying the sizes that is mathematically compatible with rems but still easy to use.
-// Setting the size base to 10px in rems give us the unit we need because we can use intuitive multipliers.
-// For example:
-//   $size-base *   .8  =   8px
-//   $size-base *  1.6  =  16px
-//   $size-base * 10.0  = 100px
-
-$size-base: .714285714285714rem; // 10px based on a rem size of 14px
-
-
 // Spacing
 //
 // Control the default styling of most Bootstrap elements by modifying these
@@ -264,9 +260,9 @@ $line-height-sm:              1.5 !default;
 $border-width:                1px !default;
 $border-color:                $gray-300 !default;
 
-$border-radius:               .142857142857143rem; // 2px
-$border-radius-lg:            .285714285714286rem; // 4px
-$border-radius-sm:            .142857142857143rem; // 2px
+$border-radius:               px(2);
+$border-radius-lg:            px(4);
+$border-radius-sm:            px(2);
 
 $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
 $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
@@ -293,9 +289,9 @@ $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberati
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
-$font-size-base:              $size-base;
-$font-size-lg:                $font-size-base * 1.8;
-$font-size-sm:                $font-size-base * 1.25;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
 
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
@@ -304,12 +300,12 @@ $font-weight-bold:            700 !default;
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
-$h1-font-size:                $font-size-base * 2.8;
-$h2-font-size:                $font-size-base * 2.4;
-$h3-font-size:                $font-size-base * 2.0;
-$h4-font-size:                $font-size-base * 1.6;
-$h5-font-size:                $font-size-base * 1.5;
-$h6-font-size:                $font-size-base * 1.4;
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      ($spacer / 2) !default;
 $headings-font-family:        inherit !default;
@@ -328,7 +324,7 @@ $display3-weight:             300 !default;
 $display4-weight:             300 !default;
 $display-line-height:         $headings-line-height !default;
 
-$lead-font-size:              $font-size-base * 1.8;
+$lead-font-size:              ($font-size-base * 1.25) !default;
 $lead-font-weight:            300 !default;
 
 $small-font-size:             80% !default;
@@ -336,7 +332,7 @@ $small-font-size:             80% !default;
 $text-muted:                  $gray-600 !default;
 
 $blockquote-small-color:      $gray-600 !default;
-$blockquote-font-size:        $font-size-base * 1.8;
+$blockquote-font-size:        ($font-size-base * 1.25) !default;
 
 $hr-border-color:             rgba($black, .1) !default;
 $hr-border-width:             $border-width !default;
@@ -514,7 +510,7 @@ $custom-forms-transition:               background-color .15s ease-in-out, borde
 $custom-control-gutter:                 1.5rem !default;
 $custom-control-spacer-x:               1rem !default;
 
-$custom-control-indicator-size:         $size-base;
+$custom-control-indicator-size:         px(10);
 $custom-control-indicator-border:       $gray-300 1px solid;
 $custom-control-indicator-bg:           $white;
 $custom-control-indicator-bg-size:      60% 60%;
@@ -715,8 +711,8 @@ $navbar-light-toggler-border-color: rgba($black, .1) !default;
 
 // Fluid Navbar
 
-$navbar-width:                      $size-base * 20.0;
-$navbar-width-sm:                   $size-base * 5.0;
+$navbar-width:                      px(200);
+$navbar-width-sm:                   px(50);
 
 // Pagination
 
@@ -882,7 +878,7 @@ $alert-color-level:                 0;
 // Progress bars
 
 $progress-height:                   1rem !default;
-$progress-font-size:                .75rem;
+$progress-font-size:                ($font-size-base * .75) !default;
 $progress-bg:                       $gray-200 !default;
 $progress-border-radius:            $border-radius !default;
 $progress-box-shadow:               inset 0 .1rem .1rem rgba($black, .1) !default;
@@ -972,7 +968,7 @@ $carousel-transition:               transform .6s ease !default; // Define trans
 
 // Close
 
-$close-font-size:                   $font-size-base * 2.1;
+$close-font-size:                   $font-size-base * 1.5 !default;
 $close-font-weight:                 $font-weight-bold !default;
 $close-color:                       $black !default;
 $close-text-shadow:                 0 1px 0 $white !default;

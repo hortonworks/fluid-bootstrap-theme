@@ -7,7 +7,7 @@
  */
 
 .breadcrumb-item {
-  font-size: $font-size-base * 2.0;
+  font-size: px(20);
 
   &.active {
     color: gray("900");

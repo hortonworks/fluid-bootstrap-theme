@@ -11,16 +11,16 @@
     border: none;
     
     .card-header {
-      font-size: $font-size-base * 1.8;
-      line-height: $font-size-base * 2.0;
+      font-size: px(18);
+      line-height: px(20);
       background-color: initial;
-      padding: $size-base * 2.0;
+      padding: px(20);
       cursor: pointer;
 
       &:after {
         content: $fa-var-angle-up;
         font-family: 'FontAwesome';
-        font-size: $font-size-base * 2.0;
+        font-size: px(20);
         color: $link;
         float: right;
       }
