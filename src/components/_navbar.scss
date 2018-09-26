@@ -22,6 +22,53 @@
 
   &.collapsing {
     @extend .collapse;
+
+    .navbar-brand[data-toggle="collapse"]:after {
+      opacity: 0;
+    }
+  }
+
+  // We use the [style] selector to determine the direction of the .collapsing behavior;
+  // when it is present, the menu is expanding.
+  &.collapsing[style^="height"] {
+    width: $navbar-width !important;
+
+    & ~ *:not(.popover):not(.tooltip):not(.modal) {
+      margin-left: $navbar-width;
+    }
+
+    .navbar-brand {
+
+      i:first-child,
+      .fa:first-child {
+        margin-right: px(8) !important;
+      }
+    }
+
+    .navbar-nav {
+
+      .nav-item.nav-link, 
+      .nav-item > .nav-link {
+        height: px(38) !important;
+        width: $navbar-width;
+
+        &.status:before {
+          left: px(30) !important;
+        }
+
+        i:first-child,
+        .fa:first-child {
+          width: px(16) !important;
+          margin-right: px(8) !important;
+          font-size: px(16) !important;
+        }
+      }
+
+      &.collapse.show {
+        display: initial !important;
+        position: initial;
+      }
+    }
   }
 
   &.collapse {
@@ -69,7 +116,7 @@
           position: relative;
           left: px(50);
           top: px(-50);
-          width: $navbar-width - px(25);
+          width: $navbar-width - px(24);
           background-color: $fluid-navbar-bg;
           overflow: visible;
           transition: none;
@@ -109,7 +156,7 @@
           height: px(50);
 
           &:after {
-            display: none;
+            opacity: 0;
           }
 
           i:first-child,
@@ -120,8 +167,8 @@
           }
         }
 
-        .dropdown-toggle {
-          display: none;
+        .dropdown-toggle:after {
+          opacity: 0;
         }
       }
 
@@ -149,6 +196,7 @@
         content: $fa-var-angle-up;
         font-family: "FontAwesome";
         font-size: px(20);
+        //@include transition($transition-collapse-all);
       }
 
       &.collapsed {
@@ -225,6 +273,7 @@
             line-height: 1.15;
             font-weight: bold;
             border: none;
+            //@include transition($transition-collapse-all);
           }
         }
 
@@ -272,6 +321,7 @@
   @include transition($transition-collapse-all);
 
   &[data-toggle="collapse"] {
+    
     &:after {
       margin-left: px(8);
       content: $fa-var-angle-up;
@@ -317,8 +367,8 @@
   flex-wrap: wrap;
   align-items: center;
 
-  // this provides top and bottom padding but can be collapsed like content,
-  // thus avoiding a noticeable pause at the end of the animation  
+  // This provides top and bottom padding but can be collapsed like content,
+  // thus avoiding a noticeable pause at the end of the animation. 
   &:before, &:after {
     content: " ";
     height: px(20);
@@ -353,6 +403,7 @@
     }
 
     &:hover {
+      
       i,
       span.fa {
         background-color: lighten(color("blue"), 10%)
