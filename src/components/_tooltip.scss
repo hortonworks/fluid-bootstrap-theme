@@ -8,7 +8,7 @@
 
  .tooltip {
     .tooltip-inner {
-      padding: 1rem; // if 1rem = 10px
+      padding: px(10);
     }
     &.tooltip-no-arrow {
       .arrow {

@@ -9,3 +9,7 @@
 @function theme-icon($key) {
   @return map-get($theme-icons, $key);
 }
+
+@function px($pixels) {
+  @return (($pixels * 1px) / $root-font-size) * 1rem;
+}

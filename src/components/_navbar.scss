@@ -46,15 +46,15 @@
 
         &[data-toggle="collapse"]:after {
           position: absolute;
-          top: -18px;
-          left: 32px;
+          top: px(-18);
+          left: px(32);
           margin: 0;
-          font-size: 16px;
+          font-size: px(16);
         }
 
         i:first-child,
         .fa:first-child {
-          margin-right: $size-base * 1.6;
+          margin-right: px(16);
         }
       }
 
@@ -67,9 +67,9 @@
 
         &.collapse {
           position: relative;
-          left: $size-base * 5.0;
-          top: $size-base * -5.0;
-          width: $navbar-width - ($size-base * 2.5);
+          left: px(50);
+          top: px(-50);
+          width: $navbar-width - px(25);
           background-color: $fluid-navbar-bg;
           overflow: visible;
           transition: none;
@@ -80,11 +80,11 @@
 
           .nav-item.nav-link, 
           .nav-item > .nav-link {
-            height: $size-base * 3.8;
+            height: px(38);
             overflow: hidden;
 
             &.status:before {
-              left: $size-base * .6;
+              left: px(6);
             }
 
             i:first-child,
@@ -106,7 +106,7 @@
 
         .nav-item.nav-link,
         .nav-item > .nav-link {
-          height: $size-base * 5.0;
+          height: px(50);
 
           &:after {
             display: none;
@@ -114,9 +114,9 @@
 
           i:first-child,
           .fa:first-child {
-            width: $size-base * 1.9;
-            margin-right: $size-base * 1.6;
-            font-size: $font-size-base * 1.9;
+            width: px(19);
+            margin-right: px(16);
+            font-size: px(19);
           }
         }
 
@@ -145,10 +145,10 @@
       .nav-item > .nav-link:after {
         position: absolute;
         top: 50%;
-        right: $size-base * 1.2;
+        right: px(12);
         content: $fa-var-angle-up;
         font-family: "FontAwesome";
-        font-size: $font-size-base * 2.0;
+        font-size: px(20);
       }
 
       &.collapsed {
@@ -173,8 +173,8 @@
       &.nav-link,
       & > .nav-link {
         position: relative;
-        height: $size-base * 3.8;
-        padding: $size-base * 1.2 $size-base * 1.6;
+        height: px(38);
+        padding: px(12) px(16);
         line-height: 0;
         white-space: nowrap;
         overflow: hidden;
@@ -182,17 +182,17 @@
 
         &.active:before {
           position: absolute;
-          left: -.5rem;
+          left: px(-7);
           top: 50%;
           border: solid transparent;
-          border-width: 1rem;
+          border-width: px(14);
           border-left-color: theme-color("primary");
           content: " ";
           transform: translateY(-50%);
         }
       
         &.status:before {
-          left: $size-base * 3.0;
+          left: px(30);
         }
 
         i:first-child,
@@ -200,9 +200,9 @@
           position: relative;
           top: 50%;
           transform: translateY(-50%);
-          width: $size-base * 1.6;
-          margin-right: $size-base * .8;
-          font-size: $font-size-base * 1.6;
+          width: px(16);
+          margin-right: px(8);
+          font-size: px(16);
           vertical-align: text-top;
           @include transition($transition-collapse-all);
         }
@@ -212,14 +212,14 @@
 
         .dropdown-toggle {
           position: absolute;
-          height: $size-base * 3.8;
-          width: $size-base * 1.9;
+          height: px(38);
+          width: px(19);
           top: 0;
-          right: $size-base * 2.8;
+          right: px(28);
           color: inherit;
 
           &:after {
-            margin-left: $size-base * .9;
+            margin-left: px(9);
             content: "\22ee"; // unicode vertical ellipsis used instead of FontAwesome because it is lighter weight
             vertical-align: middle;
             line-height: 1.15;
@@ -233,8 +233,8 @@
         }
 
         .dropdown-menu {
-          top: $size-base * 3.6;
-          left: $size-base * 15.4;
+          top: px(36);
+          left: px(154);
         }
       }
 
@@ -256,10 +256,10 @@
 
 .navbar-brand {
   position: relative;
-  height: $size-base * 6.2; // 2 extra px to compensate for default padding
+  height: px(62); // 2 extra px to compensate for default padding
   margin: 0;
-  margin-bottom: 5px;
-  padding-left: $size-base * 1.25;
+  margin-bottom: px(5);
+  padding-left: px(12.5);
   display: flex;
   flex-direction: row !important;
   align-items: center;
@@ -267,18 +267,18 @@
   background-color: $fluid-navbar-brand-bg;
   text-transform: uppercase;
   white-space: nowrap;
-  line-height: $font-size-base * 6.0;
+  line-height: px(60);
   overflow: hidden;
   @include transition($transition-collapse-all);
 
   &[data-toggle="collapse"] {
     &:after {
-      margin-left: 8px;
+      margin-left: px(8);
       content: $fa-var-angle-up;
       color: theme-color("primary");
       font-family: "FontAwesome";
-      font-size: $font-size-base * 1.6;
-      font-size: 32px;
+      font-size: px(16);
+      font-size: px(32);
     }
 
     &.collapsed:after {
@@ -295,10 +295,10 @@
   i:first-child,
   .fa:first-child {
     position: relative;
-    width: $size-base * 2.5;
-    margin-right: $size-base * .8;
+    width: px(25);
+    margin-right: px(8);
     flex-shrink: 0;
-    font-size: $font-size-base * 2.5;
+    font-size: px(25);
     @include transition($transition-collapse-all);
   }
 }
@@ -307,11 +307,11 @@
 .brand-menu.show {
   @extend .dropdown-menu;
   position: fixed;
-  top: 60px;
+  top: px(60);
   padding: 0;
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 617px;
+  padding-left: px(20);
+  padding-right: px(20);
+  max-width: px(617);
   display: flex;
   flex-direction: row !important;
   flex-wrap: wrap;
@@ -321,17 +321,17 @@
   // thus avoiding a noticeable pause at the end of the animation  
   &:before, &:after {
     content: " ";
-    height: 20px;
+    height: px(20);
     width: 100%;
   }
 
   &:after {
-    height: 17px;
+    height: px(17);
   }
 
   .brand-menu-item {
-    width: $size-base * 7.5;
-    margin: $size-base * 2.0;
+    width: px(75);
+    margin: px(20);
     line-height: $font-size-base;
     white-space: nowrap;
     text-align: center;
@@ -339,16 +339,16 @@
     i,
     span.fa {
       display: block;
-      width: $size-base * 7.5;
-      height: $size-base * 7.5;
+      width: px(75);
+      height: px(75);
       color: color("white");
       background-color: color("blue");
-      margin-bottom: $size-base;
+      margin-bottom: px(10);
       border-radius: $border-radius;
 
       &:before {
-        font-size: $font-size-base * 4.0;
-        line-height: $font-size-base * 7.5;
+        font-size: px(40);
+        line-height: px(75);
       }
     }
 
@@ -370,7 +370,7 @@
   bottom: 0;
   width: 100%;
   padding: 0;
-  height: $size-base * 4.8;
+  height: px(48);
   display: initial !important;
   background-color: $fluid-navbar-brand-bg;
   border: none;
@@ -382,7 +382,7 @@
     position: absolute;
     left: 0;
     bottom: 100%;
-    height: $size-base * 5.0;
+    height: px(50);
     width: 100%;
     content: " ";
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, $fluid-navbar-bg 100%);
@@ -403,12 +403,12 @@
 
   .navbar-toggler-icon {
     background-image: unset;
-    line-height: $font-size-base * 4.8;
+    line-height: px(48);
 
     &:before {
       content: $fa-var-angle-double-left;
       font-family: "FontAwesome";
-      font-size: $font-size-base * 2.0;
+      font-size: px(20);
       color: theme-color("primary");
     }
   }
