@@ -116,7 +116,7 @@
           position: relative;
           left: px(50);
           top: px(-50);
-          width: $navbar-width - px(25);
+          width: $navbar-width - px(24);
           background-color: $fluid-navbar-bg;
           overflow: visible;
           transition: none;
@@ -196,7 +196,7 @@
         content: $fa-var-angle-up;
         font-family: "FontAwesome";
         font-size: px(20);
-        @include transition($transition-collapse-all);
+        //@include transition($transition-collapse-all);
       }
 
       &.collapsed {
@@ -273,7 +273,7 @@
             line-height: 1.15;
             font-weight: bold;
             border: none;
-            @include transition($transition-collapse-all);
+            //@include transition($transition-collapse-all);
           }
         }
 
