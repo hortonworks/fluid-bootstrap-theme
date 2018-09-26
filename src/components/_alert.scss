@@ -9,15 +9,15 @@
 .alert {
   //box-shadow: 1px 1px 5px 0 gray("600");
   box-shadow: $box-shadow;
-  font-size: $font-size-base * 1.2;
+  font-size: px(12);
   
   & > div {
-    margin-left: 40px;
+    margin-left: px(40);
   }
 
   &:before {
     font-family: 'FontAwesome';
-    font-size: $font-size-base * 2.4;
+    font-size: px(24);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -26,10 +26,10 @@
   &:after {
     content: '\00d7'; // &times;
     font-family: 'Roboto';
-    font-size: $font-size-base * 1.6;
+    font-size: px(16);
     color: gray("600");
     position: absolute;
-    right: 5px;
+    right: px(5);
     top: 0;
     cursor: pointer;
   }
@@ -39,7 +39,7 @@
   }
   
   .alert-header {
-    font-size: $font-size-base * 1.4;
+    font-size: px(14);
   }
 }
 

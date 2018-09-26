@@ -7,9 +7,9 @@
  */
 
 html {
-  font-size: 14px;
+  font-size: $root-font-size;
 }
 
 body {
-  font-size: $font-size-base * 1.4;
+  font-size: px(14);
 }
