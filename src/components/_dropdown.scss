@@ -15,3 +15,7 @@
     @include dropdown-item-variant($value, $value);
   }
 }
+
+.dropdown-menu {
+  font-size: $font-size-base * 1.4;
+}
