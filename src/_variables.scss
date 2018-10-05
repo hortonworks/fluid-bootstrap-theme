@@ -12,9 +12,9 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 
-// $root-font-size is assigned as the font-size of the root <html> element in _reboot.scss, 
+// $root-font-size is assigned as the font-size of the root <html> element in _reboot.scss,
 // which means that it is used as the basis for all sizes specified in rems.
-// When you need to specify a size in px, use the px() function instead. 
+// When you need to specify a size in px, use the px() function instead.
 // It converts pixels to rems using the value of $root-font-size.
 $root-font-size: 14px;
 
@@ -839,7 +839,7 @@ $modal-title-line-height:           $line-height-base !default;
 
 $modal-content-bg:                  $white !default;
 $modal-content-border-color:        rgba($black, .2) !default;
-$modal-content-border-width:        $border-width !default;
+$modal-content-border-width:        0;
 $modal-content-border-radius:       $border-radius-lg !default;
 $modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5) !default;
 $modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba($black, .5) !default;

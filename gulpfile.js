@@ -18,9 +18,10 @@ var gulp = require('gulp'),
 
 var fonts_src = './node_modules/font-awesome/fonts/fontawesome-webfont.*';
 var sass_src = ['./src/**/*.scss', './node_modules/font-awesome/scss/*.scss'];
+var sass_docs_src = ['./docs/scss/*.scss'];
 var html_src = './*.html';
 
-gulp.task('copy-html', () => 
+gulp.task('copy-html', () =>
   gulp.src(html_src)
     .pipe(gulp.dest('./docs/'))
     .pipe(connect.reload())
@@ -49,15 +50,30 @@ gulp.task('build-sass', () =>
     .pipe(connect.reload())
 );
 
+gulp.task('build-docs-sass', () =>
+  gulp.src(sass_docs_src)
+    .pipe(bulkSass())
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([ autoprefixer({ browsers: ['Chrome >= 35', 'Firefox >= 38', 'Edge >= 12', 'Explorer >= 10', 'iOS >= 8', 'Safari >= 8', 'Android 2.3', 'Android >= 4', 'Opera >= 12']})]))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./docs/css/'))
+    .pipe(cleanCss())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('./docs/css/'))
+    .pipe(connect.reload())
+);
+
 gulp.task('clean', () => del(['./dist']));
 
 gulp.task('build', gulp.series('build-sass', 'copy-fonts', 'copy-html'));
 
 gulp.task('watch-sass', () => gulp.watch(sass_src, { ignoreInitial: false }, gulp.series('build-sass')));
+gulp.task('watch-docs-sass', () => gulp.watch(sass_docs_src, { ignoreInitial: false }, gulp.series('build-docs-sass')));
 gulp.task('watch-fonts', () => gulp.watch(fonts_src, { ignoreInitial: false }, gulp.series('copy-fonts')));
 gulp.task('watch-html', () => gulp.watch(html_src, { ignoreInitial: false }, gulp.series('copy-html')));
 
-gulp.task('watch', gulp.parallel('watch-sass', 'watch-fonts', 'watch-html'));
+gulp.task('watch', gulp.parallel('watch-sass', 'watch-docs-sass', 'watch-fonts', 'watch-html'));
 
 gulp.task('connect', () => connect.server({
     root: 'docs',
