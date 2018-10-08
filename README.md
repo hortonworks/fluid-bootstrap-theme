@@ -7,6 +7,10 @@ of all or any part of the contents of this file is strictly prohibited.
 -->
 # Fluid Bootstrap Theme
 
+## Demo
+
+https://hortonworks.github.io/fluid-bootstrap-theme/
+
 ## Getting started
 
 1. Clone this repo
