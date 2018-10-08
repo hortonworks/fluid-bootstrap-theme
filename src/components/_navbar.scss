@@ -20,6 +20,11 @@
   z-index: 999;
   @include transition($transition-collapse-all);
 
+  > .collapse {
+    flex: 1;
+    overflow-y: auto;
+  }
+
   &.collapsing {
     @extend .collapse;
 
@@ -47,7 +52,7 @@
 
     .navbar-nav {
 
-      .nav-item.nav-link, 
+      .nav-item.nav-link,
       .nav-item > .nav-link {
         height: px(38) !important;
         width: $navbar-width;
@@ -125,7 +130,7 @@
             display: none;
           }
 
-          .nav-item.nav-link, 
+          .nav-item.nav-link,
           .nav-item > .nav-link {
             height: px(38);
             overflow: hidden;
@@ -238,7 +243,7 @@
           content: " ";
           transform: translateY(-50%);
         }
-      
+
         &.status:before {
           left: px(30);
         }
@@ -321,7 +326,7 @@
   @include transition($transition-collapse-all);
 
   &[data-toggle="collapse"] {
-    
+
     &:after {
       margin-left: px(8);
       content: $fa-var-angle-up;
@@ -368,7 +373,7 @@
   align-items: center;
 
   // This provides top and bottom padding but can be collapsed like content,
-  // thus avoiding a noticeable pause at the end of the animation. 
+  // thus avoiding a noticeable pause at the end of the animation.
   &:before, &:after {
     content: " ";
     height: px(20);
@@ -403,7 +408,7 @@
     }
 
     &:hover {
-      
+
       i,
       span.fa {
         background-color: lighten(color("blue"), 10%)
@@ -417,16 +422,12 @@
 }
 
 .navbar-toggler {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   padding: 0;
   height: px(48);
   display: initial !important;
   background-color: $fluid-navbar-brand-bg;
   border: none;
   border-radius: 0;
-  z-index: 999;
 
   // Create a fade out effect as menu items overflow vertically
   &:before {
