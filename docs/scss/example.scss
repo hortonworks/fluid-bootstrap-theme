@@ -1,0 +1,10 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "../../src/functions";
+@import "../../src/variables";
+
+.fluid-container-example {
+  .row [class^="col-"] {
+    background: $gray-300;
+    padding: 1rem;
+  }
+}
