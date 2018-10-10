@@ -300,12 +300,12 @@ $font-weight-bold:            700 !default;
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
+$h1-font-size:                px(28);
+$h2-font-size:                px(24);
+$h3-font-size:                px(20);
+$h4-font-size:                px(16);
+$h5-font-size:                px(15);
+$h6-font-size:                px(14);
 
 $headings-margin-bottom:      ($spacer / 2) !default;
 $headings-font-family:        inherit !default;
@@ -799,7 +799,7 @@ $popover-border-radius:             $border-radius;
 $popover-box-shadow:                0 .25rem .5rem rgba($black, .2) !default;
 
 $popover-header-bg:                 darken($popover-bg, 3%) !default;
-$popover-header-color:              $headings-color !default;
+$popover-header-color:              $white;
 $popover-header-padding-y:          .5rem !default;
 $popover-header-padding-x:          .75rem !default;
 
@@ -830,7 +830,7 @@ $badge-pill-border-radius:          10rem !default;
 // Modals
 
 // Padding applied to the modal body
-$modal-inner-padding:               1rem !default;
+$modal-inner-padding:               px(20);
 
 $modal-dialog-margin:               .5rem !default;
 $modal-dialog-margin-y-sm-up:       1.75rem !default;
@@ -841,16 +841,17 @@ $modal-content-bg:                  $white !default;
 $modal-content-border-color:        rgba($black, .2) !default;
 $modal-content-border-width:        0;
 $modal-content-border-radius:       $border-radius-lg !default;
-$modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5) !default;
-$modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba($black, .5) !default;
+$modal-content-box-shadow-xs:       0 .12rem .25rem rgba($gray-800, .5);
+$modal-content-box-shadow-sm-up:    0 .25rem .5rem rgba($gray-800, .5);
 
-$modal-backdrop-bg:                 $black !default;
+$modal-backdrop-bg:                 $gray-600;
 $modal-backdrop-opacity:            .5 !default;
 $modal-header-border-color:         $gray-200 !default;
 $modal-footer-border-color:         $modal-header-border-color !default;
 $modal-header-border-width:         $modal-content-border-width !default;
 $modal-footer-border-width:         $modal-header-border-width !default;
-$modal-header-padding:              1rem !default;
+$modal-header-padding:              px(20) px(20) px(0) px(20);
+$modal-footer-padding:              px(0) px(20) px(20) px(20);
 
 $modal-lg:                          800px !default;
 $modal-md:                          500px !default;
@@ -968,9 +969,9 @@ $carousel-transition:               transform .6s ease !default; // Define trans
 
 // Close
 
-$close-font-size:                   $font-size-base * 1.5 !default;
-$close-font-weight:                 $font-weight-bold !default;
-$close-color:                       $black !default;
+$close-font-size:                   px(25);
+$close-font-weight:                 $font-weight-light;
+$close-color:                       $gray-700;
 $close-text-shadow:                 0 1px 0 $white !default;
 
 // Code
