@@ -416,6 +416,9 @@
 
 .navbar-collapse {
   position: relative;
+  height: 100%;
+  overflow-y: hidden;
+  padding-bottom: px(170);
 }
 
 .navbar-toggler {
