@@ -26,13 +26,13 @@ $root-font-size: 14px;
 $white:    #fff !default;
 $gray-100: #fbfbfb;
 $gray-200: #f6f6f6;
-$gray-300: #ececec;   // Background
+$gray-300: #ececec; // Background
 $gray-400: #d1d1d1;
 $gray-500: #b5b5b5;
-$gray-600: #999999;   // Light Text
-$gray-700: #666666;   // Default
+$gray-600: #999999; // Light Text
+$gray-700: #666666; // Default
 $gray-800: #4c4c4c;
-$gray-900: #333333;   // Dark Text
+$gray-900: #333333; // Dark Text
 $black:    #000 !default;
 
 $grays: () !default;
@@ -146,7 +146,7 @@ $yiq-text-light:            $white !default;
 
 $enable-caret:              true !default;
 $enable-rounded:            true !default;
-$enable-shadows:            true;
+$enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        true !default;
 $enable-hover-media-query:  false !default; // Deprecated, no longer affects any compiled CSS
