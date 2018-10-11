@@ -323,12 +323,13 @@
   &[data-toggle="collapse"] {
     
     &:after {
-      margin-left: px(8);
+      position: absolute;
+      right: px(12.5);
       content: $fa-var-angle-up;
       color: theme-color("primary");
       font-family: "FontAwesome";
       font-size: px(16);
-      font-size: px(32);
+      font-size: px(30);
     }
 
     &.collapsed:after {
@@ -436,7 +437,8 @@
     height: px(50);
     width: 100%;
     content: " ";
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, $fluid-navbar-bg 100%);
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba($fluid-navbar-bg, 0) 0%, $fluid-navbar-bg 100%);
   }
 
   &:hover,
@@ -461,6 +463,12 @@
       font-family: "FontAwesome";
       font-size: px(20);
       color: theme-color("primary");
+
+      /* For Firefox and Safari */
+      position: absolute;
+      bottom: 0;
+      transform: translateX(-50%);
+      /**************************/
     }
   }
 }
