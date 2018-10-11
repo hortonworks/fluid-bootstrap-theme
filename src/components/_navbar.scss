@@ -47,7 +47,7 @@
 
     .navbar-nav {
 
-      .nav-item.nav-link, 
+      .nav-item.nav-link,
       .nav-item > .nav-link {
         height: px(38) !important;
         width: $navbar-width;
@@ -61,6 +61,7 @@
           width: px(16) !important;
           margin-right: px(8) !important;
           font-size: px(16) !important;
+          line-height: 0 !important;
         }
       }
 
@@ -125,7 +126,7 @@
             display: none;
           }
 
-          .nav-item.nav-link, 
+          .nav-item.nav-link,
           .nav-item > .nav-link {
             height: px(38);
             overflow: hidden;
@@ -164,6 +165,7 @@
             width: px(19);
             margin-right: px(16);
             font-size: px(19);
+            line-height: px(14);
           }
         }
 
@@ -223,7 +225,7 @@
         position: relative;
         height: px(38);
         padding: px(12) px(16);
-        line-height: 0;
+        line-height: 1;
         white-space: nowrap;
         overflow: hidden;
         @include transition($transition-collapse-all);
@@ -238,19 +240,18 @@
           content: " ";
           transform: translateY(-50%);
         }
-      
+
         &.status:before {
           left: px(30);
         }
 
         i:first-child,
         .fa:first-child {
-          position: relative;
-          top: 50%;
-          transform: translateY(-50%);
           width: px(16);
+          margin-top: px(8);
           margin-right: px(8);
           font-size: px(16);
+          line-height: 0;
           vertical-align: text-top;
           @include transition($transition-collapse-all);
         }
@@ -321,7 +322,7 @@
   @include transition($transition-collapse-all);
 
   &[data-toggle="collapse"] {
-    
+
     &:after {
       position: absolute;
       right: px(12.5);
@@ -369,7 +370,7 @@
   align-items: center;
 
   // This provides top and bottom padding but can be collapsed like content,
-  // thus avoiding a noticeable pause at the end of the animation. 
+  // thus avoiding a noticeable pause at the end of the animation.
   &:before, &:after {
     content: " ";
     height: px(20);
@@ -404,7 +405,7 @@
     }
 
     &:hover {
-      
+
       i,
       span.fa {
         background-color: lighten(color("blue"), 10%)
