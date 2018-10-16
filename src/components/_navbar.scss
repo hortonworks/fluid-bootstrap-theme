@@ -156,6 +156,7 @@
         .nav-item.nav-link,
         .nav-item > .nav-link {
           height: px(50);
+          overflow: visible;
 
           &:after {
             opacity: 0;
@@ -196,15 +197,34 @@
 
     &[data-toggle="collapse"] {
 
-      .nav-item.nav-link:after,
-      .nav-item > .nav-link:after {
-        position: absolute;
-        top: px(11);
-        right: px(12);
-        content: $fa-var-angle-up;
-        font-family: "FontAwesome";
-        font-size: px(20);
-        //@include transition($transition-collapse-all);
+      .nav-item {
+
+        &.nav-link,
+        & > .nav-link {
+          padding-right: px(32);
+
+          &:after {
+            position: absolute;
+            top: px(11);
+            right: px(12);
+            content: $fa-var-angle-up;
+            font-family: "FontAwesome";
+            font-size: px(20);
+            //@include transition($transition-collapse-all);
+          }
+        }
+
+        &.dropdown {
+
+          &.nav-link,
+          & > .nav-link {
+            padding-right: px(40);
+          }
+
+          & .dropdown-toggle {
+            right: px(28);
+          }
+        }
       }
 
       &.collapsed {
@@ -233,6 +253,8 @@
         padding: px(12) px(16);
         line-height: 1;
         white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
         @include transition($transition-collapse-all);
 
         &.active:before {
@@ -264,12 +286,17 @@
 
       &.dropdown {
 
+        &.nav-link,
+        & > .nav-link {
+          padding-right: px(24);
+        }
+
         .dropdown-toggle {
           position: absolute;
           height: px(38);
           width: px(19);
           top: 0;
-          right: px(28);
+          right: px(8);
           color: inherit;
 
           &:after {
