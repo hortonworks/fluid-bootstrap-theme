@@ -6,6 +6,111 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+nav.pagination {
+  position: relative;
+  height: $input-height;
+  justify-content: flex-end;
+
+  > span.fade.show {
+    white-space: nowrap;
+    align-self: center;
+    margin-right: px(4);
+  }
+
+  > div.fade {
+    position: absolute;
+    display: inherit;
+    right: $input-height * 2;
+
+    .form-group {
+      font-size: 0; // remove white space between inline elements
+
+      * {
+        font-size: $font-size-base;
+      }
+
+      label {
+        line-height: $input-height;
+        vertical-align: top;
+        margin-right: px(2);
+      }
+
+      select {
+        width: px(65);
+        margin-right: px(4);
+      }
+
+      .form-control {
+        display: initial;
+        width: px(32);
+        text-align: center;
+        height: $input-height;
+        margin-right: px(4);
+      }
+
+      .dropdown {
+        margin-left: px(6);
+      }
+
+      .dropdown-menu {
+        min-width: px(122);
+        width: px(122);
+        padding: px(4);
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        &.show {
+          display: flex;
+        }
+
+        .page-item .page-link {
+          min-width: $font-size-base * 2;
+          height: $font-size-base * 2;
+          padding: 0;
+          padding-left: px(5);
+          padding-right: px(5);
+          text-align: center;
+          line-height: 2;
+        }
+      }
+    }
+  }
+
+  &:hover {
+
+    > span.fade.show {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    > div.fade {
+      opacity: 1;
+    }
+  }
+
+  > .page-link {
+    width: $input-height;
+    height: $input-height;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: $border-radius;
+    font-size: $font-size-base * 1.5;
+    line-height: $input-height;
+    text-align: center;
+    color: text-color("default");
+
+    &.disabled {
+      color: text-color("light");
+      pointer-events: none;
+    }
+
+    & .fa {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
 .page-item {
   &.disabled,
   &.active {

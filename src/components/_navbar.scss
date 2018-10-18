@@ -17,7 +17,7 @@
   justify-content: flex-start;
   align-items: unset;
   background-color: $fluid-navbar-bg !important;
-  z-index: 999;
+  z-index: 9999;
   @include transition($transition-collapse-all);
 
   &.collapsing {
@@ -47,7 +47,7 @@
 
     .navbar-nav {
 
-      .nav-item.nav-link, 
+      .nav-item.nav-link,
       .nav-item > .nav-link {
         height: px(38) !important;
         width: $navbar-width;
@@ -125,7 +125,7 @@
             display: none;
           }
 
-          .nav-item.nav-link, 
+          .nav-item.nav-link,
           .nav-item > .nav-link {
             height: px(38);
             overflow: hidden;
@@ -219,7 +219,7 @@
       }
 
       &.nav-link,
-      & > .nav-link {
+      > .nav-link {
         position: relative;
         height: px(38);
         padding: px(12) px(16);
@@ -238,7 +238,7 @@
           content: " ";
           transform: translateY(-50%);
         }
-      
+
         &.status:before {
           left: px(30);
         }
@@ -321,7 +321,7 @@
   @include transition($transition-collapse-all);
 
   &[data-toggle="collapse"] {
-    
+
     &:after {
       margin-left: px(8);
       content: $fa-var-angle-up;
@@ -368,7 +368,7 @@
   align-items: center;
 
   // This provides top and bottom padding but can be collapsed like content,
-  // thus avoiding a noticeable pause at the end of the animation. 
+  // thus avoiding a noticeable pause at the end of the animation.
   &:before, &:after {
     content: " ";
     height: px(20);
@@ -403,7 +403,7 @@
     }
 
     &:hover {
-      
+
       i,
       span.fa {
         background-color: lighten(color("blue"), 10%)
