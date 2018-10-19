@@ -6,10 +6,17 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-html {
-  font-size: $root-font-size;
-}
+body > {
 
-body {
-  font-size: px(14);
+  header:first-of-type {
+    @extend .fixed-top;
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    background-color: $white;
+
+    & + main {
+      padding-top: $header-height;
+    }
+  }
 }

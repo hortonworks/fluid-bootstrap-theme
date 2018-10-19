@@ -6,6 +6,11 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+function updateContainerExample() {
+  $('#documentWidth').text($('body').css('width'));
+  $('#containerWidth').text($('#containerExample').css('width'));
+}
+
 $(function () {
   $('[data-toggle="popover"]').popover();
   $('[data-toggle="tooltip"]').tooltip();
@@ -23,4 +28,7 @@ $(function () {
       $(this).find('.navbar-nav.collapse').css('margin-bottom', '0');
     }
   });
+
+  updateContainerExample();
+  $(window).resize(updateContainerExample);
 });

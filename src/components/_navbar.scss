@@ -305,7 +305,7 @@
 
 .navbar-brand {
   position: relative;
-  height: px(62); // 2 extra px to compensate for default padding
+  height: $header-height;
   margin: 0;
   margin-bottom: px(5);
   padding-left: px(12.5);
