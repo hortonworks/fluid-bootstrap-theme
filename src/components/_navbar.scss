@@ -385,6 +385,10 @@
     font-size: px(25);
     @include transition($transition-collapse-all);
   }
+
+  & ~ .navbar-collapse {
+    padding-top: px(67);
+  }
 }
 
 .brand-menu,
@@ -449,8 +453,8 @@
 .navbar-collapse {
   position: absolute;
   height: 100%;
-  padding-top: px(67);
-  padding-bottom: px(170);
+  padding-top: px(5);
+  padding-bottom: px(5);
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
@@ -511,5 +515,9 @@
       transform: translateX(-50%);
       /**************************/
     }
+  }
+
+  & ~ .navbar-collapse {
+    padding-bottom: px(100);
   }
 }
