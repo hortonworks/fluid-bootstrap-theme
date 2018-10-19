@@ -65,15 +65,15 @@ $cyan:   #17a2b8 !default;
 $glow:   #007bff; // This is Bootstrap's original $blue value, but we only want to use it for active glows
 
 // Fluid colors
-$fluid-green:                 #3fae2a;
-$fluid-navbar:                rgba(255, 255, 255, .5);
-$fluid-navbar-bg:             #313544;
-$fluid-navbar-brand:          rgba(255, 255, 255, .75);
-$fluid-navbar-brand-hover:      $white;
-$fluid-navbar-brand-hover-bg: #304e73;
-$fluid-navbar-brand-bg:       #313d54;
-$fluid-navbar-active:           $white;
-$fluid-navbar-active-bg:      #414354;
+$fluid-green:              #3fae2a;
+$navbar-color:             rgba(255, 255, 255, .5);
+$navbar-bg:                #313544;
+$navbar-brand-color:       rgba(255, 255, 255, .75);
+$navbar-brand-hover-color:   $white;
+$navbar-brand-hover-bg:    #304e73;
+$navbar-brand-bg:          #313d54;
+$navbar-active-color:        $white;
+$navbar-active-bg:         #414354;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
