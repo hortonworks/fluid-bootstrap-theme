@@ -8,15 +8,15 @@
 
 body > {
 
-  header:first-of-type {
+  header.header-top {
     @extend .fixed-top;
     display: flex;
     align-items: center;
-    height: $header-height;
+    height: $navbar-brand-height;
     background-color: $white;
 
-    & + main {
-      padding-top: $header-height;
+    & + * {
+      padding-top: $navbar-brand-height;
     }
   }
 }

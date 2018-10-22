@@ -66,7 +66,7 @@ $glow:   #007bff; // This is Bootstrap's original $blue value, but we only want 
 
 // Fluid colors
 $fluid-green:              #3fae2a;
-$navbar-color:             rgba(255, 255, 255, .5);
+$navbar-color:             rgba(255, 255, 255, .55); // This is .55 rather than .5 to achieve contrast required for a11y
 $navbar-bg:                #313544;
 $navbar-brand-color:       rgba(255, 255, 255, .75);
 $navbar-brand-hover-color:   $white;
@@ -247,10 +247,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1920px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -700,7 +700,7 @@ $navbar-nav-link-padding-x:         .5rem !default;
 $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 $nav-link-height:                   ($font-size-base * $line-height-base + $nav-link-padding-y * 2) !default;
-$navbar-brand-height:               $navbar-brand-font-size * $line-height-base !default;
+$navbar-brand-height:               px(62); // includes 2 extra px to compensate for default padding
 $navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) / 2 !default;
 
 $navbar-toggler-padding-y:          .25rem !default;
