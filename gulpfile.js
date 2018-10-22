@@ -5,39 +5,54 @@
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
-var gulp = require('gulp'),
-  sass = require('gulp-sass'),
-  sourcemaps = require('gulp-sourcemaps'),
-  cleanCss = require('gulp-clean-css'),
-  rename = require('gulp-rename'),
-  postcss = require('gulp-postcss'),
-  autoprefixer = require('autoprefixer'),
-  bulkSass = require('gulp-sass-glob-import'),
-  del = require('del'),
-  connect = require('gulp-connect');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var cleanCss = require('gulp-clean-css');
+var rename = require('gulp-rename');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var bulkSass = require('gulp-sass-glob-import');
+var del = require('del');
+var connect = require('gulp-connect');
+var babel = require("gulp-babel");
 
+// sources
 var fonts_src = './node_modules/font-awesome/fonts/fontawesome-webfont.*';
 var sass_src = ['./src/**/*.scss', './node_modules/font-awesome/scss/*.scss'];
 var sass_docs_src = ['./docs/scss/*.scss'];
 var html_src = './*.html';
 var js_src = './application.js';
 
+// destinations
+var html_dest = './docs/';
+var js_dest = './dist/scripts/';
+var js_docs_dest = './docs/scripts/';
+var fonts_dest = './dist/fonts/';
+var fonts_docs_dest = './docs/fonts/';
+var css_dest = './dist/styles/';
+var css_docs_dest = './docs/styles/';
+
 gulp.task('copy-html', () =>
   gulp.src(html_src)
-    .pipe(gulp.dest('./docs/'))
+    .pipe(gulp.dest(html_dest))
     .pipe(connect.reload())
 );
 
-gulp.task('copy-js', () =>
+gulp.task('build-js', () =>
   gulp.src(js_src)
-    .pipe(gulp.dest('./docs/js'))
+    .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(js_dest))
+    .pipe(gulp.dest(js_docs_dest))
     .pipe(connect.reload())
 );
 
 gulp.task('copy-fonts', () =>
   gulp.src(fonts_src)
-    .pipe(gulp.dest('./dist/fonts/'))
-    .pipe(gulp.dest('./docs/fonts/'))
+    .pipe(gulp.dest(fonts_dest))
+    .pipe(gulp.dest(fonts_docs_dest))
     .pipe(connect.reload())
 );
 
@@ -48,12 +63,12 @@ gulp.task('build-sass', () =>
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([ autoprefixer({ browsers: ['Chrome >= 35', 'Firefox >= 38', 'Edge >= 12', 'Explorer >= 10', 'iOS >= 8', 'Safari >= 8', 'Android 2.3', 'Android >= 4', 'Opera >= 12']})]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/css/'))
-    .pipe(gulp.dest('./docs/css/'))
+    .pipe(gulp.dest(css_dest))
+    .pipe(gulp.dest(css_docs_dest))
     .pipe(cleanCss())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('./dist/css/'))
-    .pipe(gulp.dest('./docs/css/'))
+    .pipe(gulp.dest(css_dest))
+    .pipe(gulp.dest(css_docs_dest))
     .pipe(connect.reload())
 );
 
@@ -64,22 +79,19 @@ gulp.task('build-docs-sass', () =>
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([ autoprefixer({ browsers: ['Chrome >= 35', 'Firefox >= 38', 'Edge >= 12', 'Explorer >= 10', 'iOS >= 8', 'Safari >= 8', 'Android 2.3', 'Android >= 4', 'Opera >= 12']})]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./docs/css/'))
-    .pipe(cleanCss())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('./docs/css/'))
+    .pipe(gulp.dest(css_docs_dest))
     .pipe(connect.reload())
 );
 
-gulp.task('clean', () => del(['./dist']));
+gulp.task('clean', () => del(['./dist', './docs']));
 
-gulp.task('build', gulp.series('build-sass', 'build-docs-sass', 'copy-fonts', 'copy-html', 'copy-js'));
+gulp.task('build', gulp.series('build-sass', 'build-docs-sass', 'build-js', 'copy-fonts', 'copy-html'));
 
 gulp.task('watch-sass', () => gulp.watch(sass_src, { ignoreInitial: false }, gulp.series('build-sass')));
 gulp.task('watch-docs-sass', () => gulp.watch(sass_docs_src, { ignoreInitial: false }, gulp.series('build-docs-sass')));
+gulp.task('watch-js', () => gulp.watch(js_src, { ignoreInitial: false }, gulp.series('build-js')));
 gulp.task('watch-fonts', () => gulp.watch(fonts_src, { ignoreInitial: false }, gulp.series('copy-fonts')));
 gulp.task('watch-html', () => gulp.watch(html_src, { ignoreInitial: false }, gulp.series('copy-html')));
-gulp.task('watch-js', () => gulp.watch(js_src, { ignoreInitial: false }, gulp.series('copy-js')));
 
 gulp.task('watch', gulp.parallel('watch-sass', 'watch-docs-sass', 'watch-fonts', 'watch-html', 'watch-js'));
 

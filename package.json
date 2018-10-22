@@ -16,6 +16,11 @@
     "bootstrap",
     "themes"
   ],
+  "browserslist": [
+    "last 1 version",
+    "> 0.25%",
+    "not dead"
+  ],
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.1.0",
@@ -24,9 +29,12 @@
     "popper.js": "^1.14.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "autoprefixer": "^8.2.0",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0-beta.2",
     "gulp-clean-css": "^3.9.3",
     "gulp-connect": "^5.5.0",
     "gulp-livereload": "^3.8.1",
