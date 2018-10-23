@@ -525,7 +525,7 @@
   & ~ .navbar-collapse {
 
     // Padding is on last child rather than on parent due to IE
-    *:last-child {
+    > *:last-child {
       padding-bottom: px(100);
     }
   }
