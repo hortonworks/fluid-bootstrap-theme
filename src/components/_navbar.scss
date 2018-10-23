@@ -100,6 +100,7 @@
         &[data-toggle="collapse"]:after {
           position: absolute;
           top: px(-18);
+          -ms-transform: translateY(px(29)); // IE
           left: px(32);
           margin: 0;
           font-size: px(16);
@@ -522,6 +523,10 @@
   }
 
   & ~ .navbar-collapse {
-    padding-bottom: px(100);
+
+    // Padding is on last child rather than on parent due to IE
+    *:last-child {
+      padding-bottom: px(100);
+    }
   }
 }
