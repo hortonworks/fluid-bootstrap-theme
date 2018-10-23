@@ -56,6 +56,7 @@
       .nav-item > .nav-link {
         height: px(38) !important;
         width: $navbar-width;
+        padding-left: px(16) !important;
 
         &.status:before {
           left: px(30) !important;
@@ -118,7 +119,7 @@
           position: relative;
           left: px(50);
           top: px(-50);
-          width: $navbar-width - px(24);
+          width: $navbar-width - px(14);
           background-color: $fluid-navbar-bg;
           overflow: visible;
           transition: none;
@@ -130,9 +131,11 @@
           .nav-item.nav-link,
           .nav-item > .nav-link {
             height: px(38);
+            padding-left: px(26);
+            overflow: hidden;
 
             &.status:before {
-              left: px(6);
+              left: px(16);
             }
 
             i:first-child,
