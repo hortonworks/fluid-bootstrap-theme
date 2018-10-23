@@ -19,10 +19,17 @@ var babel = require("gulp-babel");
 
 // sources
 var fonts_src = './node_modules/font-awesome/fonts/fontawesome-webfont.*';
-var sass_src = ['./src/**/*.scss', './node_modules/font-awesome/scss/*.scss'];
-var sass_docs_src = ['./docs/scss/*.scss'];
+var sass_src = [
+  './src/**/*.scss',
+  './node_modules/font-awesome/scss/*.scss'
+];
+var sass_docs_src = './docs/scss/*.scss';
 var html_src = './*.html';
 var js_src = './application.js';
+var js_docs_src = [
+  './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+  './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map'
+];
 
 // destinations
 var html_dest = './docs/';
@@ -45,6 +52,12 @@ gulp.task('build-js', () =>
     .pipe(babel())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(js_dest))
+    .pipe(gulp.dest(js_docs_dest))
+    .pipe(connect.reload())
+);
+
+gulp.task('copy-docs-js', () =>
+  gulp.src(js_docs_src)
     .pipe(gulp.dest(js_docs_dest))
     .pipe(connect.reload())
 );
@@ -85,15 +98,16 @@ gulp.task('build-docs-sass', () =>
 
 gulp.task('clean', () => del(['./dist', './docs']));
 
-gulp.task('build', gulp.series('build-sass', 'build-docs-sass', 'build-js', 'copy-fonts', 'copy-html'));
+gulp.task('build', gulp.series('build-sass', 'build-docs-sass', 'build-js', 'copy-docs-js', 'copy-fonts', 'copy-html'));
 
 gulp.task('watch-sass', () => gulp.watch(sass_src, { ignoreInitial: false }, gulp.series('build-sass')));
 gulp.task('watch-docs-sass', () => gulp.watch(sass_docs_src, { ignoreInitial: false }, gulp.series('build-docs-sass')));
 gulp.task('watch-js', () => gulp.watch(js_src, { ignoreInitial: false }, gulp.series('build-js')));
+gulp.task('watch-docs-js', () => gulp.watch(js_docs_src, { ignoreInitial: false }, gulp.series('copy-docs-js')));
 gulp.task('watch-fonts', () => gulp.watch(fonts_src, { ignoreInitial: false }, gulp.series('copy-fonts')));
 gulp.task('watch-html', () => gulp.watch(html_src, { ignoreInitial: false }, gulp.series('copy-html')));
 
-gulp.task('watch', gulp.parallel('watch-sass', 'watch-docs-sass', 'watch-fonts', 'watch-html', 'watch-js'));
+gulp.task('watch', gulp.parallel('watch-sass', 'watch-docs-sass', 'watch-fonts', 'watch-html', 'watch-js', 'watch-docs-js'));
 
 gulp.task('connect', () => connect.server({
     root: 'docs',
