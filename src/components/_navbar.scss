@@ -43,15 +43,6 @@
 
       .navbar-brand {
 
-      .nav-item.nav-link,
-      .nav-item > .nav-link {
-        height: px(38) !important;
-        width: $navbar-width;
-
-        &.status:before {
-          left: px(30) !important;
-        }
-
         i:first-child,
         .fa:first-child {
           margin-right: px(8) !important;
