@@ -23,7 +23,7 @@ var sass_src = [
   './src/**/*.scss',
   './node_modules/font-awesome/scss/*.scss'
 ];
-var sass_docs_src = './docs/scss/*.scss';
+var sass_docs_src = './application.scss';
 var html_src = './*.html';
 var js_src = './application.js';
 var js_docs_src = [
