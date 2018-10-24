@@ -6,10 +6,6 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-html {
-  font-size: $root-font-size;
-}
-
-body {
-  font-size: px(14);
+.container {
+  min-width: 1024px;
 }

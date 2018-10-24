@@ -16,10 +16,6 @@ label {
   &:disabled {
     border: none;
   }
-
-  &:focus, &:active {
-    box-shadow: 0 0 0 $btn-focus-width rgba($fluid-active, .5) !important;
-  }
 }
 
 .valid-feedback, .invalid-feedback {

@@ -11,7 +11,7 @@
   box-shadow: $box-shadow;
   font-size: px(12);
 
-  & > div {
+  > div {
     margin-left: px(40);
   }
 
@@ -35,7 +35,7 @@
   }
 
   &:hover:after {
-    color: $fluid-default;
+    color: theme-color("default");
   }
 
   .alert-header {
@@ -58,7 +58,7 @@
 .alert-default {
   border-color: $gray-300;
 
-  & > div {
+  > div {
     margin-left: inherit;
   }
 }

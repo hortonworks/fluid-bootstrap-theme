@@ -8,26 +8,22 @@
 
 .btn {
   text-transform: uppercase;
-  
+
   &.btn-primary {
     color: $white;
     border-color: theme-color("primary");
   }
-  
+
   &.btn-secondary {
     @extend .btn-outline-primary;
   }
-  
+
   &.btn-default {
     @extend .btn-outline-default;
   }
-  
+
   &.btn-link {
     color: $link-color;
     border-color: transparent;
-  }
-
-  &:focus, &:active {
-    box-shadow: 0 0 0 $btn-focus-width rgba($fluid-active, .5) !important;
   }
 }

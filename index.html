@@ -14,9 +14,9 @@ of all or any part of the contents of this file is strictly prohibited.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="styles/fluid-bootstrap.css">
+  <link rel="stylesheet" href="css/fluid-bootstrap.css">
+  <link rel="stylesheet" href="css/application.css">
 </head>
-
 <body data-spy="scroll" data-target="#my-navbar" data-offset="100">
   <nav id="navbarToggle" class="navbar navbar-expand-sm collapse show">
     <a class="navbar-brand collapsed" href="#top" data-toggle="collapse" data-target="#navbarBrandToggle" aria-controls="navbarBrandToggle"
@@ -169,12 +169,41 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
     </div>
   </nav>
-  <header class="bg-dark text-light pt-5 pb-5">
+  <header class="header-top bg-dark">
     <div class="container">
-      <h6 class="display-3">Fluid Bootstrap 4 Theme Test Page</h6>
+      <h1 class="text-light">Fluid Bootstrap 4 Theme Test Page</h1>
     </div>
   </header>
   <main>
+    <section id="layout">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between">
+            <h2><i class="fa fa-paragraph mr-1"></i> Layout</h2>
+            <h2>
+              <a href="https://getbootstrap.com/docs/4.0/layout/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Layout docs"><span class="fa fa-book fw"></span></a>
+              <a href="#top" class="ml-3"><span class="fa fa-chevron-up fw"></span></a>
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p>FLUID is designed for large screens. Therefore, the horizontal sizing behavior of .container has been overridden. .container is center aligned within the content area and has a minimum width of 1024px and a maximum width of 1920px.</p>
+            <p>.container-fluid should not be used as a top-level container, but can be used within a .container for content that should span the full width of the .container.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container bg-light" id="containerExample">
+        <div class="row">
+          <div class="col-12 display-4 text-center">
+            <div>Document Width:</div>
+            <div id="documentWidth"></div>
+            <div>Container Width:</div>
+            <div id="containerWidth"></div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="mb-5 pt-5" id="typography">
       <div class="bg-light py-4 mb-5">
         <div class="container">
@@ -775,21 +804,40 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container">
         <div class="row px-5">
           <div class="col-12">
-            <nav aria-label="Pagination example">
-              <ul class="pagination">
-                <li class="page-item disabled">
-                  <a class="page-link" href="javascript:void(0);" aria-label="Previous">
-                    <span aria-hidden="true"><i class="fa fa-angle-left"></i></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="javascript:void(0);" aria-label="Next">
-                    <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </li>
-              </ul>
+            <nav class="pagination" aria-label="Page navigation example">
+              <div class="fade">
+                <div class="form-group">
+                  <label for="itemsPerPage">Show:</label>
+                  <select id="itemsPerPage">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="form-group dropdown">
+                  <label for="goToPage">Go:</label>
+                  <input id="goToPage" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <ul class="dropdown-menu">
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                    <li class="page-item"><a class="page-link" href="#">500</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1000</a></li>
+                  </ul>
+                </div>
+              </div>
+              <span class="fade show">Showing 1-10 of 1000</span>
+              <a class="page-link disabled" href="#" aria-label="Previous">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="page-link" href="#" aria-label="Next">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
             </nav>
           </div>
         </div>
@@ -2257,7 +2305,7 @@ of all or any part of the contents of this file is strictly prohibited.
                     </button>
                   </div>
                   <div class="modal-body">
-                    <div class="container-fluid fluid-container-example">
+                    <div class="container-fluid" id="modalFluidContainerExample">
                       <div class="row">
                         <div class="col-md-4">.col-md-4</div>
                         <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
