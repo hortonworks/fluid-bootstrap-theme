@@ -9,11 +9,11 @@
 .accordion {
   .card {
     border: none;
-    
+
     .card-header {
       font-size: px(18);
       line-height: px(20);
-      background-color: initial;
+      background-color: inherit;
       padding: px(20);
       cursor: pointer;
 
