@@ -40,6 +40,11 @@ const preventClickEventsWhenCollapsed = event => {
   }
 }
 
+function updateContainerExample() {
+  $('#documentWidth').text($('body').css('width'));
+  $('#containerWidth').text($('#containerExample').css('width'));
+}
+
 $(function () {
   $('[data-toggle="popover"]').popover();
   $('[data-toggle="tooltip"]').tooltip();
@@ -49,4 +54,7 @@ $(function () {
 
   $('.navbar.collapse .navbar-nav[data-toggle="collapse"]').click(preventClickEventsWhenCollapsed);
   $('.navbar.collapse .nav-item.dropdown .dropdown-toggle').click(preventClickEventsWhenCollapsed);
+
+  updateContainerExample();
+  $(window).resize(updateContainerExample);
 });
