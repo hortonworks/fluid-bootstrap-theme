@@ -6,10 +6,15 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-html {
-  font-size: $root-font-size;
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $text-dark;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-body {
-  font-size: px(14);
+@each $color, $value in $text-colors {
+  @include text-emphasis-variant(".text-#{$color}", $value);
 }

@@ -6,6 +6,10 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+@function text-color($key: "default") {
+  @return map-get($text-colors, $key);
+}
+
 @function theme-icon($key) {
   @return map-get($theme-icons, $key);
 }
