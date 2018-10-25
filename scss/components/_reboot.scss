@@ -11,5 +11,5 @@ html {
 }
 
 body {
-  font-size: px(14);
+  min-width: $layout-min-width;
 }

@@ -9,6 +9,7 @@
 function updateContainerExample() {
   $('#documentWidth').text($('body').css('width'));
   $('#containerWidth').text($('#containerExample').css('width'));
+  $('#containerFluidWidth').text($('#containerFluidExample').css('width'));
 }
 
 $(function () {

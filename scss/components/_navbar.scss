@@ -457,6 +457,7 @@
 
 .navbar-collapse {
   position: absolute;
+  display: flex !important;
   top: 0; // set explicitly for IE
   left: 0; // set explicitly for IE
   height: 100%;
