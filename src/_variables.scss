@@ -230,6 +230,9 @@ $paragraph-margin-bottom:   1rem !default;
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 
+$layout-min-width: 1024px;
+$layout-max-width: 1920px;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -250,7 +253,7 @@ $container-max-widths: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1920px
+  xl: 1200px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");

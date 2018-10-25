@@ -13,6 +13,7 @@ body > {
     display: flex;
     align-items: center;
     height: $navbar-brand-height;
+    min-width: $layout-min-width;
     background-color: $white;
 
     & + * {
