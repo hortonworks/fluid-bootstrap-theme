@@ -44,6 +44,7 @@ var sass_src = [
   './scss/**/*.scss',
   './node_modules/font-awesome/scss/*.scss'
 ];
+var css_src = css_dest + '*.css';
 var sass_docs_src = './demo.scss';
 
 var js_build_src = './js/src/*.js';
@@ -69,7 +70,7 @@ gulp.task('copy-html', () =>
     .pipe(connect.reload())
 );
 
-gulp.task('build-sass', () =>
+gulp.task('transpile-sass', () =>
   gulp.src(sass_src)
     .pipe(bulkSass())
     .pipe(sourcemaps.init())
@@ -78,6 +79,12 @@ gulp.task('build-sass', () =>
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(css_dest))
     .pipe(gulp.dest(css_docs_dest))
+    .pipe(connect.reload())
+);
+
+gulp.task('minify-css', () =>
+  gulp.src(css_src)
+    .pipe(sourcemaps.init())
     .pipe(cleanCss())
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('./'))
@@ -85,6 +92,8 @@ gulp.task('build-sass', () =>
     .pipe(gulp.dest(css_docs_dest))
     .pipe(connect.reload())
 );
+
+gulp.task('build-sass', gulp.series('transpile-sass', 'minify-css', connect.reload));
 
 gulp.task('build-docs-sass', () =>
   gulp.src(sass_docs_src)
