@@ -6,6 +6,6 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-.container {
-  min-width: 1024px;
+.container-fluid {
+  max-width: $layout-max-width;
 }
