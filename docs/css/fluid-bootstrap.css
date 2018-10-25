@@ -2387,7 +2387,7 @@ select.is-invalid {
       max-width: 992px; } }
   @media (min-width: 1200px) {
     .container {
-      max-width: 1920px; } }
+      max-width: 1200px; } }
 
 .container-fluid {
   width: 100%;
@@ -10591,8 +10591,8 @@ label {
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
-.container {
-  min-width: 1024px; }
+.container-fluid {
+  max-width: 1920px; }
 
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
@@ -10611,6 +10611,7 @@ body > header.header-top {
       -ms-flex-align: center;
           align-items: center;
   height: 4.42857rem;
+  min-width: 1024px;
   background-color: #fff; }
   body > header.header-top + * {
     padding-top: 4.42857rem; }
@@ -11074,6 +11075,10 @@ i, .fa {
 
 .navbar-collapse {
   position: absolute;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   top: 0;
   left: 0;
   height: 100%;
@@ -11252,7 +11257,7 @@ html {
   font-size: 14px; }
 
 body {
-  font-size: 1rem; }
+  min-width: 1024px; }
 
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
