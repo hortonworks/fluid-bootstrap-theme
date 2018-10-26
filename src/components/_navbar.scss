@@ -17,7 +17,7 @@
   justify-content: flex-start;
   align-items: unset;
   background-color: $fluid-navbar-bg !important;
-  z-index: 999;
+  z-index: 1030;
   overflow: hidden;
   @include transition($transition-collapse-all);
 
@@ -353,7 +353,7 @@
   text-transform: uppercase;
   white-space: nowrap;
   line-height: px(60);
-  z-index: 999;
+  z-index: 1030;
   @include transition($transition-collapse-all);
 
   &[data-toggle="collapse"] {
@@ -366,7 +366,7 @@
       font-family: "FontAwesome";
       font-size: px(16);
       font-size: px(30);
-      z-index: 9999;
+      z-index: 1030; // Edge
     }
 
     &.collapsed:after {
@@ -475,7 +475,7 @@
   background-color: $fluid-navbar-brand-bg;
   border: none;
   border-radius: 0;
-  z-index: 999;
+  z-index: 1030;
 
   // Create a fade out effect as menu items overflow vertically
   &:before {
