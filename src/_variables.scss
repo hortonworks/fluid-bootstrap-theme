@@ -682,6 +682,8 @@ $nav-divider-margin-y:              ($spacer / 2) !default;
 $navbar-padding-y:                  ($spacer / 2) !default;
 $navbar-padding-x:                  $spacer !default;
 
+$navbar-nav-padding:                px(5);
+
 $navbar-nav-link-height:              px(38);
 $navbar-nav-link-height-collapsed:    px(50);
 $navbar-nav-link-icon-size:           px(16);
