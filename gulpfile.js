@@ -145,13 +145,13 @@ gulp.task('build-docs-js', () =>
 
 gulp.task('clean', () => del(['./dist', './docs', js_build_dest]));
 
-gulp.task('build', gulp.series('copy-fonts', 'copy-html', 'build-sass', 'build-docs-sass', 'build-js', 'bundle-js', 'build-docs-js'));
+gulp.task('build', gulp.parallel('copy-fonts', 'copy-html', 'build-sass', 'build-docs-sass', 'build-js', 'build-docs-js'));
 
 gulp.task('watch-fonts', () => gulp.watch(fonts_src, { ignoreInitial: false }, gulp.series('copy-fonts')));
 gulp.task('watch-html', () => gulp.watch(html_src, { ignoreInitial: false }, gulp.series('copy-html')));
 gulp.task('watch-sass', () => gulp.watch(sass_src, { ignoreInitial: false }, gulp.series('build-sass')));
 gulp.task('watch-docs-sass', () => gulp.watch(sass_docs_src, { ignoreInitial: false }, gulp.series('build-docs-sass')));
-gulp.task('watch-js', () => gulp.watch(js_build_src, { ignoreInitial: false }, gulp.series('build-js', 'bundle-js')));
+gulp.task('watch-js', () => gulp.watch(js_build_src, { ignoreInitial: false }, gulp.series('build-js')));
 gulp.task('watch-docs-js', () => gulp.watch(js_docs_src, { ignoreInitial: false }, gulp.series('build-docs-js')));
 
 gulp.task('watch', gulp.parallel('watch-fonts', 'watch-html', 'watch-sass', 'watch-docs-sass', 'watch-js', 'watch-docs-js'));
