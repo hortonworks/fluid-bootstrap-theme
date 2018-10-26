@@ -72,8 +72,8 @@
       }
 
       &.collapse.show {
-        display: initial !important;
-        position: initial;
+        display: block !important;
+        position: static;
       }
     }
   }
@@ -341,9 +341,8 @@
 }
 
 .navbar-brand {
-  height: $navbar-brand-height + px(2); // 2 extra px to compensate for default padding
+  height: $navbar-brand-height;
   margin: 0;
-  margin-bottom: px(5);
   padding-left: px(12.5);
   display: flex;
   flex-direction: row !important;
@@ -389,7 +388,7 @@
   }
 
   & ~ .navbar-collapse {
-    padding-top: $navbar-brand-height + px(7); // 2 extra px to compensate for default padding + 5 extra px for first nav link top margin
+    padding-top: $navbar-brand-height + $navbar-nav-padding;
   }
 }
 
@@ -455,8 +454,8 @@
 .navbar-collapse {
   position: absolute;
   height: 100%;
-  padding-top: px(5);
-  padding-bottom: px(5);
+  padding-top: $navbar-nav-padding;
+  padding-bottom: $navbar-nav-padding;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
