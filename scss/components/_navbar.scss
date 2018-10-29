@@ -75,6 +75,11 @@
           position: static;
         }
       }
+
+      &.collapse.show {
+        display: block !important;
+        position: static;
+      }
     }
   }
 
@@ -342,10 +347,8 @@
 }
 
 .navbar-brand {
-  width: 100%; // set explicitly for IE
-  height: $navbar-brand-height + px(2); // 2 extra px to compensate for default padding
+  height: $navbar-brand-height;
   margin: 0;
-  margin-bottom: px(5);
   padding: 0;
   padding-left: px(12.5);
   display: flex;
@@ -393,7 +396,7 @@
   }
 
   & ~ .navbar-collapse {
-    padding-top: $navbar-brand-height + px(7); // 2 extra px to compensate for default padding + 5 extra px for first nav link top margin
+    padding-top: $navbar-brand-height + $navbar-nav-padding;
   }
 }
 
@@ -465,8 +468,8 @@
   top: 0; // set explicitly for IE
   left: 0; // set explicitly for IE
   height: 100%;
-  padding-top: px(5);
-  padding-bottom: px(5);
+  padding-top: $navbar-nav-padding;
+  padding-bottom: $navbar-nav-padding;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
