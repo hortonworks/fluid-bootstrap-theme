@@ -17,6 +17,7 @@ of all or any part of the contents of this file is strictly prohibited.
   <link rel="stylesheet" href="css/fluid-bootstrap.css">
   <link rel="stylesheet" href="css/demo.css">
 </head>
+
 <body data-spy="scroll" data-target="#my-navbar" data-offset="100">
   <nav id="navbarToggle" class="navbar navbar-expand-sm collapse show">
     <a class="navbar-brand collapsed" href="#top" data-toggle="collapse" data-target="#navbarBrandToggle" aria-controls="navbarBrandToggle"
@@ -171,7 +172,11 @@ of all or any part of the contents of this file is strictly prohibited.
   </nav>
   <header class="header-top bg-dark">
     <div class="container-fluid">
-      <h1 class="text-light">Fluid Bootstrap 4 Theme Test Page</h1>
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-light">Fluid Bootstrap 4 Theme Test Page</h1>
+        </div>
+      </div>
     </div>
   </header>
   <main>
@@ -188,8 +193,9 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
         <div class="row">
           <div class="col-12">
-            <p>FLUID is designed for large screens. Therefore, the horizontal sizing behavior of .container has been overridden. .container is center aligned within the content area and has a minimum width of 1024px and a maximum width of 1920px.</p>
-            <p>.container-fluid should not be used as a top-level container, but can be used within a .container for content that should span the full width of the .container.</p>
+            <p>FLUID is designed for large screens. Therefore, the minimum width of the entire layout is limited by setting <code>min-width: 1024px</code> on the <code>&lt;body&gt;</code>, below which a horizontal scrollbar will appear. The maximum width of <code>.container-fluid</code> has been set to 1920px, above which the container will have equal left and right margins to fill up the remaining space. Generally, you should use <code>.container-fluid</code> so that layouts scale fluidly between these extremes. (The default breakpoints for <code>.container</code> have not been changed.)</p>
+            <p>The main <code>&lt;header class=".header-top"&gt;</code> and <code>&lt;footer class=".footer-bottom"&gt;</code> should not be placed inside any container so that they can stretch to the full width of the window.
+            <p>Observe the behavior of the example containers below and the header/footer on this page as you change the width of the window to understand the desired behavior.</p>
           </div>
         </div>
         <div class="row mb-3">
@@ -2416,6 +2422,17 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
     </section>
   </main>
+  <footer class="footer-bottom bg-dark text-light">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <p>This is the footer.</p>
+          <p>It contains some important information.</p>
+          <p>You should probably read it carefully.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Required libraries for Bootstrap 4 JS components to work (https://getbootstrap.com/docs/4.0/getting-started/introduction/#js) -->
   <!-- jQuery first, then Bootstrap Bundle (includes Popper) -->
