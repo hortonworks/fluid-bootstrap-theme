@@ -8,15 +8,11 @@
 
 body > {
 
-  header.header-top {
-    @extend .fixed-top;
+  footer.footer-bottom {
     display: flex;
     align-items: center;
-    height: $navbar-brand-height;
     min-width: $layout-min-width;
-
-    & + * {
-      padding-top: $navbar-brand-height;
-    }
+    padding-top: ($grid-gutter-width / 2);
+    padding-bottom: ($grid-gutter-width / 2);
   }
 }
