@@ -63,11 +63,13 @@ gulp.task('copy-fonts', () =>
   gulp.src(fonts_src)
     .pipe(gulp.dest(fonts_dest))
     .pipe(gulp.dest(fonts_docs_dest))
+    .pipe(connect.reload())
 );
 
 gulp.task('copy-html', () =>
   gulp.src(html_src)
     .pipe(gulp.dest(html_dest))
+    .pipe(connect.reload())
 );
 
 gulp.task('transpile-sass', () =>
@@ -89,6 +91,7 @@ gulp.task('minify-css', () =>
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(css_dest))
     .pipe(gulp.dest(css_docs_dest))
+    .pipe(connect.reload())
 );
 
 gulp.task('build-sass', gulp.series('transpile-sass', 'minify-css'));
@@ -127,6 +130,7 @@ gulp.task('minify-js', () =>
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(js_bundle_dest))
+    .pipe(connect.reload())
 );
 
 gulp.task('build-js', gulp.series('transpile-js', 'bundle-js', 'minify-js'));
@@ -144,7 +148,6 @@ gulp.task('clean', () => del(['./dist', './docs', js_build_dest]));
 gulp.task('build', gulp.parallel('copy-fonts', 'copy-html', 'build-sass', 'build-docs-sass', 'build-js', 'build-docs-js'));
 
 gulp.task('connect', done => {
-  server = true;
   connect.server({
     root: 'docs',
     port: 8000,
@@ -154,17 +157,12 @@ gulp.task('connect', done => {
   done();
 });
 
-gulp.task('reload', done => {
-  connect.reload();
-  done();
-});
-
-gulp.task('watch-fonts', () => gulp.watch(fonts_src, { ignoreInitial: false }, gulp.series('copy-fonts', 'reload')));
-gulp.task('watch-html', () => gulp.watch(html_src, { ignoreInitial: false }, gulp.series('copy-html', 'reload')));
-gulp.task('watch-sass', () => gulp.watch(sass_src, { ignoreInitial: false }, gulp.series('build-sass', 'reload')));
-gulp.task('watch-docs-sass', () => gulp.watch(sass_docs_src, { ignoreInitial: false }, gulp.series('build-docs-sass', 'reload')));
-gulp.task('watch-js', () => gulp.watch(js_build_src, { ignoreInitial: false }, gulp.series('build-js', 'reload')));
-gulp.task('watch-docs-js', () => gulp.watch(js_docs_src, { ignoreInitial: false }, gulp.series('build-docs-js', 'reload')));
+gulp.task('watch-fonts', () => gulp.watch(fonts_src, { ignoreInitial: false }, gulp.series('copy-fonts')));
+gulp.task('watch-html', () => gulp.watch(html_src, { ignoreInitial: false }, gulp.series('copy-html')));
+gulp.task('watch-sass', () => gulp.watch(sass_src, { ignoreInitial: false }, gulp.series('build-sass')));
+gulp.task('watch-docs-sass', () => gulp.watch(sass_docs_src, { ignoreInitial: false }, gulp.series('build-docs-sass')));
+gulp.task('watch-js', () => gulp.watch(js_build_src, { ignoreInitial: false }, gulp.series('build-js')));
+gulp.task('watch-docs-js', () => gulp.watch(js_docs_src, { ignoreInitial: false }, gulp.series('build-docs-js')));
 
 gulp.task('watch', gulp.parallel('watch-fonts', 'watch-html', 'watch-sass', 'watch-docs-sass', 'watch-js', 'watch-docs-js'));
 
