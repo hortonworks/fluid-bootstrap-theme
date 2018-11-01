@@ -12,8 +12,10 @@ body > {
     @extend .fixed-top;
     display: flex;
     align-items: center;
-    height: $navbar-brand-height;
+    height: $navbar-brand-height + $border-width;
     min-width: $layout-min-width;
+    background-color: $white;
+    border-bottom: $border-width $body-bg solid;
 
     & + * {
       padding-top: $navbar-brand-height;

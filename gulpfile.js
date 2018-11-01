@@ -104,6 +104,7 @@ gulp.task('build-docs-sass', () =>
     .pipe(postcss([autoprefixer({ browsers: ['Chrome >= 35', 'Firefox >= 38', 'Edge >= 12', 'Explorer >= 10', 'iOS >= 8', 'Safari >= 8', 'Android 2.3', 'Android >= 4', 'Opera >= 12'] })]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(css_docs_dest))
+    .pipe(connect.reload())
 );
 
 gulp.task('transpile-js', () =>
@@ -141,6 +142,7 @@ gulp.task('build-docs-js', () =>
     .pipe(babel())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(js_docs_dest))
+    .pipe(connect.reload())
 );
 
 gulp.task('clean', () => del(['./dist', './docs', js_build_dest]));
