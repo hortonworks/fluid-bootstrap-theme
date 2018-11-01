@@ -6,6 +6,10 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+p:last-child {
+  margin-bottom: 0;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: $text-dark;
@@ -13,8 +17,4 @@ h1, h2, h3, h4, h5, h6,
   &:last-child {
     margin-bottom: 0;
   }
-}
-
-@each $color, $value in $text-colors {
-  @include text-emphasis-variant(".text-#{$color}", $value);
 }

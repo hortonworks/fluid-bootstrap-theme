@@ -16,7 +16,7 @@
   }
 
   &:before {
-    font-family: 'FontAwesome';
+    font-family: "FontAwesome";
     font-size: px(24);
     position: absolute;
     top: 50%;
@@ -24,8 +24,8 @@
   }
 
   &:after {
-    content: '\00d7'; // &times;
-    font-family: 'Roboto';
+    content: "\00d7"; // &times;
+    font-family: "Roboto";
     font-size: px(16);
     color: gray("600");
     position: absolute;
@@ -46,7 +46,7 @@
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
     color: theme-color("default");
-    background-color: inherit;
+    background-color: $white;
     border-color: theme-color-level($color, $alert-border-level);
 
     .alert-header, &:before {

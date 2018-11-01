@@ -43,7 +43,6 @@
 
       .navbar-brand {
 
-        i:first-child,
         .fa:first-child {
           margin-right: px(8) !important;
         }
@@ -59,9 +58,8 @@
 
           &.status:before {
             left: px(30) !important;
-          } 
+          }
 
-          i:first-child,
           .fa:first-child {
             width: $navbar-nav-link-icon-size !important;
             margin-right: px(8) !important;
@@ -112,7 +110,6 @@
           font-size: px(16);
         }
 
-        i:first-child,
         .fa:first-child {
           margin-right: px(16);
         }
@@ -144,7 +141,6 @@
               left: px(16);
             }
 
-            i:first-child,
             .fa:first-child {
               width: 0;
               margin: 0;
@@ -171,7 +167,6 @@
             opacity: 0;
           }
 
-          i:first-child,
           .fa:first-child {
             width: px(19);
             margin-right: px(16);
@@ -281,7 +276,6 @@
           left: px(30);
         }
 
-        i:first-child,
         .fa:first-child {
           width: $navbar-nav-link-icon-size;
           margin-top: px(8);
@@ -386,7 +380,6 @@
     background-color: $navbar-brand-hover-bg;
   }
 
-  i:first-child,
   .fa:first-child {
     width: $navbar-nav-link-icon-size-collapsed;
     margin-right: px(8);
@@ -434,8 +427,7 @@
     white-space: nowrap;
     text-align: center;
 
-    i,
-    span.fa {
+    .fa {
       display: block;
       width: $navbar-brand-menu-item-size;
       height: $navbar-brand-menu-item-size;
@@ -454,8 +446,7 @@
 
     &:hover {
 
-      i,
-      span.fa {
+      .fa {
         background-color: lighten(color("blue"), 10%)
       }
     }

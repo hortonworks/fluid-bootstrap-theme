@@ -101,11 +101,11 @@ $colors: map-merge(
 $primary:       $fluid-green;
 $secondary:     $fluid-green;
 $default:       $gray-600;
-$success:       $green;
+$success:       $green !default;
 $info:          $blue;
 $link:          $blue;
 $warning:       $orange;
-$danger:        $red;
+$danger:        $red !default;
 $light:         $gray-300;
 $dark:          $gray-900;
 
@@ -206,7 +206,7 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white !default;
+$body-bg:                   $light;
 $body-color:                $text;
 
 // Links
@@ -274,7 +274,7 @@ $line-height-lg:              1.5 !default;
 $line-height-sm:              1.5 !default;
 
 $border-width:                px(1);
-$border-color:                $gray-300 !default;
+$border-color:                $gray-400;
 
 $border-radius:               px(2);
 $border-radius-lg:            px(4);
@@ -306,8 +306,8 @@ $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$font-size-lg:                ($font-size-base * 1.25) !default;
-$font-size-sm:                ($font-size-base * .875) !default;
+$font-size-lg:                px(20) !default;
+$font-size-sm:                px(10) !default;
 
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
@@ -343,7 +343,7 @@ $display-line-height:         $headings-line-height !default;
 $lead-font-size:              ($font-size-base * 1.25) !default;
 $lead-font-weight:            300 !default;
 
-$small-font-size:             80% !default;
+$small-font-size:             $font-size-sm;
 
 $text-muted:                  $gray-600 !default;
 

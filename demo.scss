@@ -2,9 +2,31 @@
 @import "scss/functions";
 @import "scss/variables";
 
-h2, .h2 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+section {
+  min-height: 600px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.specimen {
+  margin-bottom: 15px;
+  padding: 15px;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.swatch {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 15px;
 }
 
 #containerExample, #containerFluidExample {

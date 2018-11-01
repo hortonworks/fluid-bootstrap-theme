@@ -81,7 +81,7 @@ body {
   line-height: 1.5;
   color: #666666;
   text-align: left;
-  background-color: #fff; }
+  background-color: #ececec; }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -378,7 +378,7 @@ hr {
 
 small,
 .small {
-  font-size: 80%;
+  font-size: 0.71429rem;
   font-weight: 400; }
 
 mark,
@@ -420,7 +420,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #fff;
+  background-color: #ececec;
   border: 0.07143rem solid #ececec;
   border-radius: 0.14286rem;
   max-width: 100%;
@@ -1521,7 +1521,7 @@ pre {
   .table tbody + tbody {
     border-top: 0.14286rem solid #ececec; }
   .table .table {
-    background-color: #fff; }
+    background-color: #ececec; }
 
 .table-sm th,
 .table-sm td {
@@ -1659,7 +1659,7 @@ pre {
     background-color: rgba(0, 0, 0, 0.075); }
 
 .table .thead-dark th {
-  color: #fff;
+  color: #ececec;
   background-color: #333333;
   border-color: #464646; }
 
@@ -1669,7 +1669,7 @@ pre {
   border-color: #ececec; }
 
 .table-dark {
-  color: #fff;
+  color: #ececec;
   background-color: #333333; }
   .table-dark th,
   .table-dark td,
@@ -1802,13 +1802,13 @@ select.form-control:focus::-ms-value {
 .col-form-label-lg {
   padding-top: calc(0.5rem + 0.07143rem);
   padding-bottom: calc(0.5rem + 0.07143rem);
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.5; }
 
 .col-form-label-sm {
   padding-top: calc(0.25rem + 0.07143rem);
   padding-bottom: calc(0.25rem + 0.07143rem);
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   line-height: 1.5; }
 
 .form-control-plaintext {
@@ -1827,16 +1827,16 @@ select.form-control:focus::-ms-value {
     padding-left: 0; }
 
 .form-control-sm {
-  height: calc(1.8125rem + 0.14286rem);
+  height: calc(1.57143rem + 0.14286rem);
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   line-height: 1.5;
   border-radius: 0.14286rem; }
 
 .form-control-lg {
-  height: calc(2.875rem + 0.14286rem);
+  height: calc(3.14286rem + 0.14286rem);
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.5;
   border-radius: 0.28571rem; }
 
@@ -1904,7 +1904,7 @@ textarea.form-control {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 80%;
+  font-size: 0.71429rem;
   color: #1eb475; }
 
 .valid-tooltip {
@@ -1915,7 +1915,7 @@ textarea.form-control {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   line-height: 1.5;
   color: #fff;
   background-color: rgba(30, 180, 117, 0.9);
@@ -1981,8 +1981,8 @@ select.is-valid {
   background-color: #2adb91; }
 
 .was-validated .custom-control-input:valid:focus ~ .custom-control-label::before, .was-validated .form-check .form-check-input:valid:focus ~ .custom-control-label::before, .form-check .was-validated .form-check-input:valid:focus ~ .custom-control-label::before, .was-validated .form-check .form-radio-input:valid:focus ~ .custom-control-label::before, .form-check .was-validated .form-radio-input:valid:focus ~ .custom-control-label::before, .was-validated .form-radio .form-check-input:valid:focus ~ .custom-control-label::before, .form-radio .was-validated .form-check-input:valid:focus ~ .custom-control-label::before, .was-validated .form-radio .form-radio-input:valid:focus ~ .custom-control-label::before, .form-radio .was-validated .form-radio-input:valid:focus ~ .custom-control-label::before, .was-validated .form-check .custom-control-input:valid:focus ~ .form-check-label::before, .form-check .was-validated .custom-control-input:valid:focus ~ .form-check-label::before, .was-validated .form-check .form-check-input:valid:focus ~ .form-check-label::before, .form-check .was-validated .form-check-input:valid:focus ~ .form-check-label::before, .was-validated .form-check .form-radio-input:valid:focus ~ .form-check-label::before, .form-check .was-validated .form-radio-input:valid:focus ~ .form-check-label::before, .was-validated .form-check .custom-control-input:valid:focus ~ .form-radio-label::before, .form-check .was-validated .custom-control-input:valid:focus ~ .form-radio-label::before, .was-validated .form-check .form-check-input:valid:focus ~ .form-radio-label::before, .form-check .was-validated .form-check-input:valid:focus ~ .form-radio-label::before, .was-validated .form-check .form-radio-input:valid:focus ~ .form-radio-label::before, .form-check .was-validated .form-radio-input:valid:focus ~ .form-radio-label::before, .was-validated .form-radio .custom-control-input:valid:focus ~ .form-check-label::before, .form-radio .was-validated .custom-control-input:valid:focus ~ .form-check-label::before, .was-validated .form-radio .form-check-input:valid:focus ~ .form-check-label::before, .form-radio .was-validated .form-check-input:valid:focus ~ .form-check-label::before, .was-validated .form-radio .form-radio-input:valid:focus ~ .form-check-label::before, .form-radio .was-validated .form-radio-input:valid:focus ~ .form-check-label::before, .was-validated .form-radio .custom-control-input:valid:focus ~ .form-radio-label::before, .form-radio .was-validated .custom-control-input:valid:focus ~ .form-radio-label::before, .was-validated .form-radio .form-check-input:valid:focus ~ .form-radio-label::before, .form-radio .was-validated .form-check-input:valid:focus ~ .form-radio-label::before, .was-validated .form-radio .form-radio-input:valid:focus ~ .form-radio-label::before, .form-radio .was-validated .form-radio-input:valid:focus ~ .form-radio-label::before, .custom-control-input.is-valid:focus ~ .custom-control-label::before, .form-check .is-valid.form-check-input:focus ~ .custom-control-label::before, .form-check .is-valid.form-radio-input:focus ~ .custom-control-label::before, .form-radio .is-valid.form-check-input:focus ~ .custom-control-label::before, .form-radio .is-valid.form-radio-input:focus ~ .custom-control-label::before, .form-check .custom-control-input.is-valid:focus ~ .form-check-label::before, .form-check .is-valid.form-check-input:focus ~ .form-check-label::before, .form-check .is-valid.form-radio-input:focus ~ .form-check-label::before, .form-check .custom-control-input.is-valid:focus ~ .form-radio-label::before, .form-check .is-valid.form-check-input:focus ~ .form-radio-label::before, .form-check .is-valid.form-radio-input:focus ~ .form-radio-label::before, .form-radio .custom-control-input.is-valid:focus ~ .form-check-label::before, .form-radio .is-valid.form-check-input:focus ~ .form-check-label::before, .form-radio .is-valid.form-radio-input:focus ~ .form-check-label::before, .form-radio .custom-control-input.is-valid:focus ~ .form-radio-label::before, .form-radio .is-valid.form-check-input:focus ~ .form-radio-label::before, .form-radio .is-valid.form-radio-input:focus ~ .form-radio-label::before {
-  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(30, 180, 117, 0.25);
-          box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(30, 180, 117, 0.25); }
+  -webkit-box-shadow: 0 0 0 1px #ececec, 0 0 0 0.2rem rgba(30, 180, 117, 0.25);
+          box-shadow: 0 0 0 1px #ececec, 0 0 0 0.2rem rgba(30, 180, 117, 0.25); }
 
 .was-validated .custom-file-input:valid ~ .custom-file-label, .custom-file-input.is-valid ~ .custom-file-label {
   border-color: #1eb475; }
@@ -2002,7 +2002,7 @@ select.is-valid {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 80%;
+  font-size: 0.71429rem;
   color: #ef6162; }
 
 .invalid-tooltip {
@@ -2013,7 +2013,7 @@ select.is-valid {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   line-height: 1.5;
   color: #fff;
   background-color: rgba(239, 97, 98, 0.9);
@@ -2079,8 +2079,8 @@ select.is-invalid {
   background-color: #f48f90; }
 
 .was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before, .was-validated .form-check .form-check-input:invalid:focus ~ .custom-control-label::before, .form-check .was-validated .form-check-input:invalid:focus ~ .custom-control-label::before, .was-validated .form-check .form-radio-input:invalid:focus ~ .custom-control-label::before, .form-check .was-validated .form-radio-input:invalid:focus ~ .custom-control-label::before, .was-validated .form-radio .form-check-input:invalid:focus ~ .custom-control-label::before, .form-radio .was-validated .form-check-input:invalid:focus ~ .custom-control-label::before, .was-validated .form-radio .form-radio-input:invalid:focus ~ .custom-control-label::before, .form-radio .was-validated .form-radio-input:invalid:focus ~ .custom-control-label::before, .was-validated .form-check .custom-control-input:invalid:focus ~ .form-check-label::before, .form-check .was-validated .custom-control-input:invalid:focus ~ .form-check-label::before, .was-validated .form-check .form-check-input:invalid:focus ~ .form-check-label::before, .form-check .was-validated .form-check-input:invalid:focus ~ .form-check-label::before, .was-validated .form-check .form-radio-input:invalid:focus ~ .form-check-label::before, .form-check .was-validated .form-radio-input:invalid:focus ~ .form-check-label::before, .was-validated .form-check .custom-control-input:invalid:focus ~ .form-radio-label::before, .form-check .was-validated .custom-control-input:invalid:focus ~ .form-radio-label::before, .was-validated .form-check .form-check-input:invalid:focus ~ .form-radio-label::before, .form-check .was-validated .form-check-input:invalid:focus ~ .form-radio-label::before, .was-validated .form-check .form-radio-input:invalid:focus ~ .form-radio-label::before, .form-check .was-validated .form-radio-input:invalid:focus ~ .form-radio-label::before, .was-validated .form-radio .custom-control-input:invalid:focus ~ .form-check-label::before, .form-radio .was-validated .custom-control-input:invalid:focus ~ .form-check-label::before, .was-validated .form-radio .form-check-input:invalid:focus ~ .form-check-label::before, .form-radio .was-validated .form-check-input:invalid:focus ~ .form-check-label::before, .was-validated .form-radio .form-radio-input:invalid:focus ~ .form-check-label::before, .form-radio .was-validated .form-radio-input:invalid:focus ~ .form-check-label::before, .was-validated .form-radio .custom-control-input:invalid:focus ~ .form-radio-label::before, .form-radio .was-validated .custom-control-input:invalid:focus ~ .form-radio-label::before, .was-validated .form-radio .form-check-input:invalid:focus ~ .form-radio-label::before, .form-radio .was-validated .form-check-input:invalid:focus ~ .form-radio-label::before, .was-validated .form-radio .form-radio-input:invalid:focus ~ .form-radio-label::before, .form-radio .was-validated .form-radio-input:invalid:focus ~ .form-radio-label::before, .custom-control-input.is-invalid:focus ~ .custom-control-label::before, .form-check .is-invalid.form-check-input:focus ~ .custom-control-label::before, .form-check .is-invalid.form-radio-input:focus ~ .custom-control-label::before, .form-radio .is-invalid.form-check-input:focus ~ .custom-control-label::before, .form-radio .is-invalid.form-radio-input:focus ~ .custom-control-label::before, .form-check .custom-control-input.is-invalid:focus ~ .form-check-label::before, .form-check .is-invalid.form-check-input:focus ~ .form-check-label::before, .form-check .is-invalid.form-radio-input:focus ~ .form-check-label::before, .form-check .custom-control-input.is-invalid:focus ~ .form-radio-label::before, .form-check .is-invalid.form-check-input:focus ~ .form-radio-label::before, .form-check .is-invalid.form-radio-input:focus ~ .form-radio-label::before, .form-radio .custom-control-input.is-invalid:focus ~ .form-check-label::before, .form-radio .is-invalid.form-check-input:focus ~ .form-check-label::before, .form-radio .is-invalid.form-radio-input:focus ~ .form-check-label::before, .form-radio .custom-control-input.is-invalid:focus ~ .form-radio-label::before, .form-radio .is-invalid.form-check-input:focus ~ .form-radio-label::before, .form-radio .is-invalid.form-radio-input:focus ~ .form-radio-label::before {
-  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(239, 97, 98, 0.25);
-          box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(239, 97, 98, 0.25); }
+  -webkit-box-shadow: 0 0 0 1px #ececec, 0 0 0 0.2rem rgba(239, 97, 98, 0.25);
+          box-shadow: 0 0 0 1px #ececec, 0 0 0 0.2rem rgba(239, 97, 98, 0.25); }
 
 .was-validated .custom-file-input:invalid ~ .custom-file-label, .custom-file-input.is-invalid ~ .custom-file-label {
   border-color: #ef6162; }
@@ -2702,13 +2702,13 @@ fieldset:disabled a.btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.5;
   border-radius: 0.28571rem; }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   line-height: 1.5;
   border-radius: 0.14286rem; }
 
@@ -2918,7 +2918,7 @@ input[type="button"].btn-block {
   display: block;
   padding: 0.5rem 1.5rem;
   margin-bottom: 0;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   color: #999999;
   white-space: nowrap; }
 
@@ -3180,9 +3180,9 @@ input[type="button"].btn-block {
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
 .input-group-lg > .input-group-append > .btn {
-  height: calc(2.875rem + 0.14286rem);
+  height: calc(3.14286rem + 0.14286rem);
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.5;
   border-radius: 0.28571rem; }
 
@@ -3191,9 +3191,9 @@ input[type="button"].btn-block {
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
 .input-group-sm > .input-group-append > .btn {
-  height: calc(1.8125rem + 0.14286rem);
+  height: calc(1.57143rem + 0.14286rem);
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   line-height: 1.5;
   border-radius: 0.14286rem; }
 
@@ -3236,8 +3236,8 @@ input[type="button"].btn-block {
     color: #fff;
     background-color: #1491c1; }
   .custom-control-input:focus ~ .custom-control-label::before, .form-check .form-check-input:focus ~ .custom-control-label::before, .form-check .form-radio-input:focus ~ .custom-control-label::before, .form-radio .form-check-input:focus ~ .custom-control-label::before, .form-radio .form-radio-input:focus ~ .custom-control-label::before, .form-check .custom-control-input:focus ~ .form-check-label::before, .form-check .form-check-input:focus ~ .form-check-label::before, .form-check .form-radio-input:focus ~ .form-check-label::before, .form-check .custom-control-input:focus ~ .form-radio-label::before, .form-check .form-check-input:focus ~ .form-radio-label::before, .form-check .form-radio-input:focus ~ .form-radio-label::before, .form-radio .custom-control-input:focus ~ .form-check-label::before, .form-radio .form-check-input:focus ~ .form-check-label::before, .form-radio .form-radio-input:focus ~ .form-check-label::before, .form-radio .custom-control-input:focus ~ .form-radio-label::before, .form-radio .form-check-input:focus ~ .form-radio-label::before, .form-radio .form-radio-input:focus ~ .form-radio-label::before {
-    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-            box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+    -webkit-box-shadow: 0 0 0 1px #ececec, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            box-shadow: 0 0 0 1px #ececec, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
   .custom-control-input:active ~ .custom-control-label::before, .form-check .form-check-input:active ~ .custom-control-label::before, .form-check .form-radio-input:active ~ .custom-control-label::before, .form-radio .form-check-input:active ~ .custom-control-label::before, .form-radio .form-radio-input:active ~ .custom-control-label::before, .form-check .custom-control-input:active ~ .form-check-label::before, .form-check .form-check-input:active ~ .form-check-label::before, .form-check .form-radio-input:active ~ .form-check-label::before, .form-check .custom-control-input:active ~ .form-radio-label::before, .form-check .form-check-input:active ~ .form-radio-label::before, .form-check .form-radio-input:active ~ .form-radio-label::before, .form-radio .custom-control-input:active ~ .form-check-label::before, .form-radio .form-check-input:active ~ .form-check-label::before, .form-radio .form-radio-input:active ~ .form-check-label::before, .form-radio .custom-control-input:active ~ .form-radio-label::before, .form-radio .form-check-input:active ~ .form-radio-label::before, .form-radio .form-radio-input:active ~ .form-radio-label::before {
     color: #fff;
     background-color: #94d9f4; }
@@ -3344,13 +3344,13 @@ input[type="button"].btn-block {
     opacity: 0; }
 
 .custom-select-sm {
-  height: calc(1.8125rem + 0.14286rem);
+  height: calc(1.57143rem + 0.14286rem);
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 75%; }
 
 .custom-select-lg {
-  height: calc(2.875rem + 0.14286rem);
+  height: calc(3.14286rem + 0.14286rem);
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 125%; }
@@ -3419,12 +3419,12 @@ input[type="button"].btn-block {
   .custom-range:focus {
     outline: none; }
     .custom-range:focus::-webkit-slider-thumb {
-      -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-              box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+      -webkit-box-shadow: 0 0 0 1px #ececec, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+              box-shadow: 0 0 0 1px #ececec, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
     .custom-range:focus::-moz-range-thumb {
-      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+      box-shadow: 0 0 0 1px #ececec, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
     .custom-range:focus::-ms-thumb {
-      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+      box-shadow: 0 0 0 1px #ececec, 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
   .custom-range::-moz-focus-outer {
     border: 0; }
   .custom-range::-webkit-slider-thumb {
@@ -3573,8 +3573,8 @@ input[type="button"].btn-block {
   .nav-tabs .nav-link.active,
   .nav-tabs .nav-item.show .nav-link {
     color: #666666;
-    background-color: #fff;
-    border-color: #ececec #ececec #fff; }
+    background-color: #ececec;
+    border-color: #ececec #ececec #ececec; }
   .nav-tabs .dropdown-menu, .nav-tabs .brand-menu {
     margin-top: -0.07143rem;
     border-top-left-radius: 0;
@@ -3652,7 +3652,7 @@ input[type="button"].btn-block {
   padding-top: -0.89286rem;
   padding-bottom: -0.89286rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: inherit;
   white-space: nowrap; }
   .navbar-brand:hover, .navbar-brand:focus {
@@ -3698,7 +3698,7 @@ input[type="button"].btn-block {
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1;
   background-color: transparent;
   border: 0.07143rem solid transparent;
@@ -4325,7 +4325,7 @@ input[type="button"].btn-block {
 
 .pagination-lg .page-link {
   padding: 0.75rem 1.5rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.5; }
 
 .pagination-lg .page-item:first-child .page-link {
@@ -4338,7 +4338,7 @@ input[type="button"].btn-block {
 
 .pagination-sm .page-link {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   line-height: 1.5; }
 
 .pagination-sm .page-item:first-child .page-link {
@@ -5009,7 +5009,7 @@ button.close {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   word-wrap: break-word;
   opacity: 0; }
   .tooltip.show {
@@ -5094,7 +5094,7 @@ button.close {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   word-wrap: break-word;
   background-color: #666666;
   -webkit-background-clip: padding-box;
@@ -5532,19 +5532,19 @@ button.bg-default:focus {
   background-color: transparent !important; }
 
 .border {
-  border: 0.07143rem solid #ececec !important; }
+  border: 0.07143rem solid #d1d1d1 !important; }
 
 .border-top {
-  border-top: 0.07143rem solid #ececec !important; }
+  border-top: 0.07143rem solid #d1d1d1 !important; }
 
 .border-right {
-  border-right: 0.07143rem solid #ececec !important; }
+  border-right: 0.07143rem solid #d1d1d1 !important; }
 
 .border-bottom {
-  border-bottom: 0.07143rem solid #ececec !important; }
+  border-bottom: 0.07143rem solid #d1d1d1 !important; }
 
 .border-left {
-  border-left: 0.07143rem solid #ececec !important; }
+  border-left: 0.07143rem solid #d1d1d1 !important; }
 
 .border-0 {
   border: 0 !important; }
@@ -10349,7 +10349,7 @@ a.text-default:hover, a.text-default:focus {
     cursor: pointer; }
     .accordion .card .card-header:after {
       content: "";
-      font-family: 'FontAwesome';
+      font-family: "FontAwesome";
       font-size: 1.42857rem;
       color: #1491c1;
       float: right; }
@@ -10370,7 +10370,7 @@ a.text-default:hover, a.text-default:focus {
   .alert > div {
     margin-left: 2.85714rem; }
   .alert:before {
-    font-family: 'FontAwesome';
+    font-family: "FontAwesome";
     font-size: 1.71429rem;
     position: absolute;
     top: 50%;
@@ -10378,8 +10378,8 @@ a.text-default:hover, a.text-default:focus {
          -o-transform: translateY(-50%);
             transform: translateY(-50%); }
   .alert:after {
-    content: '\00d7';
-    font-family: 'Roboto';
+    content: "\00d7";
+    font-family: "Roboto";
     font-size: 1.14286rem;
     color: #999999;
     position: absolute;
@@ -10393,63 +10393,63 @@ a.text-default:hover, a.text-default:focus {
 
 .alert-primary {
   color: #999999;
-  background-color: inherit;
+  background-color: #fff;
   border-color: #3fae2a; }
   .alert-primary .alert-header, .alert-primary:before {
     color: #3fae2a; }
 
 .alert-secondary {
   color: #999999;
-  background-color: inherit;
+  background-color: #fff;
   border-color: #3fae2a; }
   .alert-secondary .alert-header, .alert-secondary:before {
     color: #3fae2a; }
 
 .alert-success {
   color: #999999;
-  background-color: inherit;
+  background-color: #fff;
   border-color: #1eb475; }
   .alert-success .alert-header, .alert-success:before {
     color: #1eb475; }
 
 .alert-info {
   color: #999999;
-  background-color: inherit;
+  background-color: #fff;
   border-color: #1491c1; }
   .alert-info .alert-header, .alert-info:before {
     color: #1491c1; }
 
 .alert-warning {
   color: #999999;
-  background-color: inherit;
+  background-color: #fff;
   border-color: #e98a40; }
   .alert-warning .alert-header, .alert-warning:before {
     color: #e98a40; }
 
 .alert-danger {
   color: #999999;
-  background-color: inherit;
+  background-color: #fff;
   border-color: #ef6162; }
   .alert-danger .alert-header, .alert-danger:before {
     color: #ef6162; }
 
 .alert-light {
   color: #999999;
-  background-color: inherit;
+  background-color: #fff;
   border-color: #ececec; }
   .alert-light .alert-header, .alert-light:before {
     color: #ececec; }
 
 .alert-dark {
   color: #999999;
-  background-color: inherit;
+  background-color: #fff;
   border-color: #333333; }
   .alert-dark .alert-header, .alert-dark:before {
     color: #333333; }
 
 .alert-default {
   color: #999999;
-  background-color: inherit;
+  background-color: #fff;
   border-color: #999999; }
   .alert-default .alert-header, .alert-default:before {
     color: #999999; }
@@ -10579,7 +10579,8 @@ body > footer.footer-bottom {
           align-items: center;
   min-width: 1024px;
   padding-top: 15px;
-  padding-bottom: 15px; }
+  padding-bottom: 15px;
+  border-top: 0.07143rem #d1d1d1 solid; }
 
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
@@ -10662,16 +10663,18 @@ body > header.header-top {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 4.28571rem;
-  min-width: 1024px; }
+  height: 4.35714rem;
+  min-width: 1024px;
+  background-color: #fff;
+  border-bottom: 0.07143rem #ececec solid; }
   body > header.header-top + * {
     padding-top: 4.28571rem; }
 
-i, .fa {
+.fa {
   text-align: center; }
-  i *, .fa * {
+  .fa * {
     font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
-  i .badge, .fa .badge {
+  .fa .badge {
     position: relative;
     top: -0.5rem;
     left: -0.5rem;
@@ -10746,7 +10749,6 @@ i, .fa {
     width: 14.28571rem !important; }
     .navbar.collapsing[style^="height"] ~ *:not(.popover):not(.tooltip):not(.modal) {
       margin-left: 14.28571rem; }
-    .navbar.collapsing[style^="height"] .navbar-brand i:first-child,
     .navbar.collapsing[style^="height"] .navbar-brand .fa:first-child {
       margin-right: 0.57143rem !important; }
     .navbar.collapsing[style^="height"] .navbar-nav .nav-item.nav-link,
@@ -10757,9 +10759,7 @@ i, .fa {
       .navbar.collapsing[style^="height"] .navbar-nav .nav-item.nav-link.status:before,
       .navbar.collapsing[style^="height"] .navbar-nav .nav-item > .nav-link.status:before {
         left: 2.14286rem !important; }
-      .navbar.collapsing[style^="height"] .navbar-nav .nav-item.nav-link i:first-child,
       .navbar.collapsing[style^="height"] .navbar-nav .nav-item.nav-link .fa:first-child,
-      .navbar.collapsing[style^="height"] .navbar-nav .nav-item > .nav-link i:first-child,
       .navbar.collapsing[style^="height"] .navbar-nav .nav-item > .nav-link .fa:first-child {
         width: 1.14286rem !important;
         margin-right: 0.57143rem !important;
@@ -10797,9 +10797,7 @@ i, .fa {
       left: 2.28571rem;
       margin: 0;
       font-size: 1.14286rem; }
-    .navbar.collapse:not(.show) .navbar-brand i:first-child, .navbar.collapsing:not(.show) .navbar-brand i:first-child,
-    .navbar.collapse:not(.show) .navbar-brand .fa:first-child,
-    .navbar.collapsing:not(.show) .navbar-brand .fa:first-child {
+    .navbar.collapse:not(.show) .navbar-brand .fa:first-child, .navbar.collapsing:not(.show) .navbar-brand .fa:first-child {
       margin-right: 1.14286rem; }
     .navbar.collapse:not(.show) .navbar-nav, .navbar.collapsing:not(.show) .navbar-nav {
       width: 3.57143rem; }
@@ -10829,15 +10827,7 @@ i, .fa {
           .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link.status:before,
           .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link.status:before {
             left: 1.14286rem; }
-          .navbar.collapse:not(.show) .navbar-nav.collapse .nav-item.nav-link i:first-child, .navbar.collapsing:not(.show) .navbar-nav.collapse .nav-item.nav-link i:first-child, .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link i:first-child, .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link i:first-child,
-          .navbar.collapse:not(.show) .navbar-nav.collapse .nav-item.nav-link .fa:first-child,
-          .navbar.collapsing:not(.show) .navbar-nav.collapse .nav-item.nav-link .fa:first-child,
-          .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link .fa:first-child,
-          .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link .fa:first-child,
-          .navbar.collapse:not(.show) .navbar-nav.collapse .nav-item > .nav-link i:first-child,
-          .navbar.collapsing:not(.show) .navbar-nav.collapse .nav-item > .nav-link i:first-child,
-          .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link i:first-child,
-          .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link i:first-child,
+          .navbar.collapse:not(.show) .navbar-nav.collapse .nav-item.nav-link .fa:first-child, .navbar.collapsing:not(.show) .navbar-nav.collapse .nav-item.nav-link .fa:first-child, .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link .fa:first-child, .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link .fa:first-child,
           .navbar.collapse:not(.show) .navbar-nav.collapse .nav-item > .nav-link .fa:first-child,
           .navbar.collapsing:not(.show) .navbar-nav.collapse .nav-item > .nav-link .fa:first-child,
           .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link .fa:first-child,
@@ -10862,11 +10852,7 @@ i, .fa {
         .navbar.collapse:not(.show) .navbar-nav .nav-item > .nav-link:after,
         .navbar.collapsing:not(.show) .navbar-nav .nav-item > .nav-link:after {
           opacity: 0; }
-        .navbar.collapse:not(.show) .navbar-nav .nav-item.nav-link i:first-child, .navbar.collapsing:not(.show) .navbar-nav .nav-item.nav-link i:first-child,
-        .navbar.collapse:not(.show) .navbar-nav .nav-item.nav-link .fa:first-child,
-        .navbar.collapsing:not(.show) .navbar-nav .nav-item.nav-link .fa:first-child,
-        .navbar.collapse:not(.show) .navbar-nav .nav-item > .nav-link i:first-child,
-        .navbar.collapsing:not(.show) .navbar-nav .nav-item > .nav-link i:first-child,
+        .navbar.collapse:not(.show) .navbar-nav .nav-item.nav-link .fa:first-child, .navbar.collapsing:not(.show) .navbar-nav .nav-item.nav-link .fa:first-child,
         .navbar.collapse:not(.show) .navbar-nav .nav-item > .nav-link .fa:first-child,
         .navbar.collapsing:not(.show) .navbar-nav .nav-item > .nav-link .fa:first-child {
           width: 1.35714rem;
@@ -10953,9 +10939,7 @@ i, .fa {
         .navbar .navbar-nav .nav-item.nav-link.status:before,
         .navbar .navbar-nav .nav-item > .nav-link.status:before {
           left: 2.14286rem; }
-        .navbar .navbar-nav .nav-item.nav-link i:first-child,
         .navbar .navbar-nav .nav-item.nav-link .fa:first-child,
-        .navbar .navbar-nav .nav-item > .nav-link i:first-child,
         .navbar .navbar-nav .nav-item > .nav-link .fa:first-child {
           width: 1.14286rem;
           margin-top: 0.57143rem;
@@ -10967,9 +10951,7 @@ i, .fa {
           -o-transition: all 0.35s ease, color 0s, background-color 0s;
           transition: all 0.35s ease, color 0s, background-color 0s; }
           @media screen and (prefers-reduced-motion: reduce) {
-            .navbar .navbar-nav .nav-item.nav-link i:first-child,
             .navbar .navbar-nav .nav-item.nav-link .fa:first-child,
-            .navbar .navbar-nav .nav-item > .nav-link i:first-child,
             .navbar .navbar-nav .nav-item > .nav-link .fa:first-child {
               -webkit-transition: none;
               -o-transition: none;
@@ -11044,7 +11026,6 @@ i, .fa {
   .navbar-brand:hover, .navbar-brand:active, .navbar-brand.active {
     color: #fff !important;
     background-color: #304e73; }
-  .navbar-brand i:first-child,
   .navbar-brand .fa:first-child {
     width: 1.78571rem;
     margin-right: 0.57143rem;
@@ -11056,7 +11037,6 @@ i, .fa {
     -o-transition: all 0.35s ease, color 0s, background-color 0s;
     transition: all 0.35s ease, color 0s, background-color 0s; }
     @media screen and (prefers-reduced-motion: reduce) {
-      .navbar-brand i:first-child,
       .navbar-brand .fa:first-child {
         -webkit-transition: none;
         -o-transition: none;
@@ -11105,10 +11085,8 @@ i, .fa {
     line-height: 1rem;
     white-space: nowrap;
     text-align: center; }
-    .brand-menu .brand-menu-item i,
-    .brand-menu .brand-menu-item span.fa,
-    .brand-menu.show .brand-menu-item i,
-    .brand-menu.show .brand-menu-item span.fa {
+    .brand-menu .brand-menu-item .fa,
+    .brand-menu.show .brand-menu-item .fa {
       display: block;
       width: 5.35714rem;
       height: 5.35714rem;
@@ -11118,16 +11096,12 @@ i, .fa {
       background-color: #1491c1;
       margin-bottom: 0.71429rem;
       border-radius: 0.14286rem; }
-      .brand-menu .brand-menu-item i:before,
-      .brand-menu .brand-menu-item span.fa:before,
-      .brand-menu.show .brand-menu-item i:before,
-      .brand-menu.show .brand-menu-item span.fa:before {
+      .brand-menu .brand-menu-item .fa:before,
+      .brand-menu.show .brand-menu-item .fa:before {
         font-size: 2.85714rem;
         line-height: 5.35714rem; }
-    .brand-menu .brand-menu-item:hover i,
-    .brand-menu .brand-menu-item:hover span.fa,
-    .brand-menu.show .brand-menu-item:hover i,
-    .brand-menu.show .brand-menu-item:hover span.fa {
+    .brand-menu .brand-menu-item:hover .fa,
+    .brand-menu.show .brand-menu-item:hover .fa {
       background-color: #20b0e8; }
 
 .navbar-collapse {
@@ -11389,12 +11363,87 @@ body {
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
+p:last-child {
+  margin-bottom: 0; }
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #333333; }
   h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child,
   .h1:last-child, .h2:last-child, .h3:last-child, .h4:last-child, .h5:last-child, .h6:last-child {
     margin-bottom: 0; }
+
+.bg-gray-100 {
+  background-color: #fbfbfb !important; }
+
+a.bg-gray-100:hover, a.bg-gray-100:focus,
+button.bg-gray-100:hover,
+button.bg-gray-100:focus {
+  background-color: #e2e2e2 !important; }
+
+.bg-gray-200 {
+  background-color: #f6f6f6 !important; }
+
+a.bg-gray-200:hover, a.bg-gray-200:focus,
+button.bg-gray-200:hover,
+button.bg-gray-200:focus {
+  background-color: #dddddd !important; }
+
+.bg-gray-300 {
+  background-color: #ececec !important; }
+
+a.bg-gray-300:hover, a.bg-gray-300:focus,
+button.bg-gray-300:hover,
+button.bg-gray-300:focus {
+  background-color: lightgray !important; }
+
+.bg-gray-400 {
+  background-color: #d1d1d1 !important; }
+
+a.bg-gray-400:hover, a.bg-gray-400:focus,
+button.bg-gray-400:hover,
+button.bg-gray-400:focus {
+  background-color: #b8b8b8 !important; }
+
+.bg-gray-500 {
+  background-color: #b5b5b5 !important; }
+
+a.bg-gray-500:hover, a.bg-gray-500:focus,
+button.bg-gray-500:hover,
+button.bg-gray-500:focus {
+  background-color: #9c9c9c !important; }
+
+.bg-gray-600 {
+  background-color: #999999 !important; }
+
+a.bg-gray-600:hover, a.bg-gray-600:focus,
+button.bg-gray-600:hover,
+button.bg-gray-600:focus {
+  background-color: gray !important; }
+
+.bg-gray-700 {
+  background-color: #666666 !important; }
+
+a.bg-gray-700:hover, a.bg-gray-700:focus,
+button.bg-gray-700:hover,
+button.bg-gray-700:focus {
+  background-color: #4d4d4d !important; }
+
+.bg-gray-800 {
+  background-color: #4c4c4c !important; }
+
+a.bg-gray-800:hover, a.bg-gray-800:focus,
+button.bg-gray-800:hover,
+button.bg-gray-800:focus {
+  background-color: #333333 !important; }
+
+.bg-gray-900 {
+  background-color: #333333 !important; }
+
+a.bg-gray-900:hover, a.bg-gray-900:focus,
+button.bg-gray-900:hover,
+button.bg-gray-900:focus {
+  background-color: #1a1a1a !important; }
 
 .text-light {
   color: #999999 !important; }
@@ -11412,6 +11461,60 @@ a.text-default:hover, a.text-default:focus {
   color: #333333 !important; }
 
 a.text-dark:hover, a.text-dark:focus {
+  color: #1a1a1a !important; }
+
+.gray-100 {
+  color: #fbfbfb !important; }
+
+a.gray-100:hover, a.gray-100:focus {
+  color: #e2e2e2 !important; }
+
+.gray-200 {
+  color: #f6f6f6 !important; }
+
+a.gray-200:hover, a.gray-200:focus {
+  color: #dddddd !important; }
+
+.gray-300 {
+  color: #ececec !important; }
+
+a.gray-300:hover, a.gray-300:focus {
+  color: lightgray !important; }
+
+.gray-400 {
+  color: #d1d1d1 !important; }
+
+a.gray-400:hover, a.gray-400:focus {
+  color: #b8b8b8 !important; }
+
+.gray-500 {
+  color: #b5b5b5 !important; }
+
+a.gray-500:hover, a.gray-500:focus {
+  color: #9c9c9c !important; }
+
+.gray-600 {
+  color: #999999 !important; }
+
+a.gray-600:hover, a.gray-600:focus {
+  color: gray !important; }
+
+.gray-700 {
+  color: #666666 !important; }
+
+a.gray-700:hover, a.gray-700:focus {
+  color: #4d4d4d !important; }
+
+.gray-800 {
+  color: #4c4c4c !important; }
+
+a.gray-800:hover, a.gray-800:focus {
+  color: #333333 !important; }
+
+.gray-900 {
+  color: #333333 !important; }
+
+a.gray-900:hover, a.gray-900:focus {
   color: #1a1a1a !important; }
 
 /*# sourceMappingURL=fluid-bootstrap.css.map */
