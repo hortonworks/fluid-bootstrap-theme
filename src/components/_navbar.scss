@@ -17,7 +17,8 @@
   justify-content: flex-start;
   align-items: unset;
   background-color: $navbar-bg !important;
-  z-index: 9999;
+  z-index: 1030;
+  overflow: hidden;
   @include transition($transition-collapse-all);
 
   &.collapsing {
@@ -25,6 +26,10 @@
 
     .navbar-brand[data-toggle="collapse"]:after {
       opacity: 0;
+    }
+
+    .navbar-collapse {
+      width: $navbar-width;
     }
   }
 
@@ -49,8 +54,9 @@
 
       .nav-item.nav-link,
       .nav-item > .nav-link {
-        height: px(38) !important;
+        height: $navbar-nav-link-height !important;
         width: $navbar-width;
+        padding-left: $navbar-nav-link-icon-size !important;
 
         &.status:before {
           left: px(30) !important;
@@ -58,15 +64,16 @@
 
         i:first-child,
         .fa:first-child {
-          width: px(16) !important;
+          width: $navbar-nav-link-icon-size !important;
           margin-right: px(8) !important;
-          font-size: px(16) !important;
+          font-size: $navbar-nav-link-icon-size !important;
+          line-height: 0 !important;
         }
       }
 
       &.collapse.show {
-        display: initial !important;
-        position: initial;
+        display: block !important;
+        position: static;
       }
     }
   }
@@ -106,17 +113,13 @@
       }
 
       .navbar-nav {
-        overflow: hidden;
-
-        &.collapsing {
-          @extend .collapse;
-        }
+        width: $navbar-width-sm;
 
         &.collapse {
           position: relative;
-          left: px(50);
-          top: px(-50);
-          width: $navbar-width - px(24);
+          left: $navbar-nav-link-height-collapsed;
+          top: $navbar-nav-link-height-collapsed * -1;
+          width: $navbar-width - px(14);
           background-color: $navbar-bg;
           overflow: visible;
           transition: none;
@@ -127,11 +130,12 @@
 
           .nav-item.nav-link,
           .nav-item > .nav-link {
-            height: px(38);
+            height: $navbar-nav-link-height;
+            padding-left: px(26);
             overflow: hidden;
 
             &.status:before {
-              left: px(6);
+              left: px(16);
             }
 
             i:first-child,
@@ -148,12 +152,14 @@
           &:hover + .navbar-nav.collapsing,
           & + .navbar-nav.collapse:hover  {
             display: initial;
+            position: fixed;
           }
         }
 
         .nav-item.nav-link,
         .nav-item > .nav-link {
-          height: px(50);
+          height: $navbar-nav-link-height-collapsed;
+          overflow: visible;
 
           &:after {
             opacity: 0;
@@ -164,6 +170,7 @@
             width: px(19);
             margin-right: px(16);
             font-size: px(19);
+            line-height: px(14);
           }
         }
 
@@ -185,18 +192,42 @@
   }
 
   .navbar-nav {
+    width: $navbar-width;
+
+    &.collapsing {
+      position: static;
+    }
 
     &[data-toggle="collapse"] {
 
-      .nav-item.nav-link:after,
-      .nav-item > .nav-link:after {
-        position: absolute;
-        top: 50%;
-        right: px(12);
-        content: $fa-var-angle-up;
-        font-family: "FontAwesome";
-        font-size: px(20);
-        //@include transition($transition-collapse-all);
+      .nav-item {
+
+        &.nav-link,
+        & > .nav-link {
+          padding-right: px(32);
+
+          &:after {
+            position: absolute;
+            top: px(11);
+            right: px(12);
+            content: $fa-var-angle-up;
+            font-family: "FontAwesome";
+            font-size: px(20);
+            //@include transition($transition-collapse-all);
+          }
+        }
+
+        &.dropdown {
+
+          &.nav-link,
+          & > .nav-link {
+            padding-right: px(40);
+          }
+
+          & .dropdown-toggle {
+            right: px(28);
+          }
+        }
       }
 
       &.collapsed {
@@ -221,10 +252,11 @@
       &.nav-link,
       > .nav-link {
         position: relative;
-        height: px(38);
+        height: $navbar-nav-link-height;
         padding: px(12) px(16);
-        line-height: 0;
+        line-height: 1;
         white-space: nowrap;
+        text-overflow: ellipsis;
         overflow: hidden;
         @include transition($transition-collapse-all);
 
@@ -245,12 +277,11 @@
 
         i:first-child,
         .fa:first-child {
-          position: relative;
-          top: 50%;
-          transform: translateY(-50%);
-          width: px(16);
+          width: $navbar-nav-link-icon-size;
+          margin-top: px(8);
           margin-right: px(8);
-          font-size: px(16);
+          font-size: $navbar-nav-link-icon-size;
+          line-height: 0;
           vertical-align: text-top;
           @include transition($transition-collapse-all);
         }
@@ -258,12 +289,17 @@
 
       &.dropdown {
 
+        &.nav-link,
+        & > .nav-link {
+          padding-right: px(24);
+        }
+
         .dropdown-toggle {
           position: absolute;
-          height: px(38);
+          height: $navbar-nav-link-height;
           width: px(19);
           top: 0;
-          right: px(28);
+          right: px(8);
           color: inherit;
 
           &:after {
@@ -284,6 +320,7 @@
         .dropdown-menu {
           top: px(36);
           left: px(154);
+          position: fixed;
         }
       }
 
@@ -304,10 +341,8 @@
 }
 
 .navbar-brand {
-  position: relative;
-  height: px(62); // 2 extra px to compensate for default padding
+  height: $navbar-brand-height;
   margin: 0;
-  margin-bottom: px(5);
   padding-left: px(12.5);
   display: flex;
   flex-direction: row !important;
@@ -316,19 +351,20 @@
   background-color: $navbar-brand-bg;
   text-transform: uppercase;
   white-space: nowrap;
-  line-height: px(60);
-  overflow: hidden;
+  line-height: $navbar-brand-height;
+  z-index: 1030;
   @include transition($transition-collapse-all);
 
   &[data-toggle="collapse"] {
 
     &:after {
-      margin-left: px(8);
+      position: absolute;
+      right: px(12.5);
       content: $fa-var-angle-up;
       color: theme-color("primary");
       font-family: "FontAwesome";
-      font-size: px(16);
-      font-size: px(32);
+      font-size: px(30);
+      z-index: 1030; // Edge
     }
 
     &.collapsed:after {
@@ -344,12 +380,15 @@
 
   i:first-child,
   .fa:first-child {
-    position: relative;
-    width: px(25);
+    width: $navbar-nav-link-icon-size-collapsed;
     margin-right: px(8);
     flex-shrink: 0;
-    font-size: px(25);
+    font-size: $navbar-nav-link-icon-size-collapsed;
     @include transition($transition-collapse-all);
+  }
+
+  & ~ .navbar-collapse {
+    padding-top: $navbar-brand-height + $navbar-nav-padding;
   }
 }
 
@@ -357,10 +396,10 @@
 .brand-menu.show {
   @extend .dropdown-menu;
   position: fixed;
-  top: px(60);
+  top: $navbar-brand-height;
   padding: 0;
-  padding-left: px(20);
-  padding-right: px(20);
+  padding-left: $navbar-brand-menu-spacing;
+  padding-right: $navbar-brand-menu-spacing;
   max-width: px(617);
   display: flex;
   flex-direction: row !important;
@@ -371,17 +410,17 @@
   // thus avoiding a noticeable pause at the end of the animation.
   &:before, &:after {
     content: " ";
-    height: px(20);
+    height: $navbar-brand-menu-spacing;
     width: 100%;
   }
 
   &:after {
-    height: px(17);
+    height: $navbar-brand-menu-spacing - px(3); // 3 less px to compensate for font line height
   }
 
   .brand-menu-item {
-    width: px(75);
-    margin: px(20);
+    width: $navbar-brand-menu-item-size;
+    margin: $navbar-brand-menu-spacing;
     line-height: $font-size-base;
     white-space: nowrap;
     text-align: center;
@@ -389,16 +428,16 @@
     i,
     span.fa {
       display: block;
-      width: px(75);
-      height: px(75);
+      width: $navbar-brand-menu-item-size;
+      height: $navbar-brand-menu-item-size;
       color: color("white");
       background-color: color("blue");
-      margin-bottom: px(10);
+      margin-bottom: $navbar-brand-menu-spacing / 2;
       border-radius: $border-radius;
 
       &:before {
         font-size: px(40);
-        line-height: px(75);
+        line-height: $navbar-brand-menu-item-size;
       }
     }
 
@@ -413,7 +452,15 @@
 }
 
 .navbar-collapse {
-  position: relative;
+  position: absolute;
+  height: 100%;
+  padding-top: $navbar-nav-padding;
+  padding-bottom: $navbar-nav-padding;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .navbar-toggler {
@@ -426,16 +473,17 @@
   background-color: $navbar-brand-bg;
   border: none;
   border-radius: 0;
-  z-index: 999;
+  z-index: 1030;
 
   // Create a fade out effect as menu items overflow vertically
   &:before {
     position: absolute;
     left: 0;
     bottom: 100%;
-    height: px(50);
+    height: $navbar-nav-link-height-collapsed;
     width: 100%;
     content: " ";
+    pointer-events: none;
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, $navbar-bg 100%);
   }
 
@@ -461,6 +509,16 @@
       font-family: "FontAwesome";
       font-size: px(20);
       color: theme-color("primary");
+
+      /* For Firefox and Safari */
+      position: absolute;
+      bottom: 0;
+      transform: translateX(-50%);
+      /**************************/
     }
+  }
+
+  & ~ .navbar-collapse {
+    padding-bottom: $navbar-nav-link-height-collapsed * 2;
   }
 }
