@@ -7,11 +7,14 @@
  */
 
 .popover {
-  @include box-shadow($box-shadow-sm);
+  box-shadow: $box-shadow-lg;
+
   .arrow {
     margin: 0 $border-radius;
   }
+
   &.popover-no-arrow {
+
     .arrow {
       display: none;
     }

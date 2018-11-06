@@ -7,9 +7,8 @@
  */
 
 .alert {
-  //box-shadow: 1px 1px 5px 0 gray("600");
-  box-shadow: $box-shadow;
-  font-size: px(12);
+  box-shadow: $box-shadow-lg;
+  font-size: $font-size-sm;
 
   > div {
     margin-left: px(40);
@@ -25,9 +24,7 @@
 
   &:after {
     content: "\00d7"; // &times;
-    font-family: "Roboto";
-    font-size: px(16);
-    color: gray("600");
+    font-size: $font-size-sm;
     position: absolute;
     right: px(5);
     top: 0;
@@ -39,7 +36,7 @@
   }
 
   .alert-header {
-    font-size: px(14);
+    font-size: $font-size-base;
   }
 }
 
@@ -56,7 +53,7 @@
 }
 
 .alert-default {
-  border-color: $gray-300;
+  border-color: $border-color;
 
   > div {
     margin-left: inherit;

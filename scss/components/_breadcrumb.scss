@@ -6,14 +6,18 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-.breadcrumb-item {
-  font-size: px(20);
+.breadcrumb {
 
-  &.active {
-    color: gray("900");
-  }
+  .breadcrumb-item {
+    font-size: px(20);
 
-  a {
-    color: gray("600");
+    &.active {
+      color: gray("900");
+    }
+
+    a {
+      color: gray("600");
+    }
   }
 }
+

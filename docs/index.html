@@ -170,29 +170,48 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
     </div>
   </nav>
-  <header class="header-top">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <h1 class="text-default">Fluid Bootstrap 4 Theme Test Page</h1>
-        </div>
-      </div>
-    </div>
-  </header>
+  <nav class="fixed-top">
+    <h1 class="text-default">Fluid Bootstrap 4 Theme Test Page</h1>
+  </nav>
   <main>
     <section id="layout">
-      <div class="container-fluid section-heading">
-        <h2><i class="fa fa-th-large mr-1"></i> Layout</h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/layout/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Layout docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <header>
+              <h2><i class="fa fa-th-large mr-1"></i> Layout</h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/layout/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Layout docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
       </div>
       <div class="container-fluid">
         <div class="row pb-3">
           <div class="col-12">
             <div class="card">
               <div class="card-body">
+                <h3 class="card-title">Semantics</h3>
+                <p>
+                  <a href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics" target="_blank">Semantic</a> markup should be used to structure layouts. The main semantic components in Fluid are:
+                  <ul>
+                    <li>Left navbar - contains primary branding and navigation; represented by a <code>&lt;nav class="navbar"&gt;</code> tag</li>
+                    <li>Top nav - contains secondary branding and navigation (such as breadcrumbs) and may contain other application level components (i.e. current user info, notifications, etc.); represented by a <code>&lt;nav class="fixed-top"&gt;</code> tag that is a direct child of the <code>&lt;body&gt;</code></li>
+                    <li>Main content - contains all other application content; represented by the <code>&lt;main&gt;</code> tag
+                      <ul>
+                        <li>Sections - use to divide major content areas; represented by <code>&lt;section&gt;</code> tags
+                      </ul>
+                    </li>
+                    <li>Main footer - may contain tertiary branding/navigation and copyright/legal information, etc.; represented by the last <code>&lt;footer&gt;</code> tag that is a direct child of the <code>&lt;body&gt;</code></li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Responsiveness</h3>
                 <p>FLUID is designed for large screens. Therefore, the minimum width of the entire layout is limited by setting <code>min-width: 1024px</code> on the <code>&lt;body&gt;</code>, below which a horizontal scrollbar will appear. The maximum width of <code>.container-fluid</code> has been set to 1920px, above which the container will have equal left and right margins to fill up the remaining space. Generally, you should use <code>.container-fluid</code> so that layouts scale fluidly between these extremes. (The default breakpoints for <code>.container</code> have not been changed.)</p>
                 <p>The main <code>&lt;header class=".header-top"&gt;</code> and <code>&lt;footer class=".footer-bottom"&gt;</code> should not be placed inside any container so that they can stretch to the full width of the window.</p>
                 <p>Observe the behavior of the example containers below and the header/footer on this page as you change the width of the window to understand the desired behavior.</p>
@@ -225,54 +244,54 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
     </section>
     <section id="typography">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-text-height mr-1"></span>
-          Typography
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/content/typography/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Typography docs"><span class="fa fa-book"></span></a>
-          <a href="https://getbootstrap.com/docs/4.0/content/code/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Code docs"><span class="fa fa-book"></span></a>
-          <a href="https://getbootstrap.com/docs/4.0/utilities/text/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Text utility docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row pb-3">
           <div class="col-12">
+            <header>
+              <h2>
+                <span class="fa fa-text-height mr-1"></span>
+                Typography
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/content/typography/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Typography docs"><span class="fa fa-book"></span></a>
+                <a href="https://getbootstrap.com/docs/4.0/content/code/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Code docs"><span class="fa fa-book"></span></a>
+                <a href="https://getbootstrap.com/docs/4.0/utilities/text/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Text utility docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
             <h3>Fonts</h3>
             <div class="card-deck">
               <div class="card">
-                <h4 class="card-header">Text</h4>
                 <div class="card-body">
-                  <h5 class="card-title">Regular</h5>
+                  <h4 class="card-title">Text</h4>
+                  <h5 class="card-subtitle">Regular</h5>
                   <div class="specimen border">
-                    <small class="text-light">Roboto Regular (font-weight: 400)</small>
-                    <p class="h6 text-light">Roboto Regular (font-weight: 400)</p>
-                    <p class="h5 text-light">Roboto Regular (font-weight: 400)</p>
-                    <p class="h4 text-light">Roboto Regular (font-weight: 400)</p>
-                    <p class="h3 text-light">Roboto Regular (font-weight: 400)</p>
-                    <p class="h2 text-light">Roboto Regular (font-weight: 400)</p>
-                    <p class="h1 text-light">Roboto Regular (font-weight: 400)</p>
+                    <small>Roboto Regular (font-weight: 400)</small>
+                    <p class="h6 text-default">Roboto Regular (font-weight: 400)</p>
+                    <p class="h5 text-default">Roboto Regular (font-weight: 400)</p>
+                    <p class="h4 text-default">Roboto Regular (font-weight: 400)</p>
+                    <p class="h3 text-default">Roboto Regular (font-weight: 400)</p>
+                    <p class="h2 text-default">Roboto Regular (font-weight: 400)</p>
+                    <p class="h1 text-default">Roboto Regular (font-weight: 400)</p>
                   </div>
-                  <h5 class="card-title">Bold</h5>
+                  <h5 class="card-subtitle">Bold</h5>
                   <div class="specimen border">
-                    <small class="text-light"><strong>Roboto Bold (font-weight: 700)</strong></small>
-                    <p class="h6 text-light"><strong>Roboto Bold (font-weight: 700)</strong></p>
-                    <p class="h5 text-light"><strong>Roboto Bold (font-weight: 700)</strong></p>
-                    <p class="h4 text-light"><strong>Roboto Bold (font-weight: 700)</strong></p>
-                    <p class="h3 text-light"><strong>Roboto Bold (font-weight: 700)</strong></p>
-                    <p class="h2 text-light"><strong>Roboto Bold (font-weight: 700)</strong></p>
-                    <p class="h1 text-light"><strong>Roboto Bold (font-weight: 700)</strong></p>
+                    <small><strong>Roboto Bold (font-weight: 700)</strong></small>
+                    <p class="h6 text-default"><strong>Roboto Bold (font-weight: 700)</strong></p>
+                    <p class="h5 text-default"><strong>Roboto Bold (font-weight: 700)</strong></p>
+                    <p class="h4 text-default"><strong>Roboto Bold (font-weight: 700)</strong></p>
+                    <p class="h3 text-default"><strong>Roboto Bold (font-weight: 700)</strong></p>
+                    <p class="h2 text-default"><strong>Roboto Bold (font-weight: 700)</strong></p>
+                    <p class="h1 text-default"><strong>Roboto Bold (font-weight: 700)</strong></p>
                   </div>
                 </div>
               </div>
               <div class="card">
-                <h4 class="card-header">Icons</h4>
                 <div class="card-body">
+                  <h4 class="card-title">Icons</h4>
                   <p><a href="https://fontawesome.com/v4.7.0/" target="_blank">Font Awesome 4.7</a></p>
                 </div>
               </div>
@@ -284,9 +303,9 @@ of all or any part of the contents of this file is strictly prohibited.
             <h3>Colors</h3>
             <div class="card-deck">
               <div class="card">
-                <h4 class="card-header">Light Text (color:&nbsp;#999999;)</h4>
                 <div class="card-body">
-                  <h5 class="card-title">On .bg&#8209;white</h5>
+                  <h4 class="card-title">Light Text (color:&nbsp;#999999;)</h4>
+                  <h5 class="card-subtitle">On .bg&#8209;white</h5>
                   <div class="specimen border">
                     <small class="text-light">small.text-light</small>
                     <p class="h6 text-light">h6.text-light</p>
@@ -296,7 +315,7 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-light">h2.text-light</p>
                     <p class="h1 text-light">h1.text-light</p>
                   </div>
-                  <h5 class="card-title">On .bg&#8209;light</h5>
+                  <h5 class="card-subtitle">On .bg&#8209;light</h5>
                   <div class="bg-light specimen">
                     <small class="text-light">small.text-light</small>
                     <p class="h6 text-light">h6.text-light</p>
@@ -306,7 +325,7 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-light">h2.text-light</p>
                     <p class="h1 text-light">h1.text-light</p>
                   </div>
-                  <h5 class="card-title">On .bg&#8209;dark</h5>
+                  <h5 class="card-subtitle">On .bg&#8209;dark</h5>
                   <div class="bg-dark specimen">
                     <small class="text-light">small.text-light</small>
                     <p class="h6 text-light">h6.text-light</p>
@@ -319,9 +338,9 @@ of all or any part of the contents of this file is strictly prohibited.
                 </div>
               </div>
               <div class="card">
-                <h4 class="card-header">Default Text (color:&nbsp;#666666;)</h4>
                 <div class="card-body">
-                  <h5 class="card-title">On .bg&#8209;white</h5>
+                  <h4 class="card-title">Default Text (color:&nbsp;#666666;)</h4>
+                  <h5 class="card-subtitle">On .bg&#8209;white</h5>
                   <div class="specimen border">
                     <small class="text-default">small.text-default</small>
                     <p class="h6 text-default">h6.text-default</p>
@@ -331,7 +350,7 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-default">h2.text-default</p>
                     <p class="h1 text-default">h1.text-default</p>
                   </div>
-                  <h5 class="card-title">On .bg&#8209;light</h5>
+                  <h5 class="card-subtitle">On .bg&#8209;light</h5>
                   <div class="bg-light specimen">
                     <small class="text-default">small.text-dark</small>
                     <p class="h6 text-default">h6.text-default</p>
@@ -341,7 +360,7 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-default">h2.text-default</p>
                     <p class="h1 text-default">h1.text-default</p>
                   </div>
-                  <h5 class="card-title">On .bg&#8209;dark</h5>
+                  <h5 class="card-subtitle">On .bg&#8209;dark</h5>
                   <div class="bg-dark specimen">
                     <small class="text-default">small.text-dark</small>
                     <p class="h6 text-default">h6.text-default</p>
@@ -354,9 +373,9 @@ of all or any part of the contents of this file is strictly prohibited.
                 </div>
               </div>
               <div class="card">
-                <h4 class="card-header">Dark Text (color:&nbsp;#999999;)</h4>
                 <div class="card-body">
-                  <h5 class="card-title">On .bg&#8209;white</h5>
+                  <h4 class="card-title">Dark Text (color:&nbsp;#999999;)</h4>
+                  <h5 class="card-subtitle">On .bg&#8209;white</h5>
                   <div class="specimen border">
                     <small class="text-dark">small.text-dark</small>
                     <p class="h6 text-dark">h6.text-dark</p>
@@ -366,7 +385,7 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-dark">h2.text-dark</p>
                     <p class="h1 text-dark">h1.text-dark</p>
                   </div>
-                  <h5 class="card-title">On .bg&#8209;light</h5>
+                  <h5 class="card-subtitle">On .bg&#8209;light</h5>
                   <div class="bg-light specimen">
                     <small class="text-dark">small.text-dark</small>
                     <p class="h6 text-dark">h6.text-dark</p>
@@ -376,7 +395,7 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-dark">h2.text-dark</p>
                     <p class="h1 text-dark">h1.text-dark</p>
                   </div>
-                  <h5 class="card-title">On .bg&#8209;dark</h5>
+                  <h5 class="card-subtitle">On .bg&#8209;dark</h5>
                   <div class="bg-dark specimen">
                     <small class="text-dark">small.text-dark</small>
                     <p class="h6 text-dark">h6.text-dark</p>
@@ -396,50 +415,50 @@ of all or any part of the contents of this file is strictly prohibited.
             <h3>Sizes</h3>
             <div class="card-columns">
               <div class="card">
-                <h4 class="card-header">Heading 1</h4>
                 <div class="card-body">
-                  <div class="h1">font&#8209;size:&nbsp;28px; font&#8209;color:&nbsp;#333333;</div>
+                  <h4 class="card-title">Heading 1</h4>
+                  <div class="h1">font&#8209;size:&nbsp;28px;</div>
                 </div>
               </div>
               <div class="card">
-                <h4 class="card-header">Heading 2</h4>
                 <div class="card-body">
-                  <div class="h2">font&#8209;size:&nbsp;24px; font&#8209;color:&nbsp;#333333;</div>
+                  <h4 class="card-title">Heading 2</h4>
+                  <div class="h2">font&#8209;size:&nbsp;24px;</div>
                 </div>
               </div>
               <div class="card">
-                <h4 class="card-header">Heading 3</h4>
                 <div class="card-body">
-                  <div class="h3">font&#8209;size:&nbsp;20px; font&#8209;color:&nbsp;#333333;</div>
+                  <h4 class="card-title">Heading 3</h4>
+                  <div class="h3">font&#8209;size:&nbsp;20px;</div>
                 </div>
               </div>
               <div class="card">
-                <h4 class="card-header">Heading 4</h4>
                 <div class="card-body">
-                  <div class="h4">font&#8209;size:&nbsp;16px; font&#8209;color:&nbsp;#333333;</div>
+                  <h4 class="card-title">Heading 4</h4>
+                  <div class="h4">font&#8209;size:&nbsp;16px;</div>
                 </div>
               </div>
               <div class="card">
-                <h4 class="card-header">Heading 5</h4>
                 <div class="card-body">
-                  <div class="h5">font&#8209;size:&nbsp;15px; font&#8209;color:&nbsp;#333333;</div>
+                  <h4 class="card-title">Heading 5</h4>
+                  <div class="h5">font&#8209;size:&nbsp;15px;</div>
                 </div>
               </div>
               <div class="card">
-                <h4 class="card-header">Heading 6</h4>
                 <div class="card-body">
-                  <div class="h6">font&#8209;size:&nbsp;14px; font&#8209;color:&nbsp;#333333;</div>
+                  <h4 class="card-title">Heading 6</h4>
+                  <div class="h6">font&#8209;size:&nbsp;14px;</div>
                 </div>
               </div>
               <div class="card">
-                <h4 class="card-header">Body Text</h4>
                 <div class="card-body">
+                  <h4 class="card-title">Body Text</h4>
                   <p>font&#8209;size:&nbsp;14px;</p>
                 </div>
               </div>
               <div class="card">
-                <h4 class="card-header">Small Text</h4>
                 <div class="card-body">
+                  <h4 class="card-title">Small Text</h4>
                   <p><small>font&#8209;size:&nbsp;10px;</small></p>
                   <p>Use for tooltips and other fine print.</p>
                 </div>
@@ -450,128 +469,132 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
     </section>
     <section id="colors">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-eyedropper mr-1"></span>
-          Colors
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/utilities/colors/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Color utility docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
-        <div class="row pb-3">
-          <div class="col-3">
-            <h3>Grays</h3>
-            <div class="swatch bg-gray-100">
-              <div>.*&#8209;gray&#8209;100</div>
-              <div>#fbfbfb</div>
-            </div>
-            <div class="swatch bg-gray-200">
-              <div>.*&#8209;gray&#8209;200</div>
-              <div>#f6f6f6</div>
-            </div>
-            <div class="swatch bg-gray-300 border">
-              <div>.*&#8209;gray&#8209;300</div>
-              <div>.bg&#8209;light</div>
-              <div>#ececec</div>
-            </div>
-            <div class="swatch bg-gray-400">
-              <div>.*&#8209;gray&#8209;400</div>
-              <div>#d1d1d1</div>
-            </div>
-            <div class="swatch bg-gray-500 text-white">
-              <div>.*&#8209;gray&#8209;500</div>
-              <div>#b5b5b5</div>
-            </div>
-            <div class="swatch bg-gray-600 text-white">
-              <div>.*&#8209;gray&#8209;600</div>
-              <div>.text&#8209;light</div>
-              <div>#999999</div>
-            </div>
-            <div class="swatch bg-gray-700 text-white">
-              <div>.*&#8209;gray&#8209;700</div>
-              <div>(default text)</div>
-              <div>#666666</div>
-            </div>
-            <div class="swatch bg-gray-800 text-white">
-              <div>.*&#8209;gray&#8209;800</div>
-              <div>#4c4c4c</div>
-            </div>
-            <div class="swatch bg-gray-900 text-white">
-              <div>.*&#8209;gray&#8209;900</div>
-              <div>.*&#8209;dark</div>
-              <div>#333333</div>
-            </div>
-          </div>
-          <div class="col-3">
-            <h3>Theme Colors</h3>
-            <div class="swatch bg-primary text-white">
-              <div>.*&#8209;primary</div>
-              <div>#fbfbfb</div>
-            </div>
-            <div class="swatch bg-success text-white">
-              <div>.*&#8209;success</div>
-              <div>#fbfbfb</div>
-            </div>
-            <div class="swatch bg-warning text-white">
-              <div>.*&#8209;warning</div>
-              <div>#fbfbfb</div>
-            </div>
-            <div class="swatch bg-danger text-white">
-              <div>.*&#8209;danger</div>
-              <div>#fbfbfb</div>
-            </div>
-            <div class="swatch bg-info text-white">
-              <div>.*&#8209;info</div>
-              <div>links</div>
-              <div>#fbfbfb</div>
+        <header>
+          <h2>
+            <span class="fa fa-eyedropper mr-1"></span>
+            Colors
+          </h2>
+          <h2>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/colors/" target="_blank" data-toggle="tooltip"
+              data-placement="bottom" title="" data-original-title="Color utility docs"><span class="fa fa-book"></span></a>
+            <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+          </h2>
+        </header>
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Grays</h3>
+              <div class="swatch bg-gray-100">
+                <div>.*&#8209;gray&#8209;100</div>
+                <div>#fbfbfb</div>
+              </div>
+              <div class="swatch bg-gray-200">
+                <div>.*&#8209;gray&#8209;200</div>
+                <div>#f6f6f6</div>
+              </div>
+              <div class="swatch bg-gray-300">
+                <div>.*&#8209;gray&#8209;300</div>
+                <div>.bg&#8209;light</div>
+                <div>#ececec</div>
+              </div>
+              <div class="swatch bg-gray-400">
+                <div>.*&#8209;gray&#8209;400</div>
+                <div>#d1d1d1</div>
+              </div>
+              <div class="swatch bg-gray-500 text-white">
+                <div>.*&#8209;gray&#8209;500</div>
+                <div>#b5b5b5</div>
+              </div>
+              <div class="swatch bg-gray-600 text-white">
+                <div>.*&#8209;gray&#8209;600</div>
+                <div>.text&#8209;light</div>
+                <div>#999999</div>
+              </div>
+              <div class="swatch bg-gray-700 text-white">
+                <div>.*&#8209;gray&#8209;700</div>
+                <div>(default text)</div>
+                <div>#666666</div>
+              </div>
+              <div class="swatch bg-gray-800 text-white">
+                <div>.*&#8209;gray&#8209;800</div>
+                <div>#4c4c4c</div>
+              </div>
+              <div class="swatch bg-gray-900 text-white">
+                <div>.*&#8209;gray&#8209;900</div>
+                <div>.*&#8209;dark</div>
+                <div>#333333</div>
+              </div>
             </div>
           </div>
-          <div class="col-3">
-            <h3>Reserved Colors</h3>
-            <div class="swatch text-white" style="background-color: #313d54;">
-              <div>brand background</div>
-              <div>#313d54</div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Theme Colors</h3>
+              <div class="swatch bg-primary text-white">
+                <div>.*&#8209;primary</div>
+                <div>#fbfbfb</div>
+              </div>
+              <div class="swatch bg-success text-white">
+                <div>.*&#8209;success</div>
+                <div>#fbfbfb</div>
+              </div>
+              <div class="swatch bg-warning text-white">
+                <div>.*&#8209;warning</div>
+                <div>#fbfbfb</div>
+              </div>
+              <div class="swatch bg-danger text-white">
+                <div>.*&#8209;danger</div>
+                <div>#fbfbfb</div>
+              </div>
+              <div class="swatch bg-info text-white">
+                <div>.*&#8209;info</div>
+                <div>links</div>
+                <div>#fbfbfb</div>
+              </div>
             </div>
-            <div class="swatch text-white" style="background-color: #304e73;">
-              <div>brand hover</div>
-              <div>#304e73</div>
-            </div>
-            <div class="swatch text-white" style="background-color: #313544;">
-              <div>navbar background</div>
-              <div>#313544</div>
-            </div>
-            <div class="swatch text-white" style="background-color: #414354;">
-              <div>active navbar item</div>
-              <div>#414354</div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Reserved Colors</h3>
+              <div class="swatch text-white" style="background-color: #313d54;">
+                <div>brand background</div>
+                <div>#313d54</div>
+              </div>
+              <div class="swatch text-white" style="background-color: #304e73;">
+                <div>brand hover</div>
+                <div>#304e73</div>
+              </div>
+              <div class="swatch text-white" style="background-color: #313544;">
+                <div>navbar background</div>
+                <div>#313544</div>
+              </div>
+              <div class="swatch text-white" style="background-color: #414354;">
+                <div>active navbar item</div>
+                <div>#414354</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <section id="accordion">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-angle-down mr-1"></span>
-          Accordion
-        </h2>
-        <h2>
-          <a href="http://productdesign.hortonworks.com/accordions/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Image docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <!-- Example starts here -->
+            <header>
+              <h2>
+                <span class="fa fa-angle-down mr-1"></span>
+                Accordion
+              </h2>
+              <h2>
+                <a href="http://productdesign.hortonworks.com/accordions/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Image docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
             <div class="accordion" id="accordionExample">
               <div class="card">
-                <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
-                  aria-expanded="true" aria-controls="collapseOne">
+                <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   Collapsible Group Item #1
                 </div>
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -587,8 +610,7 @@ of all or any part of the contents of this file is strictly prohibited.
                 </div>
               </div>
               <div class="card">
-                <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo"
-                  aria-expanded="false" aria-controls="collapseTwo">
+                <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Collapsible Group Item #2
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
@@ -604,8 +626,7 @@ of all or any part of the contents of this file is strictly prohibited.
                 </div>
               </div>
               <div class="card">
-                <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree"
-                  aria-expanded="false" aria-controls="collapseThree">
+                <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   Collapsible Group Item #3
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -621,29 +642,31 @@ of all or any part of the contents of this file is strictly prohibited.
                 </div>
               </div>
             </div>
-            <!-- Example ends here -->
           </div>
         </div>
       </div>
     </section>
     <section id="alerts">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-bell mr-1"></span>
-          Alerts
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/alerts/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Alert docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <h3>Simple alerts</h3>
+        <header>
+          <h2>
+            <span class="fa fa-bell mr-1"></span>
+            Alerts
+          </h2>
+          <h2>
+            <a href="https://getbootstrap.com/docs/4.0/components/alerts/" target="_blank" data-toggle="tooltip"
+              data-placement="bottom" title="" data-original-title="Alert docs"><span class="fa fa-book"></span></a>
+            <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+          </h2>
+        </header>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Simple alerts</h3>
             <div class="alert alert-default" role="alert">
               <div class="alert-header">.alert-default</div>
+            </div>
+            <div class="alert alert-info" role="alert">
+              <div class="alert-header">.alert-info</div>
             </div>
             <div class="alert alert-success" role="alert">
               <div class="alert-header">.alert-success</div>
@@ -656,11 +679,15 @@ of all or any part of the contents of this file is strictly prohibited.
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <h3>Alerts with additional content</h3>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Alerts with additional content</h3>
             <div class="alert alert-default" role="alert">
               <div class="alert-header">.alert-default</div>
+              <div>Here's some more information.</div>
+            </div>
+            <div class="alert alert-info" role="alert">
+              <div class="alert-header">.alert-info</div>
               <div>Here's some more information.</div>
             </div>
             <div class="alert alert-success" role="alert">
@@ -680,168 +707,195 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
     </section>
     <section id="badges">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-info-circle mr-1"></span>
-          Badges
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/badge/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Badge docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6">
-            <h3 class="mt-5">Pill badges</h3>
-            <p>
+        <header>
+          <h2>
+            <span class="fa fa-info-circle mr-1"></span>
+            Badges
+          </h2>
+          <h2>
+            <a href="https://getbootstrap.com/docs/4.0/components/badge/" target="_blank" data-toggle="tooltip"
+              data-placement="bottom" title="" data-original-title="Badge docs"><span class="fa fa-book"></span></a>
+            <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+          </h2>
+        </header>
+        <div class="card-columns">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Pill badges</h3>
               <span class="badge badge-pill badge-default">Default</span>
               <span class="badge badge-pill badge-success">Success</span>
               <span class="badge badge-pill badge-danger">Danger</span>
               <span class="badge badge-pill badge-warning">Warning</span>
-            </p>
-            <h3 class="mt-5">Links</h3>
-            <p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Links</h3>
               <a href="javascript:void(0);" class="badge badge-pill badge-default">Default</a>
               <a href="javascript:void(0);" class="badge badge-pill badge-success">Success</a>
               <a href="javascript:void(0);" class="badge badge-pill badge-danger">Danger</a>
               <a href="javascript:void(0);" class="badge badge-pill badge-warning">Warning</a>
-            </p>
+            </div>
           </div>
-          <div class="col-md-6">
-            <h3 class="mt-5">Badges in headings</h3>
-            <h1>Example heading <span class="badge badge-pill badge-success">New</span></h1>
-            <h2>Example heading <span class="badge badge-pill badge-success">New</span></h2>
-            <h3>Example heading <span class="badge badge-pill badge-success">New</span></h3>
-            <h4>Example heading <span class="badge badge-pill badge-success">New</span></h4>
-            <h5>Example heading <span class="badge badge-pill badge-success">New</span></h5>
-            <h6>Example heading <span class="badge badge-pill badge-success">New</span></h6>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Badges in headings</h3>
+              <div class="h1">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h2">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h3">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h4">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h5">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h6">Example heading <span class="badge badge-pill badge-success">New</span></div>
+            </div>
           </div>
-          <div class="col-md-6">
-            <h3 class="mt-5">Badges on icons</h3>
-            <i class="fa fa-bell"><span class="badge badge-pill badge-danger">1</span></i>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Badges on icons</h3>
+              <i class="fa fa-bell"><span class="badge badge-pill badge-danger">1</span></i>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="breadcrumbs">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa mr-1">/</span>
-          Breadcrumbs
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/breadcrumb/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Breadcrumb docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Home</li>
-              </ol>
-            </nav>
-          </div>
-          <div class="col-12">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Library</li>
-              </ol>
-            </nav>
-          </div>
-          <div class="col-12">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
-              </ol>
-            </nav>
+            <header>
+              <h2>
+                <span class="fa mr-1">/</span>
+                Breadcrumbs
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/breadcrumb/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Breadcrumb docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">One Level</h3>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Home</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Two Levels</h3>
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="#">Home</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Library</li>
+                    </ol>
+                  </nav>
+                </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Three Levels</h3>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="buttons">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-square mr-1"></span>
-          Buttons
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/buttons/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Button docs"><span class="fa fa-book"></span></a>
-          <a href="https://getbootstrap.com/docs/4.0/components/button-group/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Button group docs"><span class="fa fa-book"></span></a>
-          <a href="https://getbootstrap.com/docs/4.0/components/dropdowns/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Dropdown docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <h3 class="mt-5">Normal State</h3>
-            <div class="my-1">
+            <header>
+              <h2>
+                <span class="fa fa-square mr-1"></span>
+                Buttons
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/buttons/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Button docs"><span class="fa fa-book"></span></a>
+                <a href="https://getbootstrap.com/docs/4.0/components/button-group/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Button group docs"><span class="fa fa-book"></span></a>
+                <a href="https://getbootstrap.com/docs/4.0/components/dropdowns/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Dropdown docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
+        <div class="card-columns">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Normal State</h3>
               <button class="btn btn-primary">Primary</button>
               <button class="btn btn-secondary">Secondary</button>
               <button class="btn btn-default">Default</button>
               <button class="btn btn-link">Link</button>
             </div>
-            <h3 class="mt-5">Active State</h3>
-            <div class="my-1">
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Active State</h3>
               <button class="btn btn-primary active">Primary</button>
               <button class="btn btn-secondary active">Secondary</button>
               <button class="btn btn-default active">Default</button>
               <button class="btn btn-link active">Link</button>
             </div>
-            <h3 class="mt-5">Disabled State</h3>
-            <div class="my-1">
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Disabled State</h3>
               <button class="btn btn-primary" disabled="">Primary</button>
               <button class="btn btn-secondary" disabled="">Secondary</button>
               <button class="btn btn-default" disabled="">Default</button>
               <button class="btn btn-link" disabled="">Link</button>
             </div>
           </div>
-          <div class="col-md-6">
-            <h3 class="mt-5">Groups and dropdown</h3>
-            <div class="btn-toolbar my-1" role="toolbar" aria-label="Toolbar with button groups">
-              <div class="btn-group mr-2" role="group" aria-label="First group">
-                <button type="button" class="btn btn-secondary">1</button>
-                <button type="button" class="btn btn-secondary">2</button>
-                <button type="button" class="btn btn-secondary">3</button>
-              </div>
-              <div class="btn-group mr-2" role="group" aria-label="Button group with nested dropdown">
-                <button type="button" class="btn btn-secondary">4</button>
-                <button type="button" class="btn btn-secondary">5</button>
-                <div class="btn-group" role="group">
-                  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <a class="dropdown-item" href="javascript:void(0);">Dropdown link</a>
-                    <a class="dropdown-item" href="javascript:void(0);">Dropdown link</a>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Groups and dropdown</h3>
+              <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                  <button type="button" class="btn btn-secondary">1</button>
+                  <button type="button" class="btn btn-secondary">2</button>
+                  <button type="button" class="btn btn-secondary">3</button>
+                </div>
+                <div class="btn-group mr-2" role="group" aria-label="Button group with nested dropdown">
+                  <button type="button" class="btn btn-secondary">4</button>
+                  <button type="button" class="btn btn-secondary">5</button>
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <a class="dropdown-item" href="javascript:void(0);">Dropdown link</a>
+                      <a class="dropdown-item" href="javascript:void(0);">Dropdown link</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="btn-group">
-                <button type="button" class="btn btn-secondary">Action</button>
-                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <h6 class="dropdown-header">Dropdown header</h6>
-                  <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                  <a class="dropdown-item disabled" href="javascript:void(0);">Disabled link</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-secondary">Action</button>
+                  <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <h6 class="dropdown-header">Dropdown header</h6>
+                    <a class="dropdown-item" href="javascript:void(0);">Action</a>
+                    <a class="dropdown-item disabled" href="javascript:void(0);">Disabled link</a>
+                    <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -850,475 +904,497 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
     </section>
     <section id="pagination">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-file-text mr-1"></span>
-          Pagination
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/pagination/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Pagination docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <nav class="pagination" aria-label="Page navigation example">
-              <div class="fade">
-                <div class="form-group">
-                  <label for="itemsPerPage">Show:</label>
-                  <select id="itemsPerPage">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                  </select>
-                </div>
-                <div class="form-group dropdown">
-                  <label for="goToPage">Go:</label>
-                  <input id="goToPage" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <ul class="dropdown-menu">
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
-                    <li class="page-item"><a class="page-link" href="#">500</a></li>
-                    <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1000</a></li>
-                  </ul>
-                </div>
+            <header>
+              <h2>
+                <span class="fa fa-file-text mr-1"></span>
+                Pagination
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/pagination/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Pagination docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+            <div class="card">
+              <div class="card-body">
+                <nav class="pagination" aria-label="Page navigation example">
+                  <div class="fade">
+                    <div class="form-group">
+                      <label for="itemsPerPage">Show:</label>
+                      <select id="itemsPerPage">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                    </div>
+                    <div class="form-group dropdown">
+                      <label for="goToPage">Go:</label>
+                      <input id="goToPage" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <ul class="dropdown-menu">
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                        <li class="page-item"><a class="page-link" href="#">500</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1000</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <span class="fade show">1-10 of 1000</span>
+                  <a class="page-link disabled" href="#" aria-label="Previous">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="page-link" href="#" aria-label="Next">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </nav>
               </div>
-              <span class="fade show">1-10 of 1000</span>
-              <a class="page-link disabled" href="#" aria-label="Previous">
-                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="page-link" href="#" aria-label="Next">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <span class="sr-only">Next</span>
-              </a>
-            </nav>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="tables">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-table mr-1"></span>
-          Tables
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/content/tables/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Table docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
-            <h3 class="mt-5">Table</h3>
-            <table class="table table-bordered table-striped table-hover">
-              <thead class="">
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-md-6">
-            <h3 class="mt-5">Inversed table</h3>
-            <table class="table table-bordered table-striped table-hover table-inverse">
-              <thead class="">
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="col-12">
+            <header>
+              <h2>
+                <span class="fa fa-table mr-1"></span>
+                Tables
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/content/tables/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Table docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <h3 class="mt-5">Table with colors</h3>
-            <p><strong>Note: </strong> Use <code>table-*</code> classes.</p>
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Column heading</th>
-                  <th>Column heading</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Default</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="table-active">
-                  <th scope="row">Active</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="table-primary">
-                  <th scope="row">Primary</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="table-secondary">
-                  <th scope="row">Secondary</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="table-success">
-                  <th scope="row">Success</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="table-danger">
-                  <th scope="row">Danger</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="table-warning">
-                  <th scope="row">Warning</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="table-info">
-                  <th scope="row">Info</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">Light</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="table-dark">
-                  <th scope="row">Dark</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="card-columns">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Table</h3>
+              <table class="table table-bordered table-striped table-hover">
+                <thead class="">
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="col-md-6">
-            <h3 class="mt-5">Inversed table with colors</h3>
-            <p><strong>Note: </strong> Use <code>bg-*</code> and <code>text-*</code> classes.</p>
-            <table class="table table-hover table-inverse">
-              <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Column heading</th>
-                  <th>Column heading</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Default</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="bg-primary ">
-                  <th scope="row">Primary</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="bg-secondary ">
-                  <th scope="row">Secondary</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="bg-success ">
-                  <th scope="row">Success</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="bg-danger ">
-                  <th scope="row">Danger</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="bg-warning text-dark">
-                  <th scope="row">Warning</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="bg-info ">
-                  <th scope="row">Info</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="bg-light text-dark">
-                  <th scope="row">Light</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-                <tr class="bg-dark ">
-                  <th scope="row">Dark</th>
-                  <td>Column content</td>
-                  <td>Column content</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Inversed table</h3>
+              <table class="table table-bordered table-striped table-hover table-inverse">
+                <thead class="">
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <h3 class="mt-5">Default header</h3>
-            <table class="table ">
-              <thead class="thead-default">
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Table with colors</h3>
+              <p class="card-text"><strong>Note:</strong> Use <code>table-*</code> classes.</p>
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Column heading</th>
+                    <th>Column heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Default</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="table-active">
+                    <th scope="row">Active</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="table-primary">
+                    <th scope="row">Primary</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Secondary</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="table-success">
+                    <th scope="row">Success</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="table-danger">
+                    <th scope="row">Danger</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <th scope="row">Warning</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="table-info">
+                    <th scope="row">Info</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Light</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="table-dark">
+                    <th scope="row">Dark</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="col-md-6">
-            <h3 class="mt-5">Inversed header</h3>
-            <table class="table ">
-              <thead class="thead-inverse">
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Inversed table with colors</h3>
+              <p class="card-text"><strong>Note:</strong> Use <code>bg-*</code> and <code>text-*</code> classes.</p>
+              <table class="table table-hover table-inverse">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Column heading</th>
+                    <th>Column heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Default</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="bg-primary ">
+                    <th scope="row">Primary</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="bg-secondary ">
+                    <th scope="row">Secondary</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="bg-success ">
+                    <th scope="row">Success</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="bg-danger ">
+                    <th scope="row">Danger</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="bg-warning text-dark">
+                    <th scope="row">Warning</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="bg-info ">
+                    <th scope="row">Info</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="bg-light text-dark">
+                    <th scope="row">Light</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr class="bg-dark ">
+                    <th scope="row">Dark</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <h3 class="mt-5">Small table</h3>
-            <table class="table table-sm">
-              <thead class="">
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Default header</h3>
+              <table class="table">
+                <thead class="thead-default">
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Inversed header</h3>
+              <table class="table">
+                <thead class="thead-inverse">
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Small table</h3>
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="list-groups">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-list-ul mr-1"></span>
-          List groups
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/list-group/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="List group docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
+            <header>
+              <h2>
+                <span class="fa fa-list-ul mr-1"></span>
+                List groups
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/list-group/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="List group docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
           </div>
-          <div class="col-md-6">
-            <h3 class="mt-5">...with actions and colors</h3>
-            <div class="list-group">
-              <button type="button" class="list-group-item list-group-item-action">This is a regular list group item</button>
-              <button type="button" class="list-group-item list-group-item-action list-group-item-active">
-                This is a(n) active list group item
-              </button>
-              <button type="button" class="list-group-item list-group-item-action list-group-item-disabled">
-                This is a(n) disabled list group item
-              </button>
-              <button type="button" class="list-group-item list-group-item-action list-group-item-primary">
-                This is a(n) primary list group item
-              </button>
-              <button type="button" class="list-group-item list-group-item-action list-group-item-secondary">
-                This is a(n) secondary list group item
-              </button>
-              <button type="button" class="list-group-item list-group-item-action list-group-item-success">
-                This is a(n) success list group item
-              </button>
-              <button type="button" class="list-group-item list-group-item-action list-group-item-danger">
-                This is a(n) danger list group item
-              </button>
-              <button type="button" class="list-group-item list-group-item-action list-group-item-warning">
-                This is a(n) warning list group item
-              </button>
-              <button type="button" class="list-group-item list-group-item-action list-group-item-info">
-                This is a(n) info list group item
-              </button>
-              <button type="button" class="list-group-item list-group-item-action list-group-item-light">
-                This is a(n) light list group item
-              </button>
-              <button type="button" class="list-group-item list-group-item-action list-group-item-dark">
-                This is a(n) dark list group item
-              </button>
+        </div>
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">...with actions and colors</h3>
+              <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action">This is a regular list group item</button>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-active">
+                  This is a(n) active list group item
+                </button>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-disabled">
+                  This is a(n) disabled list group item
+                </button>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-primary">
+                  This is a(n) primary list group item
+                </button>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-secondary">
+                  This is a(n) secondary list group item
+                </button>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-success">
+                  This is a(n) success list group item
+                </button>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-danger">
+                  This is a(n) danger list group item
+                </button>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-warning">
+                  This is a(n) warning list group item
+                </button>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info">
+                  This is a(n) info list group item
+                </button>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-light">
+                  This is a(n) light list group item
+                </button>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-dark">
+                  This is a(n) dark list group item
+                </button>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <h3 class="mt-5">...with custom content</h3>
-            <div class="list-group">
-              <a href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start active">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small>3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-                  blandit.</p>
-                <small>Donec id elit non mi porta.</small>
-              </a>
-              <a href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-                  blandit.</p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-              </a>
-              <a href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-                  blandit.</p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-              </a>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">...with custom content</h3>
+              <div class="list-group">
+                <a href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start active">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small>3 days ago</small>
+                  </div>
+                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                    blandit.</p>
+                  <small>Donec id elit non mi porta.</small>
+                </a>
+                <a href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-muted">3 days ago</small>
+                  </div>
+                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                    blandit.</p>
+                  <small class="text-muted">Donec id elit non mi porta.</small>
+                </a>
+                <a href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-muted">3 days ago</small>
+                  </div>
+                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                    blandit.</p>
+                  <small class="text-muted">Donec id elit non mi porta.</small>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <section id="cards">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-id-card mr-1"></span>
-          Cards
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/card/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Card docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <h3 class="mt-5">Various types of cards</h3>
+            <header>
+              <h2>
+                <span class="fa fa-id-card mr-1"></span>
+                Cards
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/card/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Card docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+            <h3>Various types of cards</h3>
             <div class="card-columns">
               <div class="card">
                 <div class="card-body">
@@ -1462,7 +1538,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
         <div class="row">
           <div class="col-12">
-            <h3 class="mt-5">Colored cards</h3>
+            <h3>Colored cards</h3>
           </div>
           <div class="col-sm-6 col-md-4 col-xl-3">
             <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
@@ -1547,7 +1623,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
         <div class="row">
           <div class="col-12">
-            <h3 class="mt-5">Cards with colored borders</h3>
+            <h3>Cards with colored borders</h3>
           </div>
           <div class="col-sm-6 col-md-4 col-xl-3">
             <div class="card border-primary mb-3" style="max-width: 20rem;">
@@ -1633,688 +1709,725 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
     </section>
     <section id="forms">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-pencil mr-1"></span>
-          Forms
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/forms/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Form docs"><span class="fa fa-book"></span></a>
-          <a href="https://getbootstrap.com/docs/4.0/components/input-group/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Input group docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <header>
+              <h2>
+                <span class="fa fa-pencil mr-1"></span>
+                Forms
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/forms/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Form docs"><span class="fa fa-book"></span></a>
+                <a href="https://getbootstrap.com/docs/4.0/components/input-group/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Input group docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
         <div class="form-row">
           <div class="col">
-            <form novalidate>
-              <fieldset>
-                <div class="row">
-                  <legend class="col-form-label col-sm-2 pt-0">Text Inputs with Validation</legend>
-                  <div class="col-sm-10">
-                    <div class="form-group form-row">
-                      <div class="col-sm-6">
-                        <label for="exampleFormControlInput1">Inline Feedback (passing validation)</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                        <div class="valid-feedback inline-feedback">This entry is valid.</div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput2">Block Feedback (failing validation)</label>
-                      <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com"
-                        required>
-                      <div class="invalid-feedback">This entry is invalid.</div>
-                    </div>
-                    <div class="form-group">
-                      <button class="btn btn-primary" type="submit">Validate</button>
-                      <script>
-                        // Example starter JavaScript for disabling form submissions if there are invalid fields
-                        (function () {
-                          'use strict';
-                          window.addEventListener('load', function () {
-                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                            var forms = document.getElementsByTagName('form');
-                            // Loop over them and prevent submission
-                            var validation = Array.prototype.filter.call(forms, function (form) {
-                              form.addEventListener('submit', function (event) {
-                                if (form.checkValidity() === false) {
-                                  event.preventDefault();
-                                  event.stopPropagation();
-                                }
-                                form.classList.add('was-validated');
+            <div class="card">
+              <div class="card-body">
+                <form novalidate>
+                  <fieldset>
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">Text Inputs with Validation</legend>
+                      <div class="col-sm-10">
+                        <div class="form-group form-row">
+                          <div class="col-sm-6">
+                            <label for="exampleFormControlInput1">Inline Feedback (passing validation)</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            <div class="valid-feedback inline-feedback">This entry is valid.</div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlInput2">Block Feedback (failing validation)</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com"
+                            required>
+                          <div class="invalid-feedback">This entry is invalid.</div>
+                        </div>
+                        <div class="form-group">
+                          <button class="btn btn-primary" type="submit">Validate</button>
+                          <script>
+                            // Example starter JavaScript for disabling form submissions if there are invalid fields
+                            (function () {
+                              'use strict';
+                              window.addEventListener('load', function () {
+                                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                var forms = document.getElementsByTagName('form');
+                                // Loop over them and prevent submission
+                                var validation = Array.prototype.filter.call(forms, function (form) {
+                                  form.addEventListener('submit', function (event) {
+                                    if (form.checkValidity() === false) {
+                                      event.preventDefault();
+                                      event.stopPropagation();
+                                    }
+                                    form.classList.add('was-validated');
+                                  }, false);
+                                });
                               }, false);
-                            });
-                          }, false);
-                        })();
-                      </script>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-            </form>
-            <form novalidate>
-              <fieldset>
-                <div class="row">
-                  <legend class="col-form-label col-sm-2 pt-0">More Text Input Examples</legend>
-                  <div class="col-sm-10">
-                    <div class="form-group">
-                      <label for="exampleFormControlInput3">Disabled Field</label>
-                      <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com"
-                        disabled>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput4">Button Add-On</label>
-                      <div class="input-group">
-                        <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Recipient's username"
-                          aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                          <button class="btn btn-primary" type="button" id="button-addon2">Button</button>
+                            })();
+                          </script>
                         </div>
                       </div>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput5">Dropdown Add-On</label>
-                      <div class="input-group">
-                        <input type="text" class="form-control" id="exampleFormControlInput5" aria-label="Text input with dropdown button">
-                        <div class="input-group-append">
-                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div role="separator" class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                  </fieldset>
+                </form>
+                <form novalidate>
+                  <fieldset>
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">More Text Input Examples</legend>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                          <label for="exampleFormControlInput3">Disabled Field</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com"
+                            disabled>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlInput4">Button Add-On</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Recipient's username"
+                              aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" type="button" id="button-addon2">Button</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlInput5">Dropdown Add-On</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="exampleFormControlInput5" aria-label="Text input with dropdown button">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div role="separator" class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                  </fieldset>
+                </form>
+                <form novalidate>
+                  <!-- The novalidate attribute is critical to ensure that validation styles are applied. -->
+                  <div class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">Select Menus</legend>
+                      <div class="col-sm-10">
+                        <select>
+                          <option selected>Open this select menu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </fieldset>
-            </form>
-            <form novalidate>
-              <!-- The novalidate attribute is critical to ensure that validation styles are applied. -->
-              <div class="form-group">
-                <div class="row">
-                  <legend class="col-form-label col-sm-2 pt-0">Select Menus</legend>
-                  <div class="col-sm-10">
-                    <select>
-                      <option selected>Open this select menu</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
-                </div>
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">Checkboxes</legend>
+                      <div class="col-sm-10">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Default checkbox
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                          <label class="form-check-label" for="defaultCheck2">
+                            Disabled checkbox
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                      <div class="col-sm-10">
+                        <div class="form-radio">
+                          <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                            checked>
+                          <label class="form-radio-label" for="gridRadios1">
+                            First radio
+                          </label>
+                        </div>
+                        <div class="form-radio">
+                          <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                          <label class="form-radio-label" for="gridRadios2">
+                            Second radio
+                          </label>
+                        </div>
+                        <div class="form-radio disabled">
+                          <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
+                            disabled>
+                          <label class="form-radio-label" for="gridRadios3">
+                            Third disabled radio
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
               </div>
-              <fieldset class="form-group">
-                <div class="row">
-                  <legend class="col-form-label col-sm-2 pt-0">Checkboxes</legend>
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                      <label class="form-check-label" for="defaultCheck1">
-                        Default checkbox
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
-                      <label class="form-check-label" for="defaultCheck2">
-                        Disabled checkbox
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset class="form-group">
-                <div class="row">
-                  <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                  <div class="col-sm-10">
-                    <div class="form-radio">
-                      <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
-                        checked>
-                      <label class="form-radio-label" for="gridRadios1">
-                        First radio
-                      </label>
-                    </div>
-                    <div class="form-radio">
-                      <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                      <label class="form-radio-label" for="gridRadios2">
-                        Second radio
-                      </label>
-                    </div>
-                    <div class="form-radio disabled">
-                      <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
-                        disabled>
-                      <label class="form-radio-label" for="gridRadios3">
-                        Third disabled radio
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="navbar">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-angle-double-left mr-1"></span>
-          Navbar
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/navbar/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Navbar docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <p>The navbar on the left side of this demo is an example of the Fluid Bootstrap navbar. It uses standard
-              Bootstrap markup and classes, but also demonstrates the Fluid features described below. Please examine
-              the markup to learn the correct way to construct these features.</p>
-          </div>
-          <div class="col-12">
-            <h3>Brand</h3>
-            <dl class="row">
-              <dt class="col-3">Custom content</dt>
-              <dd class="col-9">Bootstrap does not make any assumptions about what goes in the brand area. If you use
-                only text, Fluid Bootstrap will style it appropriately in expanded mode, but it will be clipped when
-                the navbar is collapsed. Fluid prefers that you use an icon followed by text (although the font size
-                and number of lines is not specified). In that case, Fluid Bootstrap ensures that the icon/text
-                combination is displayed correctly in both expanded and collapsed modes.</dd>
-              <dt class="col-3">Dropdown menu</dt>
-              <dd class="col-9">A green arrow indicates that the brand can be clicked to open a dropdown menu listing
-                other available products. This menu is also accessible when the navbar is collapsed.</dd>
-            </dl>
-            <h3>Nav Items</h3>
-            <dl class="row">
-              <dt class="col-3">Icons</dt>
-              <dd class="col-9">Place an icon as the first child inside a nav item and it will be styled appropriately.</dd>
-              <dt class="col-3">Dropdown menu</dt>
-              <dd class="col-9">Three vertical dots indicate that there is a dropdown menu associated with a nav item.
-                This menu is not accessible when the navbar is collapsed.</dd>
-              <dt class="col-3">Child nav items</dt>
-              <dd class="col-9">A nav item can have child nav items, indicated by an arrow on the right. These items
-                are accessible when the navbar is collapsed by popping out to the right when their parent is hovered
-                over. <em>Note: This feature makes use of the Bootstrap</em> collapse <em>functionality. Correct
-                  positioning of these popovers requires some additional Javascript.</em></dd>
-              <dt class="col-3">Status indicators</dt>
-              <dd class="col-9">Fluid status indicators can be applied to nav items and they will be positioned
-                appropriately.</dd>
-            </dl>
+            <header>
+              <h2>
+                <span class="fa fa-angle-double-left mr-1"></span>
+                Navbar
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/navbar/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Navbar docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text">
+                  The navbar on the left side of this demo is an example of the Fluid Bootstrap navbar. It uses standard Bootstrap markup and classes, but also demonstrates the Fluid features described below. Please examine the markup to learn the correct way to construct these features.
+                </p>
+                <h3 class="card-subtitle">Brand</h3>
+                <dl class="row">
+                  <dt class="col-3">Custom content</dt>
+                  <dd class="col-9">Bootstrap does not make any assumptions about what goes in the brand area. If you use
+                    only text, Fluid Bootstrap will style it appropriately in expanded mode, but it will be clipped when
+                    the navbar is collapsed. Fluid prefers that you use an icon followed by text (although the font size
+                    and number of lines is not specified). In that case, Fluid Bootstrap ensures that the icon/text
+                    combination is displayed correctly in both expanded and collapsed modes.</dd>
+                  <dt class="col-3">Dropdown menu</dt>
+                  <dd class="col-9">A green arrow indicates that the brand can be clicked to open a dropdown menu listing
+                    other available products. This menu is also accessible when the navbar is collapsed.</dd>
+                </dl>
+                <h3 class="card-subtitle">Nav Items</h3>
+                <dl class="row">
+                  <dt class="col-3">Icons</dt>
+                  <dd class="col-9">Place an icon as the first child inside a nav item and it will be styled appropriately.</dd>
+                  <dt class="col-3">Dropdown menu</dt>
+                  <dd class="col-9">Three vertical dots indicate that there is a dropdown menu associated with a nav item.
+                    This menu is not accessible when the navbar is collapsed.</dd>
+                  <dt class="col-3">Child nav items</dt>
+                  <dd class="col-9">A nav item can have child nav items, indicated by an arrow on the right. These items
+                    are accessible when the navbar is collapsed by popping out to the right when their parent is hovered
+                    over. <em>Note: This feature makes use of the Bootstrap</em> collapse <em>functionality. Correct
+                      positioning of these popovers requires some additional Javascript.</em></dd>
+                  <dt class="col-3">Status indicators</dt>
+                  <dd class="col-9">Fluid status indicators can be applied to nav items and they will be positioned
+                    appropriately.</dd>
+                </dl>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="tabs">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-folder mr-1"></span>
-          Tabs
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/navs/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Navs' docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
-            <h3 class="mt-5">Tabs</h3>
-            <div class="nav nav-tabs">
-              <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-              <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-              <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
-                  aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
+          <div class="col-12">
+            <header>
+              <h2>
+                <span class="fa fa-folder mr-1"></span>
+                Tabs
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/navs/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Navs' docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
+        <div class="card-columns">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Tabs</h3>
+              <div class="nav nav-tabs">
+                <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
+                <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
+                <div class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
+                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="javascript:void(0);">Action</a>
+                    <a class="dropdown-item" href="javascript:void(0);">Another action</a>
+                    <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
+                  </div>
                 </div>
+                <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
               </div>
-              <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-            </div>
-            <h3 class="mt-5">Pills</h3>
-            <div class="nav nav-pills">
-              <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-              <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-              <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
-                  aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                </div>
-              </div>
-              <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
             </div>
           </div>
-          <div class="col-md-6">
-            <h3 class="mt-5">Vertical pills</h3>
-            <div class="nav nav-pills flex-column">
-              <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-              <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-              <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
-                  aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Pills</h3>
+              <div class="nav nav-pills">
+                <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
+                <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
+                <div class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
+                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="javascript:void(0);">Action</a>
+                    <a class="dropdown-item" href="javascript:void(0);">Another action</a>
+                    <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
+                  </div>
                 </div>
+                <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
               </div>
-              <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Vertical pills</h3>
+              <div class="nav nav-pills flex-column">
+                <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
+                <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
+                <div class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
+                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="javascript:void(0);">Action</a>
+                    <a class="dropdown-item" href="javascript:void(0);">Another action</a>
+                    <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
+                  </div>
+                </div>
+                <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <section id="popovers">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-commenting mr-1"></span>
-          Popovers
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/popovers/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Popover docs"><span class="fa fa-book"></span></a>
-          <a href="https://getbootstrap.com/docs/4.0/components/tooltips/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Tooltip docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left"
-              data-content="Popover on left.">
-              Popover on left
-            </button>
-
-            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top"
-              data-content="Popover on top.">
-              Popover on top
-            </button>
-
-            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom"
-              data-content="Popover on bottom.">
-              Popover on bottom
-            </button>
-
-            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right"
-              data-content="Popover on right.">
-              Popover on right
-            </button>
+            <header>
+              <h2>
+                <span class="fa fa-commenting mr-1"></span>
+                Popovers & Tooltips
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/popovers/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Popover docs"><span class="fa fa-book"></span></a>
+                <a href="https://getbootstrap.com/docs/4.0/components/tooltips/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Tooltip docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
           </div>
         </div>
-      </div>
-      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
-            <h3 class="mt-5">Tooltips</h3>
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
-              Tooltip on left
-            </button>
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-              Tooltip on top
-            </button>
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-              Tooltip on bottom
-            </button>
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
-              Tooltip on right
-            </button>
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Popovers</h3>
+                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left"
+                  data-content="Popover on left.">
+                  Popover on left
+                </button>
+                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top"
+                  data-content="Popover on top.">
+                  Popover on top
+                </button>
+                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom"
+                  data-content="Popover on bottom.">
+                  Popover on bottom
+                </button>
+                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right"
+                  data-content="Popover on right.">
+                  Popover on right
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Tooltips</h3>
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+                  Tooltip on left
+                </button>
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                  Tooltip on top
+                </button>
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+                  Tooltip on bottom
+                </button>
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+                  Tooltip on right
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="progress-bars">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-spinner mr-1"></span>
-          Progress bars
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/progress/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Progress docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
-            <h3 class="mt-5">Colored progress bars</h3>
-            <div class="progress my-1">
-              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
-                aria-valuemax="100">Label</div>
-            </div>
-            <div class="progress my-1">
-              <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                aria-valuemin="0" aria-valuemax="100">Label</div>
-            </div>
-            <div class="progress my-1">
-              <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
-                aria-valuemax="100">Label</div>
-            </div>
-            <div class="progress my-1">
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                aria-valuemin="0" aria-valuemax="100">Label</div>
-            </div>
-            <div class="progress my-1">
-              <div class="progress-bar bg-danger" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                aria-valuemin="0" aria-valuemax="100">Label</div>
+          <div class="col-12">
+            <header>
+              <h2>
+                <span class="fa fa-spinner mr-1"></span>
+                Progress bars
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/progress/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Progress docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Colored progress bars</h3>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <h3 class="mt-5">Striped progress bars</h3>
-            <div class="progress my-1">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                aria-valuemin="0" aria-valuemax="100">Label</div>
-            </div>
-            <div class="progress my-1">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%;"
-                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
-            </div>
-            <div class="progress my-1">
-              <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;"
-                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
-            </div>
-            <div class="progress my-1">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 50%;"
-                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
-            </div>
-            <div class="progress my-1">
-              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%;"
-                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Striped progress bars</h3>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%;"
+                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;"
+                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 50%;"
+                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%;"
+                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <section id="modals">
-      <div class="container-fluid section-heading">
-        <h2>
-          <span class="fa fa-window-restore mr-1"></span>
-          Modals
-        </h2>
-        <h2>
-          <a href="https://getbootstrap.com/docs/4.0/components/modal/" target="_blank" data-toggle="tooltip"
-            data-placement="bottom" title="" data-original-title="Modal docs"><span class="fa fa-book"></span></a>
-          <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
-        </h2>
-      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalSimple">
-              Launch demo modal
-            </button>
+            <header>
+              <h2>
+                <span class="fa fa-window-restore mr-1"></span>
+                Modals
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/modal/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Modal docs"><span class="fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+            <div class="card">
+              <div class="card-body" style="line-height: 3rem;">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalSimple">
+                  Launch demo modal
+                </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalSimple" tabindex="-1" role="dialog" aria-labelledby="exampleModalSimpleTitle"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLongTitle">Modal title</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalSimple" tabindex="-1" role="dialog" aria-labelledby="exampleModalSimpleTitle"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLongTitle">Modal title</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <!-- -------------------- VERTICALLY CENTERED ----------------------- -->
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-              Vertically centered modal
-            </button>
+                <!-- -------------------- VERTICALLY CENTERED ----------------------- -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                  Vertically centered modal
+                </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalCenterTitle">Modal vertically centered</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalCenterTitle">Modal vertically centered</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <!-- -------------------- Modal with form ----------------------- -->
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalForm">
-              Modal with form
-            </button>
+                <!-- -------------------- Modal with form ----------------------- -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalForm">
+                  Modal with form
+                </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title">Modal with form</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                          placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                          else.</small>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title">Modal with form</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                              placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                              else.</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                          </div>
+                        </form>
                       </div>
-                      <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                       </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <!-- -------------------- Modals Tooltips ----------------------- -->
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalTooltip">
-              Tooltips in modal
-            </button>
+                <!-- -------------------- Modals Tooltips ----------------------- -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalTooltip">
+                  Tooltips in modal
+                </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalTooltip" tabindex="-1" role="dialog" aria-labelledby="exampleModalTooltip"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title">Modal with tooltips</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <h5>Popover in a modal</h5>
-                    <p>This <a href="#" role="button" class="btn btn-secondary popover-test" data-toggle="popover"
-                        title="Popover title" data-content="Popover body content is set in this attribute.">button</a>
-                      triggers a popover on click.</p>
-                    <hr>
-                    <h5>Tooltips in a modal</h5>
-                    <p><a href="#" class="tooltip-test" data-toggle="tooltip" title="Tooltip">This link</a> and <a href="#"
-                        class="tooltip-test" data-toggle="tooltip" title="Tooltip">that link</a> have tooltips on
-                      hover.</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalTooltip" tabindex="-1" role="dialog" aria-labelledby="exampleModalTooltip"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title">Modal with tooltips</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <h5>Popover in a modal</h5>
+                        <p>This <a href="#" role="button" class="btn btn-secondary popover-test" data-toggle="popover"
+                            title="Popover title" data-content="Popover body content is set in this attribute.">button</a>
+                          triggers a popover on click.</p>
+                        <hr>
+                        <h5>Tooltips in a modal</h5>
+                        <p><a href="#" class="tooltip-test" data-toggle="tooltip" title="Tooltip">This link</a> and <a href="#"
+                            class="tooltip-test" data-toggle="tooltip" title="Tooltip">that link</a> have tooltips on
+                          hover.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <!-- -------------------- Modals Grid ----------------------- -->
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalGrid">
-              Modal & grid
-            </button>
+                <!-- -------------------- Modals Grid ----------------------- -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalGrid">
+                  Modal & grid
+                </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalGrid" tabindex="-1" role="dialog" aria-labelledby="exampleModalGrid"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title">Modal with grid</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="container-fluid" id="modalFluidContainerExample">
-                      <div class="row">
-                        <div class="col-md-4">.col-md-4</div>
-                        <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalGrid" tabindex="-1" role="dialog" aria-labelledby="exampleModalGrid"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title">Modal with grid</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
                       </div>
-                      <div class="row">
-                        <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
-                        <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-9">
-                          Level 1: .col-sm-9
+                      <div class="modal-body">
+                        <div class="container-fluid" id="modalFluidContainerExample">
                           <div class="row">
-                            <div class="col-8 col-sm-6">
-                              Level 2: .col-8 .col-sm-6
-                            </div>
-                            <div class="col-4 col-sm-6">
-                              Level 2: .col-4 .col-sm-6
+                            <div class="col-md-4">.col-md-4</div>
+                            <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
+                            <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-9">
+                              Level 1: .col-sm-9
+                              <div class="row">
+                                <div class="col-8 col-sm-6">
+                                  Level 2: .col-8 .col-sm-6
+                                </div>
+                                <div class="col-4 col-sm-6">
+                                  Level 2: .col-4 .col-sm-6
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- -------------------- Modals Sizes ----------------------- -->
-
-            <!-- Large modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLg">Large modal</button>
-
-            <div class="modal fade" id="#exampleModalLg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title">Modal Large</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Small modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalSm">Small modal</button>
-
-            <div class="modal fade" id="exampleModalSm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title">Modal Small</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Not title -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalBodyOnly">Modal
-              without title and footer</button>
-
-            <div class="modal fade" id="exampleModalBodyOnly" tabindex="-1" role="dialog" aria-labelledby="NoTitleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-body">
-                    <div class="example-progress-indicator">
-                      <i class="fa fa-spinner fa-spin"></i> Loading...
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                <!-- -------------------- Modals Sizes ----------------------- -->
+
+                <!-- Large modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLg">Large modal</button>
+
+                <div class="modal fade" id="#exampleModalLg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title">Modal Large</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Small modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalSm">Small modal</button>
+
+                <div class="modal fade" id="exampleModalSm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title">Modal Small</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Not title -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalBodyOnly">Modal
+                  without title and footer</button>
+
+                <div class="modal fade" id="exampleModalBodyOnly" tabindex="-1" role="dialog" aria-labelledby="NoTitleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div class="example-progress-indicator">
+                          <i class="fa fa-spinner fa-spin"></i> Loading...
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </section>
   </main>
-  <footer class="footer-bottom bg-dark text-light">
+  <footer>
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">

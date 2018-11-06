@@ -8,7 +8,16 @@
 
 .accordion {
   .card {
-    border: none;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    &:not(:first-of-type) {
+      .card-header {
+        border-top: $border-width $border-color solid;
+      }
+    }
 
     .card-header {
       font-size: px(18);
@@ -28,6 +37,10 @@
       &.collapsed:after {
         content: $fa-var-angle-down;
       }
+    }
+
+    .card-body {
+      padding-top: 0;
     }
   }
 }
