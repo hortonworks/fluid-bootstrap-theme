@@ -99,6 +99,7 @@ nav.pagination {
     line-height: $input-height;
     text-align: center;
     color: text-color("default");
+    background-color: transparent;
 
     &.disabled {
       color: text-color("light");

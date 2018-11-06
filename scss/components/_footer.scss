@@ -6,9 +6,9 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-body > {
+body {
 
-  footer.footer-bottom {
+  > footer:last-of-type {
     display: flex;
     align-items: center;
     min-width: $layout-min-width;
