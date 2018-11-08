@@ -1,0 +1,69 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+.nav-tabs,
+.nav-pills {
+
+  .nav-item {
+    margin-top: $nav-tabs-border-width;
+    margin-right: $nav-link-margin-spacing;
+    margin-bottom: 0;
+  }
+
+  .nav-link {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    text-transform: uppercase;
+    line-height: 1;
+    border-radius: 0;
+
+    &.active {
+      border-bottom: $nav-tabs-link-active-border-color $nav-tabs-border-width solid;
+    }
+  }
+
+  &.flex-column {
+
+    .nav-item {
+      margin-right: 0;
+      margin-bottom: $nav-link-margin-spacing;
+    }
+
+    .nav-link {
+      border-left: none;
+      border-top: none;
+      border-bottom: none;
+      border-right: transparent $nav-tabs-border-width solid;
+      text-align: right;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &.active {
+        border-right-color: $nav-tabs-link-active-border-color;
+      }
+    }
+  }
+}
+
+.nav-link {
+  color: text-color("default");
+
+  &:hover {
+    color: $nav-tabs-link-active-color;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    &:hover {
+      color: $nav-link-disabled-color;
+    }
+  }
+}
