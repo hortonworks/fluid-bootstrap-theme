@@ -8,18 +8,34 @@
 
 .navbar {
   @extend .navbar-dark;
-  position: fixed !important;
-  height: 100% !important;
+  position: fixed;
+  height: 100%;
   width: $navbar-width;
   margin: 0;
   padding: 0;
-  flex-direction: column !important;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: normal;
-  background-color: $fluid-navbar-bg !important;
+  background-color: $fluid-navbar-bg;
   z-index: 999;
   overflow: hidden;
   @include transition($transition-collapse-all);
+
+  * {
+    flex-shrink: 0;
+    align-items: normal;
+  }
+
+  &[class*="navbar-expand-"] {
+
+    * {
+      flex-direction: column;
+    }
+
+    .navbar-toggler {
+      display: block;
+    }
+  }
 
   &.collapsing {
     @extend .collapse;
@@ -34,8 +50,8 @@
 
     // We use the [style] selector to determine the direction of the .collapsing behavior;
     // when it is present, the menu is expanding.
-    &[style^="height"] {
-      width: $navbar-width !important;
+    &[style^="height"]:not(.show) {
+      width: $navbar-width;
 
       & ~ *:not(.popover):not(.tooltip):not(.modal) {
         margin-left: $navbar-width;
@@ -45,7 +61,7 @@
 
         i:first-child,
         .fa:first-child {
-          margin-right: px(8) !important;
+          margin-right: px(8);
         }
       }
 
@@ -53,24 +69,24 @@
 
         .nav-item.nav-link,
         .nav-item > .nav-link {
-          height: px(38) !important;
+          height: px(38);
           width: $navbar-width;
 
           &.status:before {
-            left: px(30) !important;
+            left: px(30) !important; // !important ensures this remains set during collapse animation
           }
 
           i:first-child,
           .fa:first-child {
-            width: px(16) !important;
-            margin-right: px(8) !important;
-            font-size: px(16) !important;
-            line-height: 0 !important;
+            width: px(16) !important;       // !important ensures this remains set during collapse animation
+            margin-right: px(8) !important; // !important ensures this remains set during collapse animation
+            font-size: px(16) !important;   // !important ensures this remains set during collapse animation
+            line-height: 0 !important;      // !important ensures this remains set during collapse animation
           }
         }
 
         &.collapse.show {
-          display: block !important;
+          display: block;
           position: static;
         }
       }
@@ -181,12 +197,6 @@
         content: $fa-var-angle-double-right;
       }
     }
-  }
-
-  * {
-    flex-direction: column !important;
-    flex-shrink: 0;
-    align-items: normal;
   }
 
   .navbar-nav {
@@ -336,61 +346,61 @@
       // }
     }
   }
-}
 
-.navbar-brand {
-  height: px(62); // 2 extra px to compensate for default padding
-  width: 100%; // set explicitly for IE
-  margin: 0;
-  margin-bottom: px(5);
-  padding-left: px(12.5);
-  display: flex;
-  flex-direction: row !important;
-  align-items: center;
-  color: $fluid-navbar-brand !important;
-  background-color: $fluid-navbar-brand-bg;
-  text-transform: uppercase;
-  white-space: nowrap;
-  line-height: px(60);
-  z-index: 999;
-  @include transition($transition-collapse-all);
-
-  &[data-toggle="collapse"] {
-
-    &:after {
-      position: absolute;
-      right: px(12.5);
-      content: $fa-var-angle-up;
-      color: theme-color("primary");
-      font-family: "FontAwesome";
-      font-size: px(16);
-      font-size: px(30);
-      line-height: px(60); // IE
-      z-index: 9999;
-    }
-
-    &.collapsed:after {
-      content: $fa-var-angle-down;
-    }
-  }
-
-  &:hover,
-  &:active, &.active {
-    color: $fluid-navbar-brand-hover !important;
-    background-color: $fluid-navbar-brand-hover-bg;
-  }
-
-  i:first-child,
-  .fa:first-child {
-    width: px(25);
-    margin-right: px(8);
-    flex-shrink: 0;
-    font-size: px(25);
+  .navbar-brand {
+    height: px(62); // 2 extra px to compensate for default padding
+    width: 100%; // set explicitly for IE
+    margin: 0;
+    margin-bottom: px(5);
+    padding-left: px(12.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $fluid-navbar-brand;
+    background-color: $fluid-navbar-brand-bg;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: px(60);
+    z-index: 999;
     @include transition($transition-collapse-all);
-  }
 
-  & ~ .navbar-collapse {
-    padding-top: px(67);
+    &[data-toggle="collapse"] {
+
+      &:after {
+        position: absolute;
+        right: px(12.5);
+        content: $fa-var-angle-up;
+        color: theme-color("primary");
+        font-family: "FontAwesome";
+        font-size: px(16);
+        font-size: px(30);
+        line-height: px(60); // IE
+        z-index: 9999;
+      }
+
+      &.collapsed:after {
+        content: $fa-var-angle-down;
+      }
+    }
+
+    &:hover,
+    &:active, &.active {
+      color: $fluid-navbar-brand-hover;
+      background-color: $fluid-navbar-brand-hover-bg;
+    }
+
+    i:first-child,
+    .fa:first-child {
+      width: px(25);
+      margin-right: px(8);
+      flex-shrink: 0;
+      font-size: px(25);
+      @include transition($transition-collapse-all);
+    }
+
+    & ~ .navbar-collapse {
+      padding-top: px(67);
+    }
   }
 }
 
@@ -404,7 +414,7 @@
   padding-right: px(20);
   max-width: px(617);
   display: flex;
-  flex-direction: row !important;
+  flex-direction: row !important; // !important ensures this remains set during collapse animation
   flex-wrap: wrap;
   align-items: center;
 
@@ -472,7 +482,7 @@
   width: 100%;
   padding: 0;
   height: px(48);
-  display: block !important;
+  display: block;
   background-color: $fluid-navbar-brand-bg;
   border: none;
   border-radius: 0;
