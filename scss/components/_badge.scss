@@ -6,15 +6,6 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-html {
-  font-size: $root-font-size;
-}
-
-body {
-  min-width: $layout-min-width;
-}
-
-dt {
-  color: text-color("light");
-  text-align: right;
+.badge {
+  line-height: $badge-line-height;
 }

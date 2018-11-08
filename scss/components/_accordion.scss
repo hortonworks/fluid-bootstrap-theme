@@ -20,10 +20,11 @@
     }
 
     .card-header {
+      padding: px(20);
       font-size: px(18);
       line-height: px(20);
       background-color: inherit;
-      padding: px(20);
+      border-bottom: 0;
       cursor: pointer;
 
       &:after {

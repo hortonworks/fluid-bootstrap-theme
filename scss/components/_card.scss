@@ -16,6 +16,16 @@
   border-bottom: $border-width $border-color solid;
 }
 
+.card-body {
+
+  > .container,
+  > .container-fluid {
+    width: auto;
+    margin-left: -($grid-gutter-width / 2);
+    margin-right: -($grid-gutter-width / 2);
+  }
+}
+
 .card-subtitle {
   margin-top: 0;
   margin-bottom: $card-spacer-y / 2
