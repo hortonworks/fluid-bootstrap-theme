@@ -378,7 +378,7 @@ hr {
 
 small,
 .small {
-  font-size: 0.875rem;
+  font-size: 0.85714rem;
   font-weight: 400; }
 
 mark,
@@ -1802,13 +1802,13 @@ select.form-control:focus::-ms-value {
 .col-form-label-lg {
   padding-top: calc(0.5rem + 0.07143rem);
   padding-bottom: calc(0.5rem + 0.07143rem);
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.5; }
 
 .col-form-label-sm {
   padding-top: calc(0.25rem + 0.07143rem);
   padding-bottom: calc(0.25rem + 0.07143rem);
-  font-size: 0.875rem;
+  font-size: 0.85714rem;
   line-height: 1.5; }
 
 .form-control-plaintext {
@@ -1827,16 +1827,16 @@ select.form-control:focus::-ms-value {
     padding-left: 0; }
 
 .form-control-sm {
-  height: calc(1.8125rem + 0.14286rem);
+  height: calc(1.78571rem + 0.14286rem);
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.85714rem;
   line-height: 1.5;
   border-radius: 0.14286rem; }
 
 .form-control-lg {
-  height: calc(2.875rem + 0.14286rem);
+  height: calc(3.14286rem + 0.14286rem);
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.5;
   border-radius: 0.28571rem; }
 
@@ -1904,7 +1904,7 @@ textarea.form-control {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 0.875rem;
+  font-size: 0.85714rem;
   color: #1eb475; }
 
 .valid-tooltip {
@@ -1915,7 +1915,7 @@ textarea.form-control {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   line-height: 1.5;
   color: #fff;
   background-color: rgba(30, 180, 117, 0.9);
@@ -2002,7 +2002,7 @@ select.is-valid {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 0.875rem;
+  font-size: 0.85714rem;
   color: #ef6162; }
 
 .invalid-tooltip {
@@ -2013,7 +2013,7 @@ select.is-valid {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   line-height: 1.5;
   color: #fff;
   background-color: rgba(239, 97, 98, 0.9);
@@ -2702,13 +2702,13 @@ fieldset:disabled a.btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.5;
   border-radius: 0.28571rem; }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.85714rem;
   line-height: 1.5;
   border-radius: 0.14286rem; }
 
@@ -2918,7 +2918,7 @@ input[type="button"].btn-block {
   display: block;
   padding: 0.5rem 1.5rem;
   margin-bottom: 0;
-  font-size: 0.875rem;
+  font-size: 0.85714rem;
   color: #999999;
   white-space: nowrap; }
 
@@ -3180,9 +3180,9 @@ input[type="button"].btn-block {
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
 .input-group-lg > .input-group-append > .btn {
-  height: calc(2.875rem + 0.14286rem);
+  height: calc(3.14286rem + 0.14286rem);
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.5;
   border-radius: 0.28571rem; }
 
@@ -3191,9 +3191,9 @@ input[type="button"].btn-block {
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
 .input-group-sm > .input-group-append > .btn {
-  height: calc(1.8125rem + 0.14286rem);
+  height: calc(1.78571rem + 0.14286rem);
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.85714rem;
   line-height: 1.5;
   border-radius: 0.14286rem; }
 
@@ -3344,13 +3344,13 @@ input[type="button"].btn-block {
     opacity: 0; }
 
 .custom-select-sm {
-  height: calc(1.8125rem + 0.14286rem);
+  height: calc(1.78571rem + 0.14286rem);
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 75%; }
 
 .custom-select-lg {
-  height: calc(2.875rem + 0.14286rem);
+  height: calc(3.14286rem + 0.14286rem);
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 125%; }
@@ -3652,7 +3652,7 @@ input[type="button"].btn-block {
   padding-top: -0.89286rem;
   padding-bottom: -0.89286rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: inherit;
   white-space: nowrap; }
   .navbar-brand:hover, .navbar-brand:focus {
@@ -3698,7 +3698,7 @@ input[type="button"].btn-block {
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1;
   background-color: transparent;
   border: 0.07143rem solid transparent;
@@ -4325,7 +4325,7 @@ input[type="button"].btn-block {
 
 .pagination-lg .page-link {
   padding: 0.75rem 1.5rem;
-  font-size: 1.25rem;
+  font-size: 1.42857rem;
   line-height: 1.5; }
 
 .pagination-lg .page-item:first-child .page-link {
@@ -4338,7 +4338,7 @@ input[type="button"].btn-block {
 
 .pagination-sm .page-link {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.85714rem;
   line-height: 1.5; }
 
 .pagination-sm .page-item:first-child .page-link {
@@ -5009,7 +5009,7 @@ button.close {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   word-wrap: break-word;
   opacity: 0; }
   .tooltip.show {
@@ -5094,7 +5094,7 @@ button.close {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.875rem;
+  font-size: 0.71429rem;
   word-wrap: break-word;
   background-color: #666666;
   -webkit-background-clip: padding-box;
@@ -10380,7 +10380,7 @@ a.text-default:hover, a.text-default:focus {
 .alert {
   -webkit-box-shadow: 0 0.14286rem 0.21429rem 0.14286rem rgba(0, 0, 0, 0.175);
           box-shadow: 0 0.14286rem 0.21429rem 0.14286rem rgba(0, 0, 0, 0.175);
-  font-size: 0.875rem; }
+  font-size: 0.85714rem; }
   .alert > div {
     margin-left: 2.85714rem; }
   .alert:before {
@@ -10393,7 +10393,7 @@ a.text-default:hover, a.text-default:focus {
             transform: translateY(-50%); }
   .alert:after {
     content: "\00d7";
-    font-size: 0.875rem;
+    font-size: 0.85714rem;
     position: absolute;
     right: 0.35714rem;
     top: 0;

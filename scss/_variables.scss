@@ -306,8 +306,8 @@ $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$font-size-lg:                ($font-size-base * 1.25) !default;
-$font-size-sm:                ($font-size-base * .875) !default;
+$font-size-lg:                px(20);
+$font-size-sm:                px(12);
 
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
@@ -800,7 +800,7 @@ $card-columns-margin:               $card-spacer-y !default;
 
 // Tooltips
 
-$tooltip-font-size:                 $font-size-sm !default;
+$tooltip-font-size:                 px(10);
 $tooltip-max-width:                 200px !default;
 $tooltip-color:                     $white !default;
 $tooltip-bg:                        $gray-700;
@@ -816,7 +816,7 @@ $tooltip-arrow-color:               $tooltip-bg !default;
 
 // Popovers
 
-$popover-font-size:                 $font-size-sm !default;
+$popover-font-size:                 px(10);
 $popover-bg:                        $gray-700;
 $popover-max-width:                 276px !default;
 $popover-border-width:              $border-width !default;
