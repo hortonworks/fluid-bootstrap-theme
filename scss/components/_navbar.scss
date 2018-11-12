@@ -8,18 +8,34 @@
 
 .navbar {
   @extend .navbar-dark;
-  position: fixed !important;
-  height: 100% !important;
+  position: fixed;
+  height: 100%;
   width: $navbar-width;
   margin: 0;
   padding: 0;
-  flex-direction: column !important;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: normal;
-  background-color: $navbar-bg !important;
+  background-color: $navbar-bg;
   z-index: 1030;
   overflow: hidden;
   @include transition($transition-collapse-all);
+
+  * {
+    flex-shrink: 0;
+    align-items: normal;
+  }
+
+  &[class*="navbar-expand-"] {
+
+    * {
+      flex-direction: column;
+    }
+
+    .navbar-toggler {
+      display: block;
+    }
+  }
 
   &.collapsing {
     @extend .collapse;
@@ -34,8 +50,8 @@
 
     // We use the [style] selector to determine the direction of the .collapsing behavior;
     // when it is present, the menu is expanding.
-    &[style^="height"] {
-      width: $navbar-width !important;
+    &[style^="height"]:not(.show) {
+      width: $navbar-width;
 
       & ~ *:not(.popover):not(.tooltip):not(.modal) {
         margin-left: $navbar-width;
@@ -44,7 +60,7 @@
       .navbar-brand {
 
         .fa:first-child {
-          margin-right: px(8) !important;
+          margin-right: px(8);
         }
       }
 
@@ -52,24 +68,24 @@
 
         .nav-item.nav-link,
         .nav-item > .nav-link {
-          height: $navbar-nav-link-height !important;
+          height: $navbar-nav-link-height;
           width: $navbar-width;
           padding-left: $navbar-nav-link-icon-size !important;
 
           &.status:before {
-            left: px(30) !important;
+            left: px(30) !important; // !important ensures this remains set during collapse animation
           }
 
           .fa:first-child {
-            width: $navbar-nav-link-icon-size !important;
-            margin-right: px(8) !important;
-            font-size: $navbar-nav-link-icon-size !important;
-            line-height: 0 !important;
+            width: $navbar-nav-link-icon-size !important;      // !important ensures this remains set during collapse animation
+            margin-right: px(8) !important;                    // !important ensures this remains set during collapse animation
+            font-size: $navbar-nav-link-icon-size !important;  // !important ensures this remains set during collapse animation
+            line-height: 0 !important;                         // !important ensures this remains set during collapse animation
           }
         }
 
         &.collapse.show {
-          display: block !important;
+          display: block;
           position: static;
         }
       }
@@ -184,12 +200,6 @@
         content: $fa-var-angle-double-right;
       }
     }
-  }
-
-  * {
-    flex-direction: column !important;
-    flex-shrink: 0;
-    align-items: normal;
   }
 
   .navbar-nav {
@@ -346,9 +356,9 @@
   padding: 0;
   padding-left: px(12.5);
   display: flex;
-  flex-direction: row !important;
+  flex-direction: row;
   align-items: center;
-  color: $navbar-brand-color !important;
+  color: $navbar-brand-color;
   background-color: $navbar-brand-bg;
   text-transform: uppercase;
   white-space: nowrap;
@@ -368,7 +378,7 @@
       line-height: px(60); // IE
       z-index: 1030; // Edge
     }
-
+    
     &.collapsed:after {
       content: $fa-var-angle-down;
     }
@@ -376,7 +386,7 @@
 
   &:hover,
   &:active, &.active {
-    color: $navbar-brand-hover-color !important;
+    color: $navbar-brand-hover-color;
     background-color: $navbar-brand-hover-bg;
   }
 
@@ -403,7 +413,7 @@
   padding-right: $navbar-brand-menu-spacing;
   max-width: px(617);
   display: flex;
-  flex-direction: row !important;
+  flex-direction: row !important; // !important ensures this remains set during collapse animation
   flex-wrap: wrap;
   align-items: center;
 
@@ -475,7 +485,7 @@
   width: 100%;
   padding: 0;
   height: px(48);
-  display: block !important;
+  display: block;
   background-color: $navbar-brand-bg;
   border: none;
   border-radius: 0;
