@@ -204,9 +204,9 @@ table {
   border-collapse: collapse; }
 
 caption {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  color: #999999;
+  padding-top: 0.46429rem;
+  padding-bottom: 0.46429rem;
+  color: #666666;
   text-align: left;
   caption-side: bottom; }
 
@@ -1512,7 +1512,7 @@ pre {
   background-color: transparent; }
   .table th,
   .table td {
-    padding: 0.75rem;
+    padding: 0.46429rem;
     vertical-align: top;
     border-top: 0.07143rem solid #ececec; }
   .table thead th {
@@ -1546,7 +1546,7 @@ pre {
   background-color: rgba(0, 0, 0, 0.05); }
 
 .table-hover tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.075); }
+  background-color: #f3faff; }
 
 .table-primary,
 .table-primary > th,
@@ -1650,13 +1650,13 @@ pre {
 .table-active,
 .table-active > th,
 .table-active > td {
-  background-color: rgba(0, 0, 0, 0.075); }
+  background-color: #ececec; }
 
 .table-hover .table-active:hover {
-  background-color: rgba(0, 0, 0, 0.075); }
+  background-color: #dfdfdf; }
   .table-hover .table-active:hover > td,
   .table-hover .table-active:hover > th {
-    background-color: rgba(0, 0, 0, 0.075); }
+    background-color: #dfdfdf; }
 
 .table .thead-dark th {
   color: #ececec;
@@ -1913,7 +1913,7 @@ textarea.form-control {
   z-index: 5;
   display: none;
   max-width: 100%;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   margin-top: .1rem;
   font-size: 0.71429rem;
   line-height: 1.5;
@@ -2011,7 +2011,7 @@ select.is-valid {
   z-index: 5;
   display: none;
   max-width: 100%;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   margin-top: .1rem;
   font-size: 0.71429rem;
   line-height: 1.5;
@@ -5067,7 +5067,7 @@ button.close {
 
 .tooltip-inner {
   max-width: 200px;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   color: #fff;
   text-align: center;
   background-color: #666666;
@@ -8001,7 +8001,7 @@ a.text-default:hover, a.text-default:focus {
   font-weight: normal;
   font-style: normal; }
 
-.fa {
+.fa, .icon {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -8058,10 +8058,10 @@ a.text-default:hover, a.text-default:focus {
 .fa-pull-right {
   float: right; }
 
-.fa.fa-pull-left {
+.fa.fa-pull-left, .fa-pull-left.icon {
   margin-right: .3em; }
 
-.fa.fa-pull-right {
+.fa.fa-pull-right, .fa-pull-right.icon {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -8071,10 +8071,10 @@ a.text-default:hover, a.text-default:focus {
 .pull-left {
   float: left; }
 
-.fa.pull-left {
+.fa.pull-left, .pull-left.icon {
   margin-right: .3em; }
 
-.fa.pull-right {
+.fa.pull-right, .pull-right.icon {
   margin-left: .3em; }
 
 .fa-spin {
@@ -8432,16 +8432,16 @@ a.text-default:hover, a.text-default:focus {
 .fa-minus-circle:before {
   content: ""; }
 
-.fa-times-circle:before {
+.fa-times-circle:before, .icon-danger:before {
   content: ""; }
 
-.fa-check-circle:before {
+.fa-check-circle:before, .icon-success:before {
   content: ""; }
 
 .fa-question-circle:before {
   content: ""; }
 
-.fa-info-circle:before {
+.fa-info-circle:before, .icon-info:before {
   content: ""; }
 
 .fa-crosshairs:before {
@@ -8487,7 +8487,7 @@ a.text-default:hover, a.text-default:focus {
 .fa-asterisk:before {
   content: ""; }
 
-.fa-exclamation-circle:before {
+.fa-exclamation-circle:before, .icon-warning:before {
   content: ""; }
 
 .fa-gift:before {
@@ -10353,7 +10353,6 @@ a.text-default:hover, a.text-default:focus {
   border-top: 0.07143rem #d1d1d1 solid; }
 
 .accordion .card .card-header {
-  padding: 1.42857rem;
   font-size: 1.28571rem;
   line-height: 1.42857rem;
   background-color: inherit;
@@ -10370,6 +10369,34 @@ a.text-default:hover, a.text-default:focus {
 
 .accordion .card .card-body {
   padding-top: 0; }
+
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+ul.actions {
+  margin: 0;
+  padding: 0; }
+
+.actions li {
+  list-style: none;
+  margin-right: 0.71429rem;
+  display: inline-block; }
+
+.actions .fa, .actions .icon,
+.actions .icon {
+  font-size: 1rem; }
+
+.actions .dropdown-toggle:after {
+  margin-left: 0.14286rem;
+  content: "\22ee";
+  font-size: 1.07143rem;
+  vertical-align: inherit;
+  font-weight: 700;
+  border: none; }
 
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
@@ -10750,14 +10777,28 @@ body > nav.fixed-top {
     body > nav.fixed-top > *:last-child {
       padding-right: 0; }
 
-.fa {
+.fa, .icon {
   text-align: center; }
-  .fa * {
+  .fa *, .icon * {
     font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
-  .fa .badge {
+  .fa .badge, .icon .badge {
     position: relative;
     top: -0.5rem;
-    left: -0.5rem; }
+    left: -0.5rem;
+    -webkit-box-shadow: 0 0.14286rem 0.21429rem 0.14286rem rgba(0, 0, 0, 0.175);
+            box-shadow: 0 0.14286rem 0.21429rem 0.14286rem rgba(0, 0, 0, 0.175); }
+
+.icon-info {
+  color: #1491c1; }
+
+.icon-success {
+  color: #1eb475; }
+
+.icon-warning {
+  color: #e98a40; }
+
+.icon-danger {
+  color: #ef6162; }
 
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
@@ -10897,7 +10938,7 @@ body > nav.fixed-top {
     width: 14.28571rem; }
     .navbar.collapsing[style^="height"]:not(.show) ~ *:not(.popover):not(.tooltip):not(.modal) {
       margin-left: 14.28571rem; }
-    .navbar.collapsing[style^="height"]:not(.show) .navbar-brand .fa:first-child {
+    .navbar.collapsing[style^="height"]:not(.show) .navbar-brand .fa:first-child, .navbar.collapsing[style^="height"]:not(.show) .navbar-brand .icon:first-child {
       margin-right: 0.57143rem; }
     .navbar.collapsing[style^="height"]:not(.show) .navbar-nav .nav-item.nav-link,
     .navbar.collapsing[style^="height"]:not(.show) .navbar-nav .nav-item > .nav-link {
@@ -10907,8 +10948,9 @@ body > nav.fixed-top {
       .navbar.collapsing[style^="height"]:not(.show) .navbar-nav .nav-item.nav-link.status:before,
       .navbar.collapsing[style^="height"]:not(.show) .navbar-nav .nav-item > .nav-link.status:before {
         left: 2.14286rem !important; }
-      .navbar.collapsing[style^="height"]:not(.show) .navbar-nav .nav-item.nav-link .fa:first-child,
-      .navbar.collapsing[style^="height"]:not(.show) .navbar-nav .nav-item > .nav-link .fa:first-child {
+      .navbar.collapsing[style^="height"]:not(.show) .navbar-nav .nav-item.nav-link .fa:first-child, .navbar.collapsing[style^="height"]:not(.show) .navbar-nav .nav-item.nav-link .icon:first-child,
+      .navbar.collapsing[style^="height"]:not(.show) .navbar-nav .nav-item > .nav-link .fa:first-child,
+      .navbar.collapsing[style^="height"]:not(.show) .navbar-nav .nav-item > .nav-link .icon:first-child {
         width: 1.14286rem !important;
         margin-right: 0.57143rem !important;
         font-size: 1.14286rem !important;
@@ -10945,7 +10987,7 @@ body > nav.fixed-top {
       left: 2.28571rem;
       margin: 0;
       font-size: 1.14286rem; }
-    .navbar.collapse:not(.show) .navbar-brand .fa:first-child, .navbar.collapsing:not(.show) .navbar-brand .fa:first-child {
+    .navbar.collapse:not(.show) .navbar-brand .fa:first-child, .navbar.collapsing:not(.show) .navbar-brand .fa:first-child, .navbar.collapse:not(.show) .navbar-brand .icon:first-child, .navbar.collapsing:not(.show) .navbar-brand .icon:first-child {
       margin-right: 1.14286rem; }
     .navbar.collapse:not(.show) .navbar-nav, .navbar.collapsing:not(.show) .navbar-nav {
       width: 3.57143rem; }
@@ -10975,11 +11017,15 @@ body > nav.fixed-top {
           .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link.status:before,
           .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link.status:before {
             left: 1.14286rem; }
-          .navbar.collapse:not(.show) .navbar-nav.collapse .nav-item.nav-link .fa:first-child, .navbar.collapsing:not(.show) .navbar-nav.collapse .nav-item.nav-link .fa:first-child, .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link .fa:first-child, .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link .fa:first-child,
+          .navbar.collapse:not(.show) .navbar-nav.collapse .nav-item.nav-link .fa:first-child, .navbar.collapsing:not(.show) .navbar-nav.collapse .nav-item.nav-link .fa:first-child, .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link .fa:first-child, .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link .fa:first-child, .navbar.collapse:not(.show) .navbar-nav.collapse .nav-item.nav-link .icon:first-child, .navbar.collapsing:not(.show) .navbar-nav.collapse .nav-item.nav-link .icon:first-child, .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link .icon:first-child, .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item.nav-link .icon:first-child,
           .navbar.collapse:not(.show) .navbar-nav.collapse .nav-item > .nav-link .fa:first-child,
           .navbar.collapsing:not(.show) .navbar-nav.collapse .nav-item > .nav-link .fa:first-child,
           .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link .fa:first-child,
-          .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link .fa:first-child {
+          .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link .fa:first-child,
+          .navbar.collapse:not(.show) .navbar-nav.collapse .nav-item > .nav-link .icon:first-child,
+          .navbar.collapsing:not(.show) .navbar-nav.collapse .nav-item > .nav-link .icon:first-child,
+          .navbar.collapse:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link .icon:first-child,
+          .navbar.collapsing:not(.show) .navbar-nav.navbar.collapsing .nav-item > .nav-link .icon:first-child {
             width: 0;
             margin: 0; }
       .navbar.collapse:not(.show) .navbar-nav[data-toggle="collapse"]:hover + .navbar-nav.collapse, .navbar.collapsing:not(.show) .navbar-nav[data-toggle="collapse"]:hover + .navbar-nav.collapse, .navbar.collapse:not(.show) .navbar-nav[data-toggle="collapse"]:hover + .navbar-nav.navbar.collapsing, .navbar.collapsing:not(.show) .navbar-nav[data-toggle="collapse"]:hover + .navbar-nav.navbar.collapsing,
@@ -11000,9 +11046,11 @@ body > nav.fixed-top {
         .navbar.collapse:not(.show) .navbar-nav .nav-item > .nav-link:after,
         .navbar.collapsing:not(.show) .navbar-nav .nav-item > .nav-link:after {
           opacity: 0; }
-        .navbar.collapse:not(.show) .navbar-nav .nav-item.nav-link .fa:first-child, .navbar.collapsing:not(.show) .navbar-nav .nav-item.nav-link .fa:first-child,
+        .navbar.collapse:not(.show) .navbar-nav .nav-item.nav-link .fa:first-child, .navbar.collapsing:not(.show) .navbar-nav .nav-item.nav-link .fa:first-child, .navbar.collapse:not(.show) .navbar-nav .nav-item.nav-link .icon:first-child, .navbar.collapsing:not(.show) .navbar-nav .nav-item.nav-link .icon:first-child,
         .navbar.collapse:not(.show) .navbar-nav .nav-item > .nav-link .fa:first-child,
-        .navbar.collapsing:not(.show) .navbar-nav .nav-item > .nav-link .fa:first-child {
+        .navbar.collapsing:not(.show) .navbar-nav .nav-item > .nav-link .fa:first-child,
+        .navbar.collapse:not(.show) .navbar-nav .nav-item > .nav-link .icon:first-child,
+        .navbar.collapsing:not(.show) .navbar-nav .nav-item > .nav-link .icon:first-child {
           width: 1.35714rem;
           margin-right: 1.14286rem;
           font-size: 1.35714rem;
@@ -11074,8 +11122,9 @@ body > nav.fixed-top {
         .navbar .navbar-nav .nav-item.nav-link.status:before,
         .navbar .navbar-nav .nav-item > .nav-link.status:before {
           left: 2.14286rem; }
-        .navbar .navbar-nav .nav-item.nav-link .fa:first-child,
-        .navbar .navbar-nav .nav-item > .nav-link .fa:first-child {
+        .navbar .navbar-nav .nav-item.nav-link .fa:first-child, .navbar .navbar-nav .nav-item.nav-link .icon:first-child,
+        .navbar .navbar-nav .nav-item > .nav-link .fa:first-child,
+        .navbar .navbar-nav .nav-item > .nav-link .icon:first-child {
           width: 1.14286rem;
           margin-top: 0.57143rem;
           margin-right: 0.57143rem;
@@ -11086,8 +11135,9 @@ body > nav.fixed-top {
           -o-transition: all 0.35s ease, color 0s, background-color 0s;
           transition: all 0.35s ease, color 0s, background-color 0s; }
           @media screen and (prefers-reduced-motion: reduce) {
-            .navbar .navbar-nav .nav-item.nav-link .fa:first-child,
-            .navbar .navbar-nav .nav-item > .nav-link .fa:first-child {
+            .navbar .navbar-nav .nav-item.nav-link .fa:first-child, .navbar .navbar-nav .nav-item.nav-link .icon:first-child,
+            .navbar .navbar-nav .nav-item > .nav-link .fa:first-child,
+            .navbar .navbar-nav .nav-item > .nav-link .icon:first-child {
               -webkit-transition: none;
               -o-transition: none;
               transition: none; } }
@@ -11106,7 +11156,7 @@ body > nav.fixed-top {
           content: "\22ee";
           vertical-align: middle;
           line-height: 1.15;
-          font-weight: bold;
+          font-weight: 700;
           border: none; }
       .navbar .navbar-nav .nav-item.dropdown.show .dropdown-toggle {
         color: #fff; }
@@ -11161,7 +11211,7 @@ body > nav.fixed-top {
   .navbar-brand:hover, .navbar-brand:active, .navbar-brand.active {
     color: #fff;
     background-color: #304e73; }
-  .navbar-brand .fa:first-child {
+  .navbar-brand .fa:first-child, .navbar-brand .icon:first-child {
     width: 1.78571rem;
     margin-right: 0.57143rem;
     -webkit-flex-shrink: 0;
@@ -11172,7 +11222,7 @@ body > nav.fixed-top {
     -o-transition: all 0.35s ease, color 0s, background-color 0s;
     transition: all 0.35s ease, color 0s, background-color 0s; }
     @media screen and (prefers-reduced-motion: reduce) {
-      .navbar-brand .fa:first-child {
+      .navbar-brand .fa:first-child, .navbar-brand .icon:first-child {
         -webkit-transition: none;
         -o-transition: none;
         transition: none; } }
@@ -11220,8 +11270,9 @@ body > nav.fixed-top {
     line-height: 1rem;
     white-space: nowrap;
     text-align: center; }
-    .brand-menu .brand-menu-item .fa,
-    .brand-menu.show .brand-menu-item .fa {
+    .brand-menu .brand-menu-item .fa, .brand-menu .brand-menu-item .icon,
+    .brand-menu.show .brand-menu-item .fa,
+    .brand-menu.show .brand-menu-item .icon {
       display: block;
       width: 5.35714rem;
       height: 5.35714rem;
@@ -11231,12 +11282,14 @@ body > nav.fixed-top {
       background-color: #1491c1;
       margin-bottom: 0.71429rem;
       border-radius: 0.14286rem; }
-      .brand-menu .brand-menu-item .fa:before,
-      .brand-menu.show .brand-menu-item .fa:before {
+      .brand-menu .brand-menu-item .fa:before, .brand-menu .brand-menu-item .icon:before,
+      .brand-menu.show .brand-menu-item .fa:before,
+      .brand-menu.show .brand-menu-item .icon:before {
         font-size: 2.85714rem;
         line-height: 5.35714rem; }
-    .brand-menu .brand-menu-item:hover .fa,
-    .brand-menu.show .brand-menu-item:hover .fa {
+    .brand-menu .brand-menu-item:hover .fa, .brand-menu .brand-menu-item:hover .icon,
+    .brand-menu.show .brand-menu-item:hover .fa,
+    .brand-menu.show .brand-menu-item:hover .icon {
       background-color: #20b0e8; }
 
 .navbar-collapse {
@@ -11316,7 +11369,8 @@ nav.pagination {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
-          justify-content: flex-end; }
+          justify-content: flex-end;
+  font-size: 0.85714rem; }
   nav.pagination > span.fade.show {
     white-space: nowrap;
     -webkit-align-self: center;
@@ -11330,7 +11384,7 @@ nav.pagination {
     nav.pagination > div.fade .form-group {
       font-size: 0; }
       nav.pagination > div.fade .form-group * {
-        font-size: 1rem; }
+        font-size: 0.85714rem; }
       nav.pagination > div.fade .form-group label {
         line-height: 2.39286rem;
         vertical-align: top;
@@ -11347,8 +11401,8 @@ nav.pagination {
       nav.pagination > div.fade .form-group .dropdown {
         margin-left: 0.42857rem; }
       nav.pagination > div.fade .form-group .dropdown-menu, nav.pagination > div.fade .form-group .brand-menu {
-        min-width: 8.71429rem;
-        width: 8.71429rem;
+        min-width: 0;
+        width: 7.57143rem;
         padding: 0.28571rem;
         -webkit-flex-wrap: wrap;
             -ms-flex-wrap: wrap;
@@ -11363,11 +11417,11 @@ nav.pagination {
           display: -ms-flexbox;
           display: flex; }
         nav.pagination > div.fade .form-group .dropdown-menu .page-item .page-link, nav.pagination > div.fade .form-group .brand-menu .page-item .page-link {
-          min-width: 2rem;
-          height: 2rem;
+          min-width: 1.71429rem;
+          height: 1.71429rem;
           padding: 0;
-          padding-left: 0.35714rem;
-          padding-right: 0.35714rem;
+          padding-left: 0.30612rem;
+          padding-right: 0.30612rem;
           text-align: center;
           line-height: 2; }
   nav.pagination:hover > span.fade.show {
@@ -11390,7 +11444,7 @@ nav.pagination {
     nav.pagination > .page-link.disabled {
       color: #999999;
       pointer-events: none; }
-    nav.pagination > .page-link .fa {
+    nav.pagination > .page-link .fa, nav.pagination > .page-link .icon {
       font-weight: 700; }
 
 .page-item.disabled .page-link, .page-item.active .page-link {
@@ -11485,10 +11539,70 @@ dt {
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
+.table-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+  .table-header + .table {
+    margin-top: -2.71429rem; }
+
+.table {
+  font-size: 0.85714rem; }
+  .table:last-child {
+    margin-bottom: 0; }
+  .table caption {
+    caption-side: top;
+    font-size: 1.42857rem; }
+  .table tr.active {
+    background-color: #ececec; }
+  .table th,
+  .table td {
+    vertical-align: inherit; }
+    .table th .form-check,
+    .table td .form-check {
+      display: inline-block;
+      vertical-align: inherit; }
+  .table thead {
+    border-bottom: 0.07143rem solid #d1d1d1; }
+    .table thead th,
+    .table thead td {
+      border: none; }
+  .table tbody th,
+  .table tbody td {
+    border: none; }
+    .table tbody th.primary,
+    .table tbody td.primary {
+      font-size: 1rem; }
+  .table tbody:before, .table tbody:after {
+    content: "";
+    display: block;
+    height: 0.07143rem; }
+  .table tfoot {
+    border-top: 0.07143rem solid #d1d1d1; }
+    .table tfoot th,
+    .table tfoot td {
+      border: none; }
+  .table .form-check-label {
+    display: block; }
+
+.table-hover tbody tr:hover {
+  outline: 0.07143rem solid #a7dff2; }
+
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
 .tooltip .tooltip-inner {
   -webkit-box-shadow: 0 0.14286rem 0.21429rem 0.14286rem rgba(0, 0, 0, 0.175);
-          box-shadow: 0 0.14286rem 0.21429rem 0.14286rem rgba(0, 0, 0, 0.175);
-  padding: 0.71429rem; }
+          box-shadow: 0 0.14286rem 0.21429rem 0.14286rem rgba(0, 0, 0, 0.175); }
 
 .tooltip.tooltip-no-arrow .arrow {
   display: none; }
@@ -11496,8 +11610,6 @@ dt {
 .tooltip.tooltip-light .tooltip-inner {
   background-color: #fff;
   border: 1px solid #dbdbdb;
-  -webkit-box-shadow: 0 0 1rem 0 #dbdbdb;
-          box-shadow: 0 0 1rem 0 #dbdbdb;
   color: #666666; }
 
 /*
@@ -11513,6 +11625,15 @@ p:last-child {
 h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child,
 .h1:last-child, .h2:last-child, .h3:last-child, .h4:last-child, .h5:last-child, .h6:last-child {
   margin-bottom: 0; }
+
+.text-base {
+  font-size: 1rem !important; }
+
+.text-large {
+  font-size: 1.42857rem !important; }
+
+.text-small {
+  font-size: 0.85714rem !important; }
 
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.

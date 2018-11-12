@@ -317,7 +317,7 @@
             content: "\22ee"; // unicode vertical ellipsis used instead of FontAwesome because it is lighter weight
             vertical-align: middle;
             line-height: 1.15;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
             border: none;
             //@include transition($transition-collapse-all);
           }
@@ -378,7 +378,7 @@
       line-height: px(60); // IE
       z-index: 1030; // Edge
     }
-    
+
     &.collapsed:after {
       content: $fa-var-angle-down;
     }

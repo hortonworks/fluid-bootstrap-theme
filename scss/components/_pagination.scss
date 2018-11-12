@@ -10,6 +10,7 @@ nav.pagination {
   position: relative;
   height: $input-height;
   justify-content: flex-end;
+  font-size: $font-size-sm;
 
   > span.fade.show {
     white-space: nowrap;
@@ -26,7 +27,7 @@ nav.pagination {
       font-size: 0; // remove white space between inline elements
 
       * {
-        font-size: $font-size-base;
+        font-size: $font-size-sm;
       }
 
       label {
@@ -53,8 +54,8 @@ nav.pagination {
       }
 
       .dropdown-menu {
-        min-width: px(122);
-        width: px(122);
+        min-width: 0;
+        width: px(106);
         padding: px(4);
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -64,11 +65,11 @@ nav.pagination {
         }
 
         .page-item .page-link {
-          min-width: $font-size-base * 2;
-          height: $font-size-base * 2;
+          min-width: $font-size-sm * 2;
+          height: $font-size-sm * 2;
           padding: 0;
-          padding-left: px(5);
-          padding-right: px(5);
+          padding-left: px(5, $font-size-sm);
+          padding-right: px(5, $font-size-sm);
           text-align: center;
           line-height: 2;
         }

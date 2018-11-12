@@ -9,5 +9,30 @@
     position: relative;
     top: px(-7);
     left: px(-7);
+    box-shadow: $box-shadow-lg;
   }
+}
+
+.icon {
+  @extend .fa;
+}
+
+.icon-info {
+  @extend .fa-info-circle;
+  color: theme-color("info");
+}
+
+.icon-success {
+  @extend .fa-check-circle;
+  color: theme-color("success");
+}
+
+.icon-warning {
+  @extend .fa-exclamation-circle;
+  color: theme-color("warning");
+}
+
+.icon-danger {
+  @extend .fa-times-circle;
+  color: theme-color("danger");
 }
