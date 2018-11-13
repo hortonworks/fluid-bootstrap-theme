@@ -11368,11 +11368,11 @@ nav.pagination {
     -webkit-align-self: center;
         -ms-flex-item-align: center;
             align-self: center;
-    margin-right: 0.28571rem; }
+    margin-right: 15px; }
   nav.pagination > div.fade {
     position: absolute;
     display: inherit;
-    right: 4.78571rem; }
+    right: 90px; }
     nav.pagination > div.fade .form-group {
       font-size: 0; }
       nav.pagination > div.fade .form-group * {
@@ -11382,16 +11382,14 @@ nav.pagination {
         vertical-align: top;
         margin-right: 0.14286rem; }
       nav.pagination > div.fade .form-group select {
-        width: 4.64286rem;
-        margin-right: 0.28571rem; }
+        width: 4.64286rem; }
       nav.pagination > div.fade .form-group .form-control {
         display: initial;
         width: 2.28571rem;
         text-align: center;
-        height: 2.39286rem;
-        margin-right: 0.28571rem; }
-      nav.pagination > div.fade .form-group .dropdown {
-        margin-left: 0.42857rem; }
+        height: 2.39286rem; }
+      nav.pagination > div.fade .form-group.dropdown {
+        margin-left: 15px; }
       nav.pagination > div.fade .form-group .dropdown-menu, nav.pagination > div.fade .form-group .brand-menu {
         min-width: 0;
         width: 7.57143rem;
@@ -11422,9 +11420,9 @@ nav.pagination {
   nav.pagination:hover > div.fade {
     opacity: 1; }
   nav.pagination > .page-link {
-    width: 2.39286rem;
     height: 2.39286rem;
-    margin: 0;
+    margin-left: 15px;
+    margin-right: 15px;
     padding: 0;
     border: none;
     border-radius: 0.14286rem;

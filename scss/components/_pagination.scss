@@ -15,13 +15,13 @@ nav.pagination {
   > span.fade.show {
     white-space: nowrap;
     align-self: center;
-    margin-right: px(4);
+    margin-right: $grid-gutter-width / 2;
   }
 
   > div.fade {
     position: absolute;
     display: inherit;
-    right: $input-height * 2;
+    right: $grid-gutter-width * 3;
 
     .form-group {
       font-size: 0; // remove white space between inline elements
@@ -38,7 +38,6 @@ nav.pagination {
 
       select {
         width: px(65);
-        margin-right: px(4);
       }
 
       .form-control {
@@ -46,11 +45,10 @@ nav.pagination {
         width: px(32);
         text-align: center;
         height: $input-height;
-        margin-right: px(4);
       }
 
-      .dropdown {
-        margin-left: px(6);
+      &.dropdown {
+        margin-left: $grid-gutter-width / 2;
       }
 
       .dropdown-menu {
@@ -90,9 +88,9 @@ nav.pagination {
   }
 
   > .page-link {
-    width: $input-height;
     height: $input-height;
-    margin: 0;
+    margin-left: $grid-gutter-width / 2;
+    margin-right: $grid-gutter-width / 2;
     padding: 0;
     border: none;
     border-radius: $border-radius;
