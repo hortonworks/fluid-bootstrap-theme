@@ -674,7 +674,7 @@ $zindex-tooltip:                    1070 !default;
 
 // Navs
 
-$nav-link-margin:                   $grid-gutter-width / 2;
+$nav-link-margin:                   px($grid-gutter-width / 2px); //convert to rems
 $nav-link-padding-y:                $nav-link-margin;
 $nav-link-padding-x:                $nav-link-margin;
 $nav-link-disabled-color:           $gray-600 !default;
