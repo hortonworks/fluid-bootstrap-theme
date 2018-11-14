@@ -264,7 +264,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           30px !default;
+$grid-gutter-width:           15px;
 
 // Components
 //
@@ -674,9 +674,9 @@ $zindex-tooltip:                    1070 !default;
 
 // Navs
 
-$nav-link-padding-y:                px(5);
-$nav-link-padding-x:                px(5);
-$nav-link-margin-spacing:           px(10);
+$nav-link-margin:                   $grid-gutter-width / 2;
+$nav-link-padding-y:                $nav-link-margin;
+$nav-link-padding-x:                $nav-link-margin;
 $nav-link-disabled-color:           $gray-600 !default;
 
 $nav-tabs-border-color:             transparent;
@@ -779,7 +779,7 @@ $jumbotron-bg:                      $gray-200 !default;
 
 // Cards
 
-$card-margin:                       $grid-gutter-width / 2;
+$card-margin:                       $grid-gutter-width;
 $card-spacer-y:                     $card-margin;
 $card-spacer-x:                     $card-margin;
 $card-border-width:                 0;
@@ -795,7 +795,7 @@ $card-group-margin:                 ($grid-gutter-width / 2) !default;
 $card-deck-margin:                  $card-group-margin !default;
 
 $card-columns-count:                3 !default;
-$card-columns-gap:                  $card-group-margin;
+$card-columns-gap:                  $card-margin;
 $card-columns-margin:               $card-spacer-y !default;
 
 

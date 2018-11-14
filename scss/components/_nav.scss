@@ -9,9 +9,12 @@
 .nav-tabs,
 .nav-pills {
 
+  &:not(.flex-column) {
+    margin-bottom: $grid-gutter-width;
+  }
+
   .nav-item {
-    margin-top: $nav-tabs-border-width;
-    margin-right: $nav-link-margin-spacing;
+    margin-right: $nav-link-margin;
     margin-bottom: 0;
   }
 
@@ -32,12 +35,10 @@
 
     .nav-item {
       margin-right: 0;
-      margin-bottom: $nav-link-margin-spacing;
+      margin-bottom: $nav-link-margin;
     }
 
     .nav-link {
-      border-left: none;
-      border-top: none;
       border-bottom: none;
       border-right: transparent $nav-tabs-border-width solid;
       text-align: right;

@@ -21,8 +21,8 @@
   > .container,
   > .container-fluid {
     width: auto;
-    margin-left: -($grid-gutter-width / 2);
-    margin-right: -($grid-gutter-width / 2);
+    margin-left: -$grid-gutter-width;
+    margin-right: -$grid-gutter-width;
   }
 }
 
@@ -36,14 +36,6 @@
 
   .card {
     margin-bottom: 0;
-  }
-}
-
-.card-deck {
-  margin-left: 0;
-
-  .card {
-    margin-left: 0;
   }
 }
 
