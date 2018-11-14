@@ -470,8 +470,8 @@ pre {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
   margin-right: auto;
   margin-left: auto; }
   @media (min-width: 576px) {
@@ -489,8 +489,8 @@ pre {
 
 .container-fluid {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
   margin-right: auto;
   margin-left: auto; }
 
@@ -502,8 +502,8 @@ pre {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px; }
+  margin-right: -7.5px;
+  margin-left: -7.5px; }
 
 .no-gutters {
   margin-right: 0;
@@ -522,8 +522,8 @@ pre {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px; }
+  padding-right: 7.5px;
+  padding-left: 7.5px; }
 
 .col {
   -webkit-flex-basis: 0;
@@ -4113,7 +4113,7 @@ input[type="button"].btn-block {
       -ms-flex-direction: column;
           flex-direction: column; }
   .card-deck .card {
-    margin-bottom: 15px; }
+    margin-bottom: 7.5px; }
   @media (min-width: 576px) {
     .card-deck {
       -webkit-box-orient: horizontal;
@@ -4121,8 +4121,8 @@ input[type="button"].btn-block {
       -webkit-flex-flow: row wrap;
           -ms-flex-flow: row wrap;
               flex-flow: row wrap;
-      margin-right: -15px;
-      margin-left: -15px; }
+      margin-right: -7.5px;
+      margin-left: -7.5px; }
       .card-deck .card {
         display: -webkit-box;
         display: -webkit-flex;
@@ -4137,9 +4137,9 @@ input[type="button"].btn-block {
         -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
-        margin-right: 15px;
+        margin-right: 7.5px;
         margin-bottom: 0;
-        margin-left: 15px; } }
+        margin-left: 7.5px; } }
 
 .card-group {
   display: -webkit-box;
@@ -4152,7 +4152,7 @@ input[type="button"].btn-block {
       -ms-flex-direction: column;
           flex-direction: column; }
   .card-group > .card {
-    margin-bottom: 15px; }
+    margin-bottom: 7.5px; }
   @media (min-width: 576px) {
     .card-group {
       -webkit-box-orient: horizontal;
@@ -10551,11 +10551,6 @@ a.text-default:hover, a.text-default:focus {
 .card-deck .card {
   margin-bottom: 0; }
 
-.card-deck {
-  margin-left: 0; }
-  .card-deck .card {
-    margin-left: 0; }
-
 .card-group .card {
   border-left-width: 0.07143rem;
   border-right-width: 0.07143rem; }
@@ -10715,6 +10710,11 @@ label {
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
+.container,
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px; }
+
 .container-fluid {
   max-width: 1920px; }
 
@@ -10790,10 +10790,13 @@ body > nav.fixed-top {
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
+.nav-tabs:not(.flex-column),
+.nav-pills:not(.flex-column) {
+  margin-bottom: 15px; }
+
 .nav-tabs .nav-item,
 .nav-pills .nav-item {
-  margin-top: 2px;
-  margin-right: 0.71429rem;
+  margin-right: 7.5px;
   margin-bottom: 0; }
 
 .nav-tabs .nav-link,
@@ -10811,12 +10814,10 @@ body > nav.fixed-top {
 .nav-tabs.flex-column .nav-item,
 .nav-pills.flex-column .nav-item {
   margin-right: 0;
-  margin-bottom: 0.71429rem; }
+  margin-bottom: 7.5px; }
 
 .nav-tabs.flex-column .nav-link,
 .nav-pills.flex-column .nav-link {
-  border-left: none;
-  border-top: none;
   border-bottom: none;
   border-right: transparent 2px solid;
   text-align: right;
@@ -10828,7 +10829,8 @@ body > nav.fixed-top {
     border-right-color: #3fae2a; }
 
 .nav-link {
-  color: #666666; }
+  color: #666666;
+  padding: 7.5px; }
   .nav-link:hover {
     color: #333333; }
   .nav-link.disabled {
