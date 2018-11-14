@@ -3550,7 +3550,7 @@ input[type="button"].btn-block {
 
 .nav-link {
   display: block;
-  padding: 0.35714rem 0.35714rem; }
+  padding: 0.53571rem 0.53571rem; }
   .nav-link:hover, .nav-link:focus {
     text-decoration: none; }
   .nav-link.disabled {
@@ -3649,8 +3649,8 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: -1.03571rem;
-  padding-bottom: -1.03571rem;
+  padding-top: -0.85714rem;
+  padding-bottom: -0.85714rem;
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -3680,8 +3680,8 @@ input[type="button"].btn-block {
 
 .navbar-text {
   display: inline-block;
-  padding-top: 0.35714rem;
-  padding-bottom: 0.35714rem; }
+  padding-top: 0.53571rem;
+  padding-bottom: 0.53571rem; }
 
 .navbar-collapse {
   -webkit-flex-basis: 100%;
@@ -10796,7 +10796,7 @@ body > nav.fixed-top {
 
 .nav-tabs .nav-item,
 .nav-pills .nav-item {
-  margin-right: 7.5px;
+  margin-right: 0.53571rem;
   margin-bottom: 0; }
 
 .nav-tabs .nav-link,
@@ -10814,7 +10814,7 @@ body > nav.fixed-top {
 .nav-tabs.flex-column .nav-item,
 .nav-pills.flex-column .nav-item {
   margin-right: 0;
-  margin-bottom: 7.5px; }
+  margin-bottom: 0.53571rem; }
 
 .nav-tabs.flex-column .nav-link,
 .nav-pills.flex-column .nav-link {
@@ -10829,8 +10829,7 @@ body > nav.fixed-top {
     border-right-color: #3fae2a; }
 
 .nav-link {
-  color: #666666;
-  padding: 7.5px; }
+  color: #666666; }
   .nav-link:hover {
     color: #333333; }
   .nav-link.disabled {
