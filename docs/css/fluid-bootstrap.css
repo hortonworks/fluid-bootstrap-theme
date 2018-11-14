@@ -3251,11 +3251,11 @@ input[type="button"].btn-block {
   margin-bottom: 0; }
   .custom-control-label::before, .form-check .form-check-label::before, .form-check .form-radio-label::before, .form-radio .form-check-label::before, .form-radio .form-radio-label::before {
     position: absolute;
-    top: 0.39286rem;
+    top: 0.28571rem;
     left: -1.5rem;
     display: block;
-    width: 0.71429rem;
-    height: 0.71429rem;
+    width: 0.92857rem;
+    height: 0.92857rem;
     pointer-events: none;
     content: "";
     -webkit-user-select: none;
@@ -3265,16 +3265,16 @@ input[type="button"].btn-block {
     background-color: #fff; }
   .custom-control-label::after, .form-check .form-check-label::after, .form-check .form-radio-label::after, .form-radio .form-check-label::after, .form-radio .form-radio-label::after {
     position: absolute;
-    top: 0.39286rem;
+    top: 0.28571rem;
     left: -1.5rem;
     display: block;
-    width: 0.71429rem;
-    height: 0.71429rem;
+    width: 0.92857rem;
+    height: 0.92857rem;
     content: "";
     background-repeat: no-repeat;
     background-position: center center;
-    -webkit-background-size: 60% 60%;
-            background-size: 60% 60%; }
+    -webkit-background-size: 50% 50%;
+            background-size: 50% 50%; }
 
 .custom-checkbox .custom-control-label::before, .form-check .custom-control-label::before, .form-check .form-check-label::before, .form-check .form-radio-label::before, .custom-checkbox .form-radio .form-check-label::before, .form-radio .custom-checkbox .form-check-label::before, .custom-checkbox .form-radio .form-radio-label::before, .form-radio .custom-checkbox .form-radio-label::before {
   border-radius: 0.14286rem; }
@@ -10690,10 +10690,8 @@ body > footer:last-of-type {
 label {
   color: #999999; }
 
-.form-control {
-  font-size: 1rem; }
-  .form-control:disabled {
-    border: none; }
+.form-control:disabled {
+  border: none; }
 
 .valid-feedback, .invalid-feedback {
   color: #999999; }
@@ -10733,7 +10731,7 @@ label {
   border: none; }
 
 .form-check .form-check-label:before, .form-check .form-radio-label:before, .form-radio .form-check-label:before, .form-radio .form-radio-label:before {
-  border: #d1d1d1 1px solid; }
+  border: #d1d1d1 0.07143rem solid; }
 
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
