@@ -16,8 +16,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: normal;
-  background-color: $fluid-navbar-bg;
-  z-index: 999;
+  background-color: $navbar-bg;
+  z-index: 9999;
   overflow: hidden;
   @include transition($transition-collapse-all);
 
@@ -135,8 +135,8 @@
           position: relative;
           left: px(50);
           top: px(-50);
-          width: $navbar-width - px(24);
-          background-color: $fluid-navbar-bg;
+          width: $navbar-width - px(14);
+          background-color: $navbar-bg;
           overflow: visible;
           transition: none;
 
@@ -147,9 +147,11 @@
           .nav-item.nav-link,
           .nav-item > .nav-link {
             height: px(38);
+            padding-left: px(26);
+            overflow: hidden;
 
             &.status:before {
-              left: px(6);
+              left: px(16);
             }
 
             i:first-child,
@@ -248,17 +250,17 @@
     }
 
     .nav-item {
-      color: $fluid-navbar;
+      color: $navbar-color;
 
       &:hover,
       &:hover > .nav-link,
       &:active, &.active {
-        color: $fluid-navbar-active;
-        background-color: $fluid-navbar-active-bg;
+        color: $navbar-active-color;
+        background-color: $navbar-active-bg;
       }
 
       &.nav-link,
-      & > .nav-link {
+      > .nav-link {
         position: relative;
         height: px(38);
         padding: px(12) px(16);
@@ -322,7 +324,7 @@
         }
 
         &.show .dropdown-toggle {
-          color: $fluid-navbar-active;
+          color: $navbar-active-color;
         }
 
         .dropdown-menu {
@@ -348,16 +350,16 @@
   }
 
   .navbar-brand {
-    height: px(62); // 2 extra px to compensate for default padding
+    height: $navbar-brand-height;
     width: 100%; // set explicitly for IE
     margin: 0;
-    margin-bottom: px(5);
+    padding: 0;
     padding-left: px(12.5);
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: $fluid-navbar-brand;
-    background-color: $fluid-navbar-brand-bg;
+    color: $navbar-brand-color;
+    background-color: $navbar-brand-bg;
     text-transform: uppercase;
     white-space: nowrap;
     line-height: px(60);
@@ -372,7 +374,6 @@
         content: $fa-var-angle-up;
         color: theme-color("primary");
         font-family: "FontAwesome";
-        font-size: px(16);
         font-size: px(30);
         line-height: px(60); // IE
         z-index: 9999;
@@ -385,8 +386,8 @@
 
     &:hover,
     &:active, &.active {
-      color: $fluid-navbar-brand-hover;
-      background-color: $fluid-navbar-brand-hover-bg;
+      color: $navbar-brand-hover-color;
+      background-color: $navbar-brand-hover-bg;
     }
 
     i:first-child,
@@ -483,7 +484,7 @@
   padding: 0;
   height: px(48);
   display: block;
-  background-color: $fluid-navbar-brand-bg;
+  background-color: $navbar-brand-bg;
   border: none;
   border-radius: 0;
   z-index: 999;
@@ -497,15 +498,15 @@
     width: 100%;
     content: " ";
     pointer-events: none;
-    background: linear-gradient(to bottom, rgba($fluid-navbar-bg, 0) 0%, $fluid-navbar-bg 100%);
+    background: linear-gradient(to bottom, rgba($navbar-bg, 0) 0%, $navbar-bg 100%);
   }
 
   &:hover,
   &:active {
-    background-color: $fluid-navbar-active-bg;
+    background-color: $navbar-active-bg;
 
     .navbar-toggler-icon:before {
-      color: $fluid-navbar-active;
+      color: $navbar-active-color;
     }
   }
 
