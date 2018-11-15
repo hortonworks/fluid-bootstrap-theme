@@ -10,8 +10,8 @@
   //box-shadow: 1px 1px 5px 0 gray("600");
   box-shadow: $box-shadow;
   font-size: px(12);
-  
-  & > div {
+
+  > div {
     margin-left: px(40);
   }
 
@@ -35,9 +35,9 @@
   }
 
   &:hover:after {
-    color: $fluid-default;
+    color: theme-color("default");
   }
-  
+
   .alert-header {
     font-size: px(14);
   }
@@ -58,7 +58,7 @@
 .alert-default {
   border-color: $gray-300;
 
-  & > div {
+  > div {
     margin-left: initial;
   }
 }
