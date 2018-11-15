@@ -16,7 +16,7 @@
   flex-direction: column !important;
   justify-content: flex-start;
   align-items: unset;
-  background-color: $fluid-navbar-bg !important;
+  background-color: $navbar-bg !important;
   z-index: 1030;
   overflow: hidden;
   @include transition($transition-collapse-all);
@@ -120,7 +120,7 @@
           left: $navbar-nav-link-height-collapsed;
           top: $navbar-nav-link-height-collapsed * -1;
           width: $navbar-width - px(14);
-          background-color: $fluid-navbar-bg;
+          background-color: $navbar-bg;
           overflow: visible;
           transition: none;
 
@@ -240,17 +240,17 @@
     }
 
     .nav-item {
-      color: $fluid-navbar;
+      color: $navbar-color;
 
       &:hover,
       &:hover > .nav-link,
       &:active, &.active {
-        color: $fluid-navbar-active;
-        background-color: $fluid-navbar-active-bg;
+        color: $navbar-active-color;
+        background-color: $navbar-active-bg;
       }
 
       &.nav-link,
-      & > .nav-link {
+      > .nav-link {
         position: relative;
         height: $navbar-nav-link-height;
         padding: px(12) px(16);
@@ -314,7 +314,7 @@
         }
 
         &.show .dropdown-toggle {
-          color: $fluid-navbar-active;
+          color: $navbar-active-color;
         }
 
         .dropdown-menu {
@@ -347,8 +347,8 @@
   display: flex;
   flex-direction: row !important;
   align-items: center;
-  color: $fluid-navbar-brand !important;
-  background-color: $fluid-navbar-brand-bg;
+  color: $navbar-brand-color !important;
+  background-color: $navbar-brand-bg;
   text-transform: uppercase;
   white-space: nowrap;
   line-height: $navbar-brand-height;
@@ -374,8 +374,8 @@
 
   &:hover,
   &:active, &.active {
-    color: $fluid-navbar-brand-hover !important;
-    background-color: $fluid-navbar-brand-hover-bg;
+    color: $navbar-brand-hover-color !important;
+    background-color: $navbar-brand-hover-bg;
   }
 
   i:first-child,
@@ -470,7 +470,7 @@
   padding: 0;
   height: px(48);
   display: initial !important;
-  background-color: $fluid-navbar-brand-bg;
+  background-color: $navbar-brand-bg;
   border: none;
   border-radius: 0;
   z-index: 1030;
@@ -484,15 +484,15 @@
     width: 100%;
     content: " ";
     pointer-events: none;
-    background: linear-gradient(to bottom, rgba($fluid-navbar-bg, 0) 0%, $fluid-navbar-bg 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, $navbar-bg 100%);
   }
 
   &:hover,
   &:active {
-    background-color: $fluid-navbar-active-bg;
+    background-color: $navbar-active-bg;
 
     .navbar-toggler-icon:before {
-      color: $fluid-navbar-active;
+      color: $navbar-active-color;
     }
   }
 
