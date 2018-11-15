@@ -698,13 +698,22 @@ $nav-divider-margin-y:              ($spacer / 2) !default;
 $navbar-padding-y:                  ($spacer / 2) !default;
 $navbar-padding-x:                  $spacer !default;
 
-$navbar-nav-link-padding-x:         .5rem !default;
+$navbar-nav-padding:                px(5);
+
+$navbar-nav-link-height:              px(38);
+$navbar-nav-link-height-collapsed:    px(50);
+$navbar-nav-link-icon-size:           px(16);
+$navbar-nav-link-icon-size-collapsed: px(25);
+$navbar-nav-link-padding-x:           .5rem !default;
 
 $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 $nav-link-height:                   ($font-size-base * $line-height-base + $nav-link-padding-y * 2) !default;
-$navbar-brand-height:               px(62); // includes 2 extra px to compensate for default padding
+$navbar-brand-height:               px(60);
 $navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) / 2 !default;
+
+$navbar-brand-menu-spacing:         px(20);
+$navbar-brand-menu-item-size:       px(75);
 
 $navbar-toggler-padding-y:          .25rem !default;
 $navbar-toggler-padding-x:          .75rem !default;

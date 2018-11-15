@@ -17,7 +17,7 @@
   justify-content: flex-start;
   align-items: normal;
   background-color: $navbar-bg;
-  z-index: 9999;
+  z-index: 1030;
   overflow: hidden;
   @include transition($transition-collapse-all);
 
@@ -133,8 +133,8 @@
 
         &.collapse {
           position: relative;
-          left: px(50);
-          top: px(-50);
+          left: $navbar-nav-link-height-collapsed;
+          top: $navbar-nav-link-height-collapsed * -1;
           width: $navbar-width - px(14);
           background-color: $navbar-bg;
           overflow: visible;
@@ -146,7 +146,7 @@
 
           .nav-item.nav-link,
           .nav-item > .nav-link {
-            height: px(38);
+            height: $navbar-nav-link-height;
             padding-left: px(26);
             overflow: hidden;
 
@@ -174,7 +174,7 @@
 
         .nav-item.nav-link,
         .nav-item > .nav-link {
-          height: px(50);
+          height: $navbar-nav-link-height-collapsed;
           overflow: visible;
 
           &:after {
@@ -262,7 +262,7 @@
       &.nav-link,
       > .nav-link {
         position: relative;
-        height: px(38);
+        height: $navbar-nav-link-height;
         padding: px(12) px(16);
         line-height: 1;
         white-space: nowrap;
@@ -287,10 +287,10 @@
 
         i:first-child,
         .fa:first-child {
-          width: px(16);
+          width: $navbar-nav-link-icon-size;
           margin-top: px(8);
           margin-right: px(8);
-          font-size: px(16);
+          font-size: $navbar-nav-link-icon-size;
           line-height: 0;
           vertical-align: text-top;
           @include transition($transition-collapse-all);
@@ -306,7 +306,7 @@
 
         .dropdown-toggle {
           position: absolute;
-          height: px(38);
+          height: $navbar-nav-link-height;
           width: px(19);
           top: 0;
           right: px(8);
@@ -362,8 +362,8 @@
     background-color: $navbar-brand-bg;
     text-transform: uppercase;
     white-space: nowrap;
-    line-height: px(60);
-    z-index: 999;
+    line-height: $navbar-brand-height;
+    z-index: 1030;
     @include transition($transition-collapse-all);
 
     &[data-toggle="collapse"] {
@@ -376,7 +376,7 @@
         font-family: "FontAwesome";
         font-size: px(30);
         line-height: px(60); // IE
-        z-index: 9999;
+        z-index: 1030; // Edge
       }
 
       &.collapsed:after {
@@ -392,15 +392,15 @@
 
     i:first-child,
     .fa:first-child {
-      width: px(25);
+      width: $navbar-nav-link-icon-size-collapsed;
       margin-right: px(8);
       flex-shrink: 0;
-      font-size: px(25);
+      font-size: $navbar-nav-link-icon-size-collapsed;
       @include transition($transition-collapse-all);
     }
 
     & ~ .navbar-collapse {
-      padding-top: px(67);
+      padding-top: $navbar-brand-height + $navbar-nav-padding;
     }
   }
 }
@@ -409,10 +409,10 @@
 .brand-menu.show {
   @extend .dropdown-menu;
   position: fixed;
-  top: px(60);
+  top: $navbar-brand-height;
   padding: 0;
-  padding-left: px(20);
-  padding-right: px(20);
+  padding-left: $navbar-brand-menu-spacing;
+  padding-right: $navbar-brand-menu-spacing;
   max-width: px(617);
   display: flex;
   flex-direction: row !important; // !important ensures this remains set during collapse animation
@@ -423,18 +423,18 @@
   // thus avoiding a noticeable pause at the end of the animation.
   &:before, &:after {
     content: " ";
-    height: px(20);
+    height: $navbar-brand-menu-spacing;
     width: 100%;
     display: block; // IE
   }
 
   &:after {
-    height: px(17);
+    height: $navbar-brand-menu-spacing - px(3); // 3 less px to compensate for font line height
   }
 
   .brand-menu-item {
-    width: px(75);
-    margin: px(20);
+    width: $navbar-brand-menu-item-size;
+    margin: $navbar-brand-menu-spacing;
     line-height: $font-size-base;
     white-space: nowrap;
     text-align: center;
@@ -442,14 +442,19 @@
     i,
     span.fa {
       display: block;
-      width: px(75);
-      height: px(75);
+      width: $navbar-brand-menu-item-size;
+      height: $navbar-brand-menu-item-size;
       font-size: px(40);
       line-height: px(75);
       color: color("white");
       background-color: color("blue");
-      margin-bottom: px(10);
+      margin-bottom: $navbar-brand-menu-spacing / 2;
       border-radius: $border-radius;
+
+      &:before {
+        font-size: px(40);
+        line-height: $navbar-brand-menu-item-size;
+      }
     }
 
     &:hover {
@@ -467,8 +472,8 @@
   top: 0; // set explicitly for IE
   left: 0; // set explicitly for IE
   height: 100%;
-  padding-top: px(5);
-  padding-bottom: px(5);
+  padding-top: $navbar-nav-padding;
+  padding-bottom: $navbar-nav-padding;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
@@ -487,14 +492,14 @@
   background-color: $navbar-brand-bg;
   border: none;
   border-radius: 0;
-  z-index: 999;
+  z-index: 1030;
 
   // Create a fade out effect as menu items overflow vertically
   &:before {
     position: absolute;
     left: 0;
     bottom: 100%;
-    height: px(50);
+    height: $navbar-nav-link-height-collapsed;
     width: 100%;
     content: " ";
     pointer-events: none;
@@ -537,7 +542,7 @@
 
     // Padding is on last child rather than on parent due to IE
     > *:last-child {
-      padding-bottom: px(100);
+      padding-bottom: $navbar-nav-link-height-collapsed * 2;
     }
   }
 }
