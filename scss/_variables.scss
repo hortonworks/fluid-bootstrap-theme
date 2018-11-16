@@ -371,16 +371,18 @@ $hr-margin-y:                 $spacer !default;
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
 
-$table-cell-padding:          .75rem !default;
+$table-cell-padding:          px(6.5);
 $table-cell-padding-sm:       .3rem !default;
 
 $table-bg:                    transparent !default;
 $table-accent-bg:             rgba($black, .05) !default;
-$table-hover-bg:              rgba($black, .075) !default;
-$table-active-bg:             $table-hover-bg !default;
+$table-hover-bg:              #f3faff;
+$table-active-bg:             $gray-300;
 
 $table-border-width:          $border-width !default;
 $table-border-color:          $gray-300 !default;
+$table-heading-border-color:  $gray-400;
+$table-hover-border-color:    #a7dff2;
 
 $table-head-bg:               $gray-200 !default;
 $table-head-color:            $gray-700 !default;
@@ -393,7 +395,8 @@ $table-dark-color:            $body-bg !default;
 
 $table-striped-order:         odd !default;
 
-$table-caption-color:         $text-muted !default;
+$table-caption-color:         $text;
+$table-caption-size:          px(20);
 
 // Buttons + Forms
 //
@@ -526,10 +529,10 @@ $custom-forms-transition:               background-color .15s ease-in-out, borde
 $custom-control-gutter:                 1.5rem !default;
 $custom-control-spacer-x:               1rem !default;
 
-$custom-control-indicator-size:         px(10);
-$custom-control-indicator-border:       $border-color 1px solid;
+$custom-control-indicator-size:         px(13);
+$custom-control-indicator-border:       $border-color $border-width solid;
 $custom-control-indicator-bg:           $white;
-$custom-control-indicator-bg-size:      60% 60%;
+$custom-control-indicator-bg-size:      50% 50% !default;
 $custom-control-indicator-box-shadow:   inset 0 .25rem .25rem rgba($black, .1) !default;
 
 $custom-control-indicator-disabled-bg:          $gray-200 !default;
@@ -807,8 +810,9 @@ $tooltip-color:                     $white !default;
 $tooltip-bg:                        $gray-700;
 $tooltip-border-radius:             $border-radius !default;
 $tooltip-opacity:                   .9 !default;
-$tooltip-padding-y:                 .25rem !default;
-$tooltip-padding-x:                 .5rem !default;
+$tooltip-padding-y:                 .5rem;
+$tooltip-padding-x:                 .75rem;
+
 $tooltip-margin:                    0 !default;
 
 $tooltip-arrow-width:               .8rem !default;
@@ -817,7 +821,7 @@ $tooltip-arrow-color:               $tooltip-bg !default;
 
 // Popovers
 
-$popover-font-size:                 px(10);
+$popover-font-size:                 $tooltip-font-size;
 $popover-bg:                        $gray-700;
 $popover-max-width:                 276px !default;
 $popover-border-width:              $border-width !default;
@@ -827,8 +831,8 @@ $popover-box-shadow:                0 .25rem .5rem rgba($black, .2) !default;
 
 $popover-header-bg:                 darken($popover-bg, 3%) !default;
 $popover-header-color:              $white;
-$popover-header-padding-y:          .5rem !default;
-$popover-header-padding-x:          .75rem !default;
+$popover-header-padding-y:          $tooltip-padding-y;
+$popover-header-padding-x:          $tooltip-padding-x;
 
 $popover-body-color:                $white;
 $popover-body-padding-y:            $popover-header-padding-y !default;
