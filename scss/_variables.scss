@@ -153,6 +153,57 @@ $yiq-contrasted-threshold:  160; // Bumped this up from the default so that we s
 $yiq-text-dark:             $gray-900 !default;
 $yiq-text-light:            $white !default;
 
+
+// Icons
+
+$icon-warning:          "\21"; /* '!' */
+$icon-apps:             "\23"; /* '#' */
+$icon-search:           "\24"; /* '$' */
+$icon-info:             "\25"; /* '%' */
+$icon-close:            "\2a"; /* '*' */
+$icon-success:          "\2b"; /* '+' */
+$icon-danger:           "\2d"; /* '-' */
+$icon-sort-up:          "\2f"; /* '/' */
+$icon-menu:             "\3a"; /* ':' */
+$icon-previous:         "\3c"; /* '&lt;' */
+$icon-next:             "\3e"; /* '&gt;' */
+$icon-help:             "\3f"; /* '?' */
+$icon-sort-down:        "\5c"; /* '\' */
+$icon-collapse:         "\5e"; /* '^' */
+$icon-expand:           "\5f"; /* '_' */
+$icon-navbar-collapse:  "\7b"; /* '{' */
+$icon-unsorted:         "\7c"; /* '|' */
+$icon-navbar-expand:    "\7d"; /* '}' */
+$icon-filter:           "\7e"; /* '~' */
+
+$theme-icons: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-icons: map-merge(
+  (
+    "apps":            $icon-apps,
+    "close":           $icon-close,
+    "collapse":        $icon-collapse,
+    "danger":          $icon-danger,
+    "expand":          $icon-expand,
+    "filter":          $icon-filter,
+    "help":            $icon-help,
+    "info":            $icon-info,
+    "menu":            $icon-menu,
+    "navbar-collapse": $icon-navbar-collapse,
+    "navbar-expand":   $icon-navbar-expand,
+    "next":            $icon-next,
+    "previous":        $icon-previous,
+    "search":          $icon-search,
+    "sort-down":       $icon-sort-down,
+    "sort-up":         $icon-sort-up,
+    "success":         $icon-success,
+    "unsorted":        $icon-unsorted,
+    "warning":         $icon-warning,
+  ),
+  $theme-icons
+);
+
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.

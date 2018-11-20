@@ -6,10 +6,14 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-// Required for variable overriding
+// Fonts
+@import "../icons/css/fluidicons.css";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+// Required for overriding variables
 @import "node_modules/bootstrap/scss/functions";
 @import "functions"; // Fluid functions
-@import "variables"; // Fluid overrides
+@import "variables"; // Fluid variable overrides
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 @import "node_modules/bootstrap/scss/root";
@@ -47,11 +51,6 @@
 @import "node_modules/bootstrap/scss/utilities";
 @import "node_modules/bootstrap/scss/print";
 
-// Fonts
-@import "node_modules/font-awesome/scss/font-awesome";
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
-
 // Fluid extensions
-@import "custom-variables"; // This references FontAwesome, so it must come after it
 @import "components/*";
 @import "utilities/*";

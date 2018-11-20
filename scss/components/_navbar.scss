@@ -59,7 +59,7 @@
 
       .navbar-brand {
 
-        .fa:first-child {
+        .icon:first-child {
           margin-right: px(8);
         }
       }
@@ -76,7 +76,7 @@
             left: px(30) !important; // !important ensures this remains set during collapse animation
           }
 
-          .fa:first-child {
+          .icon:first-child {
             width: $navbar-nav-link-icon-size !important;      // !important ensures this remains set during collapse animation
             margin-right: px(8) !important;                    // !important ensures this remains set during collapse animation
             font-size: $navbar-nav-link-icon-size !important;  // !important ensures this remains set during collapse animation
@@ -121,7 +121,7 @@
           font-size: px(16);
         }
 
-        .fa:first-child {
+        .icon:first-child {
           margin-right: px(16);
         }
       }
@@ -152,7 +152,7 @@
               left: px(16);
             }
 
-            .fa:first-child {
+            .icon:first-child {
               width: 0;
               margin: 0;
             }
@@ -178,7 +178,7 @@
             opacity: 0;
           }
 
-          .fa:first-child {
+          .icon:first-child {
             width: px(19);
             margin-right: px(16);
             font-size: px(19);
@@ -192,7 +192,7 @@
       }
 
       .navbar-toggler-icon:before {
-        content: $fa-var-angle-double-right;
+        content: theme-icon("navbar-collapse");
       }
     }
   }
@@ -216,8 +216,8 @@
             position: absolute;
             top: px(11);
             right: px(12);
-            content: $fa-var-angle-up;
-            font-family: "FontAwesome";
+            content: theme-icon("collapse");
+            font-family: "fluidicons";
             font-size: px(20);
             //@include transition($transition-collapse-all);
           }
@@ -240,7 +240,7 @@
 
         .nav-item.nav-link:after,
         .nav-item > .nav-link:after {
-          content: $fa-var-angle-down;
+          content: theme-icon("expand");
         }
       }
     }
@@ -281,7 +281,7 @@
           left: px(30);
         }
 
-        .fa:first-child {
+        .icon:first-child {
           width: $navbar-nav-link-icon-size;
           margin-top: px(8);
           margin-right: px(8);
@@ -308,11 +308,11 @@
           color: inherit;
 
           &:after {
-            margin-left: px(9);
-            content: "\22ee"; // unicode vertical ellipsis used instead of FontAwesome because it is lighter weight
+            margin-left: px(4);
+            content: ":";
+            font-family: "fluidicons";
             vertical-align: middle;
             line-height: 1.15;
-            font-weight: $font-weight-bold;
             border: none;
             //@include transition($transition-collapse-all);
           }
@@ -365,16 +365,16 @@
       &:after {
         position: absolute;
         right: px(12.5);
-        content: $fa-var-angle-up;
+        content: theme-icon("collapse");
         color: theme-color("primary");
-        font-family: "FontAwesome";
+        font-family: "fluidicons";
         font-size: px(30);
         line-height: px(60); // IE
         z-index: 1030; // Edge
       }
 
       &.collapsed:after {
-        content: $fa-var-angle-down;
+        content: theme-icon("expand");
       }
     }
 
@@ -384,7 +384,7 @@
       background-color: $navbar-brand-hover-bg;
     }
 
-    .fa:first-child {
+    .icon:first-child {
       width: $navbar-nav-link-icon-size-collapsed;
       margin-right: px(8);
       flex-shrink: 0;
@@ -432,7 +432,7 @@
     white-space: nowrap;
     text-align: center;
 
-    .fa {
+    .icon {
       display: block;
       width: $navbar-brand-menu-item-size;
       height: $navbar-brand-menu-item-size;
@@ -451,7 +451,7 @@
 
     &:hover {
 
-      .fa {
+      .icon {
         background-color: lighten(color("blue"), 10%)
       }
     }
@@ -515,8 +515,8 @@
     line-height: px(48);
 
     &:before {
-      content: $fa-var-angle-double-left;
-      font-family: "FontAwesome";
+      content: theme-icon("navbar-expand");
+      font-family: "fluidicons";
       font-size: px(20);
       color: theme-color("primary");
 

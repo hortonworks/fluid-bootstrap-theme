@@ -1,0 +1,20 @@
+
+.icon-warning:before { content: '\21'; } /* '!' */
+.icon-apps:before { content: '\23'; } /* '#' */
+.icon-search:before { content: '\24'; } /* '$' */
+.icon-info:before { content: '\25'; } /* '%' */
+.icon-close:before { content: '\2a'; } /* '*' */
+.icon-success:before { content: '\2b'; } /* '+' */
+.icon-danger:before { content: '\2d'; } /* '-' */
+.icon-sort-up:before { content: '\2f'; } /* '/' */
+.icon-menu:before { content: '\3a'; } /* ':' */
+.icon-previous:before { content: '\3c'; } /* '&lt;' */
+.icon-next:before { content: '\3e'; } /* '&gt;' */
+.icon-help:before { content: '\3f'; } /* '?' */
+.icon-sort-down:before { content: '\5c'; } /* '\' */
+.icon-collapse:before { content: '\5e'; } /* '^' */
+.icon-expand:before { content: '\5f'; } /* '_' */
+.icon-navbar-collapse:before { content: '\7b'; } /* '{' */
+.icon-unsorted:before { content: '\7c'; } /* '|' */
+.icon-navbar-expand:before { content: '\7d'; } /* '}' */
+.icon-filter:before { content: '\7e'; } /* '~' */
