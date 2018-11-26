@@ -54,8 +54,6 @@ label {
 // Make all <select> dropdowns themed
 select {
   @extend .custom-select;
-
-  height: initial;
 }
 
  // Make all checkboxes and radios themed

@@ -6,10 +6,17 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-html {
-  font-size: $root-font-size;
-}
+body > {
 
-body {
-  min-width: $layout-min-width;
+  header.header-top {
+    @extend .fixed-top;
+    display: flex;
+    align-items: center;
+    height: $navbar-brand-height;
+    min-width: $layout-min-width;
+
+    & + * {
+      padding-top: $navbar-brand-height;
+    }
+  }
 }

@@ -8,18 +8,34 @@
 
 .navbar {
   @extend .navbar-dark;
-  position: fixed !important;
-  height: 100% !important;
+  position: fixed;
+  height: 100%;
   width: $navbar-width;
   margin: 0;
   padding: 0;
-  flex-direction: column !important;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: unset;
-  background-color: $navbar-bg !important;
+  align-items: normal;
+  background-color: $navbar-bg;
   z-index: 1030;
   overflow: hidden;
   @include transition($transition-collapse-all);
+
+  * {
+    flex-shrink: 0;
+    align-items: normal;
+  }
+
+  &[class*="navbar-expand-"] {
+
+    * {
+      flex-direction: column;
+    }
+
+    .navbar-toggler {
+      display: block;
+    }
+  }
 
   &.collapsing {
     @extend .collapse;
@@ -31,49 +47,48 @@
     .navbar-collapse {
       width: $navbar-width;
     }
-  }
 
-  // We use the [style] selector to determine the direction of the .collapsing behavior;
-  // when it is present, the menu is expanding.
-  &.collapsing[style^="height"] {
-    width: $navbar-width !important;
+    // We use the [style] selector to determine the direction of the .collapsing behavior;
+    // when it is present, the menu is expanding.
+    &[style^="height"]:not(.show) {
+      width: $navbar-width;
 
-    & ~ *:not(.popover):not(.tooltip):not(.modal) {
-      margin-left: $navbar-width;
-    }
-
-    .navbar-brand {
-
-      i:first-child,
-      .fa:first-child {
-        margin-right: px(8) !important;
+      & ~ *:not(.popover):not(.tooltip):not(.modal) {
+        margin-left: $navbar-width;
       }
-    }
 
-    .navbar-nav {
-
-      .nav-item.nav-link,
-      .nav-item > .nav-link {
-        height: $navbar-nav-link-height !important;
-        width: $navbar-width;
-        padding-left: $navbar-nav-link-icon-size !important;
-
-        &.status:before {
-          left: px(30) !important;
-        }
+      .navbar-brand {
 
         i:first-child,
         .fa:first-child {
-          width: $navbar-nav-link-icon-size !important;
-          margin-right: px(8) !important;
-          font-size: $navbar-nav-link-icon-size !important;
-          line-height: 0 !important;
+          margin-right: px(8);
         }
       }
 
-      &.collapse.show {
-        display: block !important;
-        position: static;
+      .navbar-nav {
+
+        .nav-item.nav-link,
+        .nav-item > .nav-link {
+          height: px(38);
+          width: $navbar-width;
+
+          &.status:before {
+            left: px(30) !important; // !important ensures this remains set during collapse animation
+          }
+
+          i:first-child,
+          .fa:first-child {
+            width: px(16) !important;       // !important ensures this remains set during collapse animation
+            margin-right: px(8) !important; // !important ensures this remains set during collapse animation
+            font-size: px(16) !important;   // !important ensures this remains set during collapse animation
+            line-height: 0 !important;      // !important ensures this remains set during collapse animation
+          }
+        }
+
+        &.collapse.show {
+          display: block;
+          position: static;
+        }
       }
     }
   }
@@ -101,6 +116,7 @@
         &[data-toggle="collapse"]:after {
           position: absolute;
           top: px(-18);
+          -ms-transform: translateY(px(29)); // IE
           left: px(32);
           margin: 0;
           font-size: px(16);
@@ -151,7 +167,7 @@
           &:hover + .navbar-nav.collapse,
           &:hover + .navbar-nav.collapsing,
           & + .navbar-nav.collapse:hover  {
-            display: initial;
+            display: block;
             position: fixed;
           }
         }
@@ -183,12 +199,6 @@
         content: $fa-var-angle-double-right;
       }
     }
-  }
-
-  * {
-    flex-direction: column !important;
-    flex-shrink: 0;
-    align-items: unset;
   }
 
   .navbar-nav {
@@ -338,57 +348,60 @@
       // }
     }
   }
-}
 
-.navbar-brand {
-  height: $navbar-brand-height;
-  margin: 0;
-  padding-left: px(12.5);
-  display: flex;
-  flex-direction: row !important;
-  align-items: center;
-  color: $navbar-brand-color !important;
-  background-color: $navbar-brand-bg;
-  text-transform: uppercase;
-  white-space: nowrap;
-  line-height: $navbar-brand-height;
-  z-index: 1030;
-  @include transition($transition-collapse-all);
-
-  &[data-toggle="collapse"] {
-
-    &:after {
-      position: absolute;
-      right: px(12.5);
-      content: $fa-var-angle-up;
-      color: theme-color("primary");
-      font-family: "FontAwesome";
-      font-size: px(30);
-      z-index: 1030; // Edge
-    }
-
-    &.collapsed:after {
-      content: $fa-var-angle-down;
-    }
-  }
-
-  &:hover,
-  &:active, &.active {
-    color: $navbar-brand-hover-color !important;
-    background-color: $navbar-brand-hover-bg;
-  }
-
-  i:first-child,
-  .fa:first-child {
-    width: $navbar-nav-link-icon-size-collapsed;
-    margin-right: px(8);
-    flex-shrink: 0;
-    font-size: $navbar-nav-link-icon-size-collapsed;
+  .navbar-brand {
+    height: $navbar-brand-height;
+    width: 100%; // set explicitly for IE
+    margin: 0;
+    padding: 0;
+    padding-left: px(12.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $navbar-brand-color;
+    background-color: $navbar-brand-bg;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: $navbar-brand-height;
+    z-index: 1030;
     @include transition($transition-collapse-all);
-  }
 
-  & ~ .navbar-collapse {
-    padding-top: $navbar-brand-height + $navbar-nav-padding;
+    &[data-toggle="collapse"] {
+
+      &:after {
+        position: absolute;
+        right: px(12.5);
+        content: $fa-var-angle-up;
+        color: theme-color("primary");
+        font-family: "FontAwesome";
+        font-size: px(30);
+        line-height: px(60); // IE
+        z-index: 1030; // Edge
+      }
+
+      &.collapsed:after {
+        content: $fa-var-angle-down;
+      }
+    }
+
+    &:hover,
+    &:active, &.active {
+      color: $navbar-brand-hover-color;
+      background-color: $navbar-brand-hover-bg;
+    }
+
+    i:first-child,
+    .fa:first-child {
+      width: $navbar-nav-link-icon-size-collapsed;
+      margin-right: px(8);
+      flex-shrink: 0;
+      font-size: $navbar-nav-link-icon-size-collapsed;
+      @include transition($transition-collapse-all);
+    }
+
+    & ~ .navbar-collapse {
+      padding-top: $navbar-brand-height + $navbar-nav-padding;
+    }
   }
 }
 
@@ -402,7 +415,7 @@
   padding-right: $navbar-brand-menu-spacing;
   max-width: px(617);
   display: flex;
-  flex-direction: row !important;
+  flex-direction: row !important; // !important ensures this remains set during collapse animation
   flex-wrap: wrap;
   align-items: center;
 
@@ -412,6 +425,7 @@
     content: " ";
     height: $navbar-brand-menu-spacing;
     width: 100%;
+    display: block; // IE
   }
 
   &:after {
@@ -430,6 +444,8 @@
       display: block;
       width: $navbar-brand-menu-item-size;
       height: $navbar-brand-menu-item-size;
+      font-size: px(40);
+      line-height: px(75);
       color: color("white");
       background-color: color("blue");
       margin-bottom: $navbar-brand-menu-spacing / 2;
@@ -453,6 +469,8 @@
 
 .navbar-collapse {
   position: absolute;
+  top: 0; // set explicitly for IE
+  left: 0; // set explicitly for IE
   height: 100%;
   padding-top: $navbar-nav-padding;
   padding-bottom: $navbar-nav-padding;
@@ -465,11 +483,12 @@
 
 .navbar-toggler {
   position: absolute;
+  left: 0; // set explicitly for IE
   bottom: 0;
   width: 100%;
   padding: 0;
   height: px(48);
-  display: initial !important;
+  display: block;
   background-color: $navbar-brand-bg;
   border: none;
   border-radius: 0;
@@ -484,7 +503,7 @@
     width: 100%;
     content: " ";
     pointer-events: none;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, $navbar-bg 100%);
+    background: linear-gradient(to bottom, rgba($navbar-bg, 0) 0%, $navbar-bg 100%);
   }
 
   &:hover,
@@ -501,7 +520,7 @@
   }
 
   .navbar-toggler-icon {
-    background-image: unset;
+    background-image: none;
     line-height: px(48);
 
     &:before {
@@ -515,10 +534,15 @@
       bottom: 0;
       transform: translateX(-50%);
       /**************************/
+      -ms-transform: translateX(50%); // IE
     }
   }
 
   & ~ .navbar-collapse {
-    padding-bottom: $navbar-nav-link-height-collapsed * 2;
+
+    // Padding is on last child rather than on parent due to IE
+    > *:last-child {
+      padding-bottom: $navbar-nav-link-height-collapsed * 2;
+    }
   }
 }
