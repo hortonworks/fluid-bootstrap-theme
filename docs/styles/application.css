@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+#containerExample,
+#containerFluidExample {
+  padding: 50px;
+  border: #666666 1px solid; }
+
+#modalFluidContainerExample .row [class^="col-"] {
+  background: #ececec;
+  padding: 1rem; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcGxpY2F0aW9uLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7OztHQU1HO0FBRUg7O0VBRUUsY0FBYTtFQUNiLDBCQUF5QixFQUMxQjs7QUFFRDtFQUNFLG9CQUFtQjtFQUNuQixjQUFhLEVBQ2QiLCJmaWxlIjoiYXBwbGljYXRpb24uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIENvcHlyaWdodCAoYykgMjAxMS0yMDE4LCBIb3J0b253b3JrcyBJbmMuICBBbGwgcmlnaHRzIHJlc2VydmVkLlxuICogRXhjZXB0IGFzIGV4cHJlc3NseSBwZXJtaXR0ZWQgaW4gYSB3cml0dGVuIGFncmVlbWVudCBiZXR3ZWVuIHlvdVxuICogb3IgeW91ciBjb21wYW55IGFuZCBIb3J0b253b3JrcywgSW5jLCBhbnkgdXNlLCByZXByb2R1Y3Rpb24sXG4gKiBtb2RpZmljYXRpb24sIHJlZGlzdHJpYnV0aW9uLCBzaGFyaW5nLCBsZW5kaW5nIG9yIG90aGVyIGV4cGxvaXRhdGlvblxuICogb2YgYWxsIG9yIGFueSBwYXJ0IG9mIHRoZSBjb250ZW50cyBvZiB0aGlzIGZpbGUgaXMgc3RyaWN0bHkgcHJvaGliaXRlZC5cbiAqL1xuXG4jY29udGFpbmVyRXhhbXBsZSxcbiNjb250YWluZXJGbHVpZEV4YW1wbGUge1xuICBwYWRkaW5nOiA1MHB4O1xuICBib3JkZXI6ICM2NjY2NjYgMXB4IHNvbGlkO1xufVxuXG4jbW9kYWxGbHVpZENvbnRhaW5lckV4YW1wbGUgLnJvdyBbY2xhc3NePVwiY29sLVwiXSB7XG4gIGJhY2tncm91bmQ6ICNlY2VjZWM7XG4gIHBhZGRpbmc6IDFyZW07XG59XG4iXX0= */

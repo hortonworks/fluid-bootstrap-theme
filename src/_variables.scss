@@ -30,7 +30,7 @@ $gray-300: #ececec; // Background
 $gray-400: #d1d1d1;
 $gray-500: #b5b5b5;
 $gray-600: #999999; // Light Text
-$gray-700: #666666; // Default
+$gray-700: #666666; // Default Text
 $gray-800: #4c4c4c;
 $gray-900: #333333; // Dark Text
 $black:    #000 !default;
@@ -66,7 +66,7 @@ $glow:   #007bff; // This is Bootstrap's original $blue value, but we only want 
 
 // Fluid colors
 $fluid-green:              #3fae2a;
-$navbar-color:             rgba(255, 255, 255, .5);
+$navbar-color:             rgba(255, 255, 255, .55); // This is .55 rather than .5 to achieve contrast required for a11y
 $navbar-bg:                #313544;
 $navbar-brand-color:       rgba(255, 255, 255, .75);
 $navbar-brand-hover-color:   $white;
@@ -230,6 +230,9 @@ $paragraph-margin-bottom:   1rem !default;
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 
+$layout-min-width: 1024px;
+$layout-max-width: 1920px;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -247,10 +250,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -270,7 +273,7 @@ $grid-gutter-width:           30px !default;
 $line-height-lg:              1.5 !default;
 $line-height-sm:              1.5 !default;
 
-$border-width:                px(1);
+$border-width:                1px !default;
 $border-color:                $gray-300 !default;
 
 $border-radius:               px(2);
@@ -412,7 +415,7 @@ $input-btn-padding-y-lg:      .5rem !default;
 $input-btn-padding-x-lg:      1rem !default;
 $input-btn-line-height-lg:    $line-height-lg !default;
 
-$input-btn-border-width:      $border-width !default;
+$input-btn-border-width:      px($border-width / 1px); // convert to rems for compatibility in later calculations
 
 
 // Buttons
@@ -493,7 +496,7 @@ $input-plaintext-color:                 $body-color !default;
 $input-height-border:                   $input-border-width * 2 !default;
 
 $input-height-inner:                    ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2) !default;
-$input-height:                          $input-height-inner + $input-height-border;
+$input-height:                          $input-height-inner + $input-height-border; // let Sass do the math so we can use this value in other source files
 
 $input-height-inner-sm:                 ($font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2) !default;
 $input-height-sm:                       calc(#{$input-height-inner-sm} + #{$input-height-border}) !default;

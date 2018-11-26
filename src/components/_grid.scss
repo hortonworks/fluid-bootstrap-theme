@@ -6,10 +6,6 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-html {
-  font-size: $root-font-size;
-}
-
-body {
-  min-width: $layout-min-width;
+.container-fluid {
+  max-width: $layout-max-width;
 }
