@@ -404,10 +404,6 @@
       padding-top: $navbar-brand-height + $navbar-nav-padding;
     }
   }
-
-  & ~ .navbar-collapse {
-    padding-top: px(67);
-  }
 }
 
 .brand-menu,

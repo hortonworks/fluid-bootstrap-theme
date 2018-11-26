@@ -11064,8 +11064,6 @@ i, .fa {
           transition: none; } }
     .navbar .navbar-brand ~ .navbar-collapse {
       padding-top: 4.64286rem; }
-  .navbar ~ .navbar-collapse {
-    padding-top: 4.78571rem; }
 
 .brand-menu,
 .brand-menu.show {
