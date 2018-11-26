@@ -3649,8 +3649,8 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: -0.96429rem;
-  padding-bottom: -0.96429rem;
+  padding-top: -0.89286rem;
+  padding-bottom: -0.89286rem;
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -10662,11 +10662,11 @@ body > header.header-top {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 4.42857rem;
+  height: 4.28571rem;
   min-width: 1024px;
   background-color: #fff; }
   body > header.header-top + * {
-    padding-top: 4.42857rem; }
+    padding-top: 4.28571rem; }
 
 i, .fa {
   text-align: center; }
@@ -10999,7 +10999,7 @@ i, .fa {
         left: 11rem;
         position: fixed; }
   .navbar .navbar-brand {
-    height: 4.42857rem;
+    height: 4.28571rem;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -11021,7 +11021,7 @@ i, .fa {
     background-color: #313d54;
     text-transform: uppercase;
     white-space: nowrap;
-    line-height: 4.42857rem;
+    line-height: 4.28571rem;
     z-index: 1030;
     -webkit-transition: all 0.35s ease, color 0s, background-color 0s;
     -o-transition: all 0.35s ease, color 0s, background-color 0s;
@@ -11063,14 +11063,14 @@ i, .fa {
           -o-transition: none;
           transition: none; } }
     .navbar .navbar-brand ~ .navbar-collapse {
-      padding-top: 4.78571rem; }
+      padding-top: 4.64286rem; }
   .navbar ~ .navbar-collapse {
     padding-top: 4.78571rem; }
 
 .brand-menu,
 .brand-menu.show {
   position: fixed;
-  top: 4.42857rem;
+  top: 4.28571rem;
   padding: 0;
   padding-left: 1.42857rem;
   padding-right: 1.42857rem;

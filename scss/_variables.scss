@@ -709,7 +709,7 @@ $navbar-nav-link-padding-x:           .5rem !default;
 $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 $nav-link-height:                   ($font-size-base * $line-height-base + $nav-link-padding-y * 2) !default;
-$navbar-brand-height:               px(62); // includes 2 extra px to compensate for default padding
+$navbar-brand-height:               px(60);
 $navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) / 2 !default;
 
 $navbar-brand-menu-spacing:         px(20);
