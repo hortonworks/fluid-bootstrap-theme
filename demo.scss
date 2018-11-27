@@ -1,0 +1,19 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "scss/functions";
+@import "scss/variables";
+
+h2, .h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#containerExample, #containerFluidExample {
+  border: color("gray") 1px solid;
+}
+
+#modalFluidContainerExample {
+  .row [class^="col-"] {
+    background: $gray-300;
+    padding: 1rem;
+  }
+}

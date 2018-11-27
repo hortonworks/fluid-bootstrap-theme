@@ -1,0 +1,549 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+.navbar {
+  @extend .navbar-dark;
+  position: fixed;
+  height: 100%;
+  width: $navbar-width;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: normal;
+  background-color: $navbar-bg;
+  z-index: 1030;
+  overflow: hidden;
+  @include transition($transition-collapse-all);
+
+  * {
+    flex-shrink: 0;
+    align-items: normal;
+  }
+
+  &[class*="navbar-expand-"] {
+
+    * {
+      flex-direction: column;
+    }
+
+    .navbar-toggler {
+      display: block;
+    }
+  }
+
+  &.collapsing {
+    @extend .collapse;
+
+    .navbar-brand[data-toggle="collapse"]:after {
+      opacity: 0;
+    }
+
+    .navbar-collapse {
+      width: $navbar-width;
+    }
+
+    // We use the [style] selector to determine the direction of the .collapsing behavior;
+    // when it is present, the menu is expanding.
+    &[style^="height"]:not(.show) {
+      width: $navbar-width;
+
+      & ~ *:not(.popover):not(.tooltip):not(.modal) {
+        margin-left: $navbar-width;
+      }
+
+      .navbar-brand {
+
+        i:first-child,
+        .fa:first-child {
+          margin-right: px(8);
+        }
+      }
+
+      .navbar-nav {
+
+        .nav-item.nav-link,
+        .nav-item > .nav-link {
+          height: px(38);
+          width: $navbar-width;
+          padding-left: $navbar-nav-link-icon-size !important; // !important ensures this remains set during collapse animation
+
+          &.status:before {
+            left: px(30) !important; // !important ensures this remains set during collapse animation
+          }
+
+          i:first-child,
+          .fa:first-child {
+            width: $navbar-nav-link-icon-size !important;     // !important ensures this remains set during collapse animation
+            margin-right: px(8) !important;                   // !important ensures this remains set during collapse animation
+            font-size: $navbar-nav-link-icon-size !important; // !important ensures this remains set during collapse animation
+            line-height: 0 !important;                        // !important ensures this remains set during collapse animation
+          }
+        }
+
+        &.collapse.show {
+          display: block;
+          position: static;
+        }
+      }
+    }
+  }
+
+  &.collapse {
+
+    & ~ *:not(.popover):not(.tooltip):not(.modal) {
+      @include transition($transition-collapse-all);
+    }
+
+    &.show ~ *:not(.popover):not(.tooltip):not(.modal) {
+      margin-left: $navbar-width;
+    }
+
+    &:not(.show) {
+      display: flex;
+      width: $navbar-width-sm;
+
+      & ~ * {
+        margin-left: $navbar-width-sm;
+      }
+
+      .navbar-brand {
+
+        &[data-toggle="collapse"]:after {
+          position: absolute;
+          top: px(-18);
+          -ms-transform: translateY(px(29)); // IE
+          left: px(32);
+          margin: 0;
+          font-size: px(16);
+        }
+
+        i:first-child,
+        .fa:first-child {
+          margin-right: px(16);
+        }
+      }
+
+      .navbar-nav {
+        width: $navbar-width-sm;
+
+        &.collapse {
+          position: relative;
+          left: $navbar-nav-link-height-collapsed;
+          top: $navbar-nav-link-height-collapsed * -1;
+          width: $navbar-width - px(14);
+          background-color: $navbar-bg;
+          overflow: visible;
+          transition: none;
+
+          &.show {
+            display: none;
+          }
+
+          .nav-item.nav-link,
+          .nav-item > .nav-link {
+            height: $navbar-nav-link-height;
+            padding-left: px(26);
+            overflow: hidden;
+
+            &.status:before {
+              left: px(16);
+            }
+
+            i:first-child,
+            .fa:first-child {
+              width: 0;
+              margin: 0;
+            }
+          }
+        }
+
+        &[data-toggle="collapse"] {
+
+          &:hover + .navbar-nav.collapse,
+          &:hover + .navbar-nav.collapsing,
+          & + .navbar-nav.collapse:hover  {
+            display: block;
+            position: fixed;
+          }
+        }
+
+        .nav-item.nav-link,
+        .nav-item > .nav-link {
+          height: $navbar-nav-link-height-collapsed;
+          overflow: visible;
+
+          &:after {
+            opacity: 0;
+          }
+
+          i:first-child,
+          .fa:first-child {
+            width: px(19);
+            margin-right: px(16);
+            font-size: px(19);
+            line-height: px(14);
+          }
+        }
+
+        .dropdown-toggle:after {
+          opacity: 0;
+        }
+      }
+
+      .navbar-toggler-icon:before {
+        content: $fa-var-angle-double-right;
+      }
+    }
+  }
+
+  .navbar-nav {
+    width: $navbar-width;
+
+    &.collapsing {
+      position: static;
+    }
+
+    &[data-toggle="collapse"] {
+
+      .nav-item {
+
+        &.nav-link,
+        & > .nav-link {
+          padding-right: px(32);
+
+          &:after {
+            position: absolute;
+            top: px(11);
+            right: px(12);
+            content: $fa-var-angle-up;
+            font-family: "FontAwesome";
+            font-size: px(20);
+            //@include transition($transition-collapse-all);
+          }
+        }
+
+        &.dropdown {
+
+          &.nav-link,
+          & > .nav-link {
+            padding-right: px(40);
+          }
+
+          & .dropdown-toggle {
+            right: px(28);
+          }
+        }
+      }
+
+      &.collapsed {
+
+        .nav-item.nav-link:after,
+        .nav-item > .nav-link:after {
+          content: $fa-var-angle-down;
+        }
+      }
+    }
+
+    .nav-item {
+      color: $navbar-color;
+
+      &:hover,
+      &:hover > .nav-link,
+      &:active, &.active {
+        color: $navbar-active-color;
+        background-color: $navbar-active-bg;
+      }
+
+      &.nav-link,
+      > .nav-link {
+        position: relative;
+        height: $navbar-nav-link-height;
+        padding: px(12) px(16);
+        line-height: 1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        @include transition($transition-collapse-all);
+
+        &.active:before {
+          position: absolute;
+          left: px(-7);
+          top: 50%;
+          border: solid transparent;
+          border-width: px(14);
+          border-left-color: theme-color("primary");
+          content: " ";
+          transform: translateY(-50%);
+        }
+
+        &.status:before {
+          left: px(30);
+        }
+
+        i:first-child,
+        .fa:first-child {
+          width: $navbar-nav-link-icon-size;
+          margin-top: px(8);
+          margin-right: px(8);
+          font-size: $navbar-nav-link-icon-size;
+          line-height: 0;
+          vertical-align: text-top;
+          @include transition($transition-collapse-all);
+        }
+      }
+
+      &.dropdown {
+
+        &.nav-link,
+        & > .nav-link {
+          padding-right: px(24);
+        }
+
+        .dropdown-toggle {
+          position: absolute;
+          height: $navbar-nav-link-height;
+          width: px(19);
+          top: 0;
+          right: px(8);
+          color: inherit;
+
+          &:after {
+            margin-left: px(9);
+            content: "\22ee"; // unicode vertical ellipsis used instead of FontAwesome because it is lighter weight
+            vertical-align: middle;
+            line-height: 1.15;
+            font-weight: bold;
+            border: none;
+            //@include transition($transition-collapse-all);
+          }
+        }
+
+        &.show .dropdown-toggle {
+          color: $navbar-active-color;
+        }
+
+        .dropdown-menu {
+          top: px(36);
+          left: px(154);
+          position: fixed;
+        }
+      }
+
+      /* Uncomment to make the dropdown menu items hover/active color primary green rather than the default. */
+      // .dropdown-item {
+      //   @include hover-focus {
+      //     color: color-yiq(theme-color("primary"));
+      //     @include gradient-bg(theme-color("primary"));
+      //   }
+      //
+      //   &.active,
+      //   &:active {
+      //     @include gradient-bg(darken(theme-color("primary"), 10%));
+      //   }
+      // }
+    }
+  }
+
+  .navbar-brand {
+    height: $navbar-brand-height;
+    width: 100%; // set explicitly for IE
+    margin: 0;
+    padding: 0;
+    padding-left: px(12.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $navbar-brand-color;
+    background-color: $navbar-brand-bg;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: $navbar-brand-height;
+    z-index: 1030;
+    @include transition($transition-collapse-all);
+
+    &[data-toggle="collapse"] {
+
+      &:after {
+        position: absolute;
+        right: px(12.5);
+        content: $fa-var-angle-up;
+        color: theme-color("primary");
+        font-family: "FontAwesome";
+        font-size: px(30);
+        line-height: px(60); // IE
+        z-index: 1030; // Edge
+      }
+
+      &.collapsed:after {
+        content: $fa-var-angle-down;
+      }
+    }
+
+    &:hover,
+    &:active, &.active {
+      color: $navbar-brand-hover-color;
+      background-color: $navbar-brand-hover-bg;
+    }
+
+    i:first-child,
+    .fa:first-child {
+      width: $navbar-nav-link-icon-size-collapsed;
+      margin-right: px(8);
+      flex-shrink: 0;
+      font-size: $navbar-nav-link-icon-size-collapsed;
+      @include transition($transition-collapse-all);
+    }
+
+    & ~ .navbar-collapse {
+      padding-top: $navbar-brand-height + $navbar-nav-padding;
+    }
+  }
+}
+
+.brand-menu,
+.brand-menu.show {
+  @extend .dropdown-menu;
+  position: fixed;
+  top: $navbar-brand-height;
+  padding: 0;
+  padding-left: $navbar-brand-menu-spacing;
+  padding-right: $navbar-brand-menu-spacing;
+  max-width: px(617);
+  display: flex;
+  flex-direction: row !important; // !important ensures this remains set during collapse animation
+  flex-wrap: wrap;
+  align-items: center;
+
+  // This provides top and bottom padding but can be collapsed like content,
+  // thus avoiding a noticeable pause at the end of the animation.
+  &:before, &:after {
+    content: " ";
+    height: $navbar-brand-menu-spacing;
+    width: 100%;
+    display: block; // IE
+  }
+
+  &:after {
+    height: $navbar-brand-menu-spacing - px(3); // 3 less px to compensate for font line height
+  }
+
+  .brand-menu-item {
+    width: $navbar-brand-menu-item-size;
+    margin: $navbar-brand-menu-spacing;
+    line-height: $font-size-base;
+    white-space: nowrap;
+    text-align: center;
+
+    i,
+    span.fa {
+      display: block;
+      width: $navbar-brand-menu-item-size;
+      height: $navbar-brand-menu-item-size;
+      font-size: px(40);
+      line-height: px(75);
+      color: color("white");
+      background-color: color("blue");
+      margin-bottom: $navbar-brand-menu-spacing / 2;
+      border-radius: $border-radius;
+
+      &:before {
+        font-size: px(40);
+        line-height: $navbar-brand-menu-item-size;
+      }
+    }
+
+    &:hover {
+
+      i,
+      span.fa {
+        background-color: lighten(color("blue"), 10%)
+      }
+    }
+  }
+}
+
+.navbar-collapse {
+  position: absolute;
+  top: 0; // set explicitly for IE
+  left: 0; // set explicitly for IE
+  height: 100%;
+  padding-top: $navbar-nav-padding;
+  padding-bottom: $navbar-nav-padding;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.navbar-toggler {
+  position: absolute;
+  left: 0; // set explicitly for IE
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  height: px(48);
+  display: block;
+  background-color: $navbar-brand-bg;
+  border: none;
+  border-radius: 0;
+  z-index: 1030;
+
+  // Create a fade out effect as menu items overflow vertically
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    height: $navbar-nav-link-height-collapsed;
+    width: 100%;
+    content: " ";
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba($navbar-bg, 0) 0%, $navbar-bg 100%);
+  }
+
+  &:hover,
+  &:active {
+    background-color: $navbar-active-bg;
+
+    .navbar-toggler-icon:before {
+      color: $navbar-active-color;
+    }
+  }
+
+  &:focus {
+    outline-style: none;
+  }
+
+  .navbar-toggler-icon {
+    background-image: none;
+    line-height: px(48);
+
+    &:before {
+      content: $fa-var-angle-double-left;
+      font-family: "FontAwesome";
+      font-size: px(20);
+      color: theme-color("primary");
+
+      /* For Firefox and Safari */
+      position: absolute;
+      bottom: 0;
+      transform: translateX(-50%);
+      /**************************/
+      -ms-transform: translateX(50%); // IE
+    }
+  }
+
+  & ~ .navbar-collapse {
+
+    // Padding is on last child rather than on parent due to IE
+    > *:last-child {
+      padding-bottom: $navbar-nav-link-height-collapsed * 2;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+.status:before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: " ";
+  width: px(8);
+  height: px(8);
+  margin-right: px(5);
+  border-radius: px(4);
+}
+
+@each $color, $value in $theme-colors {
+  .status-#{$color}:before {
+    background-color: $value;
+  }
+}
