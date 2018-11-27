@@ -71,6 +71,7 @@
         .nav-item > .nav-link {
           height: px(38);
           width: $navbar-width;
+          padding-left: $navbar-nav-link-icon-size !important; // !important ensures this remains set during collapse animation
 
           &.status:before {
             left: px(30) !important; // !important ensures this remains set during collapse animation
@@ -78,10 +79,10 @@
 
           i:first-child,
           .fa:first-child {
-            width: px(16) !important;       // !important ensures this remains set during collapse animation
-            margin-right: px(8) !important; // !important ensures this remains set during collapse animation
-            font-size: px(16) !important;   // !important ensures this remains set during collapse animation
-            line-height: 0 !important;      // !important ensures this remains set during collapse animation
+            width: $navbar-nav-link-icon-size !important;     // !important ensures this remains set during collapse animation
+            margin-right: px(8) !important;                   // !important ensures this remains set during collapse animation
+            font-size: $navbar-nav-link-icon-size !important; // !important ensures this remains set during collapse animation
+            line-height: 0 !important;                        // !important ensures this remains set during collapse animation
           }
         }
 
