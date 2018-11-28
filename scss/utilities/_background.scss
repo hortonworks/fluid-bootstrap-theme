@@ -6,14 +6,6 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-body {
-
-  > footer:last-of-type {
-    display: flex;
-    align-items: center;
-    min-width: $layout-min-width;
-    padding-top: ($grid-gutter-width / 2);
-    padding-bottom: ($grid-gutter-width / 2);
-    border-top: $border-width $border-color solid;
-  }
+@each $color, $value in $grays {
+  @include bg-variant(".bg-gray-#{$color}", $value);
 }

@@ -1,3 +1,7 @@
+.dropdown-menu {
+  box-shadow: $box-shadow-lg;
+}
+
 @mixin dropdown-item-variant($background, $hover-background: darken($background, 7.5%), $active-background: darken($background, 10%)) {
   @include hover-focus {
     color: color-yiq($hover-background);

@@ -8,16 +8,31 @@
 
 body > {
 
-  header.header-top {
-    @extend .fixed-top;
+  nav.fixed-top {
     display: flex;
+    padding: $grid-gutter-width / 2;
     align-items: center;
+    height: $navbar-brand-height + $border-width;
     height: $navbar-brand-height;
     min-width: $layout-min-width;
     background-color: $white;
+    border-bottom: $border-width $body-bg solid;
 
-    & + * {
+    + * {
       padding-top: $navbar-brand-height;
+    }
+
+    > * {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
     }
   }
 }

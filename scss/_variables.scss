@@ -27,7 +27,7 @@ $white:    #fff !default;
 $gray-100: #fbfbfb;
 $gray-200: #f6f6f6;
 $gray-300: #ececec; // Background
-$gray-400: #d1d1d1;
+$gray-400: #d1d1d1; // Border
 $gray-500: #b5b5b5;
 $gray-600: #999999; // Light Text
 $gray-700: #666666; // Default Text
@@ -101,11 +101,11 @@ $colors: map-merge(
 $primary:       $fluid-green;
 $secondary:     $fluid-green;
 $default:       $gray-600;
-$success:       $green;
+$success:       $green !default;
 $info:          $blue;
 $link:          $blue;
 $warning:       $orange;
-$danger:        $red;
+$danger:        $red !default;
 $light:         $gray-300;
 $dark:          $gray-900;
 
@@ -206,7 +206,7 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white !default;
+$body-bg:                   $light;
 $body-color:                $text;
 
 // Links
@@ -274,15 +274,15 @@ $line-height-lg:              1.5 !default;
 $line-height-sm:              1.5 !default;
 
 $border-width:                px(1);
-$border-color:                $gray-300 !default;
+$border-color:                $gray-400;
 
 $border-radius:               px(2);
 $border-radius-lg:            px(4);
 $border-radius-sm:            px(2);
 
-$box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
-$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
-$box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
+$box-shadow-sm:               0 px(2) px(3) 0 rgba($black, .1); // for static components - same as below, please do not use
+$box-shadow:                  0 px(2) px(3) 0 rgba($black, .1); // for static components - use this one
+$box-shadow-lg:               0 px(2) px(3) px(2) rgba($black, .175); // for ephemeral components
 
 $component-active-color:      $white !default;
 $component-active-bg:         $blue;
@@ -306,8 +306,8 @@ $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$font-size-lg:                ($font-size-base * 1.25) !default;
-$font-size-sm:                ($font-size-base * .875) !default;
+$font-size-lg:                px(20);
+$font-size-sm:                px(12);
 
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
@@ -343,7 +343,7 @@ $display-line-height:         $headings-line-height !default;
 $lead-font-size:              ($font-size-base * 1.25) !default;
 $lead-font-weight:            300 !default;
 
-$small-font-size:             80% !default;
+$small-font-size:             $font-size-sm;
 
 $text-muted:                  $gray-600 !default;
 
@@ -527,7 +527,7 @@ $custom-control-gutter:                 1.5rem !default;
 $custom-control-spacer-x:               1rem !default;
 
 $custom-control-indicator-size:         px(10);
-$custom-control-indicator-border:       $gray-300 1px solid;
+$custom-control-indicator-border:       $border-color 1px solid;
 $custom-control-indicator-bg:           $white;
 $custom-control-indicator-bg-size:      60% 60%;
 $custom-control-indicator-box-shadow:   inset 0 .25rem .25rem rgba($black, .1) !default;
@@ -778,28 +778,29 @@ $jumbotron-bg:                      $gray-200 !default;
 
 // Cards
 
-$card-spacer-y:                     .75rem !default;
-$card-spacer-x:                     1.25rem !default;
-$card-border-width:                 $border-width !default;
+$card-margin:                       $grid-gutter-width / 2;
+$card-spacer-y:                     $card-margin;
+$card-spacer-x:                     $card-margin;
+$card-border-width:                 0;
 $card-border-radius:                $border-radius !default;
-$card-border-color:                 rgba($black, .125) !default;
+$card-border-color:                 $border-color;
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
-$card-cap-bg:                       rgba($black, .03) !default;
+$card-cap-bg:                       $white;
 $card-bg:                           $white !default;
 
-$card-img-overlay-padding:          1.25rem !default;
+$card-img-overlay-padding:          $card-margin;
 
 $card-group-margin:                 ($grid-gutter-width / 2) !default;
 $card-deck-margin:                  $card-group-margin !default;
 
 $card-columns-count:                3 !default;
-$card-columns-gap:                  1.25rem !default;
+$card-columns-gap:                  $card-group-margin;
 $card-columns-margin:               $card-spacer-y !default;
 
 
 // Tooltips
 
-$tooltip-font-size:                 $font-size-sm !default;
+$tooltip-font-size:                 px(10);
 $tooltip-max-width:                 200px !default;
 $tooltip-color:                     $white !default;
 $tooltip-bg:                        $gray-700;
@@ -815,7 +816,7 @@ $tooltip-arrow-color:               $tooltip-bg !default;
 
 // Popovers
 
-$popover-font-size:                 $font-size-sm !default;
+$popover-font-size:                 px(10);
 $popover-bg:                        $gray-700;
 $popover-max-width:                 276px !default;
 $popover-border-width:              $border-width !default;

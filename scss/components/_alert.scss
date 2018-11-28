@@ -7,16 +7,15 @@
  */
 
 .alert {
-  //box-shadow: 1px 1px 5px 0 gray("600");
-  box-shadow: $box-shadow;
-  font-size: px(12);
+  box-shadow: $box-shadow-lg;
+  font-size: $font-size-sm;
 
   > div {
     margin-left: px(40);
   }
 
   &:before {
-    font-family: 'FontAwesome';
+    font-family: "FontAwesome";
     font-size: px(24);
     position: absolute;
     top: 50%;
@@ -24,10 +23,8 @@
   }
 
   &:after {
-    content: '\00d7'; // &times;
-    font-family: 'Roboto';
-    font-size: px(16);
-    color: gray("600");
+    content: "\00d7"; // &times;
+    font-size: $font-size-sm;
     position: absolute;
     right: px(5);
     top: 0;
@@ -39,14 +36,14 @@
   }
 
   .alert-header {
-    font-size: px(14);
+    font-size: $font-size-base;
   }
 }
 
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
     color: theme-color("default");
-    background-color: inherit;
+    background-color: $white;
     border-color: theme-color-level($color, $alert-border-level);
 
     .alert-header, &:before {
@@ -56,7 +53,7 @@
 }
 
 .alert-default {
-  border-color: $gray-300;
+  border-color: $border-color;
 
   > div {
     margin-left: inherit;
