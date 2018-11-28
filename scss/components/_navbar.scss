@@ -8,18 +8,34 @@
 
 .navbar {
   @extend .navbar-dark;
-  position: fixed !important;
-  height: 100% !important;
+  position: fixed;
+  height: 100%;
   width: $navbar-width;
   margin: 0;
   padding: 0;
-  flex-direction: column !important;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: normal;
-  background-color: $navbar-bg !important;
+  background-color: $navbar-bg;
   z-index: 1030;
   overflow: hidden;
   @include transition($transition-collapse-all);
+
+  * {
+    flex-shrink: 0;
+    align-items: normal;
+  }
+
+  &[class*="navbar-expand-"] {
+
+    * {
+      flex-direction: column;
+    }
+
+    .navbar-toggler {
+      display: block;
+    }
+  }
 
   &.collapsing {
     @extend .collapse;
@@ -34,8 +50,8 @@
 
     // We use the [style] selector to determine the direction of the .collapsing behavior;
     // when it is present, the menu is expanding.
-    &[style^="height"] {
-      width: $navbar-width !important;
+    &[style^="height"]:not(.show) {
+      width: $navbar-width;
 
       & ~ *:not(.popover):not(.tooltip):not(.modal) {
         margin-left: $navbar-width;
@@ -43,8 +59,9 @@
 
       .navbar-brand {
 
+        i:first-child,
         .fa:first-child {
-          margin-right: px(8) !important;
+          margin-right: px(8);
         }
       }
 
@@ -52,31 +69,27 @@
 
         .nav-item.nav-link,
         .nav-item > .nav-link {
-          height: $navbar-nav-link-height !important;
+          height: $navbar-nav-link-height;
           width: $navbar-width;
-          padding-left: $navbar-nav-link-icon-size !important;
+          padding-left: $navbar-nav-link-icon-size !important; // !important ensures this remains set during collapse animation
 
           &.status:before {
-            left: px(30) !important;
+            left: px(30) !important; // !important ensures this remains set during collapse animation
           }
 
+          i:first-child,
           .fa:first-child {
-            width: $navbar-nav-link-icon-size !important;
-            margin-right: px(8) !important;
-            font-size: $navbar-nav-link-icon-size !important;
-            line-height: 0 !important;
+            width: $navbar-nav-link-icon-size !important;     // !important ensures this remains set during collapse animation
+            margin-right: px(8) !important;                   // !important ensures this remains set during collapse animation
+            font-size: $navbar-nav-link-icon-size !important; // !important ensures this remains set during collapse animation
+            line-height: 0 !important;                        // !important ensures this remains set during collapse animation
           }
         }
 
         &.collapse.show {
-          display: block !important;
+          display: block;
           position: static;
         }
-      }
-
-      &.collapse.show {
-        display: block !important;
-        position: static;
       }
     }
   }
@@ -110,6 +123,7 @@
           font-size: px(16);
         }
 
+        i:first-child,
         .fa:first-child {
           margin-right: px(16);
         }
@@ -141,6 +155,7 @@
               left: px(16);
             }
 
+            i:first-child,
             .fa:first-child {
               width: 0;
               margin: 0;
@@ -167,6 +182,7 @@
             opacity: 0;
           }
 
+          i:first-child,
           .fa:first-child {
             width: px(19);
             margin-right: px(16);
@@ -184,12 +200,6 @@
         content: $fa-var-angle-double-right;
       }
     }
-  }
-
-  * {
-    flex-direction: column !important;
-    flex-shrink: 0;
-    align-items: normal;
   }
 
   .navbar-nav {
@@ -276,6 +286,7 @@
           left: px(30);
         }
 
+        i:first-child,
         .fa:first-child {
           width: $navbar-nav-link-icon-size;
           margin-top: px(8);
@@ -338,58 +349,60 @@
       // }
     }
   }
-}
 
-.navbar-brand {
-  height: $navbar-brand-height;
-  margin: 0;
-  padding: 0;
-  padding-left: px(12.5);
-  display: flex;
-  flex-direction: row !important;
-  align-items: center;
-  color: $navbar-brand-color !important;
-  background-color: $navbar-brand-bg;
-  text-transform: uppercase;
-  white-space: nowrap;
-  line-height: $navbar-brand-height;
-  z-index: 1030;
-  @include transition($transition-collapse-all);
-
-  &[data-toggle="collapse"] {
-
-    &:after {
-      position: absolute;
-      right: px(12.5);
-      content: $fa-var-angle-up;
-      color: theme-color("primary");
-      font-family: "FontAwesome";
-      font-size: px(30);
-      line-height: px(60); // IE
-      z-index: 1030; // Edge
-    }
-
-    &.collapsed:after {
-      content: $fa-var-angle-down;
-    }
-  }
-
-  &:hover,
-  &:active, &.active {
-    color: $navbar-brand-hover-color !important;
-    background-color: $navbar-brand-hover-bg;
-  }
-
-  .fa:first-child {
-    width: $navbar-nav-link-icon-size-collapsed;
-    margin-right: px(8);
-    flex-shrink: 0;
-    font-size: $navbar-nav-link-icon-size-collapsed;
+  .navbar-brand {
+    height: $navbar-brand-height;
+    width: 100%; // set explicitly for IE
+    margin: 0;
+    padding: 0;
+    padding-left: px(12.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $navbar-brand-color;
+    background-color: $navbar-brand-bg;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: $navbar-brand-height;
+    z-index: 1030;
     @include transition($transition-collapse-all);
-  }
 
-  & ~ .navbar-collapse {
-    padding-top: $navbar-brand-height + $navbar-nav-padding;
+    &[data-toggle="collapse"] {
+
+      &:after {
+        position: absolute;
+        right: px(12.5);
+        content: $fa-var-angle-up;
+        color: theme-color("primary");
+        font-family: "FontAwesome";
+        font-size: px(30);
+        line-height: px(60); // IE
+        z-index: 1030; // Edge
+      }
+
+      &.collapsed:after {
+        content: $fa-var-angle-down;
+      }
+    }
+
+    &:hover,
+    &:active, &.active {
+      color: $navbar-brand-hover-color;
+      background-color: $navbar-brand-hover-bg;
+    }
+
+    i:first-child,
+    .fa:first-child {
+      width: $navbar-nav-link-icon-size-collapsed;
+      margin-right: px(8);
+      flex-shrink: 0;
+      font-size: $navbar-nav-link-icon-size-collapsed;
+      @include transition($transition-collapse-all);
+    }
+
+    & ~ .navbar-collapse {
+      padding-top: $navbar-brand-height + $navbar-nav-padding;
+    }
   }
 }
 
@@ -403,7 +416,7 @@
   padding-right: $navbar-brand-menu-spacing;
   max-width: px(617);
   display: flex;
-  flex-direction: row !important;
+  flex-direction: row !important; // !important ensures this remains set during collapse animation
   flex-wrap: wrap;
   align-items: center;
 
@@ -427,7 +440,8 @@
     white-space: nowrap;
     text-align: center;
 
-    .fa {
+    i,
+    span.fa {
       display: block;
       width: $navbar-brand-menu-item-size;
       height: $navbar-brand-menu-item-size;
@@ -446,7 +460,8 @@
 
     &:hover {
 
-      .fa {
+      i,
+      span.fa {
         background-color: lighten(color("blue"), 10%)
       }
     }
@@ -455,7 +470,6 @@
 
 .navbar-collapse {
   position: absolute;
-  display: flex !important;
   top: 0; // set explicitly for IE
   left: 0; // set explicitly for IE
   height: 100%;
@@ -475,7 +489,7 @@
   width: 100%;
   padding: 0;
   height: px(48);
-  display: block !important;
+  display: block;
   background-color: $navbar-brand-bg;
   border: none;
   border-radius: 0;
