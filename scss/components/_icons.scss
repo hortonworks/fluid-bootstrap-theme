@@ -1,6 +1,6 @@
-i, .fa {
+.fa {
   text-align: center;
-  
+
   * {
     font-family: $font-family-base;
   }
@@ -9,6 +9,5 @@ i, .fa {
     position: relative;
     top: px(-7);
     left: px(-7);
-    border: white 1px solid;
   }
 }

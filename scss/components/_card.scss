@@ -1,0 +1,54 @@
+.card {
+
+  &:not(:last-child) {
+    margin-bottom: $card-margin;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $text-light;
+  }
+}
+
+.card-header {
+  background-color: inherit;
+  color: $text-light;
+  border-bottom: $border-width $border-color solid;
+}
+
+.card-subtitle {
+  margin-top: 0;
+  margin-bottom: $card-spacer-y / 2
+}
+
+.card-group,
+.card-deck {
+
+  .card {
+    margin-bottom: 0;
+  }
+}
+
+.card-deck {
+  margin-left: 0;
+
+  .card {
+    margin-left: 0;
+  }
+}
+
+.card-group {
+
+  .card {
+    border-left-width: $border-width;
+    border-right-width: $border-width;
+
+    &:first-of-type {
+      border-left-width: 0;
+    }
+
+    &:last-of-type {
+      border-right-width: 0;
+    }
+  }
+}

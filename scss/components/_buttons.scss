@@ -8,6 +8,7 @@
 
 .btn {
   text-transform: uppercase;
+  line-height: px(22); // Correct vertical text centering
 
   &.btn-primary {
     color: $white;

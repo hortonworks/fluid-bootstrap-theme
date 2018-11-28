@@ -69,7 +69,7 @@
 
         .nav-item.nav-link,
         .nav-item > .nav-link {
-          height: px(38);
+          height: $navbar-nav-link-height;
           width: $navbar-width;
           padding-left: $navbar-nav-link-icon-size !important; // !important ensures this remains set during collapse animation
 

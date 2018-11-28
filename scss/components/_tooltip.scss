@@ -7,15 +7,21 @@
  */
 
  .tooltip {
+
     .tooltip-inner {
+      box-shadow: $box-shadow-lg;
       padding: px(10);
     }
+
     &.tooltip-no-arrow {
+
       .arrow {
         display: none;
       }
     }
+
     &.tooltip-light {
+
       .tooltip-inner {
         background-color: $white;
         border: 1px solid darken($white, 14%);
