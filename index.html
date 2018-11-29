@@ -220,7 +220,7 @@ of all or any part of the contents of this file is strictly prohibited.
                 <p>The main <code>&lt;header class=".header-top"&gt;</code> and <code>&lt;footer class=".footer-bottom"&gt;</code> should not be placed inside any container so that they can stretch to the full width of the window.</p>
                 <p>Observe the behavior of the example containers below and the header/footer on this page as you change the width of the window to understand the desired behavior.</p>
               </div>
-            </div>
+            </div class="card">
           </div>
         </div>
         <div class="row mb-3">
@@ -421,37 +421,37 @@ of all or any part of the contents of this file is strictly prohibited.
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 1</h4>
-                  <div class="h1">font&#8209;size:&nbsp;28px;</div>
+                  <div class="h1 text-default">font&#8209;size:&nbsp;28px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 2</h4>
-                  <div class="h2">font&#8209;size:&nbsp;24px;</div>
+                  <div class="h2 text-default">font&#8209;size:&nbsp;24px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 3</h4>
-                  <div class="h3">font&#8209;size:&nbsp;20px;</div>
+                  <div class="h3 text-default">font&#8209;size:&nbsp;20px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 4</h4>
-                  <div class="h4">font&#8209;size:&nbsp;16px;</div>
+                  <div class="h4 text-default">font&#8209;size:&nbsp;16px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 5</h4>
-                  <div class="h5">font&#8209;size:&nbsp;15px;</div>
+                  <div class="h5 text-default">font&#8209;size:&nbsp;15px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 6</h4>
-                  <div class="h6">font&#8209;size:&nbsp;14px;</div>
+                  <div class="h6 text-default">font&#8209;size:&nbsp;14px;</div>
                 </div>
               </div>
               <div class="card">
@@ -782,18 +782,24 @@ of all or any part of the contents of this file is strictly prohibited.
           <div class="card">
             <div class="card-body">
               <h3 class="card-title">Badges in headings</h3>
-              <div class="h1">Example heading <span class="badge badge-pill badge-success">New</span></div>
-              <div class="h2">Example heading <span class="badge badge-pill badge-success">New</span></div>
-              <div class="h3">Example heading <span class="badge badge-pill badge-success">New</span></div>
-              <div class="h4">Example heading <span class="badge badge-pill badge-success">New</span></div>
-              <div class="h5">Example heading <span class="badge badge-pill badge-success">New</span></div>
-              <div class="h6">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h1 text-default">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h2 text-default">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h3 text-default">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h4 text-default">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h5 text-default">Example heading <span class="badge badge-pill badge-success">New</span></div>
+              <div class="h6 text-default">Example heading <span class="badge badge-pill badge-success">New</span></div>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
               <h3 class="card-title">Badges on icons</h3>
               <i class="fa fa-bell"><span class="badge badge-pill badge-danger">1</span></i>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Badges in buttons</h3>
+              <button type="button" class="btn btn-secondary">Notifications <span class="badge badge-pill badge-danger">4</span></button>
             </div>
           </div>
         </div>
@@ -1948,30 +1954,30 @@ of all or any part of the contents of this file is strictly prohibited.
                 </p>
                 <h3 class="card-subtitle">Brand</h3>
                 <dl class="row">
-                  <dt class="col-3">Custom content</dt>
-                  <dd class="col-9">Bootstrap does not make any assumptions about what goes in the brand area. If you use
+                  <dt class="col-2 text-right">Custom content</dt>
+                  <dd class="col-10">Bootstrap does not make any assumptions about what goes in the brand area. If you use
                     only text, Fluid Bootstrap will style it appropriately in expanded mode, but it will be clipped when
                     the navbar is collapsed. Fluid prefers that you use an icon followed by text (although the font size
                     and number of lines is not specified). In that case, Fluid Bootstrap ensures that the icon/text
                     combination is displayed correctly in both expanded and collapsed modes.</dd>
-                  <dt class="col-3">Dropdown menu</dt>
-                  <dd class="col-9">A green arrow indicates that the brand can be clicked to open a dropdown menu listing
+                  <dt class="col-2 text-right">Dropdown menu</dt>
+                  <dd class="col-10">A green arrow indicates that the brand can be clicked to open a dropdown menu listing
                     other available products. This menu is also accessible when the navbar is collapsed.</dd>
                 </dl>
                 <h3 class="card-subtitle">Nav Items</h3>
                 <dl class="row">
-                  <dt class="col-3">Icons</dt>
-                  <dd class="col-9">Place an icon as the first child inside a nav item and it will be styled appropriately.</dd>
-                  <dt class="col-3">Dropdown menu</dt>
-                  <dd class="col-9">Three vertical dots indicate that there is a dropdown menu associated with a nav item.
+                  <dt class="col-2 text-right">Icons</dt>
+                  <dd class="col-10">Place an icon as the first child inside a nav item and it will be styled appropriately.</dd>
+                  <dt class="col-2 text-right">Dropdown menu</dt>
+                  <dd class="col-10">Three vertical dots indicate that there is a dropdown menu associated with a nav item.
                     This menu is not accessible when the navbar is collapsed.</dd>
-                  <dt class="col-3">Child nav items</dt>
-                  <dd class="col-9">A nav item can have child nav items, indicated by an arrow on the right. These items
+                  <dt class="col-2 text-right">Child nav items</dt>
+                  <dd class="col-10">A nav item can have child nav items, indicated by an arrow on the right. These items
                     are accessible when the navbar is collapsed by popping out to the right when their parent is hovered
                     over. <em>Note: This feature makes use of the Bootstrap</em> collapse <em>functionality. Correct
                       positioning of these popovers requires some additional Javascript.</em></dd>
-                  <dt class="col-3">Status indicators</dt>
-                  <dd class="col-9">Fluid status indicators can be applied to nav items and they will be positioned
+                  <dt class="col-2 text-right">Status indicators</dt>
+                  <dd class="col-10">Fluid status indicators can be applied to nav items and they will be positioned
                     appropriately.</dd>
                 </dl>
               </div>
@@ -1997,67 +2003,60 @@ of all or any part of the contents of this file is strictly prohibited.
             </header>
           </div>
         </div>
-        <div class="card-columns">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Tabs</h3>
-              <div class="nav nav-tabs">
-                <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                <div class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
-                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                    <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                    <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                  </div>
-                </div>
-                <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-              </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Tabs</h3>
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Tab 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Tab 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Tab 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" id="tab4-tab" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Disabled</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">Our neural pathways have become accustomed to your sensory input patterns. Computer, belay that order. The game’s not big enough unless it scares you a little. When has justice ever been as simple as a rule book? What’s a knock-out like you doing in a computer-generated gin joint like this? Did you come here for something in particular or just general Riker-bashing? As much as I care about you, my first duty is to the ship. Your head is not an artifact!</div>
+              <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">Wouldn’t that bring about chaos? In all trust, there is the possibility for betrayal. I’ll be sure to note that in my log. The unexpected is our normal routine. Now, how the hell do we defeat an enemy that knows us better than we know ourselves? I recommend you don’t fire until you’re within 40,000 kilometers. Not if I weaken first. And blowing into maximum warp speed, you appeared for an instant to be in two places at once. Congratulations – you just destroyed the Enterprise.</div>
+              <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
+              <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Pills</h3>
-              <div class="nav nav-pills">
-                <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                <div class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
-                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                    <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                    <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Vertical Tabs</h3>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-1">
+                  <ul class="nav nav-tabs flex-column" role="tablist" aria-orientation="vertical">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="v-tab1-tab" data-toggle="tab" href="#v-tab1" role="tab" aria-controls="v-tab1" aria-selected="true">Tab 1</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="v-tab2-tab" data-toggle="tab" href="#v-tab2" role="tab" aria-controls="v-tab2" aria-selected="false">Tab 2</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="v-tab3-tab" data-toggle="tab" href="#v-tab3" role="tab" aria-controls="v-tab3" aria-selected="false">Tab 3</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" id="v-tab4-tab" data-toggle="tab" href="#v-tab4" role="tab" aria-controls="v-tab4" aria-selected="false">Disabled</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-11">
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="v-tab1" role="tabpanel" aria-labelledby="v-tab1-tab">Our neural pathways have become accustomed to your sensory input patterns. Computer, belay that order. The game’s not big enough unless it scares you a little. When has justice ever been as simple as a rule book? What’s a knock-out like you doing in a computer-generated gin joint like this? Did you come here for something in particular or just general Riker-bashing? As much as I care about you, my first duty is to the ship. Your head is not an artifact!</div>
+                    <div class="tab-pane fade" id="v-tab2" role="tabpanel" aria-labelledby="v-tab2-tab">Wouldn’t that bring about chaos? In all trust, there is the possibility for betrayal. I’ll be sure to note that in my log. The unexpected is our normal routine. Now, how the hell do we defeat an enemy that knows us better than we know ourselves? I recommend you don’t fire until you’re within 40,000 kilometers. Not if I weaken first. And blowing into maximum warp speed, you appeared for an instant to be in two places at once. Congratulations – you just destroyed the Enterprise.</div>
+                    <div class="tab-pane fade" id="v-tab3" role="tabpanel" aria-labelledby="v-tab3-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
+                    <div class="tab-pane fade" id="v-tab4" role="tabpanel" aria-labelledby="v-tab4-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
                   </div>
                 </div>
-                <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Vertical pills</h3>
-              <div class="nav nav-pills flex-column">
-                <a class="nav-item nav-link active" href="javascript:void(0);">Active</a>
-                <a class="nav-item nav-link" href="javascript:void(0);">Link</a>
-                <div class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" role="button"
-                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                    <a class="dropdown-item" href="javascript:void(0);">Another action</a>
-                    <a class="dropdown-item" href="javascript:void(0);">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="javascript:void(0);">Separated link</a>
-                  </div>
-                </div>
-                <a class="nav-item nav-link disabled" href="javascript:void(0);">Disabled</a>
               </div>
             </div>
           </div>
