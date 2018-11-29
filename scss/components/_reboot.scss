@@ -13,3 +13,7 @@ html {
 body {
   min-width: $layout-min-width;
 }
+
+dt {
+  color: text-color("light");
+}

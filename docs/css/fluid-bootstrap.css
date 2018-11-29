@@ -126,7 +126,7 @@ ul ol {
   margin-bottom: 0; }
 
 dt {
-  font-weight: 700; }
+  font-weight: 400; }
 
 dd {
   margin-bottom: .5rem;
@@ -470,8 +470,8 @@ pre {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
   margin-right: auto;
   margin-left: auto; }
   @media (min-width: 576px) {
@@ -489,8 +489,8 @@ pre {
 
 .container-fluid {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
   margin-right: auto;
   margin-left: auto; }
 
@@ -502,8 +502,8 @@ pre {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px; }
+  margin-right: -7.5px;
+  margin-left: -7.5px; }
 
 .no-gutters {
   margin-right: 0;
@@ -522,8 +522,8 @@ pre {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px; }
+  padding-right: 7.5px;
+  padding-left: 7.5px; }
 
 .col {
   -webkit-flex-basis: 0;
@@ -3550,33 +3550,33 @@ input[type="button"].btn-block {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem; }
+  padding: 0.53571rem 0.53571rem; }
   .nav-link:hover, .nav-link:focus {
     text-decoration: none; }
   .nav-link.disabled {
     color: #999999; }
 
 .nav-tabs {
-  border-bottom: 0.07143rem solid #ececec; }
+  border-bottom: 2px solid transparent; }
   .nav-tabs .nav-item {
-    margin-bottom: -0.07143rem; }
+    margin-bottom: -2px; }
   .nav-tabs .nav-link {
-    border: 0.07143rem solid transparent;
+    border: 2px solid transparent;
     border-top-left-radius: 0.14286rem;
     border-top-right-radius: 0.14286rem; }
     .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
-      border-color: #f6f6f6 #f6f6f6 #ececec; }
+      border-color: #f6f6f6 #f6f6f6 transparent; }
     .nav-tabs .nav-link.disabled {
       color: #999999;
       background-color: transparent;
       border-color: transparent; }
   .nav-tabs .nav-link.active,
   .nav-tabs .nav-item.show .nav-link {
-    color: #666666;
-    background-color: #ececec;
-    border-color: #ececec #ececec #ececec; }
+    color: #333333;
+    background-color: inherit;
+    border-color: #3fae2a; }
   .nav-tabs .dropdown-menu, .nav-tabs .brand-menu {
-    margin-top: -0.07143rem;
+    margin-top: -2px;
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
@@ -3585,8 +3585,8 @@ input[type="button"].btn-block {
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1491c1; }
+  color: #333333;
+  background-color: inherit; }
 
 .nav-fill .nav-item {
   -webkit-box-flex: 1;
@@ -3649,8 +3649,8 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: -0.89286rem;
-  padding-bottom: -0.89286rem;
+  padding-top: -0.85714rem;
+  padding-bottom: -0.85714rem;
   margin-right: 1rem;
   font-size: 1.42857rem;
   line-height: inherit;
@@ -3680,8 +3680,8 @@ input[type="button"].btn-block {
 
 .navbar-text {
   display: inline-block;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem; }
+  padding-top: 0.53571rem;
+  padding-bottom: 0.53571rem; }
 
 .navbar-collapse {
   -webkit-flex-basis: 100%;
@@ -4113,7 +4113,7 @@ input[type="button"].btn-block {
       -ms-flex-direction: column;
           flex-direction: column; }
   .card-deck .card {
-    margin-bottom: 15px; }
+    margin-bottom: 7.5px; }
   @media (min-width: 576px) {
     .card-deck {
       -webkit-box-orient: horizontal;
@@ -4121,8 +4121,8 @@ input[type="button"].btn-block {
       -webkit-flex-flow: row wrap;
           -ms-flex-flow: row wrap;
               flex-flow: row wrap;
-      margin-right: -15px;
-      margin-left: -15px; }
+      margin-right: -7.5px;
+      margin-left: -7.5px; }
       .card-deck .card {
         display: -webkit-box;
         display: -webkit-flex;
@@ -4137,9 +4137,9 @@ input[type="button"].btn-block {
         -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
-        margin-right: 15px;
+        margin-right: 7.5px;
         margin-bottom: 0;
-        margin-left: 15px; } }
+        margin-left: 7.5px; } }
 
 .card-group {
   display: -webkit-box;
@@ -4152,7 +4152,7 @@ input[type="button"].btn-block {
       -ms-flex-direction: column;
           flex-direction: column; }
   .card-group > .card {
-    margin-bottom: 15px; }
+    margin-bottom: 7.5px; }
   @media (min-width: 576px) {
     .card-group {
       -webkit-box-orient: horizontal;
@@ -4351,7 +4351,7 @@ input[type="button"].btn-block {
 
 .badge {
   display: inline-block;
-  padding: 0.25em 0.4em;
+  padding: 0 0.4em;
   font-size: 75%;
   font-weight: 700;
   line-height: 1;
@@ -10356,7 +10356,7 @@ a.text-default:hover, a.text-default:focus {
   font-size: 1.28571rem;
   line-height: 1.42857rem;
   background-color: inherit;
-  padding: 1.42857rem;
+  border-bottom: 0;
   cursor: pointer; }
   .accordion .card .card-header:after {
     content: "";
@@ -10484,6 +10484,16 @@ a.text-default:hover, a.text-default:focus {
   content: ""; }
 
 /*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+.badge {
+  line-height: 1.5; }
+
+/*
  * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
  * Except as expressly permitted in a written agreement between you
  * or your company and Hortonworks, Inc, any use, reproduction,
@@ -10526,6 +10536,12 @@ a.text-default:hover, a.text-default:focus {
   color: #999999;
   border-bottom: 0.07143rem #d1d1d1 solid; }
 
+.card-body > .container,
+.card-body > .container-fluid {
+  width: auto;
+  margin-left: -15px;
+  margin-right: -15px; }
+
 .card-subtitle {
   margin-top: 0;
   margin-bottom: 7.5px; }
@@ -10533,11 +10549,6 @@ a.text-default:hover, a.text-default:focus {
 .card-group .card,
 .card-deck .card {
   margin-bottom: 0; }
-
-.card-deck {
-  margin-left: 0; }
-  .card-deck .card {
-    margin-left: 0; }
 
 .card-group .card {
   border-left-width: 0.07143rem;
@@ -10698,6 +10709,11 @@ label {
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
+.container,
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px; }
+
 .container-fluid {
   max-width: 1920px; }
 
@@ -10765,6 +10781,60 @@ body > nav.fixed-top {
 
 .modal-footer {
   padding: 0rem 1.42857rem 1.42857rem 1.42857rem; }
+
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+.nav-tabs:not(.flex-column),
+.nav-pills:not(.flex-column) {
+  margin-bottom: 15px; }
+
+.nav-tabs .nav-item,
+.nav-pills .nav-item {
+  margin-right: 0.53571rem;
+  margin-bottom: 0; }
+
+.nav-tabs .nav-link,
+.nav-pills .nav-link {
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  text-transform: uppercase;
+  line-height: 1;
+  border-radius: 0; }
+  .nav-tabs .nav-link.active,
+  .nav-pills .nav-link.active {
+    border-bottom: #3fae2a 2px solid; }
+
+.nav-tabs.flex-column .nav-item,
+.nav-pills.flex-column .nav-item {
+  margin-right: 0;
+  margin-bottom: 0.53571rem; }
+
+.nav-tabs.flex-column .nav-link,
+.nav-pills.flex-column .nav-link {
+  border-bottom: none;
+  border-right: transparent 2px solid;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  .nav-tabs.flex-column .nav-link.active,
+  .nav-pills.flex-column .nav-link.active {
+    border-right-color: #3fae2a; }
+
+.nav-link {
+  color: #666666; }
+  .nav-link:hover {
+    color: #333333; }
+  .nav-link.disabled {
+    cursor: not-allowed; }
+    .nav-link.disabled:hover {
+      color: #999999; }
 
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
@@ -11379,6 +11449,9 @@ html {
 
 body {
   min-width: 1024px; }
+
+dt {
+  color: #999999; }
 
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.

@@ -16,6 +16,16 @@
   border-bottom: $border-width $border-color solid;
 }
 
+.card-body {
+
+  > .container,
+  > .container-fluid {
+    width: auto;
+    margin-left: -$grid-gutter-width;
+    margin-right: -$grid-gutter-width;
+  }
+}
+
 .card-subtitle {
   margin-top: 0;
   margin-bottom: $card-spacer-y / 2
@@ -26,14 +36,6 @@
 
   .card {
     margin-bottom: 0;
-  }
-}
-
-.card-deck {
-  margin-left: 0;
-
-  .card {
-    margin-left: 0;
   }
 }
 
