@@ -264,7 +264,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           30px !default;
+$grid-gutter-width:           15px;
 
 // Components
 //
@@ -499,7 +499,7 @@ $input-plaintext-color:                 $body-color !default;
 $input-height-border:                   $input-border-width * 2 !default;
 
 $input-height-inner:                    ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2) !default;
-$input-height:                          $input-height-inner + $input-height-border;
+$input-height:                          $input-height-inner + $input-height-border; // let Sass do the math so we can use this value in other source files
 
 $input-height-inner-sm:                 ($font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2) !default;
 $input-height-sm:                       calc(#{$input-height-inner-sm} + #{$input-height-border}) !default;
@@ -677,9 +677,9 @@ $zindex-tooltip:                    1070 !default;
 
 // Navs
 
-$nav-link-padding-y:                px(5);
-$nav-link-padding-x:                px(5);
-$nav-link-margin-spacing:           px(10);
+$nav-link-margin:                   px($grid-gutter-width / 2px); //convert to rems
+$nav-link-padding-y:                $nav-link-margin;
+$nav-link-padding-x:                $nav-link-margin;
 $nav-link-disabled-color:           $gray-600 !default;
 
 $nav-tabs-border-color:             transparent;
@@ -782,7 +782,7 @@ $jumbotron-bg:                      $gray-200 !default;
 
 // Cards
 
-$card-margin:                       $grid-gutter-width / 2;
+$card-margin:                       $grid-gutter-width;
 $card-spacer-y:                     $card-margin;
 $card-spacer-x:                     $card-margin;
 $card-border-width:                 0;
@@ -798,7 +798,7 @@ $card-group-margin:                 ($grid-gutter-width / 2) !default;
 $card-deck-margin:                  $card-group-margin !default;
 
 $card-columns-count:                3 !default;
-$card-columns-gap:                  $card-group-margin;
+$card-columns-gap:                  $card-margin;
 $card-columns-margin:               $card-spacer-y !default;
 
 

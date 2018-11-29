@@ -12,8 +12,8 @@ body {
     display: flex;
     align-items: center;
     min-width: $layout-min-width;
-    padding-top: ($grid-gutter-width / 2);
-    padding-bottom: ($grid-gutter-width / 2);
+    padding-top: $grid-gutter-width;
+    padding-bottom: $grid-gutter-width;
     border-top: $border-width $border-color solid;
   }
 }

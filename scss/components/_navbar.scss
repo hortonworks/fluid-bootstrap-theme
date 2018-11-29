@@ -59,6 +59,7 @@
 
       .navbar-brand {
 
+        i:first-child,
         .fa:first-child {
           margin-right: px(8);
         }
@@ -70,17 +71,18 @@
         .nav-item > .nav-link {
           height: $navbar-nav-link-height;
           width: $navbar-width;
-          padding-left: $navbar-nav-link-icon-size !important;
+          padding-left: $navbar-nav-link-icon-size !important; // !important ensures this remains set during collapse animation
 
           &.status:before {
             left: px(30) !important; // !important ensures this remains set during collapse animation
           }
 
+          i:first-child,
           .fa:first-child {
-            width: $navbar-nav-link-icon-size !important;      // !important ensures this remains set during collapse animation
-            margin-right: px(8) !important;                    // !important ensures this remains set during collapse animation
-            font-size: $navbar-nav-link-icon-size !important;  // !important ensures this remains set during collapse animation
-            line-height: 0 !important;                         // !important ensures this remains set during collapse animation
+            width: $navbar-nav-link-icon-size !important;     // !important ensures this remains set during collapse animation
+            margin-right: px(8) !important;                   // !important ensures this remains set during collapse animation
+            font-size: $navbar-nav-link-icon-size !important; // !important ensures this remains set during collapse animation
+            line-height: 0 !important;                        // !important ensures this remains set during collapse animation
           }
         }
 
@@ -121,6 +123,7 @@
           font-size: px(16);
         }
 
+        i:first-child,
         .fa:first-child {
           margin-right: px(16);
         }
@@ -152,6 +155,7 @@
               left: px(16);
             }
 
+            i:first-child,
             .fa:first-child {
               width: 0;
               margin: 0;
@@ -178,6 +182,7 @@
             opacity: 0;
           }
 
+          i:first-child,
           .fa:first-child {
             width: px(19);
             margin-right: px(16);
@@ -281,6 +286,7 @@
           left: px(30);
         }
 
+        i:first-child,
         .fa:first-child {
           width: $navbar-nav-link-icon-size;
           margin-top: px(8);
@@ -346,6 +352,7 @@
 
   .navbar-brand {
     height: $navbar-brand-height;
+    width: 100%; // set explicitly for IE
     margin: 0;
     padding: 0;
     padding-left: px(12.5);
@@ -384,6 +391,7 @@
       background-color: $navbar-brand-hover-bg;
     }
 
+    i:first-child,
     .fa:first-child {
       width: $navbar-nav-link-icon-size-collapsed;
       margin-right: px(8);
@@ -432,7 +440,8 @@
     white-space: nowrap;
     text-align: center;
 
-    .fa {
+    i,
+    span.fa {
       display: block;
       width: $navbar-brand-menu-item-size;
       height: $navbar-brand-menu-item-size;
@@ -451,7 +460,8 @@
 
     &:hover {
 
-      .fa {
+      i,
+      span.fa {
         background-color: lighten(color("blue"), 10%)
       }
     }
