@@ -8,8 +8,9 @@
 
 .nav-tabs,
 .nav-pills {
+  border: none;
 
-  &:not(.flex-column) {
+  &:not(.flex-column):not(.card-header-tabs) {
     margin-bottom: $grid-gutter-width;
   }
 
@@ -25,10 +26,6 @@
     text-transform: uppercase;
     line-height: 1;
     border-radius: 0;
-
-    &.active {
-      border-bottom: $nav-tabs-link-active-border-color $nav-tabs-border-width solid;
-    }
   }
 
   &.flex-column {
