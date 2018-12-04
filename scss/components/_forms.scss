@@ -11,7 +11,6 @@ label {
 }
 
 .form-control {
-  font-size:  px(14);
 
   &:disabled {
     border: none;
@@ -56,7 +55,7 @@ select {
   @extend .custom-select;
 }
 
- // Make all checkboxes and radios themed
+// Make all checkboxes and radios themed
 .form-check, .form-radio {
   @extend .custom-control;
 
