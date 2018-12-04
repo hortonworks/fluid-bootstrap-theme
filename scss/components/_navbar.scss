@@ -70,7 +70,7 @@
         .nav-item > .nav-link {
           height: $navbar-nav-link-height;
           width: $navbar-width;
-          padding-left: $navbar-nav-link-icon-size !important;
+          padding-left: $navbar-nav-link-icon-size !important; // !important ensures this remains set during collapse animation
 
           &.status:before {
             left: px(30) !important; // !important ensures this remains set during collapse animation
@@ -346,6 +346,7 @@
 
   .navbar-brand {
     height: $navbar-brand-height;
+    width: 100%; // set explicitly for IE
     margin: 0;
     padding: 0;
     padding-left: px(12.5);

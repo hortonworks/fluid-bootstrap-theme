@@ -187,7 +187,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2><i class=icon  fa-th-large mr-1"></i> Layout</h2>
               <h2>
                 <a href="https://getbootstrap.com/docs/4.0/layout/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Layout docs"><span class="icon fa fa-book"></span></a>
@@ -256,7 +256,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row pb-3">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-text-height mr-1"></span>
                 Typography
@@ -645,7 +645,7 @@ of all or any part of the contents of this file is strictly prohibited.
     </section>
     <section id="colors">
       <div class="container-fluid">
-        <header>
+        <header class="section-header">
           <h2>
             <span class="icon fa fa-eyedropper mr-1"></span>
             Colors
@@ -756,7 +756,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2><i class="icon fa fa-adjust mr-1"></i> Shadows</h2>
               <h2>
                 <a href="https://getbootstrap.com/docs/4.1/utilities/shadows/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Shadows docs"><span class="icon fa fa-book"></span></a>
@@ -793,7 +793,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-angle-down mr-1"></span>
                 Accordion
@@ -860,7 +860,7 @@ of all or any part of the contents of this file is strictly prohibited.
     </section>
     <section id="alerts">
       <div class="container-fluid">
-        <header>
+        <header class="section-header">
           <h2>
             <span class="icon fa fa-bell mr-1"></span>
             Alerts
@@ -920,7 +920,7 @@ of all or any part of the contents of this file is strictly prohibited.
     </section>
     <section id="badges">
       <div class="container-fluid">
-        <header>
+        <header class="section-header">
           <h2>
             <span class="icon fa fa-info-circle mr-1"></span>
             Badges
@@ -967,6 +967,12 @@ of all or any part of the contents of this file is strictly prohibited.
               <i class="icon fa fa-bell"><span class="badge badge-pill badge-danger">1</span></i>
             </div>
           </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Badges in buttons</h3>
+              <button type="button" class="btn btn-secondary">Notifications <span class="badge badge-pill badge-danger">4</span></button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -974,7 +980,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon mr-1">/</span>
                 Breadcrumbs
@@ -1026,7 +1032,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-square mr-1"></span>
                 Buttons
@@ -1119,7 +1125,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-file-text mr-1"></span>
                 Pagination
@@ -1177,7 +1183,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-table mr-1"></span>
                 Tables
@@ -1377,7 +1383,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-list-ul mr-1"></span>
                 List groups
@@ -1470,7 +1476,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-id-card mr-1"></span>
                 Cards
@@ -1799,7 +1805,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-pencil mr-1"></span>
                 Forms
@@ -1976,7 +1982,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-angle-double-left mr-1"></span>
                 Navbar
@@ -1994,37 +2000,29 @@ of all or any part of the contents of this file is strictly prohibited.
                 </p>
                 <h3 class="card-subtitle">Brand</h3>
                 <dl class="row">
-                  <dt class="col-2">Custom content</dt>
+                  <dt class="col-2 text-right">Custom content</dt>
                   <dd class="col-10">Bootstrap does not make any assumptions about what goes in the brand area. If you use
                     only text, Fluid Bootstrap will style it appropriately in expanded mode, but it will be clipped when
                     the navbar is collapsed. Fluid prefers that you use an icon followed by text (although the font size
                     and number of lines is not specified). In that case, Fluid Bootstrap ensures that the icon/text
                     combination is displayed correctly in both expanded and collapsed modes.</dd>
-                </dl>
-                <dl class="row">
-                  <dt class="col-2">Dropdown menu</dt>
+                  <dt class="col-2 text-right">Dropdown menu</dt>
                   <dd class="col-10">A green arrow indicates that the brand can be clicked to open a dropdown menu listing
                     other available products. This menu is also accessible when the navbar is collapsed.</dd>
                 </dl>
                 <h3 class="card-subtitle">Nav Items</h3>
                 <dl class="row">
-                  <dt class="col-2">Icons</dt>
+                  <dt class="col-2 text-right">Icons</dt>
                   <dd class="col-10">Place an icon as the first child inside a nav item and it will be styled appropriately.</dd>
-                </dl>
-                <dl class="row">
-                  <dt class="col-2">Dropdown menu</dt>
+                  <dt class="col-2 text-right">Dropdown menu</dt>
                   <dd class="col-10">Three vertical dots indicate that there is a dropdown menu associated with a nav item.
                     This menu is not accessible when the navbar is collapsed.</dd>
-                </dl>
-                <dl class="row">
-                  <dt class="col-2">Child nav items</dt>
+                  <dt class="col-2 text-right">Child nav items</dt>
                   <dd class="col-10">A nav item can have child nav items, indicated by an arrow on the right. These items
                     are accessible when the navbar is collapsed by popping out to the right when their parent is hovered
                     over. <em>Note: This feature makes use of the Bootstrap</em> collapse <em>functionality. Correct
                       positioning of these popovers requires some additional Javascript.</em></dd>
-                </dl>
-                <dl class="row">
-                  <dt class="col-2">Status indicators</dt>
+                  <dt class="col-2 text-right">Status indicators</dt>
                   <dd class="col-10">Fluid status indicators can be applied to nav items and they will be positioned
                     appropriately.</dd>
                 </dl>
@@ -2038,7 +2036,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-folder mr-1"></span>
                 Tabs
@@ -2115,7 +2113,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-commenting mr-1"></span>
                 Popovers & Tooltips
@@ -2178,7 +2176,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-spinner mr-1"></span>
                 Progress bars
@@ -2249,7 +2247,7 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <header>
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-window-restore mr-1"></span>
                 Modals

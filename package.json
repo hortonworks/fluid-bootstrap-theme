@@ -9,7 +9,8 @@
   },
   "contributors": [
     "Jason Golieb",
-    "Istvan Tobias"
+    "Istvan Tobias",
+    "Mihai Mihalache"
   ],
   "keywords": [
     "fluid",
@@ -35,14 +36,15 @@
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^3.10.0",
+    "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.6.1",
-    "gulp-livereload": "^3.8.1",
+    "gulp-livereload": "^4.0.1",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob-import": "^0.1.0",
-    "gulp-scss-lint": "^0.7.1",
+    "gulp-scss-lint": "^0.7.2",
     "gulp-serve": "^1.4.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",

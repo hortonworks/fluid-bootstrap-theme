@@ -2,7 +2,7 @@
 @import "scss/functions";
 @import "scss/variables";
 
-header:not(.table-header) {
+.section-header {
   display: flex;
   justify-content: space-between;
   margin-top: $grid-gutter-width;
