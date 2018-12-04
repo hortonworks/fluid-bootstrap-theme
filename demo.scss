@@ -2,7 +2,7 @@
 @import "scss/functions";
 @import "scss/variables";
 
-header {
+.section-header {
   display: flex;
   justify-content: space-between;
   margin-top: $grid-gutter-width;
@@ -28,6 +28,10 @@ section {
   justify-content: space-between;
   margin-bottom: 15px;
   padding: 15px;
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 #containerExample, #containerFluidExample {
