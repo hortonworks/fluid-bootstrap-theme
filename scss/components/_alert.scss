@@ -15,7 +15,7 @@
   }
 
   &:before {
-    font-family: "FontAwesome";
+    font-family: "fluidicons";
     font-size: px(24);
     position: absolute;
     top: 50%;
@@ -23,10 +23,10 @@
   }
 
   &:after {
-    content: "\00d7"; // &times;
-    font-size: $font-size-sm;
+    content: theme-icon("close");
+    font-family: "fluidicons";
     position: absolute;
-    right: px(5);
+    right: px(2);
     top: 0;
     cursor: pointer;
   }

@@ -12,6 +12,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const cleanCss = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
+const atImport = require("postcss-import");
 const autoprefixer = require('autoprefixer');
 const bulkSass = require('gulp-sass-glob-import');
 const del = require('del');
@@ -19,9 +20,10 @@ const connect = require('gulp-connect');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 
+
 // destinations
-const fonts_dest = './dist/fonts/';
-const fonts_docs_dest = './docs/fonts/';
+const fonts_dest = './dist/font/';
+const fonts_docs_dest = './docs/font/';
 
 const html_dest = './docs/';
 
@@ -35,13 +37,12 @@ const js_docs_dest = './docs/js/';
 
 
 // sources
-const fonts_src = './node_modules/font-awesome/fonts/fontawesome-webfont.*';
+const fonts_src = './icons/font/*.*';
 
 const html_src = './*.html';
 
 const sass_src = [
-  './scss/**/*.scss',
-  './node_modules/font-awesome/scss/*.scss'
+  './scss/**/*.scss'
 ];
 const css_src = [
   css_dest + '*.css',
@@ -77,7 +78,7 @@ gulp.task('transpile-sass', () =>
     .pipe(bulkSass())
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([ autoprefixer({ browsers: ['Chrome >= 35', 'Firefox >= 38', 'Edge >= 12', 'Explorer >= 10', 'iOS >= 8', 'Safari >= 8', 'Android 2.3', 'Android >= 4', 'Opera >= 12']})]))
+    .pipe(postcss([atImport(), autoprefixer({ browsers: ['Chrome >= 35', 'Firefox >= 38', 'Edge >= 12', 'Explorer >= 10', 'iOS >= 8', 'Safari >= 8', 'Android 2.3', 'Android >= 4', 'Opera >= 12']})]))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(css_dest))
     .pipe(gulp.dest(css_docs_dest))
@@ -101,7 +102,7 @@ gulp.task('build-docs-sass', () =>
     .pipe(bulkSass())
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([autoprefixer({ browsers: ['Chrome >= 35', 'Firefox >= 38', 'Edge >= 12', 'Explorer >= 10', 'iOS >= 8', 'Safari >= 8', 'Android 2.3', 'Android >= 4', 'Opera >= 12'] })]))
+    .pipe(postcss([atImport(), autoprefixer({ browsers: ['Chrome >= 35', 'Firefox >= 38', 'Edge >= 12', 'Explorer >= 10', 'iOS >= 8', 'Safari >= 8', 'Android 2.3', 'Android >= 4', 'Opera >= 12'] })]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(css_docs_dest))
     .pipe(connect.reload())

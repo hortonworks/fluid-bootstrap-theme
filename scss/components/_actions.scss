@@ -19,7 +19,6 @@ ul.actions {
     display: inline-block;
   }
 
-  .fa,
   .icon {
     font-size: $font-size-base;
   }
@@ -27,11 +26,11 @@ ul.actions {
   .dropdown-toggle {
 
     &:after {
-      margin-left: px(2);
-      content: "\22ee"; // unicode vertical ellipsis used instead of FontAwesome because it is lighter weight
-      font-size: px(15);
+      margin-left: px(-2);
+      content: ":";
+      font-size: px(14);
+      font-family: "fluidicons";
       vertical-align: inherit;
-      font-weight: $font-weight-bold;
       border: none;
     }
   }

@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'fluidicons';
+  src: url('../font/fluidicons.eot?92279577');
+  src: url('../font/fluidicons.eot?92279577#iefix') format('embedded-opentype'),
+       url('../font/fluidicons.woff2?92279577') format('woff2'),
+       url('../font/fluidicons.woff?92279577') format('woff'),
+       url('../font/fluidicons.ttf?92279577') format('truetype'),
+       url('../font/fluidicons.svg?92279577#fluidicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fluidicons';
+    src: url('../font/fluidicons.svg?92279577#fluidicons') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fluidicons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-warning:before { content: '\21'; } /* '!' */
+.icon-apps:before { content: '\23'; } /* '#' */
+.icon-search:before { content: '\24'; } /* '$' */
+.icon-info:before { content: '\25'; } /* '%' */
+.icon-close:before { content: '\2a'; } /* '*' */
+.icon-success:before { content: '\2b'; } /* '+' */
+.icon-danger:before { content: '\2d'; } /* '-' */
+.icon-sort-up:before { content: '\2f'; } /* '/' */
+.icon-menu:before { content: '\3a'; } /* ':' */
+.icon-previous:before { content: '\3c'; } /* '&lt;' */
+.icon-next:before { content: '\3e'; } /* '&gt;' */
+.icon-help:before { content: '\3f'; } /* '?' */
+.icon-sort-down:before { content: '\5c'; } /* '\' */
+.icon-collapse:before { content: '\5e'; } /* '^' */
+.icon-expand:before { content: '\5f'; } /* '_' */
+.icon-navbar-collapse:before { content: '\7b'; } /* '{' */
+.icon-unsorted:before { content: '\7c'; } /* '|' */
+.icon-navbar-expand:before { content: '\7d'; } /* '}' */
+.icon-filter:before { content: '\7e'; } /* '~' */
