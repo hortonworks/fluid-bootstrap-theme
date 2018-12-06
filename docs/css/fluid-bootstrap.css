@@ -7794,14 +7794,14 @@ label {
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
-body > .navbar.fixed-top {
+.navbar.navbar-header {
   height: 4.35714rem;
   min-width: 1024px;
   background-color: #fff;
   border-bottom: 0.07143rem #ececec solid; }
-body > .navbar.fixed-top + * {
+.navbar.navbar-header + * {
     padding-top: 4.28571rem; }
-body > .navbar.navbar-footer {
+.navbar.navbar-footer {
   min-width: 1024px;
   border-top: 0.07143rem #d1d1d1 solid; }
 .navbar.navbar-primary {

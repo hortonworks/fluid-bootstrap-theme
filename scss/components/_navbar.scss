@@ -6,26 +6,20 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-body {
+.navbar.navbar-header {
+  height: $navbar-brand-height + $border-width;
+  min-width: $layout-min-width;
+  background-color: $white;
+  border-bottom: $border-width $body-bg solid;
 
-  > .navbar {
-
-    &.fixed-top {
-      height: $navbar-brand-height + $border-width;
-      min-width: $layout-min-width;
-      background-color: $white;
-      border-bottom: $border-width $body-bg solid;
-
-      + * {
-        padding-top: $navbar-brand-height;
-      }
-    }
-
-    &.navbar-footer {
-      min-width: $layout-min-width;
-      border-top: $border-width $border-color solid;
-    }
+  + * {
+    padding-top: $navbar-brand-height;
   }
+}
+
+.navbar.navbar-footer {
+  min-width: $layout-min-width;
+  border-top: $border-width $border-color solid;
 }
 
 .navbar.navbar-primary {
