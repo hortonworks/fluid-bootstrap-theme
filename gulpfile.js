@@ -20,6 +20,33 @@ const connect = require('gulp-connect');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 
+// Helpers
+// Task Arguments
+const args = (argList => {
+  let args = {}, a, opt, thisOpt, curOpt;
+
+  for (a = 0; a < argList.length; a++) {
+    thisOpt = argList[a].trim();
+    opt = thisOpt.replace(/^\-+/, '');
+
+    if (opt === thisOpt) {
+      // argument value
+      if (curOpt)
+        switch (opt) {
+          case 'true':  args[curOpt] = true; break;
+          case 'false': args[curOpt] = false; break;
+          default:      args[curOpt] = opt;
+        }
+
+      curOpt = null;
+    } else {
+      curOpt = opt;
+      args[curOpt] = true;
+    }
+  }
+
+  return args;
+})(process.argv);
 
 // destinations
 const fonts_dest = './dist/font/';
@@ -51,13 +78,12 @@ const css_src = [
 const sass_docs_src = './demo.scss';
 
 const js_build_src = './js/src/*.js';
-const js_bundle_src = [
+const js_bundle_src = (args.skipjquery) ? js_build_dest + '*.js' : [
   './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
   js_build_dest + '*.js'
 ];
 const js_minify_src = js_bundle_dest + js_bundle_name;
 const js_docs_src = './demo.js';
-
 
 // tasks
 gulp.task('copy-fonts', () =>
