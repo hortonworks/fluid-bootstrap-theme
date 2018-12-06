@@ -947,6 +947,8 @@ $modal-transition:                  transform .3s ease-out !default;
 //
 // Define alert colors, border radius, and padding.
 
+$alert-icon-font-size:              px(24);
+
 $alert-padding-y:                   .75rem !default;
 $alert-padding-x:                   1.25rem !default;
 $alert-margin-bottom:               1rem !default;
@@ -1052,7 +1054,7 @@ $carousel-transition:               transform .6s ease !default; // Define trans
 
 // Close
 
-$close-font-size:                   px(25);
+$close-font-size:                   px(14);
 $close-font-weight:                 $font-weight-light;
 $close-color:                       $gray-700;
 $close-text-shadow:                 0 1px 0 $white !default;
