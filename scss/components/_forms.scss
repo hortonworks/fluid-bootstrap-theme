@@ -87,3 +87,20 @@ select {
 .form-radio {
   @extend .custom-radio;
 }
+
+.form-check-inline,
+.form-radio-inline {
+  display: inline-flex;
+  align-items: center;
+  padding-left: px(5); // Override base .form-check
+  margin-right: $form-check-inline-margin-x;
+
+  // Undo .form-check-input defaults and add some `margin-right`.
+  .form-check-input,
+  .form-radio-input {
+    position: static;
+    margin-top: 0;
+    margin-right: $form-check-inline-input-margin-x;
+    margin-left: 0;
+  }
+}
