@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+ul.actions {
+  margin: 0;
+  padding: 0;
+}
+
+.actions {
+
+  li {
+    list-style: none;
+    margin-right: px(10);
+    display: inline-block;
+  }
+
+  .icon {
+    font-size: $font-size-base;
+  }
+
+  .dropdown-toggle {
+
+    &:after {
+      margin-left: px(-2);
+      content: ":";
+      font-size: px(14);
+      font-family: "fluidicons";
+      vertical-align: inherit;
+      border: none;
+    }
+  }
+}

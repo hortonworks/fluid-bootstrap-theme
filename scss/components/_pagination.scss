@@ -10,23 +10,24 @@ nav.pagination {
   position: relative;
   height: $input-height;
   justify-content: flex-end;
+  font-size: $font-size-sm;
 
   > span.fade.show {
     white-space: nowrap;
     align-self: center;
-    margin-right: px(4);
+    margin-right: $grid-gutter-width / 2;
   }
 
   > div.fade {
     position: absolute;
     display: inherit;
-    right: $input-height * 2;
+    right: $grid-gutter-width * 3;
 
     .form-group {
       font-size: 0; // remove white space between inline elements
 
       * {
-        font-size: $font-size-base;
+        font-size: $font-size-sm;
       }
 
       label {
@@ -37,7 +38,6 @@ nav.pagination {
 
       select {
         width: px(65);
-        margin-right: px(4);
       }
 
       .form-control {
@@ -45,16 +45,15 @@ nav.pagination {
         width: px(32);
         text-align: center;
         height: $input-height;
-        margin-right: px(4);
       }
 
-      .dropdown {
-        margin-left: px(6);
+      &.dropdown {
+        margin-left: $grid-gutter-width / 2;
       }
 
       .dropdown-menu {
-        min-width: px(122);
-        width: px(122);
+        min-width: 0;
+        width: px(106);
         padding: px(4);
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -64,11 +63,11 @@ nav.pagination {
         }
 
         .page-item .page-link {
-          min-width: $font-size-base * 2;
-          height: $font-size-base * 2;
+          min-width: $font-size-sm * 2;
+          height: $font-size-sm * 2;
           padding: 0;
-          padding-left: px(5);
-          padding-right: px(5);
+          padding-left: px(5, $font-size-sm);
+          padding-right: px(5, $font-size-sm);
           text-align: center;
           line-height: 2;
         }
@@ -89,9 +88,9 @@ nav.pagination {
   }
 
   > .page-link {
-    width: $input-height;
     height: $input-height;
-    margin: 0;
+    margin-left: $grid-gutter-width / 2;
+    margin-right: $grid-gutter-width / 2;
     padding: 0;
     border: none;
     border-radius: $border-radius;
@@ -104,10 +103,6 @@ nav.pagination {
     &.disabled {
       color: text-color("light");
       pointer-events: none;
-    }
-
-    & .fa {
-      font-weight: $font-weight-bold;
     }
   }
 }

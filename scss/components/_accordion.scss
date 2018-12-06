@@ -27,15 +27,15 @@
       cursor: pointer;
 
       &:after {
-        content: $fa-var-angle-up;
-        font-family: "FontAwesome";
+        content: theme-icon("collapse");
+        font-family: "fluidicons";
         font-size: px(20);
         color: $link;
         float: right;
       }
 
       &.collapsed:after {
-        content: $fa-var-angle-down;
+        content: theme-icon("expand");
       }
     }
 

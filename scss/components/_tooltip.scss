@@ -10,7 +10,6 @@
 
     .tooltip-inner {
       box-shadow: $box-shadow-lg;
-      padding: px(10);
     }
 
     &.tooltip-no-arrow {
@@ -25,7 +24,6 @@
       .tooltip-inner {
         background-color: $white;
         border: 1px solid darken($white, 14%);
-        box-shadow: 0 0 1rem 0 darken($white, 14%);
         color: gray("700");
       }
     }

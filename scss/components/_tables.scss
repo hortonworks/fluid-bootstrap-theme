@@ -1,0 +1,90 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+.table-header {
+  display: flex;
+  justify-content: flex-end;
+
+  + .table {
+    margin-top: px(-38);
+  }
+}
+
+.table {
+  font-size: $font-size-sm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  caption {
+    caption-side: top;
+    font-size: $font-size-lg;
+  }
+
+  tr.active {
+    background-color: $table-active-bg;
+  }
+
+  th,
+  td {
+    vertical-align: inherit;
+
+    .form-check {
+      display: inline-block;
+      vertical-align: inherit;
+    }
+  }
+
+  thead {
+    border-bottom: $table-border-width solid $table-heading-border-color;
+
+    th,
+    td {
+      border: none;
+    }
+  }
+
+  tbody {
+
+    th,
+    td {
+      border: none;
+
+      &.primary {
+        font-size: $font-size-base;
+      }
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      height: $table-border-width;
+    }
+  }
+
+  tfoot {
+    border-top: $table-border-width solid $table-heading-border-color;
+
+    th,
+    td {
+      border: none;
+    }
+  }
+
+  .form-check-label {
+    display: block;
+  }
+}
+
+.table-hover {
+  tbody tr:hover {
+    outline: $table-border-width solid $table-hover-border-color;
+  }
+}

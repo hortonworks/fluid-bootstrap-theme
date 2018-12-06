@@ -1,4 +1,5 @@
-.fa {
+.icon {
+  display: inline-block;
   text-align: center;
 
   * {
@@ -9,5 +10,22 @@
     position: relative;
     top: px(-7);
     left: px(-7);
+    box-shadow: $box-shadow-lg;
   }
+}
+
+.icon-info {
+  color: theme-color("info");
+}
+
+.icon-success {
+  color: theme-color("success");
+}
+
+.icon-warning {
+  color: theme-color("warning");
+}
+
+.icon-danger {
+  color: theme-color("danger");
 }

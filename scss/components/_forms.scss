@@ -11,7 +11,6 @@ label {
 }
 
 .form-control {
-  font-size:  px(14);
 
   &:disabled {
     border: none;
@@ -22,8 +21,8 @@ label {
   color: theme-color("default");
 
   &:before {
-    font-family: "FontAwesome";
-    margin-right: px(5);
+    font-family: "fluidicons";
+    margin-right: px(3);
   }
 }
 
@@ -34,11 +33,6 @@ label {
   left: 100%;
   bottom: ($input-padding-y * 2 + $input-line-height * px(14)) / 2;
   transform: translateY(50%);
-  padding-left: px(15);
-
-  &:before {
-    margin-left: px(-15);
-  }
 }
 
 .valid-feedback:before {
@@ -56,7 +50,7 @@ select {
   @extend .custom-select;
 }
 
- // Make all checkboxes and radios themed
+// Make all checkboxes and radios themed
 .form-check, .form-radio {
   @extend .custom-control;
 
