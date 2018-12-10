@@ -86,7 +86,7 @@ const css_src = [
 const sass_docs_src = './demo.scss';
 
 const js_build_src = './js/src/*.js';
-const js_bundle_src = (args.skipjquery) ? js_build_dest + '*.js' : [
+const js_bundle_src = (args.skipbootstrapjs) ? js_build_dest + '*.js' : [
   './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
   js_build_dest + '*.js'
 ];
