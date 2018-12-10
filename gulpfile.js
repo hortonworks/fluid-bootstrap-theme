@@ -20,6 +20,41 @@ const connect = require('gulp-connect');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 
+// Helpers
+// Task Arguments
+// Created an args object with key/value pairs sent to a task as flags
+// command: gulp task1 --a 123 --b "my string" --c --d false
+// args: { "a": "123", "b": "my string", "c": true , "b": false}
+const args = (argList => {
+  let args = {}, a, opt, thisOpt, curOpt;
+
+  // loops through the process.argv array
+  for (a = 0; a < argList.length; a++) {
+    thisOpt = argList[a].trim();
+    opt = thisOpt.replace(/^\-+/, '');
+
+    // any argList value preceded with one or more dashes results in a new key in the args object
+    // argList values without dashes are set as values for the previous key in the args object
+    if (opt === thisOpt) {
+      // argument value
+      if (curOpt)
+        // simple switch to parse boolean values if encountered
+        switch (opt) {
+          case 'true':  args[curOpt] = true; break;
+          case 'false': args[curOpt] = false; break;
+          default:      args[curOpt] = opt;
+        }
+
+      curOpt = null;
+    } else {
+      curOpt = opt;
+      // an argList value preceded with one or more dahses defaults to true
+      args[curOpt] = true;
+    }
+  }
+
+  return args;
+})(process.argv);
 
 // destinations
 const fonts_dest = './dist/font/';
@@ -51,13 +86,12 @@ const css_src = [
 const sass_docs_src = './demo.scss';
 
 const js_build_src = './js/src/*.js';
-const js_bundle_src = [
+const js_bundle_src = (args.skipbootstrapjs) ? js_build_dest + '*.js' : [
   './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
   js_build_dest + '*.js'
 ];
 const js_minify_src = js_bundle_dest + js_bundle_name;
 const js_docs_src = './demo.js';
-
 
 // tasks
 gulp.task('copy-fonts', () =>
