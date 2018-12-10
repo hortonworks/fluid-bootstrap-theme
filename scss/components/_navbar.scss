@@ -6,7 +6,23 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-.navbar {
+.navbar.navbar-header {
+  height: $navbar-brand-height + $border-width;
+  min-width: $layout-min-width;
+  background-color: $white;
+  border-bottom: $border-width $body-bg solid;
+
+  + * {
+    padding-top: $navbar-brand-height;
+  }
+}
+
+.navbar.navbar-footer {
+  min-width: $layout-min-width;
+  border-top: $border-width $border-color solid;
+}
+
+.navbar.navbar-primary {
   @extend .navbar-dark;
   position: fixed;
   height: 100%;
@@ -192,7 +208,7 @@
       }
 
       .navbar-toggler-icon:before {
-        content: theme-icon("navbar-collapse");
+        content: theme-icon("navbar-expand");
       }
     }
   }
@@ -214,7 +230,7 @@
 
           &:after {
             position: absolute;
-            top: px(11);
+            top: px(10);
             right: px(12);
             content: theme-icon("collapse");
             font-family: "fluidicons";
@@ -397,6 +413,86 @@
       padding-top: $navbar-brand-height + $navbar-nav-padding;
     }
   }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 0; // set explicitly for IE
+    left: 0; // set explicitly for IE
+    height: 100%;
+    padding-top: $navbar-nav-padding;
+    padding-bottom: $navbar-nav-padding;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    left: 0; // set explicitly for IE
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    height: px(48);
+    display: block;
+    background-color: $navbar-brand-bg;
+    border: none;
+    border-radius: 0;
+    z-index: 1030;
+
+    // Create a fade out effect as menu items overflow vertically
+    &:before {
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      height: $navbar-nav-link-height-collapsed;
+      width: 100%;
+      content: " ";
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba($navbar-bg, 0) 0%, $navbar-bg 100%);
+    }
+
+    &:hover,
+    &:active {
+      background-color: $navbar-active-bg;
+
+      .navbar-toggler-icon:before {
+        color: $navbar-active-color;
+      }
+    }
+
+    &:focus {
+      outline-style: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: none;
+      line-height: px(48);
+
+      &:before {
+        content: theme-icon("navbar-collapse");
+        font-family: "fluidicons";
+        font-size: px(20);
+        color: theme-color("primary");
+
+        /* For Firefox and Safari */
+        position: absolute;
+        bottom: 0;
+        transform: translateX(-50%);
+        /**************************/
+        -ms-transform: translateX(50%); // IE
+      }
+    }
+
+    & ~ .navbar-collapse {
+
+      // Padding is on last child rather than on parent due to IE
+      > *:last-child {
+        padding-bottom: $navbar-nav-link-height-collapsed * 2;
+      }
+    }
+  }
 }
 
 .brand-menu,
@@ -455,86 +551,6 @@
       .icon {
         background-color: lighten(color("blue"), 10%)
       }
-    }
-  }
-}
-
-.navbar-collapse {
-  position: absolute;
-  top: 0; // set explicitly for IE
-  left: 0; // set explicitly for IE
-  height: 100%;
-  padding-top: $navbar-nav-padding;
-  padding-bottom: $navbar-nav-padding;
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-.navbar-toggler {
-  position: absolute;
-  left: 0; // set explicitly for IE
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  height: px(48);
-  display: block;
-  background-color: $navbar-brand-bg;
-  border: none;
-  border-radius: 0;
-  z-index: 1030;
-
-  // Create a fade out effect as menu items overflow vertically
-  &:before {
-    position: absolute;
-    left: 0;
-    bottom: 100%;
-    height: $navbar-nav-link-height-collapsed;
-    width: 100%;
-    content: " ";
-    pointer-events: none;
-    background: linear-gradient(to bottom, rgba($navbar-bg, 0) 0%, $navbar-bg 100%);
-  }
-
-  &:hover,
-  &:active {
-    background-color: $navbar-active-bg;
-
-    .navbar-toggler-icon:before {
-      color: $navbar-active-color;
-    }
-  }
-
-  &:focus {
-    outline-style: none;
-  }
-
-  .navbar-toggler-icon {
-    background-image: none;
-    line-height: px(48);
-
-    &:before {
-      content: theme-icon("navbar-expand");
-      font-family: "fluidicons";
-      font-size: px(20);
-      color: theme-color("primary");
-
-      /* For Firefox and Safari */
-      position: absolute;
-      bottom: 0;
-      transform: translateX(-50%);
-      /**************************/
-      -ms-transform: translateX(50%); // IE
-    }
-  }
-
-  & ~ .navbar-collapse {
-
-    // Padding is on last child rather than on parent due to IE
-    > *:last-child {
-      padding-bottom: $navbar-nav-link-height-collapsed * 2;
     }
   }
 }
