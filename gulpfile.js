@@ -22,16 +22,23 @@ const uglify = require('gulp-uglify');
 
 // Helpers
 // Task Arguments
+// Created an args object with key/value pairs sent to a task as flags
+// command: gulp task1 --a 123 --b "my string" --c --d false
+// args: { "a": "123", "b": "my string", "c": true , "b": false}
 const args = (argList => {
   let args = {}, a, opt, thisOpt, curOpt;
 
+  // loops through the process.argv array
   for (a = 0; a < argList.length; a++) {
     thisOpt = argList[a].trim();
     opt = thisOpt.replace(/^\-+/, '');
 
+    // any argList value preceded with one or more dashes results in a new key in the args object
+    // argList values without dashes are set as values for the previous key in the args object
     if (opt === thisOpt) {
       // argument value
       if (curOpt)
+        // simple switch to parse boolean values if encountered
         switch (opt) {
           case 'true':  args[curOpt] = true; break;
           case 'false': args[curOpt] = false; break;
@@ -41,6 +48,7 @@ const args = (argList => {
       curOpt = null;
     } else {
       curOpt = opt;
+      // an argList value preceded with one or more dahses defaults to true
       args[curOpt] = true;
     }
   }
