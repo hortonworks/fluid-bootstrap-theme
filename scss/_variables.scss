@@ -224,7 +224,7 @@ $enable-print-styles:       true !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: 1rem !default;
+$spacer: px(15);
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
@@ -750,7 +750,7 @@ $nav-divider-margin-y:              ($spacer / 2) !default;
 
 // Navbar
 
-$navbar-padding-y:                  ($spacer / 2) !default;
+$navbar-padding-y:                  $spacer;
 $navbar-padding-x:                  $spacer !default;
 
 $navbar-nav-padding:                px(5);
