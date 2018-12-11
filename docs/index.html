@@ -100,6 +100,10 @@ of all or any part of the contents of this file is strictly prohibited.
           <span class="icon fa fa-th-large"></span>
           Layout
         </a>
+        <a class="nav-item nav-link" href="#cards">
+          <span class="icon fa fa-id-card"></span>
+          Panels
+        </a>
         <a class="nav-item nav-link" href="#typography">
           <span class="icon fa fa-text-height"></span>
           Typography
@@ -136,45 +140,37 @@ of all or any part of the contents of this file is strictly prohibited.
           <span class="icon fa fa-square"></span>
           Buttons
         </a>
-        <a class="nav-item nav-link" href="#pagination">
-          <span class="icon fa fa-file-text"></span>
-          Pagination
-        </a>
-        <a class="nav-item nav-link" href="#tables">
-          <span class="icon fa fa-table"></span>
-          Tables
-        </a>
-        <a class="nav-item nav-link" href="#list-groups">
-          <span class="icon fa fa-list-ul"></span>
-          List Groups
-        </a>
-        <a class="nav-item nav-link" href="#cards">
-          <span class="icon fa fa-id-card"></span>
-          Cards
-        </a>
         <a class="nav-item nav-link" href="#forms">
           <span class="icon fa fa-pencil"></span>
           Forms
+        </a>
+        <a class="nav-item nav-link" href="#modals">
+          <span class="icon fa fa-window-restore"></span>
+          Modals
         </a>
         <a class="nav-item nav-link" href="#navbar">
           <span class="icon fa fa-angle-double-left"></span>
           Navbar
         </a>
-        <a class="nav-item nav-link" href="#tabs">
-          <span class="icon fa fa-folder"></span>
-          Tabs
+        <a class="nav-item nav-link" href="#pagination">
+          <span class="icon fa fa-file-text"></span>
+          Pagination
         </a>
         <a class="nav-item nav-link" href="#popovers">
           <span class="icon fa fa-commenting"></span>
-          Popovers
+          Popovers &amp; Tooltips
         </a>
         <a class="nav-item nav-link" href="#progress-bars">
           <span class="icon fa fa-spinner"></span>
           Progress Bars
         </a>
-        <a class="nav-item nav-link" href="#modals">
-          <span class="icon fa fa-window-restore"></span>
-          Modals
+        <a class="nav-item nav-link" href="#tables">
+          <span class="icon fa fa-table"></span>
+          Tables
+        </a>
+        <a class="nav-item nav-link" href="#tabs">
+          <span class="icon fa fa-folder"></span>
+          Tabs
         </a>
       </div>
     </div>
@@ -186,7 +182,7 @@ of all or any part of the contents of this file is strictly prohibited.
     <section id="layout">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <header class="section-header">
               <h2><i class=icon  fa-th-large mr-1"></i> Layout</h2>
               <h2>
@@ -199,7 +195,7 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
       <div class="container-fluid">
         <div class="row pb-3">
-          <div class="col-12">
+          <div class="col">
             <div class="card">
               <div class="card-body">
                 <h3 class="card-title">Semantics</h3>
@@ -229,7 +225,7 @@ of all or any part of the contents of this file is strictly prohibited.
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-12 display-4 text-center">
+          <div class="col display-4 text-center">
             <div>Document Width:</div>
             <div id="documentWidth"></div>
           </div>
@@ -237,7 +233,7 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
       <div class="container bg-light mb-3 p-5" id="containerExample">
         <div class="row">
-          <div class="col-12 display-4 text-center">
+          <div class="col display-4 text-center">
             <div>.container width:</div>
             <div id="containerWidth"></div>
           </div>
@@ -245,9 +241,232 @@ of all or any part of the contents of this file is strictly prohibited.
       </div>
       <div class="container-fluid bg-light mb-3 p-5" id="containerFluidExample">
         <div class="row">
-          <div class="col-12 display-4 text-center">
+          <div class="col display-4 text-center">
             <div>.container-fluid width:</div>
             <div id="containerFluidWidth"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="cards">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <header class="section-header">
+              <h2>
+                <span class="icon fa fa-id-card mr-1"></span>
+                Panels
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/card/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Card docs"><span class="icon fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
+        <div class="row pb-3">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Usage</h3>
+                <p>Panels are a concept in Fluid that is implemented using Bootstrap Cards. All content should be contained in panels. You should usually not need to use <code>.card-header</code> and should generally use <code>.card-title</code> and <code>.card-text</code> within the <code>.card-body</code> to achieve the consistent layout required by Fluid. Use <code>.card-footer</code> to keep footer elements, including buttons and links, at the bottom of the card even if its height increases.</p>
+                <p>You are encouraged to make use of the available <a href="https://getbootstrap.com/docs/4.0/components/card/#card-layout" target="_blank">card layout utilities</a> to control the placement of Panels. This will allow you to achieve horizontal and/or flowing layouts. When you just need a series of full-width panels, simply place one <code>.card</code> after another in your markup. You can also use an <a href="#accordion">accordion</a> to group panels.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3><code>.card-columns</code> Example</h3>
+        <div class="card-columns">
+          <div class="card">
+            <div class="card-body">
+              This is some text within a card block.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <h4 class="card-subtitle">Card with subtitle</h6>
+              <p class="card-text">You're going to be an interesting companion, Mr. Data. I'll alert the crew. The look in your eyes, I recognize it. You used to have it for me. The Federation's gone; the Borg is everywhere! When has justice ever been as simple as a rule book?</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">I'll alert the crew. You're going to be an interesting companion, Mr. Data. I've had twelve years to think about it. And if I had it to do over again, I would have grabbed the phaser and pointed it at you instead of them. For an android with no feelings, he sure managed to evoke them in others. I am your worst nightmare! A lot of things can change in twelve years, Admiral. You did exactly what you had to do. You considered all your options, you tried every alternative and then you made the hard choice. Besides, you look good in a dress. Computer, belay that order. Mr. Worf, you sound like a man who's asking his friend if he can start dating his sister.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">Yes, absolutely, I do indeed concur, wholeheartedly! Mr. Worf, you sound like a man who's asking his friend if he can start dating his sister. Not if I weaken first. Ensign Babyface! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Sorry, Data. Now, how the hell do we defeat an enemy that knows us better than we know ourselves? Captain, why are we out here chasing comets? Our neural pathways have become accustomed to your sensory input patterns. The look in your eyes, I recognize it. You used to have it for me. I can't. As much as I care about you, my first duty is to the ship. Sure. You'd be surprised how far a hug goes with Geordi, or Worf. Computer, belay that order. What's a knock-out like you doing in a computer-generated gin joint like this? This should be interesting. The unexpected is our normal routine. I'd like to think that I haven't changed those things, sir. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf. We could cause a diplomatic crisis. Take the ship into the Neutral Zone Shields up! Rrrrred alert! Flair is what marks the difference between artistry and mere competence. When has justice ever been as simple as a rule book? In all trust, there is the possibility for betrayal. For an android with no feelings, he sure managed to evoke them in others.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">Card header</div>
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">I recommend you don't fire until you're within 40,000 kilometers. Congratulations - you just destroyed the Enterprise. We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf. Now we know what they mean by 'advanced' tactical training. Some days you get the bear, and some days the bear gets you. Fear is the true enemy, the only enemy. I'm afraid I still don't understand, sir. Is it my imagination, or have tempers become a little frayed on the ship lately? Mr. Worf, you do remember how to fire phasers? Worf, It's better than music. It's jazz.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf. When has justice ever been as simple as a rule book? For an android with no feelings, he sure managed to evoke them in others. A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you.</p>
+            </div>
+          </div>
+        </div>
+        <h3><code>.card-deck</code> Example</h3>
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              This is some text within a card block.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <h5 class="card-subtitle">Card with subtitle</h5>
+              <p class="card-text">You enjoyed that. Fate protects fools, little children and ships named Enterprise. In all trust, there is the possibility for betrayal. Flair is what marks the difference between artistry and mere competence. I am your worst nightmare! You bet I'm agitated! I may be surrounded by insanity, but I am not insane. I will obey your orders. I will serve this ship as First Officer. And in an attack against the Enterprise, I will die with this crew. But I will not break my oath of loyalty to Starfleet.</p>
+            </div>
+            <div class="card-footer">
+              <a href="javascript:void(0);" class="card-link">Card link</a>
+              <a href="javascript:void(0);" class="card-link">Another link</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">Wait a minute - you've been declared dead. You can't give orders around here. Now we know what they mean by 'advanced' tactical training. Commander William Riker of the Starship Enterprise. Your shields were failing, sir. Your head is not an artifact! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Shields up! Rrrrred alert! Congratulations - you just destroyed the Enterprise.</p>
+            </div>
+            <div class="card-footer">
+              <a href="javascript:void(0);" class="btn btn-primary">Primary</a>
+              <a href="javascript:void(0);" class="btn btn-secondary">Secondary</a>
+              <a href="javascript:void(0);" class="btn btn-default">Button</a>
+            </div>
+          </div>
+        </div>
+        <h3><code>.card-group</code> Example</h3>
+        <div class="card-group">
+          <div class="card">
+            <img class="card-img-top" src="images/card-group-1.jpg" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+            <div class="card-body">
+              <h4 class="card-title">Sunset</h4>
+              <p class="card-text">That sunset is perfectly lined up with that crazy-shaped tree. It's like a burning bush.</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text"><small class="text-muted">Last updated yesterday</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="images/card-group-2.jpg" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+            <div class="card-body">
+              <h4 class="card-title">Butterflies</h4>
+              <p class="card-text">Thos are some crazy mushrooms. I hope those butterflies know what they're doing.</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text"><small class="text-muted">Last updated just now</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="images/card-group-3.jpg" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+            <div class="card-body">
+              <h4 class="card-title">Daisy</h4>
+              <p class="card-text">Wow, that is some amazing background blur. Looks like the photographer read his camera's manual!</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text"><small class="text-muted">Last updated 3 minutes ago</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="images/card-group-4.jpg" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+            <div class="card-body">
+              <h4 class="card-title">Tracks</h4>
+              <p class="card-text">Where are these tracks going? Does anybody know? Does anybody care?</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text"><small class="text-muted">Last updated 1 hour ago</small></p>
+            </div>
+          </div>
+        </div>
+        <h3>Cards with colored borders</h3>
+        <div class="card-columns">
+          <div class="card border border-primary">
+            <div class="card-body">
+              <h4 class="card-title">Primary border</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border border-success">
+            <div class="card-header">Card header</div>
+            <div class="card-body">
+              <h4 class="card-title">Success border</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border border-warning">
+            <div class="card-body">
+              <h4 class="card-title">Warning border</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border border-danger">
+            <div class="card-body">
+              <h4 class="card-title">Danger border</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border border-info">
+            <div class="card-body">
+              <h4 class="card-title">Info border</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border border-dark">
+            <div class="card-body">
+              <h4 class="card-title">Dark border</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+        <h3>Cards with colored backgrounds</h3>
+        <div class="card-columns">
+          <div class="card text-white bg-primary">
+            <div class="card-body">
+              <h4 class="card-title">Primary background</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-success">
+            <div class="card-header">Card header</div>
+            <div class="card-body">
+              <h4 class="card-title">Success background</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-warning">
+            <div class="card-body">
+              <h4 class="card-title">Warning background</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-danger">
+            <div class="card-body">
+              <h4 class="card-title">Danger background</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-info">
+            <div class="card-body">
+              <h4 class="card-title">Info background</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-dark">
+            <div class="card-body">
+              <h4 class="card-title">Dark background</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -255,7 +474,7 @@ of all or any part of the contents of this file is strictly prohibited.
     <section id="typography">
       <div class="container-fluid">
         <div class="row pb-3">
-          <div class="col-12">
+          <div class="col">
             <header class="section-header">
               <h2>
                 <span class="icon fa fa-text-height mr-1"></span>
@@ -308,7 +527,7 @@ of all or any part of the contents of this file is strictly prohibited.
           </div>
         </div>
         <div class="row pb-3">
-          <div class="col-12">
+          <div class="col">
             <h3>Colors</h3>
             <div class="card-deck">
               <div class="card">
@@ -420,7 +639,7 @@ of all or any part of the contents of this file is strictly prohibited.
           </div>
         </div>
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <h3>Sizes</h3>
             <div class="card-columns">
               <div class="card">
@@ -480,8 +699,8 @@ of all or any part of the contents of this file is strictly prohibited.
     <section id="iconography">
       <div class="container-fluid">
         <div class="row pb-3">
-          <div class="col-12">
-            <header>
+          <div class="col">
+            <header class="section-header">
               <h2>
                 <span class="icon fa fa-cube mr-1"></span>
                 Iconography
@@ -755,7 +974,7 @@ of all or any part of the contents of this file is strictly prohibited.
     <section id="shadows">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <header class="section-header">
               <h2><i class="icon fa fa-adjust mr-1"></i> Shadows</h2>
               <h2>
@@ -792,7 +1011,7 @@ of all or any part of the contents of this file is strictly prohibited.
     <section id="accordion">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <header class="section-header">
               <h2>
                 <span class="icon fa fa-angle-down mr-1"></span>
@@ -979,7 +1198,7 @@ of all or any part of the contents of this file is strictly prohibited.
     <section id="breadcrumbs">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <header class="section-header">
               <h2>
                 <span class="icon mr-1">/</span>
@@ -1031,7 +1250,7 @@ of all or any part of the contents of this file is strictly prohibited.
     <section id="buttons">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <header class="section-header">
               <h2>
                 <span class="icon fa fa-square mr-1"></span>
@@ -1121,690 +1340,10 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </div>
     </section>
-    <section id="pagination">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <header class="section-header">
-              <h2>
-                <span class="icon fa fa-file-text mr-1"></span>
-                Pagination
-              </h2>
-              <h2>
-                <a href="https://getbootstrap.com/docs/4.0/components/pagination/" target="_blank" data-toggle="tooltip"
-                  data-placement="bottom" title="" data-original-title="Pagination docs"><span class="icon fa fa-book"></span></a>
-                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
-              </h2>
-            </header>
-            <div class="card">
-              <div class="card-body">
-                <nav class="pagination" aria-label="Page navigation example">
-                  <div class="fade">
-                    <div class="form-group">
-                      <label for="itemsPerPage">Show:</label>
-                      <select id="itemsPerPage">
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                      </select>
-                    </div>
-                    <div class="form-group dropdown">
-                      <label for="goToPageExample">Go:</label>
-                      <input id="goToPageExample" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <ul class="dropdown-menu">
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
-                        <li class="page-item"><a class="page-link" href="#">500</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1000</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <span class="fade show">1-10 of 1000</span>
-                  <a class="page-link disabled" href="#" aria-label="Previous">
-                    <i class="icon icon-previous" aria-hidden="true"></i>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="page-link" href="#" aria-label="Next">
-                    <i class="icon icon-next" aria-hidden="true"></i>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="tables">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <header class="section-header">
-              <h2>
-                <span class="icon fa fa-table mr-1"></span>
-                Tables
-              </h2>
-              <h2>
-                <a href="https://getbootstrap.com/docs/4.0/content/tables/" target="_blank" data-toggle="tooltip"
-                  data-placement="bottom" title="" data-original-title="Table docs"><span class="icon fa fa-book"></span></a>
-                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
-              </h2>
-            </header>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-body">
-                <h3 class="card-title">Table</h3>
-                <header class="table-header">
-                  <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Actions
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </header>
-                <table class="table table-hover">
-                  <caption>Example Title</caption>
-                  <thead class="">
-                    <tr>
-                      <th class="text-center">Status</th>
-                      <th>Name</th>
-                      <th>Username</th>
-                      <th>Last Login</th>
-                      <th>Actions</th>
-                      <th class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="checkAll">
-                          <label class="form-check-label" for="checkAll"></label>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="text-center text-base"><i class="icon icon-success"></td>
-                      <td class="primary"><a href="#">William Ross</a></td>
-                      <td>admiralbill</td>
-                      <td>2 days ago</td>
-                      <td>
-                        <ul class="actions">
-                          <li>
-                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
-                          </li>
-                        </ul>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="1" id="row1">
-                          <label class="form-check-label" for="row1"></label>
-                        </div>
-                      </th>
-                    </tr>
-                    <tr class="active">
-                      <td class="text-center text-base"><i class="icon icon-warning"></td>
-                      <td class="primary"><a href="#">Benjamin Sisko</a></td>
-                      <td>brotherbenny</td>
-                      <td>Just now</td>
-                      <td>
-                        <div class="actions dropdown">
-                          <a class="dropdown-toggle" href="#" role="button" id="actionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Send e-mail</a>
-                            <a class="dropdown-item" href="#">Follow</a>
-                            <a class="dropdown-item" href="#">View profile</a>
-                            <a class="dropdown-item" href="#">Edit</a>
-                            <a class="dropdown-item" href="#">Delete user</a>
-                          </div>
-                        </div>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="2" id="row2" checked>
-                          <label class="form-check-label" for="row2"></label>
-                        </div>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td class="text-center text-base"><i class="icon icon-danger"></td>
-                      <td class="primary"><a href="#">Miles O'Brien</a></td>
-                      <td>smiley</td>
-                      <td>5 hours ago</td>
-                      <td>
-                        <ul class="actions">
-                          <li>
-                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
-                          </li>
-                        </ul>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="3" id="row3">
-                          <label class="form-check-label" for="row3"></label>
-                        </div>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td class="text-center text-base"><i class="icon icon-info"></td>
-                      <td class="primary"><a href="#">Julian Bashir</a></td>
-                      <td>kukalaka</td>
-                      <td>Never</td>
-                      <td>
-                        <ul class="actions">
-                          <li>
-                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
-                          </li>
-                        </ul>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="3" id="row3">
-                          <label class="form-check-label" for="row3"></label>
-                        </div>
-                      </th>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td colspan="6">
-                        <nav class="pagination" aria-label="Page navigation example">
-                          <div class="fade">
-                            <div class="form-group">
-                              <label for="itemsPerPage">Show:</label>
-                              <select id="itemsPerPage">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                              </select>
-                            </div>
-                            <div class="form-group dropdown">
-                              <label for="goToPage">Go:</label>
-                              <input id="goToPage" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <ul class="dropdown-menu">
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
-                                <li class="page-item"><a class="page-link" href="#">500</a></li>
-                                <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1000</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <span class="fade show">1-10 of 1000</span>
-                          <a class="page-link disabled" href="#" aria-label="Previous">
-                            <i class="icon icon-previous" aria-hidden="true"></i>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="page-link" href="#" aria-label="Next">
-                            <i class="icon icon-next" aria-hidden="true"></i>
-                            <span class="sr-only">Next</span>
-                          </a>
-                        </nav>
-                      </td>
-                    </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="list-groups">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <header class="section-header">
-              <h2>
-                <span class="icon fa fa-list-ul mr-1"></span>
-                List groups
-              </h2>
-              <h2>
-                <a href="https://getbootstrap.com/docs/4.0/components/list-group/" target="_blank" data-toggle="tooltip"
-                  data-placement="bottom" title="" data-original-title="List group docs"><span class="icon fa fa-book"></span></a>
-                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
-              </h2>
-            </header>
-          </div>
-        </div>
-        <div class="card-deck">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">...with actions and colors</h3>
-              <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action">This is a regular list group item</button>
-                <button type="button" class="list-group-item list-group-item-action list-group-item-active">
-                  This is a(n) active list group item
-                </button>
-                <button type="button" class="list-group-item list-group-item-action list-group-item-disabled">
-                  This is a(n) disabled list group item
-                </button>
-                <button type="button" class="list-group-item list-group-item-action list-group-item-primary">
-                  This is a(n) primary list group item
-                </button>
-                <button type="button" class="list-group-item list-group-item-action list-group-item-secondary">
-                  This is a(n) secondary list group item
-                </button>
-                <button type="button" class="list-group-item list-group-item-action list-group-item-success">
-                  This is a(n) success list group item
-                </button>
-                <button type="button" class="list-group-item list-group-item-action list-group-item-danger">
-                  This is a(n) danger list group item
-                </button>
-                <button type="button" class="list-group-item list-group-item-action list-group-item-warning">
-                  This is a(n) warning list group item
-                </button>
-                <button type="button" class="list-group-item list-group-item-action list-group-item-info">
-                  This is a(n) info list group item
-                </button>
-                <button type="button" class="list-group-item list-group-item-action list-group-item-light">
-                  This is a(n) light list group item
-                </button>
-                <button type="button" class="list-group-item list-group-item-action list-group-item-dark">
-                  This is a(n) dark list group item
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">...with custom content</h3>
-              <div class="list-group">
-                <a href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start active">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago</small>
-                  </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-                    blandit.</p>
-                  <small>Donec id elit non mi porta.</small>
-                </a>
-                <a href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                  </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-                    blandit.</p>
-                  <small class="text-muted">Donec id elit non mi porta.</small>
-                </a>
-                <a href="javascript:void(0);" class="list-group-item list-group-item-action flex-column align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                  </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-                    blandit.</p>
-                  <small class="text-muted">Donec id elit non mi porta.</small>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="cards">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <header class="section-header">
-              <h2>
-                <span class="icon fa fa-id-card mr-1"></span>
-                Cards
-              </h2>
-              <h2>
-                <a href="https://getbootstrap.com/docs/4.0/components/card/" target="_blank" data-toggle="tooltip"
-                  data-placement="bottom" title="" data-original-title="Card docs"><span class="icon fa fa-book"></span></a>
-                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
-              </h2>
-            </header>
-            <h3>Various types of cards</h3>
-            <div class="card-columns">
-              <div class="card">
-                <div class="card-body">
-                  This is some text within a card block.
-                </div>
-              </div>
-              <div class="card">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Cras justo odio</li>
-                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                  <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                  <a href="javascript:void(0);" class="card-link">Card link</a>
-                  <a href="javascript:void(0);" class="card-link">Another link</a>
-                </div>
-              </div>
-              <div class="card p-3">
-                <blockquote class="blockquote mb-0 card-body">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                  <footer class="blockquote-footer">
-                    <small class="text-muted">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
-                    </small>
-                  </footer>
-                </blockquote>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  Featured
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Special title treatment</h4>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="javascript:void(0);" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card text-center">
-                <div class="card-header">
-                  Featured
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Special title treatment</h4>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="javascript:void(0);" class="btn btn-primary">Go somewhere</a>
-                </div>
-                <div class="card-footer text-muted">
-                  2 days ago
-                </div>
-              </div>
-              <div class="card">
-                <img class="card-img" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22323%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20323%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_163880def1b%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_163880def1b%22%3E%3Crect%20width%3D%22323%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22119.984375%22%20y%3D%2267.2%22%3E323x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                  alt="100%x120" data-src="holder.js/100px120" data-holder-rendered="true" style="height: 120px; width: 100%; display: block;">
-              </div>
-              <div class="card">
-                <img class="card-img-top" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22323%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20323%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_163880def1c%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_163880def1c%22%3E%3Crect%20width%3D%22323%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22119.984375%22%20y%3D%2267.2%22%3E323x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                  alt="100%x120" data-src="holder.js/100px120" data-holder-rendered="true" style="height: 120px; width: 100%; display: block;">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little
-                    bit longer.
-                  </p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-                <img class="card-img-bottom" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22323%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20323%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_163880def1e%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_163880def1e%22%3E%3Crect%20width%3D%22323%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22119.984375%22%20y%3D%2267.2%22%3E323x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                  alt="100%x120" data-src="holder.js/100px120" data-holder-rendered="true" style="height: 120px; width: 100%; display: block;">
-              </div>
-              <div class="card">
-                <img class="card-img-top" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22323%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20323%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_163880def21%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_163880def21%22%3E%3Crect%20width%3D%22323%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22119.984375%22%20y%3D%2267.2%22%3E323x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                  alt="100%x120" data-src="holder.js/100px120" data-holder-rendered="true" style="height: 120px; width: 100%; display: block;">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Cras justo odio</li>
-                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                  <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-                <div class="card-body">
-                  <a href="javascript:void(0);" class="card-link">Card link</a>
-                  <a href="javascript:void(0);" class="card-link">Another link</a>
-                </div>
-              </div>
-              <div class="card text-center">
-                <div class="card-header">
-                  <ul class="nav nav-tabs card-header-tabs">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="javascript:void(0);">Active</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="javascript:void(0);">Link</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="javascript:void(0);">Disabled</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Special title treatment</h4>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="javascript:void(0);" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card text-center">
-                <div class="card-header">
-                  <ul class="nav nav-pills card-header-pills">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="javascript:void(0);">Active</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="javascript:void(0);">Link</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="javascript:void(0);">Disabled</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Special title treatment</h4>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="javascript:void(0);" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <h3>Colored cards</h3>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Primary card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Secondary card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Success card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Danger card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card  bg-warning mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Warning card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Info card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card  bg-light mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Light card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Dark card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <h3>Cards with colored borders</h3>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card border-primary mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Primary card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card border-secondary mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Secondary card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card border-success mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Success card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card border-danger mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Danger card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card border-warning mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Warning card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card border-info mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Info card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3 bg-dark p-3">
-            <div class="card border-light mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Light card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-xl-3">
-            <div class="card border-dark mb-3" style="max-width: 20rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h4 class="card-title">Dark card</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section id="forms">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <header class="section-header">
               <h2>
                 <span class="icon fa fa-pencil mr-1"></span>
@@ -1978,275 +1517,10 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </div>
     </section>
-    <section id="navbar">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <header class="section-header">
-              <h2>
-                <span class="icon fa fa-angle-double-left mr-1"></span>
-                Navbar
-              </h2>
-              <h2>
-                <a href="https://getbootstrap.com/docs/4.0/components/navbar/" target="_blank" data-toggle="tooltip"
-                  data-placement="bottom" title="" data-original-title="Navbar docs"><span class="icon fa fa-book"></span></a>
-                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
-              </h2>
-            </header>
-            <div class="card">
-              <div class="card-body">
-                <p class="card-text">
-                  The navbar on the left side of this demo is an example of the Fluid Bootstrap navbar. It uses standard Bootstrap markup and classes, but also demonstrates the Fluid features described below. Please examine the markup to learn the correct way to construct these features.
-                </p>
-                <h3 class="card-subtitle">Brand</h3>
-                <dl class="row">
-                  <dt class="col-2 text-right">Custom content</dt>
-                  <dd class="col-10">Bootstrap does not make any assumptions about what goes in the brand area. If you use
-                    only text, Fluid Bootstrap will style it appropriately in expanded mode, but it will be clipped when
-                    the navbar is collapsed. Fluid prefers that you use an icon followed by text (although the font size
-                    and number of lines is not specified). In that case, Fluid Bootstrap ensures that the icon/text
-                    combination is displayed correctly in both expanded and collapsed modes.</dd>
-                  <dt class="col-2 text-right">Dropdown menu</dt>
-                  <dd class="col-10">A green arrow indicates that the brand can be clicked to open a dropdown menu listing
-                    other available products. This menu is also accessible when the navbar is collapsed.</dd>
-                </dl>
-                <h3 class="card-subtitle">Nav Items</h3>
-                <dl class="row">
-                  <dt class="col-2 text-right">Icons</dt>
-                  <dd class="col-10">Place an icon as the first child inside a nav item and it will be styled appropriately.</dd>
-                  <dt class="col-2 text-right">Dropdown menu</dt>
-                  <dd class="col-10">Three vertical dots indicate that there is a dropdown menu associated with a nav item.
-                    This menu is not accessible when the navbar is collapsed.</dd>
-                  <dt class="col-2 text-right">Child nav items</dt>
-                  <dd class="col-10">A nav item can have child nav items, indicated by an arrow on the right. These items
-                    are accessible when the navbar is collapsed by popping out to the right when their parent is hovered
-                    over. <em>Note: This feature makes use of the Bootstrap</em> collapse <em>functionality. Correct
-                      positioning of these popovers requires some additional Javascript.</em></dd>
-                  <dt class="col-2 text-right">Status indicators</dt>
-                  <dd class="col-10">Fluid status indicators can be applied to nav items and they will be positioned
-                    appropriately.</dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="tabs">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <header class="section-header">
-              <h2>
-                <span class="icon fa fa-folder mr-1"></span>
-                Tabs
-              </h2>
-              <h2>
-                <a href="https://getbootstrap.com/docs/4.0/components/navs/" target="_blank" data-toggle="tooltip"
-                  data-placement="bottom" title="" data-original-title="Navs' docs"><span class="icon fa fa-book"></span></a>
-                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
-              </h2>
-            </header>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">Tabs</h3>
-            <ul class="nav nav-tabs" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Tab 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Tab 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Tab 3</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" id="tab4-tab" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Disabled</a>
-              </li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">Our neural pathways have become accustomed to your sensory input patterns. Computer, belay that order. The game’s not big enough unless it scares you a little. When has justice ever been as simple as a rule book? What’s a knock-out like you doing in a computer-generated gin joint like this? Did you come here for something in particular or just general Riker-bashing? As much as I care about you, my first duty is to the ship. Your head is not an artifact!</div>
-              <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">Wouldn’t that bring about chaos? In all trust, there is the possibility for betrayal. I’ll be sure to note that in my log. The unexpected is our normal routine. Now, how the hell do we defeat an enemy that knows us better than we know ourselves? I recommend you don’t fire until you’re within 40,000 kilometers. Not if I weaken first. And blowing into maximum warp speed, you appeared for an instant to be in two places at once. Congratulations – you just destroyed the Enterprise.</div>
-              <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
-              <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">Vertical Tabs</h3>
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-1">
-                  <ul class="nav nav-tabs flex-column" role="tablist" aria-orientation="vertical">
-                    <li class="nav-item">
-                      <a class="nav-link active" id="v-tab1-tab" data-toggle="tab" href="#v-tab1" role="tab" aria-controls="v-tab1" aria-selected="true">Tab 1</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" id="v-tab2-tab" data-toggle="tab" href="#v-tab2" role="tab" aria-controls="v-tab2" aria-selected="false">Tab 2</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" id="v-tab3-tab" data-toggle="tab" href="#v-tab3" role="tab" aria-controls="v-tab3" aria-selected="false">Tab 3</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" id="v-tab4-tab" data-toggle="tab" href="#v-tab4" role="tab" aria-controls="v-tab4" aria-selected="false">Disabled</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-11">
-                  <div class="tab-content">
-                    <div class="tab-pane fade show active" id="v-tab1" role="tabpanel" aria-labelledby="v-tab1-tab">Our neural pathways have become accustomed to your sensory input patterns. Computer, belay that order. The game’s not big enough unless it scares you a little. When has justice ever been as simple as a rule book? What’s a knock-out like you doing in a computer-generated gin joint like this? Did you come here for something in particular or just general Riker-bashing? As much as I care about you, my first duty is to the ship. Your head is not an artifact!</div>
-                    <div class="tab-pane fade" id="v-tab2" role="tabpanel" aria-labelledby="v-tab2-tab">Wouldn’t that bring about chaos? In all trust, there is the possibility for betrayal. I’ll be sure to note that in my log. The unexpected is our normal routine. Now, how the hell do we defeat an enemy that knows us better than we know ourselves? I recommend you don’t fire until you’re within 40,000 kilometers. Not if I weaken first. And blowing into maximum warp speed, you appeared for an instant to be in two places at once. Congratulations – you just destroyed the Enterprise.</div>
-                    <div class="tab-pane fade" id="v-tab3" role="tabpanel" aria-labelledby="v-tab3-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
-                    <div class="tab-pane fade" id="v-tab4" role="tabpanel" aria-labelledby="v-tab4-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="popovers">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <header class="section-header">
-              <h2>
-                <span class="icon fa fa-commenting mr-1"></span>
-                Popovers & Tooltips
-              </h2>
-              <h2>
-                <a href="https://getbootstrap.com/docs/4.0/components/popovers/" target="_blank" data-toggle="tooltip"
-                  data-placement="bottom" title="" data-original-title="Popover docs"><span class="icon fa fa-book"></span></a>
-                <a href="https://getbootstrap.com/docs/4.0/components/tooltips/" target="_blank" data-toggle="tooltip"
-                  data-placement="bottom" title="" data-original-title="Tooltip docs"><span class="icon fa fa-book"></span></a>
-                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
-              </h2>
-            </header>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-body">
-                <h3 class="card-title">Popovers</h3>
-                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left"
-                  data-content="Popover on left.">
-                  Popover on left
-                </button>
-                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top"
-                  data-content="Popover on top.">
-                  Popover on top
-                </button>
-                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom"
-                  data-content="Popover on bottom.">
-                  Popover on bottom
-                </button>
-                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right"
-                  data-content="Popover on right.">
-                  Popover on right
-                </button>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                <h3 class="card-title">Tooltips</h3>
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
-                  Tooltip on left
-                </button>
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                  Tooltip on top
-                </button>
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                  Tooltip on bottom
-                </button>
-                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
-                  Tooltip on right
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="progress-bars">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <header class="section-header">
-              <h2>
-                <span class="icon fa fa-spinner mr-1"></span>
-                Progress bars
-              </h2>
-              <h2>
-                <a href="https://getbootstrap.com/docs/4.0/components/progress/" target="_blank" data-toggle="tooltip"
-                  data-placement="bottom" title="" data-original-title="Progress docs"><span class="icon fa fa-book"></span></a>
-                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
-              </h2>
-            </header>
-          </div>
-        </div>
-        <div class="card-deck">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Colored progress bars</h3>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
-                  aria-valuemax="100">Label</div>
-              </div>
-              <div class="progress mt-3">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100">Label</div>
-              </div>
-              <div class="progress mt-3">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
-                  aria-valuemax="100">Label</div>
-              </div>
-              <div class="progress mt-3">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100">Label</div>
-              </div>
-              <div class="progress mt-3">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100">Label</div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Striped progress bars</h3>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100">Label</div>
-              </div>
-              <div class="progress mt-3">
-                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
-              </div>
-              <div class="progress mt-3">
-                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
-              </div>
-              <div class="progress mt-3">
-                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 50%;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
-              </div>
-              <div class="progress mt-3">
-                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section id="modals">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col">
             <header class="section-header">
               <h2>
                 <span class="icon fa fa-window-restore mr-1"></span>
@@ -2512,11 +1786,534 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </div>
     </section>
+    <section id="navbar">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <header class="section-header">
+              <h2>
+                <span class="icon fa fa-angle-double-left mr-1"></span>
+                Navbar
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/navbar/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Navbar docs"><span class="icon fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text">
+                  The navbar on the left side of this demo is an example of the Fluid Bootstrap navbar. It uses standard Bootstrap markup and classes, but also demonstrates the Fluid features described below. Please examine the markup to learn the correct way to construct these features.
+                </p>
+                <h3 class="card-subtitle">Brand</h3>
+                <dl class="row">
+                  <dt class="col-2 text-right">Custom content</dt>
+                  <dd class="col-10">Bootstrap does not make any assumptions about what goes in the brand area. If you use
+                    only text, Fluid Bootstrap will style it appropriately in expanded mode, but it will be clipped when
+                    the navbar is collapsed. Fluid prefers that you use an icon followed by text (although the font size
+                    and number of lines is not specified). In that case, Fluid Bootstrap ensures that the icon/text
+                    combination is displayed correctly in both expanded and collapsed modes.</dd>
+                  <dt class="col-2 text-right">Dropdown menu</dt>
+                  <dd class="col-10">A green arrow indicates that the brand can be clicked to open a dropdown menu listing
+                    other available products. This menu is also accessible when the navbar is collapsed.</dd>
+                </dl>
+                <h3 class="card-subtitle">Nav Items</h3>
+                <dl class="row">
+                  <dt class="col-2 text-right">Icons</dt>
+                  <dd class="col-10">Place an icon as the first child inside a nav item and it will be styled appropriately.</dd>
+                  <dt class="col-2 text-right">Dropdown menu</dt>
+                  <dd class="col-10">Three vertical dots indicate that there is a dropdown menu associated with a nav item.
+                    This menu is not accessible when the navbar is collapsed.</dd>
+                  <dt class="col-2 text-right">Child nav items</dt>
+                  <dd class="col-10">A nav item can have child nav items, indicated by an arrow on the right. These items
+                    are accessible when the navbar is collapsed by popping out to the right when their parent is hovered
+                    over. <em>Note: This feature makes use of the Bootstrap</em> collapse <em>functionality. Correct
+                      positioning of these popovers requires some additional Javascript.</em></dd>
+                  <dt class="col-2 text-right">Status indicators</dt>
+                  <dd class="col-10">Fluid status indicators can be applied to nav items and they will be positioned
+                    appropriately.</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="pagination">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <header class="section-header">
+              <h2>
+                <span class="icon fa fa-file-text mr-1"></span>
+                Pagination
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/pagination/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Pagination docs"><span class="icon fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+            <div class="card">
+              <div class="card-body">
+                <nav class="pagination" aria-label="Page navigation example">
+                  <div class="fade">
+                    <div class="form-group">
+                      <label for="itemsPerPage">Show:</label>
+                      <select id="itemsPerPage">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                    </div>
+                    <div class="form-group dropdown">
+                      <label for="goToPageExample">Go:</label>
+                      <input id="goToPageExample" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <ul class="dropdown-menu">
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                        <li class="page-item"><a class="page-link" href="#">500</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1000</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <span class="fade show">1-10 of 1000</span>
+                  <a class="page-link disabled" href="#" aria-label="Previous">
+                    <i class="icon icon-previous" aria-hidden="true"></i>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="page-link" href="#" aria-label="Next">
+                    <i class="icon icon-next" aria-hidden="true"></i>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="popovers">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <header class="section-header">
+              <h2>
+                <span class="icon fa fa-commenting mr-1"></span>
+                Popovers & Tooltips
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/popovers/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Popover docs"><span class="icon fa fa-book"></span></a>
+                <a href="https://getbootstrap.com/docs/4.0/components/tooltips/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Tooltip docs"><span class="icon fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Popovers</h3>
+                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left"
+                  data-content="Popover on left.">
+                  Popover on left
+                </button>
+                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top"
+                  data-content="Popover on top.">
+                  Popover on top
+                </button>
+                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom"
+                  data-content="Popover on bottom.">
+                  Popover on bottom
+                </button>
+                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right"
+                  data-content="Popover on right.">
+                  Popover on right
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Tooltips</h3>
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+                  Tooltip on left
+                </button>
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                  Tooltip on top
+                </button>
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+                  Tooltip on bottom
+                </button>
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+                  Tooltip on right
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="progress-bars">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <header class="section-header">
+              <h2>
+                <span class="icon fa fa-spinner mr-1"></span>
+                Progress bars
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/progress/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Progress docs"><span class="icon fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Colored progress bars</h3>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Striped progress bars</h3>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%;"
+                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;"
+                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 50%;"
+                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+              <div class="progress mt-3">
+                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%;"
+                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="tables">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <header class="section-header">
+              <h2>
+                <span class="icon fa fa-table mr-1"></span>
+                Tables
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/content/tables/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Table docs"><span class="icon fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Table</h3>
+                <header class="table-header">
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Actions
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </header>
+                <table class="table table-hover">
+                  <caption>Example Title</caption>
+                  <thead class="">
+                    <tr>
+                      <th class="text-center">Status</th>
+                      <th>Name</th>
+                      <th>Username</th>
+                      <th>Last Login</th>
+                      <th>Actions</th>
+                      <th class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="checkAll">
+                          <label class="form-check-label" for="checkAll"></label>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center text-base"><i class="icon icon-success"></td>
+                      <td class="primary"><a href="#">William Ross</a></td>
+                      <td>admiralbill</td>
+                      <td>2 days ago</td>
+                      <td>
+                        <ul class="actions">
+                          <li>
+                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                          </li>
+                        </ul>
+                      </td>
+                      <th scope="row" class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="1" id="row1">
+                          <label class="form-check-label" for="row1"></label>
+                        </div>
+                      </th>
+                    </tr>
+                    <tr class="active">
+                      <td class="text-center text-base"><i class="icon icon-warning"></td>
+                      <td class="primary"><a href="#">Benjamin Sisko</a></td>
+                      <td>brotherbenny</td>
+                      <td>Just now</td>
+                      <td>
+                        <div class="actions dropdown">
+                          <a class="dropdown-toggle" href="#" role="button" id="actionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Send e-mail</a>
+                            <a class="dropdown-item" href="#">Follow</a>
+                            <a class="dropdown-item" href="#">View profile</a>
+                            <a class="dropdown-item" href="#">Edit</a>
+                            <a class="dropdown-item" href="#">Delete user</a>
+                          </div>
+                        </div>
+                      </td>
+                      <th scope="row" class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="2" id="row2" checked>
+                          <label class="form-check-label" for="row2"></label>
+                        </div>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td class="text-center text-base"><i class="icon icon-danger"></td>
+                      <td class="primary"><a href="#">Miles O'Brien</a></td>
+                      <td>smiley</td>
+                      <td>5 hours ago</td>
+                      <td>
+                        <ul class="actions">
+                          <li>
+                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                          </li>
+                        </ul>
+                      </td>
+                      <th scope="row" class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="3" id="row3">
+                          <label class="form-check-label" for="row3"></label>
+                        </div>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td class="text-center text-base"><i class="icon icon-info"></td>
+                      <td class="primary"><a href="#">Julian Bashir</a></td>
+                      <td>kukalaka</td>
+                      <td>Never</td>
+                      <td>
+                        <ul class="actions">
+                          <li>
+                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                          </li>
+                        </ul>
+                      </td>
+                      <th scope="row" class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="3" id="row3">
+                          <label class="form-check-label" for="row3"></label>
+                        </div>
+                      </th>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="6">
+                        <nav class="pagination" aria-label="Page navigation example">
+                          <div class="fade">
+                            <div class="form-group">
+                              <label for="itemsPerPage">Show:</label>
+                              <select id="itemsPerPage">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                              </select>
+                            </div>
+                            <div class="form-group dropdown">
+                              <label for="goToPage">Go:</label>
+                              <input id="goToPage" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <ul class="dropdown-menu">
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">500</a></li>
+                                <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1000</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <span class="fade show">1-10 of 1000</span>
+                          <a class="page-link disabled" href="#" aria-label="Previous">
+                            <i class="icon icon-previous" aria-hidden="true"></i>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="page-link" href="#" aria-label="Next">
+                            <i class="icon icon-next" aria-hidden="true"></i>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </nav>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="tabs">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <header class="section-header">
+              <h2>
+                <span class="icon fa fa-folder mr-1"></span>
+                Tabs
+              </h2>
+              <h2>
+                <a href="https://getbootstrap.com/docs/4.0/components/navs/" target="_blank" data-toggle="tooltip"
+                  data-placement="bottom" title="" data-original-title="Navs' docs"><span class="icon fa fa-book"></span></a>
+                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Tabs</h3>
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Tab 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Tab 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Tab 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" id="tab4-tab" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Disabled</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">Our neural pathways have become accustomed to your sensory input patterns. Computer, belay that order. The game’s not big enough unless it scares you a little. When has justice ever been as simple as a rule book? What’s a knock-out like you doing in a computer-generated gin joint like this? Did you come here for something in particular or just general Riker-bashing? As much as I care about you, my first duty is to the ship. Your head is not an artifact!</div>
+              <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">Wouldn’t that bring about chaos? In all trust, there is the possibility for betrayal. I’ll be sure to note that in my log. The unexpected is our normal routine. Now, how the hell do we defeat an enemy that knows us better than we know ourselves? I recommend you don’t fire until you’re within 40,000 kilometers. Not if I weaken first. And blowing into maximum warp speed, you appeared for an instant to be in two places at once. Congratulations – you just destroyed the Enterprise.</div>
+              <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
+              <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Vertical Tabs</h3>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-1">
+                  <ul class="nav nav-tabs flex-column" role="tablist" aria-orientation="vertical">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="v-tab1-tab" data-toggle="tab" href="#v-tab1" role="tab" aria-controls="v-tab1" aria-selected="true">Tab 1</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="v-tab2-tab" data-toggle="tab" href="#v-tab2" role="tab" aria-controls="v-tab2" aria-selected="false">Tab 2</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="v-tab3-tab" data-toggle="tab" href="#v-tab3" role="tab" aria-controls="v-tab3" aria-selected="false">Tab 3</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" id="v-tab4-tab" data-toggle="tab" href="#v-tab4" role="tab" aria-controls="v-tab4" aria-selected="false">Disabled</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-11">
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="v-tab1" role="tabpanel" aria-labelledby="v-tab1-tab">Our neural pathways have become accustomed to your sensory input patterns. Computer, belay that order. The game’s not big enough unless it scares you a little. When has justice ever been as simple as a rule book? What’s a knock-out like you doing in a computer-generated gin joint like this? Did you come here for something in particular or just general Riker-bashing? As much as I care about you, my first duty is to the ship. Your head is not an artifact!</div>
+                    <div class="tab-pane fade" id="v-tab2" role="tabpanel" aria-labelledby="v-tab2-tab">Wouldn’t that bring about chaos? In all trust, there is the possibility for betrayal. I’ll be sure to note that in my log. The unexpected is our normal routine. Now, how the hell do we defeat an enemy that knows us better than we know ourselves? I recommend you don’t fire until you’re within 40,000 kilometers. Not if I weaken first. And blowing into maximum warp speed, you appeared for an instant to be in two places at once. Congratulations – you just destroyed the Enterprise.</div>
+                    <div class="tab-pane fade" id="v-tab3" role="tabpanel" aria-labelledby="v-tab3-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
+                    <div class="tab-pane fade" id="v-tab4" role="tabpanel" aria-labelledby="v-tab4-tab">I am your worst nightmare! Sure. You’d be surprised how far a hug goes with Geordi, or Worf. The Federation’s gone; the Borg is everywhere! A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you. Now we know what they mean by ‘advanced’ tactical training. Mr. Worf, you sound like a man who’s asking his friend if he can start dating his sister. Smooth as an android’s bottom, eh, Data? We finished our first sensor sweep of the neutral zone. I can’t. </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <nav class="navbar navbar-footer">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
+        <div class="col">
           <p>This is the footer.</p>
           <p>It contains some important information.</p>
           <p>You should probably read it carefully.</p>
