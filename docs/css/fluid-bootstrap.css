@@ -4179,7 +4179,7 @@ input[type="button"].btn-block {
 .alert-link {
   font-weight: 700; }
 .alert-dismissible {
-  padding-right: 4.28571rem; }
+  padding-right: 3.5rem; }
 .alert-dismissible .close {
     position: absolute;
     top: 0;
@@ -4481,7 +4481,7 @@ input[type="button"].btn-block {
     border-color: #505050; }
 .close {
   float: right;
-  font-size: 1.78571rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1;
   color: #666666;
@@ -7410,88 +7410,94 @@ ul.actions {
  * of all or any part of the contents of this file is strictly prohibited.
  */
 .alert {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0;
   -webkit-box-shadow: 0 0.14286rem 0.21429rem 0.14286rem rgba(0, 0, 0, 0.175);
           box-shadow: 0 0.14286rem 0.21429rem 0.14286rem rgba(0, 0, 0, 0.175);
   font-size: 0.85714rem; }
+.alert + .alert {
+    margin-top: 15px; }
 .alert > div {
-    margin-left: 2.85714rem; }
+    margin-left: 15px; }
 .alert:before {
     font-family: "fluidicons";
     font-size: 1.71429rem;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-         -o-transform: translateY(-50%);
-            transform: translateY(-50%); }
-.alert:after {
-    content: "*";
-    font-family: "fluidicons";
-    position: absolute;
-    right: 0.14286rem;
-    top: 0;
-    cursor: pointer; }
+    height: 1.71429rem;
+    line-height: 1; }
 .alert:hover:after {
     color: #999999; }
-.alert .alert-header {
-    font-size: 1rem; }
+.alert-dismissible .close {
+  padding: 0;
+  top: 2px;
+  right: 2px; }
+.alert-heading {
+  font-size: 1rem;
+  line-height: 1.71429rem; }
 .alert-primary {
   color: #999999;
   background-color: #fff;
   border-color: #3fae2a; }
-.alert-primary .alert-header, .alert-primary:before {
+.alert-primary .alert-heading, .alert-primary:before {
     color: #3fae2a; }
 .alert-secondary {
   color: #999999;
   background-color: #fff;
   border-color: #3fae2a; }
-.alert-secondary .alert-header, .alert-secondary:before {
+.alert-secondary .alert-heading, .alert-secondary:before {
     color: #3fae2a; }
 .alert-success {
   color: #999999;
   background-color: #fff;
   border-color: #1eb475; }
-.alert-success .alert-header, .alert-success:before {
+.alert-success .alert-heading, .alert-success:before {
     color: #1eb475; }
 .alert-info {
   color: #999999;
   background-color: #fff;
   border-color: #1491c1; }
-.alert-info .alert-header, .alert-info:before {
+.alert-info .alert-heading, .alert-info:before {
     color: #1491c1; }
 .alert-warning {
   color: #999999;
   background-color: #fff;
   border-color: #e98a40; }
-.alert-warning .alert-header, .alert-warning:before {
+.alert-warning .alert-heading, .alert-warning:before {
     color: #e98a40; }
 .alert-danger {
   color: #999999;
   background-color: #fff;
   border-color: #ef6162; }
-.alert-danger .alert-header, .alert-danger:before {
+.alert-danger .alert-heading, .alert-danger:before {
     color: #ef6162; }
 .alert-light {
   color: #999999;
   background-color: #fff;
   border-color: #ececec; }
-.alert-light .alert-header, .alert-light:before {
+.alert-light .alert-heading, .alert-light:before {
     color: #ececec; }
 .alert-dark {
   color: #999999;
   background-color: #fff;
   border-color: #333333; }
-.alert-dark .alert-header, .alert-dark:before {
+.alert-dark .alert-heading, .alert-dark:before {
     color: #333333; }
 .alert-default {
   color: #999999;
   background-color: #fff;
   border-color: #999999; }
-.alert-default .alert-header, .alert-default:before {
+.alert-default .alert-heading, .alert-default:before {
     color: #999999; }
 .alert-default {
   border-color: #d1d1d1; }
 .alert-default > div {
-    margin-left: inherit; }
+    margin-left: 0; }
 .alert-apps:before {
   content: "#"; }
 .alert-close:before {
@@ -7711,6 +7717,8 @@ label {
 .icon {
   display: inline-block;
   text-align: center; }
+.icon:before {
+    margin: 0; }
 .icon * {
     font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
 .icon .badge {
@@ -8570,6 +8578,21 @@ a.bg-gray-900:hover, a.bg-gray-900:focus,
 button.bg-gray-900:hover,
 button.bg-gray-900:focus {
   background-color: #1a1a1a !important; }
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+.top {
+  top: 0; }
+.right {
+  right: 0; }
+.bottom {
+  bottom: 0; }
+.left {
+  left: 0; }
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
  * Except as expressly permitted in a written agreement between you

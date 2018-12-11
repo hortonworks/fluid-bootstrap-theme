@@ -178,13 +178,17 @@ of all or any part of the contents of this file is strictly prohibited.
   <nav class="navbar navbar-header fixed-top">
     <h1 class="navbar-text text-default">Fluid Bootstrap 4 Theme Test Page</h1>
   </nav>
-  <main>
+  <main id="mainContent">
+    <div id="alertsTopRight" class="alert-container right"></div>
+    <div id="alertsTopLeft" class="alert-container"></div>
+    <div id="alertsBottomRight" class="alert-container bottom right"></div>
+    <div id="alertsBottomLeft" class="alert-container bottom"></div>
     <section id="layout">
       <div class="container-fluid">
         <div class="row">
           <div class="col">
             <header class="section-header">
-              <h2><i class=icon  fa-th-large mr-1"></i> Layout</h2>
+              <h2><i class=icon fa-th-large mr-1"></i> Layout</h2>
               <h2>
                 <a href="https://getbootstrap.com/docs/4.0/layout/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Layout docs"><span class="icon fa fa-book"></span></a>
                 <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
@@ -1090,49 +1094,137 @@ of all or any part of the contents of this file is strictly prohibited.
             <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
           </h2>
         </header>
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">Simple alerts</h3>
-            <div class="alert alert-default" role="alert">
-              <div class="alert-header">.alert-default</div>
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Alert types</h3>
+              <div class="alert alert-default" role="alert">
+                <div>
+                  <div class="alert-heading">.alert-default</div>
+                </div>
+              </div>
+              <div class="alert alert-info" role="alert">
+                <div>
+                  <div class="alert-heading">.alert-info</div>
+                </div>
+              </div>
+              <div class="alert alert-success" role="alert">
+                <div>
+                  <div class="alert-heading">.alert-success</div>
+                </div>
+              </div>
+              <div class="alert alert-warning" role="alert">
+                <div>
+                  <div class="alert-heading">.alert-warning</div>
+                </div>
+              </div>
+              <div class="alert alert-danger" role="alert">
+                <div>
+                  <div class="alert-heading">.alert-danger</div>
+                </div>
+              </div>
             </div>
-            <div class="alert alert-info" role="alert">
-              <div class="alert-header">.alert-info</div>
-            </div>
-            <div class="alert alert-success" role="alert">
-              <div class="alert-header">.alert-success</div>
-            </div>
-            <div class="alert alert-warning" role="alert">
-              <div class="alert-header">.alert-warning</div>
-            </div>
-            <div class="alert alert-danger" role="alert">
-              <div class="alert-header">.alert-danger</div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Alert examples</h3>
+              <div class="alert alert-info" role="alert">
+                <div>
+                  <div class="alert-heading">Alert heading</div>
+                  <div>Here's some more information.</div>
+                </div>
+              </div>
+              <div class="alert alert-success" role="alert">
+                <div>
+                  <div class="alert-heading">Alert heading</div>
+                  <div>Here's some more information.</div>
+                  <div>Here's even more information.</div>
+                  <div>Here's more information still.</div>
+                </div>
+              </div>
+              <div class="alert alert-warning" role="alert">
+                <div>
+                  <div class="alert-heading">Alert with heading <a class="alert-link" href="#">link</a></div>
+                  <div>And here's a <a href="#">link</a> in the content.</div>
+                </div>
+              </div>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div>
+                  <div class="alert-heading">Dismissible alert</div>
+                  <div>Click the x to close me.</div>
+                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span class="icon icon-close" aria-hidden="true"></span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-body">
-            <h3 class="card-title">Alerts with additional content</h3>
-            <div class="alert alert-default" role="alert">
-              <div class="alert-header">.alert-default</div>
-              <div>Here's some more information.</div>
-            </div>
-            <div class="alert alert-info" role="alert">
-              <div class="alert-header">.alert-info</div>
-              <div>Here's some more information.</div>
-            </div>
-            <div class="alert alert-success" role="alert">
-              <div class="alert-header">.alert-success</div>
-              <div>Here's some more information.</div>
-            </div>
-            <div class="alert alert-warning" role="alert">
-              <div class="alert-header">.alert-warning</div>
-              <div>Here's some more information.</div>
-            </div>
-            <div class="alert alert-danger" role="alert">
-              <div class="alert-header">.alert-danger</div>
-              <div>Here's some more information.</div>
-            </div>
+            <h3 class="card-title">Alert tester</h3>
+            <form id="addAlert">
+              <div class="form-row">
+                <div class="col-auto">
+                  <div class="form-group">
+                    <label for="alertType">Type</label>
+                    <select class="form-control" name="alertType">
+                      <option value="default">Default</option>
+                      <option value="info">Info</option>
+                      <option value="success">Success</option>
+                      <option value="warning">Warning</option>
+                      <option value="danger">Danger</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <div><label>Position</label></div>
+                    <div class="form-radio form-radio-inline">
+                      <input class="form-radio-input" type="radio" name="alertTopBottom" id="alertTop" value="top" checked>
+                      <label class="form-radio-label" for="alertTop">Top</label>
+                    </div>
+                    <div class="form-radio form-radio-inline">
+                      <input class="form-radio-input" type="radio" name="alertTopBottom" id="alertBottom" value="bottom">
+                      <label class="form-radio-label" for="alertBottom">Bottom</label>
+                    </div>
+                    <br>
+                    <div class="form-radio form-radio-inline">
+                      <input class="form-radio-input" type="radio" name="alertRightLeft" id="alertLeft" value="left">
+                      <label class="form-radio-label" for="alertLeft">Left</label>
+                    </div>
+                    <div class="form-radio form-radio-inline">
+                      <input class="form-radio-input" type="radio" name="alertRightLeft" id="alertRight" value="right" checked>
+                      <label class="form-radio-label" for="alertRight">Right</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="alertDuration">Duration (seconds)</label>
+                    <input type="number" class="form-control" name="alertDuration" value="0">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="alertMessage">Heading</label>
+                    <input type="text" class="form-control" name="alertMessage" value="Example alert">
+                  </div>
+                  <div class="form-group">
+                    <label for="alertContent">Content</label>
+                    <textarea class="form-control" name="alertContent" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="alertDismissible" id="alertDismissible" checked>
+                      <label class="form-check-label" for="alertDismissible">Dismissible</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <button type="submit" class="btn btn-primary">Add Alert</button>
+                  <button type="button" class="btn btn-secondary" id="dismissAllAlerts">Dismiss All</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
