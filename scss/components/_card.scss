@@ -4,15 +4,21 @@
     margin-bottom: $card-margin;
   }
 
-  h1, h2, h3, h4, h5, h6,
-  .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: $text-light;
+  &:not([class*="bg-"]) {
+
+    .card-header {
+      color: $text-light;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      color: $text-light;
+    }
   }
 }
 
 .card-header {
   background-color: inherit;
-  color: $text-light;
   border-bottom: $border-width $border-color solid;
 }
 
@@ -24,6 +30,10 @@
     margin-left: -$grid-gutter-width;
     margin-right: -$grid-gutter-width;
   }
+
+  + .card-footer {
+    padding-top: 0;
+  }
 }
 
 .card-subtitle {
@@ -31,8 +41,15 @@
   margin-bottom: $card-spacer-y / 2
 }
 
+.card-header-tabs,
+.card-header-pills {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .card-group,
 .card-deck {
+  margin-bottom: $grid-gutter-width;
 
   .card {
     margin-bottom: 0;
