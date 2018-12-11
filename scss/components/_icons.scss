@@ -2,6 +2,10 @@
   display: inline-block;
   text-align: center;
 
+  &:before {
+    margin: 0;
+  }
+
   * {
     font-family: $font-family-base;
   }

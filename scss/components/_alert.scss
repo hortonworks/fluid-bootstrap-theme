@@ -7,37 +7,44 @@
  */
 
 .alert {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
   box-shadow: $box-shadow-lg;
   font-size: $font-size-sm;
 
+  + .alert {
+    margin-top: $grid-gutter-width;
+  }
+
   > div {
-    margin-left: px(40);
+    margin-left: $grid-gutter-width;
   }
 
   &:before {
     font-family: "fluidicons";
-    font-size: px(24);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &:after {
-    content: theme-icon("close");
-    font-family: "fluidicons";
-    position: absolute;
-    right: px(2);
-    top: 0;
-    cursor: pointer;
+    font-size: $alert-icon-font-size;
+    height: $alert-icon-font-size;
+    line-height: 1;
   }
 
   &:hover:after {
     color: theme-color("default");
   }
+}
 
-  .alert-header {
-    font-size: $font-size-base;
+.alert-dismissible {
+
+  .close {
+    padding: 0;
+    top: 2px;
+    right: 2px;
   }
+}
+
+.alert-heading {
+  font-size: $font-size-base;
+  line-height: $alert-icon-font-size;
 }
 
 @each $color, $value in $theme-colors {
@@ -46,7 +53,7 @@
     background-color: $white;
     border-color: theme-color-level($color, $alert-border-level);
 
-    .alert-header, &:before {
+    .alert-heading, &:before {
       color: $value;
     }
   }
@@ -56,7 +63,7 @@
   border-color: $border-color;
 
   > div {
-    margin-left: inherit;
+    margin-left: 0;
   }
 }
 

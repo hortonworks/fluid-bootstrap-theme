@@ -2,6 +2,18 @@
 @import "scss/functions";
 @import "scss/variables";
 
+.alert-container {
+  position: fixed;
+  z-index: 1030;
+  pointer-events: none;
+  padding: $grid-gutter-width;
+  width: 35%;
+
+  * {
+    pointer-events: all;
+  }
+}
+
 .section-header {
   display: flex;
   justify-content: space-between;
