@@ -7701,6 +7701,26 @@ label {
   border: none; }
 .form-check .form-check-label:before, .form-check .form-radio-label:before, .form-radio .form-check-label:before, .form-radio .form-radio-label:before {
   border: #d1d1d1 0.07143rem solid; }
+.form-check-inline,
+.form-radio-inline {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 0.35714rem;
+  margin-right: 0.75rem; }
+.form-check-inline .form-check-input,
+  .form-check-inline .form-radio-input,
+  .form-radio-inline .form-check-input,
+  .form-radio-inline .form-radio-input {
+    position: static;
+    margin-top: 0;
+    margin-right: 0.3125rem;
+    margin-left: 0; }
 /*
  * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
  * Except as expressly permitted in a written agreement between you

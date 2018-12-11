@@ -1455,7 +1455,7 @@ of all or any part of the contents of this file is strictly prohibited.
           <div class="col">
             <div class="card">
               <div class="card-body">
-                <form novalidate>
+                <form class="validate" novalidate>
                   <fieldset>
                     <div class="row">
                       <legend class="col-form-label col-sm-2 pt-0">Text Inputs with Validation</legend>
@@ -1475,32 +1475,12 @@ of all or any part of the contents of this file is strictly prohibited.
                         </div>
                         <div class="form-group">
                           <button class="btn btn-primary" type="submit">Validate</button>
-                          <script>
-                            // Example starter JavaScript for disabling form submissions if there are invalid fields
-                            (function () {
-                              'use strict';
-                              window.addEventListener('load', function () {
-                                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                                var forms = document.getElementsByTagName('form');
-                                // Loop over them and prevent submission
-                                var validation = Array.prototype.filter.call(forms, function (form) {
-                                  form.addEventListener('submit', function (event) {
-                                    if (form.checkValidity() === false) {
-                                      event.preventDefault();
-                                      event.stopPropagation();
-                                    }
-                                    form.classList.add('was-validated');
-                                  }, false);
-                                });
-                              }, false);
-                            })();
-                          </script>
                         </div>
                       </div>
                     </div>
                   </fieldset>
                 </form>
-                <form novalidate>
+                <form class="validate" novalidate>
                   <fieldset>
                     <div class="row">
                       <legend class="col-form-label col-sm-2 pt-0">More Text Input Examples</legend>
@@ -1541,7 +1521,7 @@ of all or any part of the contents of this file is strictly prohibited.
                     </div>
                   </fieldset>
                 </form>
-                <form novalidate>
+                <form class="validate" novalidate>
                   <!-- The novalidate attribute is critical to ensure that validation styles are applied. -->
                   <div class="form-group">
                     <div class="row">
@@ -2419,6 +2399,28 @@ of all or any part of the contents of this file is strictly prohibited.
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/fluid-bootstrap.js"></script>
   <script src="js/demo.js"></script>
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByTagName('form');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          if (form.classList.contains('validate')) {
+            form.addEventListener('submit', function (event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          }
+        });
+      }, false);
+    })();
+  </script>
 
 </body>
 
