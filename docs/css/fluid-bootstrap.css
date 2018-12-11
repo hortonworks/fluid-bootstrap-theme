@@ -8315,7 +8315,7 @@ nav.pagination > span.fade.show {
 nav.pagination > div.fade {
     position: absolute;
     display: inherit;
-    right: 45px; }
+    right: calc((1.5rem + 15px) * 2 + 7.5px); }
 nav.pagination > div.fade .form-group {
       font-size: 0; }
 nav.pagination > div.fade .form-group * {
@@ -8332,7 +8332,7 @@ nav.pagination > div.fade .form-group .form-control {
         text-align: center;
         height: 2.39286rem; }
 nav.pagination > div.fade .form-group.dropdown {
-        margin-left: 7.5px; }
+        margin-left: 15px; }
 nav.pagination > div.fade .form-group .dropdown-menu, nav.pagination > div.fade .form-group .brand-menu {
         min-width: 0;
         width: 7.57143rem;
