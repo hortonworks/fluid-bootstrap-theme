@@ -15,13 +15,14 @@ nav.pagination {
   > span.fade.show {
     white-space: nowrap;
     align-self: center;
-    margin-right: $grid-gutter-width / 2;
+    margin-right: $pagination-text-margin-right;
   }
 
   > div.fade {
     position: absolute;
     display: inherit;
-    right: $grid-gutter-width * 3;
+    right: calc((#{$pagination-icon-font-size} + #{$grid-gutter-width}) * 2 + #{$pagination-text-margin-right}); // let browser do the math so we can mix rem and px
+                                                                                                               //
 
     .form-group {
       font-size: 0; // remove white space between inline elements
@@ -48,7 +49,7 @@ nav.pagination {
       }
 
       &.dropdown {
-        margin-left: $grid-gutter-width / 2;
+        margin-left: $grid-gutter-width;
       }
 
       .dropdown-menu {
@@ -94,7 +95,7 @@ nav.pagination {
     padding: 0;
     border: none;
     border-radius: $border-radius;
-    font-size: $font-size-base * 1.5;
+    font-size: $pagination-icon-font-size;
     line-height: $input-height;
     text-align: center;
     color: text-color("default");
