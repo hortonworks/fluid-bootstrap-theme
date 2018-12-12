@@ -56,22 +56,25 @@ const args = (argList => {
   return args;
 })(process.argv);
 
+// roots
+const dist = './dist';
+const docs = '../gh-pages';
+
 // destinations
-const fonts_dest = './dist/font/';
-const fonts_docs_dest = './docs/font/';
+const fonts_dest = `${dist}/font/`;
+const fonts_docs_dest = `${docs}/font/`;
 
-const images_dest = './docs/images/';
+const images_dest = `${docs}/images/`;
 
-const html_dest = './docs/';
+const html_dest = `${docs}/`;
 
-const css_dest = './dist/css/';
-const css_docs_dest = './docs/css/';
+const css_dest = `${dist}/css/`;
+const css_docs_dest = `${docs}/css/`;
 
 const js_build_dest = './js/dist/';
-const js_bundle_dest = './dist/js/';
+const js_bundle_dest = `${dist}/js/`;
 const js_bundle_name = 'fluid-bootstrap.js';
-const js_docs_dest = './docs/js/';
-
+const js_docs_dest = `${docs}/js/`;
 
 // sources
 const fonts_src = './icons/font/*.*';
@@ -122,7 +125,7 @@ gulp.task('transpile-sass', () =>
     .pipe(bulkSass())
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([atImport(), autoprefixer({ browsers: ['Chrome >= 35', 'Firefox >= 38', 'Edge >= 12', 'Explorer >= 10', 'iOS >= 8', 'Safari >= 8', 'Android 2.3', 'Android >= 4', 'Opera >= 12']})]))
+    .pipe(postcss([atImport(), autoprefixer({ browsers: ['Chrome >= 35', 'Firefox >= 38', 'Edge >= 12', 'Explorer >= 10', 'iOS >= 8', 'Safari >= 8', 'Android 2.3', 'Android >= 4', 'Opera >= 12'] })]))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(css_dest))
     .pipe(gulp.dest(css_docs_dest))
@@ -190,13 +193,13 @@ gulp.task('build-docs-js', () =>
     .pipe(connect.reload())
 );
 
-gulp.task('clean', () => del(['./dist', './docs', js_build_dest]));
+gulp.task('clean', () => del([dist, `${docs}/*/**`, `${docs}/*`, js_build_dest], { force: true }));
 
 gulp.task('build', gulp.parallel('copy-fonts', 'copy-html', 'build-sass', 'build-docs-sass', 'build-js', 'build-docs-js'));
 
 gulp.task('connect', done => {
   connect.server({
-    root: 'docs',
+    root: docs,
     port: 8000,
     livereload: true
   });
