@@ -9,6 +9,7 @@
 .icon-sort-up:before { content: '\2f'; } /* '/' */
 .icon-menu:before { content: '\3a'; } /* ':' */
 .icon-previous:before { content: '\3c'; } /* '&lt;' */
+.icon-check:before { content: '\3d'; } /* '=' */
 .icon-next:before { content: '\3e'; } /* '&gt;' */
 .icon-help:before { content: '\3f'; } /* '?' */
 .icon-sort-down:before { content: '\5c'; } /* '\' */
