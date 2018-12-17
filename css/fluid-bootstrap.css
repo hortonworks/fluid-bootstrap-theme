@@ -7872,6 +7872,9 @@ label {
       -webkit-transition: none;
       -o-transition: none;
       transition: none; } }
+@media (-webkit-animation) {
+    .navbar.navbar-primary {
+      overflow: visible; } }
 .navbar.navbar-primary * {
     -webkit-flex-shrink: 0;
         -ms-flex-negative: 0;
