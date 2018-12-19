@@ -164,6 +164,10 @@ of all or any part of the contents of this file is strictly prohibited.
           <span class="icon fa fa-spinner"></span>
           Progress Bars
         </a>
+        <a class="nav-item nav-link" href="#stepper">
+          <span class="icon fa fa-list-ol"></span>
+          Stepper
+        </a>
         <a class="nav-item nav-link" href="#tables">
           <span class="icon fa fa-table"></span>
           Tables
@@ -176,7 +180,7 @@ of all or any part of the contents of this file is strictly prohibited.
     </div>
   </nav>
   <nav class="navbar navbar-header fixed-top">
-    <h1 class="navbar-text text-default">Fluid Bootstrap 4 Theme Test Page</h1>
+    <h1 class="navbar-text text-default">Fluid Bootstrap 4 Theme Demo Page</h1>
   </nav>
   <main id="mainContent">
     <div id="alertsTopRight" class="alert-container right"></div>
@@ -2100,6 +2104,88 @@ of all or any part of the contents of this file is strictly prohibited.
                   aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="stepper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <header class="section-header">
+              <h2>
+                <span class="icon fa fa-list-ol mr-1"></span>
+                Stepper
+              </h2>
+              <h2>
+                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+          </div>
+        </div>
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Vertical stepper</h3>
+              <ol class="stepper">
+                <li class="complete">
+                  <a href="#">Step A</a>
+                  <div class="desc">Completed step</div>
+                </li>
+                <li class="active">
+                  Step B
+                  <div class="desc">Active step</div>
+                </li>
+                <li><a class="disabled" href="#">Step C</a></li>
+                <li>Step D</li>
+                <li>
+                  Step E
+                  <div class="desc">Optional one line description</div></li>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="card bg-dark">
+            <div class="card-body">
+              <h3 class="card-title text-light">On dark background</h3>
+              <ol class="stepper stepper-light">
+                <li class="complete">
+                  <a href="#">Step A</a>
+                  <div class="desc">Completed step</div>
+                </li>
+                <li class="active">
+                  Step B
+                  <div class="desc">Active step</div>
+                </li>
+                <li><a class="disabled" href="#">Step C</a></li>
+                <li>Step D</li>
+                <li>
+                  Step E
+                  <div class="desc">Optional one line description</div></li>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Horizontal stepper</h3>
+            <ol class="stepper stepper-horizontal">
+              <li class="complete">
+                <a href="#">Step A</a>
+                <div class="desc">Completed step</div>
+              </li>
+              <li class="active">
+                Step B
+                <div class="desc">Active step</div>
+              </li>
+              <li><a class="disabled" href="#">Step C</a></li>
+              <li>Step D</li>
+              <li>
+                Step E
+                <div class="desc">Optional one line description</div></li>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
