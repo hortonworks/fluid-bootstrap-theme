@@ -7,7 +7,7 @@
  */
 
 .navbar.navbar-header {
-  height: $navbar-brand-height + $border-width;
+  height: calc(#{$navbar-brand-height} + #{$border-width});
   min-width: $layout-min-width;
   background-color: $white;
   border-bottom: $border-width $body-bg solid;
