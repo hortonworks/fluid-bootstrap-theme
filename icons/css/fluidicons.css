@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fluidicons';
-  src: url('../font/fluidicons.eot?92279577');
-  src: url('../font/fluidicons.eot?92279577#iefix') format('embedded-opentype'),
-       url('../font/fluidicons.woff2?92279577') format('woff2'),
-       url('../font/fluidicons.woff?92279577') format('woff'),
-       url('../font/fluidicons.ttf?92279577') format('truetype'),
-       url('../font/fluidicons.svg?92279577#fluidicons') format('svg');
+  src: url('../font/fluidicons.eot?29175200');
+  src: url('../font/fluidicons.eot?29175200#iefix') format('embedded-opentype'),
+       url('../font/fluidicons.woff2?29175200') format('woff2'),
+       url('../font/fluidicons.woff?29175200') format('woff'),
+       url('../font/fluidicons.ttf?29175200') format('truetype'),
+       url('../font/fluidicons.svg?29175200#fluidicons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fluidicons';
-    src: url('../font/fluidicons.svg?92279577#fluidicons') format('svg');
+    src: url('../font/fluidicons.svg?29175200#fluidicons') format('svg');
   }
 }
 */
@@ -65,6 +65,7 @@
 .icon-sort-up:before { content: '\2f'; } /* '/' */
 .icon-menu:before { content: '\3a'; } /* ':' */
 .icon-previous:before { content: '\3c'; } /* '&lt;' */
+.icon-check:before { content: '\3d'; } /* '=' */
 .icon-next:before { content: '\3e'; } /* '&gt;' */
 .icon-help:before { content: '\3f'; } /* '?' */
 .icon-sort-down:before { content: '\5c'; } /* '\' */

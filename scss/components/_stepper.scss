@@ -1,0 +1,138 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+.stepper {
+  margin: 0;
+  padding-left: $stepper-padding;
+  counter-reset: stepper;
+  background-color: inherit;
+  cursor: default;
+
+  &.stepper-light {
+    color: text-color("light");
+  }
+
+  &.stepper-horizontal {
+    padding: 0;
+    white-space: nowrap;
+
+    li {
+      display: inline-block;
+      width: $stepper-step-size-horizontal;
+      text-align: center;
+      padding-top: $stepper-padding;
+      vertical-align: top;
+      white-space: normal;
+      height: auto;
+
+      &:before {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &:not(:last-child) {
+        margin: 0;
+
+        &:after {
+          height: 1px;
+          width: $stepper-step-size-horizontal;
+          left: 50%;
+          top: 14px;
+        }
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    list-style: none;
+    background-color: inherit;
+    height: $stepper-step-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+
+    * {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &:before {
+      counter-increment: stepper;
+      content: counter(stepper);
+      width: $stepper-icon-size;
+      height: $stepper-icon-size;
+      position: absolute;
+      left: $stepper-padding * -1;
+      border-radius: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: $border-width color("gray") solid;
+      font-size: px(16);
+      line-height: calc(#{$stepper-icon-size} - 1px);
+      text-align: center;
+      background-color: color("white");
+      z-index: 2;
+      background-color: inherit;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $stepper-step-size;
+
+      &:after {
+        content: " ";
+        width: 1px;
+        height: $stepper-step-size * 2;
+        position: absolute;
+        top: 50%;
+        left: $stepper-icon-size * -1;
+        background-color: color("gray");
+        z-index: 1;
+      }
+    }
+
+    &:not(.complete) {
+      pointer-events: none;
+    }
+
+    &.active {
+      font-weight: $font-weight-bold;
+
+      &:before {
+        font-weight: $font-weight-normal;
+        color: theme-color("primary");
+        border-color: theme-color("primary");
+      }
+    }
+
+    &.complete {
+      &:before {
+        content: "=";
+        font-family: "fluidicons";
+        color: color("white");
+        background-color: theme-color("primary");
+        border-color: theme-color("primary");
+      }
+
+      &:not(:last-child):after {
+        background-color: theme-color("primary");
+      }
+    }
+
+    .desc {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+}

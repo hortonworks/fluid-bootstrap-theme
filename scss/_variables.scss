@@ -1082,3 +1082,10 @@ $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
 
 $pagination-icon-font-size: $font-size-base * 1.5;
 $pagination-text-margin-right: $grid-gutter-width / 2;
+
+// Stepper
+
+$stepper-padding:                   40px;
+$stepper-icon-size:                 2rem - px(1); // ensure this is an odd number so that we can perfectly center the line
+$stepper-step-size:                 2.5rem;
+$stepper-step-size-horizontal:      10rem;
