@@ -1090,3 +1090,10 @@ $stepper-padding:                   40px;
 $stepper-icon-size:                 2rem - px(1); // ensure this is an odd number so that we can perfectly center the line
 $stepper-step-size:                 2.5rem;
 $stepper-step-size-horizontal:      10rem;
+
+// Wizard
+$wizard-navbar-height:              6rem;
+$wizard-navbar-width:               $wizard-navbar-height * 3;
+$wizard-padding-y:                  1.25rem;
+$wizard-padding-x:                  1.75rem;
+$wizard-btn-min-width:              7rem;
