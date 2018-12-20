@@ -9,7 +9,7 @@
 const addAlert = (message, options = {}) => {
   const makeAlert = (message, options) => {
     const alert = document.createElement('div');
-    alert.classList.add('alert', 'fade', 'show');
+    alert.classList.add('alert', 'fade');
     alert.setAttribute('role', 'alert');
 
     switch (options.type) {
@@ -48,11 +48,15 @@ const addAlert = (message, options = {}) => {
     if (options.dismissible) {
       alert.classList.add('alert-dismissible');
       const temp = document.createElement('div');
-      temp.innerHTML = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>';
+      temp.innerHTML = '<button type="button" class="close" aria-label="Close" onclick="dismissAlertHandler(this)"></button>';
       alert.appendChild(temp.firstChild);
     }
 
-    return alert;
+    const alertCollapse = document.createElement('div');
+    alertCollapse.classList.add('alert-collapse', 'collapse', 'show');
+    alertCollapse.appendChild(alert);
+
+    return alertCollapse;
   };
 
   if (!message || typeof message !== 'string') return;
@@ -74,8 +78,10 @@ const addAlert = (message, options = {}) => {
     target.appendChild(alert);
   }
 
+  setTimeout(() => alert.firstChild.classList.add('show'));
+
   if (duration) {
-    setTimeout(() => $(alert).alert('close'), duration * 1000);
+    setTimeout(() => dismissAlert($(alert.firstChild)), duration * 1000);
   }
 };
 
@@ -121,6 +127,20 @@ const addAlertHandler = event => {
   addAlert(data.alertMessage, options);
 
   return false;
+};
+
+const dismissAlert = alert => {
+  const alertCollapse = alert.closest('.alert-collapse');
+
+  alert.one('close.bs.alert', () => alertCollapse.collapse('hide'));
+  alertCollapse.one('hidden.bs.collapse', () => alertCollapse.remove());
+
+  alert.alert('close');
+};
+
+const dismissAlertHandler = close => {
+  const alert = $(close).closest('.alert');
+  dismissAlert(alert);
 };
 
 const dismissAllAlerts = () => {

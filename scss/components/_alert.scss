@@ -13,7 +13,8 @@
   box-shadow: $box-shadow-lg;
   font-size: $font-size-sm;
 
-  + .alert {
+  + .alert,
+  + .alert-collapse .alert {
     margin-top: $grid-gutter-width;
   }
 
@@ -30,6 +31,14 @@
 
   &:hover:after {
     color: theme-color("default");
+  }
+}
+
+.alert-collapse {
+
+  + .alert,
+  + .alert-collapse .alert {
+    margin-top: $grid-gutter-width;
   }
 }
 
