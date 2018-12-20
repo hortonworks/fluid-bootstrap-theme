@@ -48,7 +48,7 @@ const addAlert = (message, options = {}) => {
     if (options.dismissible) {
       alert.classList.add('alert-dismissible');
       const temp = document.createElement('div');
-      temp.innerHTML = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>';
+      temp.innerHTML = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>';
       alert.appendChild(temp.firstChild);
     }
 
