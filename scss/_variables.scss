@@ -166,6 +166,7 @@ $icon-danger:           "\2d"; /* '-' */
 $icon-sort-up:          "\2f"; /* '/' */
 $icon-menu:             "\3a"; /* ':' */
 $icon-previous:         "\3c"; /* '&lt;' */
+$icon-check:            "\3d"; /* '=' */
 $icon-next:             "\3e"; /* '&gt;' */
 $icon-help:             "\3f"; /* '?' */
 $icon-sort-down:        "\5c"; /* '\' */
@@ -176,11 +177,13 @@ $icon-unsorted:         "\7c"; /* '|' */
 $icon-navbar-expand:    "\7d"; /* '}' */
 $icon-filter:           "\7e"; /* '~' */
 
+
 $theme-icons: ();
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-icons: map-merge(
   (
     "apps":            $icon-apps,
+    "check":           $icon-check,
     "close":           $icon-close,
     "collapse":        $icon-collapse,
     "danger":          $icon-danger,
@@ -201,6 +204,18 @@ $theme-icons: map-merge(
     "warning":         $icon-warning,
   ),
   $theme-icons
+);
+
+$status-icons: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$status-icons: map-merge(
+  (
+    "danger":          $icon-danger,
+    "info":            $icon-info,
+    "success":         $icon-success,
+    "warning":         $icon-warning,
+  ),
+  $status-icons
 );
 
 
