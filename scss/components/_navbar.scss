@@ -6,6 +6,19 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+.navbar {
+
+  > .container,
+  > .container-fluid {
+    margin-left: $grid-gutter-width * -1;
+    margin-right: $grid-gutter-width * -1;
+  }
+
+  > .btn + .btn:not(.btn-link) {
+    margin-left: 10px;
+  }
+}
+
 .navbar.navbar-header {
   height: calc(#{$navbar-brand-height} + #{$border-width});
   min-width: $layout-min-width;
