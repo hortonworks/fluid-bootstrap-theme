@@ -92,11 +92,16 @@ const css_src = [
 ];
 const sass_docs_src = './demo.scss';
 
-const js_build_src = './js/src/*.js';
-const js_bundle_src = (args.skipbootstrapjs) ? js_build_dest + '*.js' : [
-  './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+const js_transpile_src = './js/src/*.js';
+
+const js_bundle_src = [
+  './node_modules/bootstrap-select/dist/js/bootstrap-select.js',
   js_build_dest + '*.js'
 ];
+if (!args.skipbootstrapjs) {
+  js_bundle_src.unshift('./node_modules/bootstrap/dist/js/bootstrap.bundle.js');
+}
+
 const js_minify_src = js_bundle_dest + js_bundle_name;
 const js_docs_src = './demo.js';
 
@@ -156,7 +161,7 @@ gulp.task('build-docs-sass', () =>
 );
 
 gulp.task('transpile-js', () =>
-  gulp.src(js_build_src)
+  gulp.src(js_transpile_src)
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(sourcemaps.write('./'))
@@ -212,7 +217,7 @@ gulp.task('watch-images', () => gulp.watch(images_src, { ignoreInitial: false },
 gulp.task('watch-html', () => gulp.watch(html_src, { ignoreInitial: false }, gulp.series('copy-html')));
 gulp.task('watch-sass', () => gulp.watch(sass_src, { ignoreInitial: false }, gulp.series('build-sass')));
 gulp.task('watch-docs-sass', () => gulp.watch(sass_docs_src, { ignoreInitial: false }, gulp.series('build-docs-sass')));
-gulp.task('watch-js', () => gulp.watch(js_build_src, { ignoreInitial: false }, gulp.series('build-js')));
+gulp.task('watch-js', () => gulp.watch(js_transpile_src, { ignoreInitial: false }, gulp.series('build-js')));
 gulp.task('watch-docs-js', () => gulp.watch(js_docs_src, { ignoreInitial: false }, gulp.series('build-docs-js')));
 
 gulp.task('watch', gulp.parallel('watch-fonts', 'watch-images', 'watch-html', 'watch-sass', 'watch-docs-sass', 'watch-js', 'watch-docs-js'));

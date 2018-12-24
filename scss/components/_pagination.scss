@@ -36,7 +36,8 @@ nav.pagination {
         margin-right: px(2);
       }
 
-      select {
+      select,
+      .bootstrap-select {
         width: px(65);
       }
 
@@ -47,29 +48,36 @@ nav.pagination {
         height: $input-height;
       }
 
+      .btn.dropdown-toggle {
+        line-height: 1.5rem;
+      }
+
       &.dropdown {
         margin-left: $grid-gutter-width;
       }
 
-      .dropdown-menu {
-        min-width: 0;
-        width: px(106);
-        padding: px(4);
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+      &.dropdown:not(.bootstrap-select) {
 
-        &.show {
-          display: flex;
-        }
+        .dropdown-menu {
+          min-width: 0;
+          width: px(106);
+          padding: px(4);
+          flex-wrap: wrap;
+          justify-content: space-evenly;
 
-        .page-item .page-link {
-          min-width: $font-size-sm * 2;
-          height: $font-size-sm * 2;
-          padding: 0;
-          padding-left: px(5, $font-size-sm);
-          padding-right: px(5, $font-size-sm);
-          text-align: center;
-          line-height: 2;
+          &.show {
+            display: flex;
+          }
+
+          .page-item .page-link {
+            min-width: $font-size-sm * 2;
+            height: $font-size-sm * 2;
+            padding: 0;
+            padding-left: px(5, $font-size-sm);
+            padding-right: px(5, $font-size-sm);
+            text-align: center;
+            line-height: 2;
+          }
         }
       }
     }

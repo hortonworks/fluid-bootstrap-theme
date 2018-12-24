@@ -6,8 +6,26 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+form:not(.form-inline) {
+
+  .form-group:not(.row) {
+
+    label {
+      display: block;
+    }
+  }
+}
+
 label {
   color: $label-color;
+}
+
+.form-row:not(:last-child) {
+  margin-bottom: $grid-gutter-width;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
 }
 
 .form-control {
@@ -104,3 +122,4 @@ select {
     margin-left: 0;
   }
 }
+
