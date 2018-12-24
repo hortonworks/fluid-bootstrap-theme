@@ -6,16 +6,41 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+.modal-content {
+  box-shadow: $box-shadow-lg;
+}
+
 .modal-header {
-  display: flex;
+  padding-bottom: 0;
   align-items: center;
-  padding: $modal-header-padding;
-  .close {
-    margin-left: auto;
-    padding: 0;
-  }
+}
+
+.modal-title {
+  color: $text-light;
+  font-size: $font-size-lg;
 }
 
 .modal-footer {
-  padding: $modal-footer-padding;
+  padding-top: 0;
+
+  > :not(:first-child) { margin-left: 0; }
+  > :not(:last-child) { margin-right: 0; }
+
+  > .btn + .btn:not(.btn-link) {
+    margin-left: 10px;
+  }
+}
+
+.modal-fluid {
+  width: 90vw;
+  min-width: $layout-min-width;
+  max-width: $layout-max-width;
+
+  .modal-body > .container-fluid {
+    width: auto;
+  }
+}
+
+.modal-backdrop ~ .modal-backdrop {
+  display: none;
 }
