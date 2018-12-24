@@ -1609,22 +1609,25 @@ of all or any part of the contents of this file is strictly prohibited.
               </h2>
             </header>
             <div class="card">
-              <div class="card-body" style="line-height: 3rem;">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalSimple">
-                  Launch demo modal
-                </button>
+              <div class="card-body">
+                <button type="button" class="btn btn-primary modal-example-button mb-2" data-toggle="modal" data-target="#exampleModalSimple">Basic Example</button>
+                <button type="button" class="btn btn-primary modal-example-button mb-2" data-toggle="modal" data-target="#exampleModalCenter">Vertically Centered</button>
+                <button type="button" class="btn btn-primary modal-example-button mb-2" data-toggle="modal" data-target="#exampleModalBodyOnly">No header or footer</button>
+                <br>
+                <button type="button" class="btn btn-primary modal-example-button mb-2" data-toggle="modal" data-target="#exampleModalForm">With form</button>
+                <button type="button" class="btn btn-primary modal-example-button mb-2" data-toggle="modal" data-target="#exampleModalTooltip">With Tooltips</button>
+                <button type="button" class="btn btn-primary modal-example-button mb-2" data-toggle="modal" data-target="#exampleModalGrid">With Grid</button>
+                <br>
+                <button type="button" class="btn btn-primary modal-example-button" data-toggle="modal" data-target="#exampleModalLg">Large</button>
+                <button type="button" class="btn btn-primary modal-example-button" data-toggle="modal" data-target="#exampleModalSm">Small</button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalSimple" tabindex="-1" role="dialog" aria-labelledby="exampleModalSimpleTitle"
-                  aria-hidden="true">
+                <!-- Basic example -->
+                <div class="modal fade" id="exampleModalSimple" tabindex="-1" role="dialog" aria-labelledby="exampleModalSimpleTitle" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h3 class="modal-title" id="exampleModalLongTitle">Modal title</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div class="modal-title" id="exampleModalLongTitle">Modal title</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         ...
@@ -1637,22 +1640,13 @@ of all or any part of the contents of this file is strictly prohibited.
                   </div>
                 </div>
 
-                <!-- -------------------- VERTICALLY CENTERED ----------------------- -->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                  Vertically centered modal
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                  aria-hidden="true">
+                <!-- Vertically centered -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h3 class="modal-title" id="exampleModalCenterTitle">Modal vertically centered</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div class="modal-title" id="exampleModalCenterTitle">Modal vertically centered</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         ...
@@ -1665,22 +1659,13 @@ of all or any part of the contents of this file is strictly prohibited.
                   </div>
                 </div>
 
-                <!-- -------------------- Modal with form ----------------------- -->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalForm">
-                  Modal with form
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle"
-                  aria-hidden="true">
+                <!-- With form -->
+                <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h3 class="modal-title">Modal with form</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div class="modal-title">Modal with form</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <form>
@@ -1709,22 +1694,13 @@ of all or any part of the contents of this file is strictly prohibited.
                   </div>
                 </div>
 
-                <!-- -------------------- Modals Tooltips ----------------------- -->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalTooltip">
-                  Tooltips in modal
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalTooltip" tabindex="-1" role="dialog" aria-labelledby="exampleModalTooltip"
-                  aria-hidden="true">
+                <!-- With tooltips -->
+                <div class="modal fade" id="exampleModalTooltip" tabindex="-1" role="dialog" aria-labelledby="exampleModalTooltip" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h3 class="modal-title">Modal with tooltips</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div class="modal-title">Modal with tooltips</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <h5>Popover in a modal</h5>
@@ -1745,22 +1721,13 @@ of all or any part of the contents of this file is strictly prohibited.
                   </div>
                 </div>
 
-                <!-- -------------------- Modals Grid ----------------------- -->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalGrid">
-                  Modal & grid
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalGrid" tabindex="-1" role="dialog" aria-labelledby="exampleModalGrid"
-                  aria-hidden="true">
+                <!-- With grid -->
+                <div class="modal fade" id="exampleModalGrid" tabindex="-1" role="dialog" aria-labelledby="exampleModalGrid" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h3 class="modal-title">Modal with grid</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div class="modal-title">Modal with grid</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <div class="container-fluid" id="modalFluidContainerExample">
@@ -1798,20 +1765,13 @@ of all or any part of the contents of this file is strictly prohibited.
                   </div>
                 </div>
 
-                <!-- -------------------- Modals Sizes ----------------------- -->
-
-                <!-- Large modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLg">Large modal</button>
-
-                <div class="modal fade" id="#exampleModalLg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                  aria-hidden="true">
+                <!-- Large -->
+                <div class="modal fade" id="exampleModalLg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h3 class="modal-title">Modal Large</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div class="modal-title">Modal Large</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         ...
@@ -1820,18 +1780,14 @@ of all or any part of the contents of this file is strictly prohibited.
                   </div>
                 </div>
 
-                <!-- Small modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalSm">Small modal</button>
-
+                <!-- Small -->
                 <div class="modal fade" id="exampleModalSm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
                   aria-hidden="true">
                   <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h3 class="modal-title">Modal Small</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div class="modal-title">Modal Small</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         ...
@@ -1840,10 +1796,7 @@ of all or any part of the contents of this file is strictly prohibited.
                   </div>
                 </div>
 
-                <!-- Not title -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalBodyOnly">Modal
-                  without title and footer</button>
-
+                <!-- No header or footer -->
                 <div class="modal fade" id="exampleModalBodyOnly" tabindex="-1" role="dialog" aria-labelledby="NoTitleModalLabel"
                   aria-hidden="true">
                   <div class="modal-dialog">
