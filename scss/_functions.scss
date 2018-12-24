@@ -14,6 +14,10 @@
   @return map-get($theme-icons, $key);
 }
 
+@function status-icon($key) {
+  @return map-get($status-icons, $key);
+}
+
 @function px($pixels, $basis: 1rem) {
   @return (($pixels * 1px) / $root-font-size) * $basis;
 }
