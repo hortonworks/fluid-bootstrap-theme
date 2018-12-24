@@ -224,7 +224,7 @@ $enable-print-styles:       true !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: px(15);
+$spacer: 15px;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
@@ -238,6 +238,8 @@ $spacers: map-merge(
   ),
   $spacers
 );
+
+$inline-element-spacing: 4px; // Amount of space automatically inserted between inline elements; in most cases this is 4px.
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: () !default;
@@ -447,7 +449,7 @@ $table-dark-color:            $body-bg !default;
 $table-striped-order:         odd !default;
 
 $table-caption-color:         $text;
-$table-caption-size:          px(20);
+$table-caption-size:          $font-size-lg;
 
 // Buttons + Forms
 //
