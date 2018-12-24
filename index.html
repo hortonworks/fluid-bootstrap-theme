@@ -1156,12 +1156,14 @@ of all or any part of the contents of this file is strictly prohibited.
                   <div>And here's a <a href="#">link</a> in the content.</div>
                 </div>
               </div>
-              <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <div>
-                  <div class="alert-heading">Dismissible alert</div>
-                  <div>Click the x to close me.</div>
+              <div class="alert-collapse collapse show">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <div>
+                    <div class="alert-heading">Dismissible alert</div>
+                    <div>Click the x to close me.</div>
+                  </div>
+                  <button type="button" class="close" aria-label="Close" onclick="dismissAlertHandler(this)"></button>
                 </div>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
               </div>
             </div>
           </div>
