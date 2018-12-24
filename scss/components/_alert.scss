@@ -76,7 +76,7 @@
   }
 }
 
-@each $icon, $value in $theme-icons {
+@each $icon, $value in $status-icons {
   .alert-#{$icon} {
     &:before {
       content: $value;

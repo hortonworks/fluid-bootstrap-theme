@@ -133,7 +133,7 @@ gulp.task('transpile-sass', () =>
 
 gulp.task('minify-css', () =>
   gulp.src(css_src)
-    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(cleanCss())
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('./'))
