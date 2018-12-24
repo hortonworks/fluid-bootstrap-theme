@@ -36,13 +36,13 @@ label {
 }
 
 .valid-feedback:before {
-  content: theme-icon("success");
-  color: theme-color("success");
+  content: status-icon("success");
+  color: status-color("success");
 }
 
 .invalid-feedback:before {
-  content: theme-icon("danger");
-  color: theme-color("danger");
+  content: status-icon("danger");
+  color: status-color("danger");
 }
 
 // Make all <select> dropdowns themed
