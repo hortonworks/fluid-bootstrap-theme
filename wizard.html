@@ -1,0 +1,155 @@
+<!--
+Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
+Except as expressly permitted in a written agreement between you
+or your company and Hortonworks, Inc, any use, reproduction,
+modification, redistribution, sharing, lending or other exploitation
+of all or any part of the contents of this file is strictly prohibited.
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Fluid Bootstrap 4 Theme</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="css/fluid-bootstrap.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/demo.css">
+</head>
+
+<body class="wizard">
+  <nav class="navbar navbar-primary">
+    <ol class="stepper stepper-light step-1">
+      <li class="active">
+        <a href="javascript:goToStep(1);">Step A</a>
+        <div class="desc">Start here</div>
+      </li>
+      <li>
+        <a href="javascript:goToStep(2);">Step B</a>
+        <div class="desc">Continue here</div>
+      </li>
+      <li>
+        <a href="javascript:goToStep(3);">Step C</a>
+        <div class="desc">Finish here</div></li>
+      </li>
+    </ol>
+    <ol class="stepper stepper-light step-2">
+      <li class="complete">
+        <a href="javascript:goToStep(1);">Step A</a>
+        <div class="desc">Start here</div>
+      </li>
+      <li class="active">
+        <a href="javascript:goToStep(2);">Step B</a>
+        <div class="desc">Continue here</div>
+      </li>
+      <li>
+        <a href="javascript:goToStep(3);">Step C</a>
+        <div class="desc">Finish here</div></li>
+      </li>
+    </ol>
+    <ol class="stepper stepper-light step-3">
+      <li class="complete">
+        <a href="javascript:goToStep(1);">Step A</a>
+        <div class="desc">Start here</div>
+      </li>
+      <li class="complete">
+        <a href="javascript:goToStep(2);">Step B</a>
+        <div class="desc">Continue here</div>
+      </li>
+      <li class="active">
+        <a href="javascript:goToStep(3);">Step C</a>
+        <div class="desc">Finish here</div></li>
+      </li>
+    </ol>
+  </nav>
+  <nav class="navbar navbar-header fixed-top">
+    <h1 class="navbar-text text-default">Fluid Bootstrap 4 Theme - Full Screen Wizard Example</h1>
+  </nav>
+  <main class="wizard-body">
+    <div id="alertsTopRight" class="alert-container right"></div>
+    <div id="alertsTopLeft" class="alert-container"></div>
+    <div id="alertsBottomRight" class="alert-container bottom right"></div>
+    <div id="alertsBottomLeft" class="alert-container bottom"></div>
+    <div class="container-fluid step-1">
+      <header class="wizard-header">
+        <h2>1. Step A</h2>
+        <p>This is the first step of this wizard. You can put an extended step description here.</p>
+      </header>
+      <div class="card" id="wizardContent" style="height: 100vh">
+        <div class="card-body">
+          Content for the first step goes here.
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid step-2">
+      <header class="wizard-header">
+        <h2>2. Step B</h2>
+        <p>This is the second step of this wizard. You can put an extended step description here.</p>
+      </header>
+      <div class="card" id="wizardContent">
+        <div class="card-body">
+          Content for the second step goes here.
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid step-3">
+      <header class="wizard-header">
+        <h2>3. Step C</h2>
+        <p>This is the third and final step of this wizard. You can put an extended step description here.</p>
+      </header>
+      <div class="card" id="wizardContent">
+        <div class="card-body">
+          Content for the third step goes here.
+        </div>
+      </div>
+    </div>
+  </main>
+  <nav class="navbar navbar-wizard fixed-bottom">
+    <button type="button" class="btn btn-default wizard-cancel-button" data-toggle="modal" data-target="#cancelWizard">Cancel</button>
+    <button id="back" type="button" class="btn btn-secondary wizard-nav-button wizard-back-button" onclick="back()">Back</button>
+    <button id="next" type="button" class="btn btn-primary wizard-nav-button" onclick="next()">Next</button>
+    <a id="finish" class="btn btn-primary" href="index.html#wizard">Finish</a>
+  </nav>
+  <nav class="navbar navbar-footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <p>This is the footer.</p>
+          <p>It contains some important information.</p>
+          <p>You should probably read it carefully.</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cancel Confirmation -->
+  <div id="cancelWizard" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="cancelWizardHeader">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-title" id="cancelWizardHeader">Cancel wizard</span>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary wizard-nav-button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="index.html#wizard">OK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Required libraries for Bootstrap 4 JS components to work (https://getbootstrap.com/docs/4.0/getting-started/introduction/#js) -->
+  <!-- jQuery first, then Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/fluid-bootstrap.js"></script>
+  <script src="js/demo.js"></script>
+  <script>
+    goToStep(1);
+  </script>
+</body>
+
+</html>
