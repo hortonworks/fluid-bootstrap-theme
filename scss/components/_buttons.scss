@@ -8,7 +8,7 @@
 
 .btn {
   text-transform: uppercase;
-  line-height: px(22); // Correct vertical text centering
+  padding-bottom: .25rem; // Correct vertical text centering
 
   &.btn-primary {
     color: $white;
@@ -26,5 +26,21 @@
   &.btn-link {
     color: $link-color;
     border-color: transparent;
+  }
+
+  + .btn:not(.btn-link) {
+    margin-left: 10px - $inline-element-spacing;
+  }
+}
+
+.btn-group,
+.btn-group-vertical {
+
+  .btn,
+  .btn-group {
+
+    + .btn:not(.btn-link) {
+      margin-left: -$btn-border-width;
+    }
   }
 }
