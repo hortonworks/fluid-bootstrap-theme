@@ -2,6 +2,22 @@
 @import "scss/functions";
 @import "scss/variables";
 
+.wizard {
+
+  .alert-container.bottom {
+    bottom: $wizard-navbar-height;
+  }
+}
+
+#wizardContent {
+  height: 50vh;
+}
+
+.step-2,
+.step-3 {
+  display: none;
+}
+
 .alert-container {
   position: fixed;
   z-index: 1030;

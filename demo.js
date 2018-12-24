@@ -6,6 +6,7 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+//#region Alert tester
 const addAlert = (message, options = {}) => {
   const makeAlert = (message, options) => {
     const alert = document.createElement('div');
@@ -126,7 +127,9 @@ const addAlertHandler = event => {
 const dismissAllAlerts = () => {
   $(".alert-container .alert").alert('close');
 };
+//#endregion
 
+//#region Container example
 const updateContainerExample = function () {
   $('#documentWidth').text($('body').css('width'));
   $('#containerWidth').text($('#containerExample').css('width'));
@@ -143,3 +146,75 @@ $(function () {
   $('#addAlert').on('submit', addAlertHandler);
   $('#dismissAllAlerts').on('click', dismissAllAlerts);
 });
+//#endregion
+
+//#region Wizard in modal
+let currentStep;
+
+function updateDisplayedStep(targetStep) {
+  const toHide = document.querySelectorAll('[class*="step-"]');
+  Array.prototype.forEach.call(toHide, el => {
+    el.style.display = 'none';
+  });
+
+  const toShow = document.getElementsByClassName(`step-${targetStep}`);
+  Array.prototype.forEach.call(toShow, el => {
+    el.style.display = 'block';
+  });
+
+  const buttons = document.getElementsByClassName('wizard-nav-button');
+  Array.prototype.forEach.call(buttons, el => {
+    el.style.display = 'block';
+  });
+
+  document.getElementById('finish').style.display = 'none';
+  if (targetStep === 1) {
+    document.getElementById('back').style.display = 'none';
+  }
+  if (targetStep === 3) {
+    document.getElementById('next').style.display = 'none';
+    document.getElementById('finish').style.display = 'block';
+  }
+}
+
+function back() {
+  updateDisplayedStep(--currentStep);
+}
+
+function next() {
+  updateDisplayedStep(++currentStep);
+}
+
+function goToStep(step) {
+  currentStep = step;
+  updateDisplayedStep(step);
+}
+
+function cancelConfirmation(selector) {
+  $(selector).one('hidden.bs.modal', () => $('body').addClass('modal-open'));
+  $(selector).modal('hide');
+}
+//#endregion
+
+//#region Form validation
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict';
+  window.addEventListener('load', function () {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByTagName('form');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function (form) {
+      if (form.classList.contains('validate')) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      }
+    });
+  }, false);
+})();
+//#endregion

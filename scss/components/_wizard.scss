@@ -1,0 +1,108 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+.wizard {
+
+  .navbar-header {
+    margin-left: 0;
+    height: $wizard-navbar-height;
+    padding: $wizard-padding-y $wizard-padding-x;
+  }
+
+  .wizard-header {
+    margin-bottom: $grid-gutter-width;
+  }
+
+  .wizard-body {
+    margin-top: $wizard-navbar-height;
+    margin-left: $wizard-navbar-width;
+    padding-top: $wizard-padding-x;
+    padding-left: $wizard-padding-x;
+    padding-right: $wizard-padding-x;
+    padding-bottom: $wizard-padding-x;
+
+    > .container,
+    > .container-fluid {
+      padding: 0;
+    }
+  }
+
+  .navbar-primary {
+    margin-bottom: $wizard-navbar-height;
+    padding: $wizard-padding-x;
+    width: $wizard-navbar-width;
+    align-items: center;
+    top: calc(#{$wizard-navbar-height} - #{$border-width});
+    z-index: 1040;
+    height: calc(100% - (#{$wizard-navbar-height} - #{$border-width}) * 2);
+  }
+
+  .navbar-footer {
+    margin-left: $wizard-navbar-width;
+    margin-bottom: $wizard-navbar-height;
+    padding: $wizard-padding-x;
+  }
+
+  .navbar-wizard {
+    height: $wizard-navbar-height;
+    padding: $wizard-padding-y $wizard-padding-x;
+    min-width: $layout-min-width;
+    background-color: $white;
+    border-top: $border-width $body-bg solid;
+  }
+
+  .btn {
+    min-width: $wizard-btn-min-width;
+  }
+
+  .wizard-cancel-button {
+    margin-right: auto;
+  }
+
+  &.modal {
+
+    > .modal-dialog > .modal-content {
+      > .modal-header {
+        height: $wizard-navbar-height;
+        padding: $wizard-padding-y $wizard-padding-x;
+        border-bottom: $border-width $body-bg solid;
+
+        .modal-title {
+          @extend .h1;
+        }
+      }
+
+      > .modal-body {
+        padding: $wizard-padding-x;
+        color: inherit;
+        background-color: theme-color("light");
+        max-height: 75vh;
+        overflow: auto;
+      }
+
+      > .modal-footer {
+        height: $wizard-navbar-height;
+        padding: $wizard-padding-y $wizard-padding-x;
+        border-top: $border-width $body-bg solid;
+      }
+    }
+
+    .navbar-primary {
+      position: fixed;
+      left: 0;
+
+      ~ * {
+        margin-left: $wizard-navbar-width;
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+
