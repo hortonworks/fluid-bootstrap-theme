@@ -157,8 +157,12 @@ const updateContainerExample = function () {
 };
 
 $(function () {
-  $('[data-toggle="popover"]').popover();
-  $('[data-toggle="tooltip"]').tooltip();
+  if ($.fn.popover) {
+    $('[data-toggle="popover"]').popover();
+  }
+  if ($.fn.tooltip) {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
 
   updateContainerExample();
   $(window).resize(updateContainerExample);

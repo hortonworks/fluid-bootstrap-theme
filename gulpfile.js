@@ -84,8 +84,12 @@ const images_src = './images/*.*';
 const html_src = './*.html';
 
 const sass_src = [
-  './scss/**/*.scss'
+  './scss/_fluid-bootstrap.scss'
 ];
+if (!args.nodeps) {
+  sass_src.push('./scss/_fluid-bootstrap-deps.scss');
+}
+
 const css_src = [
   css_dest + '*.css',
   '!' + css_dest + '*.min.css'
@@ -94,13 +98,16 @@ const sass_docs_src = './demo.scss';
 
 const js_transpile_src = './js/src/*.js';
 
-const js_bundle_src = [
-  './node_modules/bootstrap-select/dist/js/bootstrap-select.js',
-  js_build_dest + '*.js'
+const js_deps = [
+  './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+  './node_modules/bootstrap-select/dist/js/bootstrap-select.js'
 ];
-if (!args.skipbootstrapjs) {
-  js_bundle_src.unshift('./node_modules/bootstrap/dist/js/bootstrap.bundle.js');
+
+let js_bundle_src = [];
+if (!args.nodeps) {
+  js_bundle_src = js_deps;
 }
+js_bundle_src.push(js_build_dest + '*.js');
 
 const js_minify_src = js_bundle_dest + js_bundle_name;
 const js_docs_src = './demo.js';
@@ -127,6 +134,7 @@ gulp.task('copy-html', () =>
 
 gulp.task('transpile-sass', () =>
   gulp.src(sass_src)
+    .pipe(concat('fluid-bootstrap.scss'))
     .pipe(bulkSass())
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))

@@ -6,4 +6,6 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-$.fn.selectpicker.Constructor.DEFAULTS.style = ''; // remove .btn-light from default bootstrap-select styling
+if ($.fn.selectpicker) {
+  $.fn.selectpicker.Constructor.DEFAULTS.style = ''; // remove .btn-light from default bootstrap-select styling
+}
