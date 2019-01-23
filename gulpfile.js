@@ -84,19 +84,31 @@ const images_src = './images/*.*';
 const html_src = './*.html';
 
 const sass_src = [
-  './scss/**/*.scss'
+  './scss/_fluid-bootstrap.scss'
 ];
+if (!args.nodeps) {
+  sass_src.push('./scss/_fluid-bootstrap-deps.scss');
+}
+
 const css_src = [
   css_dest + '*.css',
   '!' + css_dest + '*.min.css'
 ];
 const sass_docs_src = './demo.scss';
 
-const js_build_src = './js/src/*.js';
-const js_bundle_src = (args.skipbootstrapjs) ? js_build_dest + '*.js' : [
+const js_transpile_src = './js/src/*.js';
+
+const js_deps = [
   './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
-  js_build_dest + '*.js'
+  './node_modules/bootstrap-select/dist/js/bootstrap-select.js'
 ];
+
+let js_bundle_src = [];
+if (!args.nodeps) {
+  js_bundle_src = js_deps;
+}
+js_bundle_src.push(js_build_dest + '*.js');
+
 const js_minify_src = js_bundle_dest + js_bundle_name;
 const js_docs_src = './demo.js';
 
@@ -122,6 +134,7 @@ gulp.task('copy-html', () =>
 
 gulp.task('transpile-sass', () =>
   gulp.src(sass_src)
+    .pipe(concat('fluid-bootstrap.scss'))
     .pipe(bulkSass())
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -156,7 +169,7 @@ gulp.task('build-docs-sass', () =>
 );
 
 gulp.task('transpile-js', () =>
-  gulp.src(js_build_src)
+  gulp.src(js_transpile_src)
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(sourcemaps.write('./'))
@@ -212,7 +225,7 @@ gulp.task('watch-images', () => gulp.watch(images_src, { ignoreInitial: false },
 gulp.task('watch-html', () => gulp.watch(html_src, { ignoreInitial: false }, gulp.series('copy-html')));
 gulp.task('watch-sass', () => gulp.watch(sass_src, { ignoreInitial: false }, gulp.series('build-sass')));
 gulp.task('watch-docs-sass', () => gulp.watch(sass_docs_src, { ignoreInitial: false }, gulp.series('build-docs-sass')));
-gulp.task('watch-js', () => gulp.watch(js_build_src, { ignoreInitial: false }, gulp.series('build-js')));
+gulp.task('watch-js', () => gulp.watch(js_transpile_src, { ignoreInitial: false }, gulp.series('build-js')));
 gulp.task('watch-docs-js', () => gulp.watch(js_docs_src, { ignoreInitial: false }, gulp.series('build-docs-js')));
 
 gulp.task('watch', gulp.parallel('watch-fonts', 'watch-images', 'watch-html', 'watch-sass', 'watch-docs-sass', 'watch-js', 'watch-docs-js'));
