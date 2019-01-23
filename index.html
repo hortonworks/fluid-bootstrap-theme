@@ -15,7 +15,7 @@ of all or any part of the contents of this file is strictly prohibited.
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="css/fluid-bootstrap.css">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="css/demo.css">
 </head>
 
@@ -1176,7 +1176,7 @@ of all or any part of the contents of this file is strictly prohibited.
                 <div class="col-auto">
                   <div class="form-group">
                     <label for="alertType">Type</label>
-                    <select class="form-control" name="alertType">
+                    <select class="form-control selectpicker" name="alertType">
                       <option value="default">Default</option>
                       <option value="info">Info</option>
                       <option value="success">Success</option>
@@ -1459,140 +1459,159 @@ of all or any part of the contents of this file is strictly prohibited.
             </header>
           </div>
         </div>
-        <div class="form-row">
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <form class="validate" novalidate>
-                  <fieldset>
-                    <div class="row">
-                      <legend class="col-form-label col-sm-2 pt-0">Text Inputs with Validation</legend>
-                      <div class="col-sm-10">
-                        <div class="form-group form-row">
-                          <div class="col-sm-6">
-                            <label for="exampleFormControlInput1">Inline Feedback (passing validation)</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                            <div class="valid-feedback inline-feedback">This entry is valid.</div>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlInput2">Block Feedback (failing validation)</label>
-                          <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com"
-                            required>
-                          <div class="invalid-feedback">This entry is invalid.</div>
-                        </div>
-                        <div class="form-group">
-                          <button class="btn btn-primary" type="submit">Validate</button>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </form>
-                <form class="validate" novalidate>
-                  <fieldset>
-                    <div class="row">
-                      <legend class="col-form-label col-sm-2 pt-0">More Text Input Examples</legend>
-                      <div class="col-sm-10">
-                        <div class="form-group">
-                          <label for="exampleFormControlInput3">Disabled Field</label>
-                          <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com"
-                            disabled>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlInput4">Button Add-On</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Recipient's username"
-                              aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <div class="input-group-append">
-                              <button class="btn btn-primary" type="button" id="button-addon2">Button</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlInput5">Dropdown Add-On</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" id="exampleFormControlInput5" aria-label="Text input with dropdown button">
-                            <div class="input-group-append">
-                              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <div role="separator" class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </form>
-                <form class="validate" novalidate>
-                  <!-- The novalidate attribute is critical to ensure that validation styles are applied. -->
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Text Inputs</h3>
+              <form class="validate" novalidate>
+                <fieldset>
                   <div class="form-group">
-                    <div class="row">
-                      <legend class="col-form-label col-sm-2 pt-0">Select Menus</legend>
-                      <div class="col-sm-10">
-                        <select>
-                          <option selected>Open this select menu</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
+                    <label for="exampleFormControlInput3">Disabled Field</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com"
+                      disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput4">Button Add-On</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Recipient's username"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="button-addon2">Button</button>
                       </div>
                     </div>
                   </div>
-                  <fieldset class="form-group">
-                    <div class="row">
-                      <legend class="col-form-label col-sm-2 pt-0">Checkboxes</legend>
-                      <div class="col-sm-10">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                          <label class="form-check-label" for="defaultCheck1">
-                            Default checkbox
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
-                          <label class="form-check-label" for="defaultCheck2">
-                            Disabled checkbox
-                          </label>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput5">Dropdown Add-On</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="exampleFormControlInput5" aria-label="Text input with dropdown button">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div role="separator" class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
                         </div>
                       </div>
                     </div>
-                  </fieldset>
-                  <fieldset class="form-group">
-                    <div class="row">
-                      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                      <div class="col-sm-10">
-                        <div class="form-radio">
-                          <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
-                            checked>
-                          <label class="form-radio-label" for="gridRadios1">
-                            First radio
-                          </label>
-                        </div>
-                        <div class="form-radio">
-                          <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                          <label class="form-radio-label" for="gridRadios2">
-                            Second radio
-                          </label>
-                        </div>
-                        <div class="form-radio disabled">
-                          <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
-                            disabled>
-                          <label class="form-radio-label" for="gridRadios3">
-                            Third disabled radio
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </form>
-              </div>
+                  </div>
+                </fieldset>
+              </form>
             </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Validation</h3>
+              <form class="validate" novalidate> <!-- The novalidate attribute is critical to ensure that validation styles are applied. -->
+                <fieldset>
+                  <div class="form-group form-row">
+                    <div class="col-7">
+                      <label for="exampleFormControlInput1">Inline Feedback (passing validation)</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                      <div class="valid-feedback inline-feedback">This entry is valid.</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput2">Block Feedback (failing validation)</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com"
+                      required>
+                    <div class="invalid-feedback">This entry is invalid.</div>
+                  </div>
+                  <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Validate</button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Checkboxes &amp; Radio Buttons</h3>
+              <form class="validate" novalidate>
+                <fieldset class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Default checkbox
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                    <label class="form-check-label" for="defaultCheck2">
+                      Disabled checkbox
+                    </label>
+                  </div>
+                </fieldset>
+                <fieldset class="form-group">
+                  <div class="form-radio">
+                    <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                      checked>
+                    <label class="form-radio-label" for="gridRadios1">
+                      First radio
+                    </label>
+                  </div>
+                  <div class="form-radio">
+                    <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-radio-label" for="gridRadios2">
+                      Second radio
+                    </label>
+                  </div>
+                  <div class="form-radio disabled">
+                    <input class="form-radio-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
+                      disabled>
+                    <label class="form-radio-label" for="gridRadios3">
+                      Third disabled radio
+                    </label>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Select Menus</h3>
+            <p><code>&lt;select&gt;</code> elements are styled using <a href="https://developer.snapappointments.com/bootstrap-select/" target="_blank">Bootstrap-Select</a>. You must add the <code>selectpicker</code> class to all <code>&lt;select&gt;</code> elements to enable custom styling.</p>
+            <p><code>&lt;select&gt;</code> elements can be further styled using any of the <code>btn-*</code> classes placed in a <code>data-style</code> attribute, for example: <code>&lt;select class="selectpicker" data-style="btn-primary"&gt;</code></p>
+            <form class="validate" novalidate>
+              <div class="row">
+                <div class="col-auto">
+                  <div class="form-group">
+                    <label for="defaultSelect">Default styling</label>
+                    <select class="selectpicker" id="defaultSelect">
+                      <option selected>Choose an option</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="form-group">
+                    <label>With data-style="btn-primary"</label>
+                    <select class="selectpicker" data-style="btn-primary">
+                      <option selected>Choose an option</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="form-group">
+                    <label>With data-style="btn-secondary"</label>
+                    <select class="selectpicker" data-style="btn-secondary">
+                      <option selected>Choose an option</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -1894,7 +1913,7 @@ of all or any part of the contents of this file is strictly prohibited.
                   <div class="fade">
                     <div class="form-group">
                       <label for="itemsPerPage">Show:</label>
-                      <select id="itemsPerPage">
+                      <select id="itemsPerPage" class="selectpicker">
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50">50</option>
@@ -2306,7 +2325,7 @@ of all or any part of the contents of this file is strictly prohibited.
                           <div class="fade">
                             <div class="form-group">
                               <label for="itemsPerPage">Show:</label>
-                              <select id="itemsPerPage">
+                              <select id="itemsPerPage" class="selectpicker">
                                 <option value="10">10</option>
                                 <option value="25">25</option>
                                 <option value="50">50</option>
@@ -2581,7 +2600,6 @@ of all or any part of the contents of this file is strictly prohibited.
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/fluid-bootstrap.js"></script>
   <script src="js/demo.js"></script>
-
 </body>
 
 </html>
