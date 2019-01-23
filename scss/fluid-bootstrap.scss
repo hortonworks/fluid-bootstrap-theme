@@ -12,14 +12,14 @@
 
 // Required for overriding variables
 @import "node_modules/bootstrap/scss/functions";
-@import "functions"; // Fluid functions
-@import "variables"; // Fluid variable overrides
+@import "functions";
+@import "variables";
 @import "node_modules/bootstrap/scss/variables";
+
+// The rest of Bootstrap
 @import "node_modules/bootstrap/scss/mixins";
 @import "node_modules/bootstrap/scss/root";
 @import "node_modules/bootstrap/scss/reboot";
-
-// The rest of Bootstrap
 @import "node_modules/bootstrap/scss/type";
 @import "node_modules/bootstrap/scss/images";
 @import "node_modules/bootstrap/scss/code";
@@ -51,7 +51,8 @@
 @import "node_modules/bootstrap/scss/utilities";
 @import "node_modules/bootstrap/scss/print";
 
-// Fluid extensions
+// The rest of Fluid
+@import "mixins/*";
 @import "utilities/*";
 @import "components/*";
 
