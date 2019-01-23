@@ -1,0 +1,55 @@
+/*
+ * Copyright (c) 2011-2018, Hortonworks Inc. All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+form {
+  .bootstrap-select {
+    display: block;
+  }
+}
+
+.bootstrap-select {
+
+  .dropdown-toggle {
+    height: $input-height;
+    text-transform: none;
+
+    &:not([class*="btn-"]) {
+      color: $input-color;
+      background-color: $input-bg;
+      border: $input-border-width solid $input-border-color;
+      outline: 0 !important;
+      @include form-control-focus();
+    }
+
+    @each $color, $value in $theme-colors {
+      &.btn-#{$color} {
+        @include focus-variant($value);
+      }
+    }
+  }
+
+  &.show {
+
+    .dropdown-toggle {
+
+      &:not([class*="btn-"]) {
+        color: $input-focus-color;
+        background-color: $input-focus-bg;
+        border-color: $input-focus-border-color;
+        outline: 0 !important;
+        box-shadow: $input-focus-box-shadow;
+      }
+
+      @each $color, $value in $theme-colors {
+        &.btn-#{$color} {
+          @include glow-variant($value);
+        }
+      }
+    }
+  }
+}
