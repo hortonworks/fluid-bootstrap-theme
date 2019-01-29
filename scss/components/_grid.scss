@@ -17,7 +17,7 @@
 }
 
 .row {
-  margin-top: $grid-gutter-width * -1;
+  margin-top: -$grid-gutter-width;
 }
 
 .col, .col-auto {
