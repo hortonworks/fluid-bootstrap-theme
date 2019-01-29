@@ -240,5 +240,14 @@ function cancelConfirmation(selector) {
       }
     });
   }, false);
+
+  // bOf Dashrows Component JS -->
+  $('.js-btn-a').click(function() {
+    $('.js-target-a').toggleClass('expanded');
+  });
+  $('.js-btn-b').click(function() {
+    $('.js-target-b').toggleClass('expanded');
+  });
+  // eOf Dashrows Component JS -->
 })();
 //#endregion
