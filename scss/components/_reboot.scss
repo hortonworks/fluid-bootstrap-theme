@@ -17,3 +17,10 @@ body {
 dt {
   color: text-color("light");
 }
+
+ol, ul, dl {
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

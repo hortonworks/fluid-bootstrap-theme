@@ -36,7 +36,6 @@
     margin-bottom: $wizard-navbar-height;
     padding: $wizard-padding-x;
     width: $wizard-navbar-width;
-    align-items: center;
     top: calc(#{$wizard-navbar-height} - #{$border-width});
     z-index: 1040;
     height: calc(100% - (#{$wizard-navbar-height} - #{$border-width}) * 2);
