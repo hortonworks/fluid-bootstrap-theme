@@ -60,8 +60,14 @@
 .card-deck {
   margin-bottom: $grid-gutter-width;
 
-  .card {
+  .card:last-child {
     margin-bottom: 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .card {
+      margin-bottom: 0;
+    }
   }
 }
 
