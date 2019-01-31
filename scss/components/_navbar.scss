@@ -46,7 +46,7 @@
   justify-content: flex-start;
   align-items: normal;
   background-color: $navbar-bg;
-  z-index: 1030;
+  z-index: $zindex-fixed;
   overflow: hidden;
   @include transition($transition-collapse-all);
 
@@ -392,7 +392,7 @@
     text-transform: uppercase;
     white-space: nowrap;
     line-height: $navbar-brand-height;
-    z-index: 1030;
+    z-index: $zindex-fixed;
     @include transition($transition-collapse-all);
 
     &[data-toggle="collapse"] {
@@ -405,7 +405,7 @@
         font-family: "fluidicons";
         font-size: px(30);
         line-height: px(60); // IE
-        z-index: 1030; // Edge
+        z-index: $zindex-fixed; // Edge
       }
 
       &.collapsed:after {
@@ -434,6 +434,7 @@
 
   .navbar-collapse {
     position: absolute;
+    display: flex;
     top: 0; // set explicitly for IE
     left: 0; // set explicitly for IE
     height: 100%;
@@ -457,7 +458,7 @@
     background-color: $navbar-brand-bg;
     border: none;
     border-radius: 0;
-    z-index: 1030;
+    z-index: $zindex-sticky;
 
     // Create a fade out effect as menu items overflow vertically
     &:before {
