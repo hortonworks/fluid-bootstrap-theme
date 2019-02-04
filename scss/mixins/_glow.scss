@@ -8,8 +8,8 @@
 
 @mixin glow-variant($border) {
   border-color: $border;
+  outline: 0 !important; // stylelint-disable-line declaration-no-important
   box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
-  outline: 0 !important;
 }
 
 @mixin focus-variant($value) {

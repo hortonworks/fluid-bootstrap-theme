@@ -7,11 +7,11 @@
  */
 
 .stepper {
-  margin: 0;
   padding-left: $stepper-padding;
+  margin: 0;
+  cursor: default;
   counter-reset: stepper;
   background-color: inherit;
-  cursor: default;
 
   &.stepper-light {
     color: text-color("light");
@@ -24,13 +24,13 @@
     li {
       display: inline-block;
       width: $stepper-step-size-horizontal;
-      text-align: center;
-      padding-top: $stepper-padding;
-      vertical-align: top;
-      white-space: normal;
       height: auto;
+      padding-top: $stepper-padding;
+      text-align: center;
+      white-space: normal;
+      vertical-align: top;
 
-      &:before {
+      &::before {
         top: 0;
         left: 50%;
         transform: translateX(-50%);
@@ -39,62 +39,63 @@
       &:not(:last-child) {
         margin: 0;
 
-        &:after {
-          height: 1px;
-          width: $stepper-step-size-horizontal;
-          left: 50%;
+        &::after {
           top: 14px;
+          left: 50%;
+          width: $stepper-step-size-horizontal;
+          height: 1px;
         }
       }
     }
   }
 
+  // stylelint-disable selector-no-qualifying-type
   li {
     position: relative;
-    list-style: none;
-    background-color: inherit;
-    height: $stepper-step-size;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: $stepper-step-size;
     white-space: nowrap;
+    list-style: none;
+    background-color: inherit;
 
     * {
-      text-overflow: ellipsis;
       overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    &:before {
-      counter-increment: stepper;
-      content: counter(stepper);
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: $stepper-padding * -1;
+      z-index: 2;
       width: $stepper-icon-size;
       height: $stepper-icon-size;
-      position: absolute;
-      left: $stepper-padding * -1;
-      border-radius: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      border: $border-width color("gray") solid;
       font-size: px(16);
       line-height: calc(#{$stepper-icon-size} - 1px);
       text-align: center;
-      background-color: color("white");
-      z-index: 2;
-      background-color: inherit;
+      content: counter(stepper);
+      counter-increment: stepper;
+      background-color: color("white"); // fallback value
+      background-color: inherit; // this should come after background-color: color("white")
+      border: $border-width color("gray") solid;
+      border-radius: 100%;
+      transform: translateY(-50%);
     }
 
     &:not(:last-child) {
       margin-bottom: $stepper-step-size;
 
-      &:after {
-        content: " ";
-        width: 1px;
-        height: $stepper-step-size * 2;
+      &::after {
         position: absolute;
         top: 50%;
         left: $stepper-icon-size * -1;
-        background-color: color("gray");
         z-index: 1;
+        width: 1px;
+        height: $stepper-step-size * 2;
+        content: " ";
+        background-color: color("gray");
       }
     }
 
@@ -105,7 +106,7 @@
     &.active {
       font-weight: $font-weight-bold;
 
-      &:before {
+      &::before {
         font-weight: $font-weight-normal;
         color: theme-color("primary");
         border-color: theme-color("primary");
@@ -113,15 +114,15 @@
     }
 
     &.complete {
-      &:before {
-        content: "=";
-        font-family: "fluidicons";
+      &::before {
+        font-family: fluidicons, system-ui;
         color: color("white");
+        content: "=";
         background-color: theme-color("primary");
         border-color: theme-color("primary");
       }
 
-      &:not(:last-child):after {
+      &:not(:last-child)::after {
         background-color: theme-color("primary");
       }
     }
@@ -131,6 +132,7 @@
       font-weight: $font-weight-normal;
     }
   }
+  // stylelint-enable
 
   a {
     color: inherit;

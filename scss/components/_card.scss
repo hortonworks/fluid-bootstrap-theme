@@ -18,10 +18,12 @@
       color: $text-light;
     }
 
+    // stylelint-disable selector-list-comma-newline-after
     h1, h2, h3, h4, h5, h6,
     .h1, .h2, .h3, .h4, .h5, .h6 {
       color: $text-light;
     }
+    // stylelint-enable
   }
 }
 
@@ -36,8 +38,8 @@
   > .container,
   > .container-fluid {
     width: auto;
-    margin-left: -$grid-gutter-width;
     margin-right: -$grid-gutter-width;
+    margin-left: -$grid-gutter-width;
   }
 
   + .card-footer {
@@ -47,7 +49,7 @@
 
 .card-subtitle {
   margin-top: 0;
-  margin-bottom: $card-spacer-y / 2
+  margin-bottom: $card-spacer-y / 2;
 }
 
 .card-header-tabs,
@@ -74,8 +76,8 @@
 .card-group {
 
   .card {
-    border-left-width: $border-width;
     border-right-width: $border-width;
+    border-left-width: $border-width;
 
     &:first-of-type {
       border-left-width: 0;

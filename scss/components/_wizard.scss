@@ -6,12 +6,14 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+// stylelint-disable selector-max-compound-selectors, selector-max-class
+
 .wizard {
 
   .navbar-header {
-    margin-left: 0;
     height: $wizard-navbar-height;
     padding: $wizard-padding-y $wizard-padding-x;
+    margin-left: 0;
   }
 
   .wizard-header {
@@ -19,12 +21,12 @@
   }
 
   .wizard-body {
-    margin-top: $wizard-navbar-height;
-    margin-left: $wizard-navbar-width;
     padding-top: $wizard-padding-x;
-    padding-left: $wizard-padding-x;
     padding-right: $wizard-padding-x;
     padding-bottom: $wizard-padding-x;
+    padding-left: $wizard-padding-x;
+    margin-top: $wizard-navbar-height;
+    margin-left: $wizard-navbar-width;
 
     > .container,
     > .container-fluid {
@@ -33,24 +35,24 @@
   }
 
   .navbar-primary {
-    margin-bottom: $wizard-navbar-height;
-    padding: $wizard-padding-x;
-    width: $wizard-navbar-width;
     top: calc(#{$wizard-navbar-height} - #{$border-width});
     z-index: 1040;
+    width: $wizard-navbar-width;
     height: calc(100% - (#{$wizard-navbar-height} - #{$border-width}) * 2);
+    padding: $wizard-padding-x;
+    margin-bottom: $wizard-navbar-height;
   }
 
   .navbar-footer {
-    margin-left: $wizard-navbar-width;
-    margin-bottom: $wizard-navbar-height;
     padding: $wizard-padding-x;
+    margin-bottom: $wizard-navbar-height;
+    margin-left: $wizard-navbar-width;
   }
 
   .navbar-wizard {
+    min-width: $layout-min-width;
     height: $wizard-navbar-height;
     padding: $wizard-padding-y $wizard-padding-x;
-    min-width: $layout-min-width;
     background-color: $white;
     border-top: $border-width $body-bg solid;
   }
@@ -77,11 +79,11 @@
       }
 
       > .modal-body {
+        max-height: 75vh;
         padding: $wizard-padding-x;
+        overflow: auto;
         color: inherit;
         background-color: theme-color("light");
-        max-height: 75vh;
-        overflow: auto;
       }
 
       > .modal-footer {
@@ -96,8 +98,8 @@
       left: 0;
 
       ~ * {
-        margin-left: $wizard-navbar-width;
         padding: 0;
+        margin-left: $wizard-navbar-width;
       }
     }
   }

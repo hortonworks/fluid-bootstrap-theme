@@ -6,19 +6,19 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-.status:before {
+.status::before {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  content: " ";
   width: px(8);
   height: px(8);
   margin-right: px(5);
+  content: " ";
   border-radius: px(4);
+  transform: translateY(-50%);
 }
 
 @each $color, $value in $theme-colors {
-  .status-#{$color}:before {
+  .status-#{$color}::before {
     background-color: $value;
   }
 }

@@ -6,17 +6,17 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-ul.actions {
-  margin: 0;
+ul.actions { // stylelint-disable-line selector-no-qualifying-type
   padding: 0;
+  margin: 0;
 }
 
 .actions {
 
   li {
-    list-style: none;
-    margin-right: px(10);
     display: inline-block;
+    margin-right: px(10);
+    list-style: none;
   }
 
   .icon {
@@ -25,13 +25,13 @@ ul.actions {
 
   .dropdown-toggle {
 
-    &:after {
+    &::after {
       margin-left: px(-2);
-      content: ":";
+      font-family: fluidicons, system-ui;
       font-size: px(14);
-      font-family: "fluidicons";
       vertical-align: inherit;
-      border: none;
+      content: ":";
+      border: 0;
     }
   }
 }
