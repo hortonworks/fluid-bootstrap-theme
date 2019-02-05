@@ -18,9 +18,9 @@
     "themes"
   ],
   "browserslist": [
-    "last 1 version",
-    "> 0.25%",
-    "not dead"
+    "last 2 versions",
+    "not dead",
+    "IE 10"
   ],
   "license": "MIT",
   "dependencies": {

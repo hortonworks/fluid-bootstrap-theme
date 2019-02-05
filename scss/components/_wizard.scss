@@ -53,6 +53,7 @@
     min-width: $layout-min-width;
     background-color: $white;
     border-top: $border-width $body-bg solid;
+    justify-content: flex-end;
   }
 
   .btn {
@@ -61,6 +62,11 @@
 
   .wizard-cancel-button {
     margin-right: auto;
+
+    // test for IE
+    @media screen\0 {
+      margin-right: 0;
+    }
   }
 
   &.modal {
@@ -94,6 +100,13 @@
     .navbar-primary {
       position: fixed;
       left: 0;
+
+      // test for IE
+      @media screen\0 {
+        position: absolute;
+        top: 0;
+        height: 100%;
+      }
 
       ~ * {
         margin-left: $wizard-navbar-width;
