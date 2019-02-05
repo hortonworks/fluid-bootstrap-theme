@@ -22,19 +22,19 @@
     .card-header {
       font-size: px(18);
       line-height: px(20);
+      cursor: pointer;
       background-color: inherit;
       border-bottom: 0;
-      cursor: pointer;
 
-      &:after {
-        content: theme-icon("collapse");
-        font-family: "fluidicons";
+      &::after {
+        float: right;
+        font-family: fluidicons, system-ui;
         font-size: px(20);
         color: $link;
-        float: right;
+        content: theme-icon("collapse");
       }
 
-      &.collapsed:after {
+      &.collapsed::after {
         content: theme-icon("expand");
       }
     }

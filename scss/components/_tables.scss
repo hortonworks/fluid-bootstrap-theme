@@ -6,6 +6,8 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+// stylelint-disable selector-no-qualifying-type
+
 .table-header {
   display: flex;
   justify-content: flex-end;
@@ -23,8 +25,8 @@
   }
 
   caption {
-    caption-side: top;
     font-size: $font-size-lg;
+    caption-side: top;
   }
 
   tr.active {
@@ -61,11 +63,11 @@
       }
     }
 
-    &:before,
-    &:after {
-      content: "";
+    &::before,
+    &::after {
       display: block;
       height: $table-border-width;
+      content: "";
     }
   }
 

@@ -12,9 +12,9 @@
     outline: none;
   }
 
-  &:before {
+  &::before {
+    font-family: fluidicons, system-ui;
     content: "*";
-    font-family: "fluidicons";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
