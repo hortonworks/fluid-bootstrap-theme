@@ -14,6 +14,11 @@
   > .container-fluid {
     margin-right: $grid-gutter-width * -1;
     margin-left: $grid-gutter-width * -1;
+
+    // test for IE
+    @media screen\0 {
+      display: block;
+    }
   }
 
   > .btn + .btn:not(.btn-link) {
@@ -142,7 +147,7 @@
       display: flex;
       width: $navbar-width-sm;
 
-      & ~ * {
+      & ~ *:not(.popover):not(.tooltip):not(.modal) {
         margin-left: $navbar-width-sm;
       }
 

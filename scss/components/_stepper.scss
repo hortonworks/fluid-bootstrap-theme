@@ -96,6 +96,11 @@
         height: $stepper-step-size * 2;
         content: " ";
         background-color: color("gray");
+
+        // test for IE
+        @media screen\0 {
+          display: none;
+        }
       }
     }
 
