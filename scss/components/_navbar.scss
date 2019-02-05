@@ -140,7 +140,7 @@
       display: flex;
       width: $navbar-width-sm;
 
-      & ~ * {
+      & ~ *:not(.popover):not(.tooltip):not(.modal) {
         margin-left: $navbar-width-sm;
       }
 
