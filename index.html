@@ -2404,30 +2404,62 @@ of all or any part of the contents of this file is strictly prohibited.
                     width: 80px !important;
                   }
                 </style>
-                <ul class="dashrows cols-6">
-                    <li class="dashrows-row-header">
-                        <div class="dashrows-column-one dashrows-cell-header">Status</div>
-                        <div class="dashrows-column-two dashrows-cell-header">Cluster/DataCenter</div>
-                        <div class="dashrows-column-three dashrows-cell-header">Registered</div>
-                        <div class="dashrows-column-four dashrows-cell-header">Usage</div>
-                        <div class="dashrows-column-five dashrows-cell-header">Location</div>
-                        <div class="dashrows-column-six dashrows-cell-header">Actions</div>
-                    </li>
-                    <li class="dashrows-row-body shadow-lg">
+                <div class="dashrows cols-6">
+                  <div class="dashrows-row-header">
+                      <div class="dashrows-column-one dashrows-cell-header">Status</div>
+                      <div class="dashrows-column-two dashrows-cell-header">Cluster/DataCenter</div>
+                      <div class="dashrows-column-three dashrows-cell-header">Registered</div>
+                      <div class="dashrows-column-four dashrows-cell-header">Usage</div>
+                      <div class="dashrows-column-five dashrows-cell-header">Location</div>
+                      <div class="dashrows-column-six dashrows-cell-header">Actions</div>
+                  </div>
+                  <div class="dashrows-row-body shadow-lg">
+                    <span class="dashrows-row-icon-wrapper">
+                      <span class="icon-healthy"></span>
+                    </span>
+                    <div class="dashrows-column-one dashrows-cell-body">
+                      <span class="secondary">HEALTHY</span>
+                    </div>
+                    <div class="dashrows-column-two dashrows-cell-body">
+                        <p class="primary">Sales Analysis</p>
+                        <p class="secondary">DATACENTER TX</small>
+                    </div>
+                    <div class="dashrows-column-three dashrows-cell-body">Dec. 12th, 2016 01:43:34</div>
+                    <div class="dashrows-column-four dashrows-cell-body">
+                      <button class="btn btn-link js-btn-a">
+                        40  /321 GB
+                        <span class="icon-expand"></span>
+                      </button>
+                    </div>
+                    <div class="dashrows-column-five dashrows-cell-body">San Francisco, USA</div>
+                    <div class="dashrows-column-six dashrows-cell-body">
+                      <button class="btn btn-link">
+                        <span class="icon-menu"></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="dashrows-row-details js-target-a">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non massa elementum, pellentesque enim eget, venenatis metus. Curabitur rhoncus purus vitae risus finibus tristique. Maecenas nec ultricies justo. Nam odio eros, euismod sed elit ut, tempus laoreet augue. Donec consequat pharetra mattis. Sed sit amet est faucibus, volutpat enim a, consectetur ipsum. Sed aliquet dui et quam efficitur, quis facilisis felis scelerisque.</p>
+                    <p>Phasellus in dui vitae arcu auctor scelerisque. Curabitur ac tincidunt justo. Praesent sed elit non tortor semper lobortis sit amet a lorem. Nullam egestas tincidunt tincidunt. Morbi fermentum tempor urna vitae vehicula. Vivamus feugiat quam porttitor, pharetra eros vitae, hendrerit augue. Maecenas odio enim, facilisis ac egestas id, maximus nec felis. Ut ante elit, malesuada vitae interdum ac, bibendum non dui. Nulla sed tortor et est auctor molestie. Nulla bibendum est eu nisl dictum, eget posuere est laoreet. Ut in eleifend dolor, et facilisis tortor. Ut sem diam, aliquam ut ipsum vel, suscipit gravida tortor. Duis vel ornare mauris. Suspendisse congue lacinia mollis.</p>
+                    <p>Donec eu pulvinar sem, nec pharetra diam. Quisque eget massa vel augue suscipit placerat. Proin finibus accumsan est eget ullamcorper. Integer nec magna convallis urna rhoncus placerat. Vestibulum in ligula dapibus, malesuada nisi tempor, imperdiet ipsum. Mauris cursus, nisl ac cursus lacinia, justo odio commodo enim, ac gravida leo nulla nec neque. Sed in magna libero. Sed scelerisque interdum faucibus. Vestibulum ut ante fermentum, aliquet justo a, venenatis mauris. Ut dignissim mollis justo sed faucibus. Nullam eu varius dolor. Donec sapien leo, lacinia a mollis nec, tincidunt sit amet erat. Donec efficitur sollicitudin nibh, nec vestibulum mauris. Aliquam elementum non purus non gravida.</p>
+                    <p>Proin viverra nunc eu nisi aliquet tincidunt. Nam at rhoncus sapien. Etiam velit orci, venenatis et congue id, finibus vitae purus. Duis consequat mollis scelerisque. In ut orci iaculis, convallis dui ac, malesuada orci. Donec eget feugiat magna, a ultricies nunc. Phasellus ultrices odio arcu, vitae mattis erat luctus non.</p>
+                    <p style="margin-bottom: 0">Nullam egestas pulvinar iaculis. Fusce ut tincidunt sem, id egestas elit. Duis et facilisis lorem. Vestibulum posuere, tortor ut porttitor tincidunt, erat purus rhoncus orci, ut hendrerit lorem ante a turpis. Mauris vestibulum accumsan maximus. In vulputate magna at nunc semper, vitae cursus risus fermentum. Nunc a pulvinar nibh, eget tristique ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed massa egestas, iaculis diam hendrerit, sollicitudin ipsum. Suspendisse vehicula arcu tortor, eu malesuada leo tempor in. Mauris neque ipsum, condimentum sit amet molestie eget, dictum id diam. In laoreet ligula sapien. Aliquam maximus laoreet tempus. Morbi sed lobortis nunc. Morbi tincidunt porta iaculis. Sed sit amet nulla mattis, fringilla lorem ut, tristique enim.</p>
+                  </div>
+                  <div class="dashrows-row-body shadow-lg">
                       <span class="dashrows-row-icon-wrapper">
-                        <span class="icon-healthy"></span>
+                        <span class="icon-unhealthy"></span>
                       </span>
                       <div class="dashrows-column-one dashrows-cell-body">
-                        <span class="secondary">HEALTHY</span>
+                        <span class="secondary">UNHEALTHY</span>
                       </div>
                       <div class="dashrows-column-two dashrows-cell-body">
-                          <p class="primary">Sales Analysis</p>
-                          <p class="secondary">DATACENTER TX</small>
+                        <p class="primary">Sales Analysis</p>
+                        <p class="secondary">DATACENTER TX</small>
                       </div>
                       <div class="dashrows-column-three dashrows-cell-body">Dec. 12th, 2016 01:43:34</div>
                       <div class="dashrows-column-four dashrows-cell-body">
-                        <button class="btn btn-link js-btn-a">
-                          40  /321 GB
+                        <button class="btn btn-link js-btn-b">
+                          40/321 GB
                           <span class="icon-expand"></span>
                         </button>
                       </div>
@@ -2437,47 +2469,15 @@ of all or any part of the contents of this file is strictly prohibited.
                           <span class="icon-menu"></span>
                         </button>
                       </div>
-                    </li>
-                    <li class="dashrows-row-details js-target-a">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non massa elementum, pellentesque enim eget, venenatis metus. Curabitur rhoncus purus vitae risus finibus tristique. Maecenas nec ultricies justo. Nam odio eros, euismod sed elit ut, tempus laoreet augue. Donec consequat pharetra mattis. Sed sit amet est faucibus, volutpat enim a, consectetur ipsum. Sed aliquet dui et quam efficitur, quis facilisis felis scelerisque.</p>
-                      <p>Phasellus in dui vitae arcu auctor scelerisque. Curabitur ac tincidunt justo. Praesent sed elit non tortor semper lobortis sit amet a lorem. Nullam egestas tincidunt tincidunt. Morbi fermentum tempor urna vitae vehicula. Vivamus feugiat quam porttitor, pharetra eros vitae, hendrerit augue. Maecenas odio enim, facilisis ac egestas id, maximus nec felis. Ut ante elit, malesuada vitae interdum ac, bibendum non dui. Nulla sed tortor et est auctor molestie. Nulla bibendum est eu nisl dictum, eget posuere est laoreet. Ut in eleifend dolor, et facilisis tortor. Ut sem diam, aliquam ut ipsum vel, suscipit gravida tortor. Duis vel ornare mauris. Suspendisse congue lacinia mollis.</p>
-                      <p>Donec eu pulvinar sem, nec pharetra diam. Quisque eget massa vel augue suscipit placerat. Proin finibus accumsan est eget ullamcorper. Integer nec magna convallis urna rhoncus placerat. Vestibulum in ligula dapibus, malesuada nisi tempor, imperdiet ipsum. Mauris cursus, nisl ac cursus lacinia, justo odio commodo enim, ac gravida leo nulla nec neque. Sed in magna libero. Sed scelerisque interdum faucibus. Vestibulum ut ante fermentum, aliquet justo a, venenatis mauris. Ut dignissim mollis justo sed faucibus. Nullam eu varius dolor. Donec sapien leo, lacinia a mollis nec, tincidunt sit amet erat. Donec efficitur sollicitudin nibh, nec vestibulum mauris. Aliquam elementum non purus non gravida.</p>
-                      <p>Proin viverra nunc eu nisi aliquet tincidunt. Nam at rhoncus sapien. Etiam velit orci, venenatis et congue id, finibus vitae purus. Duis consequat mollis scelerisque. In ut orci iaculis, convallis dui ac, malesuada orci. Donec eget feugiat magna, a ultricies nunc. Phasellus ultrices odio arcu, vitae mattis erat luctus non.</p>
-                      <p style="margin-bottom: 0">Nullam egestas pulvinar iaculis. Fusce ut tincidunt sem, id egestas elit. Duis et facilisis lorem. Vestibulum posuere, tortor ut porttitor tincidunt, erat purus rhoncus orci, ut hendrerit lorem ante a turpis. Mauris vestibulum accumsan maximus. In vulputate magna at nunc semper, vitae cursus risus fermentum. Nunc a pulvinar nibh, eget tristique ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed massa egestas, iaculis diam hendrerit, sollicitudin ipsum. Suspendisse vehicula arcu tortor, eu malesuada leo tempor in. Mauris neque ipsum, condimentum sit amet molestie eget, dictum id diam. In laoreet ligula sapien. Aliquam maximus laoreet tempus. Morbi sed lobortis nunc. Morbi tincidunt porta iaculis. Sed sit amet nulla mattis, fringilla lorem ut, tristique enim.</p>
-                    </li>
-                    <li class="dashrows-row-body shadow-lg">
-                        <span class="dashrows-row-icon-wrapper">
-                          <span class="icon-unhealthy"></span>
-                        </span>
-                        <div class="dashrows-column-one dashrows-cell-body">
-                          <span class="secondary">UNHEALTHY</span>
-                        </div>
-                        <div class="dashrows-column-two dashrows-cell-body">
-                          <p class="primary">Sales Analysis</p>
-                          <p class="secondary">DATACENTER TX</small>
-                        </div>
-                        <div class="dashrows-column-three dashrows-cell-body">Dec. 12th, 2016 01:43:34</div>
-                        <div class="dashrows-column-four dashrows-cell-body">
-                          <button class="btn btn-link js-btn-b">
-                            40/321 GB
-                            <span class="icon-expand"></span>
-                          </button>
-                        </div>
-                        <div class="dashrows-column-five dashrows-cell-body">San Francisco, USA</div>
-                        <div class="dashrows-column-six dashrows-cell-body">
-                          <button class="btn btn-link">
-                            <span class="icon-menu"></span>
-                          </button>
-                        </div>
-                    </li>
-                    <li class="dashrows-row-details js-target-b">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non massa elementum, pellentesque enim eget, venenatis metus. Curabitur rhoncus purus vitae risus finibus tristique. Maecenas nec ultricies justo. Nam odio eros, euismod sed elit ut, tempus laoreet augue. Donec consequat pharetra mattis. Sed sit amet est faucibus, volutpat enim a, consectetur ipsum. Sed aliquet dui et quam efficitur, quis facilisis felis scelerisque.</p>
-                      <p>Phasellus in dui vitae arcu auctor scelerisque. Curabitur ac tincidunt justo. Praesent sed elit non tortor semper lobortis sit amet a lorem. Nullam egestas tincidunt tincidunt. Morbi fermentum tempor urna vitae vehicula. Vivamus feugiat quam porttitor, pharetra eros vitae, hendrerit augue. Maecenas odio enim, facilisis ac egestas id, maximus nec felis. Ut ante elit, malesuada vitae interdum ac, bibendum non dui. Nulla sed tortor et est auctor molestie. Nulla bibendum est eu nisl dictum, eget posuere est laoreet. Ut in eleifend dolor, et facilisis tortor. Ut sem diam, aliquam ut ipsum vel, suscipit gravida tortor. Duis vel ornare mauris. Suspendisse congue lacinia mollis.</p>
-                      <p>Donec eu pulvinar sem, nec pharetra diam. Quisque eget massa vel augue suscipit placerat. Proin finibus accumsan est eget ullamcorper. Integer nec magna convallis urna rhoncus placerat. Vestibulum in ligula dapibus, malesuada nisi tempor, imperdiet ipsum. Mauris cursus, nisl ac cursus lacinia, justo odio commodo enim, ac gravida leo nulla nec neque. Sed in magna libero. Sed scelerisque interdum faucibus. Vestibulum ut ante fermentum, aliquet justo a, venenatis mauris. Ut dignissim mollis justo sed faucibus. Nullam eu varius dolor. Donec sapien leo, lacinia a mollis nec, tincidunt sit amet erat. Donec efficitur sollicitudin nibh, nec vestibulum mauris. Aliquam elementum non purus non gravida.</p>
-                      <p>Proin viverra nunc eu nisi aliquet tincidunt. Nam at rhoncus sapien. Etiam velit orci, venenatis et congue id, finibus vitae purus. Duis consequat mollis scelerisque. In ut orci iaculis, convallis dui ac, malesuada orci. Donec eget feugiat magna, a ultricies nunc. Phasellus ultrices odio arcu, vitae mattis erat luctus non.</p>
-                      <p style="margin-bottom: 0">Nullam egestas pulvinar iaculis. Fusce ut tincidunt sem, id egestas elit. Duis et facilisis lorem. Vestibulum posuere, tortor ut porttitor tincidunt, erat purus rhoncus orci, ut hendrerit lorem ante a turpis. Mauris vestibulum accumsan maximus. In vulputate magna at nunc semper, vitae cursus risus fermentum. Nunc a pulvinar nibh, eget tristique ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed massa egestas, iaculis diam hendrerit, sollicitudin ipsum. Suspendisse vehicula arcu tortor, eu malesuada leo tempor in. Mauris neque ipsum, condimentum sit amet molestie eget, dictum id diam. In laoreet ligula sapien. Aliquam maximus laoreet tempus. Morbi sed lobortis nunc. Morbi tincidunt porta iaculis. Sed sit amet nulla mattis, fringilla lorem ut, tristique enim.</p>
-                    </li>
-                </ul>
+                  </div>
+                  <div class="dashrows-row-details js-target-b">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non massa elementum, pellentesque enim eget, venenatis metus. Curabitur rhoncus purus vitae risus finibus tristique. Maecenas nec ultricies justo. Nam odio eros, euismod sed elit ut, tempus laoreet augue. Donec consequat pharetra mattis. Sed sit amet est faucibus, volutpat enim a, consectetur ipsum. Sed aliquet dui et quam efficitur, quis facilisis felis scelerisque.</p>
+                    <p>Phasellus in dui vitae arcu auctor scelerisque. Curabitur ac tincidunt justo. Praesent sed elit non tortor semper lobortis sit amet a lorem. Nullam egestas tincidunt tincidunt. Morbi fermentum tempor urna vitae vehicula. Vivamus feugiat quam porttitor, pharetra eros vitae, hendrerit augue. Maecenas odio enim, facilisis ac egestas id, maximus nec felis. Ut ante elit, malesuada vitae interdum ac, bibendum non dui. Nulla sed tortor et est auctor molestie. Nulla bibendum est eu nisl dictum, eget posuere est laoreet. Ut in eleifend dolor, et facilisis tortor. Ut sem diam, aliquam ut ipsum vel, suscipit gravida tortor. Duis vel ornare mauris. Suspendisse congue lacinia mollis.</p>
+                    <p>Donec eu pulvinar sem, nec pharetra diam. Quisque eget massa vel augue suscipit placerat. Proin finibus accumsan est eget ullamcorper. Integer nec magna convallis urna rhoncus placerat. Vestibulum in ligula dapibus, malesuada nisi tempor, imperdiet ipsum. Mauris cursus, nisl ac cursus lacinia, justo odio commodo enim, ac gravida leo nulla nec neque. Sed in magna libero. Sed scelerisque interdum faucibus. Vestibulum ut ante fermentum, aliquet justo a, venenatis mauris. Ut dignissim mollis justo sed faucibus. Nullam eu varius dolor. Donec sapien leo, lacinia a mollis nec, tincidunt sit amet erat. Donec efficitur sollicitudin nibh, nec vestibulum mauris. Aliquam elementum non purus non gravida.</p>
+                    <p>Proin viverra nunc eu nisi aliquet tincidunt. Nam at rhoncus sapien. Etiam velit orci, venenatis et congue id, finibus vitae purus. Duis consequat mollis scelerisque. In ut orci iaculis, convallis dui ac, malesuada orci. Donec eget feugiat magna, a ultricies nunc. Phasellus ultrices odio arcu, vitae mattis erat luctus non.</p>
+                    <p style="margin-bottom: 0">Nullam egestas pulvinar iaculis. Fusce ut tincidunt sem, id egestas elit. Duis et facilisis lorem. Vestibulum posuere, tortor ut porttitor tincidunt, erat purus rhoncus orci, ut hendrerit lorem ante a turpis. Mauris vestibulum accumsan maximus. In vulputate magna at nunc semper, vitae cursus risus fermentum. Nunc a pulvinar nibh, eget tristique ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed massa egestas, iaculis diam hendrerit, sollicitudin ipsum. Suspendisse vehicula arcu tortor, eu malesuada leo tempor in. Mauris neque ipsum, condimentum sit amet molestie eget, dictum id diam. In laoreet ligula sapien. Aliquam maximus laoreet tempus. Morbi sed lobortis nunc. Morbi tincidunt porta iaculis. Sed sit amet nulla mattis, fringilla lorem ut, tristique enim.</p>
+                  </div>
+                </div>
                 <!-- eOf Dashrows Component -->
               </div>
             </div>
