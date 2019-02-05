@@ -8,7 +8,7 @@
 
 .nav-tabs,
 .nav-pills {
-  border: none;
+  border: 0;
 
   &:not(.flex-column):not(.card-header-tabs) {
     margin-bottom: $grid-gutter-width;
@@ -20,11 +20,11 @@
   }
 
   .nav-link {
-    border-left: none;
-    border-top: none;
-    border-right: none;
-    text-transform: uppercase;
     line-height: 1;
+    text-transform: uppercase;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
     border-radius: 0;
   }
 
@@ -36,12 +36,12 @@
     }
 
     .nav-link {
-      border-bottom: none;
-      border-right: transparent $nav-tabs-border-width solid;
-      text-align: right;
-      white-space: nowrap;
       overflow: hidden;
+      text-align: right;
       text-overflow: ellipsis;
+      white-space: nowrap;
+      border-right: transparent $nav-tabs-border-width solid;
+      border-bottom: 0;
 
       &.active {
         border-right-color: $nav-tabs-link-active-border-color;

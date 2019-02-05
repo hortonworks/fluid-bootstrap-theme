@@ -10,8 +10,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  box-shadow: $box-shadow-lg;
   font-size: $font-size-sm;
+  box-shadow: $box-shadow-lg;
 
   + .alert,
   + .alert-collapse .alert {
@@ -22,14 +22,14 @@
     margin-left: $grid-gutter-width;
   }
 
-  &:before {
-    font-family: "fluidicons";
-    font-size: $alert-icon-font-size;
+  &::before {
     height: $alert-icon-font-size;
+    font-family: fluidicons, system-ui;
+    font-size: $alert-icon-font-size;
     line-height: 1;
   }
 
-  &:hover:after {
+  &:hover::after {
     color: theme-color("default");
   }
 }
@@ -45,9 +45,9 @@
 .alert-dismissible {
 
   .close {
-    padding: 0;
     top: 2px;
     right: 2px;
+    padding: 0;
   }
 }
 
@@ -62,7 +62,8 @@
     background-color: $white;
     border-color: theme-color-level($color, $alert-border-level);
 
-    .alert-heading, &:before {
+    .alert-heading,
+    &::before {
       color: $value;
     }
   }
@@ -78,7 +79,7 @@
 
 @each $icon, $value in $status-icons {
   .alert-#{$icon} {
-    &:before {
+    &::before {
       content: $value;
     }
   }
