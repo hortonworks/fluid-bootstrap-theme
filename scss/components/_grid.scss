@@ -8,10 +8,19 @@
 
 .container,
 .container-fluid {
-  padding-left: $grid-gutter-width;
   padding-right: $grid-gutter-width;
+  padding-left: $grid-gutter-width;
 }
 
 .container-fluid {
   max-width: $layout-max-width;
+}
+
+.row {
+  margin-top: -$grid-gutter-width;
+}
+
+.col,
+.col-auto {
+  margin-top: $grid-gutter-width;
 }

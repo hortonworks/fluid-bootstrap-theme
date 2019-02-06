@@ -18,9 +18,9 @@
     "themes"
   ],
   "browserslist": [
-    "last 1 version",
-    "> 0.25%",
-    "not dead"
+    "last 2 versions",
+    "not dead",
+    "IE 10"
   ],
   "license": "MIT",
   "dependencies": {
@@ -48,7 +48,10 @@
     "gulp-scss-lint": "^0.7.2",
     "gulp-serve": "^1.4.0",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-stylelint": "^8.0.0",
     "gulp-uglify": "^3.0.1",
-    "postcss-import": "^12.0.1"
+    "postcss-import": "^12.0.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-twbs-bootstrap": "^0.3.0"
   }
 }

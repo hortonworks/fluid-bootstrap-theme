@@ -20,7 +20,7 @@
 
 .alert-container {
   position: fixed;
-  z-index: 1030;
+  z-index: $zindex-fixed;
   pointer-events: none;
   padding: $grid-gutter-width;
   width: 35%;

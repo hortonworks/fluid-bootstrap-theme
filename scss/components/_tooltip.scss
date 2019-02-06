@@ -6,25 +6,25 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
- .tooltip {
+.tooltip {
+
+  .tooltip-inner {
+    box-shadow: $box-shadow-lg;
+  }
+
+  &.tooltip-no-arrow {
+
+    .arrow {
+      display: none;
+    }
+  }
+
+  &.tooltip-light {
 
     .tooltip-inner {
-      box-shadow: $box-shadow-lg;
+      color: gray("700");
+      background-color: $white;
+      border: 1px solid darken($white, 14%);
     }
-
-    &.tooltip-no-arrow {
-
-      .arrow {
-        display: none;
-      }
-    }
-
-    &.tooltip-light {
-
-      .tooltip-inner {
-        background-color: $white;
-        border: 1px solid darken($white, 14%);
-        color: gray("700");
-      }
-    }
- }
+  }
+}

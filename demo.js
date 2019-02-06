@@ -121,7 +121,7 @@ const addAlertHandler = event => {
     type: data.alertType,
     content: data.alertContent,
     dismissible: !!data.alertDismissible,
-    duration: Number.parseInt(data.alertDuration),
+    duration: window.parseInt(data.alertDuration),
     position: data.alertTopBottom === 'bottom' ? 'first' : 'last'
   };
 

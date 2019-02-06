@@ -19,6 +19,7 @@ const del = require('del');
 const connect = require('gulp-connect');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const styleLint = require('gulp-stylelint');
 
 // Helpers
 // Task Arguments
@@ -83,6 +84,12 @@ const images_src = './images/*.*';
 
 const html_src = './*.html';
 
+const sass_lint_src = [
+  './scss/_functions.scss',
+  './scss/components/*',
+  './scss/mixins/*',
+  './scss/utilities/*',
+];
 const sass_src = [
   './scss/_fluid-bootstrap.scss'
 ];
@@ -130,6 +137,18 @@ gulp.task('copy-html', () =>
   gulp.src(html_src)
     .pipe(gulp.dest(html_dest))
     .pipe(connect.reload())
+);
+
+gulp.task('lint-sass', () =>
+  gulp.src(sass_lint_src)
+    .pipe(styleLint({
+      reporters: [
+        {
+          formatter: 'string',
+          console: true
+        }
+      ]
+    }))
 );
 
 gulp.task('transpile-sass', () =>
@@ -208,6 +227,8 @@ gulp.task('build-docs-js', () =>
 
 gulp.task('clean', () => del([dist, `${docs}/*/**`, `${docs}/*`, js_build_dest], { force: true }));
 
+gulp.task('test', gulp.parallel('lint-sass'));
+
 gulp.task('build', gulp.parallel('copy-fonts', 'copy-html', 'build-sass', 'build-docs-sass', 'build-js', 'build-docs-js'));
 
 gulp.task('connect', done => {
@@ -223,7 +244,7 @@ gulp.task('connect', done => {
 gulp.task('watch-fonts', () => gulp.watch(fonts_src, { ignoreInitial: false }, gulp.series('copy-fonts')));
 gulp.task('watch-images', () => gulp.watch(images_src, { ignoreInitial: false }, gulp.series('copy-images')));
 gulp.task('watch-html', () => gulp.watch(html_src, { ignoreInitial: false }, gulp.series('copy-html')));
-gulp.task('watch-sass', () => gulp.watch(sass_src, { ignoreInitial: false }, gulp.series('build-sass')));
+gulp.task('watch-sass', () => gulp.watch('./scss/**/*.scss', { ignoreInitial: false }, gulp.series('build-sass')));
 gulp.task('watch-docs-sass', () => gulp.watch(sass_docs_src, { ignoreInitial: false }, gulp.series('build-docs-sass')));
 gulp.task('watch-js', () => gulp.watch(js_transpile_src, { ignoreInitial: false }, gulp.series('build-js')));
 gulp.task('watch-docs-js', () => gulp.watch(js_docs_src, { ignoreInitial: false }, gulp.series('build-docs-js')));
