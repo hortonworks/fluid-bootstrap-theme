@@ -22,7 +22,7 @@
 
   .dashrows-row-header {
     .dashrows-cell-header {
-      color: text-colors("light");
+      color: text-color("light");
       font-size: $dashrows-header-font-size;
       padding: $dashrows-header-padding;
       text-align: center;
@@ -51,11 +51,11 @@
       }
 
       .primary {
-        color: text-colors("dark");
+        color: text-color("dark");
         font-size: $dashrows-row-primary-font-size;
       }
       .secondary {
-        color: text-colors("default");
+        color: text-color("default");
         font-size: $dashrows-row-secondary-font-size;
       }
     }
@@ -89,17 +89,13 @@
 
   // The code below uses px sized elements since it's crucial for those dimensions to not be floats
   .dashrows-row-icon-wrapper {
-    background-color: colors("white");
+    background-color: color("white");
     height: 24px;
     margin-left: -12px;
     margin-top: -12px;
     position: absolute;
     top: 50%;
     width: 24px;
-
-    // + .dashrows-cell-body {
-    //   margin-left: 12px;
-    // }
   }
 }
 
