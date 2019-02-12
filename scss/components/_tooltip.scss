@@ -7,6 +7,7 @@
  */
 
 .tooltip {
+  pointer-events: none;
 
   .tooltip-inner {
     box-shadow: $box-shadow-lg;
@@ -23,8 +24,8 @@
 
     .tooltip-inner {
       color: gray("700");
-      background-color: $white;
-      border: 1px solid darken($white, 14%);
+      background-color: color("white");
+      border: 1px solid darken(color("white"), 14%);
     }
   }
 }

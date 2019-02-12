@@ -7,14 +7,35 @@
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
-var isTruncated = function isTruncated(element) {
-  return element.clientWidth < element.scrollWidth || element.clientHeight < element.scrollHeight;
+var isTruncatedX = function isTruncatedX(element, tolerance) {
+  return element.clientWidth + tolerance < element.scrollWidth;
 };
 
-var conditionalTooltipHandler = function conditionalTooltipHandler(event) {
+var isTruncatedY = function isTruncatedY(element, tolerance) {
+  return element.clientHeight + tolerance < element.scrollHeight;
+};
+
+var conditionalTooltipHandler = function conditionalTooltipHandler(event, tolerance) {
+  var defaultTolerance = 2;
+
   switch (event.target.getAttribute('data-condition')) {
     case 'truncated':
-      if (!isTruncated(event.target)) {
+    case 'truncated-x':
+      if (!isTruncatedX(event.target, tolerance || defaultTolerance)) {
+        event.preventDefault();
+      }
+
+      break;
+
+    case 'truncated-y':
+      if (!isTruncatedY(event.target, tolerance || defaultTolerance)) {
+        event.preventDefault();
+      }
+
+      break;
+
+    case 'truncated-both':
+      if (!isTruncatedX(event.target, tolerance || defaultTolerance) && !isTruncatedY(event.target, tolerance || defaultTolerance)) {
         event.preventDefault();
       }
 
