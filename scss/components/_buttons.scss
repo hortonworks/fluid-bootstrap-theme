@@ -11,16 +11,18 @@
   text-transform: uppercase;
 
   &.btn-primary {
-    color: $white;
+    color: color("white");
     border-color: theme-color("primary");
   }
 
   &.btn-secondary {
     @extend .btn-outline-primary;
+    background-color: transparent;
   }
 
   &.btn-default {
     @extend .btn-outline-default;
+    background-color: transparent;
   }
 
   &.btn-link {
