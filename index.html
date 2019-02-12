@@ -172,9 +172,9 @@ of all or any part of the contents of this file is strictly prohibited.
           <span class="icon fa fa-commenting"></span>
           Popovers &amp; Tooltips
         </a>
-        <a class="nav-item nav-link" href="#progress-bars" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Progress Bars">
+        <a class="nav-item nav-link" href="#progress" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Progress Indicators">
           <span class="icon fa fa-spinner"></span>
-          Progress Bars
+          Progress Indicators
         </a>
         <a class="nav-item nav-link" href="#stepper" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Stepper">
           <span class="icon fa fa-list-ol"></span>
@@ -2009,17 +2009,18 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </div>
     </section>
-    <section id="progress-bars">
+    <section id="progress">
       <div class="container-fluid">
         <div class="row">
           <div class="col">
             <header class="section-header">
               <h2>
                 <span class="icon fa fa-spinner mr-1"></span>
-                Progress bars
+                Progress Indicators
               </h2>
               <h2>
                 <a href="https://getbootstrap.com/docs/4.3/components/progress/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Progress docs"><span class="icon fa fa-book"></span></a>
+                <a href="https://getbootstrap.com/docs/4.3/components/spinners/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Progress docs"><span class="icon fa fa-book"></span></a>
                 <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
               </h2>
             </header>
@@ -2028,52 +2029,59 @@ of all or any part of the contents of this file is strictly prohibited.
         <div class="card-deck">
           <div class="card">
             <div class="card-body">
-              <h3 class="card-title">Colored progress bars</h3>
+              <h3 class="card-title">Progress Bars</h3>
+              <p>Use to indicated determinate activity. Different theme colors can be used to indicate process status. The default color is blue.</p>
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
-                  aria-valuemax="100">Label</div>
+                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
               </div>
               <div class="progress mt-3">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100">Label</div>
+                <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
               </div>
               <div class="progress mt-3">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
-                  aria-valuemax="100">Label</div>
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
               </div>
               <div class="progress mt-3">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100">Label</div>
-              </div>
-              <div class="progress mt-3">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100">Label</div>
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
-              <h3 class="card-title">Striped progress bars</h3>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100">Label</div>
-                      </div>
-              <div class="progress mt-3">
-                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
-                    </div>
-              <div class="progress mt-3">
-                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
-                  </div>
-              <div class="progress mt-3">
-                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 50%;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
-                </div>
-              <div class="progress mt-3">
-                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Label</div>
+              <h3 class="card-title">Spinners</h3>
+              <p>Use to indicate indeterminate activity.</p>
+              <h4>.spinner-border-sm</h4>
+              <p>Useful inside controls like buttons. Use the <code>.spinner-border-light</code> modifier on colored backgrounds.</p>
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="sr-only">Loading...</span>
               </div>
+              <button class="btn btn-primary ml-3" type="button" disabled>
+                <span class="spinner-border spinner-border-sm spinner-border-light" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
+              <h4 class="mt-3">.spinner-border</h4>
+              <p>Good for indicating activity in just a section of the screen or otherwise non-modal loading.
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <h4 class="mt-3">.spinner-border-lg</h4>
+              <p>Can be used modally to indicate a full-screen loading state.
+              <div class="spinner-border spinner-border-lg" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <button class="btn btn-primary d-block mt-3" data-toggle="modal" data-target="#exampleModalLoading">Modal Loading Example</button>
+              <!-- Modal Loading Example -->
+              <div class="modal fade" id="exampleModalLoading" tabindex="-1" role="dialog" aria-labelledby="exampleModalLoadingTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-auto justify-content-center" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div class="spinner-border spinner-border-lg" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Example -->
             </div>
           </div>
         </div>
