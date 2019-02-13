@@ -24,8 +24,8 @@
 }
 
 .modal-title {
-  font-size: $font-size-lg;
   color: $text-light;
+  font-size: $font-size-lg;
 }
 
 .modal-footer {
@@ -40,9 +40,9 @@
 }
 
 .modal-fluid {
-  width: 90vw;
-  min-width: $layout-min-width;
   max-width: $layout-max-width;
+  min-width: $layout-min-width;
+  width: 90vw;
 
   .modal-body > .container-fluid {
     width: auto;

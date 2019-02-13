@@ -15,33 +15,33 @@
   }
 
   .nav-item {
-    margin-right: $nav-link-margin;
     margin-bottom: 0;
+    margin-right: $nav-link-margin;
   }
 
   .nav-link {
-    line-height: 1;
-    text-transform: uppercase;
-    border-top: 0;
-    border-right: 0;
     border-left: 0;
     border-radius: 0;
+    border-right: 0;
+    border-top: 0;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   &.flex-column {
 
     .nav-item {
-      margin-right: 0;
       margin-bottom: $nav-link-margin;
+      margin-right: 0;
     }
 
     .nav-link {
+      border-bottom: 0;
+      border-right: transparent $nav-tabs-border-width solid;
       overflow: hidden;
       text-align: right;
       text-overflow: ellipsis;
       white-space: nowrap;
-      border-right: transparent $nav-tabs-border-width solid;
-      border-bottom: 0;
 
       &.active {
         border-right-color: $nav-tabs-link-active-border-color;

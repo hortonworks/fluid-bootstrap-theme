@@ -40,17 +40,17 @@ label {
   color: theme-color("default");
 
   &::before {
-    margin-right: px(3);
     font-family: fluidicons, system-ui;
+    margin-right: px(3);
   }
 }
 
 .inline-feedback {
-  position: absolute;
   bottom: ($input-padding-y * 2 + $input-line-height * px(14)) / 2;
   left: 100%;
-  margin-top: 0;
   margin-left: px(5);
+  margin-top: 0;
+  position: absolute;
   transform: translateY(50%);
 }
 
@@ -115,18 +115,18 @@ select {
 
 .form-check-inline,
 .form-radio-inline {
-  display: inline-flex;
   align-items: center;
-  padding-left: px(5); // Override base .form-check
+  display: inline-flex;
   margin-right: $form-check-inline-margin-x;
+  padding-left: px(5); // Override base .form-check
 
   // Undo .form-check-input defaults and add some `margin-right`.
   .form-check-input,
   .form-radio-input {
-    position: static;
-    margin-top: 0;
-    margin-right: $form-check-inline-input-margin-x;
     margin-left: 0;
+    margin-right: $form-check-inline-input-margin-x;
+    margin-top: 0;
+    position: static;
   }
 }
 

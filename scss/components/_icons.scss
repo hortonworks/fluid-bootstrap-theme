@@ -11,10 +11,10 @@
   }
 
   .badge {
+    box-shadow: $box-shadow-lg;
+    left: px(-7);
     position: relative;
     top: px(-7);
-    left: px(-7);
-    box-shadow: $box-shadow-lg;
   }
 }
 
