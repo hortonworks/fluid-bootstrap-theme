@@ -53,7 +53,7 @@
     min-width: $layout-min-width;
     height: $wizard-navbar-height;
     padding: $wizard-padding-y $wizard-padding-x;
-    background-color: $white;
+    background-color: color("white");
     border-top: $border-width $body-bg solid;
     justify-content: flex-end;
   }

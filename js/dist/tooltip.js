@@ -8,7 +8,7 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 var isTruncated = function isTruncated(element) {
-  return element.clientWidth < element.scrollWidth;
+  return element.clientWidth < element.scrollWidth || element.clientHeight < element.scrollHeight;
 };
 
 var conditionalTooltipHandler = function conditionalTooltipHandler(event) {

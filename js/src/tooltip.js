@@ -7,7 +7,8 @@
  */
 
 const isTruncated = element => {
-  return element.clientWidth < element.scrollWidth;
+  return element.clientWidth < element.scrollWidth
+    || element.clientHeight < element.scrollHeight;
 };
 
 const conditionalTooltipHandler = event => {
