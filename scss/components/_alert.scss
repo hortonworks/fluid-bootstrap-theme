@@ -59,7 +59,7 @@
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
     color: theme-color("default");
-    background-color: $white;
+    background-color: color("white");
     border-color: theme-color-level($color, $alert-border-level);
 
     .alert-heading,
