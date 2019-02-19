@@ -7,7 +7,7 @@
  */
 
 .modal.show .modal-dialog {
-  transform: transform(0, 0); // Bootstrap 4.3: Ensure that the modal establishes a new containing box for fixed positioning
+  transform: translate(0, 0); // Bootstrap 4.3: Ensure that the modal establishes a new containing box for fixed positioning
 }
 
 .modal-dialog-auto .modal-content {
