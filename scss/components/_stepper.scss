@@ -12,6 +12,7 @@
   cursor: default;
   counter-reset: stepper;
   background-color: inherit;
+  font-size: $stepper-font-size;
 
   &.stepper-light {
     color: text-color("light");
@@ -49,21 +50,23 @@
     }
   }
 
+  &:not(.stepper-horizontal) {
+
+    .title,
+    .desc {
+      @include multiLineEllipsis($lineHeight: $line-height-sm);
+    }
+  }
+
   // stylelint-disable selector-no-qualifying-type
   li {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: $stepper-step-size;
-    white-space: nowrap;
+    min-height: $stepper-step-size;
     list-style: none;
     background-color: inherit;
-
-    * {
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
 
     &::before {
       position: absolute;
@@ -89,7 +92,7 @@
 
       &::after {
         position: absolute;
-        top: 50%;
+        top: 75%;
         left: $stepper-icon-size * -1;
         z-index: 1;
         width: 1px;
@@ -105,11 +108,16 @@
     }
 
     &:not(.complete) {
-      pointer-events: none;
+
+      a {
+        cursor: default;
+        text-decoration: none;
+      }
     }
 
     &.active {
       font-weight: $font-weight-bold;
+      color: gray("400");
 
       &::before {
         font-weight: $font-weight-normal;
@@ -132,9 +140,15 @@
       }
     }
 
+    .title {
+      background-color: inherit;
+    }
+
     .desc {
-      font-size: $font-size-sm;
+      background-color: inherit;
+      font-size: $stepper-desc-font-size;
       font-weight: $font-weight-normal;
+      padding-top: px(2);
     }
   }
   // stylelint-enable
