@@ -29,7 +29,7 @@
 .navbar.navbar-header {
   min-width: $layout-min-width;
   height: calc(#{$navbar-brand-height} + #{$border-width});
-  background-color: $white;
+  background-color: color("white");
   border-bottom: $border-width $body-bg solid;
 
   + * {
@@ -343,7 +343,7 @@
 
         .dropdown-toggle {
           position: absolute;
-          top: 0;
+          top: px(8);
           right: px(8);
           width: px(19);
           height: $navbar-nav-link-height;
@@ -352,7 +352,7 @@
           &::after {
             margin-left: px(4);
             font-family: fluidicons, system-ui;
-            line-height: 1.15;
+            line-height: $line-height-sm;
             vertical-align: middle;
             content: ":";
             border: 0;

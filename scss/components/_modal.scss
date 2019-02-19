@@ -6,6 +6,14 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+.modal.show .modal-dialog {
+  transform: transform(0, 0); // Bootstrap 4.3: Ensure that the modal establishes a new containing box for fixed positioning
+}
+
+.modal-dialog-auto .modal-content {
+  width: auto;
+}
+
 .modal-content {
   box-shadow: $box-shadow-lg;
 }
