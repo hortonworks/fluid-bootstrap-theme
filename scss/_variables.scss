@@ -1069,6 +1069,21 @@ $carousel-control-next-icon-bg:     str-replace(url("data:image/svg+xml;charset=
 $carousel-transition:               transform .6s ease !default; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
 
 
+// Spinners
+
+$spinner-width:         2rem !default;
+$spinner-height:        $spinner-width !default;
+$spinner-border-width:  .25em !default;
+
+$spinner-width-sm:        1rem !default;
+$spinner-height-sm:       $spinner-width-sm !default;
+$spinner-border-width-sm: .2em !default;
+
+$spinner-width-lg:        6rem;
+$spinner-height-lg:       $spinner-width-lg;
+$spinner-border-width-lg: .5rem;
+
+
 // Close
 
 $close-font-size:                   px(14);
