@@ -13,8 +13,8 @@
   }
 
   &::before {
-    font-family: fluidicons, system-ui;
     content: "*";
+    font-family: fluidicons, system-ui;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

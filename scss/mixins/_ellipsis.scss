@@ -7,28 +7,28 @@
  */
 
 @mixin multiLineEllipsis($bgColor: inherit, $lineCount: 2, $lineHeight: $line-height-base){
-  overflow: hidden;
-  position: relative;
   line-height: $lineHeight;
-  max-height: $lineCount * $lineHeight * 1em;
-  text-align: justify;
   margin-right: -1em;
+  max-height: $lineCount * $lineHeight * 1em;
+  overflow: hidden;
   padding-right: 1em;
+  position: relative;
+  text-align: justify;
 
-  &:before {
+  &::before {
+    bottom: 0;
     content: "\02026";
     position: absolute;
     right: 5px;
-    bottom: 0;
   }
 
-  &:after {
+  &::after {
+    background: $bgColor;
     content: "";
+    height: 1em;
+    margin-top: .2em;
     position: absolute;
     right: 5px;
     width: 1em;
-    height: 1em;
-    margin-top: 0.2em;
-    background: $bgColor;
   }
 }

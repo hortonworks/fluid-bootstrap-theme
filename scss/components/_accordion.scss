@@ -20,18 +20,18 @@
     }
 
     .card-header {
-      font-size: px(18);
-      line-height: px(20);
-      cursor: pointer;
       background-color: inherit;
       border-bottom: 0;
+      cursor: pointer;
+      font-size: px(18);
+      line-height: px(20);
 
       &::after {
+        color: $link;
+        content: theme-icon("collapse");
         float: right;
         font-family: fluidicons, system-ui;
         font-size: px(20);
-        color: $link;
-        content: theme-icon("collapse");
       }
 
       &.collapsed::after {

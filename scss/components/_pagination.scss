@@ -9,10 +9,10 @@
 // stylelint-disable selector-no-qualifying-type, selector-max-type, selector-max-class, selector-max-combinators, selector-max-compound-selectors
 
 nav.pagination {
-  position: relative;
-  justify-content: flex-end;
-  height: $input-height;
   font-size: $font-size-sm;
+  height: $input-height;
+  justify-content: flex-end;
+  position: relative;
 
   > span.fade.show {
     align-self: center;
@@ -21,9 +21,9 @@ nav.pagination {
   }
 
   > div.fade {
+    display: inherit;
     position: absolute;
     right: calc((#{$pagination-icon-font-size} + #{$grid-gutter-width}) * 2 + #{$pagination-text-margin-right});
-    display: inherit;
 
     .form-group {
       font-size: 0; // remove white space between inline elements
@@ -33,8 +33,8 @@ nav.pagination {
       }
 
       label {
-        margin-right: px(2);
         line-height: $input-height;
+        margin-right: px(2);
         vertical-align: top;
       }
 
@@ -45,9 +45,9 @@ nav.pagination {
 
       .form-control {
         display: inline-block;
-        width: px(32);
         height: $input-height;
         text-align: center;
+        width: px(32);
       }
 
       .btn.dropdown-toggle {
@@ -63,21 +63,21 @@ nav.pagination {
         .dropdown-menu {
           flex-wrap: wrap;
           justify-content: space-evenly;
-          width: px(106);
           min-width: 0;
           padding: px(4);
+          width: px(106);
 
           &.show {
             display: flex;
           }
 
           .page-item .page-link {
-            min-width: $font-size-sm * 2;
             height: $font-size-sm * 2;
-            padding: 0;
-            padding-right: px(5, $font-size-sm);
-            padding-left: px(5, $font-size-sm);
             line-height: 2;
+            min-width: $font-size-sm * 2;
+            padding: 0;
+            padding-left: px(5, $font-size-sm);
+            padding-right: px(5, $font-size-sm);
             text-align: center;
           }
         }
@@ -88,8 +88,8 @@ nav.pagination {
   &:hover {
 
     > span.fade.show {
-      pointer-events: none;
       opacity: 0;
+      pointer-events: none;
     }
 
     > div.fade {
@@ -98,17 +98,17 @@ nav.pagination {
   }
 
   > .page-link {
-    height: $input-height;
-    padding: 0;
-    margin-right: $grid-gutter-width / 2;
-    margin-left: $grid-gutter-width / 2;
-    font-size: $pagination-icon-font-size;
-    line-height: $input-height;
-    color: text-color("default");
-    text-align: center;
     background-color: transparent;
     border: none;
     border-radius: $border-radius;
+    color: text-color("default");
+    font-size: $pagination-icon-font-size;
+    height: $input-height;
+    line-height: $input-height;
+    margin-left: $grid-gutter-width / 2;
+    margin-right: $grid-gutter-width / 2;
+    padding: 0;
+    text-align: center;
 
     &.disabled {
       color: text-color("light");
@@ -126,7 +126,7 @@ nav.pagination {
   }
 
   .page-link {
-    margin-left: 0;
     border-color: transparent;
+    margin-left: 0;
   }
 }

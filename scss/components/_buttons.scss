@@ -11,8 +11,8 @@
   text-transform: uppercase;
 
   &.btn-primary {
-    color: color("white");
     border-color: theme-color("primary");
+    color: color("white");
   }
 
   &.btn-secondary {
@@ -26,8 +26,8 @@
   }
 
   &.btn-link {
-    color: $link-color;
     border-color: transparent;
+    color: $link-color;
   }
 
   + .btn:not(.btn-link) {
