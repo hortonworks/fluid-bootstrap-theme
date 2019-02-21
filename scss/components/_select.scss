@@ -19,9 +19,9 @@ form {
     text-transform: none;
 
     &:not([class*="btn-"]) {
-      color: $input-color;
       background-color: $input-bg;
       border: $input-border-width solid $input-border-color;
+      color: $input-color;
       outline: 0 !important; // stylelint-disable-line declaration-no-important
       @include form-control-focus();
     }
@@ -38,11 +38,11 @@ form {
     .dropdown-toggle {
 
       &:not([class*="btn-"]) {
-        color: $input-focus-color;
         background-color: $input-focus-bg;
         border-color: $input-focus-border-color;
-        outline: 0 !important; // stylelint-disable-line declaration-no-important
         box-shadow: $input-focus-box-shadow;
+        color: $input-focus-color;
+        outline: 0 !important; // stylelint-disable-line declaration-no-important
       }
 
       @each $color, $value in $theme-colors {

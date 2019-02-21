@@ -25,8 +25,8 @@
   }
 
   caption {
-    font-size: $font-size-lg;
     caption-side: top;
+    font-size: $font-size-lg;
   }
 
   tr.active {
@@ -65,9 +65,9 @@
 
     &::before,
     &::after {
+      content: "";
       display: block;
       height: $table-border-width;
-      content: "";
     }
   }
 

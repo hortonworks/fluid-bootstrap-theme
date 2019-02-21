@@ -7,16 +7,16 @@
  */
 
 ul.actions { // stylelint-disable-line selector-no-qualifying-type
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .actions {
 
   li {
     display: inline-block;
-    margin-right: px(10);
     list-style: none;
+    margin-right: px(10);
   }
 
   .icon {
@@ -26,12 +26,12 @@ ul.actions { // stylelint-disable-line selector-no-qualifying-type
   .dropdown-toggle {
 
     &::after {
-      margin-left: px(-2);
+      border: 0;
+      content: ":";
       font-family: fluidicons, system-ui;
       font-size: px(14);
+      margin-left: px(-2);
       vertical-align: inherit;
-      content: ":";
-      border: 0;
     }
   }
 }

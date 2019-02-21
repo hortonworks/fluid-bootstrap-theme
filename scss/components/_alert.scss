@@ -7,11 +7,11 @@
  */
 
 .alert {
-  display: flex;
   align-items: center;
-  margin-bottom: 0;
-  font-size: $font-size-sm;
   box-shadow: $box-shadow-lg;
+  display: flex;
+  font-size: $font-size-sm;
+  margin-bottom: 0;
 
   + .alert,
   + .alert-collapse .alert {
@@ -23,9 +23,9 @@
   }
 
   &::before {
-    height: $alert-icon-font-size;
     font-family: fluidicons, system-ui;
     font-size: $alert-icon-font-size;
+    height: $alert-icon-font-size;
     line-height: 1;
   }
 
@@ -45,9 +45,9 @@
 .alert-dismissible {
 
   .close {
-    top: 2px;
-    right: 2px;
     padding: 0;
+    right: 2px;
+    top: 2px;
   }
 }
 
@@ -58,9 +58,9 @@
 
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
-    color: theme-color("default");
     background-color: color("white");
     border-color: theme-color-level($color, $alert-border-level);
+    color: theme-color("default");
 
     .alert-heading,
     &::before {

@@ -37,9 +37,9 @@
 
   > .container,
   > .container-fluid {
-    width: auto;
-    margin-right: -$grid-gutter-width;
     margin-left: -$grid-gutter-width;
+    margin-right: -$grid-gutter-width;
+    width: auto;
   }
 
   + .card-footer {
@@ -48,14 +48,14 @@
 }
 
 .card-subtitle {
-  margin-top: 0;
   margin-bottom: $card-spacer-y / 2;
+  margin-top: 0;
 }
 
 .card-header-tabs,
 .card-header-pills {
-  margin-right: 0;
   margin-left: 0;
+  margin-right: 0;
 }
 
 .card-group,
@@ -76,8 +76,8 @@
 .card-group {
 
   .card {
-    border-right-width: $border-width;
     border-left-width: $border-width;
+    border-right-width: $border-width;
 
     &:first-of-type {
       border-left-width: 0;

@@ -12,8 +12,8 @@
 
   .navbar-header {
     height: $wizard-navbar-height;
-    padding: $wizard-padding-y $wizard-padding-x;
     margin-left: 0;
+    padding: $wizard-padding-y $wizard-padding-x;
   }
 
   .wizard-header {
@@ -21,12 +21,12 @@
   }
 
   .wizard-body {
-    padding-top: $wizard-padding-x;
-    padding-right: $wizard-padding-x;
+    margin-left: $wizard-navbar-width;
+    margin-top: $wizard-navbar-height;
     padding-bottom: $wizard-padding-x;
     padding-left: $wizard-padding-x;
-    margin-top: $wizard-navbar-height;
-    margin-left: $wizard-navbar-width;
+    padding-right: $wizard-padding-x;
+    padding-top: $wizard-padding-x;
 
     > .container,
     > .container-fluid {
@@ -35,27 +35,27 @@
   }
 
   .navbar-primary {
-    top: calc(#{$wizard-navbar-height} - #{$border-width});
-    z-index: 1040;
-    width: $wizard-navbar-width;
     height: calc(100% - (#{$wizard-navbar-height} - #{$border-width}) * 2);
-    padding: $wizard-padding-x;
     margin-bottom: $wizard-navbar-height;
+    padding: $wizard-padding-x;
+    top: calc(#{$wizard-navbar-height} - #{$border-width});
+    width: $wizard-navbar-width;
+    z-index: 1040;
   }
 
   .navbar-footer {
-    padding: $wizard-padding-x;
     margin-bottom: $wizard-navbar-height;
     margin-left: $wizard-navbar-width;
+    padding: $wizard-padding-x;
   }
 
   .navbar-wizard {
-    min-width: $layout-min-width;
-    height: $wizard-navbar-height;
-    padding: $wizard-padding-y $wizard-padding-x;
     background-color: color("white");
     border-top: $border-width $body-bg solid;
+    height: $wizard-navbar-height;
     justify-content: flex-end;
+    min-width: $layout-min-width;
+    padding: $wizard-padding-y $wizard-padding-x;
   }
 
   .btn {
@@ -75,9 +75,9 @@
 
     > .modal-dialog > .modal-content {
       > .modal-header {
+        border-bottom: $border-width $body-bg solid;
         height: $wizard-navbar-height;
         padding: $wizard-padding-y $wizard-padding-x;
-        border-bottom: $border-width $body-bg solid;
 
         .modal-title {
           @extend .h1;
@@ -85,34 +85,34 @@
       }
 
       > .modal-body {
-        max-height: 75vh;
-        padding: $wizard-padding-x;
-        overflow: auto;
-        color: inherit;
         background-color: theme-color("light");
+        color: inherit;
+        max-height: 75vh;
+        overflow: auto;
+        padding: $wizard-padding-x;
       }
 
       > .modal-footer {
+        border-top: $border-width $body-bg solid;
         height: $wizard-navbar-height;
         padding: $wizard-padding-y $wizard-padding-x;
-        border-top: $border-width $body-bg solid;
       }
     }
 
     .navbar-primary {
-      position: fixed;
       left: 0;
+      position: fixed;
 
       // test for IE
       @media screen\0 {
+        height: 100%;
         position: absolute;
         top: 0;
-        height: 100%;
       }
 
       ~ * {
-        padding: 0;
         margin-left: $wizard-navbar-width;
+        padding: 0;
       }
     }
   }

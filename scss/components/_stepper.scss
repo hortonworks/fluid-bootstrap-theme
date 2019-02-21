@@ -7,12 +7,12 @@
  */
 
 .stepper {
-  padding-left: $stepper-padding;
-  margin: 0;
-  cursor: default;
-  counter-reset: stepper;
   background-color: inherit;
+  counter-reset: stepper;
+  cursor: default;
   font-size: $stepper-font-size;
+  margin: 0;
+  padding-left: $stepper-padding;
 
   &.stepper-light {
     color: text-color("light");
@@ -24,16 +24,16 @@
 
     li {
       display: inline-block;
-      width: $stepper-step-size-horizontal;
       height: auto;
       padding-top: $stepper-padding;
       text-align: center;
-      white-space: normal;
       vertical-align: top;
+      white-space: normal;
+      width: $stepper-step-size-horizontal;
 
       &::before {
-        top: 0;
         left: 50%;
+        top: 0;
         transform: translateX(-50%);
       }
 
@@ -41,10 +41,10 @@
         margin: 0;
 
         &::after {
-          top: 14px;
-          left: 50%;
-          width: $stepper-step-size-horizontal;
           height: 1px;
+          left: 50%;
+          top: 14px;
+          width: $stepper-step-size-horizontal;
         }
       }
     }
@@ -60,45 +60,44 @@
 
   // stylelint-disable selector-no-qualifying-type
   li {
-    position: relative;
+    background-color: inherit;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: $stepper-step-size;
     list-style: none;
-    background-color: inherit;
+    min-height: $stepper-step-size;
+    position: relative;
 
     &::before {
-      position: absolute;
-      top: 50%;
-      left: $stepper-padding * -1;
-      z-index: 2;
-      width: $stepper-icon-size;
-      height: $stepper-icon-size;
-      font-size: px(16);
-      line-height: calc(#{$stepper-icon-size} - 1px);
-      text-align: center;
-      content: counter(stepper);
-      counter-increment: stepper;
-      background-color: color("white"); // fallback value
-      background-color: inherit; // this should come after background-color: color("white")
+      background-color: inherit;
       border: $border-width color("gray") solid;
       border-radius: 100%;
+      content: counter(stepper);
+      counter-increment: stepper;
+      font-size: px(16);
+      height: $stepper-icon-size;
+      left: $stepper-padding * -1;
+      line-height: calc(#{$stepper-icon-size} - 1px);
+      position: absolute;
+      text-align: center;
+      top: 50%;
       transform: translateY(-50%);
+      width: $stepper-icon-size;
+      z-index: 2;
     }
 
     &:not(:last-child) {
       margin-bottom: $stepper-step-size;
 
       &::after {
+        background-color: color("gray");
+        content: " ";
+        height: $stepper-step-size * 2;
+        left: $stepper-icon-size * -1;
         position: absolute;
         top: 75%;
-        left: $stepper-icon-size * -1;
-        z-index: 1;
         width: 1px;
-        height: $stepper-step-size * 2;
-        content: " ";
-        background-color: color("gray");
+        z-index: 1;
 
         // test for IE
         @media screen\0 {
@@ -116,23 +115,23 @@
     }
 
     &.active {
-      font-weight: $font-weight-bold;
       color: gray("400");
+      font-weight: $font-weight-bold;
 
       &::before {
-        font-weight: $font-weight-normal;
-        color: theme-color("primary");
         border-color: theme-color("primary");
+        color: theme-color("primary");
+        font-weight: $font-weight-normal;
       }
     }
 
     &.complete {
       &::before {
-        font-family: fluidicons, system-ui;
-        color: color("white");
-        content: "=";
         background-color: theme-color("primary");
         border-color: theme-color("primary");
+        color: color("white");
+        content: "=";
+        font-family: fluidicons, system-ui;
       }
 
       &:not(:last-child)::after {
