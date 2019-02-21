@@ -6,15 +6,32 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-const isTruncated = element => {
-  return element.clientWidth < element.scrollWidth
-    || element.clientHeight < element.scrollHeight;
+const isTruncatedX = (element, tolerance) => {
+  return element.clientWidth + tolerance < element.scrollWidth;
 };
 
-const conditionalTooltipHandler = event => {
+const isTruncatedY = (element, tolerance) => {
+  return element.clientHeight + tolerance < element.scrollHeight;
+};
+
+const conditionalTooltipHandler = (event, tolerance) => {
+  const defaultTolerance = 2;
+
   switch (event.target.getAttribute('data-condition')) {
     case 'truncated':
-      if (!isTruncated(event.target)) {
+    case 'truncated-x':
+      if (!isTruncatedX(event.target, tolerance || defaultTolerance)) {
+        event.preventDefault();
+      }
+      break;
+    case 'truncated-y':
+      if (!isTruncatedY(event.target, tolerance || defaultTolerance)) {
+        event.preventDefault();
+      }
+      break;
+    case 'truncated-both':
+      if (!isTruncatedX(event.target, tolerance || defaultTolerance)
+        && !isTruncatedY(event.target, tolerance || defaultTolerance)) {
         event.preventDefault();
       }
   }
