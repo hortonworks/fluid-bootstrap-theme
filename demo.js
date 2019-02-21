@@ -161,7 +161,7 @@ $(function () {
     $('[data-toggle="popover"]').popover();
   }
   if ($.fn.tooltip) {
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip({ boundary: 'window' });
   }
 
   updateContainerExample();
