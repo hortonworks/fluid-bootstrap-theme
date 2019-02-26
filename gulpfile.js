@@ -117,7 +117,10 @@ if (!args.nodeps) {
 js_bundle_src.push(js_build_dest + '*.js');
 
 const js_minify_src = js_bundle_dest + js_bundle_name;
-const js_docs_src = './demo.js';
+const js_docs_src = [
+  './demo.js',
+  './node_modules/list.js/dist/list.js'
+];
 
 // tasks
 gulp.task('copy-fonts', () =>
