@@ -396,7 +396,7 @@
     line-height: $navbar-brand-height;
     margin: 0;
     padding: 0;
-    padding-left: 12.5px;
+    padding-left: 12px;
     text-transform: uppercase;
     white-space: nowrap;
     width: 100%; // set explicitly for IE
@@ -411,7 +411,7 @@
         font-size: px(30);
         line-height: px(60); // IE
         position: absolute;
-        right: 12.5px;
+        right: 12px;
         z-index: $zindex-fixed; // Edge
       }
 
