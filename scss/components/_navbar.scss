@@ -101,7 +101,7 @@
       .navbar-brand {
 
         .icon:first-child {
-          margin-right: px(8);
+          margin-right: 8px;
         }
       }
 
@@ -114,13 +114,13 @@
           width: $navbar-width;
 
           &.status::before {
-            left: px(30) !important; // !important ensures this remains set during collapse animation
+            left: 30px !important; // !important ensures this remains set during collapse animation
           }
 
           .icon:first-child {
             font-size: $navbar-nav-link-icon-size !important;  // !important ensures this remains set during collapse animation
             line-height: 0 !important;                         // !important ensures this remains set during collapse animation
-            margin-right: px(8) !important;                    // !important ensures this remains set during collapse animation
+            margin-right: 8px !important;                    // !important ensures this remains set during collapse animation
             width: $navbar-nav-link-icon-size !important;      // !important ensures this remains set during collapse animation
           }
         }
@@ -155,15 +155,15 @@
 
         &[data-toggle="collapse"]::after {
           font-size: px(16);
-          left: px(32);
+          left: 32px;
           margin: 0;
           position: absolute;
-          top: px(-18);
+          top: -18px;
           -ms-transform: translateY(px(29)); /* IE */ // stylelint-disable-line property-no-vendor-prefix
         }
 
         .icon:first-child {
-          margin-right: px(16);
+          margin-right: 16px;
         }
       }
 
@@ -177,7 +177,7 @@
           position: relative;
           top: $navbar-nav-link-height-collapsed * -1;
           transition: none;
-          width: $navbar-width - px(14);
+          width: $navbar-width - 14px;
 
           &.show {
             display: none;
@@ -187,10 +187,10 @@
           .nav-item > .nav-link {
             height: $navbar-nav-link-height;
             overflow: hidden;
-            padding-left: px(26);
+            padding-left: 26px;
 
             &.status::before {
-              left: px(16);
+              left: 16px;
             }
 
             .icon:first-child {
@@ -220,10 +220,10 @@
           }
 
           .icon:first-child {
-            font-size: px(19);
-            line-height: px(14);
-            margin-right: px(16);
-            width: px(19);
+            font-size: 19px;
+            line-height: 14px;
+            margin-right: 16px;
+            width: 19px;
           }
         }
 
@@ -251,15 +251,15 @@
 
         &.nav-link,
         & > .nav-link {
-          padding-right: px(32);
+          padding-right: 32px;
 
           &::after {
             content: theme-icon("collapse");
             font-family: fluidicons, system-ui;
             font-size: px(20);
             position: absolute;
-            right: px(12);
-            top: px(10);
+            right: 12px;
+            top: 10px;
             //@include transition($transition-collapse-all);
           }
         }
@@ -268,11 +268,11 @@
 
           &.nav-link,
           & > .nav-link {
-            padding-right: px(40);
+            padding-right: 40px;
           }
 
           & .dropdown-toggle {
-            right: px(28);
+            right: 28px;
           }
         }
       }
@@ -303,7 +303,7 @@
         height: $navbar-nav-link-height;
         line-height: 1;
         overflow: hidden;
-        padding: px(12) px(16);
+        padding: 12px 16px;
         position: relative;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -320,15 +320,15 @@
         }
 
         &.status::before {
-          left: px(30);
+          left: 30px;
         }
 
         .icon:first-child {
           @include transition($transition-collapse-all);
           font-size: $navbar-nav-link-icon-size;
           line-height: 0;
-          margin-right: px(8);
-          margin-top: px(8);
+          margin-right: 8px;
+          margin-top: 8px;
           vertical-align: text-top;
           width: $navbar-nav-link-icon-size;
         }
@@ -338,23 +338,23 @@
 
         &.nav-link,
         & > .nav-link {
-          padding-right: px(24);
+          padding-right: 24px;
         }
 
         .dropdown-toggle {
           color: inherit;
           height: $navbar-nav-link-height;
           position: absolute;
-          right: px(8);
-          top: px(8);
-          width: px(19);
+          right: 8px;
+          top: 8px;
+          width: 19px;
 
           &::after {
             border: 0;
             content: ":";
             font-family: fluidicons, system-ui;
             line-height: $line-height-sm;
-            margin-left: px(4);
+            margin-left: 4px;
             vertical-align: middle;
           }
         }
@@ -364,9 +364,9 @@
         }
 
         .dropdown-menu {
-          left: px(154);
+          left: 154px;
           position: fixed;
-          top: px(36);
+          top: 36px;
         }
       }
 
@@ -396,7 +396,7 @@
     line-height: $navbar-brand-height;
     margin: 0;
     padding: 0;
-    padding-left: px(12.5);
+    padding-left: 12px;
     text-transform: uppercase;
     white-space: nowrap;
     width: 100%; // set explicitly for IE
@@ -411,7 +411,7 @@
         font-size: px(30);
         line-height: px(60); // IE
         position: absolute;
-        right: px(12.5);
+        right: 12px;
         z-index: $zindex-fixed; // Edge
       }
 
@@ -431,7 +431,7 @@
       @include transition($transition-collapse-all);
       flex-shrink: 0;
       font-size: $navbar-nav-link-icon-size-collapsed;
-      margin-right: px(8);
+      margin-right: 8px;
       width: $navbar-nav-link-icon-size-collapsed;
     }
 
@@ -461,7 +461,7 @@
     border-radius: 0;
     bottom: 0;
     display: block;
-    height: px(48);
+    height: 48px;
     left: 0; // set explicitly for IE
     padding: 0;
     position: absolute;
@@ -530,7 +530,7 @@
   display: flex;
   flex-direction: row !important; // !important ensures this remains set during collapse animation
   flex-wrap: wrap;
-  max-width: px(617);
+  max-width: 617px;
   padding: 0;
   padding-left: $navbar-brand-menu-spacing;
   padding-right: $navbar-brand-menu-spacing;
