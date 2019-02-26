@@ -14,8 +14,9 @@
 
 // $root-font-size is assigned as the font-size of the root <html> element in _reboot.scss,
 // which means that it is used as the basis for all sizes specified in rems.
-// When you need to specify a size in px, use the px() function instead.
-// It converts pixels to rems using the value of $root-font-size.
+// When you need to specify a size relative to font size and you know the size you want in px,
+// the px() function will help. It converts pixels to rems using the value of $root-font-size.
+// On the other hand, if you know the size you want in rems, you should use rems.
 $root-font-size: 14px;
 
 
@@ -344,13 +345,13 @@ $line-height-sm:              1.15; // Bootstrap's reboot line height
 $border-width:                1px;
 $border-color:                $gray-400;
 
-$border-radius:               px(2);
-$border-radius-lg:            px(4);
-$border-radius-sm:            px(2);
+$border-radius:               2px;
+$border-radius-lg:            4px;
+$border-radius-sm:            2px;
 
-$box-shadow-sm:               0 px(2) px(3) 0 rgba($black, .1); // for static components - same as below, please do not use
-$box-shadow:                  0 px(2) px(3) 0 rgba($black, .1); // for static components - use this one
-$box-shadow-lg:               0 px(2) px(3) px(2) rgba($black, .175); // for ephemeral components
+$box-shadow-sm:               0 2px 3px 0 rgba($black, .1); // for static components - same as below, please do not use
+$box-shadow:                  0 2px 3px 0 rgba($black, .1); // for static components - use this one
+$box-shadow-lg:               0 2px 3px 2px rgba($black, .175); // for ephemeral components
 
 $component-active-color:      $white !default;
 $component-active-bg:         $blue;
@@ -809,8 +810,8 @@ $navbar-light-toggler-border-color: rgba($black, .1) !default;
 
 // Fluid Navbar
 
-$navbar-width:                      px(200);
-$navbar-width-sm:                   px(50);
+$navbar-width:                      200px;
+$navbar-width-sm:                   50px;
 
 // Pagination
 
@@ -1132,7 +1133,7 @@ $stepper-desc-font-size:            $font-size-sm;
 // Wizard
 
 $wizard-navbar-height:              6rem;
-$wizard-navbar-width:               px(250);
+$wizard-navbar-width:               250px;
 $wizard-padding-y:                  1.25rem;
 $wizard-padding-x:                  1.75rem;
 $wizard-btn-min-width:              7rem;

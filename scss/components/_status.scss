@@ -7,14 +7,14 @@
  */
 
 .status::before {
-  border-radius: px(4);
+  border-radius: 4px;
   content: " ";
-  height: px(8);
-  margin-right: px(5);
+  height: 8px;
+  margin-right: 5px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: px(8);
+  width: 8px;
 }
 
 @each $color, $value in $theme-colors {
