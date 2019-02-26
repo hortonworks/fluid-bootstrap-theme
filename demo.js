@@ -240,14 +240,72 @@ function cancelConfirmation(selector) {
       }
     });
   }, false);
+})();
+//#endregion
 
-  // bOf Dashrows Component JS -->
-  $('.js-btn-a').click(function() {
+//#region Dashrows
+$(function () {
+  $('.js-btn-a').click(function () {
     $('.js-target-a').toggleClass('expanded');
   });
-  $('.js-btn-b').click(function() {
+
+  $('.js-btn-b').click(function () {
     $('.js-target-b').toggleClass('expanded');
   });
-  // eOf Dashrows Component JS -->
-})();
+});
+//#endregion
+
+//#region Sortable table example
+// Uses List.js only for demo purposes to show how a Fluid sortable table should behave
+const toggleRowSelection = target => {
+  const getRow = el => {
+    do {
+      if (el.matches('tr')) {
+        return el;
+      }
+      el = el.parentElement || el.parentNode;
+    } while (el !== null && el.nodeType === 1);
+  }
+
+  const row = getRow(target);
+  if (row) {
+    const checkbox = row.querySelector('tr input[type="checkbox"]');
+    if (checkbox) {
+      checkbox.checked = target.checked;
+      target.checked ? row.classList.add('selected') : row.classList.remove('selected');
+    }
+  }
+}
+
+const checkHandler = event => {
+  toggleRowSelection(event.target);
+  if (!event.target.checked) {
+    document.getElementById('checkAll').checked = false;
+  }
+}
+
+const checkAllHandler = event => {
+  const table = document.getElementById('sortable-example');
+
+  if (table) {
+    const checkboxes = table.querySelectorAll('tbody input[type="checkbox"]');
+    Array.prototype.forEach.call(checkboxes, checkbox => {
+      checkbox.checked = event.target.checked;
+      toggleRowSelection(checkbox);
+    });
+  }
+}
+
+$(function () {
+  new List('sortable-example', {
+    listClass: "table-data",
+    sortClass: "sortable",
+    valueNames: ['data-status', 'data-name', 'data-username', 'data-login']
+  });
+
+  document.getElementById('checkAll').addEventListener('click', checkAllHandler);
+  Array.prototype.forEach.call(document.querySelectorAll('#sortable-example tbody input[type="checkbox"]'), checkbox => {
+    checkbox.addEventListener('click', checkHandler);
+  });
+});
 //#endregion

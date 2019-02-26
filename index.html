@@ -2190,8 +2190,25 @@ of all or any part of the contents of this file is strictly prohibited.
             <div class="card">
               <div class="card-body">
                 <h3 class="card-title">Table</h3>
+                <p>This example demonstrates most of the basic table features, including:</p>
+                <ul>
+                  <li>Basic search box</li>
+                  <li>Global actions dropdown menu</li>
+                  <li>Column sorting by clicking on column headings indicated with blue arrows</li>
+                  <li>Select all by clicking the checkbox in the header row</li>
+                  <li>Actions component in each row displaying up to three icons or a dropdown menu</li>
+                  <li>Pagination control</li>
+                </ul>
+                <p>Note that checkboxes for row selection may be placed in either the left- or the rightmost position, as required by the application, although Fluid prefers them to be on the right to reduce the user's need to move the pointer.</p>
                 <header class="table-header">
-                  <div class="dropdown">
+                  <div class="table-caption">Example Title</div>
+                  <div class="input-group table-search">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+                    </div>
+                  </div>
+                  <div class="dropdown ml-2">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Actions
                     </button>
@@ -2202,14 +2219,13 @@ of all or any part of the contents of this file is strictly prohibited.
                     </div>
                   </div>
                 </header>
-                <table class="table table-hover">
-                  <caption>Example Title</caption>
-                  <thead class="">
+                <table id="sortable-example" class="table table-hover">
+                  <thead>
                     <tr>
-                      <th class="text-center">Status</th>
-                      <th>Name</th>
-                      <th>Username</th>
-                      <th>Last Login</th>
+                      <th class="sortable text-center" data-sort="data-status">Status</th>
+                      <th class="sortable" data-sort="data-name">Name</th>
+                      <th class="sortable" data-sort="data-username">Username</th>
+                      <th class="sortable" data-sort="data-login">Last Login</th>
                       <th>Actions</th>
                       <th class="text-center">
                         <div class="form-check">
@@ -2219,12 +2235,12 @@ of all or any part of the contents of this file is strictly prohibited.
                       </th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody class="table-data">
                     <tr>
-                      <td class="text-center text-base"><i class="icon icon-success"></td>
-                      <td class="primary"><a href="#">William Ross</a></td>
-                      <td>admiralbill</td>
-                      <td>2 days ago</td>
+                      <td class="text-center text-base data-status"><i class="icon icon-success"><span class="sr-only">Success</span></td>
+                      <td class="primary data-name"><a href="#">William Ross</a></td>
+                      <td class="data-username">admiralbill</td>
+                      <td class="data-login">2 days ago</td>
                       <td>
                         <ul class="actions">
                           <li>
@@ -2240,16 +2256,16 @@ of all or any part of the contents of this file is strictly prohibited.
                       </td>
                       <th scope="row" class="text-center">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="1" id="row1">
+                          <input class="form-check-input table-example-check" type="checkbox" value="1" id="row1">
                           <label class="form-check-label" for="row1"></label>
                         </div>
                       </th>
                     </tr>
-                    <tr class="active">
-                      <td class="text-center text-base"><i class="icon icon-warning"></td>
-                      <td class="primary"><a href="#">Benjamin Sisko</a></td>
-                      <td>brotherbenny</td>
-                      <td>Just now</td>
+                    <tr class="selected">
+                      <td class="text-center text-base data-status"><i class="icon icon-warning"><span class="sr-only">Warning</span></td>
+                      <td class="primary data-name"><a href="#">Benjamin Sisko</a></td>
+                      <td class="data-username">brotherbenny</td>
+                      <td class="data-login">Just now</td>
                       <td>
                         <div class="actions dropdown">
                           <a class="dropdown-toggle" href="#" role="button" id="actionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
@@ -2264,16 +2280,16 @@ of all or any part of the contents of this file is strictly prohibited.
                       </td>
                       <th scope="row" class="text-center">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="2" id="row2" checked>
+                          <input class="form-check-input table-example-check" type="checkbox" value="2" id="row2" checked>
                           <label class="form-check-label" for="row2"></label>
                         </div>
                       </th>
                     </tr>
                     <tr>
-                      <td class="text-center text-base"><i class="icon icon-danger"></td>
-                      <td class="primary"><a href="#">Miles O'Brien</a></td>
-                      <td>smiley</td>
-                      <td>5 hours ago</td>
+                      <td class="text-center text-base data-status"><i class="icon icon-danger"><span class="sr-only">Danger</span></td>
+                      <td class="primary data-name"><a href="#">Miles O'Brien</a></td>
+                      <td class="data-username">smiley</td>
+                      <td class="data-login">5 hours ago</td>
                       <td>
                         <ul class="actions">
                           <li>
@@ -2289,16 +2305,16 @@ of all or any part of the contents of this file is strictly prohibited.
                       </td>
                       <th scope="row" class="text-center">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="3" id="row3">
+                          <input class="form-check-input table-example-check" type="checkbox" value="3" id="row3">
                           <label class="form-check-label" for="row3"></label>
                         </div>
                       </th>
                     </tr>
                     <tr>
-                      <td class="text-center text-base"><i class="icon icon-info"></td>
-                      <td class="primary"><a href="#">Julian Bashir</a></td>
-                      <td>kukalaka</td>
-                      <td>Never</td>
+                      <td class="text-center text-base data-status"><i class="icon icon-info"><span class="sr-only">Info</span></td>
+                      <td class="primary data-name"><a href="#">Julian Bashir</a></td>
+                      <td class="data-username">kukalaka</td>
+                      <td class="data-login">Never</td>
                       <td>
                         <ul class="actions">
                           <li>
@@ -2314,8 +2330,8 @@ of all or any part of the contents of this file is strictly prohibited.
                       </td>
                       <th scope="row" class="text-center">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="3" id="row3">
-                          <label class="form-check-label" for="row3"></label>
+                          <input class="form-check-input table-example-check" type="checkbox" value="4" id="row4">
+                          <label class="form-check-label" for="row4"></label>
                         </div>
                       </th>
                     </tr>
@@ -2364,6 +2380,191 @@ of all or any part of the contents of this file is strictly prohibited.
                 </table>
               </div>
             </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Table with Primary Search</h3>
+                <p>When search is a primary function of a table (such as large data tables), the Rich Search component should be used. In this case, the search bar should be full-width on its own line, as shown below.</p>
+                <header class="table-header">
+                  <div class="table-caption">Example Title</div>
+                  <div class="dropdown ml-2">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Actions
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </header>
+                <div class="input-group table-search">
+                  <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+                  </div>
+                </div>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th class="sortable text-center" data-sort="data-status">Status</th>
+                      <th class="sortable" data-sort="data-name">Name</th>
+                      <th class="sortable" data-sort="data-username">Username</th>
+                      <th class="sortable" data-sort="data-login">Last Login</th>
+                      <th>Actions</th>
+                      <th class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="">
+                          <label class="form-check-label"></label>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-data">
+                    <tr>
+                      <td class="text-center text-base data-status"><i class="icon icon-success"><span class="sr-only">Success</span></td>
+                      <td class="primary data-name"><a href="#">William Ross</a></td>
+                      <td class="data-username">admiralbill</td>
+                      <td class="data-login">2 days ago</td>
+                      <td>
+                        <ul class="actions">
+                          <li>
+                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                          </li>
+                        </ul>
+                      </td>
+                      <th scope="row" class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input table-example-check" type="checkbox" value="1" id="row1a">
+                          <label class="form-check-label" for="row1a"></label>
+                        </div>
+                      </th>
+                    </tr>
+                    <tr class="selected">
+                      <td class="text-center text-base data-status"><i class="icon icon-warning"><span class="sr-only">Warning</span></td>
+                      <td class="primary data-name"><a href="#">Benjamin Sisko</a></td>
+                      <td class="data-username">brotherbenny</td>
+                      <td class="data-login">Just now</td>
+                      <td>
+                        <div class="actions dropdown">
+                          <a class="dropdown-toggle" href="#" role="button" id="actionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Send e-mail</a>
+                            <a class="dropdown-item" href="#">Follow</a>
+                            <a class="dropdown-item" href="#">View profile</a>
+                            <a class="dropdown-item" href="#">Edit</a>
+                            <a class="dropdown-item" href="#">Delete user</a>
+                          </div>
+                        </div>
+                      </td>
+                      <th scope="row" class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input table-example-check" type="checkbox" value="2" id="row2a" checked>
+                          <label class="form-check-label" for="row2a"></label>
+                        </div>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td class="text-center text-base data-status"><i class="icon icon-danger"><span class="sr-only">Danger</span></td>
+                      <td class="primary data-name"><a href="#">Miles O'Brien</a></td>
+                      <td class="data-username">smiley</td>
+                      <td class="data-login">5 hours ago</td>
+                      <td>
+                        <ul class="actions">
+                          <li>
+                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                          </li>
+                        </ul>
+                      </td>
+                      <th scope="row" class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input table-example-check" type="checkbox" value="3" id="row3a">
+                          <label class="form-check-label" for="row3a"></label>
+                        </div>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td class="text-center text-base data-status"><i class="icon icon-info"><span class="sr-only">Info</span></td>
+                      <td class="primary data-name"><a href="#">Julian Bashir</a></td>
+                      <td class="data-username">kukalaka</td>
+                      <td class="data-login">Never</td>
+                      <td>
+                        <ul class="actions">
+                          <li>
+                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                          </li>
+                        </ul>
+                      </td>
+                      <th scope="row" class="text-center">
+                        <div class="form-check">
+                          <input class="form-check-input table-example-check" type="checkbox" value="4" id="row4a">
+                          <label class="form-check-label" for="row4a"></label>
+                        </div>
+                      </th>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="6">
+                        <nav class="pagination" aria-label="Page navigation example">
+                          <div class="fade">
+                            <div class="form-group">
+                              <label for="itemsPerPage">Show:</label>
+                              <select id="itemsPerPage" class="selectpicker">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                              </select>
+                            </div>
+                            <div class="form-group dropdown">
+                              <label for="goToPage2">Go:</label>
+                              <input id="goToPage2" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <ul class="dropdown-menu">
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">500</a></li>
+                                <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1000</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <span class="fade show">1-10 of 1000</span>
+                          <a class="page-link disabled" href="#" aria-label="Previous">
+                            <i class="icon icon-previous" aria-hidden="true"></i>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="page-link" href="#" aria-label="Next">
+                            <i class="icon icon-next" aria-hidden="true"></i>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </nav>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -2714,6 +2915,7 @@ of all or any part of the contents of this file is strictly prohibited.
   <!-- jQuery first, then Bootstrap Bundle (includes Popper) -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/fluid-bootstrap.js"></script>
+  <script src="js/list.js"></script>
   <script src="js/demo.js"></script>
 </body>
 
