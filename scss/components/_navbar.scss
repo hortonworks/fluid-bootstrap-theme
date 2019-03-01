@@ -94,7 +94,8 @@
     &[style^="height"]:not(.show) {
       width: $navbar-width;
 
-      & ~ *:not(.popover):not(.tooltip):not(.modal) {
+      & ~ .navbar,
+      & ~ main {
         margin-left: $navbar-width;
       }
 
@@ -135,11 +136,9 @@
 
   &.collapse {
 
-    & ~ *:not(.popover):not(.tooltip):not(.modal) {
+    & ~ .navbar,
+    & ~ main {
       @include transition($transition-collapse-all);
-    }
-
-    &.show ~ *:not(.popover):not(.tooltip):not(.modal) {
       margin-left: $navbar-width;
     }
 
@@ -147,7 +146,8 @@
       display: flex;
       width: $navbar-width-sm;
 
-      & ~ *:not(.popover):not(.tooltip):not(.modal) {
+      & ~ .navbar,
+      & ~ main {
         margin-left: $navbar-width-sm;
       }
 

@@ -450,7 +450,7 @@ $table-active-bg:             $gray-300;
 
 $table-border-width:          $border-width !default;
 $table-border-color:          $gray-300 !default;
-$table-heading-border-color:  $gray-400;
+$table-head-border-color:     $gray-400;
 $table-hover-border-color:    #a7dff2;
 
 $table-head-bg:               $gray-200 !default;
@@ -1151,3 +1151,12 @@ $dashrows-row-padding:              px(10);
 $dashrows-row-primary-font-size:    $font-size-lg;
 $dashrows-row-secondary-font-size:  $font-size-sm;
 $dashrows-row-details-padding:      px(10);
+
+
+// Filter
+$filter-icon-width:                 px(11);
+$filter-key-width:                  px(100);
+$filter-input-width:                px(150);
+$filter-dropdown-height:            px(250);
+$filter-item-margin-x:              5px;
+$filter-item-margin-y:              2px;

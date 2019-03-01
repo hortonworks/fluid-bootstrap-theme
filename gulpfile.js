@@ -107,7 +107,8 @@ const js_transpile_src = './js/src/*.js';
 
 const js_deps = [
   './node_modules/bootstrap/dist/js/bootstrap.bundle.js',
-  './node_modules/bootstrap-select/dist/js/bootstrap-select.js'
+  './node_modules/bootstrap-select/dist/js/bootstrap-select.js',
+  './node_modules/javascript-autocomplete/auto-complete.js'
 ];
 
 let js_bundle_src = [];
@@ -228,11 +229,23 @@ gulp.task('build-docs-js', () =>
     .pipe(connect.reload())
 );
 
+/* These would be used if we ever have js or css files that are only used for the demo that need to be copied as-is. */
+// gulp.task('copy-docs-js', () =>
+//   gulp.src(js_docs_copy)
+//     .pipe(gulp.dest(js_docs_dest))
+//     .pipe(connect.reload())
+// );
+// gulp.task('copy-docs-css', () =>
+//   gulp.src(css_docs_copy)
+//     .pipe(gulp.dest(css_docs_dest))
+//     .pipe(connect.reload())
+// );
+
 gulp.task('clean', () => del([dist, `${docs}/*/**`, `${docs}/*`, js_build_dest], { force: true }));
 
 gulp.task('test', gulp.parallel('lint-sass'));
 
-gulp.task('build', gulp.parallel('copy-fonts', 'copy-html', 'build-sass', 'build-docs-sass', 'build-js', 'build-docs-js'));
+gulp.task('build', gulp.parallel('copy-fonts', 'copy-html', 'build-sass', 'build-docs-sass', 'build-js', 'build-docs-js'/*, 'copy-docs-js', 'copy-docs-css'*/));
 
 gulp.task('connect', done => {
   connect.server({
@@ -251,7 +264,9 @@ gulp.task('watch-sass', () => gulp.watch('./scss/**/*.scss', { ignoreInitial: fa
 gulp.task('watch-docs-sass', () => gulp.watch(sass_docs_src, { ignoreInitial: false }, gulp.series('build-docs-sass')));
 gulp.task('watch-js', () => gulp.watch(js_transpile_src, { ignoreInitial: false }, gulp.series('build-js')));
 gulp.task('watch-docs-js', () => gulp.watch(js_docs_src, { ignoreInitial: false }, gulp.series('build-docs-js')));
+// gulp.task('watch-docs-js-copy', () => gulp.watch(js_docs_copy, { ignoreInitial: false }, gulp.series('copy-docs-js')));
+// gulp.task('watch-docs-css-copy', () => gulp.watch(css_docs_copy, { ignoreInitial: false }, gulp.series('copy-docs-css')));
 
-gulp.task('watch', gulp.parallel('watch-fonts', 'watch-images', 'watch-html', 'watch-sass', 'watch-docs-sass', 'watch-js', 'watch-docs-js'));
+gulp.task('watch', gulp.parallel('watch-fonts', 'watch-images', 'watch-html', 'watch-sass', 'watch-docs-sass', 'watch-js', 'watch-docs-js'/*, 'watch-docs-js-copy', 'watch-docs-css-copy'*/));
 
 gulp.task('default', gulp.series('clean', 'connect', 'watch'));

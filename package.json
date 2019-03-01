@@ -51,6 +51,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylelint": "^8.0.0",
     "gulp-uglify": "^3.0.1",
+    "javascript-autocomplete": "^1.0.3",
     "postcss-import": "^12.0.1",
     "stylelint": "^9.10.1",
     "stylelint-config-twbs-bootstrap": "^0.3.0"
