@@ -8,10 +8,6 @@
 
 .card {
 
-  &:not(:last-child) {
-    margin-bottom: $card-margin;
-  }
-
   &:not([class*="bg-"]) {
 
     .card-header {
@@ -58,21 +54,6 @@
   margin-right: 0;
 }
 
-.card-group,
-.card-deck {
-  margin-bottom: $grid-gutter-width;
-
-  .card:last-child {
-    margin-bottom: 0;
-  }
-
-  @include media-breakpoint-up(sm) {
-    .card {
-      margin-bottom: 0;
-    }
-  }
-}
-
 .card-group {
 
   .card {
@@ -87,4 +68,8 @@
       border-right-width: 0;
     }
   }
+}
+
+.card-columns {
+  margin-bottom: -$grid-gutter-width;
 }
