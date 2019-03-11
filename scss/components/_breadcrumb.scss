@@ -6,18 +6,31 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-.breadcrumb {
+.breadcrumb-item {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-light;
 
-  .breadcrumb-item {
-    font-size: $font-size-lg;
+  &:not(:first-child) {
+    //padding-left: space(8);
+    padding-left: space(16);
+  }
 
-    &.active {
-      color: gray("900");
-    }
+  &.active {
+    color: text-color("default");
+  }
 
-    a {
-      color: gray("600");
-    }
+  a {
+    color: text-color("light");
+  }
+
+  & + .breadcrumb-item::before {
+    border-left: $border-width solid $border-color;
+    content: " ";
+    height: space(24);
+    padding-right: space(16);
+    position: relative;
+    top: -2px;
+    transform: skew(-34deg);
+    vertical-align: middle;
   }
 }
-

@@ -21,3 +21,7 @@
 @function px($pixels, $basis: 1rem) {
   @return (($pixels * 1px) / $root-font-size) * $basis;
 }
+
+@function space($key) {
+  @return map-get($spaces, $key);
+}

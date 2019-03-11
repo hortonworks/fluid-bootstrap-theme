@@ -6,8 +6,11 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+// stylelint-disable declaration-no-important
+
 html {
   font-size: $root-font-size;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 body {
