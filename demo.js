@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
  * Except as expressly permitted in a written agreement between you
@@ -145,12 +147,12 @@ const dismissAlertHandler = close => {
 };
 
 const dismissAllAlerts = () => {
-  $(".alert-container .alert").alert('close');
+  $('.alert-container .alert').alert('close');
 };
 //#endregion
 
 //#region Container example
-const updateContainerExample = function () {
+const updateContainerExample = () => {
   $('#documentWidth').text($('body').css('width'));
   $('#containerWidth').text($('#containerExample').css('width'));
   $('#containerFluidWidth').text($('#containerFluidExample').css('width'));
@@ -175,7 +177,7 @@ $(function () {
 //#region Wizard in modal
 let currentStep;
 
-function updateDisplayedStep(targetStep) {
+const updateDisplayedStep = targetStep => {
   const toHide = document.querySelectorAll('[class*="step-"]');
   Array.prototype.forEach.call(toHide, el => {
     el.style.display = 'none';
@@ -199,31 +201,30 @@ function updateDisplayedStep(targetStep) {
     document.getElementById('next').style.display = 'none';
     document.getElementById('finish').style.display = 'block';
   }
-}
+};
 
-function back() {
+const back = () => {
   updateDisplayedStep(--currentStep);
-}
+};
 
-function next() {
+const next = () => {
   updateDisplayedStep(++currentStep);
-}
+};
 
-function goToStep(step) {
+const goToStep = step => {
   currentStep = step;
   updateDisplayedStep(step);
-}
+};
 
-function cancelConfirmation(selector) {
+const cancelConfirmation = selector => {
   $(selector).one('hidden.bs.modal', () => $('body').addClass('modal-open'));
   $(selector).modal('hide');
-}
+};
 //#endregion
 
 //#region Form validation
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
-  'use strict';
   window.addEventListener('load', function () {
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByTagName('form');
@@ -275,14 +276,14 @@ const toggleRowSelection = target => {
       target.checked ? row.classList.add('selected') : row.classList.remove('selected');
     }
   }
-}
+};
 
 const checkHandler = event => {
   toggleRowSelection(event.target);
   if (!event.target.checked) {
     document.getElementById('checkAll').checked = false;
   }
-}
+};
 
 const checkAllHandler = event => {
   const table = document.getElementById('sortable-example');
@@ -294,18 +295,149 @@ const checkAllHandler = event => {
       toggleRowSelection(checkbox);
     });
   }
+};
+
+const makeSortable = (tableId, columns) => {
+  const table = document.getElementById(tableId);
+  let list;
+  if (table) {
+    list = new List(tableId, {
+      listClass: 'table-data',
+      sortClass: 'sortable',
+      valueNames: columns
+    });
+
+    const checkAll = table.querySelector('thead input[type="checkbox"]')
+    if (checkAll) {
+      checkAll.addEventListener('click', checkAllHandler);
+      Array.prototype.forEach.call(table.querySelectorAll('tbody input[type="checkbox"]'), checkbox => {
+        checkbox.addEventListener('click', checkHandler);
+      });
+    }
+  }
+
+  return list;
+};
+
+let filterable;
+$(() => {
+  makeSortable('sortable-example', ['data-status', 'data-name', 'data-username', 'data-login']);
+  filterable = makeSortable('filterable-example', ['data-company', 'data-name', 'data-department', 'data-gender', 'data-city', 'data-country']);
+});
+//#endregion
+
+//#region Filter
+const facets = [
+  {
+    key: 'Name',
+  },
+  {
+    key: 'Organization',
+    header: true
+  },
+  {
+    key: 'Company',
+    values: []
+  },
+  {
+    key: 'Department',
+    values: []
+  },
+  {
+    key: 'Gender',
+    noRepeat: true,
+    values: []
+  },
+  {
+    key: 'Location',
+    header: true
+  },
+  {
+    key: 'City'
+  },
+  {
+    key: 'Country',
+    values: []
+  }
+];
+
+const fillFacets = (facets, source) => {
+  facets.forEach(facet => {
+    if (!facet.header && facet.values) {
+      const className = `data-${facet.key.toLowerCase()}`;
+      const data = source.getElementsByClassName(className);
+      const values = new Set();
+      Array.prototype.forEach.call(data, datum => values.add(datum.textContent));
+      facet.values = [...values].sort();
+    }
+  });
+
+  return facets;
+};
+
+const filterByFacets = (item, filter) => {
+  let result = true;
+  const values = item.values();
+
+  for (let prop in values) {
+    const valFilter = filter[prop.split('-')[1]];
+
+    if (valFilter) {
+      const itemVal = values[prop];
+
+      if (typeof (valFilter) === 'string') {
+        result = itemVal === valFilter;
+      } else {
+        let thisResult = false;
+
+        for (let i = 0, len = valFilter.length; i < len; i++) {
+          if (itemVal === valFilter[i]) {
+            thisResult = true;
+            break;
+          }
+        }
+
+        if (!thisResult) {
+          result = false;
+        }
+      }
+    }
+
+    if (!result) {
+      return result;
+    }
+  }
+
+  return result;
+};
+
+const applyFilter = (filterable, filter) => {
+  if (filterable && filter) {
+    filterable.filter(item => filterByFacets(item, filter.result()));
+  }
+};
+
+const showFilter = (queryDisplay, filter) => {
+  if (queryDisplay && filter) {
+    queryDisplay.textContent = JSON.stringify(filter.result(), null, 2); // result is a JSON object, so stringify it for display
+  }
 }
 
-$(function () {
-  new List('sortable-example', {
-    listClass: "table-data",
-    sortClass: "sortable",
-    valueNames: ['data-status', 'data-name', 'data-username', 'data-login']
+(function () {
+  const dataSource = document.querySelector('#filterable-example tbody');
+
+  window.addEventListener('load', () => {
+    const filterEl = document.getElementById('filter-input-example');
+    const data = fillFacets(facets, dataSource);
+    const filter = new Filter(filterEl, data);
+    filterEl.addEventListener('changed.fluid.filter', () => showFilter(document.getElementById('filter-query-example'), filter));
   });
 
-  document.getElementById('checkAll').addEventListener('click', checkAllHandler);
-  Array.prototype.forEach.call(document.querySelectorAll('#sortable-example tbody input[type="checkbox"]'), checkbox => {
-    checkbox.addEventListener('click', checkHandler);
+  window.addEventListener('load', () => {
+    const filterEl = document.getElementById('filter-input');
+    const data = fillFacets(facets, dataSource);
+    const filter = new Filter(filterEl, data);
+    filterEl.addEventListener('changed.fluid.filter', () => applyFilter(filterable, filter));
   });
-});
+})();
 //#endregion
