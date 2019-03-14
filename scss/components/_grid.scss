@@ -7,6 +7,14 @@
  */
 
 .container,
+.container-fluid,
+.row,
+.col,
+[class^="col-"] {
+  background-color: inherit;
+}
+
+.container,
 .container-fluid {
   background-color: inherit;
   padding-left: $grid-gutter-width;
@@ -20,10 +28,9 @@
 .row {
   background-color: inherit;
   margin-top: -$grid-gutter-width;
+}
 
-  .col,
-  [class^="col-"] {
-    background-color: inherit;
-    margin-top: $grid-gutter-width;
-  }
+.col,
+[class^="col-"] {
+  margin-top: $grid-gutter-width;
 }
