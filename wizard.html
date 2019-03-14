@@ -19,7 +19,7 @@ of all or any part of the contents of this file is strictly prohibited.
   <link rel="stylesheet" href="css/demo.css">
 </head>
 
-<body class="wizard">
+<body id="wizard" class="wizard-fullpage">
   <nav class="navbar navbar-primary">
     <ol class="stepper stepper-light step-1">
       <li class="active">
@@ -37,7 +37,7 @@ of all or any part of the contents of this file is strictly prohibited.
     </ol>
     <ol class="stepper stepper-light step-2">
       <li class="complete">
-        <a class="title" href="javascript:goToStep(1);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step A">Step A</a>
+        <a class="title" href="javascript:wizard.goToStep(1);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step A">Step A</a>
         <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Start here">Start here</div>
       </li>
       <li class="active">
@@ -51,11 +51,11 @@ of all or any part of the contents of this file is strictly prohibited.
     </ol>
     <ol class="stepper stepper-light step-3">
       <li class="complete">
-        <a class="title" href="javascript:goToStep(1);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step A">Step A</a>
+        <a class="title" href="javascript:wizard.goToStep(1);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step A">Step A</a>
         <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Start here">Start here</div>
       </li>
       <li class="complete">
-        <a class="title" href="javascript:goToStep(2);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step B - Do something very long and involved that takes too much space">Step B - Do something very long and involved that takes too much space</a>
+        <a class="title" href="javascript:wizard.goToStep(2);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step B - Do something very long and involved that takes too much space">Step B - Do something very long and involved that takes too much space</a>
         <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Continue here. This step has a particularly long description that is going to get truncated.">Continue here. This step has a particularly long description that is going to get truncated.</div>
       </li>
       <li class="active">
@@ -65,7 +65,7 @@ of all or any part of the contents of this file is strictly prohibited.
     </ol>
   </nav>
   <nav class="navbar navbar-header fixed-top">
-    <h1 class="navbar-text text-default">Fluid Bootstrap 4 Theme - Full Screen Wizard Example</h1>
+    <h1 class="navbar-text text-default">Fluid Bootstrap 4 Theme - Full Page Wizard Example</h1>
   </nav>
   <main class="wizard-body">
     <div id="alertsTopRight" class="alert-container right"></div>
@@ -108,9 +108,9 @@ of all or any part of the contents of this file is strictly prohibited.
   </main>
   <nav class="navbar navbar-wizard fixed-bottom">
     <button type="button" class="btn btn-default wizard-cancel-button" data-toggle="modal" data-target="#cancelWizard">Cancel</button>
-    <button id="back" type="button" class="btn btn-secondary wizard-nav-button wizard-back-button" onclick="back()">Back</button>
-    <button id="next" type="button" class="btn btn-primary wizard-nav-button" onclick="next()">Next</button>
-    <a id="finish" class="btn btn-primary" href="index.html#wizard">Finish</a>
+    <button id="back" type="button" class="btn btn-secondary wizard-nav-button wizard-back-button" onclick="wizard.back()">Back</button>
+    <button id="next" type="button" class="btn btn-primary wizard-nav-button wizard-next-button" onclick="wizard.next()">Next</button>
+    <a id="finish" class="btn btn-primary wizard-finish-button" href="index.html#wizard">Finish</a>
   </nav>
   <nav class="navbar navbar-footer">
     <div class="container-fluid">
@@ -148,7 +148,10 @@ of all or any part of the contents of this file is strictly prohibited.
   <script src="js/fluid-bootstrap.js"></script>
   <script src="js/demo.js"></script>
   <script>
-    goToStep(1);
+    let wizard;
+    $(function () {
+      wizard = new Wizard('wizard');
+    });
   </script>
 </body>
 
