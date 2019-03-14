@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
  * Except as expressly permitted in a written agreement between you
@@ -7,6 +5,8 @@
  * modification, redistribution, sharing, lending or other exploitation
  * of all or any part of the contents of this file is strictly prohibited.
  */
+
+'use strict';
 
 //#region Alert tester
 const addAlert = (message, options = {}) => {
@@ -175,45 +175,53 @@ $(function () {
 //#endregion
 
 //#region Wizard in modal
-let currentStep;
-
-const updateDisplayedStep = targetStep => {
-  const toHide = document.querySelectorAll('[class*="step-"]');
-  Array.prototype.forEach.call(toHide, el => {
-    el.style.display = 'none';
-  });
-
-  const toShow = document.getElementsByClassName(`step-${targetStep}`);
-  Array.prototype.forEach.call(toShow, el => {
-    el.style.display = 'block';
-  });
-
-  const buttons = document.getElementsByClassName('wizard-nav-button');
-  Array.prototype.forEach.call(buttons, el => {
-    el.style.display = 'block';
-  });
-
-  document.getElementById('finish').style.display = 'none';
-  if (targetStep === 1) {
-    document.getElementById('back').style.display = 'none';
+class Wizard {
+  constructor(wizardId) {
+    this.currentStep = 1;
+    this.wizard = document.getElementById(wizardId);
+    this.updateDisplayedStep(1);
   }
-  if (targetStep === 3) {
-    document.getElementById('next').style.display = 'none';
-    document.getElementById('finish').style.display = 'block';
+
+  updateDisplayedStep(targetStep) {
+    if (this.wizard) {
+      const toHide = this.wizard.querySelectorAll('[class*="step-"]');
+      Array.prototype.forEach.call(toHide, el => {
+        el.style.display = 'none';
+      });
+
+      const toShow = this.wizard.getElementsByClassName(`step-${targetStep}`);
+      Array.prototype.forEach.call(toShow, el => {
+        el.style.display = 'block';
+      });
+
+      const buttons = this.wizard.getElementsByClassName('wizard-nav-button');
+      Array.prototype.forEach.call(buttons, el => {
+        el.style.display = 'block';
+      });
+
+      this.wizard.querySelector('.wizard-finish-button').style.display = 'none';
+      if (targetStep === 1) {
+        this.wizard.querySelector('.wizard-back-button').style.display = 'none';
+      }
+      if (targetStep === 3) {
+        this.wizard.querySelector('.wizard-next-button').style.display = 'none';
+        this.wizard.querySelector('.wizard-finish-button').style.display = 'block';
+      }
+    }
   }
-};
 
-const back = () => {
-  updateDisplayedStep(--currentStep);
-};
+  back() {
+    this.updateDisplayedStep(--this.currentStep);
+  }
 
-const next = () => {
-  updateDisplayedStep(++currentStep);
-};
+  next() {
+    this.updateDisplayedStep(++this.currentStep);
+  }
 
-const goToStep = step => {
-  currentStep = step;
-  updateDisplayedStep(step);
+  goToStep(step) {
+    this.currentStep = step;
+    this.updateDisplayedStep(step);
+  }
 };
 
 const cancelConfirmation = selector => {

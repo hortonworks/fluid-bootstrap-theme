@@ -10,6 +10,41 @@
 
 .wizard {
 
+  .navbar-primary {
+    background-color: inherit;
+    float: left;
+    margin-right: $grid-gutter-width / -2;
+    padding-right: $grid-gutter-width;
+    position: static;
+    width: $wizard-navbar-width;
+  }
+
+  .wizard-body {
+    border-left: $border-width solid $border-color;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+
+    .navbar-wizard {
+      margin-left: $grid-gutter-width;
+      margin-top: auto;
+      padding: 0;
+
+      .wizard-next-button {
+        margin-left: auto;
+
+        // test for IE
+        @media screen\0 {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.wizard-fullpage {
+
   .navbar-header {
     height: $wizard-navbar-height;
     margin-left: 0;
@@ -117,6 +152,3 @@
     }
   }
 }
-
-
-
