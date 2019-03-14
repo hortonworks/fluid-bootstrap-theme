@@ -14,9 +14,9 @@ of all or any part of the contents of this file is strictly prohibited.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="css/fluid-bootstrap.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="css/demo.css">
+  <link rel="stylesheet" href="css/fluid-bootstrap.css">
 </head>
 
 <body data-spy="scroll" data-target="#my-navbar" data-offset="100">
@@ -151,6 +151,10 @@ of all or any part of the contents of this file is strictly prohibited.
         <a class="nav-item nav-link" href="#buttons" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Buttons">
           <span class="icon fa fa-square"></span>
           Buttons
+        </a>
+        <a class="nav-item nav-link" href="#filter" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Filter">
+          <span class="icon icon-filter mt-0"></span>
+          Filter
         </a>
         <a class="nav-item nav-link" href="#forms" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Forms">
           <span class="icon fa fa-pencil"></span>
@@ -1449,6 +1453,56 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </div>
     </section>
+    <section id="filter">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <header class="section-header">
+              <h2>
+                <span class="icon icon-filter"></span>
+                Filter
+              </h2>
+              <h2>
+                <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
+              </h2>
+            </header>
+            <div class="card">
+              <div class="card-body">
+                <p>The filter control provides faceted filtering of a data set. It returns a JSON object that can be used to filter a related data source. For an example of how it should be displayed in relation to a table, see <a href="#tables">Tables</a>.</p>
+                <div class="form-control filter-control" id="filter-input-example" data-placeholder="Filter"></div>
+                <p class="mt-3">Current filter output:<br><code id="filter-query-example"></code></p>
+                <p>The following options can be passed to the Filter constructor:</p>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="width: 100px;">Name</th>
+                      <th style="width: 100px;">Type</th>
+                      <th style="width: 50px;">Default</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>tooltips</td>
+                      <td>boolean</td>
+                      <td>true</td>
+                      <td>Create tooltips for any keys or values that are truncated in both the pills and the dropdown menus. This functionality is dependent on the provided <a href="#popovers">Tooltips</a> implementation.</td>
+                    </tr>
+                    <tr>
+                      <td>autoFocus</td>
+                      <td>boolean</td>
+                      <td>true</td>
+                      <td>Automatically set the focus on a new filter after completing a filter.</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="forms">
       <div class="container-fluid">
         <div class="row">
@@ -2382,8 +2436,8 @@ of all or any part of the contents of this file is strictly prohibited.
             </div>
             <div class="card">
               <div class="card-body">
-                <h3 class="card-title">Table with Primary Search</h3>
-                <p>When search is a primary function of a table (such as large data tables), the Rich Search component should be used. In this case, the search bar should be full-width on its own line, as shown below.</p>
+                <h3 class="card-title">Table with primary search</h3>
+                <p>When search is a primary function of a table, the search bar can be full-width on its own line, as shown below.</p>
                 <header class="table-header">
                   <div class="table-caption">Example Title</div>
                   <div class="dropdown ml-2">
@@ -2403,168 +2457,847 @@ of all or any part of the contents of this file is strictly prohibited.
                     <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
                   </div>
                 </div>
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th class="sortable text-center" data-sort="data-status">Status</th>
-                      <th class="sortable" data-sort="data-name">Name</th>
-                      <th class="sortable" data-sort="data-username">Username</th>
-                      <th class="sortable" data-sort="data-login">Last Login</th>
-                      <th>Actions</th>
-                      <th class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="">
-                          <label class="form-check-label"></label>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="table-data">
-                    <tr>
-                      <td class="text-center text-base data-status"><i class="icon icon-success"><span class="sr-only">Success</span></td>
-                      <td class="primary data-name"><a href="#">William Ross</a></td>
-                      <td class="data-username">admiralbill</td>
-                      <td class="data-login">2 days ago</td>
-                      <td>
-                        <ul class="actions">
-                          <li>
-                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
-                          </li>
-                        </ul>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input table-example-check" type="checkbox" value="1" id="row1a">
-                          <label class="form-check-label" for="row1a"></label>
-                        </div>
-                      </th>
-                    </tr>
-                    <tr class="selected">
-                      <td class="text-center text-base data-status"><i class="icon icon-warning"><span class="sr-only">Warning</span></td>
-                      <td class="primary data-name"><a href="#">Benjamin Sisko</a></td>
-                      <td class="data-username">brotherbenny</td>
-                      <td class="data-login">Just now</td>
-                      <td>
-                        <div class="actions dropdown">
-                          <a class="dropdown-toggle" href="#" role="button" id="actionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Send e-mail</a>
-                            <a class="dropdown-item" href="#">Follow</a>
-                            <a class="dropdown-item" href="#">View profile</a>
-                            <a class="dropdown-item" href="#">Edit</a>
-                            <a class="dropdown-item" href="#">Delete user</a>
-                          </div>
-                        </div>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input table-example-check" type="checkbox" value="2" id="row2a" checked>
-                          <label class="form-check-label" for="row2a"></label>
-                        </div>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td class="text-center text-base data-status"><i class="icon icon-danger"><span class="sr-only">Danger</span></td>
-                      <td class="primary data-name"><a href="#">Miles O'Brien</a></td>
-                      <td class="data-username">smiley</td>
-                      <td class="data-login">5 hours ago</td>
-                      <td>
-                        <ul class="actions">
-                          <li>
-                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
-                          </li>
-                        </ul>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input table-example-check" type="checkbox" value="3" id="row3a">
-                          <label class="form-check-label" for="row3a"></label>
-                        </div>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td class="text-center text-base data-status"><i class="icon icon-info"><span class="sr-only">Info</span></td>
-                      <td class="primary data-name"><a href="#">Julian Bashir</a></td>
-                      <td class="data-username">kukalaka</td>
-                      <td class="data-login">Never</td>
-                      <td>
-                        <ul class="actions">
-                          <li>
-                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
-                          </li>
-                        </ul>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input table-example-check" type="checkbox" value="4" id="row4a">
-                          <label class="form-check-label" for="row4a"></label>
-                        </div>
-                      </th>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td colspan="6">
-                        <nav class="pagination" aria-label="Page navigation example">
-                          <div class="fade">
-                            <div class="form-group">
-                              <label for="itemsPerPage">Show:</label>
-                              <select id="itemsPerPage" class="selectpicker">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                              </select>
-                            </div>
-                            <div class="form-group dropdown">
-                              <label for="goToPage2">Go:</label>
-                              <input id="goToPage2" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <ul class="dropdown-menu">
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
-                                <li class="page-item"><a class="page-link" href="#">500</a></li>
-                                <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1000</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <span class="fade show">1-10 of 1000</span>
-                          <a class="page-link disabled" href="#" aria-label="Previous">
-                            <i class="icon icon-previous" aria-hidden="true"></i>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="page-link" href="#" aria-label="Next">
-                            <i class="icon icon-next" aria-hidden="true"></i>
-                            <span class="sr-only">Next</span>
-                          </a>
-                        </nav>
-                      </td>
-                    </tr>
-                  </tfoot>
-                </table>
+                <div>(table omitted)</div>
               </div>
             </div>
-
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Table with filter control</h3>
+                <p>When filtering by facets is a primary function of a table, the Filter component should be used. In this case, the filter bar should be full-width on its own line, as shown below.</p>
+                <header class="table-header">
+                  <div class="table-caption">Example Title</div>
+                  <div class="dropdown ml-2">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Actions
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </header>
+                <div class="input-group table-filter">
+                  <div class="form-control filter-control" id="filter-input" data-placeholder="Filter"></div>
+                </div>
+                <div style="height: 300px; overflow: auto;">
+                  <table id="filterable-example" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th class="sortable" data-sort="data-company">Company</th>
+                        <th class="sortable" data-sort="data-name">Name</th>
+                        <th class="sortable" data-sort="data-department">Department</th>
+                        <th class="sortable" data-sort="data-gender">Gender</th>
+                        <th class="sortable" data-sort="data-city">City</th>
+                        <th class="sortable" data-sort="data-country">Country</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-data" style="height: 300px;" data-placeholder="Nothing matches the current filter">
+                      <tr>
+                        <td class="data-company">Altavista</td>
+                        <td class="primary data-name">Rogan Sosa</td>
+                        <td class="data-department">Legal Department</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">St. Pölten</td>
+                        <td class="data-country">Puerto Rico</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Altavista</td>
+                        <td class="primary data-name">Daphne Peck</td>
+                        <td class="data-department">Sales and Marketing</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Beerzel</td>
+                        <td class="data-country">Saint Lucia</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Altavista</td>
+                        <td class="primary data-name">Gage Nunez</td>
+                        <td class="data-department">Legal Department</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Kawerau</td>
+                        <td class="data-country">Saint Martin</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Adobe</td>
+                        <td class="primary data-name">Yvonne Delgado</td>
+                        <td class="data-department">Public Relations</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Shippagan</td>
+                        <td class="data-country">Christmas Island</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Chami</td>
+                        <td class="primary data-name">Thor Trujillo</td>
+                        <td class="data-department">Quality Assurance</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Kalken</td>
+                        <td class="data-country">Egypt</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Chami</td>
+                        <td class="primary data-name">Octavius Thornton</td>
+                        <td class="data-department">Asset Management</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Armo</td>
+                        <td class="data-country">French Southern Territories</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lavasoft</td>
+                        <td class="primary data-name">Evangeline Porter</td>
+                        <td class="data-department">Research and Development</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Maastricht</td>
+                        <td class="data-country">Congo, the Democratic Republic of the</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lavasoft</td>
+                        <td class="primary data-name">Craig Tran</td>
+                        <td class="data-department">Legal Department</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Eksaarde</td>
+                        <td class="data-country">Kenya</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Google</td>
+                        <td class="primary data-name">Otto Rutledge</td>
+                        <td class="data-department">Legal Department</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Gonda</td>
+                        <td class="data-country">Panama</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Chami</td>
+                        <td class="primary data-name">Mannix Dixon</td>
+                        <td class="data-department">Research and Development</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Ahmadpur East</td>
+                        <td class="data-country">Ukraine</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Microsoft</td>
+                        <td class="primary data-name">Wilma Brock</td>
+                        <td class="data-department">Finances</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Placanica</td>
+                        <td class="data-country">Venezuela</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Macromedia</td>
+                        <td class="primary data-name">Chloe Dale</td>
+                        <td class="data-department">Advertising</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Castel Ritaldi</td>
+                        <td class="data-country">Sierra Leone</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lycos</td>
+                        <td class="primary data-name">Carolyn Love</td>
+                        <td class="data-department">Sales and Marketing</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Castelnuovo Magra</td>
+                        <td class="data-country">Morocco</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Apple Systems</td>
+                        <td class="primary data-name">Herman Benton</td>
+                        <td class="data-department">Sales and Marketing</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Dieppe</td>
+                        <td class="data-country">Curaçao</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Google</td>
+                        <td class="primary data-name">Camilla Moody</td>
+                        <td class="data-department">Human Resources</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Haßloch</td>
+                        <td class="data-country">Libya</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Finale</td>
+                        <td class="primary data-name">Austin Kemp</td>
+                        <td class="data-department">Payroll</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Chester</td>
+                        <td class="data-country">United Arab Emirates</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Chami</td>
+                        <td class="primary data-name">Gabriel Moss</td>
+                        <td class="data-department">Accounting</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Sterling Heights</td>
+                        <td class="data-country">Gabon</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Microsoft</td>
+                        <td class="primary data-name">Piper Long</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Gualdo Cattaneo</td>
+                        <td class="data-country">Bermuda</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Google</td>
+                        <td class="primary data-name">Armando Riley</td>
+                        <td class="data-department">Human Resources</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Amelia</td>
+                        <td class="data-country">Gibraltar</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lycos</td>
+                        <td class="primary data-name">Callum Pennington</td>
+                        <td class="data-department">Advertising</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Tiruvarur</td>
+                        <td class="data-country">Honduras</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Google</td>
+                        <td class="primary data-name">Jessamine Kelley</td>
+                        <td class="data-department">Tech Support</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Broxburn</td>
+                        <td class="data-country">Malawi</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Borland</td>
+                        <td class="primary data-name">Reagan Bell</td>
+                        <td class="data-department">Quality Assurance</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Lebu</td>
+                        <td class="data-country">Gibraltar</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Sibelius</td>
+                        <td class="primary data-name">Elliott Macias</td>
+                        <td class="data-department">Sales and Marketing</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Haßloch</td>
+                        <td class="data-country">Romania</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lycos</td>
+                        <td class="primary data-name">Jerome Christian</td>
+                        <td class="data-department">Legal Department</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Cametá</td>
+                        <td class="data-country">Ukraine</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lavasoft</td>
+                        <td class="primary data-name">Madaline Moses</td>
+                        <td class="data-department">Finances</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Kailua</td>
+                        <td class="data-country">British Indian Ocean Territory</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Google</td>
+                        <td class="primary data-name">Nathaniel Baker</td>
+                        <td class="data-department">Media Relations</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Cavaso del Tomba</td>
+                        <td class="data-country">Yemen</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Mia Bailey</td>
+                        <td class="data-department">Research and Development</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Meix-Devant-Virton</td>
+                        <td class="data-country">Austria</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Borland</td>
+                        <td class="primary data-name">Amelia Meyers</td>
+                        <td class="data-department">Finances</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Independence</td>
+                        <td class="data-country">Macedonia</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Apple Systems</td>
+                        <td class="primary data-name">Melinda Cabrera</td>
+                        <td class="data-department">Research and Development</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Saguenay</td>
+                        <td class="data-country">Seychelles</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Cakewalk</td>
+                        <td class="primary data-name">Lance Baird</td>
+                        <td class="data-department">Research and Development</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Rochester</td>
+                        <td class="data-country">Guinea</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Sibelius</td>
+                        <td class="primary data-name">Wynne Day</td>
+                        <td class="data-department">Tech Support</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">North Berwick</td>
+                        <td class="data-country">Chile</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Microsoft</td>
+                        <td class="primary data-name">Cyrus Sargent</td>
+                        <td class="data-department">Finances</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Krefeld</td>
+                        <td class="data-country">Côte D'Ivoire (Ivory Coast)</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Adobe</td>
+                        <td class="primary data-name">Rogan Wilder</td>
+                        <td class="data-department">Payroll</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Dorchester</td>
+                        <td class="data-country">Kiribati</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lavasoft</td>
+                        <td class="primary data-name">Channing Albert</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Perwez</td>
+                        <td class="data-country">United Arab Emirates</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Kamal Mcknight</td>
+                        <td class="data-department">Public Relations</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Griesheim</td>
+                        <td class="data-country">Slovenia</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Sibelius</td>
+                        <td class="primary data-name">Peter Baker</td>
+                        <td class="data-department">Legal Department</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Westerlo</td>
+                        <td class="data-country">Saint Kitts and Nevis</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Kylee Floyd</td>
+                        <td class="data-department">Advertising</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Wanneroo</td>
+                        <td class="data-country">Iraq</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Finale</td>
+                        <td class="primary data-name">Deirdre Davis</td>
+                        <td class="data-department">Advertising</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Mattersburg</td>
+                        <td class="data-country">South Georgia and The South Sandwich Islands</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Finale</td>
+                        <td class="primary data-name">Noah Mcconnell</td>
+                        <td class="data-department">Research and Development</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Chilliwack</td>
+                        <td class="data-country">Kiribati</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Levi Hull</td>
+                        <td class="data-department">Advertising</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Turgutlu</td>
+                        <td class="data-country">Anguilla</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Macromedia</td>
+                        <td class="primary data-name">Lunea Burch</td>
+                        <td class="data-department">Human Resources</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Gagliano del Capo</td>
+                        <td class="data-country">Aruba</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lavasoft</td>
+                        <td class="primary data-name">Xerxes Fry</td>
+                        <td class="data-department">Human Resources</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Scandriglia</td>
+                        <td class="data-country">Côte D'Ivoire (Ivory Coast)</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Cynthia Brown</td>
+                        <td class="data-department">Public Relations</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Petrolina</td>
+                        <td class="data-country">Germany</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Dara Oneil</td>
+                        <td class="data-department">Media Relations</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Bay Roberts</td>
+                        <td class="data-country">Malaysia</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Google</td>
+                        <td class="primary data-name">Jordan Jacobs</td>
+                        <td class="data-department">Asset Management</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Albury</td>
+                        <td class="data-country">Georgia</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Chami</td>
+                        <td class="primary data-name">Angelica Oconnor</td>
+                        <td class="data-department">Human Resources</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Ayr</td>
+                        <td class="data-country">Sierra Leone</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Sylvester Pugh</td>
+                        <td class="data-department">Legal Department</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Göteborg</td>
+                        <td class="data-country">Japan</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Adobe</td>
+                        <td class="primary data-name">Aspen Hartman</td>
+                        <td class="data-department">Quality Assurance</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Levallois-Perret</td>
+                        <td class="data-country">Faroe Islands</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Patricia Witt</td>
+                        <td class="data-department">Sales and Marketing</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Belém</td>
+                        <td class="data-country">Antarctica</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Sibelius</td>
+                        <td class="primary data-name">Kelly Gibson</td>
+                        <td class="data-department">Public Relations</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Lago Ranco</td>
+                        <td class="data-country">Indonesia</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Macromedia</td>
+                        <td class="primary data-name">Ariana Rogers</td>
+                        <td class="data-department">Legal Department</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Minto</td>
+                        <td class="data-country">Venezuela</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Cakewalk</td>
+                        <td class="primary data-name">Cade Clements</td>
+                        <td class="data-department">Sales and Marketing</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Chicoutimi</td>
+                        <td class="data-country">Malawi</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Apple Systems</td>
+                        <td class="primary data-name">Quynn Larson</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Sart-Dames-Avelines</td>
+                        <td class="data-country">Hong Kong</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Sibelius</td>
+                        <td class="primary data-name">Gray Henson</td>
+                        <td class="data-department">Public Relations</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Bossire</td>
+                        <td class="data-country">Greenland</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Altavista</td>
+                        <td class="primary data-name">Ruby Guthrie</td>
+                        <td class="data-department">Quality Assurance</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Houston</td>
+                        <td class="data-country">Haiti</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Borland</td>
+                        <td class="primary data-name">Francis Greer</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Saint-Malo</td>
+                        <td class="data-country">Brunei</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Google</td>
+                        <td class="primary data-name">Alice Washington</td>
+                        <td class="data-department">Quality Assurance</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Juan Fernández</td>
+                        <td class="data-country">Bangladesh</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Finale</td>
+                        <td class="primary data-name">Gary Gross</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Ganshoren</td>
+                        <td class="data-country">Congo, the Democratic Republic of the</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Kelly Lindsey</td>
+                        <td class="data-department">Asset Management</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Rodì Milici</td>
+                        <td class="data-country">New Zealand</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lavasoft</td>
+                        <td class="primary data-name">Aquila Mercer</td>
+                        <td class="data-department">Accounting</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Villafalletto</td>
+                        <td class="data-country">El Salvador</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Borland</td>
+                        <td class="primary data-name">Ray Wiley</td>
+                        <td class="data-department">Public Relations</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Pimpri-Chinchwad</td>
+                        <td class="data-country">Tanzania</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lycos</td>
+                        <td class="primary data-name">Illiana Small</td>
+                        <td class="data-department">Asset Management</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Boneffe</td>
+                        <td class="data-country">Greece</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Mohammad Sexton</td>
+                        <td class="data-department">Payroll</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Luino</td>
+                        <td class="data-country">El Salvador</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Apple Systems</td>
+                        <td class="primary data-name">Jakeem Powell</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Bearberry</td>
+                        <td class="data-country">Montserrat</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Cakewalk</td>
+                        <td class="primary data-name">Kibo Holcomb</td>
+                        <td class="data-department">Payroll</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Melipilla</td>
+                        <td class="data-country">Montserrat</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Sibelius</td>
+                        <td class="primary data-name">Charles Baird</td>
+                        <td class="data-department">Sales and Marketing</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Valkenburg aan de Geul</td>
+                        <td class="data-country">Martinique</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lavasoft</td>
+                        <td class="primary data-name">Demetria Landry</td>
+                        <td class="data-department">Public Relations</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Tillet</td>
+                        <td class="data-country">Brunei</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Adobe</td>
+                        <td class="primary data-name">Garrison Stanton</td>
+                        <td class="data-department">Payroll</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Navsari</td>
+                        <td class="data-country">Guadeloupe</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Chami</td>
+                        <td class="primary data-name">Camden Nixon</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Sobral</td>
+                        <td class="data-country">Congo, the Democratic Republic of the</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Borland</td>
+                        <td class="primary data-name">Violet Chase</td>
+                        <td class="data-department">Advertising</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Sitapur</td>
+                        <td class="data-country">Spain</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Tatyana Smith</td>
+                        <td class="data-department">Media Relations</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Cuddapah</td>
+                        <td class="data-country">Antarctica</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Altavista</td>
+                        <td class="primary data-name">Berk Ford</td>
+                        <td class="data-department">Human Resources</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Cittanova</td>
+                        <td class="data-country">Korea, South</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Microsoft</td>
+                        <td class="primary data-name">Amethyst Rivers</td>
+                        <td class="data-department">Quality Assurance</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Campitello di Fassa</td>
+                        <td class="data-country">Grenada</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Microsoft</td>
+                        <td class="primary data-name">Fiona Nieves</td>
+                        <td class="data-department">Advertising</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Maransart</td>
+                        <td class="data-country">Estonia</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Sibelius</td>
+                        <td class="primary data-name">Neve Bailey</td>
+                        <td class="data-department">Public Relations</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Montigny-lès-Metz</td>
+                        <td class="data-country">Aruba</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Lycos</td>
+                        <td class="primary data-name">Aretha Ford</td>
+                        <td class="data-department">Payroll</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">North Saanich</td>
+                        <td class="data-country">Nigeria</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Borland</td>
+                        <td class="primary data-name">Troy Bentley</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Carlton</td>
+                        <td class="data-country">Peru</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Adobe</td>
+                        <td class="primary data-name">Bethany Cooley</td>
+                        <td class="data-department">Payroll</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Mignanego</td>
+                        <td class="data-country">Somalia</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Chami</td>
+                        <td class="primary data-name">Buckminster Lara</td>
+                        <td class="data-department">Quality Assurance</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Taunusstein</td>
+                        <td class="data-country">Svalbard and Jan Mayen Islands</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Microsoft</td>
+                        <td class="primary data-name">Ori Patton</td>
+                        <td class="data-department">Customer Relations</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Antibes</td>
+                        <td class="data-country">Virgin Islands, British</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Grant Frederick</td>
+                        <td class="data-department">Human Resources</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Watford</td>
+                        <td class="data-country">Hong Kong</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Macromedia</td>
+                        <td class="primary data-name">Yuri Gaines</td>
+                        <td class="data-department">Legal Department</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">De Klinge</td>
+                        <td class="data-country">Jamaica</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Borland</td>
+                        <td class="primary data-name">Taylor Herrera</td>
+                        <td class="data-department">Human Resources</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">El Carmen</td>
+                        <td class="data-country">Saint Vincent and The Grenadines</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Macromedia</td>
+                        <td class="primary data-name">Aristotle Harris</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Motta Camastra</td>
+                        <td class="data-country">Malaysia</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Altavista</td>
+                        <td class="primary data-name">George Cain</td>
+                        <td class="data-department">Tech Support</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Kaneohe</td>
+                        <td class="data-country">Bermuda</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Cakewalk</td>
+                        <td class="primary data-name">Geoffrey Cummings</td>
+                        <td class="data-department">Tech Support</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Thuillies</td>
+                        <td class="data-country">Costa Rica</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Apple Systems</td>
+                        <td class="primary data-name">Kimberley Serrano</td>
+                        <td class="data-department">Advertising</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Llanidloes</td>
+                        <td class="data-country">Niue</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Finale</td>
+                        <td class="primary data-name">Erich Monroe</td>
+                        <td class="data-department">Payroll</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Erchie</td>
+                        <td class="data-country">Ghana</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Malachi Chase</td>
+                        <td class="data-department">Human Resources</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Strona</td>
+                        <td class="data-country">Denmark</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Apple Systems</td>
+                        <td class="primary data-name">Martena Atkins</td>
+                        <td class="data-department">Tech Support</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Leffinge</td>
+                        <td class="data-country">Solomon Islands</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Altavista</td>
+                        <td class="primary data-name">Orli Duffy</td>
+                        <td class="data-department">Sales and Marketing</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Toruń</td>
+                        <td class="data-country">Mauritania</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Cassady Vance</td>
+                        <td class="data-department">Media Relations</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Kollam</td>
+                        <td class="data-country">Gibraltar</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Borland</td>
+                        <td class="primary data-name">Serena Rosario</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Albiano</td>
+                        <td class="data-country">French Guiana</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Finale</td>
+                        <td class="primary data-name">Aimee Curtis</td>
+                        <td class="data-department">Asset Management</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Indianapolis</td>
+                        <td class="data-country">Sierra Leone</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Finale</td>
+                        <td class="primary data-name">Marny Bowers</td>
+                        <td class="data-department">Customer Service</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Sivry</td>
+                        <td class="data-country">Algeria</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Adobe</td>
+                        <td class="primary data-name">Conan Matthews</td>
+                        <td class="data-department">Asset Management</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Naumburg</td>
+                        <td class="data-country">Bhutan</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Microsoft</td>
+                        <td class="primary data-name">Anthony Gilbert</td>
+                        <td class="data-department">Media Relations</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Olivar</td>
+                        <td class="data-country">Thailand</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Microsoft</td>
+                        <td class="primary data-name">Oscar Knox</td>
+                        <td class="data-department">Quality Assurance</td>
+                        <td class="data-gender">Female</td>
+                        <td class="data-city">Roubaix</td>
+                        <td class="data-country">Åland Islands</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Yahoo</td>
+                        <td class="primary data-name">Marsden Gutierrez</td>
+                        <td class="data-department">Public Relations</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Hapur</td>
+                        <td class="data-country">Israel</td>
+                      </tr>
+                      <tr>
+                        <td class="data-company">Altavista</td>
+                        <td class="primary data-name">Xenos Stone</td>
+                        <td class="data-department">Accounting</td>
+                        <td class="data-gender">Male</td>
+                        <td class="data-city">Portree</td>
+                        <td class="data-country">Poland</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2776,13 +3509,118 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
         <div class="card">
           <div class="card-body">
-            <p><a href="wizard.html">Full Screen Wizard</a></p>
-            <button class="btn btn-primary" onclick="goToStep(1)" data-toggle="modal" data-target="#wizardModal" data-backdrop="static" data-keyboard="false">Wizard in Modal</button>
+            <h3 class="card-title">On-Page Wizard</h3>
+            <p>Use when the wizard is the primary content of a page that is within the global navigation context.</p>
+            <div id="wizardOnPage" class="container-fluid wizard">
+              <div class="row">
+                <div class="col-auto">
+                  <nav class="navbar navbar-primary">
+                    <ol class="stepper step-1">
+                      <li class="active">
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step A">Step A</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Start here">Start here</div>
+                      </li>
+                      <li>
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step B - Do something very long and involved that takes too much space">Step B - Do something very long and involved that takes too much space</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Continue here. This step has a particularly long description that is going to get truncated.">Continue here. This step has a particularly long description that is going to get truncated.</div>
+                      </li>
+                      <li>
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step C">Step C</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Finish here">Finish here</div></li>
+                      </li>
+                    </ol>
+                    <ol class="stepper step-2">
+                      <li class="complete">
+                        <a class="title" href="javascript:wizardOnPage.goToStep(1);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step A">Step A</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Start here">Start here</div>
+                      </li>
+                      <li class="active">
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step B - Do something very long and involved that takes too much space">Step B - Do something very long and involved that takes too much space</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Continue here. This step has a particularly long description that is going to get truncated.">Continue here. This step has a particularly long description that is going to get truncated.</div>
+                      </li>
+                      <li>
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step C">Step C</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Finish here">Finish here</div></li>
+                      </li>
+                    </ol>
+                    <ol class="stepper step-3">
+                      <li class="complete">
+                        <a class="title" href="javascript:wizardOnPage.goToStep(1);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step A">Step A</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Start here">Start here</div>
+                      </li>
+                      <li class="complete">
+                        <a class="title" href="javascript:wizardOnPage.goToStep(2);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step B - Do something very long and involved that takes too much space">Step B - Do something very long and involved that takes too much space</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Continue here. This step has a particularly long description that is going to get truncated.">Continue here. This step has a particularly long description that is going to get truncated.</div>
+                      </li>
+                      <li class="active">
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step C">Step C</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Finish here">Finish here</div></li>
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+                <div class="col">
+                  <div class="wizard-body">
+                    <div class="container-fluid step-1">
+                      <div class="row">
+                        <div class="col">
+                          <h2>1. Step A</h2>
+                          <p>This is the first step of this wizard. You can put an extended step description here.</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          Content for the first step goes here.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container-fluid step-2">
+                      <div class="row">
+                        <div class="col">
+                          <h2>2. Step B</h2>
+                          <p>This is the second step of this wizard. You can put an extended step description here.</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          Content for the second step goes here.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container-fluid step-3">
+                      <div class="row">
+                        <div class="col">
+                          <h2>3. Step C</h2>
+                          <p>This is the third and final step of this wizard. You can put an extended step description here.</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          Content for the third step goes here.
+                        </div>
+                      </div>
+                    </div>
+                    <nav class="navbar navbar-wizard">
+                      <button type="button" class="btn btn-secondary wizard-nav-button wizard-back-button" onclick="onPageWizard.back()">Back</button>
+                      <button type="button" class="btn btn-primary wizard-nav-button wizard-next-button" onclick="onPageWizard.next()">Next</button>
+                      <a class="btn btn-primary wizard-finish-button" href="javascript:location.reload();">Finish</a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Off-Page Wizards</h3>
+            <p><a href="wizard.html">Full Page Wizard</a></p>
+            <button class="btn btn-primary" onclick="modalWizard.goToStep(1)" data-toggle="modal" data-target="#wizardModal" data-backdrop="static" data-keyboard="false">Wizard in Modal</button>
           </div>
         </div>
 
         <!-- Wizard modal -->
-        <div class="modal wizard fade" id="wizardModal" tabindex="-1" role="dialog" aria-labelledby="wizardModalTitle" aria-hidden="true">
+        <div class="modal wizard-fullpage fade" id="wizardModal" tabindex="-1" role="dialog" aria-labelledby="wizardModalTitle" aria-hidden="true">
           <div class="modal-dialog modal-fluid">
             <div class="modal-content">
               <div class="modal-header">
@@ -2806,7 +3644,7 @@ of all or any part of the contents of this file is strictly prohibited.
                   </ol>
                   <ol class="stepper stepper-light step-2">
                     <li class="complete">
-                      <a href="javascript:goToStep(1);">Step A</a>
+                      <a href="javascript:wizardModal.goToStep(1);">Step A</a>
                       <div class="desc">Start here</div>
                     </li>
                     <li class="active">
@@ -2820,11 +3658,11 @@ of all or any part of the contents of this file is strictly prohibited.
                   </ol>
                   <ol class="stepper stepper-light step-3">
                     <li class="complete">
-                      <a href="javascript:goToStep(1);">Step A</a>
+                      <a href="javascript:wizardModal.goToStep(1);">Step A</a>
                       <div class="desc">Start here</div>
                     </li>
                     <li class="complete">
-                      <a href="javascript:goToStep(2);">Step B</a>
+                      <a href="javascript:wizardModal.goToStep(2);">Step B</a>
                       <div class="desc">Continue here</div>
                     </li>
                     <li class="active">
@@ -2869,9 +3707,9 @@ of all or any part of the contents of this file is strictly prohibited.
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default wizard-cancel-button" data-toggle="modal" data-target="#cancelWizard" data-backdrop="false">Cancel</button>
-                <button id="back" type="button" class="btn btn-secondary wizard-nav-button wizard-back-button" onclick="back()">Back</button>
-                <button id="next" type="button" class="btn btn-primary wizard-nav-button" onclick="next()">Next</button>
-                <button id="finish" type="button" class="btn btn-primary wizard-nav-button" data-dismiss="modal">Finish</a>
+                <button type="button" class="btn btn-secondary wizard-nav-button wizard-back-button" onclick="modalWizard.back()">Back</button>
+                <button type="button" class="btn btn-primary wizard-nav-button wizard-next-button" onclick="modalWizard.next()">Next</button>
+                <button type="button" class="btn btn-primary wizard-nav-button wizard-finish-button" data-dismiss="modal">Finish</a>
               </div>
 
               <!-- Cancel Confirmation -->
@@ -2917,6 +3755,14 @@ of all or any part of the contents of this file is strictly prohibited.
   <script src="js/fluid-bootstrap.js"></script>
   <script src="js/list.js"></script>
   <script src="js/demo.js"></script>
+  <script>
+    let onPageWizard;
+    let modalWizard;
+    $(function () {
+      onPageWizard = new Wizard('wizardOnPage');
+      modalWizard = new Wizard('wizardModal');
+    });
+  </script>
 </body>
 
 </html>

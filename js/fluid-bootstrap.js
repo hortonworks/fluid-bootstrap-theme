@@ -9918,6 +9918,809 @@
 
 }));
 
+/*
+    JavaScript autoComplete v1.0.4
+    Copyright (c) 2014 Simon Steinberger / Pixabay
+    GitHub: https://github.com/Pixabay/JavaScript-autoComplete
+    License: http://www.opensource.org/licenses/mit-license.php
+*/
+
+var autoComplete = (function(){
+    // "use strict";
+    function autoComplete(options){
+        if (!document.querySelector) return;
+
+        // helpers
+        function hasClass(el, className){ return el.classList ? el.classList.contains(className) : new RegExp('\\b'+ className+'\\b').test(el.className); }
+
+        function addEvent(el, type, handler){
+            if (el.attachEvent) el.attachEvent('on'+type, handler); else el.addEventListener(type, handler);
+        }
+        function removeEvent(el, type, handler){
+            // if (el.removeEventListener) not working in IE11
+            if (el.detachEvent) el.detachEvent('on'+type, handler); else el.removeEventListener(type, handler);
+        }
+        function live(elClass, event, cb, context){
+            addEvent(context || document, event, function(e){
+                var found, el = e.target || e.srcElement;
+                while (el && !(found = hasClass(el, elClass))) el = el.parentElement;
+                if (found) cb.call(el, e);
+            });
+        }
+
+        var o = {
+            selector: 0,
+            source: 0,
+            minChars: 3,
+            delay: 150,
+            offsetLeft: 0,
+            offsetTop: 1,
+            cache: 1,
+            menuClass: '',
+            renderItem: function (item, search){
+                // escape special characters
+                search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+                return '<div class="autocomplete-suggestion" data-val="' + item + '">' + item.replace(re, "<b>$1</b>") + '</div>';
+            },
+            onSelect: function(e, term, item){}
+        };
+        for (var k in options) { if (options.hasOwnProperty(k)) o[k] = options[k]; }
+
+        // init
+        var elems = typeof o.selector == 'object' ? [o.selector] : document.querySelectorAll(o.selector);
+        for (var i=0; i<elems.length; i++) {
+            var that = elems[i];
+
+            // create suggestions container "sc"
+            that.sc = document.createElement('div');
+            that.sc.className = 'autocomplete-suggestions '+o.menuClass;
+
+            that.autocompleteAttr = that.getAttribute('autocomplete');
+            that.setAttribute('autocomplete', 'off');
+            that.cache = {};
+            that.last_val = '';
+
+            that.updateSC = function(resize, next){
+                var rect = that.getBoundingClientRect();
+                that.sc.style.left = Math.round(rect.left + (window.pageXOffset || document.documentElement.scrollLeft) + o.offsetLeft) + 'px';
+                that.sc.style.top = Math.round(rect.bottom + (window.pageYOffset || document.documentElement.scrollTop) + o.offsetTop) + 'px';
+                that.sc.style.width = Math.round(rect.right - rect.left) + 'px'; // outerWidth
+                if (!resize) {
+                    that.sc.style.display = 'block';
+                    that.sc.classList.remove('hide')
+                    if (!that.sc.maxHeight) { that.sc.maxHeight = parseInt((window.getComputedStyle ? getComputedStyle(that.sc, null) : that.sc.currentStyle).maxHeight); }
+                    if (!that.sc.suggestionHeight) that.sc.suggestionHeight = that.sc.querySelector('.autocomplete-suggestion').offsetHeight;
+                    if (that.sc.suggestionHeight)
+                        if (!next) that.sc.scrollTop = 0;
+                        else {
+                            var scrTop = that.sc.scrollTop, selTop = next.getBoundingClientRect().top - that.sc.getBoundingClientRect().top;
+                            if (selTop + that.sc.suggestionHeight - that.sc.maxHeight > 0)
+                                that.sc.scrollTop = selTop + that.sc.suggestionHeight + scrTop - that.sc.maxHeight;
+                            else if (selTop < 0)
+                                that.sc.scrollTop = selTop + scrTop;
+                        }
+                }
+            }
+            addEvent(window, 'resize', that.updateSC);
+            document.body.appendChild(that.sc);
+
+            live('autocomplete-suggestion', 'mouseleave', function(e){
+                var sel = that.sc.querySelector('.autocomplete-suggestion.selected');
+                if (sel) setTimeout(function(){ sel.className = sel.className.replace('selected', ''); }, 20);
+            }, that.sc);
+
+            live('autocomplete-suggestion', 'mouseover', function(e){
+                var sel = that.sc.querySelector('.autocomplete-suggestion.selected');
+                if (sel) sel.className = sel.className.replace('selected', '');
+                this.className += ' selected';
+            }, that.sc);
+
+            live('autocomplete-suggestion', 'mousedown', function(e){
+                if (hasClass(this, 'autocomplete-suggestion')) { // else outside click
+                    var v = this.getAttribute('data-val');
+                    that.value = v;
+                    o.onSelect(e, v, this);
+                    that.sc.style.display = 'none';
+                    that.sc.classList.add("hide");
+
+                }
+            }, that.sc);
+
+            that.blurHandler = function(){
+                try { var over_sb = document.querySelector('.autocomplete-suggestions:hover'); } catch(e){ var over_sb = 0; }
+                if (!over_sb) {
+                    that.last_val = that.value;
+                    that.sc.style.display = 'none';
+                    that.sc.classList.add("hide");
+                    setTimeout(function(){
+                      that.sc.style.display = 'none';
+                      that.sc.classList.add("hide");
+                    }, 350); // hide suggestions on fast input
+                } else if (that !== document.activeElement) setTimeout(function(){ that.focus(); }, 20);
+            };
+            addEvent(that, 'blur', that.blurHandler);
+
+            var suggest = function(data, val){
+                if (!val) {
+                    var val = that.value;
+                }
+                that.cache[val] = data;
+                if (data.length && val.length >= o.minChars) {
+                    var s = '';
+                    for (var i=0;i<data.length;i++) s += o.renderItem(data[i], val);
+                    that.sc.innerHTML = s;
+                    that.updateSC(0);
+                }
+                else
+                    that.sc.style.display = 'none';
+                    that.sc.classList.add("hide");
+            }
+
+            that.keydownHandler = function(e){
+                var key = window.event ? e.keyCode : e.which;
+                // down (40), up (38)
+                if ((key == 40 || key == 38) && that.sc.innerHTML) {
+                    var next, sel = that.sc.querySelector('.autocomplete-suggestion.selected');
+                    if (!sel) {
+                        next = (key == 40) ? that.sc.querySelector('.autocomplete-suggestion') : that.sc.childNodes[that.sc.childNodes.length - 1]; // first : last
+                        next.className += ' selected';
+                        that.value = next.getAttribute('data-val');
+                    } else {
+                        next = (key == 40) ? sel.nextSibling : sel.previousSibling;
+                        if (next) {
+                            sel.className = sel.className.replace('selected', '');
+                            next.className += ' selected';
+                            that.value = next.getAttribute('data-val');
+                        }
+                        else { sel.className = sel.className.replace('selected', ''); that.value = that.last_val; next = 0; }
+                    }
+                    that.updateSC(0, next);
+                    return false;
+                }
+                // esc
+                else if (key == 27) {
+                  that.value = that.last_val;
+                  that.sc.style.display = 'none';
+                  that.sc.classList.add("hide");
+                }
+                // enter
+                else if (key == 13 || key == 9) {
+                    if (that.sc.style.display !== 'none') {
+                        e.preventDefault();
+                    }
+                    var sel = that.sc.querySelector('.autocomplete-suggestion.selected');
+                    if (sel && that.sc.style.display != 'none') {
+                      o.onSelect(e, sel.getAttribute('data-val'), sel);
+                      setTimeout(function(){
+                        that.sc.style.display = 'none';
+                        that.sc.classList.add("hide");
+                    }, 20); }
+                }
+            };
+            addEvent(that, 'keydown', that.keydownHandler);
+
+            that.keyupHandler = function(e){
+                var key = window.event ? e.keyCode : e.which;
+                if (!key || (key < 35 || key > 40) && key != 13 && key != 27) {
+                    var val = that.value;
+                    if (val.length >= o.minChars) {
+                        if (val != that.last_val) {
+                            that.last_val = val;
+                            clearTimeout(that.timer);
+                            if (o.cache) {
+                                if (val in that.cache) { suggest(that.cache[val]); return; }
+                                // no requests if previous suggestions were empty
+                                for (var i=1; i<val.length-o.minChars; i++) {
+                                    var part = val.slice(0, val.length-i);
+                                    if (part in that.cache && !that.cache[part].length) { suggest([]); return; }
+                                }
+                            }
+                            that.timer = setTimeout(function(){ o.source(val, suggest) }, o.delay);
+                        }
+                    } else {
+                        that.last_val = val;
+                        that.sc.style.display = 'none';
+                        that.sc.classList.add("hide");
+                    }
+                }
+            };
+            addEvent(that, 'keyup', that.keyupHandler);
+
+            that.focusHandler = function(e){
+                that.last_val = '\n';
+                that.keyupHandler(e)
+            };
+            if (!o.minChars) addEvent(that, 'focus', that.focusHandler);
+        }
+
+        // public destroy method
+        this.destroy = function(){
+            for (var i=0; i<elems.length; i++) {
+                var that = elems[i];
+                removeEvent(window, 'resize', that.updateSC);
+                removeEvent(that, 'blur', that.blurHandler);
+                removeEvent(that, 'focus', that.focusHandler);
+                removeEvent(that, 'keydown', that.keydownHandler);
+                removeEvent(that, 'keyup', that.keyupHandler);
+                if (that.autocompleteAttr)
+                    that.setAttribute('autocomplete', that.autocompleteAttr);
+                else
+                    that.removeAttribute('autocomplete');
+                document.body.removeChild(that.sc);
+                that = null;
+            }
+        };
+    }
+    return autoComplete;
+})();
+
+(function(){
+    if (typeof define === 'function' && define.amd)
+        define('autoComplete', function () { return autoComplete; });
+    else if (typeof module !== 'undefined' && module.exports)
+        module.exports = autoComplete;
+    else
+        window.autoComplete = autoComplete;
+})();
+
+/**
+ * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+/*
+  Based on "JavaScript fancySearch" created by P Kishor
+  GitHub: https://github.com/punkish/fancysearch
+*/
+'use strict';
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Filter = function Filter(container, data, options) {
+  var facets = data.map(function (facet) {
+    return _objectSpread({}, facet, {
+      used: false,
+      values: facet.values ? facet.values.map(function (value) {
+        return {
+          value: value,
+          used: false
+        };
+      }) : []
+    });
+  });
+
+  var opts = _objectSpread({
+    tooltips: true,
+    autoFocus: true
+  }, options);
+
+  var containerClicked = false; // Keeps track of when the container was clicked on, which affects how we handle blur events for the filters.
+
+  var triggerCount = 0; // Keeps track of how many times to re-trigger the keyDown even in handleUpDown().
+
+  var ENTER = 13;
+  var TAB = 9;
+  var ESC = 27;
+  var DOWN = 40;
+  var UP = 38; // Creates the following HTML. This is the structure of a single filter inside the container.
+  // <div class="filter filter-key-empty">
+  //   <div class="filter-key hide"></div>
+  //   <div class="separator">:</div>
+  //   <input class="filter-key-input" readonly="true"></input>
+  //   <div class="filter-val hide"></div>
+  //   <input class="filter-val-input hide"></input>
+  //   <button class="close hide" type="button" aria-label="Remove Filter"></button>
+  // </div>
+
+  var makeFilter = function makeFilter(focus) {
+    var filter = document.createElement('div');
+    filter.className = 'filter filter-key-empty';
+    var filterKey = document.createElement('div');
+    filterKey.className = 'filter-key hide';
+    var separator = document.createElement('div');
+    separator.className = 'separator';
+    separator.textContent = ':';
+    var filterKeyInput = document.createElement('input');
+    filterKeyInput.className = 'filter-key-input';
+    filterKeyInput.setAttribute('readonly', 'true');
+    filterKeyInput.addEventListener('focus', handleKeyFocus);
+    filterKeyInput.addEventListener('blur', handleKeyBlur);
+    filterKeyInput.addEventListener('keydown', handleKeyboard);
+    var filterVal = document.createElement('div');
+    filterVal.className = 'filter-val hide';
+    var filterValInput = document.createElement('input');
+    filterValInput.className = 'filter-val-input hide';
+    filterValInput.addEventListener('keydown', handleKeyboard);
+    filterValInput.addEventListener('blur', handleValBlur);
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'close hide';
+    closeBtn.setAttribute('type', 'button');
+    closeBtn.setAttribute('aria-label', 'Remove Filter');
+    closeBtn.addEventListener('click', function (event) {
+      return removeFilter(event.target);
+    });
+    filter.appendChild(filterKey);
+    filter.appendChild(separator);
+    filter.appendChild(filterKeyInput);
+    filter.appendChild(filterVal);
+    filter.appendChild(filterValInput);
+    filter.appendChild(closeBtn);
+    container.appendChild(filter);
+    var keys = facets.filter(function (facet) {
+      return !facet.used;
+    }).map(function (facet) {
+      return {
+        key: facet.key,
+        header: facet.header
+      };
+    });
+    makeAutoComplete('key', filterKeyInput, keys);
+
+    if (focus) {
+      filterKeyInput.focus();
+    }
+  };
+
+  var getKeyDiv = function getKeyDiv(filter) {
+    return filter.querySelector('.filter-key');
+  };
+
+  var getKeyInput = function getKeyInput(filter) {
+    return filter.querySelector('.filter-key-input');
+  };
+
+  var getValueDiv = function getValueDiv(filter) {
+    return filter.querySelector('.filter-val');
+  };
+
+  var getValueInput = function getValueInput(filter) {
+    return filter.querySelector('.filter-val-input');
+  };
+
+  var getCloseButton = function getCloseButton(filter) {
+    return filter.querySelector('.close');
+  };
+
+  var removeFilter = function removeFilter(target, suppressEvent) {
+    if (target) {
+      var getFilterEl = function getFilterEl(target) {
+        if (_toConsumableArray(target.classList).includes('filter')) {
+          return target;
+        } else {
+          return getFilterEl(target.parentElement);
+        }
+      }; // Return filter key and value to unused state.
+
+
+      var filterEl = getFilterEl(target);
+
+      if (filterEl) {
+        var key = getKeyInput(filterEl).value;
+
+        if (key) {
+          var facet = facets.find(function (facet) {
+            return facet.key === key;
+          });
+
+          if (facet) {
+            facet.used = false;
+            var val = getValueInput(filterEl).value;
+
+            if (val) {
+              var value = facet.values.find(function (value) {
+                return value.value === val;
+              });
+
+              if (value) {
+                value.used = false;
+              }
+            }
+          }
+        } // Remove filter element from UI.
+        // Check if it is still in the DOM (has a parent) first.
+
+
+        if (filterEl.parentElement) {
+          filterEl.parentElement.removeChild(filterEl);
+        }
+      } // Remove uncommitted filters because the used items state may have changed
+
+
+      getAllFilters(':not(.filter-committed)').forEach(function (filter) {
+        return filter.parentElement.removeChild(filter);
+      }); // Hide Clear All button if there are no more filters
+
+      if (getAllFilters().length === 0) {
+        clearButton.className = 'close hide';
+      } // Emit event.
+
+
+      if (!suppressEvent) {
+        container.dispatchEvent(new Event('changed.fluid.filter'));
+      }
+
+      makeFilter();
+    }
+  };
+
+  var commitValue = function commitValue(filter) {
+    var valueEl = getValueDiv(filter);
+    var valInput = getValueInput(filter);
+    var closeButton = getCloseButton(filter);
+
+    if (valInput.value !== '' && !Array.prototype.includes.call(filter.classList, 'filter-committed')) {
+      // 1. Commit the selected value in the UI.
+      filter.classList.replace('filter-val-empty', 'filter-committed');
+      valueEl.textContent = valInput.value;
+      valueEl.classList.remove('hide');
+      valInput.classList.add('hide');
+      closeButton.classList.remove('hide');
+      clearButton.classList.remove('hide'); // Show Clear All button
+      // 2. Mark the selected value as used.
+
+      var key = getKeyInput(filter).value;
+      var facet = facets.find(function (facet) {
+        return facet.key === key;
+      });
+
+      if (facet) {
+        var value = facet.values.find(function (value) {
+          return value.value === valInput.value;
+        });
+
+        if (value) {
+          value.used = true;
+        }
+      } // 3. Add tooltip if needed.
+
+
+      if (opts.tooltips && isTruncatedX(valueEl)) {
+        $(valueEl).tooltip({
+          title: valInput.value
+        });
+      } // 4. Emit event.
+
+
+      container.dispatchEvent(new Event('changed.fluid.filter')); // 5. Make the next new filter.
+
+      makeFilter(opts.autoFocus);
+      return true;
+    }
+  };
+
+  var preventKeyScroll = function preventKeyScroll(event) {
+    switch (event.keyCode) {
+      case UP:
+      case DOWN:
+        event.preventDefault();
+        break;
+    }
+  };
+
+  var handleMouseDown = function handleMouseDown(event) {
+    return containerClicked = true;
+  };
+
+  var handleMouseUp = function handleMouseUp(event) {
+    return containerClicked = false;
+  };
+
+  var handleClick = function handleClick(event) {
+    var filter = event.target;
+    uncommitted = Array.prototype.find.call(filter.children, function (child) {
+      return Array.prototype.includes.call(child.classList, 'filter') && !Array.prototype.includes.call(child.classList, 'filter-committed');
+    });
+
+    if (uncommitted) {
+      getKeyInput(uncommitted).focus();
+    }
+  };
+
+  var handleKeyFocus = function handleKeyFocus() {
+    return window.addEventListener('keydown', preventKeyScroll);
+  };
+
+  var handleKeyBlur = function handleKeyBlur(event) {
+    window.removeEventListener('keydown', preventKeyScroll); // If the element is blurred because the container was clicked on
+    // and it is still in the uncommitted state, it will be immediately refocused.
+    // In that case, we do not allow the blur event to propagate
+    // because we want to keep the autocomplete menu visible.
+    // However, if a close button within the container was clicked, then
+    // event.relatedTarget will be populated, so we allow normal blurring behavior.
+
+    if (containerClicked && !event.relatedTarget && !Array.prototype.includes.call(event.target.classList, 'filter-committed')) {
+      event.stopImmediatePropagation();
+    }
+  };
+
+  var handleValBlur = function handleValBlur(event) {
+    return commitValue(event.target.parentElement);
+  };
+
+  var handleUpDown = function handleUpDown(code, target, isOriginalEvent) {
+    var next;
+    var selected = target.sc.querySelector('.autocomplete-suggestion.selected');
+
+    if (!selected) {
+      next = code === DOWN ? target.sc.querySelector('.autocomplete-suggestion') : target.sc.childNodes[target.sc.childNodes.length - 1]; // first : last
+    } else {
+      next = code === DOWN ? selected.nextSibling : selected.previousSibling;
+    }
+
+    if (next && Array.prototype.includes.call(next.classList, 'autocomplete-header')) {
+      if (triggerCount === 0 && isOriginalEvent) {
+        while (next) {
+          if (Array.prototype.includes.call(next.classList, 'autocomplete-header')) {
+            triggerCount++;
+          } else {
+            break;
+          }
+
+          next = code === DOWN ? next.nextSibling : next.previousSibling;
+        }
+      }
+
+      if (triggerCount > 0) {
+        triggerCount--;
+        var newEvent = new KeyboardEvent('keydown', {
+          keyCode: code,
+          detail: true
+        });
+        target.dispatchEvent(newEvent);
+      }
+    }
+  };
+
+  var handleKeyboard = function handleKeyboard(event) {
+    switch (event.keyCode) {
+      case UP:
+      case DOWN:
+        handleUpDown(event.keyCode, event.target, !event.detail); // event.detail will be true if this is a re-triggered event from handleUpDown
+
+        break;
+
+      case ENTER:
+        commitValue(event.target.parentElement);
+        break;
+
+      case TAB:
+        if (!commitValue(event.target.parentElement)) {
+          clearButton.focus();
+        }
+
+        event.preventDefault();
+        break;
+
+      case ESC:
+        if (event.target.value === '') {
+          removeFilter(event.target);
+        }
+
+        break;
+    }
+  };
+
+  var activateTooltips = function activateTooltips(mutationsList, observer) {
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = mutationsList[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var mutation = _step.value;
+
+        if (mutation.type === 'childList' && mutation.addedNodes) {
+          mutation.addedNodes.forEach(function (child) {
+            if (isTruncatedX(child)) {
+              $(child).tooltip({
+                title: child.textContent
+              });
+            }
+          });
+        }
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return != null) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+  };
+
+  var makeAutoComplete = function makeAutoComplete(type, selector, choices) {
+    new autoComplete({
+      selector: selector,
+      menuClass: 'dropdown-menu',
+      minChars: Array.isArray(choices) ? 0 : 3,
+      source: function source(term, response) {
+        // The very first time this is called,
+        // when the control is constructed,
+        // choices will contain all keys.
+        term = term.toLowerCase();
+        var matches;
+
+        if (type === 'key') {
+          matches = choices.filter(function (choice) {
+            return choice.key.toLowerCase().includes(term);
+          });
+        } else {
+          matches = choices.filter(function (choice) {
+            return choice.toLowerCase().includes(term);
+          });
+        }
+
+        response(matches);
+      },
+      renderItem: function renderItem(item, search) {
+        search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+        var itemEl = document.createElement('div');
+        itemEl.className = 'autocomplete-suggestion dropdown-item';
+
+        if (type === 'key') {
+          // The items to render for keys do not include the data-val property.
+          // This prevents the control from being in an undefined state if the user
+          // traverses the values in the dropdown using the arrow keys.
+          if (item.header) {
+            itemEl.classList.add('autocomplete-header');
+          }
+
+          itemEl.textContent = item.key;
+        } else {
+          itemEl.setAttribute('data-val', item);
+          var displayItem = item.replace(re, '<b>$1</b>');
+          itemEl.innerHTML = displayItem;
+        } // Add tooltip if needed.
+        // if (opts.tooltips) {
+        //   itemEl.setAttribute('data-toggle', 'tooltip');
+        //   itemEl.setAttribute('data-placement', 'right');
+        //   itemEl.setAttribute('data-condition', 'truncated');
+        //   itemEl.setAttribute('title', itemEl.textContent);
+        // }
+
+
+        return itemEl.outerHTML;
+      },
+      onSelect: function onSelect(event, term, item) {
+        if (Array.prototype.includes.call(item.classList, 'autocomplete-header')) {
+          event.stopImmediatePropagation();
+        } else {
+          term = item.textContent;
+          var keyInput = this.selector;
+          var filterEl = keyInput.parentElement;
+
+          if (type === 'key') {
+            // A key was just selected:
+            // 1. Commit the selected key in the UI.
+            var keyEl = getKeyDiv(filterEl);
+            keyInput.classList.add('hide');
+            keyInput.value = term;
+            keyEl.textContent = term;
+            keyEl.classList.remove('hide');
+            filterEl.classList.replace('filter-key-empty', 'filter-val-empty'); // 2. Add tooltip if needed.
+
+            if (opts.tooltips && isTruncatedX(keyEl)) {
+              $(keyEl).tooltip({
+                title: keyEl.textContent
+              });
+            } // 3. Determine choices for next autocomplete, which should
+            //    contain the available values for the selected key.
+
+
+            var valChoices = [];
+            var facet = facets.find(function (facet) {
+              return facet.key === term;
+            });
+
+            if (facet) {
+              // We found the selected key, so filter its values to get the ones not yet used.
+              valChoices = facet.values.filter(function (val) {
+                return !val.used;
+              }).map(function (val) {
+                return val.value;
+              }); // If the key is not reusable, mark it as used.
+
+              if (facet.noRepeat) {
+                facet.used = true;
+              }
+            } // 4. Create the autocomplete for the key's values using the available choices.
+
+
+            var valInput = getValueInput(filterEl);
+            makeAutoComplete('val', valInput, valChoices); // 5. Activate the value input for the filter.
+
+            valInput.classList.remove('hide');
+            valInput.focus();
+          } else {
+            // A value was just selected
+            commitValue(filterEl);
+          }
+        }
+      }
+    });
+
+    if (opts.tooltips && selector.sc) {
+      var observer = new MutationObserver(activateTooltips);
+      observer.observe(selector.sc, {
+        childList: true
+      });
+    }
+  };
+
+  var getAllFilters = function getAllFilters(selector) {
+    return _toConsumableArray(container.querySelectorAll(".filter".concat(selector || '')));
+  };
+
+  var makeClearButton = function makeClearButton() {
+    var clearButton = document.createElement('button');
+    clearButton.className = 'close hide clearAllFilters';
+    clearButton.setAttribute('type', 'button');
+    clearButton.setAttribute('aria-label', 'Clear All Filters');
+    clearButton.addEventListener('click', function () {
+      return getAllFilters().forEach(function (filter) {
+        return removeFilter(filter, false);
+      });
+    });
+    container.dispatchEvent(new Event('changed.fluid.filter'));
+    return clearButton;
+  };
+
+  var clearButton = makeClearButton();
+  container.appendChild(clearButton);
+  container.addEventListener('mousedown', handleMouseDown);
+  container.addEventListener('click', handleClick);
+  container.addEventListener('mouseup', handleMouseUp);
+  makeFilter();
+
+  this.result = function () {
+    var filters = getAllFilters();
+    var query = {};
+    filters.forEach(function (filter) {
+      var key = getKeyInput(filter).value.toLowerCase();
+      var val = getValueInput(filter).value;
+
+      if (key && val) {
+        if (key in query) {
+          if (typeof query[key] === 'string') {
+            // This is the second entry of a multi-valued filter,
+            // so turn the single string into an array.
+            var str = query[key];
+            query[key] = [str, val];
+          } else {
+            query[key].push(val);
+          }
+        } else {
+          query[key] = val;
+        }
+      }
+    });
+    return query;
+  };
+};
+
+
 "use strict";
 
 /**
@@ -9993,34 +10796,34 @@ if ($.fn.selectpicker) {
  * of all or any part of the contents of this file is strictly prohibited.
  */
 var isTruncatedX = function isTruncatedX(element, tolerance) {
-  return element.clientWidth + tolerance < element.scrollWidth;
+  var tol = tolerance || 2;
+  return element.clientWidth + tol < element.scrollWidth;
 };
 
 var isTruncatedY = function isTruncatedY(element, tolerance) {
-  return element.clientHeight + tolerance < element.scrollHeight;
+  var tol = tolerance || 2;
+  return element.clientHeight + tol < element.scrollHeight;
 };
 
 var conditionalTooltipHandler = function conditionalTooltipHandler(event, tolerance) {
-  var defaultTolerance = 2;
-
   switch (event.target.getAttribute('data-condition')) {
     case 'truncated':
     case 'truncated-x':
-      if (!isTruncatedX(event.target, tolerance || defaultTolerance)) {
+      if (!isTruncatedX(event.target, tolerance)) {
         event.preventDefault();
       }
 
       break;
 
     case 'truncated-y':
-      if (!isTruncatedY(event.target, tolerance || defaultTolerance)) {
+      if (!isTruncatedY(event.target, tolerance)) {
         event.preventDefault();
       }
 
       break;
 
     case 'truncated-both':
-      if (!isTruncatedX(event.target, tolerance || defaultTolerance) && !isTruncatedY(event.target, tolerance || defaultTolerance)) {
+      if (!isTruncatedX(event.target, tolerance) && !isTruncatedY(event.target, tolerance)) {
         event.preventDefault();
       }
 
