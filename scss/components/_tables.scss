@@ -21,7 +21,8 @@
     width: 200px;
   }
 
-  + .table-search {
+  + .table-search,
+  + .table-filter {
     margin-bottom: $grid-gutter-width / 2;
   }
 
@@ -49,6 +50,11 @@
     background-color: $table-active-bg;
   }
 
+  th {
+    color: $table-head-color;
+    font-weight: 400;
+  }
+
   th,
   td {
     vertical-align: inherit;
@@ -60,7 +66,7 @@
   }
 
   thead {
-    border-bottom: $table-border-width solid $table-heading-border-color;
+    border-bottom: $table-border-width solid $table-head-border-color;
 
     th,
     td {
@@ -97,6 +103,21 @@
 
   tbody {
 
+    &:empty::before {
+      color: $table-head-color;
+      content: attr(data-placeholder);
+      height: px(33);
+      left: 50%;
+      line-height: 1.5rem;
+      padding: $table-cell-padding;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+
+    tr:not(:last-child) {
+      border-bottom: $table-border-width solid $table-border-color;
+    }
+
     th,
     td {
       border: none;
@@ -115,7 +136,7 @@
   }
 
   tfoot {
-    border-top: $table-border-width solid $table-heading-border-color;
+    border-top: $table-border-width solid $table-head-border-color;
 
     th,
     td {
