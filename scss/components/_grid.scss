@@ -8,6 +8,7 @@
 
 .container,
 .container-fluid {
+  background-color: inherit;
   padding-left: $grid-gutter-width;
   padding-right: $grid-gutter-width;
 }
@@ -17,10 +18,12 @@
 }
 
 .row {
+  background-color: inherit;
   margin-top: -$grid-gutter-width;
-}
 
-.col,
-.col-auto {
-  margin-top: $grid-gutter-width;
+  .col,
+  [class^="col-"] {
+    background-color: inherit;
+    margin-top: $grid-gutter-width;
+  }
 }

@@ -7,31 +7,31 @@
  */
 
 const isTruncatedX = (element, tolerance) => {
-  return element.clientWidth + tolerance < element.scrollWidth;
+  const tol = tolerance || 2;
+  return element.clientWidth + tol < element.scrollWidth;
 };
 
 const isTruncatedY = (element, tolerance) => {
-  return element.clientHeight + tolerance < element.scrollHeight;
+  const tol = tolerance || 2;
+  return element.clientHeight + tol < element.scrollHeight;
 };
 
 const conditionalTooltipHandler = (event, tolerance) => {
-  const defaultTolerance = 2;
-
   switch (event.target.getAttribute('data-condition')) {
     case 'truncated':
     case 'truncated-x':
-      if (!isTruncatedX(event.target, tolerance || defaultTolerance)) {
+      if (!isTruncatedX(event.target, tolerance)) {
         event.preventDefault();
       }
       break;
     case 'truncated-y':
-      if (!isTruncatedY(event.target, tolerance || defaultTolerance)) {
+      if (!isTruncatedY(event.target, tolerance)) {
         event.preventDefault();
       }
       break;
     case 'truncated-both':
-      if (!isTruncatedX(event.target, tolerance || defaultTolerance)
-        && !isTruncatedY(event.target, tolerance || defaultTolerance)) {
+      if (!isTruncatedX(event.target, tolerance)
+        && !isTruncatedY(event.target, tolerance)) {
         event.preventDefault();
       }
   }

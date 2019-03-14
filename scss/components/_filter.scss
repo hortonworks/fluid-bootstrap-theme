@@ -1,0 +1,156 @@
+/**
+ * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
+ * Except as expressly permitted in a written agreement between you
+ * or your company and Hortonworks, Inc, any use, reproduction,
+ * modification, redistribution, sharing, lending or other exploitation
+ * of all or any part of the contents of this file is strictly prohibited.
+ */
+
+.filter-control {
+  align-items: start;
+  cursor: text;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  min-height: $input-height;
+  padding-bottom: calc(#{$input-padding-y} - #{$filter-item-margin-y});
+  padding-left: calc(#{$input-padding-x} + #{$filter-icon-width});
+  padding-right: px(19); // leave space for the "clear" icon
+  padding-top: $input-padding-y;
+  position: relative;
+
+  &::before,
+  &::after {
+    color: text-color("light");
+    position: absolute;
+  }
+
+  &::before {
+    content: "~";
+    font-family: fluidicons, system-ui;
+    left: $input-btn-padding-x;
+    width: $filter-icon-width;
+  }
+
+  &::after {
+    content: attr(data-placeholder);
+    left: calc(#{$input-btn-padding-x} + #{$filter-icon-width} + 5px);
+  }
+
+  .hide {
+    display: none;
+  }
+
+  input {
+    outline: none;
+    padding: 0;
+  }
+
+  > .close {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.filter {
+  @extend .badge-pill;
+  align-items: center;
+  display: flex;
+  float: left;
+  justify-content: center;
+  margin-bottom: $filter-item-margin-y;
+  margin-left: $filter-item-margin-x;
+  z-index: 1;
+
+  .close {
+    margin-left: 1px;
+  }
+}
+
+.filter-val-empty,
+.filter-committed {
+  @extend .badge-light;
+}
+
+.filter-key,
+.filter-val {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-key {
+  color: text-color("default");
+  max-width: $filter-key-width;
+
+  + .separator {
+    margin-right: 3px;
+  }
+
+  &.hide + .separator {
+    display: none;
+  }
+}
+
+.filter-val {
+  color: text-color("dark");
+  max-width: $filter-input-width;
+}
+
+.filter-key-input,
+.filter-val-input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  width: $filter-input-width;
+}
+
+.autocomplete-suggestions {
+  display: none;
+  margin-left: -$badge-pill-padding-x;
+  max-height: $filter-dropdown-height;
+  min-width: $filter-input-width * 1.25;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  z-index: $zindex-dropdown;
+}
+
+.autocomplete-suggestion,
+.autocomplete-header {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.autocomplete-header:not(:first-child) {
+  margin-top: 5px;
+}
+
+.autocomplete-suggestion {
+  @extend .dropdown-item;
+  cursor: pointer;
+
+  &.selected {
+    @extend .dropdown-item:focus;
+  }
+
+  b {
+    color: theme-color("info");
+    font-weight: $font-weight-normal;
+  }
+}
+
+.autocomplete-header {
+  @extend .dropdown-header;
+  pointer-events: none;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.selected {
+    background-color: transparent;
+    color: $dropdown-header-color;
+  }
+}
