@@ -3521,13 +3521,118 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
         <div class="card">
           <div class="card-body">
-            <p><a href="wizard.html">Full Screen Wizard</a></p>
-            <button class="btn btn-primary" onclick="goToStep(1)" data-toggle="modal" data-target="#wizardModal" data-backdrop="static" data-keyboard="false">Wizard in Modal</button>
+            <h3 class="card-title">On-Page Wizard</h3>
+            <p>Use when the wizard is the primary content of a page that is within the global navigation context.</p>
+            <div id="wizardOnPage" class="container-fluid wizard">
+              <div class="row">
+                <div class="col-auto">
+                  <nav class="navbar navbar-primary">
+                    <ol class="stepper step-1">
+                      <li class="active">
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step A">Step A</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Start here">Start here</div>
+                      </li>
+                      <li>
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step B - Do something very long and involved that takes too much space">Step B - Do something very long and involved that takes too much space</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Continue here. This step has a particularly long description that is going to get truncated.">Continue here. This step has a particularly long description that is going to get truncated.</div>
+                      </li>
+                      <li>
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step C">Step C</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Finish here">Finish here</div></li>
+                      </li>
+                    </ol>
+                    <ol class="stepper step-2">
+                      <li class="complete">
+                        <a class="title" href="javascript:wizardOnPage.goToStep(1);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step A">Step A</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Start here">Start here</div>
+                      </li>
+                      <li class="active">
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step B - Do something very long and involved that takes too much space">Step B - Do something very long and involved that takes too much space</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Continue here. This step has a particularly long description that is going to get truncated.">Continue here. This step has a particularly long description that is going to get truncated.</div>
+                      </li>
+                      <li>
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step C">Step C</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Finish here">Finish here</div></li>
+                      </li>
+                    </ol>
+                    <ol class="stepper step-3">
+                      <li class="complete">
+                        <a class="title" href="javascript:wizardOnPage.goToStep(1);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step A">Step A</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Start here">Start here</div>
+                      </li>
+                      <li class="complete">
+                        <a class="title" href="javascript:wizardOnPage.goToStep(2);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step B - Do something very long and involved that takes too much space">Step B - Do something very long and involved that takes too much space</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Continue here. This step has a particularly long description that is going to get truncated.">Continue here. This step has a particularly long description that is going to get truncated.</div>
+                      </li>
+                      <li class="active">
+                        <a class="title" href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Step C">Step C</a>
+                        <div class="desc" data-toggle="tooltip" data-placement="right" data-condition="truncated-y" title="Finish here">Finish here</div></li>
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+                <div class="col">
+                  <div class="wizard-body">
+                    <div class="container-fluid step-1">
+                      <div class="row">
+                        <div class="col">
+                          <h2>1. Step A</h2>
+                          <p>This is the first step of this wizard. You can put an extended step description here.</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          Content for the first step goes here.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container-fluid step-2">
+                      <div class="row">
+                        <div class="col">
+                          <h2>2. Step B</h2>
+                          <p>This is the second step of this wizard. You can put an extended step description here.</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          Content for the second step goes here.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container-fluid step-3">
+                      <div class="row">
+                        <div class="col">
+                          <h2>3. Step C</h2>
+                          <p>This is the third and final step of this wizard. You can put an extended step description here.</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          Content for the third step goes here.
+                        </div>
+                      </div>
+                    </div>
+                    <nav class="navbar navbar-wizard">
+                      <button type="button" class="btn btn-secondary wizard-nav-button wizard-back-button" onclick="onPageWizard.back()">Back</button>
+                      <button type="button" class="btn btn-primary wizard-nav-button wizard-next-button" onclick="onPageWizard.next()">Next</button>
+                      <a class="btn btn-primary wizard-finish-button" href="javascript:location.reload();">Finish</a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Off-Page Wizards</h3>
+            <p><a href="wizard.html">Full Page Wizard</a></p>
+            <button class="btn btn-primary" onclick="modalWizard.goToStep(1)" data-toggle="modal" data-target="#wizardModal" data-backdrop="static" data-keyboard="false">Wizard in Modal</button>
           </div>
         </div>
 
         <!-- Wizard modal -->
-        <div class="modal wizard fade" id="wizardModal" tabindex="-1" role="dialog" aria-labelledby="wizardModalTitle" aria-hidden="true">
+        <div class="modal wizard-fullpage fade" id="wizardModal" tabindex="-1" role="dialog" aria-labelledby="wizardModalTitle" aria-hidden="true">
           <div class="modal-dialog modal-fluid">
             <div class="modal-content">
               <div class="modal-header">
@@ -3551,7 +3656,7 @@ of all or any part of the contents of this file is strictly prohibited.
                   </ol>
                   <ol class="stepper stepper-light step-2">
                     <li class="complete">
-                      <a href="javascript:goToStep(1);">Step A</a>
+                      <a href="javascript:wizardModal.goToStep(1);">Step A</a>
                       <div class="desc">Start here</div>
                     </li>
                     <li class="active">
@@ -3565,11 +3670,11 @@ of all or any part of the contents of this file is strictly prohibited.
                   </ol>
                   <ol class="stepper stepper-light step-3">
                     <li class="complete">
-                      <a href="javascript:goToStep(1);">Step A</a>
+                      <a href="javascript:wizardModal.goToStep(1);">Step A</a>
                       <div class="desc">Start here</div>
                     </li>
                     <li class="complete">
-                      <a href="javascript:goToStep(2);">Step B</a>
+                      <a href="javascript:wizardModal.goToStep(2);">Step B</a>
                       <div class="desc">Continue here</div>
                     </li>
                     <li class="active">
@@ -3614,9 +3719,9 @@ of all or any part of the contents of this file is strictly prohibited.
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default wizard-cancel-button" data-toggle="modal" data-target="#cancelWizard" data-backdrop="false">Cancel</button>
-                <button id="back" type="button" class="btn btn-secondary wizard-nav-button wizard-back-button" onclick="back()">Back</button>
-                <button id="next" type="button" class="btn btn-primary wizard-nav-button" onclick="next()">Next</button>
-                <button id="finish" type="button" class="btn btn-primary wizard-nav-button" data-dismiss="modal">Finish</a>
+                <button type="button" class="btn btn-secondary wizard-nav-button wizard-back-button" onclick="modalWizard.back()">Back</button>
+                <button type="button" class="btn btn-primary wizard-nav-button wizard-next-button" onclick="modalWizard.next()">Next</button>
+                <button type="button" class="btn btn-primary wizard-nav-button wizard-finish-button" data-dismiss="modal">Finish</a>
               </div>
 
               <!-- Cancel Confirmation -->
@@ -3662,6 +3767,14 @@ of all or any part of the contents of this file is strictly prohibited.
   <script src="js/fluid-bootstrap.js"></script>
   <script src="js/list.js"></script>
   <script src="js/demo.js"></script>
+  <script>
+    let onPageWizard;
+    let modalWizard;
+    $(function () {
+      onPageWizard = new Wizard('wizardOnPage');
+      modalWizard = new Wizard('wizardModal');
+    });
+  </script>
 </body>
 
 </html>

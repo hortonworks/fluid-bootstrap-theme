@@ -8,14 +8,18 @@
 
 .stepper {
   background-color: inherit;
+  color: text-color("light");
   counter-reset: stepper;
   cursor: default;
   font-size: $stepper-font-size;
   margin: 0;
   padding-left: $stepper-padding;
 
-  &.stepper-light {
-    color: text-color("light");
+  &.stepper-light{
+
+    .active {
+      color: gray("400");
+    }
   }
 
   &.stepper-horizontal {
@@ -92,10 +96,10 @@
       &::after {
         background-color: color("gray");
         content: " ";
-        height: $stepper-step-size * 2;
+        height: 6rem;
         left: $stepper-icon-size * -1;
         position: absolute;
-        top: 75%;
+        top: 54%;
         width: 1px;
         z-index: 1;
 
@@ -115,7 +119,7 @@
     }
 
     &.active {
-      color: gray("400");
+      color: text-color("default");
       font-weight: $font-weight-bold;
 
       &::before {
