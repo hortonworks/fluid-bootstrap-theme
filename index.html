@@ -69,43 +69,55 @@ of all or any part of the contents of this file is strictly prohibited.
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="my-navbar">
-      <div class="navbar-nav collapsed" data-toggle="collapse" data-target="#navbarItemsToggle" aria-controls="navbarToggle"
-        aria-expanded="false" aria-label="Toggle navigation items">
-        <div class="nav-item dropdown" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Resources">
-          <a class="nav-link">
-            <span class="icon fa fa-book"></span>
-            Resources
-          </a>
-          <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false"></a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+      <div class="navbar-parent active">
+        <div class="navbar-nav collapsed" data-toggle="collapse" data-target="#navbarItemsToggle" aria-controls="navbarToggle"
+          aria-expanded="false" aria-label="Toggle navigation items">
+          <div class="nav-item dropdown" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Resources">
+            <a class="nav-link nav-parent-link">
+              <span class="icon fa fa-book"></span>
+              Resources
+            </a>
+            <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="navbarItemsToggle" class="navbar-nav collapse">
-        <a class="nav-item nav-link status status-success" href="https://getbootstrap.com/docs/4.3/" target="_blank" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Bootstrap Documentation">
-          <span class="icon"></span>
-          Bootstrap Documentation
-        </a>
-        <a class="nav-item nav-link status status-success" href="https://developer.snapappointments.com/bootstrap-select/" target="_blank" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Bootstrap-Select">
-          <span class="icon"></span>
-          Bootstrap-Select
-        </a>
-        <a class="nav-item nav-link status status-danger" href="https://fontawesome.com/v4.7.0/" target="_blank" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Font Awesome 4.7">
-          <span class="icon"></span>
-          Font Awesome 4.7
-        </a>
-        <a class="nav-item nav-link status status-danger" href="https://fontello.com/" target="_blank" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Fontello">
-          <span class="icon"></span>
-          Fontello
-        </a>
-        <a class="nav-item nav-link status status-danger" href="https://productdesign.hortonworks.com/" target="_blank" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Product Design Home">
-          <span class="icon"></span>
-          Product Design Home
-        </a>
+        <div id="navbarItemsToggle" class="navbar-nav collapse navbar-submenu">
+          <div class="nav-sublink active">
+            <a class="nav-item nav-link status status-success" href="https://getbootstrap.com/docs/4.3/" target="_blank" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Bootstrap Documentation">
+              <span class="icon"></span>
+              Bootstrap Documentation
+            </a>
+          </div>
+          <div class="nav-sublink">
+            <a class="nav-item nav-link status status-success" href="https://developer.snapappointments.com/bootstrap-select/" target="_blank" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Bootstrap-Select">
+              <span class="icon"></span>
+              Bootstrap-Select
+            </a>
+          </div>
+          <div class="nav-sublink">
+            <a class="nav-item nav-link status status-danger" href="https://fontawesome.com/v4.7.0/" target="_blank" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Font Awesome 4.7">
+              <span class="icon"></span>
+              Font Awesome 4.7
+            </a>
+          </div>
+          <div class="nav-sublink">
+            <a class="nav-item nav-link status status-danger" href="https://fontello.com/" target="_blank" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Fontello">
+              <span class="icon"></span>
+              Fontello
+            </a>
+          </div>
+          <div class="nav-sublink">
+            <a class="nav-item nav-link status status-danger" href="https://productdesign.hortonworks.com/" target="_blank" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Product Design Home">
+              <span class="icon"></span>
+              Product Design Home
+            </a>
+          </div>
+        </div>
       </div>
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="#layout" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Layout">
