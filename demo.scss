@@ -33,9 +33,9 @@
 .section-header {
   display: flex;
   justify-content: space-between;
-  margin-top: $grid-gutter-width;
-  padding-top: $grid-gutter-width;
-  padding-bottom: $grid-gutter-width;
+  margin-top: space(16);
+  padding-top: space(16);
+  padding-bottom: space(8);
 }
 
 section {

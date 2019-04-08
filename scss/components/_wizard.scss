@@ -12,6 +12,7 @@
 
   .navbar-primary {
     background-color: inherit;
+    background-image: none;
     float: left;
     margin-right: $grid-gutter-width / -2;
     padding-right: $grid-gutter-width;
@@ -70,6 +71,7 @@
   }
 
   .navbar-primary {
+    background-image: none;
     height: calc(100% - (#{$wizard-navbar-height} - #{$border-width}) * 2);
     margin-bottom: $wizard-navbar-height;
     padding: $wizard-padding-x;

@@ -29,9 +29,13 @@
       &::after {
         color: $link;
         content: theme-icon("collapse");
-        float: right;
         font-family: fluidicons, system-ui;
-        font-size: px(20);
+        font-size: $caret-font-size;
+        height: 0;
+        position: absolute;
+        right: 36px;
+        top: 14px;
+        width: 0;
       }
 
       &.collapsed::after {

@@ -25,16 +25,16 @@ $root-font-size: 14px;
 //
 
 $white:    #fff !default;
-$gray-100: #fbfbfb;
-$gray-200: #f6f6f6;
-$gray-300: #ececec; // Background
-$gray-400: #d1d1d1; // Border
-$gray-500: #b5b5b5;
-$gray-600: #999999; // Light Text
-$gray-700: #666666; // Default Text
-$gray-800: #4c4c4c;
-$gray-900: #333333; // Dark Text
-$black:    #000 !default;
+$gray-100: #f1f2f3; // Background
+$gray-200: #e4e5e7;
+$gray-300: #d6d8db; // Border
+$gray-400: #adb2b6;
+$gray-500: #989ea4;
+$gray-600: #838b92;
+$gray-700: #5a656d; // Light Text
+$gray-800: #333e47;
+$gray-900: #1b2329; // Default Text
+$black:    #000 !default; // Dark Text
 
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -53,28 +53,30 @@ $grays: map-merge(
   $grays
 );
 
-$blue:   #1491c1;
+$blue:   #0070bd;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink:   #e83e8c !default;
-$red:    #ef6162;
-$orange: #e98a40;
+$red:    #d9150c;
+$orange: #ff8300;
 $yellow: #ffc107 !default;
-$green:  #1eb475;
+$green:  #008746;
 $teal:   #20c997 !default;
 $cyan:   #17a2b8 !default;
 $glow:   #007bff; // This is Bootstrap's original $blue value, but we only want to use it for active glows
 
 // Fluid colors
-$fluid-green:              #3fae2a;
-$navbar-color:             rgba(255, 255, 255, .55); // This is .55 rather than .5 to achieve contrast required for a11y
-$navbar-bg:                #313544;
-$navbar-brand-color:       rgba(255, 255, 255, .75);
-$navbar-brand-hover-color:   $white;
-$navbar-brand-hover-bg:    #304e73;
-$navbar-brand-bg:          #313d54;
-$navbar-active-color:        $white;
-$navbar-active-bg:         #414354;
+$brand-color:              #0070bd;
+$app-color:                $brand-color; // set to $brand-color by default, but this can be different for each app
+$navbar-color:             $gray-400;
+$navbar-bg:                $gray-800;
+$navbar-app-color:         rgba(mix(transparentize($app-color, .25), $navbar-bg), 1);
+$navbar-brand-color:       $white;
+$navbar-brand-bg:          $gray-900;
+$navbar-hover-color:       $gray-100;
+$navbar-hover-bg:          rgba($white, .10);
+$navbar-active-color:      $white;
+$navbar-active-bg:         rgba($white, .10);
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -99,15 +101,15 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       $fluid-green;
-$secondary:     $fluid-green;
+$primary:       $brand-color;
+$secondary:     $brand-color;
 $default:       $gray-600;
 $success:       $green !default;
 $info:          $blue;
 $link:          $blue;
 $warning:       $orange;
 $danger:        $red !default;
-$light:         $gray-300;
+$light:         $gray-100;
 $dark:          $gray-900;
 
 $theme-colors: () !default;
@@ -129,9 +131,9 @@ $theme-colors: map-merge(
 );
 
 // Text colors
-$text-light:    $gray-600;
-$text:          $gray-700;
-$text-dark:     $gray-900;
+$text-light:    $gray-700;
+$text:          $gray-900;
+$text-dark:     $black;
 
 $text-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -240,22 +242,54 @@ $enable-print-styles:       true !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: 15px;
+$space-4:   4px;
+$space-8:   8px;
+$space-12:  12px;
+$space-16:  16px;
+$space-24:  24px;
+$space-32:  32px;
+$space-48:  48px;
+$space-64:  64px;
+
+$spaces: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spaces: map-merge(
+  (
+    4: $space-4,
+    8: $space-8,
+    12: $space-12,
+    16: $space-16,
+    24: $space-24,
+    32: $space-32,
+    48: $space-48,
+    64: $space-64
+  ),
+  $spaces
+);
+
+$spacer:    $space-16;
+$spacer-0:  0;
+$spacer-1:  $spacer * .25; // 4px
+$spacer-2:  $spacer * .5;  // 8px
+$spacer-3:  $spacer;       // 16px
+$spacer-4:  $spacer * 1.5; // 24px
+$spacer-5:  $spacer * 3;   // 48px
+
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
   (
-    0: 0,
-    1: ($spacer * .25),
-    2: ($spacer * .5),
-    3: $spacer,
-    4: ($spacer * 1.5),
-    5: ($spacer * 3)
+    0: $spacer-0,
+    1: $spacer-1,
+    2: $spacer-2,
+    3: $spacer-3,
+    4: $spacer-4,
+    5: $spacer-5
   ),
   $spacers
 );
 
-$inline-element-spacing: 4px; // Amount of space automatically inserted between inline elements; in most cases this is 4px.
+$inline-element-spacing: $space-4; // Amount of space automatically inserted between inline elements; in most cases this is 4px.
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: () !default;
@@ -333,7 +367,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           15px;
+$grid-gutter-width:           $space-16;
 
 // Components
 //
@@ -342,10 +376,10 @@ $grid-gutter-width:           15px;
 $line-height-lg:              1.5 !default;
 $line-height-sm:              1.15; // Bootstrap's reboot line height
 
-$border-width:                1px;
-$border-color:                $gray-400;
+$border-width:                1px !default;
+$border-color:                $gray-300 !default;
 
-$border-radius:               2px;
+$border-radius:               3px;
 $border-radius-lg:            4px;
 $border-radius-sm:            2px;
 
@@ -358,11 +392,12 @@ $component-active-bg:         $blue;
 $component-active-glow:       $glow;
 
 $caret-width:                 .3em !default;
+$caret-font-size:             20px;
 
 $transition-base:             all .2s ease-in-out !default;
 $transition-fade:             opacity .15s linear !default;
 $transition-collapse:         height .35s ease !default;
-$transition-collapse-all:     all .35s ease, color 0s, background-color 0s; // Added to enable animating movement of other elements when navbar collapses
+$transition-collapse-all:     all .35s ease, color 0s, background-color 0s, font-weight 0s; // Added to enable animating movement of other elements when navbar collapses
 
 // Fonts
 //
@@ -376,11 +411,14 @@ $font-family-base:            $font-family-sans-serif !default;
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                px(20);
-$font-size-sm:                px(12);
+$font-size-sm:                px(13);
+$font-size-xs:                px(12);
 
+// These just give names to font weights; you probably DON'T want to use these
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
-$font-weight-bold:            700 !default;
+$font-weight-bold:            500;
+$font-weight-bolder:          $font-weight-bold;
 
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
@@ -389,12 +427,13 @@ $h1-font-size:                px(28);
 $h2-font-size:                px(24);
 $h3-font-size:                px(20);
 $h4-font-size:                px(16);
-$h5-font-size:                px(15);
-$h6-font-size:                px(14);
+$h5-font-size:                px(14);
+$h6-font-size:                px(12);
 
 $headings-margin-bottom:      ($spacer / 2) !default;
 $headings-font-family:        inherit !default;
-$headings-font-weight:        500 !default;
+$headings-font-weight:        $font-weight-normal;
+$headings-font-weight-light:  $font-weight-light;
 $headings-line-height:        1.2 !default;
 $headings-color:              inherit !default;
 
@@ -446,15 +485,16 @@ $table-cell-padding-sm:       .3rem !default;
 $table-bg:                    transparent !default;
 $table-accent-bg:             rgba($black, .05) !default;
 $table-hover-bg:              #f3faff;
-$table-active-bg:             $gray-300;
 
 $table-border-width:          $border-width !default;
 $table-border-color:          $gray-300 !default;
 $table-head-border-color:     $gray-400;
 $table-hover-border-color:    #a7dff2;
 
+$table-active-bg:             $table-border-color;
 $table-head-bg:               $gray-200 !default;
-$table-head-color:            $gray-700 !default;
+$table-head-color:            $gray-600;
+$table-head-border-color:     $border-color;
 
 $table-dark-bg:               $gray-900 !default;
 $table-dark-accent-bg:        rgba($white, .05) !default;
@@ -757,7 +797,7 @@ $nav-tabs-border-radius:            $border-radius !default;
 $nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color !default;
 $nav-tabs-link-active-color:        $text-dark;
 $nav-tabs-link-active-bg:           inherit;
-$nav-tabs-link-active-border-color: $fluid-green;
+$nav-tabs-link-active-border-color: $brand-color;
 
 $nav-pills-border-radius:           $border-radius !default;
 $nav-pills-link-active-color:       $nav-tabs-link-active-color;
@@ -771,23 +811,28 @@ $nav-divider-margin-y:              ($spacer / 2) !default;
 $navbar-padding-y:                  $spacer;
 $navbar-padding-x:                  $spacer !default;
 
-$navbar-nav-padding:                px(5);
+$navbar-nav-padding:                $space-8;
 
-$navbar-nav-link-height:              px(38);
-$navbar-nav-link-height-collapsed:    px(50);
-$navbar-nav-link-icon-size:           px(16);
-$navbar-nav-link-icon-size-collapsed: px(25);
-$navbar-nav-link-padding-x:           .5rem !default;
+$navbar-nav-link-height:              $space-32;
+$navbar-nav-link-height-collapsed:    $space-32;
+$navbar-nav-link-icon-size:           20px;
+$navbar-nav-link-icon-size-collapsed: $space-24;
+$navbar-nav-link-space:               $space-8;
+$navbar-nav-link-padding-x:           $navbar-nav-link-space;
+$navbar-nav-link-padding-left:        $space-12;
+$navbar-nav-link-marker-width:        $space-4;
 
-$navbar-brand-font-size:            $font-size-lg !default;
+$navbar-brand-font-size:            px(18);
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 $nav-link-height-formula:           #{$font-size-base} * #{$line-height-base} + #{$nav-link-padding-y} * 2;
 $nav-link-height:                   calc(#{$nav-link-height-formula});
-$navbar-brand-height:               px(60);
+$navbar-brand-height:               $space-64;
 $navbar-brand-padding-y:            calc(((#{$nav-link-height-formula}) - #{$navbar-brand-height}) / 2);
+$navbar-brand-icon-size:            $space-32;
+$navbar-brand-icon-size-collapsed:  40px;
 
-$navbar-brand-menu-spacing:         px(20);
-$navbar-brand-menu-item-size:       px(75);
+$navbar-brand-menu-spacing:         $space-24;
+$navbar-brand-menu-icon-size:       $space-32;
 
 $navbar-toggler-padding-y:          .25rem !default;
 $navbar-toggler-padding-x:          .75rem !default;
@@ -810,8 +855,8 @@ $navbar-light-toggler-border-color: rgba($black, .1) !default;
 
 // Fluid Navbar
 
-$navbar-width:                      200px;
-$navbar-width-sm:                   50px;
+$navbar-width:                      $space-4 * 50;
+$navbar-width-sm:                   $space-64;
 
 // Pagination
 
@@ -855,7 +900,7 @@ $jumbotron-bg:                      $gray-200 !default;
 $card-margin:                       $grid-gutter-width;
 $card-spacer-y:                     $card-margin;
 $card-spacer-x:                     $card-margin;
-$card-border-width:                 0;
+$card-border-width:                 0px;
 $card-border-radius:                $border-radius !default;
 $card-border-color:                 $border-color;
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
@@ -917,7 +962,7 @@ $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default
 // Badges
 
 $badge-font-size:                   75% !default;
-$badge-font-weight:                 $font-weight-bold !default;
+$badge-font-weight:                 $font-weight-bold;
 $badge-padding-y:                   0;   // Removed padding because badges are inline-block elements,
 $badge-line-height:                 1.5; // so setting line-height instead produces a better result
 $badge-padding-x:                   .4em !default;
@@ -971,7 +1016,7 @@ $alert-padding-y:                   .75rem !default;
 $alert-padding-x:                   1.25rem !default;
 $alert-margin-bottom:               1rem !default;
 $alert-border-radius:               $border-radius !default;
-$alert-link-font-weight:            $font-weight-bold !default;
+$alert-link-font-weight:            $font-weight-bold;
 $alert-border-width:                $border-width !default;
 
 $alert-bg-level:                    -10 !default;
@@ -1088,7 +1133,7 @@ $spinner-border-width-lg: .5rem;
 // Close
 
 $close-font-size:                   px(14);
-$close-font-weight:                 $font-weight-light;
+$close-font-weight:                 $font-weight-normal;
 $close-color:                       $gray-700;
 $close-text-shadow:                 0 1px 0 $white !default;
 
