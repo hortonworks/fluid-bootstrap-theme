@@ -27,10 +27,19 @@
 
 .row {
   background-color: inherit;
+  // Works with the rule below to ensure there is
+  // a gutter between items in a row when they flex-wrap.
   margin-top: -$grid-gutter-width;
-}
 
-.col,
-[class^="col-"] {
-  margin-top: $grid-gutter-width;
+  > * {
+    // See above. Also ensures there is always the
+    // appearance of a gutter between .rows because
+    // it effectively adds a margin to all .cols.
+    margin-top: $grid-gutter-width;
+  }
+
+  + .row {
+    // Ensures that the gutter between .rows isn't doubled.
+    margin-top: 0;
+  }
 }
