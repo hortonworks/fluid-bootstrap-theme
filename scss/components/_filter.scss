@@ -72,6 +72,7 @@
 .filter-val-empty,
 .filter-committed {
   @extend .badge-light;
+  border: 1px solid $input-bg;
 }
 
 .filter-key,
@@ -82,7 +83,7 @@
 }
 
 .filter-key {
-  color: text-color("default");
+  color: text-color("light");
   max-width: $filter-key-width;
 
   + .separator {
@@ -95,7 +96,7 @@
 }
 
 .filter-val {
-  color: text-color("dark");
+  color: text-color("default");
   max-width: $filter-input-width;
 }
 
@@ -105,6 +106,10 @@
   border: none;
   width: 100%;
   width: $filter-input-width;
+}
+
+.filter-val-input {
+  color: text-color("default");
 }
 
 .autocomplete-suggestions {
@@ -152,5 +157,137 @@
   &.selected {
     background-color: transparent;
     color: $dropdown-header-color;
+  }
+}
+
+.palette-dark {
+
+  .filter-control {
+
+    &::before,
+    &::after {
+      color: text-color-dark("light");
+    }
+  }
+
+  .filter-val-empty,
+  .filter-committed {
+    @extend .badge-light-dark;
+    border-color: $input-bg-dark;
+  }
+
+  .filter-key {
+    color: text-color-dark("light");
+  }
+
+  .filter-val {
+    color: text-color-dark("default");
+  }
+
+  .filter-val-input {
+    color: text-color-dark("default");
+  }
+
+  .autocomplete-suggestion {
+    @extend .dropdown-item;
+    color: $dropdown-link-color-dark;
+
+    @include hover-focus {
+      color: $dropdown-link-hover-color-dark;
+      @include gradient-bg($dropdown-link-hover-bg-dark);
+    }
+
+    &.active,
+    &:active {
+      color: $dropdown-link-active-color;
+      @include gradient-bg($dropdown-link-active-bg-dark);
+    }
+
+    &.disabled,
+    &:disabled {
+      color: $dropdown-link-disabled-color-dark;
+    }
+
+    b {
+      color: theme-color-dark("info");
+    }
+  }
+
+  .autocomplete-header {
+    @extend .dropdown-header;
+    color: $dropdown-header-color-dark;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.selected {
+      color: $dropdown-header-color-dark;
+    }
+  }
+}
+
+.palette-accessible {
+
+  .filter-control {
+
+    &::before,
+    &::after {
+      color: text-color-accessible("light");
+    }
+  }
+
+  .filter-val-empty,
+  .filter-committed {
+    @extend .badge-light-accessible;
+    border-color: $border-color-default;
+  }
+
+  .filter-key {
+    color: text-color-accessible("light");
+  }
+
+  .filter-val {
+    color: text-color-accessible("default");
+  }
+
+  .filter-val-input {
+    color: text-color-accessible("default");
+  }
+
+  .autocomplete-suggestion {
+    @extend .dropdown-item;
+    color: $dropdown-link-color-accessible;
+
+    @include hover-focus {
+      color: $dropdown-link-hover-color-accessible;
+      @include gradient-bg($dropdown-link-hover-bg-accessible);
+    }
+
+    &.active,
+    &:active {
+      color: $dropdown-link-active-color;
+      @include gradient-bg($dropdown-link-active-bg-accessible);
+    }
+
+    &.disabled,
+    &:disabled {
+      color: $dropdown-link-disabled-color-accessible;
+    }
+
+    b {
+      color: theme-color-accessible("info");
+    }
+  }
+
+  .autocomplete-header {
+    @extend .dropdown-header;
+    color: $dropdown-header-color-accessible;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.selected {
+      color: $dropdown-header-color-accessible;
+    }
   }
 }

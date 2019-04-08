@@ -5,7 +5,9 @@
 .icon-info:before { content: '\25'; } /* '%' */
 .icon-close:before { content: '\2a'; } /* '*' */
 .icon-success:before { content: '\2b'; } /* '+' */
+.icon-down:before { content: '\2c'; } /* ',' */
 .icon-danger:before { content: '\2d'; } /* '-' */
+.icon-up:before { content: '\2e'; } /* '.' */
 .icon-sort-up:before { content: '\2f'; } /* '/' */
 .icon-menu:before { content: '\3a'; } /* ':' */
 .icon-previous:before { content: '\3c'; } /* '&lt;' */
@@ -19,3 +21,6 @@
 .icon-unsorted:before { content: '\7c'; } /* '|' */
 .icon-navbar-expand:before { content: '\7d'; } /* '}' */
 .icon-filter:before { content: '\7e'; } /* '~' */
+.icon-contrast:before { content: '\e800'; } /* '' */
+.icon-dark:before { content: '\f186'; } /* '' */
+.icon-accessible:before { content: '\f29a'; } /* '' */

@@ -6,10 +6,43 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+// stylelint-disable declaration-no-important
+
 @each $color, $value in $text-colors {
   @include text-emphasis-variant(".text-#{$color}", $value);
 }
 
+.bg-dark.text-light,
+.bg-dark .text-light {
+  color: $text-light-on-dark !important;
+}
+
+.palette-dark {
+  @each $color, $value in $text-colors-dark {
+    @include text-emphasis-variant(".text-#{$color}", $value);
+  }
+
+  .bg-dark.text-light,
+  .bg-dark .text-light {
+    color: $text-light-on-dark-dark !important;
+  }
+}
+
+.palette-accessible {
+  @each $color, $value in $text-colors-accessible {
+    @include text-emphasis-variant(".text-#{$color}", $value);
+  }
+
+  .bg-dark.text-light,
+  .bg-dark .text-light {
+    color: $text-light-on-dark-accessible !important;
+  }
+}
+
 @each $color, $value in $grays {
   @include text-emphasis-variant(".gray-#{$color}", $value);
+}
+
+.text-black {
+  color: $black !important;
 }

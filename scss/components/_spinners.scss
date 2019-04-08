@@ -19,3 +19,23 @@
   height: $spinner-height-lg;
   width: $spinner-width-lg;
 }
+
+.palette-dark {
+  .spinner-border {
+    color: color-dark("blue");
+  }
+
+  .spinner-border-light {
+    color: color-dark("white");
+  }
+}
+
+.palette-accessible {
+  .spinner-border {
+    color: color-accessible("blue");
+  }
+
+  .spinner-border-light {
+    color: color-accessible("white");
+  }
+}

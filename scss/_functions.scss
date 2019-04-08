@@ -10,6 +10,42 @@
   @return map-get($text-colors, $key);
 }
 
+@function text-color-dark($key: "default") {
+  @return map-get($text-colors-dark, $key);
+}
+
+@function text-color-accessible($key: "default") {
+  @return map-get($text-colors-accessible, $key);
+}
+
+@function bg-color($key: "default") {
+  @return map-get($bg-colors, $key);
+}
+
+@function bg-color-dark($key: "default") {
+  @return map-get($bg-colors-dark, $key);
+}
+
+@function bg-color-accessible($key: "default") {
+  @return map-get($bg-colors-accessible, $key);
+}
+
+@function color-dark($key: "blue") {
+  @return map-get($colors-dark, $key);
+}
+
+@function theme-color-dark($key: "primary") {
+  @return map-get($theme-colors-dark, $key);
+}
+
+@function color-accessible($key: "blue") {
+  @return map-get($colors-accessible, $key);
+}
+
+@function theme-color-accessible($key: "primary") {
+  @return map-get($theme-colors-accessible, $key);
+}
+
 @function theme-icon($key) {
   @return map-get($theme-icons, $key);
 }

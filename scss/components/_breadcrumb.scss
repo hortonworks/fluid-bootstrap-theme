@@ -6,6 +6,14 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+.navbar {
+
+  .breadcrumb {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .breadcrumb-item {
   font-size: $font-size-lg;
   font-weight: $font-weight-light;
@@ -24,7 +32,7 @@
   }
 
   & + .breadcrumb-item::before {
-    border-left: $border-width solid $border-color;
+    border-left: $border-width solid $border-color-default;
     content: " ";
     height: space(24);
     padding-right: space(16);
@@ -32,5 +40,57 @@
     top: -2px;
     transform: skew(-34deg);
     vertical-align: middle;
+  }
+}
+
+.palette-dark {
+
+  .breadcrumb {
+    background-color: $breadcrumb-bg-dark;
+  }
+
+  .breadcrumb-item {
+
+    &.active {
+      color: $breadcrumb-active-color-dark;
+    }
+
+    a {
+      color: text-color-dark("light");
+    }
+
+    + .breadcrumb-item {
+
+      &::before {
+        border-left-color: $border-color-default-dark;
+        color: $breadcrumb-divider-color-dark;
+      }
+    }
+  }
+}
+
+.palette-accessible {
+
+  .breadcrumb {
+    background-color: $breadcrumb-bg-accessible;
+  }
+
+  .breadcrumb-item {
+
+    &.active {
+      color: $breadcrumb-active-color-accessible;
+    }
+
+    a {
+      color: text-color-accessible("light");
+    }
+
+    + .breadcrumb-item {
+
+      &::before {
+        border-left-color: $border-color-default-accessible;
+        color: $breadcrumb-divider-color-accessible;
+      }
+    }
   }
 }

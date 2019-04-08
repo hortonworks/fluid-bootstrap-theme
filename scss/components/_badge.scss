@@ -9,3 +9,37 @@
 .badge {
   line-height: $badge-line-height;
 }
+
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+    @include badge-variant($value);
+  }
+}
+
+@each $color, $value in $theme-colors-dark {
+  .badge-#{$color}-dark {
+    @include badge-variant($value);
+  }
+}
+
+@each $color, $value in $theme-colors-accessible {
+  .badge-#{$color}-accessible {
+    @include badge-variant($value);
+  }
+}
+
+.palette-dark {
+  @each $color, $value in $theme-colors-dark {
+    .badge-#{$color} {
+      @include badge-variant($value);
+    }
+  }
+}
+
+.palette-accessible {
+  @each $color, $value in $theme-colors-accessible {
+    .badge-#{$color} {
+      @include badge-variant($value);
+    }
+  }
+}

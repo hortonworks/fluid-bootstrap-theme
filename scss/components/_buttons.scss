@@ -6,8 +6,31 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+@each $color, $value in $theme-colors-dark {
+  .btn-#{$color}-dark {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $theme-colors-dark {
+  .btn-outline-#{$color}-dark {
+    @include button-outline-variant($value);
+  }
+}
+
+@each $color, $value in $theme-colors-accessible {
+  .btn-#{$color}-accessible {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $theme-colors-accessible {
+  .btn-outline-#{$color}-accessible {
+    @include button-outline-variant($value);
+  }
+}
+
 .btn {
-  text-transform: uppercase;
 
   &.btn-primary {
     border-color: theme-color("primary");
@@ -42,6 +65,79 @@
 
     + .btn:not(.btn-link) {
       margin-left: -$btn-border-width;
+    }
+  }
+}
+
+.palette-dark {
+
+  .btn {
+
+    &.btn-primary {
+      background-color: theme-color-dark("primary");
+      border-color: theme-color-dark("primary");
+      color: color-dark("white");
+    }
+
+    &.btn-secondary {
+      @extend .btn-outline-primary-dark;
+    }
+
+    &.btn-default {
+      @extend .btn-outline-default-dark;
+    }
+
+    &.btn-link {
+      color: $link-color-dark;
+    }
+  }
+
+  .btn-link {
+    color: $link-color-dark;
+
+    @include hover {
+      color: $link-hover-color-dark;
+    }
+
+    &:disabled,
+    &.disabled {
+      color: $btn-link-disabled-color-dark;
+    }
+  }
+}
+
+.palette-accessible {
+
+  .btn {
+
+    &.btn-primary {
+      border-color: theme-color-accessible("primary");
+      color: color-accessible("white");
+    }
+
+    &.btn-secondary {
+      @extend .btn-outline-primary-accessible;
+    }
+
+    &.btn-default {
+      @extend .btn-outline-default-accessible;
+    }
+
+    &.btn-link {
+      color: $link-color-accessible;
+    }
+  }
+
+  .btn-link {
+    color: $link-color-accessible;
+
+    @include hover {
+      color: $link-hover-color-accessible;
+    }
+
+    &:disabled,
+    &.disabled {
+      color: $btn-link-disabled-color-accessible;
     }
   }
 }

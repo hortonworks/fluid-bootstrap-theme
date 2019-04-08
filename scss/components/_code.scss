@@ -1,0 +1,31 @@
+.palette-dark {
+
+  code {
+    color: $code-color-dark;
+  }
+
+  kbd {
+    background-color: $kbd-bg-dark;
+    color: $kbd-color-dark;
+  }
+
+  pre {
+    color: $pre-color-dark;
+  }
+}
+
+.palette-accessible {
+
+  code {
+    color: $code-color-accessible;
+  }
+
+  kbd {
+    background-color: $kbd-bg-accessible;
+    color: $kbd-color-accessible;
+  }
+
+  pre {
+    color: $pre-color-accessible;
+  }
+}

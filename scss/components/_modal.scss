@@ -24,7 +24,7 @@
 }
 
 .modal-title {
-  color: $text-light;
+  color: text-color("light");
   font-size: $font-size-lg;
 }
 
@@ -52,3 +52,54 @@
 .modal-backdrop ~ .modal-backdrop {
   display: none;
 }
+
+.palette-dark {
+
+  .modal-content {
+    background-color: $modal-content-bg-dark;
+    border-color: $modal-content-border-color-dark;
+    color: $modal-content-color-dark;
+  }
+
+  .modal-backdrop {
+    background-color: $modal-backdrop-bg-dark;
+  }
+
+  .modal-header {
+    border-bottom-color: $modal-header-border-color-dark;
+  }
+
+  .modal-title {
+    color: text-color-dark("light");
+  }
+
+  .modal-footer {
+    border-top-color: $modal-footer-border-color-dark;
+  }
+}
+
+.palette-accessible {
+
+  .modal-content {
+    background-color: $modal-content-bg-accessible;
+    border-color: $modal-content-border-color-accessible;
+    color: $modal-content-color-accessible;
+  }
+
+  .modal-backdrop {
+    background-color: $modal-backdrop-bg-accessible;
+  }
+
+  .modal-header {
+    border-bottom-color: $modal-header-border-color-accessible;
+  }
+
+  .modal-title {
+    color: text-color-accessible("light");
+  }
+
+  .modal-footer {
+    border-top-color: $modal-footer-border-color-accessible;
+  }
+}
+

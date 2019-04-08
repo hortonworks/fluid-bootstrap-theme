@@ -1,0 +1,14 @@
+.palette-dark {
+
+  .toast {
+    background-color: $toast-background-color-dark;
+    border-color: $toast-border-color-dark;
+    color: $toast-color-dark;
+  }
+
+  .toast-header {
+    background-color: $toast-header-background-color-dark;
+    border-bottom-color: $toast-header-border-color-dark;
+    color: $toast-header-color-dark;
+  }
+}

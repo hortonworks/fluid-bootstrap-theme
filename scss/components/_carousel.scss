@@ -1,0 +1,59 @@
+.palette-dark {
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    color: $carousel-control-color-dark;
+
+    @include hover-focus {
+      color: $carousel-control-color-dark;
+    }
+  }
+
+  .carousel-control-prev-icon {
+    background-image: $carousel-control-prev-icon-bg-dark;
+  }
+  .carousel-control-next-icon {
+    background-image: $carousel-control-next-icon-bg-dark;
+  }
+
+  .carousel-indicators {
+
+    li {
+      background-color: $carousel-indicator-active-bg-dark;
+    }
+  }
+
+  .carousel-caption {
+    color: $carousel-caption-color-dark;
+  }
+}
+
+.palette-accessible {
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    color: $carousel-control-color-accessible;
+
+    @include hover-focus {
+      color: $carousel-control-color-accessible;
+    }
+  }
+
+  .carousel-control-prev-icon {
+    background-image: $carousel-control-prev-icon-bg-accessible;
+  }
+  .carousel-control-next-icon {
+    background-image: $carousel-control-next-icon-bg-accessible;
+  }
+
+  .carousel-indicators {
+
+    li {
+      background-color: $carousel-indicator-active-bg-accessible;
+    }
+  }
+
+  .carousel-caption {
+    color: $carousel-caption-color-accessible;
+  }
+}

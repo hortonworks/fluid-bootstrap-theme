@@ -1,0 +1,23 @@
+.palette-dark {
+
+  .img-thumbnail {
+    background-color: $thumbnail-bg-dark;
+    border-color: $thumbnail-border-color-dark;
+  }
+
+  .figure-caption {
+    color: $figure-caption-color-dark;
+  }
+}
+
+.palette-accessible {
+
+  .img-thumbnail {
+    background-color: $thumbnail-bg-accessible;
+    border-color: $thumbnail-border-color-accessible;
+  }
+
+  .figure-caption {
+    color: $figure-caption-color-accessible;
+  }
+}

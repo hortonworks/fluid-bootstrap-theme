@@ -22,3 +22,19 @@
     background-color: $value;
   }
 }
+
+.palette-dark {
+  @each $color, $value in $theme-colors-dark {
+    .status-#{$color}::before {
+      background-color: $value;
+    }
+  }
+}
+
+.palette-accessible {
+  @each $color, $value in $theme-colors-accessible {
+    .status-#{$color}::before {
+      background-color: $value;
+    }
+  }
+}

@@ -51,7 +51,7 @@ nav.pagination {
       }
 
       .btn.dropdown-toggle {
-        line-height: 1.5rem;
+        line-height: 1.15rem;
       }
 
       &.dropdown {
@@ -121,6 +121,7 @@ nav.pagination {
   &.disabled,
   &.active {
     .page-link {
+      background-color: transparent;
       border-color: transparent;
     }
   }
@@ -128,5 +129,77 @@ nav.pagination {
   .page-link {
     border-color: transparent;
     margin-left: 0;
+  }
+}
+
+.palette-dark {
+
+  .page-link {
+    background-color: $pagination-bg-dark;
+    color: $pagination-color-dark;
+
+    &:hover {
+      background-color: $pagination-hover-bg-dark;
+      color: $pagination-hover-color-dark;
+    }
+  }
+
+  .page-item {
+
+    &.active .page-link {
+      background-color: $pagination-active-bg-dark;
+      color: $pagination-active-color-dark;
+    }
+
+    &.disabled .page-link {
+      color: $pagination-disabled-color-dark;
+    }
+  }
+
+  nav.pagination {
+
+    > .page-link {
+      color: text-color-dark("default");
+
+      &.disabled {
+        color: text-color-dark("light");
+      }
+    }
+  }
+}
+
+.palette-accessible {
+
+  .page-link {
+    background-color: $pagination-bg-accessible;
+    color: $pagination-color-accessible;
+
+    &:hover {
+      background-color: $pagination-hover-bg-accessible;
+      color: $pagination-hover-color-accessible;
+    }
+  }
+
+  .page-item {
+
+    &.active .page-link {
+      background-color: $pagination-active-bg-accessible;
+      color: $pagination-active-color-accessible;
+    }
+
+    &.disabled .page-link {
+      color: $pagination-disabled-color-accessible;
+    }
+  }
+
+  nav.pagination {
+
+    > .page-link {
+      color: text-color-accessible("default");
+
+      &.disabled {
+        color: text-color-accessible("light");
+      }
+    }
   }
 }

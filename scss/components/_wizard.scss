@@ -21,7 +21,7 @@
   }
 
   .wizard-body {
-    border-left: $border-width solid $border-color;
+    border-left: $border-width solid $border-color-default;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -47,6 +47,7 @@
 .wizard-fullpage {
 
   .navbar-header {
+    background-color: bg-color("light");
     height: $wizard-navbar-height;
     margin-left: 0;
     padding: $wizard-padding-y $wizard-padding-x;
@@ -87,7 +88,7 @@
   }
 
   .navbar-wizard {
-    background-color: color("white");
+    background-color: bg-color("light");
     border-top: $border-width $body-bg solid;
     height: $wizard-navbar-height;
     justify-content: flex-end;
@@ -122,7 +123,7 @@
       }
 
       > .modal-body {
-        background-color: theme-color("light");
+        background-color: bg-color("default");
         color: inherit;
         max-height: 75vh;
         overflow: auto;
@@ -154,3 +155,95 @@
     }
   }
 }
+
+.palette-dark {
+
+  .wizard {
+
+    .navbar-primary {
+      background-color: inherit;
+    }
+
+    .wizard-body {
+      border-left-color: $border-color-default-dark;
+    }
+  }
+
+  .wizard-fullpage,
+  &.wizard-fullpage {
+
+    .navbar-header {
+      background-color: bg-color-dark("light");
+    }
+
+    .navbar-wizard {
+      background-color: bg-color-dark("light");
+      border-top-color: $body-bg-dark;
+    }
+
+    &.modal {
+
+      > .modal-dialog > .modal-content {
+
+        > .modal-header {
+          border-bottom-color: $body-bg-dark;
+        }
+
+        > .modal-body {
+          background-color: bg-color-dark("default");
+        }
+
+        > .modal-footer {
+          border-top-color: $body-bg-dark;
+        }
+      }
+    }
+  }
+}
+
+.palette-accessible {
+
+  .wizard {
+
+    .navbar-primary {
+      background-color: inherit;
+      border-width: 0;
+    }
+
+    .wizard-body {
+      border-left-color: $border-color-default-accessible;
+    }
+  }
+
+  .wizard-fullpage,
+  &.wizard-fullpage {
+
+    .navbar-header {
+      background-color: bg-color-accessible("light");
+    }
+
+    .navbar-wizard {
+      background-color: bg-color-accessible("light");
+      border-top-color: $body-bg-accessible;
+    }
+
+    &.modal {
+
+      > .modal-dialog > .modal-content {
+
+        > .modal-header {
+          border-bottom-color: $body-bg-accessible;
+        }
+
+        > .modal-body {
+          background-color: bg-color-accessible("default");
+        }
+
+        > .modal-footer {
+          border-top-color: $body-bg-accessible;
+        }
+      }
+    }
+  }
+}
+

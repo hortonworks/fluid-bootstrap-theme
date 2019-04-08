@@ -33,7 +33,6 @@
 .section-header {
   display: flex;
   justify-content: space-between;
-  margin-top: space(16);
   padding-top: space(16);
   padding-bottom: space(8);
 }
@@ -52,13 +51,32 @@ section {
 }
 
 .swatch {
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
   margin-bottom: 15px;
   padding: 15px;
+}
 
-  &:last-child {
-    margin: 0;
+.ramp {
+
+  .swatch {
+    display: flex;
+    justify-content: space-between;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.row:last-child .swatch {
+  margin-bottom: 0;
+}
+
+.col-3 {
+
+  &.palette-dark,
+  &.palette-accessible {
+    padding: 0;
   }
 }
 
@@ -73,7 +91,7 @@ section {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    background-color: theme-color("light");
+    background-color: $bg-default;
     padding: $grid-gutter-width / 2;
     margin: $grid-gutter-width / 2;
 
@@ -90,12 +108,13 @@ section {
 
 #containerExample,
 #containerFluidExample {
-  border: color("gray") 1px solid;
+  border: $border-color-default 1px solid;
 }
 
 #modalFluidContainerExample {
+
   .row [class^="col-"] {
-    background: theme-color("light");
+    background: $bg-default;
     padding: 1rem;
   }
 }
@@ -103,3 +122,50 @@ section {
 .modal-example-button {
   width: 200px;
 }
+
+.palette-dark {
+
+  .charmap {
+
+    > div {
+      background-color: $bg-default-dark;
+    }
+  }
+
+  #containerExample,
+  #containerFluidExample {
+    border-color: $border-color-default-dark;
+  }
+
+  #modalFluidContainerExample {
+
+    .row [class^="col-"] {
+      background: $bg-default-dark;
+    }
+  }
+}
+
+.palette-accessible {
+
+  .charmap {
+
+    > div {
+      background-color: $bg-default-accessible;
+      border: 1px solid $border-color-default-accessible;
+      border-radius: $border-radius;
+    }
+  }
+
+  #containerExample,
+  #containerFluidExample {
+    border-color: $border-color-default-accessible;
+  }
+
+  #modalFluidContainerExample {
+
+    .row [class^="col-"] {
+      background: $bg-default-accessible;
+    }
+  }
+}
+
