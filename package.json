@@ -53,5 +53,8 @@
     "postcss-import": "^12.0.1",
     "stylelint": "^9.10.1",
     "stylelint-config-twbs-bootstrap": "^0.3.0"
+  },
+  "dependencies": {
+    "query-string": "^6.4.2"
   }
 }

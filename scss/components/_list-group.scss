@@ -1,0 +1,76 @@
+.palette-dark {
+  .list-group-item-action {
+    color: $list-group-action-color-dark;
+
+    @include hover-focus {
+      background-color: $list-group-hover-bg-dark;
+      color: $list-group-action-hover-color-dark;
+    }
+
+    &:active {
+      background-color: $list-group-action-active-bg-dark;
+      color: $list-group-action-active-color-dark;
+    }
+  }
+
+  .list-group-item {
+    background-color: $list-group-bg-dark;
+    border-color: $list-group-border-color-dark;
+    color: $list-group-color-dark;
+
+    &.disabled,
+    &:disabled {
+      background-color: $list-group-disabled-bg-dark;
+      color: $list-group-disabled-color-dark;
+    }
+
+    &.active {
+      background-color: $list-group-active-bg-dark;
+      border-color: $list-group-active-border-color-dark;
+      color: $list-group-active-color-dark;
+    }
+  }
+
+  @each $color, $value in $theme-colors-dark {
+    @include list-group-item-variant($color, theme-color-level($color, -9), theme-color-level($color, 6));
+  }
+}
+
+.palette-accessible {
+  .list-group-item-action {
+    color: $list-group-action-color-accessible;
+
+    @include hover-focus {
+      background-color: $list-group-hover-bg-accessible;
+      color: $list-group-action-hover-color-accessible;
+    }
+
+    &:active {
+      background-color: $list-group-action-active-bg-accessible;
+      color: $list-group-action-active-color-accessible;
+    }
+  }
+
+  .list-group-item {
+    background-color: $list-group-bg-accessible;
+    border-color: $list-group-border-color-accessible;
+    color: $list-group-color-accessible;
+
+    &.disabled,
+    &:disabled {
+      background-color: $list-group-disabled-bg-accessible;
+      color: $list-group-disabled-color-accessible;
+    }
+
+    &.active {
+      background-color: $list-group-active-bg-accessible;
+      border-color: $list-group-active-border-color-accessible;
+      color: $list-group-active-color-accessible;
+    }
+  }
+
+  @each $color, $value in $theme-colors-accessible {
+    @include list-group-item-variant($color, theme-color-level($color, -9), theme-color-level($color, 6));
+  }
+}
+

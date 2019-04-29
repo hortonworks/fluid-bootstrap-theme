@@ -1,4 +1,4 @@
-@mixin dropdown-item-variant($background, $hover-background: darken($background, 7.5%), $active-background: darken($background, 10%)) {
+@mixin dropdown-item-variant($background, $hover-background: darken($background, 10%), $active-background: darken($background, 0%)) {
   @include hover-focus {
     color: color-yiq($hover-background);
     @include gradient-bg($hover-background);

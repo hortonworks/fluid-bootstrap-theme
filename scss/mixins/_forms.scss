@@ -1,0 +1,29 @@
+@mixin form-control-focus-dark() {
+  &:focus {
+    background-color: $input-focus-bg-dark;
+    border-color: $input-focus-border-color-dark;
+    color: $input-focus-color-dark;
+    outline: 0;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $input-box-shadow-dark, $input-focus-box-shadow-dark;
+    } @else {
+      box-shadow: $input-focus-box-shadow-dark;
+    }
+  }
+}
+
+@mixin form-control-focus-accessible() {
+  &:focus {
+    background-color: $input-focus-bg-accessible;
+    border-color: $input-focus-border-color-accessible;
+    color: $input-focus-color-accessible;
+    outline: 0;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $input-box-shadow-accessible, $input-focus-box-shadow-accessible;
+    } @else {
+      box-shadow: $input-focus-box-shadow-accessible;
+    }
+  }
+}

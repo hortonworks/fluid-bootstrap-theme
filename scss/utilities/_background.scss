@@ -6,6 +6,84 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+// stylelint-disable declaration-no-important
+
 @each $color, $value in $grays {
   @include bg-variant(".bg-gray-#{$color}", $value);
+}
+
+@each $color, $value in $bg-colors {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+
+// Dark
+
+// $theme-colors MUST COME BEFORE $bg-colors
+@each $color, $value in $theme-colors-dark {
+  @include bg-variant(".bg-#{$color}-dark", $value);
+}
+
+@each $color, $value in $bg-colors-dark {
+  @include bg-variant(".bg-#{$color}-dark", $value);
+}
+
+@if $enable-gradients {
+  @each $color, $value in $theme-colors-dark {
+    @include bg-gradient-variant(".bg-gradient-#{$color}-dark", $value);
+  }
+}
+
+.palette-dark {
+  // $theme-colors MUST COME BEFORE $bg-colors
+  @each $color, $value in $theme-colors-dark {
+    @include bg-variant(".bg-#{$color}", $value);
+  }
+
+  @each $color, $value in $bg-colors-dark {
+    @include bg-variant(".bg-#{$color}", $value);
+  }
+
+  @if $enable-gradients {
+    @each $color, $value in $theme-colors-dark {
+      @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+    }
+  }
+}
+
+// Accessible
+
+// $theme-colors MUST COME BEFORE $bg-colors
+@each $color, $value in $theme-colors-accessible {
+  @include bg-variant(".bg-#{$color}-accessible", $value);
+}
+
+@each $color, $value in $bg-colors-accessible {
+  @include bg-variant(".bg-#{$color}-accessible", $value);
+}
+
+@if $enable-gradients {
+  @each $color, $value in $theme-colors-accessible {
+    @include bg-gradient-variant(".bg-gradient-#{$color}-accessible", $value);
+  }
+}
+
+.palette-accessible {
+  // $theme-colors MUST COME BEFORE $bg-colors
+  @each $color, $value in $theme-colors-accessible {
+    @include bg-variant(".bg-#{$color}", $value);
+  }
+
+  @each $color, $value in $bg-colors-accessible {
+    @include bg-variant(".bg-#{$color}", $value);
+  }
+
+  @if $enable-gradients {
+    @each $color, $value in $theme-colors-accessible {
+      @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+    }
+  }
+}
+
+.bg-black {
+  background-color: $black !important;
 }

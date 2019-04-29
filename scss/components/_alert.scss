@@ -58,7 +58,7 @@
 
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
-    background-color: color("white");
+    background-color: bg-color("light");
     border-color: theme-color-level($color, $alert-border-level);
     color: theme-color("default");
 
@@ -70,7 +70,7 @@
 }
 
 .alert-default {
-  border-color: $border-color;
+  border-color: $border-color-default;
 
   > div {
     margin-left: 0;
@@ -82,5 +82,57 @@
     &::before {
       content: $value;
     }
+  }
+}
+
+.palette-dark {
+  .alert {
+
+    &:hover::after {
+      color: theme-color-dark("default");
+    }
+  }
+
+  @each $color, $value in $theme-colors-dark {
+    .alert-#{$color} {
+      background-color: bg-color-dark("light");
+      border-color: theme-color-level($color, $alert-border-level);
+      color: theme-color("default");
+
+      .alert-heading,
+      &::before {
+        color: $value;
+      }
+    }
+  }
+
+  .alert-default {
+    border-color: $border-color-default-dark;
+  }
+}
+
+.palette-accessible {
+  .alert {
+
+    &:hover::after {
+      color: theme-color-accessible("default");
+    }
+  }
+
+  @each $color, $value in $theme-colors-accessible {
+    .alert-#{$color} {
+      background-color: bg-color-accessible("light");
+      border-color: theme-color-level($color, $alert-border-level);
+      color: theme-color("default");
+
+      .alert-heading,
+      &::before {
+        color: $value;
+      }
+    }
+  }
+
+  .alert-default {
+    border-color: $border-color-default-accessible;
   }
 }

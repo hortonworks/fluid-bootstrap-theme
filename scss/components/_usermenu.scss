@@ -1,0 +1,107 @@
+.navbar {
+
+  .user-toggle {
+    position: relative;
+    top: 2px;
+  }
+}
+
+.user-toggle {
+  font-size: px(16);
+}
+
+.user-icon {
+  background-color: $user-icon-bg;
+  border-radius: 50%;
+  color: color("white");
+  display: inline-block;
+  height: $user-icon-size;
+  line-height: $user-icon-size;
+  margin-right: space(8);
+  position: relative;
+  text-align: center;
+  top: -1px;
+  vertical-align: middle;
+  width: $user-icon-size;
+}
+
+.user-menu {
+  @extend .dropdown-menu-right;
+  max-width: $navbar-brand-menu-max-width;
+  min-width: $navbar-brand-menu-min-width;
+}
+
+.palette-selector {
+
+  .form-radio {
+    padding: space(4) space(24);
+  }
+
+  .icon::before {
+    font-size: $palette-selector-icon-size;
+    margin-right: space(8);
+  }
+
+  .form-radio-input:checked + .form-radio-label::after {
+    display: block;
+  }
+
+  .form-radio-label {
+    width: 100%;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      background-size: 0;
+      color: theme-color("primary");
+      content: theme-icon("check");
+      display: none;
+      font-family: fluidicons, system-ui;
+      font-size: $palette-selector-icon-size;
+      height: $palette-selector-icon-size;
+      left: auto;
+      line-height: $palette-selector-icon-size + space(4);
+      right: 0;
+      top: 0;
+      width: $palette-selector-icon-size;
+    }
+  }
+}
+
+.palette-dark {
+
+  .user-icon {
+    background-color: $user-icon-bg-dark;
+    color: color-dark("white");
+  }
+
+  .palette-selector {
+
+    .form-radio-label {
+
+      &::after {
+        color: theme-color-dark("primary");
+      }
+    }
+  }
+}
+
+.palette-accessible {
+
+  .user-icon {
+    background-color: $user-icon-bg-accessible;
+    color: color-accessible("white");
+  }
+
+  .palette-selector {
+
+    .form-radio-label {
+
+      &::after {
+        color: theme-color-accessible("primary");
+      }
+    }
+  }
+}

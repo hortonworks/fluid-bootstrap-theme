@@ -127,13 +127,31 @@
       "src": "fontawesome"
     },
     {
-      "uid": "b06cf36d89d82864ab54fd7f83dd3329",
+      "uid": "ca90da02d2c6a3183f2458e4dc416285",
+      "css": "contrast",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "567e3e257f2cc8fba2c12bf691c9f2d8",
+      "css": "dark",
+      "code": 61830,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "caeb3b38733e4cf2702a50d3c7c4ee6f",
+      "css": "accessible",
+      "code": 62106,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "345c63e3088d2f77da3ead3979d002ff",
       "css": "previous",
       "code": 60,
       "src": "custom_icons",
       "selected": true,
       "svg": {
-        "path": "M777.8 388.9L500 666.7 777.8 944.4V388.9Z",
+        "path": "M694.4 194.4L416.7 472.2 694.4 750V388.9Z",
         "width": 1000
       },
       "search": [
@@ -141,13 +159,13 @@
       ]
     },
     {
-      "uid": "1506897ba943fd969138f9a05d65307e",
+      "uid": "f21ca586fa05db0e7301f8951081377b",
       "css": "next",
       "code": 62,
       "src": "custom_icons",
       "selected": true,
       "svg": {
-        "path": "M555.6 944.4L833.3 666.7 555.6 388.9V944.4Z",
+        "path": "M416.7 750L694.4 472.2 416.7 194.4V750Z",
         "width": 1000
       },
       "search": [
@@ -155,13 +173,27 @@
       ]
     },
     {
-      "uid": "14593b4052afde216019ea46002a188c",
-      "css": "collapse",
-      "code": 94,
+      "uid": "cc34fb57f355937ce44a245f870cb5dc",
+      "css": "down",
+      "code": 44,
       "src": "custom_icons",
       "selected": true,
       "svg": {
-        "path": "M388.9 777.8L666.7 500 944.4 777.8Z",
+        "path": "M277.8 361.1L555.6 638.9 833.3 361.1Z",
+        "width": 1000
+      },
+      "search": [
+        "caret_down"
+      ]
+    },
+    {
+      "uid": "0f51c5dedab69d2210d80247e9564d9e",
+      "css": "up",
+      "code": 46,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M277.8 638.9L555.6 361.1 833.3 638.9Z",
         "width": 1000
       },
       "search": [
@@ -169,18 +201,16 @@
       ]
     },
     {
-      "uid": "0bfa33c259cdb03dbd7f3a55868bb118",
+      "uid": "5de9370846a26947e03f63142a3f1c07",
+      "css": "collapse",
+      "code": 94,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "e4dde1992f787163e2e2b534b8c8067d",
       "css": "expand",
       "code": 95,
-      "src": "custom_icons",
-      "selected": true,
-      "svg": {
-        "path": "M388.9 555.6L666.7 833.3 944.4 555.6Z",
-        "width": 1000
-      },
-      "search": [
-        "caret_down"
-      ]
+      "src": "fontawesome"
     }
   ]
 }

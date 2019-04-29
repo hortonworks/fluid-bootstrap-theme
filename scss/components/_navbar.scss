@@ -27,8 +27,8 @@
 }
 
 .navbar.navbar-header {
-  background-color: color("white");
-  border-bottom: $border-width $body-bg solid;
+  background-color: bg-color("light");
+  border-bottom: $border-width bg-color("default") solid;
   height: calc(#{$navbar-brand-height} + #{$border-width});
   min-width: $layout-min-width;
 
@@ -38,7 +38,7 @@
 }
 
 .navbar.navbar-footer {
-  border-top: $border-width $border-color solid;
+  border-top: $border-width $border-color-default solid;
   min-width: $layout-min-width;
 }
 
@@ -47,7 +47,7 @@
   @include transition($transition-collapse-all);
   align-items: normal;
   background-color: $navbar-bg;
-  background-image: linear-gradient(225deg, $navbar-bg, $navbar-app-color);
+  background-image: $navbar-gradient-dark; // Default theme has a dark navbar, so we use the dark version of this color
   flex-direction: column;
   height: 100%;
   justify-content: flex-start;
@@ -164,7 +164,7 @@
 
         &[data-toggle="collapse"]::after {
           font-size: px(16);
-          left: space(32);
+          left: 40px;
           margin: 0;
           position: absolute;
           top: space(24) * -1;
@@ -181,10 +181,11 @@
       .navbar-nav {
 
         &.collapse {
+          background-clip: padding-box;
           background-color: $navbar-bg;
-          left: $navbar-nav-link-height-collapsed;
+          border-left: 2px solid rgba(0, 0, 0, 0);
+          left: $navbar-width-sm;
           overflow: visible;
-          padding-top: $navbar-nav-padding;
           position: relative;
           top: $navbar-nav-link-height-collapsed * -1;
           transition: none;
@@ -199,6 +200,7 @@
             height: $navbar-nav-link-height;
             overflow: hidden;
             padding-left: 26px;
+            padding-top: space(8);
 
             &.status::before {
               left: space(16);
@@ -226,6 +228,7 @@
           height: $navbar-nav-link-height-collapsed;
           overflow: visible;
           padding-left: ($navbar-width-sm - $navbar-nav-link-icon-size-collapsed) / 2;
+          padding-top:  ($navbar-nav-link-height-collapsed - $navbar-nav-link-icon-size-collapsed) / 2;
 
           &::after {
             opacity: 0;
@@ -233,9 +236,14 @@
 
           .icon:first-child {
             font-size: $navbar-nav-link-icon-size-collapsed;
-            line-height: $navbar-nav-link-height-collapsed - ($navbar-nav-link-space * 2);
+            height: $navbar-nav-link-icon-size-collapsed;
+            line-height: $navbar-nav-link-icon-size-collapsed;
             margin-right: space(16);
             width: $navbar-nav-link-icon-size-collapsed;
+
+            &::before {
+              top: 0;
+            }
           }
         }
 
@@ -270,10 +278,10 @@
           &::after {
             content: theme-icon("collapse");
             font-family: fluidicons, system-ui;
-            font-size: $caret-font-size;
+            font-size: $accordion-icon-font-size;
             position: absolute;
-            right: $navbar-nav-link-padding-left + $navbar-nav-link-marker-width;
-            top: 3px;
+            right: $navbar-nav-link-padding-left;
+            top: 6px;
             //@include transition($transition-collapse-all);
           }
         }
@@ -282,11 +290,11 @@
 
           &.nav-link,
           & > .nav-link {
-            padding-right: 40px;
+            padding-right: space(48);
           }
 
           & .dropdown-toggle {
-            right: 28px;
+            right: space(32);
           }
         }
       }
@@ -314,8 +322,6 @@
         font-weight: $font-weight-bold;
       }
 
-      &:hover > .nav-link,
-      &.nav-link:hover,
       &:active > .nav-link,
       &.nav-link.active {
         background-color: $navbar-active-bg;
@@ -328,7 +334,7 @@
         @include transition($transition-collapse-all);
         height: $navbar-nav-link-height;
         line-height: 1;
-        margin-bottom: $navbar-nav-link-space;
+        margin-bottom: 0;
         overflow: hidden;
         padding-bottom: $navbar-nav-link-space;
         padding-left: $navbar-nav-link-padding-left;
@@ -339,7 +345,7 @@
         white-space: nowrap;
 
         &.active::before {
-          background-color: theme-color("primary");
+          background-color: theme-color-dark("primary"); // Default theme has a dark navbar, so we use the dark version of this color
           content: " ";
           height: 100%;
           position: absolute;
@@ -436,24 +442,23 @@
     &[data-toggle="collapse"] {
 
       &::after {
-        content: theme-icon("collapse");
+        content: theme-icon("up");
         font-family: fluidicons, system-ui;
-        font-size: $caret-font-size;
+        font-size: $accordion-icon-font-size;
         line-height: space(64); // IE
         position: absolute;
-        right: space(16);
-        top: space(4) * -1;
+        right: $navbar-nav-link-padding-left - space(4);
         z-index: $zindex-fixed; // Edge
       }
 
       &.collapsed::after {
-        content: theme-icon("expand");
+        content: theme-icon("down");
       }
     }
 
     .icon:first-child {
       @include transition($transition-collapse-all);
-      color: $app-color;
+      color: $app-color-dark; // Default theme has a dark navbar, so we use the dark version of this color
       flex-shrink: 0;
       font-size: $navbar-brand-icon-size;
       margin-right: $navbar-nav-link-space;
@@ -461,7 +466,7 @@
     }
 
     & ~ .navbar-collapse {
-      padding-top: $navbar-brand-height + $navbar-nav-padding;
+      padding-top: $navbar-brand-height + ($navbar-nav-padding * 3);
     }
   }
 
@@ -469,6 +474,7 @@
     display: flex;
     height: 100%;
     left: 0; // set explicitly for IE
+    overflow-x: hidden;
     overflow-y: scroll;
     padding-bottom: $navbar-nav-padding;
     padding-top: $navbar-nav-padding;
@@ -482,10 +488,11 @@
   }
 
   .navbar-toggler {
-    background-color: $navbar-app-color;
+    background-color: $navbar-app-color-dark; // Default theme has a dark navbar, so we use the dark version of this color
     border: 0;
     border-radius: 0;
     bottom: 0;
+    color: $navbar-color;
     display: block;
     height: space(48);
     left: 0; // set explicitly for IE
@@ -496,7 +503,7 @@
 
     // Create a fade out effect as menu items overflow vertically
     &::before {
-      background: linear-gradient(to bottom, rgba($navbar-app-color, 0) 0%, $navbar-app-color 100%);
+      background-image: $navbar-toggler-gradient;
       bottom: 100%;
       content: " ";
       height: $navbar-nav-link-height-collapsed;
@@ -556,8 +563,8 @@
 .brand-menu.show {
   @extend .dropdown-menu;
   display: flex;
-  max-width: 320px;
-  min-width: 256px;
+  max-width: $navbar-brand-menu-max-width;
+  min-width: $navbar-brand-menu-min-width;
   padding: 0;
   position: fixed;
   top: $navbar-brand-height;
@@ -593,5 +600,233 @@
 
   .dropdown-header {
     margin-top: $navbar-brand-menu-spacing;
+  }
+}
+
+.palette-dark {
+
+  .navbar.navbar-header {
+    background-color: color-dark("black");
+    border-color: bg-color-dark("default");
+  }
+
+  .navbar.navbar-footer {
+    border-color: $border-color-default-dark;
+  }
+
+  .navbar.navbar-primary {
+    background-color: $navbar-bg-dark;
+    background-image: none;
+
+    &.collapse {
+
+      &:not(.show) {
+
+        .navbar-nav {
+
+          &.collapse {
+            background-color: $navbar-bg-dark;
+          }
+        }
+      }
+    }
+
+    .navbar-nav {
+
+      .nav-item,
+      .nav-link {
+        color: $navbar-color-dark;
+      }
+
+      .nav-item {
+
+        &:hover > .nav-link,
+        &.nav-link:hover {
+          background-color: $navbar-hover-bg-dark;
+          color: $navbar-hover-color-dark;
+        }
+
+        &:active > .nav-link,
+        &.nav-link.active {
+          background-color: $navbar-active-bg-dark;
+          color: $navbar-active-color-dark;
+        }
+
+        &.nav-link,
+        > .nav-link {
+
+          &.active::before {
+            background-color: theme-color-dark("primary");
+          }
+        }
+
+        &.dropdown {
+
+          &.show .dropdown-toggle {
+            color: $navbar-active-color-dark;
+          }
+        }
+      }
+    }
+
+    .navbar-brand {
+      background-color: $navbar-brand-bg-dark;
+      background-image: $navbar-brand-gradient-dark;
+      color: $navbar-brand-color-dark;
+
+      .icon:first-child {
+        color: $app-color-dark;
+      }
+    }
+
+    .navbar-toggler {
+      background-color: $navbar-bg-dark;
+      color: $navbar-color-dark;
+
+      &::before {
+        background-image: $navbar-toggler-gradient-dark;
+      }
+
+      &:hover {
+
+        .navbar-toggler-icon::before {
+          color: $navbar-hover-color-dark;
+        }
+      }
+
+      &:active {
+
+        .navbar-toggler-icon::before {
+          color: $navbar-active-color-dark;
+        }
+      }
+    }
+  }
+
+  .brand-menu,
+  .brand-menu.show {
+
+    .dropdown-item,
+    .dropdown-header {
+
+      .icon:first-child {
+        color: $brand-color-dark;
+      }
+    }
+  }
+}
+
+.palette-accessible {
+
+  .navbar.navbar-header {
+    background-color: bg-color-accessible("light");
+    border-color: $border-color-default-accessible;
+    height: $navbar-brand-height;
+  }
+
+  .navbar.navbar-footer {
+    border-color: $border-color-default-accessible;
+  }
+
+  .navbar.navbar-primary {
+    background-color: $navbar-bg-accessible;
+    background-image: none;
+    border-right: 1px solid $border-color-default-accessible;
+
+    &.collapse {
+
+      &:not(.show) {
+
+        .navbar-nav {
+
+          &.collapse {
+            background-color: $navbar-bg-accessible;
+          }
+        }
+      }
+    }
+
+    .navbar-nav {
+
+      .nav-item,
+      .nav-link {
+        color: $navbar-color-accessible;
+      }
+
+      .nav-item {
+
+        &:hover > .nav-link,
+        &.nav-link:hover {
+          background-color: $navbar-hover-bg-accessible;
+          color: $navbar-hover-color-accessible;
+        }
+
+        &:active > .nav-link,
+        &.nav-link.active {
+          background-color: $navbar-active-bg-accessible;
+          color: $navbar-active-color-accessible;
+        }
+
+        &.nav-link,
+        > .nav-link {
+
+          &.active::before {
+            background-color: theme-color-accessible("primary");
+          }
+        }
+
+        &.dropdown {
+
+          &.show .dropdown-toggle {
+            color: $navbar-active-color-accessible;
+          }
+        }
+      }
+    }
+
+    .navbar-brand {
+      background-color: $navbar-brand-bg-accessible;
+      border-bottom: 1px solid $border-color-default-accessible;
+      color: $navbar-brand-color-accessible;
+
+      .icon:first-child {
+        color: $app-color-accessible;
+      }
+    }
+
+    .navbar-toggler {
+      background-color: $navbar-bg-accessible;
+      color: $navbar-color-accessible;
+
+      &::before {
+        background-image: $navbar-toggler-gradient-accessible;
+      }
+
+      &:hover {
+
+        .navbar-toggler-icon::before {
+          color: $navbar-hover-color-accessible;
+        }
+      }
+
+      &:active {
+
+        .navbar-toggler-icon::before {
+          color: $navbar-active-color-accessible;
+        }
+      }
+    }
+  }
+
+  .brand-menu,
+  .brand-menu.show {
+
+    .dropdown-item,
+    .dropdown-header {
+
+      .icon:first-child {
+        color: $brand-color-accessible;
+      }
+    }
   }
 }

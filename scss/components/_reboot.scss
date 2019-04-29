@@ -6,7 +6,15 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-// stylelint-disable declaration-no-important
+// stylelint-disable declaration-no-important, selector-no-qualifying-type
+
+// This doesn't work well in webkit browsers.
+// Will consider whether to enable it for other browsers.
+// .theme-changing,
+// .theme-changing::before,
+// .theme-changing::after {
+//   transition: all .35s 0s !important;
+// }
 
 html {
   font-size: $root-font-size;
@@ -14,7 +22,24 @@ html {
 }
 
 body {
+  background-color: bg-color("default");
+  color: text-color("default");
   min-width: $layout-min-width;
+
+  &.palette-dark {
+    background-color: bg-color-dark("default");
+    color: text-color-dark("default");
+  }
+
+  &.palette-accessible {
+    background-color: bg-color-accessible("default");
+    color: text-color-accessible("default");
+  }
+}
+
+a.disabled,
+fieldset:disabled a {
+  pointer-events: none;
 }
 
 dt {
@@ -27,5 +52,43 @@ dl {
 
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+.palette-dark {
+
+  a {
+    color: $link-color-dark;
+
+    @include hover {
+      color: $link-hover-color-dark;
+    }
+  }
+
+  caption {
+    color: $table-caption-color-dark;
+  }
+
+  dt {
+    color: text-color-dark("light");
+  }
+}
+
+.palette-accessible {
+
+  a {
+    color: $link-color-accessible;
+
+    @include hover {
+      color: $link-hover-color-accessible;
+    }
+  }
+
+  caption {
+    color: $table-caption-color-accessible;
+  }
+
+  dt {
+    color: text-color-accessible("light");
   }
 }

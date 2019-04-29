@@ -150,7 +150,296 @@
 }
 
 .table-hover {
+
   tbody tr:hover {
     outline: $table-border-width solid $table-hover-border-color;
   }
+}
+
+.card .table {
+  margin-left: -$card-margin;
+  margin-right: -$card-margin;
+  width: calc(100% + #{$card-margin * 2});
+
+  &:last-child {
+    margin-bottom: -$card-margin;
+  }
+
+  th,
+  td {
+
+    &:first-child {
+      padding-left: $card-margin;
+    }
+
+    &:last-child {
+      padding-right: $card-margin;
+    }
+  }
+}
+
+.palette-dark {
+
+  .table {
+    background-color: $table-bg-dark;
+    color: $table-color-dark;
+
+    tr.selected {
+      background-color: $table-active-bg-dark;
+    }
+
+    th {
+      border-color: $table-border-color-dark;
+      color: $table-head-color-dark;
+    }
+
+    td {
+      border-color: $table-border-color-dark;
+    }
+
+    thead,
+    tfoot {
+      border-color: $table-head-border-color-dark;
+
+      th {
+        border-bottom-color: $table-border-color-dark;
+      }
+
+      th,
+      td {
+
+        &.sortable {
+
+          &::after {
+            color: color-dark("blue");
+          }
+        }
+      }
+    }
+
+    .thead-dark {
+
+      th {
+        background-color: $table-dark-bg-dark;
+        border-color: $table-dark-border-color-dark;
+        color: $table-dark-color-dark;
+      }
+    }
+
+    .thead-light {
+
+      th {
+        background-color: $table-head-bg-dark;
+        border-color: $table-border-color-dark;
+        color: $table-head-color-dark;
+      }
+    }
+
+    tbody + tbody {
+      border-top-color: $table-border-color-dark;
+    }
+
+    tbody {
+
+      &:empty::before {
+        color: $table-head-color-dark;
+      }
+
+      tr:not(:last-child) {
+        border-color: $table-border-color-dark;
+      }
+    }
+  }
+
+  .table-dark {
+    background-color: $table-dark-bg-dark;
+    color: $table-dark-color-dark;
+
+    th,
+    td,
+    thead th {
+      border-color: $table-dark-border-color-dark;
+    }
+
+    &.table-striped {
+
+      tbody tr:nth-of-type(odd) {
+        background-color: $table-dark-accent-bg-dark;
+      }
+    }
+
+    &.table-hover {
+
+      tbody tr {
+        @include hover {
+          background-color: $table-dark-hover-bg-dark;
+          color: $table-dark-hover-color-dark;
+        }
+      }
+    }
+  }
+
+  .table-bordered {
+    border-color: $table-border-color-dark;
+
+    th,
+    td {
+      border-color: $table-border-color-dark;
+    }
+  }
+
+  .table-striped {
+
+    tbody tr:nth-of-type(#{$table-striped-order}) {
+      background-color: $table-accent-bg-dark;
+    }
+  }
+
+  .table-hover {
+
+    tbody tr {
+      @include hover {
+        background-color: $table-hover-bg-dark;
+        color: $table-hover-color-dark;
+      }
+    }
+  }
+
+  @each $color, $value in $theme-colors-dark {
+    @include table-row-variant($color, theme-color-level($color, $table-bg-level), theme-color-level($color, $table-border-level));
+  }
+
+  @include table-row-variant(active, $table-active-bg-dark);
+}
+
+.palette-accessible {
+
+  .table {
+    background-color: $table-bg-accessible;
+    color: $table-color-accessible;
+
+    tr.selected {
+      background-color: $table-active-bg-accessible;
+    }
+
+    th {
+      border-color: $table-border-color-accessible;
+      color: $table-head-color-accessible;
+    }
+
+    td {
+      border-color: $table-border-color-accessible;
+    }
+
+    thead,
+    tfoot {
+      border-color: $table-head-border-color-accessible;
+
+      th {
+        border-bottom-color: $table-border-color-accessible;
+      }
+
+      th,
+      td {
+
+        &.sortable {
+
+          &::after {
+            color: color-accessible("blue");
+          }
+        }
+      }
+    }
+
+    .thead-accessible {
+      th {
+        background-color: $table-dark-bg-accessible;
+        border-color: $table-dark-border-color-accessible;
+        color: $table-dark-color-accessible;
+      }
+    }
+
+    .thead-light {
+      th {
+        background-color: $table-head-bg-accessible;
+        border-color: $table-border-color-accessible;
+        color: $table-head-color-accessible;
+      }
+    }
+
+    tbody + tbody {
+      border-top-color: $table-border-color-accessible;
+    }
+
+    tbody {
+
+      &:empty::before {
+        color: $table-head-color-accessible;
+      }
+
+      tr:not(:last-child) {
+        border-color: $table-border-color-accessible;
+      }
+    }
+  }
+
+  .table-dark {
+    background-color: $table-dark-bg-accessible;
+    color: $table-dark-color-accessible;
+
+    th,
+    td,
+    thead th {
+      border-color: $table-dark-border-color-accessible;
+    }
+
+    &.table-striped {
+
+      tbody tr:nth-of-type(odd) {
+        background-color: $table-dark-accent-bg-accessible;
+      }
+    }
+
+    &.table-hover {
+
+      tbody tr {
+        @include hover {
+          background-color: $table-dark-hover-bg-accessible;
+          color: $table-dark-hover-color-accessible;
+        }
+      }
+    }
+  }
+
+  .table-bordered {
+    border-color: $table-border-color-accessible;
+
+    th,
+    td {
+      border-color: $table-border-color-accessible;
+    }
+  }
+
+  .table-striped {
+
+    tbody tr:nth-of-type(#{$table-striped-order}) {
+      background-color: $table-accent-bg-accessible;
+    }
+  }
+
+  .table-hover {
+
+    tbody tr {
+      @include hover {
+        background-color: $table-hover-bg-accessible;
+        color: $table-hover-color-accessible;
+      }
+    }
+  }
+
+  @each $color, $value in $theme-colors-dark {
+    @include table-row-variant($color, theme-color-level($color, $table-bg-level), theme-color-level($color, $table-border-level));
+  }
+
+  @include table-row-variant(active, $table-active-bg-dark);
 }

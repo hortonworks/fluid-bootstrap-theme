@@ -434,18 +434,114 @@ const showFilter = (queryDisplay, filter) => {
 (function () {
   const dataSource = document.querySelector('#filterable-example tbody');
 
-  window.addEventListener('load', () => {
-    const filterEl = document.getElementById('filter-input-example');
-    const data = fillFacets(facets, dataSource);
-    const filter = new Filter(filterEl, data);
-    filterEl.addEventListener('changed.fluid.filter', () => showFilter(document.getElementById('filter-query-example'), filter));
-  });
+  if (dataSource) {
+    window.addEventListener('load', () => {
+      const filterEl = document.getElementById('filter-input-example');
+      const data = fillFacets(facets, dataSource);
+      const filter = new Filter(filterEl, data);
+      filterEl.addEventListener('changed.fluid.filter', () => showFilter(document.getElementById('filter-query-example'), filter));
+    });
 
-  window.addEventListener('load', () => {
-    const filterEl = document.getElementById('filter-input');
-    const data = fillFacets(facets, dataSource);
-    const filter = new Filter(filterEl, data);
-    filterEl.addEventListener('changed.fluid.filter', () => applyFilter(filterable, filter));
+    window.addEventListener('load', () => {
+      const filterEl = document.getElementById('filter-input');
+      const data = fillFacets(facets, dataSource);
+      const filter = new Filter(filterEl, data);
+      filterEl.addEventListener('changed.fluid.filter', () => applyFilter(filterable, filter));
+    });
+  }
+})();
+//#endregion
+
+//#region Palette Selector
+const getQueryParams = query => {
+  let params = {};
+
+  const queryString = query.substring(1).split('&');
+
+  if (queryString.length > 0 && queryString[0]) {
+    const pairs = queryString.map(component => component.split('='));
+    pairs.reduce((acc, pair) => acc[pair[0]] = decodeURIComponent(pair[1]), params);
+  }
+
+  return params;
+};
+
+const makeQueryString = params => {
+  let queryString = '';
+
+  for (let prop in params) {
+    queryString += `&${prop}=${params[prop]}`;
+  }
+
+  queryString = queryString.substring(1);
+
+  if (queryString) {
+    queryString = `?${queryString}`;
+  }
+
+  return queryString;
+};
+
+const setQueryParam = (key, value) => {
+  let newURL = `${location.protocol}//${location.host}${location.pathname}`;
+
+  const params = getQueryParams(location.search);
+  params[key] = value;
+
+  const queryString = makeQueryString(params);
+  if (queryString) {
+    newURL += queryString;
+  }
+
+  if (location.hash) {
+    newURL += location.hash;
+  }
+
+  history.pushState(null, '', newURL);
+};
+
+const setPalette = palette => {
+  switch (palette) {
+    case 'dark':
+      document.body.classList.add('palette-dark');
+      document.body.classList.remove('palette-accessible');
+      break;
+    case 'accessible':
+      document.body.classList.remove('palette-dark');
+      document.body.classList.add('palette-accessible');
+      break;
+    default:
+      //default "hybrid" palette selected
+      document.body.classList.remove('palette-dark');
+      document.body.classList.remove('palette-accessible');
+      break;
+  }
+};
+
+const paletteChangeHandler = event => {
+  setPalette(event.target.value);
+  setQueryParam('theme', event.target.value);
+};
+
+const pageChangeHandler = link => {
+  link.search = location.search;
+};
+
+(function () {
+  const params = getQueryParams(location.search);
+  setPalette(params.theme);
+
+  const radios = document.querySelectorAll('[name="paletteRadios"]');
+  radios.forEach(radio => {
+    radio.addEventListener('click', paletteChangeHandler);
+
+    if (params.theme) {
+      if (params.theme === radio.value) {
+        radio.checked = true;
+      } else {
+        radio.checked = false;
+      }
+    }
   });
 })();
 //#endregion

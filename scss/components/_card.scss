@@ -25,7 +25,12 @@
 
 .card-header {
   background-color: inherit;
-  border-bottom: $border-width $border-color solid;
+  border-bottom: $border-width $border-color-default solid;
+}
+
+.card-footer {
+  background-color: inherit;
+  border-top: none;
 }
 
 .card-body {
@@ -60,14 +65,68 @@
   .card {
     border-left-width: $border-width;
     border-right-width: $border-width;
+  }
+}
 
-    &:first-of-type {
-      border-left-width: 0;
-    }
+.palette-dark {
 
-    &:last-of-type {
-      border-right-width: 0;
+  .card {
+    background-color: $card-bg-dark;
+    border-color: $card-border-color-dark;
+
+    &:not([class*="bg-"]) {
+
+      .card-header {
+        color: text-color-dark("light");
+      }
+
+      // stylelint-disable selector-list-comma-newline-after
+      h1, h2, h3, h4, h5, h6,
+      .h1, .h2, .h3, .h4, .h5, .h6 {
+        color: text-color-dark("light");
+      }
+      // stylelint-enable
     }
+  }
+
+  .card-body {
+    color: $card-color-dark;
+  }
+
+  .card-header {
+    border-bottom-color: $card-border-color-dark;
+    color: $card-cap-color-dark;
+  }
+}
+
+.palette-accessible {
+
+  .card {
+    background-color: $card-bg-accessible;
+    border-color: $card-border-color-accessible;
+
+    &:not([class*="bg-"]) {
+
+      .card-header {
+        color: text-color-accessible("light");
+      }
+
+      // stylelint-disable selector-list-comma-newline-after
+      h1, h2, h3, h4, h5, h6,
+      .h1, .h2, .h3, .h4, .h5, .h6 {
+        color: text-color-accessible("light");
+      }
+      // stylelint-enable
+    }
+  }
+
+  .card-body {
+    color: $card-color-accessible;
+  }
+
+  .card-header {
+    border-bottom-color: $card-border-color-accessible;
+    color: $card-cap-color-accessible;
   }
 }
 
