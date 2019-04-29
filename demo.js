@@ -98,20 +98,24 @@ const addAlertHandler = event => {
 
   const data = $(event.currentTarget).serializeArray().reduce(arrayToObj, {});
 
-  const getTarget = (topBottom, rightLeft) => {
+  const getTarget = (inline, topBottom, rightLeft) => {
     let id;
 
-    if (topBottom === 'top') {
-      if (rightLeft === 'right') {
-        id = 'alertsTopRight';
-      } else {
-        id = 'alertsTopLeft';
-      }
+    if (inline === "on") {
+      id = 'alertsInline';
     } else {
-      if (rightLeft === 'right') {
-        id = 'alertsBottomRight';
+      if (topBottom === 'top') {
+        if (rightLeft === 'right') {
+          id = 'alertsTopRight';
+        } else {
+          id = 'alertsTopLeft';
+        }
       } else {
-        id = 'alertsBottomLeft';
+        if (rightLeft === 'right') {
+          id = 'alertsBottomRight';
+        } else {
+          id = 'alertsBottomLeft';
+        }
       }
     }
 
@@ -119,7 +123,7 @@ const addAlertHandler = event => {
   }
 
   const options = {
-    target: getTarget(data.alertTopBottom, data.alertRightLeft),
+    target: getTarget(data.alertInline, data.alertTopBottom, data.alertRightLeft),
     type: data.alertType,
     content: data.alertContent,
     dismissible: !!data.alertDismissible,
@@ -148,7 +152,21 @@ const dismissAlertHandler = close => {
 
 const dismissAllAlerts = () => {
   $('.alert-container .alert').alert('close');
+  $('.alert-container-inline .alert').alert('close');
 };
+
+const toggleInline = event => {
+  $('#alertTop')[0].disabled = event.target.checked;
+  $('#alertBottom')[0].disabled = event.target.checked;
+  $('#alertRight')[0].disabled = event.target.checked;
+  $('#alertLeft')[0].disabled = event.target.checked;
+}
+
+$(function () {
+  $('#alertInline').on('click', toggleInline);
+  $('#addAlert').on('submit', addAlertHandler);
+  $('#dismissAllAlerts').on('click', dismissAllAlerts);
+});
 //#endregion
 
 //#region Container example
@@ -168,9 +186,6 @@ $(function () {
 
   updateContainerExample();
   $(window).resize(updateContainerExample);
-
-  $('#addAlert').on('submit', addAlertHandler);
-  $('#dismissAllAlerts').on('click', dismissAllAlerts);
 });
 //#endregion
 
@@ -305,6 +320,26 @@ const checkAllHandler = event => {
   }
 };
 
+const onSort = event => {
+  const table = event.list.parentElement;
+  const sortableCols = table.querySelectorAll('th.sortable');
+  const sortedCols = table.querySelectorAll('th.sortable.asc, th.sortable.desc');
+
+  sortableCols.forEach(col => {
+    col.classList.remove('sorted');
+    const target = col.getAttribute('data-sort');
+    const tds = table.querySelectorAll(`.${target}`);
+    tds.forEach(td => td.classList.remove('sorted'));
+  });
+
+  sortedCols.forEach(col => {
+    col.classList.add('sorted');
+    const target = col.getAttribute('data-sort');
+    const tds = table.querySelectorAll(`.${target}`);
+    tds.forEach(td => td.classList.add('sorted'));
+  });
+};
+
 const makeSortable = (tableId, columns) => {
   const table = document.getElementById(tableId);
   let list;
@@ -323,6 +358,8 @@ const makeSortable = (tableId, columns) => {
       });
     }
   }
+
+  list.on('sortComplete', onSort);
 
   return list;
 };

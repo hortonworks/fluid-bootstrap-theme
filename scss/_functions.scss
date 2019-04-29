@@ -61,3 +61,20 @@
 @function space($key) {
   @return map-get($spaces, $key);
 }
+
+@function theme-color-level-dark($color-name: "primary", $level: 0) {
+  $color: theme-color-dark($color-name);
+  $color-base: if($level > 0, $white, $black);
+  $level: abs($level);
+
+  @return mix($color-base, $color, $level * $theme-color-interval);
+}
+
+@function theme-color-level-accessible($color-name: "primary", $level: 0) {
+  $color: theme-color-accessible($color-name);
+  $color-base: if($level > 0, $black, $white);
+  $level: abs($level);
+
+  @return mix($color-base, $color, $level * $theme-color-interval);
+}
+
