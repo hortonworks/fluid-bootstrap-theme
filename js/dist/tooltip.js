@@ -1,12 +1,5 @@
 "use strict";
 
-/**
- * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
- * Except as expressly permitted in a written agreement between you
- * or your company and Hortonworks, Inc, any use, reproduction,
- * modification, redistribution, sharing, lending or other exploitation
- * of all or any part of the contents of this file is strictly prohibited.
- */
 var isTruncatedX = function isTruncatedX(element, tolerance) {
   var tol = tolerance || 2;
   return element.clientWidth + tol < element.scrollWidth;
