@@ -23,7 +23,6 @@ label {
 }
 
 .form-row {
-  margin-top: space(16) * -1;
 
   &:not(:last-child) {
     margin-bottom: $grid-gutter-width;

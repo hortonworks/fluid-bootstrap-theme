@@ -939,6 +939,16 @@ of all or any part of the contents of this file is strictly prohibited.
       <div class="container-fluid">
         <div class="row">
           <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Palettes</h4>
+                <p>FLUID specifies three color palettes: a Hybrid palette featuring a dark navbar and a light content area, a fully Dark palette, and an Accessible palette that ensure accessibility guidelines are followed with regard to color choices. You can switch among these palettes by clicking the user icon in upper right corner to reveal the preferences menu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
             <div class="card ramp">
               <div class="card-body">
                 <h3 class="card-title">Grays</h3>
@@ -1330,6 +1340,7 @@ of all or any part of the contents of this file is strictly prohibited.
             <div class="card">
               <div class="card-body">
                 <h3 class="card-title">Alert tester</h3>
+                <div id="alertsInline" class="alert-container-inline"></div>
                 <form id="addAlert">
                   <div class="form-row">
                     <div class="col-auto">
@@ -1344,22 +1355,26 @@ of all or any part of the contents of this file is strictly prohibited.
                         </select>
                       </div>
                       <div class="form-group">
-                        <div><label>Position</label></div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="alertInline" id="alertInline" checked>
+                          <label class="form-check-label" for="alertInline">Inline</label>
+                        </div>
+                        <div class="mt-3"><label>Float Position</label></div>
                         <div class="form-radio form-radio-inline">
-                          <input class="form-radio-input" type="radio" name="alertTopBottom" id="alertTop" value="top" checked>
+                          <input class="form-radio-input" type="radio" name="alertTopBottom" id="alertTop" value="top" checked disabled>
                           <label class="form-radio-label" for="alertTop">Top</label>
                         </div>
                         <div class="form-radio form-radio-inline">
-                          <input class="form-radio-input" type="radio" name="alertTopBottom" id="alertBottom" value="bottom">
+                          <input class="form-radio-input" type="radio" name="alertTopBottom" id="alertBottom" value="bottom" disabled>
                           <label class="form-radio-label" for="alertBottom">Bottom</label>
                         </div>
                         <br>
                         <div class="form-radio form-radio-inline">
-                          <input class="form-radio-input" type="radio" name="alertRightLeft" id="alertLeft" value="left">
+                          <input class="form-radio-input" type="radio" name="alertRightLeft" id="alertLeft" value="left" disabled>
                           <label class="form-radio-label" for="alertLeft">Left</label>
                         </div>
                         <div class="form-radio form-radio-inline">
-                          <input class="form-radio-input" type="radio" name="alertRightLeft" id="alertRight" value="right" checked>
+                          <input class="form-radio-input" type="radio" name="alertRightLeft" id="alertRight" value="right" checked disabled>
                           <label class="form-radio-label" for="alertRight">Right</label>
                         </div>
                       </div>
@@ -2419,7 +2434,7 @@ of all or any part of the contents of this file is strictly prohibited.
           <div class="col">
             <div class="card">
               <div class="card-body">
-                <h3 class="card-title">Table</h3>
+                <h3 class="card-title">Table in panel</h3>
                 <p>This example demonstrates most of the basic table features, including:</p>
                 <ul>
                   <li>Basic search box</li>
@@ -2430,188 +2445,374 @@ of all or any part of the contents of this file is strictly prohibited.
                   <li>Pagination control</li>
                 </ul>
                 <p>Note that checkboxes for row selection may be placed in either the left- or the rightmost position, as required by the application, although Fluid prefers them to be on the right to reduce the user's need to move the pointer.</p>
-                <header class="table-header">
-                  <div class="table-caption">Example Title</div>
-                  <div class="input-group table-search">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col">
+                      <div class="table-caption">Example Title</div>
                     </div>
                   </div>
-                  <div class="dropdown ml-2">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Actions
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="row">
+                    <div class="col-3">
+                      <div class="input-group table-search">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                          <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-9 text-right">
+                      <div class="dropdown ml-2">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Actions
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </header>
-                <table id="sortable-example" class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th class="sortable text-center" data-sort="data-status">Status</th>
-                      <th class="sortable" data-sort="data-name">Name</th>
-                      <th class="sortable" data-sort="data-username">Username</th>
-                      <th class="sortable" data-sort="data-login">Last Login</th>
-                      <th>Actions</th>
-                      <th class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="checkAll">
-                          <label class="form-check-label" for="checkAll"></label>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="table-data">
-                    <tr>
-                      <td class="text-center text-base data-status"><i class="icon icon-success"><span class="sr-only">Success</span></td>
-                      <td class="primary data-name"><a href="#">William Ross</a></td>
-                      <td class="data-username">admiralbill</td>
-                      <td class="data-login">2 days ago</td>
-                      <td>
-                        <ul class="actions">
-                          <li>
-                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
-                          </li>
-                        </ul>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input table-example-check" type="checkbox" value="1" id="row1">
-                          <label class="form-check-label" for="row1"></label>
-                        </div>
-                      </th>
-                    </tr>
-                    <tr class="selected">
-                      <td class="text-center text-base data-status"><i class="icon icon-warning"><span class="sr-only">Warning</span></td>
-                      <td class="primary data-name"><a href="#">Benjamin Sisko</a></td>
-                      <td class="data-username">brotherbenny</td>
-                      <td class="data-login">Just now</td>
-                      <td>
-                        <div class="actions dropdown">
-                          <a class="dropdown-toggle" href="#" role="button" id="actionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Send e-mail</a>
-                            <a class="dropdown-item" href="#">Follow</a>
-                            <a class="dropdown-item" href="#">View profile</a>
-                            <a class="dropdown-item" href="#">Edit</a>
-                            <a class="dropdown-item" href="#">Delete user</a>
-                          </div>
-                        </div>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input table-example-check" type="checkbox" value="2" id="row2" checked>
-                          <label class="form-check-label" for="row2"></label>
-                        </div>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td class="text-center text-base data-status"><i class="icon icon-danger"><span class="sr-only">Danger</span></td>
-                      <td class="primary data-name"><a href="#">Miles O'Brien</a></td>
-                      <td class="data-username">smiley</td>
-                      <td class="data-login">5 hours ago</td>
-                      <td>
-                        <ul class="actions">
-                          <li>
-                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
-                          </li>
-                        </ul>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input table-example-check" type="checkbox" value="3" id="row3">
-                          <label class="form-check-label" for="row3"></label>
-                        </div>
-                      </th>
-                    </tr>
-                    <tr>
-                      <td class="text-center text-base data-status"><i class="icon icon-info"><span class="sr-only">Info</span></td>
-                      <td class="primary data-name"><a href="#">Julian Bashir</a></td>
-                      <td class="data-username">kukalaka</td>
-                      <td class="data-login">Never</td>
-                      <td>
-                        <ul class="actions">
-                          <li>
-                            <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
-                          </li>
-                          <li>
-                            <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
-                          </li>
-                        </ul>
-                      </td>
-                      <th scope="row" class="text-center">
-                        <div class="form-check">
-                          <input class="form-check-input table-example-check" type="checkbox" value="4" id="row4">
-                          <label class="form-check-label" for="row4"></label>
-                        </div>
-                      </th>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td colspan="6">
-                        <nav class="pagination" aria-label="Page navigation example">
-                          <div class="fade">
-                            <div class="form-group">
-                              <label for="itemsPerPage">Show:</label>
-                              <select id="itemsPerPage" class="selectpicker">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                              </select>
-                            </div>
-                            <div class="form-group dropdown">
-                              <label for="goToPage">Go:</label>
-                              <input id="goToPage" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" autocomplete="off">
-                              <ul class="dropdown-menu">
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
-                                <li class="page-item"><a class="page-link" href="#">500</a></li>
-                                <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1000</a></li>
+                  <div class="row">
+                    <div class="col">
+                      <table id="sortable-example" class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th class="sortable text-center" data-sort="data-status">Status</th>
+                            <th class="sortable" data-sort="data-name">Name</th>
+                            <th class="sortable" data-sort="data-username">Username</th>
+                            <th class="sortable" data-sort="data-login">Last Login</th>
+                            <th>Actions</th>
+                            <th class="text-center">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkAll">
+                                <label class="form-check-label" for="checkAll"></label>
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody class="table-data">
+                          <tr>
+                            <td class="text-center text-base data-status"><i class="icon icon-success"><span class="sr-only">Success</span></td>
+                            <td class="primary data-name"><a href="#">William Ross</a></td>
+                            <td class="data-username">admiralbill</td>
+                            <td class="data-login">2 days ago</td>
+                            <td>
+                              <ul class="actions">
+                                <li>
+                                  <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                                </li>
+                                <li>
+                                  <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                                </li>
+                                <li>
+                                  <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                                </li>
                               </ul>
-                            </div>
-                          </div>
-                          <span class="fade show">1-10 of 1000</span>
-                          <a class="page-link disabled" href="#" aria-label="Previous">
-                            <i class="icon icon-previous" aria-hidden="true"></i>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="page-link" href="#" aria-label="Next">
-                            <i class="icon icon-next" aria-hidden="true"></i>
-                            <span class="sr-only">Next</span>
-                          </a>
-                        </nav>
-                      </td>
-                    </tr>
-                  </tfoot>
-                </table>
+                            </td>
+                            <th scope="row" class="text-center">
+                              <div class="form-check">
+                                <input class="form-check-input table-example-check" type="checkbox" value="1" id="row1">
+                                <label class="form-check-label" for="row1"></label>
+                              </div>
+                            </th>
+                          </tr>
+                          <tr class="selected">
+                            <td class="text-center text-base data-status"><i class="icon icon-warning"><span class="sr-only">Warning</span></td>
+                            <td class="primary data-name"><a href="#">Benjamin Sisko</a></td>
+                            <td class="data-username">brotherbenny</td>
+                            <td class="data-login">Just now</td>
+                            <td>
+                              <div class="actions dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" id="actionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                  <a class="dropdown-item" href="#">Send e-mail</a>
+                                  <a class="dropdown-item" href="#">Follow</a>
+                                  <a class="dropdown-item" href="#">View profile</a>
+                                  <a class="dropdown-item" href="#">Edit</a>
+                                  <a class="dropdown-item" href="#">Delete user</a>
+                                </div>
+                              </div>
+                            </td>
+                            <th scope="row" class="text-center">
+                              <div class="form-check">
+                                <input class="form-check-input table-example-check" type="checkbox" value="2" id="row2" checked>
+                                <label class="form-check-label" for="row2"></label>
+                              </div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td class="text-center text-base data-status"><i class="icon icon-danger"><span class="sr-only">Danger</span></td>
+                            <td class="primary data-name"><a href="#">Miles O'Brien</a></td>
+                            <td class="data-username">smiley</td>
+                            <td class="data-login">5 hours ago</td>
+                            <td>
+                              <ul class="actions">
+                                <li>
+                                  <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                                </li>
+                                <li>
+                                  <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                                </li>
+                                <li>
+                                  <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                                </li>
+                              </ul>
+                            </td>
+                            <th scope="row" class="text-center">
+                              <div class="form-check">
+                                <input class="form-check-input table-example-check" type="checkbox" value="3" id="row3">
+                                <label class="form-check-label" for="row3"></label>
+                              </div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td class="text-center text-base data-status"><i class="icon icon-info"><span class="sr-only">Info</span></td>
+                            <td class="primary data-name"><a href="#">Julian Bashir</a></td>
+                            <td class="data-username">kukalaka</td>
+                            <td class="data-login">Never</td>
+                            <td>
+                              <ul class="actions">
+                                <li>
+                                  <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                                </li>
+                                <li>
+                                  <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                                </li>
+                                <li>
+                                  <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                                </li>
+                              </ul>
+                            </td>
+                            <th scope="row" class="text-center">
+                              <div class="form-check">
+                                <input class="form-check-input table-example-check" type="checkbox" value="4" id="row4">
+                                <label class="form-check-label" for="row4"></label>
+                              </div>
+                            </th>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td colspan="6">
+                              <nav class="pagination" aria-label="Page navigation example">
+                                <div class="fade">
+                                  <div class="form-group">
+                                    <label for="itemsPerPage">Show:</label>
+                                    <select id="itemsPerPage" class="selectpicker">
+                                      <option value="10">10</option>
+                                      <option value="25">25</option>
+                                      <option value="50">50</option>
+                                      <option value="100">100</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group dropdown">
+                                    <label for="goToPage">Go:</label>
+                                    <input id="goToPage" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" autocomplete="off">
+                                    <ul class="dropdown-menu">
+                                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                      <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">500</a></li>
+                                      <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                                      <li class="page-item"><a class="page-link" href="#">1000</a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <span class="fade show">1-10 of 1000</span>
+                                <a class="page-link disabled" href="#" aria-label="Previous">
+                                  <i class="icon icon-previous" aria-hidden="true"></i>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="page-link" href="#" aria-label="Next">
+                                  <i class="icon icon-next" aria-hidden="true"></i>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </nav>
+                            </td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Table as primary content</h3>
+                <p>When a table is the primary content of a page it does not need to be enclosed in a panel, as shown in the following example.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="table-caption">Example Title</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="input-group table-search">
+              <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-9 text-right">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Actions
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th class="text-center" data-sort="data-status">Status</th>
+                  <th class="data-sort="data-name">Name</th>
+                  <th data-sort="data-username">Username</th>
+                  <th data-sort="data-login">Last Login</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody class="table-data">
+                <tr>
+                  <td class="text-center text-base data-status"><i class="icon icon-success"><span class="sr-only">Success</span></td>
+                  <td class="primary data-name"><a href="#">William Ross</a></td>
+                  <td class="data-username">admiralbill</td>
+                  <td class="data-login">2 days ago</td>
+                  <td>
+                    <ul class="actions">
+                      <li>
+                        <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr class="selected">
+                  <td class="text-center text-base data-status"><i class="icon icon-warning"><span class="sr-only">Warning</span></td>
+                  <td class="primary data-name"><a href="#">Benjamin Sisko</a></td>
+                  <td class="data-username">brotherbenny</td>
+                  <td class="data-login">Just now</td>
+                  <td>
+                    <div class="actions dropdown">
+                      <a class="dropdown-toggle" href="#" role="button" id="actionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Send e-mail</a>
+                        <a class="dropdown-item" href="#">Follow</a>
+                        <a class="dropdown-item" href="#">View profile</a>
+                        <a class="dropdown-item" href="#">Edit</a>
+                        <a class="dropdown-item" href="#">Delete user</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center text-base data-status"><i class="icon icon-danger"><span class="sr-only">Danger</span></td>
+                  <td class="primary data-name"><a href="#">Miles O'Brien</a></td>
+                  <td class="data-username">smiley</td>
+                  <td class="data-login">5 hours ago</td>
+                  <td>
+                    <ul class="actions">
+                      <li>
+                        <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center text-base data-status"><i class="icon icon-info"><span class="sr-only">Info</span></td>
+                  <td class="primary data-name"><a href="#">Julian Bashir</a></td>
+                  <td class="data-username">kukalaka</td>
+                  <td class="data-login">Never</td>
+                  <td>
+                    <ul class="actions">
+                      <li>
+                        <a href="#"><i class="icon fa fa-user" data-toggle="tooltip" data-placement="right" title="View profile"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="icon fa fa-pencil" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="icon fa fa-trash" data-toggle="tooltip" data-placement="right" title="Delete user"></i></a>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="6">
+                    <nav class="pagination" aria-label="Page navigation example">
+                      <div class="fade">
+                        <div class="form-group">
+                          <label for="itemsPerPage">Show:</label>
+                          <select id="itemsPerPage" class="selectpicker">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                          </select>
+                        </div>
+                        <div class="form-group dropdown">
+                          <label for="goToPage">Go:</label>
+                          <input id="goToPage" class="form-control" type="text" value="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" autocomplete="off">
+                          <ul class="dropdown-menu">
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                            <li class="page-item"><a class="page-link" href="#">500</a></li>
+                            <li class="page-item disabled"><a class="page-link" href="#">&hellip;</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1000</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <span class="fade show">1-10 of 1000</span>
+                      <a class="page-link disabled" href="#" aria-label="Previous">
+                        <i class="icon icon-previous" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="page-link" href="#" aria-label="Next">
+                        <i class="icon icon-next" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </nav>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid mt-3">
         <div class="row">
           <div class="col">
             <div class="card">
@@ -2664,7 +2865,7 @@ of all or any part of the contents of this file is strictly prohibited.
                 <div class="input-group table-filter">
                   <div class="form-control filter-control" id="filter-input" data-placeholder="Filter"></div>
                 </div>
-                <div style="height: 300px; margin-left: -16px; margin-right: -16px; margin-top: 16px; overflow: auto; padding: 16px; padding-top: 0; width: calc(100% + 32px);">
+                <div style="height: 300px; margin-left: -16px; margin-right: -16px; margin-top: 16px; margin-bottom: -16px; overflow: auto; padding: 16px; padding-top: 0; width: calc(100% + 32px);">
                   <table id="filterable-example" class="table table-hover">
                     <thead>
                       <tr>

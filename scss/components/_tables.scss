@@ -40,6 +40,7 @@
 }
 
 .table {
+  border-radius: $card-border-radius;
   font-size: $font-size-sm;
 
   &:last-child {
@@ -58,6 +59,11 @@
   th,
   td {
     vertical-align: inherit;
+
+    &.sorted {
+      border-left: $table-border-width solid $table-border-color;
+      border-right: $table-border-width solid $table-border-color;
+    }
 
     .form-check {
       display: inline-block;
@@ -149,6 +155,18 @@
   }
 }
 
+.table-dark {
+
+  th,
+  td {
+
+    &.sorted {
+      border-left: $table-border-width solid $table-dark-border-color;
+      border-right: $table-border-width solid $table-dark-border-color;
+    }
+  }
+}
+
 .table-hover {
 
   tbody tr:hover {
@@ -195,6 +213,15 @@
 
     td {
       border-color: $table-border-color-dark;
+    }
+
+    th,
+    td {
+
+      &.sorted {
+        border-left: $table-border-width solid $table-border-color-dark;
+        border-right: $table-border-width solid $table-border-color-dark;
+      }
     }
 
     thead,
@@ -259,6 +286,11 @@
     td,
     thead th {
       border-color: $table-dark-border-color-dark;
+
+      &.sorted {
+        border-left: $table-border-width solid $table-dark-border-color-dark;
+        border-right: $table-border-width solid $table-dark-border-color-dark;
+      }
     }
 
     &.table-striped {
@@ -323,12 +355,17 @@
     }
 
     th {
-      border-color: $table-border-color-accessible;
       color: $table-head-color-accessible;
     }
 
+    th,
     td {
       border-color: $table-border-color-accessible;
+
+      &.sorted {
+        border-left: $table-border-width solid $table-border-color-accessible;
+        border-right: $table-border-width solid $table-border-color-accessible;
+      }
     }
 
     thead,
@@ -391,6 +428,11 @@
     td,
     thead th {
       border-color: $table-dark-border-color-accessible;
+
+      &.sorted {
+        border-left: $table-border-width solid $table-dark-border-color-accessible;
+        border-right: $table-border-width solid $table-dark-border-color-accessible;
+      }
     }
 
     &.table-striped {
