@@ -35,3 +35,25 @@ h1, h2, h3,
 .text-small {
   font-size: $font-size-sm !important;
 }
+
+.palette-dark {
+
+  hr {
+    border-top-color: $hr-border-color-dark;
+  }
+
+  .blockquote-footer {
+    color: $blockquote-small-color-dark;
+  }
+}
+
+.palette-accessible {
+
+  hr {
+    border-top-color: $hr-border-color-accessible;
+  }
+
+  .blockquote-footer {
+    color: $blockquote-small-color-accessible;
+  }
+}

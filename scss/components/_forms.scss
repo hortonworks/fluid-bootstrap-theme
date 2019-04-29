@@ -6,6 +6,8 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
+// stylelint-disable selector-no-qualifying-type
+
 form:not(.form-inline) {
 
   .form-group:not(.row) {
@@ -20,8 +22,12 @@ label {
   color: $label-color;
 }
 
-.form-row:not(:last-child) {
-  margin-bottom: $grid-gutter-width;
+.form-row {
+  margin-top: space(16) * -1;
+
+  &:not(:last-child) {
+    margin-bottom: $grid-gutter-width;
+  }
 }
 
 .form-group:last-child {
@@ -130,3 +136,130 @@ select {
   }
 }
 
+.palette-dark {
+
+  label {
+    color: $label-color-dark;
+  }
+
+  .form-control {
+    background-color: $input-bg-dark;
+    border-color: $input-border-color-dark;
+    color: $input-color-dark;
+
+    @include box-shadow($input-box-shadow-dark);
+    @include form-control-focus-dark();
+
+    &::placeholder {
+      color: $input-placeholder-color-dark;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: $input-disabled-bg-dark;
+    }
+  }
+
+  select.form-control {
+    &:focus::-ms-value {
+      background-color: $input-bg-dark;
+      color: $input-color-dark;
+    }
+  }
+
+  .form-control-plaintext {
+    color: $input-plaintext-color-dark;
+  }
+
+  .form-check-input {
+
+    &:disabled ~ .form-check-label {
+      color: $text-disabled-dark;
+    }
+  }
+
+  @each $state, $data in $form-validation-states-dark {
+    @include form-validation-state($state, map-get($data, color), map-get($data, icon));
+  }
+
+  .valid-feedback,
+  .invalid-feedback {
+    color: theme-color("default");
+  }
+
+  .valid-feedback::before {
+    color: status-color("success");
+    content: status-icon("success");
+  }
+
+  .invalid-feedback::before {
+    color: status-color("danger");
+    content: status-icon("danger");
+  }
+
+  .form-check,
+  .form-radio {
+
+    .form-check-input,
+    .form-radio-input {
+
+      &:checked + .form-check-label,
+      &:checked + .form-radio-label {
+        &::before {
+          background-color: color-dark("blue");
+        }
+      }
+    }
+
+    .form-check-label,
+    .form-radio-label {
+
+      &::before {
+        border: $custom-control-indicator-border-dark;
+      }
+    }
+  }
+}
+
+.palette-accessible {
+
+  .form-control {
+    background-color: $input-bg-accessible;
+    border-color: $input-border-color-accessible;
+    color: $input-color-accessible;
+
+    @include box-shadow($input-box-shadow-accessible);
+    @include form-control-focus-accessible();
+
+    &::placeholder {
+      color: $input-placeholder-color-accessible;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: $input-disabled-bg-accessible;
+    }
+  }
+
+  select.form-control {
+    &:focus::-ms-value {
+      background-color: $input-bg-accessible;
+      color: $input-color-accessible;
+    }
+  }
+
+  .form-control-plaintext {
+    color: $input-plaintext-color-accessible;
+  }
+
+  .form-check-input {
+
+    &:disabled ~ .form-check-label {
+      color: $text-disabled-accessible;
+    }
+  }
+
+  @each $state, $data in $form-validation-states-accessible {
+    @include form-validation-state($state, map-get($data, color), map-get($data, icon));
+  }
+}

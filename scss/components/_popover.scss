@@ -10,7 +10,7 @@
   box-shadow: $box-shadow-lg;
 
   .arrow {
-    margin: 0 $border-radius;
+    margin: 0 1px;
   }
 
   &.popover-no-arrow {
@@ -18,5 +18,127 @@
     .arrow {
       display: none;
     }
+  }
+}
+
+.palette-dark {
+  .popover {
+    background-color: $popover-bg-dark;
+    border-color: $popover-border-color-dark;
+  }
+
+  .bs-popover-top > .arrow {
+
+    &::before {
+      border-top-color: $popover-arrow-outer-color-dark;
+    }
+
+    &::after {
+      border-top-color: $popover-arrow-color-dark;
+    }
+  }
+
+  .bs-popover-right > .arrow {
+
+    &::before {
+      border-right-color: $popover-arrow-outer-color-dark;
+    }
+
+    &::after {
+      border-right-color: $popover-arrow-color-dark;
+    }
+  }
+
+  .bs-popover-bottom > .arrow {
+
+    &::before {
+      border-bottom-color: $popover-arrow-outer-color-dark;
+    }
+
+    &::after {
+      border-bottom-color: $popover-arrow-color-dark;
+    }
+  }
+
+  .bs-popover-left > .arrow {
+
+    &::before {
+      border-left-color: $popover-arrow-outer-color-dark;
+    }
+
+    &::after {
+      border-left-color: $popover-arrow-color-dark;
+    }
+  }
+
+  .popover-header {
+    background-color: $popover-header-bg-dark;
+    border-bottom-color: darken($popover-header-bg-dark, 5%);
+    color: $popover-header-color-dark;
+  }
+
+  .popover-body {
+    color: $popover-body-color-dark;
+  }
+}
+
+.palette-accessible {
+  .popover {
+    background-color: $popover-bg-accessible;
+    border-color: $popover-border-color-accessible;
+  }
+
+  .bs-popover-top > .arrow {
+
+    &::before {
+      border-top-color: $popover-arrow-outer-color-accessible;
+    }
+
+    &::after {
+      border-top-color: $popover-arrow-color-accessible;
+    }
+  }
+
+  .bs-popover-right > .arrow {
+
+    &::before {
+      border-right-color: $popover-arrow-outer-color-accessible;
+    }
+
+    &::after {
+      border-right-color: $popover-arrow-color-accessible;
+    }
+  }
+
+  .bs-popover-bottom > .arrow {
+
+    &::before {
+      border-bottom-color: $popover-arrow-outer-color-accessible;
+    }
+
+    &::after {
+      border-bottom-color: $popover-arrow-color-accessible;
+    }
+  }
+
+  .bs-popover-left > .arrow {
+
+    &::before {
+      border-left-color: $popover-arrow-outer-color-accessible;
+    }
+
+    &::after {
+      border-left-color: $popover-arrow-color-accessible;
+    }
+  }
+
+  .popover-header {
+    background-color: $popover-header-bg-accessible;
+    border-bottom-color: darken($popover-header-bg-accessible, 5%);
+    color: $popover-header-color-accessible;
+  }
+
+  .popover-body {
+    color: $popover-body-color-accessible;
   }
 }

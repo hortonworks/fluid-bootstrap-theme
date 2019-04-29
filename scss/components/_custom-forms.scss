@@ -1,0 +1,441 @@
+.palette-dark {
+
+  .custom-control-input {
+
+    &:checked ~ .custom-control-label::before {
+      border-color: $custom-control-indicator-checked-border-color-dark;
+      color: $custom-control-indicator-checked-color-dark;
+      @include gradient-bg($custom-control-indicator-checked-bg-dark);
+      @include box-shadow($custom-control-indicator-checked-box-shadow-dark);
+    }
+
+    &:focus ~ .custom-control-label::before {
+      // the mixin is not used here to make sure there is feedback
+      @if $enable-shadows {
+        box-shadow: $input-box-shadow-dark, $input-focus-box-shadow-dark;
+      } @else {
+        box-shadow: $custom-control-indicator-focus-box-shadow-dark;
+      }
+    }
+
+    &:focus:not(:checked) ~ .custom-control-label::before {
+      border-color: $custom-control-indicator-focus-border-color-dark;
+    }
+
+    &:not(:disabled):active ~ .custom-control-label::before {
+      background-color: $custom-control-indicator-active-bg-dark;
+      border-color: $custom-control-indicator-active-border-color-dark;
+      color: $custom-control-indicator-active-color-dark;
+      @include box-shadow($custom-control-indicator-active-box-shadow-dark);
+    }
+
+    &:disabled {
+      ~ .custom-control-label {
+        color: $custom-control-label-disabled-color-dark;
+
+        &::before {
+          background-color: $custom-control-indicator-disabled-bg-dark;
+        }
+      }
+    }
+  }
+
+  .custom-control-label {
+
+    &::before {
+      background-color: $custom-control-indicator-bg-dark;
+      border-color: $custom-control-indicator-border-color-dark;
+      @include box-shadow($custom-control-indicator-box-shadow-dark);
+    }
+  }
+
+  .custom-checkbox {
+
+    .custom-control-input:checked ~ .custom-control-label {
+
+      &::after {
+        background-image: $custom-checkbox-indicator-icon-checked-dark;
+      }
+    }
+
+    .custom-control-input:indeterminate ~ .custom-control-label {
+
+      &::before {
+        border-color: $custom-checkbox-indicator-indeterminate-border-color-dark;
+        @include gradient-bg($custom-checkbox-indicator-indeterminate-bg-dark);
+        @include box-shadow($custom-checkbox-indicator-indeterminate-box-shadow-dark);
+      }
+
+      &::after {
+        background-image: $custom-checkbox-indicator-icon-indeterminate-dark;
+      }
+    }
+
+    .custom-control-input:disabled {
+
+      &:checked ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg-dark;
+      }
+
+      &:indeterminate ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg-dark;
+      }
+    }
+  }
+
+  .custom-radio {
+
+    .custom-control-input:checked ~ .custom-control-label {
+
+      &::after {
+        background-image: $custom-radio-indicator-icon-checked-dark;
+      }
+    }
+
+    .custom-control-input:disabled {
+
+      &:checked ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg-dark;
+      }
+    }
+  }
+
+  .custom-switch {
+
+    .custom-control-label {
+
+      &::after {
+        background-color: $custom-control-indicator-border-color-dark;
+      }
+    }
+
+    .custom-control-input:checked ~ .custom-control-label {
+
+      &::after {
+        background-color: $custom-control-indicator-bg-dark;
+      }
+    }
+
+    .custom-control-input:disabled {
+
+      &:checked ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg-dark;
+      }
+    }
+  }
+
+  .custom-select {
+    background: $custom-select-background-dark;
+    background-color: $custom-select-bg-dark;
+    border-color: $custom-select-border-color-dark;
+    color: $custom-select-color-dark;
+    @include box-shadow($custom-select-box-shadow-dark);
+
+    &:focus {
+      border-color: $custom-select-focus-border-color-dark;
+      @if $enable-shadows {
+        box-shadow: $custom-select-box-shadow-dark, $custom-select-focus-box-shadow-dark;
+      } @else {
+        box-shadow: $custom-select-focus-box-shadow-dark;
+      }
+
+      &::-ms-value {
+        background-color: $input-bg-dark;
+        color: $input-color-dark;
+      }
+    }
+
+    &:disabled {
+      background-color: $custom-select-disabled-bg-dark;
+      color: $custom-select-disabled-color-dark;
+    }
+  }
+
+  .custom-file-input {
+
+    &:focus ~ .custom-file-label {
+      border-color: $custom-file-focus-border-color-dark;
+      box-shadow: $custom-file-focus-box-shadow-dark;
+    }
+
+    &:disabled ~ .custom-file-label {
+      background-color: $custom-file-disabled-bg-dark;
+    }
+  }
+
+  .custom-file-label {
+    background-color: $custom-file-bg-dark;
+    border-color: $custom-file-border-color-dark;
+    color: $custom-file-color-dark;
+    @include box-shadow($custom-file-box-shadow-dark);
+
+    &::after {
+      color: $custom-file-button-color;
+      @include gradient-bg($custom-file-button-bg);
+    }
+  }
+
+  .custom-range {
+
+    &:focus {
+      &::-webkit-slider-thumb,
+      &::-moz-range-thumb,
+      &::-ms-thumb {
+        box-shadow: $custom-range-thumb-focus-box-shadow-dark;
+      }
+    }
+
+    &::-webkit-slider-thumb,
+    &::-moz-range-thumb,
+    &::-ms-thumb {
+      @include gradient-bg($custom-range-thumb-bg-dark);
+      @include box-shadow($custom-range-thumb-box-shadow-dark);
+
+      &:active {
+        @include gradient-bg($custom-range-thumb-active-bg-dark);
+      }
+    }
+
+    &::-webkit-slider-runnable-track,
+    &::-moz-range-track,
+    &::-ms-track {
+      background-color: $custom-range-track-bg-dark;
+      @include box-shadow($custom-range-track-box-shadow-dark);
+    }
+
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+      background-color: $custom-range-track-bg-dark;
+    }
+
+    &:disabled {
+
+      &::-webkit-slider-thumb,
+      &::-moz-range-thumb,
+      &::-ms-thumb {
+        background-color: $custom-range-thumb-disabled-bg-dark;
+      }
+    }
+  }
+}
+
+.palette-accessible {
+
+  .custom-control-input {
+
+    &:checked ~ .custom-control-label::before {
+      border-color: $custom-control-indicator-checked-border-color-accessible;
+      color: $custom-control-indicator-checked-color-accessible;
+      @include gradient-bg($custom-control-indicator-checked-bg-accessible);
+      @include box-shadow($custom-control-indicator-checked-box-shadow-accessible);
+    }
+
+    &:focus ~ .custom-control-label::before {
+      // the mixin is not used here to make sure there is feedback
+      @if $enable-shadows {
+        box-shadow: $input-box-shadow-accessible, $input-focus-box-shadow-accessible;
+      } @else {
+        box-shadow: $custom-control-indicator-focus-box-shadow-accessible;
+      }
+    }
+
+    &:focus:not(:checked) ~ .custom-control-label::before {
+      border-color: $custom-control-indicator-focus-border-color-accessible;
+    }
+
+    &:not(:disabled):active ~ .custom-control-label::before {
+      background-color: $custom-control-indicator-active-bg-accessible;
+      border-color: $custom-control-indicator-active-border-color-accessible;
+      color: $custom-control-indicator-active-color-accessible;
+      @include box-shadow($custom-control-indicator-active-box-shadow-accessible);
+    }
+
+    &:disabled {
+      ~ .custom-control-label {
+        color: $custom-control-label-disabled-color-accessible;
+
+        &::before {
+          background-color: $custom-control-indicator-disabled-bg-accessible;
+        }
+      }
+    }
+  }
+
+  .custom-control-label {
+
+    &::before {
+      background-color: $custom-control-indicator-bg-accessible;
+      border-color: $custom-control-indicator-border-color-accessible;
+      @include box-shadow($custom-control-indicator-box-shadow-accessible);
+    }
+  }
+
+  .custom-checkbox {
+
+    .custom-control-input:checked ~ .custom-control-label {
+
+      &::after {
+        background-image: $custom-checkbox-indicator-icon-checked-accessible;
+      }
+    }
+
+    .custom-control-input:indeterminate ~ .custom-control-label {
+
+      &::before {
+        border-color: $custom-checkbox-indicator-indeterminate-border-color-accessible;
+        @include gradient-bg($custom-checkbox-indicator-indeterminate-bg-accessible);
+        @include box-shadow($custom-checkbox-indicator-indeterminate-box-shadow-accessible);
+      }
+
+      &::after {
+        background-image: $custom-checkbox-indicator-icon-indeterminate-accessible;
+      }
+    }
+
+    .custom-control-input:disabled {
+
+      &:checked ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg-accessible;
+      }
+
+      &:indeterminate ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg-accessible;
+      }
+    }
+  }
+
+  .custom-radio {
+
+    .custom-control-input:checked ~ .custom-control-label {
+
+      &::after {
+        background-image: $custom-radio-indicator-icon-checked-accessible;
+      }
+    }
+
+    .custom-control-input:disabled {
+
+      &:checked ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg-accessible;
+      }
+    }
+  }
+
+  .custom-switch {
+
+    .custom-control-label {
+
+      &::after {
+        background-color: $custom-control-indicator-border-color-accessible;
+      }
+    }
+
+    .custom-control-input:checked ~ .custom-control-label {
+
+      &::after {
+        background-color: $custom-control-indicator-bg-accessible;
+      }
+    }
+
+    .custom-control-input:disabled {
+
+      &:checked ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-checked-disabled-bg-accessible;
+      }
+    }
+  }
+
+  .custom-select {
+    background: $custom-select-background-accessible;
+    background-color: $custom-select-bg-accessible;
+    border-color: $custom-select-border-color-accessible;
+    color: $custom-select-color-accessible;
+    @include box-shadow($custom-select-box-shadow-accessible);
+
+    &:focus {
+      border-color: $custom-select-focus-border-color-accessible;
+      @if $enable-shadows {
+        box-shadow: $custom-select-box-shadow-accessible, $custom-select-focus-box-shadow-accessible;
+      } @else {
+        box-shadow: $custom-select-focus-box-shadow-accessible;
+      }
+
+      &::-ms-value {
+        background-color: $input-bg-accessible;
+        color: $input-color-accessible;
+      }
+    }
+
+    &:disabled {
+      background-color: $custom-select-disabled-bg-accessible;
+      color: $custom-select-disabled-color-accessible;
+    }
+  }
+
+  .custom-file-input {
+
+    &:focus ~ .custom-file-label {
+      border-color: $custom-file-focus-border-color-accessible;
+      box-shadow: $custom-file-focus-box-shadow-accessible;
+    }
+
+    &:disabled ~ .custom-file-label {
+      background-color: $custom-file-disabled-bg-accessible;
+    }
+  }
+
+  .custom-file-label {
+    background-color: $custom-file-bg-accessible;
+    border-color: $custom-file-border-color-accessible;
+    color: $custom-file-color-accessible;
+    @include box-shadow($custom-file-box-shadow-accessible);
+
+    &::after {
+      color: $custom-file-button-color;
+      @include gradient-bg($custom-file-button-bg);
+    }
+  }
+
+  .custom-range {
+
+    &:focus {
+      &::-webkit-slider-thumb,
+      &::-moz-range-thumb,
+      &::-ms-thumb {
+        box-shadow: $custom-range-thumb-focus-box-shadow-accessible;
+      }
+    }
+
+    &::-webkit-slider-thumb,
+    &::-moz-range-thumb,
+    &::-ms-thumb {
+      @include gradient-bg($custom-range-thumb-bg-accessible);
+      @include box-shadow($custom-range-thumb-box-shadow-accessible);
+
+      &:active {
+        @include gradient-bg($custom-range-thumb-active-bg-accessible);
+      }
+    }
+
+    &::-webkit-slider-runnable-track,
+    &::-moz-range-track,
+    &::-ms-track {
+      background-color: $custom-range-track-bg-accessible;
+      @include box-shadow($custom-range-track-box-shadow-accessible);
+    }
+
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+      background-color: $custom-range-track-bg-accessible;
+    }
+
+    &:disabled {
+
+      &::-webkit-slider-thumb,
+      &::-moz-range-thumb,
+      &::-ms-thumb {
+        background-color: $custom-range-thumb-disabled-bg-accessible;
+      }
+    }
+  }
+}

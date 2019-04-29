@@ -33,3 +33,41 @@
 .icon-danger {
   color: theme-color("danger");
 }
+
+.palette-dark {
+
+  .icon-info {
+    color: theme-color-dark("info");
+  }
+
+  .icon-success {
+    color: theme-color-dark("success");
+  }
+
+  .icon-warning {
+    color: theme-color-dark("warning");
+  }
+
+  .icon-danger {
+    color: theme-color-dark("danger");
+  }
+}
+
+.palette-accessible {
+
+  .icon-info {
+    color: theme-color-accessible("info");
+  }
+
+  .icon-success {
+    color: theme-color-accessible("success");
+  }
+
+  .icon-warning {
+    color: theme-color-accessible("warning");
+  }
+
+  .icon-danger {
+    color: theme-color-accessible("danger");
+  }
+}

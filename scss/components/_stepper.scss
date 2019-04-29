@@ -8,7 +8,7 @@
 
 .stepper {
   background-color: inherit;
-  color: text-color("light");
+  color: $stepper-color;
   counter-reset: stepper;
   cursor: default;
   font-size: $stepper-font-size;
@@ -16,9 +16,10 @@
   padding-left: $stepper-padding;
 
   &.stepper-light{
+    color: $stepper-light-color;
 
     .active {
-      color: gray("400");
+      color: $stepper-light-active-color;
     }
   }
 
@@ -74,7 +75,7 @@
 
     &::before {
       background-color: inherit;
-      border: $border-width color("gray") solid;
+      border: $border-width $stepper-color solid;
       border-radius: 100%;
       content: counter(stepper);
       counter-increment: stepper;
@@ -94,7 +95,7 @@
       margin-bottom: $stepper-step-size;
 
       &::after {
-        background-color: color("gray");
+        background-color: $stepper-color;
         content: " ";
         height: 6rem;
         left: $stepper-icon-size * -1;
@@ -114,12 +115,11 @@
 
       a {
         cursor: default;
-        text-decoration: none;
       }
     }
 
     &.active {
-      color: text-color("default");
+      color: $stepper-active-color;
       font-weight: $font-weight-bold;
 
       &::before {
@@ -158,5 +158,107 @@
 
   a {
     color: inherit;
+  }
+}
+
+.palette-dark {
+  .stepper {
+    color: $stepper-color-dark;
+
+    &.stepper-light{
+      color: $stepper-light-color-dark;
+
+      .active {
+        color: $stepper-light-active-color-dark;
+      }
+    }
+
+    // stylelint-disable selector-no-qualifying-type
+    li {
+
+      &::before {
+        border-color: $stepper-color-dark;
+      }
+
+      &:not(:last-child) {
+
+        &::after {
+          background-color: $stepper-color-dark;
+        }
+      }
+
+      &.active {
+        color: $stepper-active-color-dark;
+
+        &::before {
+          border-color: theme-color-dark("primary");
+          color: theme-color-dark("primary");
+        }
+      }
+
+      &.complete {
+        &::before {
+          background-color: theme-color-dark("primary");
+          border-color: theme-color-dark("primary");
+          color: color-dark("white");
+        }
+
+        &:not(:last-child)::after {
+          background-color: theme-color-dark("primary");
+        }
+      }
+    }
+    // stylelint-enable
+  }
+}
+
+.palette-accessible {
+  .stepper {
+    color: $stepper-color-accessible;
+
+    &.stepper-light{
+      color: $stepper-light-color-accessible;
+
+      .active {
+        color: $stepper-light-active-color-accessible;
+      }
+    }
+
+    // stylelint-disable selector-no-qualifying-type
+    li {
+
+      &::before {
+        border-color: $stepper-color-accessible;
+      }
+
+      &:not(:last-child) {
+
+        &::after {
+          background-color: $stepper-color-accessible;
+        }
+      }
+
+      &.active {
+        color: $stepper-active-color-accessible;
+
+        &::before {
+          border-color: theme-color-accessible("primary");
+          color: theme-color-accessible("primary");
+        }
+      }
+
+      &.complete {
+        &::before {
+          background-color: theme-color-accessible("primary");
+          border-color: theme-color-accessible("primary");
+          color: color-accessible("white");
+        }
+
+        &:not(:last-child)::after {
+          background-color: theme-color-accessible("primary");
+        }
+      }
+    }
+    // stylelint-enable
   }
 }

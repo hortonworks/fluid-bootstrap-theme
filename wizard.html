@@ -110,7 +110,7 @@ of all or any part of the contents of this file is strictly prohibited.
     <button type="button" class="btn btn-default wizard-cancel-button" data-toggle="modal" data-target="#cancelWizard">Cancel</button>
     <button id="back" type="button" class="btn btn-secondary wizard-nav-button wizard-back-button" onclick="wizard.back()">Back</button>
     <button id="next" type="button" class="btn btn-primary wizard-nav-button wizard-next-button" onclick="wizard.next()">Next</button>
-    <a id="finish" class="btn btn-primary wizard-finish-button" href="index.html#wizard">Finish</a>
+    <a id="finish" class="btn btn-primary wizard-finish-button" href="index.html#wizard" onclick="pageChangeHandler(this)">Finish</a>
   </nav>
   <nav class="navbar navbar-footer">
     <div class="container-fluid">
@@ -136,7 +136,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary wizard-nav-button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="index.html#wizard">OK</a>
+          <a class="btn btn-primary" href="index.html#wizard" onclick="pageChangeHandler(this)">OK</a>
         </div>
       </div>
     </div>

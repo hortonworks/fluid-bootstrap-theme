@@ -1,0 +1,17 @@
+.palette-dark {
+
+  .input-group-text {
+    background-color: $input-group-addon-bg-dark;
+    border-color: $input-group-addon-border-color-dark;
+    color: $input-group-addon-color-dark;
+  }
+}
+
+.palette-accessible {
+
+  .input-group-text {
+    background-color: $input-group-addon-bg-accessible;
+    border-color: $input-group-addon-border-color-accessible;
+    color: $input-group-addon-color-accessible;
+  }
+}

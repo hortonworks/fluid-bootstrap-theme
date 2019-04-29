@@ -7,6 +7,7 @@
  */
 
 .accordion {
+
   .card {
 
     &:not(:last-child) {
@@ -15,7 +16,7 @@
 
     &:not(:first-of-type) {
       .card-header {
-        border-top: $border-width $border-color solid;
+        border-top: $border-width $border-color-default solid;
       }
     }
 
@@ -27,14 +28,14 @@
       line-height: px(20);
 
       &::after {
-        color: $link;
+        color: color("blue");
         content: theme-icon("collapse");
         font-family: fluidicons, system-ui;
-        font-size: $caret-font-size;
+        font-size: $accordion-icon-font-size;
         height: 0;
         position: absolute;
         right: 36px;
-        top: 14px;
+        top: space(16);
         width: 0;
       }
 
@@ -45,6 +46,53 @@
 
     .card-body {
       padding-top: 0;
+    }
+  }
+}
+
+.palette-dark {
+
+  .accordion {
+
+    .card {
+
+      &:not(:first-of-type) {
+
+        .card-header {
+          border-color: $border-color-default-dark;
+        }
+      }
+
+      .card-header {
+
+        &::after {
+          color: color-dark("blue");
+        }
+      }
+    }
+  }
+}
+
+.palette-accessible {
+
+  .accordion {
+
+    .card {
+
+      &:not(:first-of-type) {
+        border-top-width: 0;
+
+        .card-header {
+          border-color: $border-color-default-accessible;
+        }
+      }
+
+      .card-header {
+
+        &::after {
+          color: color-accessible("blue");
+        }
+      }
     }
   }
 }

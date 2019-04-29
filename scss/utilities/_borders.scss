@@ -1,0 +1,41 @@
+// stylelint-disable property-blacklist, declaration-no-important
+
+//
+// Border
+//
+
+.border         { border: $border-width solid $border-color-default !important; }
+.border-top     { border-top: $border-width solid $border-color-default !important; }
+.border-right   { border-right: $border-width solid $border-color-default !important; }
+.border-bottom  { border-bottom: $border-width solid $border-color-default !important; }
+.border-left    { border-left: $border-width solid $border-color-default !important; }
+
+.palette-dark {
+
+  .border         { border: $border-width solid $border-color-default-dark !important; }
+  .border-top     { border-top: $border-width solid $border-color-default-dark !important; }
+  .border-right   { border-right: $border-width solid $border-color-default-dark !important; }
+  .border-bottom  { border-bottom: $border-width solid $border-color-default-dark !important; }
+  .border-left    { border-left: $border-width solid $border-color-default-dark !important; }
+
+  @each $color, $value in $theme-colors-dark {
+    .border-#{$color}-dark {
+      border-color: $value !important;
+    }
+  }
+}
+
+.palette-accessible {
+
+  .border         { border: $border-width solid $border-color-default-accessible !important; }
+  .border-top     { border-top: $border-width solid $border-color-default-accessible !important; }
+  .border-right   { border-right: $border-width solid $border-color-default-accessible !important; }
+  .border-bottom  { border-bottom: $border-width solid $border-color-default-accessible !important; }
+  .border-left    { border-left: $border-width solid $border-color-default-accessible !important; }
+
+  @each $color, $value in $theme-colors-accessible {
+    .border-#{$color}-accessible {
+      border-color: $value !important;
+    }
+  }
+}

@@ -6,6 +6,27 @@
  * of all or any part of the contents of this file is strictly prohibited.
  */
 
-.progress-bar {
-  background-color: color("blue");
+.palette-dark {
+
+  .progress {
+    background-color: $progress-bg-dark;
+  }
+
+  .progress-bar {
+    background-color: $progress-bar-bg-dark;
+    color: $progress-bar-color-dark;
+  }
+}
+
+.palette-accessible {
+
+  .progress {
+    background-color: $progress-bg-accessible;
+    border: 1px solid $border-color-default-accessible;
+  }
+
+  .progress-bar {
+    background-color: $progress-bar-bg-accessible;
+    color: $progress-bar-color-accessible;
+  }
 }

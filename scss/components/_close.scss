@@ -19,3 +19,23 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+.palette-dark {
+  .close {
+    color: $close-color-dark;
+
+    @include hover {
+      color: $close-color-dark;
+    }
+  }
+}
+
+.palette-accessible {
+  .close {
+    color: $close-color-accessible;
+
+    @include hover {
+      color: $close-color-accessible;
+    }
+  }
+}

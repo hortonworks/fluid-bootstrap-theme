@@ -1,9 +1,140 @@
+.dropdown-toggle[aria-expanded="true"] {
+  //@include caret(up);
+
+  &::after {
+    transform: rotate(180deg);
+  }
+}
+
+.dropleft .dropdown-toggle[aria-expanded="true"] {
+
+  &::before {
+    transform: rotate(180deg);
+  }
+}
+
 .dropdown-menu {
   box-shadow: $box-shadow-lg;
+  padding: space(8) 0;
+
+  .dropdown-item + .dropdown-header {
+    margin-top: space(24);
+  }
+
+  .dropdown-header,
+  .dropdown-item {
+    padding: space(4) space(24);
+  }
+}
+
+.dropdown-item {
+
+  &.active,
+  &:active {
+    color: $dropdown-link-active-color;
+    @include gradient-bg($dropdown-link-active-bg);
+  }
 }
 
 @each $color, $value in $theme-colors {
   .btn-#{$color} + .dropdown-menu .dropdown-item {
-    @include dropdown-item-variant($value, $value);
+    @include dropdown-item-variant($value);
   }
 }
+
+.palette-dark {
+
+  .dropdown-menu {
+    background-color: $dropdown-bg-dark;
+    border-color: $dropdown-border-color-dark;
+    color: $dropdown-color-dark;
+    @include box-shadow($dropdown-box-shadow-dark);
+  }
+
+  .dropdown-divider {
+    @include nav-divider($dropdown-divider-bg-dark, $dropdown-divider-margin-y);
+  }
+
+  .dropdown-item {
+    color: $dropdown-link-color-dark;
+
+    @include hover-focus {
+      color: $dropdown-link-hover-color-dark;
+      @include gradient-bg($dropdown-link-hover-bg-dark);
+    }
+
+    &.active,
+    &:active {
+      color: $dropdown-link-active-color-dark;
+      @include gradient-bg($dropdown-link-active-bg-dark);
+    }
+
+    &.disabled,
+    &:disabled {
+      color: $dropdown-link-disabled-color-dark;
+    }
+  }
+
+  .dropdown-header {
+    color: $dropdown-header-color-dark;
+  }
+
+  .dropdown-item-text {
+    color: $dropdown-link-color-dark;
+  }
+
+  @each $color, $value in $theme-colors-dark {
+    .btn-#{$color} + .dropdown-menu .dropdown-item {
+      @include dropdown-item-variant($value);
+    }
+  }
+}
+
+.palette-accessible {
+
+  .dropdown-menu {
+    background-color: $dropdown-bg-accessible;
+    border-color: $dropdown-border-color-accessible;
+    color: $dropdown-color-accessible;
+    @include box-shadow($dropdown-box-shadow-accessible);
+  }
+
+  .dropdown-divider {
+    @include nav-divider($dropdown-divider-bg-accessible, $dropdown-divider-margin-y);
+  }
+
+  .dropdown-item {
+    color: $dropdown-link-color-accessible;
+
+    @include hover-focus {
+      color: $dropdown-link-hover-color-accessible;
+      @include gradient-bg($dropdown-link-hover-bg-accessible);
+    }
+
+    &.active,
+    &:active {
+      color: $dropdown-link-active-color-accessible;
+      @include gradient-bg($dropdown-link-active-bg-accessible);
+    }
+
+    &.disabled,
+    &:disabled {
+      color: $dropdown-link-disabled-color-accessible;
+    }
+  }
+
+  .dropdown-header {
+    color: $dropdown-header-color-accessible;
+  }
+
+  .dropdown-item-text {
+    color: $dropdown-link-color-accessible;
+  }
+
+  @each $color, $value in $theme-colors-accessible {
+    .btn-#{$color} + .dropdown-menu .dropdown-item {
+      @include dropdown-item-variant($value);
+    }
+  }
+}
+

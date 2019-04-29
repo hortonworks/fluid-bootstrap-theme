@@ -53,3 +53,81 @@ form {
     }
   }
 }
+
+.palette-dark {
+
+  .bootstrap-select {
+
+    .dropdown-toggle {
+
+      &:not([class*="btn-"]) {
+        background-color: $input-bg-dark;
+        border-color: $input-border-color-dark;
+        color: $input-color-dark;
+      }
+
+      @each $color, $value in $theme-colors-dark {
+        &.btn-#{$color} {
+          @include focus-variant($value);
+        }
+      }
+    }
+
+    &.show {
+
+      .dropdown-toggle {
+
+        &:not([class*="btn-"]) {
+          background-color: $input-focus-bg-dark;
+          border-color: $input-focus-border-color-dark;
+          color: $input-focus-color-dark;
+        }
+
+        @each $color, $value in $theme-colors-dark {
+          &.btn-#{$color} {
+            @include glow-variant($value);
+          }
+        }
+      }
+    }
+  }
+}
+
+.palette-accessible {
+
+  .bootstrap-select {
+
+    .dropdown-toggle {
+
+      &:not([class*="btn-"]) {
+        background-color: $input-bg-accessible;
+        border-color: $input-border-color-accessible;
+        color: $input-color-accessible;
+      }
+
+      @each $color, $value in $theme-colors-accessible {
+        &.btn-#{$color} {
+          @include focus-variant($value);
+        }
+      }
+    }
+
+    &.show {
+
+      .dropdown-toggle {
+
+        &:not([class*="btn-"]) {
+          background-color: $input-focus-bg-accessible;
+          border-color: $input-focus-border-color-accessible;
+          color: $input-focus-color-accessible;
+        }
+
+        @each $color, $value in $theme-colors-accessible {
+          &.btn-#{$color} {
+            @include glow-variant($value);
+          }
+        }
+      }
+    }
+  }
+}
