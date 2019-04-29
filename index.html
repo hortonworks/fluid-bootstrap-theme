@@ -166,10 +166,10 @@ of all or any part of the contents of this file is strictly prohibited.
           <span class="icon fa fa-table"></span>
           Tables
         </a>
-        <a class="nav-item nav-link" href="#dashrows">
+        <!-- <a class="nav-item nav-link" href="#dashrows">
           <span class="icon fa fa-server fa-flip-horizontal"></span>
           Dashrows
-        </a>
+        </a> -->
         <a class="nav-item nav-link" href="#tabs" data-toggle="tooltip" data-placement="right" data-condition="truncated" title="Tabs">
           <span class="icon fa fa-folder"></span>
           Tabs
@@ -182,7 +182,25 @@ of all or any part of the contents of this file is strictly prohibited.
     </div>
   </nav>
   <nav class="navbar navbar-header fixed-top">
-    <h1>Fluid Bootstrap 4 Theme Demo Page</h1>
+    <ol class="breadcrumb"><li class="breadcrumb-item">Fluid Bootstrap 4 Theme Demo Page</li></ol>
+    <a class="nav-link user-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-icon">U</span>Username</a>
+    <div class="dropdown-menu user-menu" aria-labelledby="navbarDropdown">
+      <div class="dropdown-header">UI Theme</div>
+      <div class="palette-selector">
+        <div class="form-radio">
+          <input class="form-radio-input" type="radio" name="paletteRadios" id="paletteRadios1" value="hybrid" checked>
+          <label class="form-radio-label" for="paletteRadios1"><i class="icon icon-contrast"></i>Hybrid</label>
+        </div>
+        <div class="form-radio">
+          <input class="form-radio-input" type="radio" name="paletteRadios" id="paletteRadios2" value="dark">
+          <label class="form-radio-label" for="paletteRadios2"><i class="icon icon-dark"></i>Dark</label>
+        </div>
+        <div class="form-radio">
+          <input class="form-radio-input" type="radio" name="paletteRadios" id="paletteRadios3" value="accessible">
+          <label class="form-radio-label" for="paletteRadios3"><i class="icon icon-accessible"></i>Accessible</label>
+        </div>
+      </div>
+    </div>
   </nav>
   <main id="mainContent">
     <div id="alertsTopRight" class="alert-container right"></div>
@@ -194,7 +212,7 @@ of all or any part of the contents of this file is strictly prohibited.
         <div class="row">
           <div class="col">
             <header class="section-header">
-              <h2><i class=icon fa-th-large mr-1"></i>Layout</h2>
+              <h2><i class="fa fa-th-large mr-1"></i>Layout</h2>
               <h2>
                 <a href="https://getbootstrap.com/docs/4.3/layout/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Layout docs"><span class="icon fa fa-book"></span></a>
                 <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
@@ -251,7 +269,7 @@ of all or any part of the contents of this file is strictly prohibited.
           </div>
         </div>
       </div>
-      <div class="container-fluid bg-light mb-3 p-5" id="containerFluidExample">
+      <div class="container-fluid bg-light p-5" id="containerFluidExample">
         <div class="row">
           <div class="col display-4 text-center">
             <div>.container-fluid width:</div>
@@ -494,7 +512,7 @@ of all or any part of the contents of this file is strictly prohibited.
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
               </div>
-              <div class="card text-white bg-dark">
+              <div class="card text-light bg-dark">
                 <div class="card-body">
                   <h4 class="card-title">Dark background</h4>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -525,7 +543,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </div>
       <div class="container-fluid">
-        <div class="row pb-3">
+        <div class="row">
           <div class="col">
             <h3>Font Family</h3>
             <div class="card">
@@ -542,49 +560,49 @@ of all or any part of the contents of this file is strictly prohibited.
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 1</h4>
-                  <div class="h1 text-default">font&#8209;size:&nbsp;28px;</div>
+                  <div class="h1 text-default">font-size:&nbsp;28px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 2</h4>
-                  <div class="h2 text-default">font&#8209;size:&nbsp;24px;</div>
+                  <div class="h2 text-default">font-size:&nbsp;24px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 3</h4>
-                  <div class="h3 text-default">font&#8209;size:&nbsp;20px;</div>
+                  <div class="h3 text-default">font-size:&nbsp;20px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 4</h4>
-                  <div class="h4 text-default">font&#8209;size:&nbsp;16px;</div>
+                  <div class="h4 text-default">font-size:&nbsp;16px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 5</h4>
-                  <div class="h5 text-default">font&#8209;size:&nbsp;14px;</div>
+                  <div class="h5 text-default">font-size:&nbsp;14px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Heading 6</h4>
-                  <div class="h6 text-default">font&#8209;size:&nbsp;12px;</div>
+                  <div class="h6 text-default">font-size:&nbsp;12px;</div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Body Text</h4>
-                  <p>font&#8209;size:&nbsp;14px;</p>
+                  <p>font-size:&nbsp;14px;</p>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Small Text</h4>
-                  <p><small>font&#8209;size:&nbsp;13px;</small></p>
+                  <p><small>font-size:&nbsp;13px;</small></p>
                   <p>Use for tooltips and other fine print.</p>
                 </div>
               </div>
@@ -633,8 +651,8 @@ of all or any part of the contents of this file is strictly prohibited.
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Light Text (color:&nbsp;#5a656d;)</h4>
-                  <h5 class="card-subtitle">On .bg&#8209;white</h5>
-                  <div class="specimen border">
+                  <h5 class="card-subtitle">On .bg-light</h5>
+                  <div class="bg-light specimen border">
                     <small class="text-light">small.text-light</small>
                     <p class="h6 text-light">h6.text-light</p>
                     <p class="h5 text-light">h5.text-light</p>
@@ -643,8 +661,8 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-light">h2.text-light</p>
                     <p class="h1 text-light">h1.text-light</p>
                   </div>
-                  <h5 class="card-subtitle">On .bg&#8209;light</h5>
-                  <div class="bg-light specimen">
+                  <h5 class="card-subtitle">On .bg-default</h5>
+                  <div class="bg-default specimen border">
                     <small class="text-light">small.text-light</small>
                     <p class="h6 text-light">h6.text-light</p>
                     <p class="h5 text-light">h5.text-light</p>
@@ -653,8 +671,8 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-light">h2.text-light</p>
                     <p class="h1 text-light">h1.text-light</p>
                   </div>
-                  <h5 class="card-subtitle">On .bg&#8209;dark</h5>
-                  <div class="bg-dark specimen">
+                  <h5 class="card-subtitle">On .bg-dark</h5>
+                  <div class="bg-dark specimen border">
                     <small class="text-light">small.text-light</small>
                     <p class="h6 text-light">h6.text-light</p>
                     <p class="h5 text-light">h5.text-light</p>
@@ -668,8 +686,8 @@ of all or any part of the contents of this file is strictly prohibited.
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Default Text (color:&nbsp;#1b2329;)</h4>
-                  <h5 class="card-subtitle">On .bg&#8209;white</h5>
-                  <div class="specimen border">
+                  <h5 class="card-subtitle">On .bg-light</h5>
+                  <div class="bg-light specimen border">
                     <small class="text-default">small.text-default</small>
                     <p class="h6 text-default">h6.text-default</p>
                     <p class="h5 text-default">h5.text-default</p>
@@ -678,9 +696,9 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-default">h2.text-default</p>
                     <p class="h1 text-default">h1.text-default</p>
                   </div>
-                  <h5 class="card-subtitle">On .bg&#8209;light</h5>
-                  <div class="bg-light specimen">
-                    <small class="text-default">small.text-dark</small>
+                  <h5 class="card-subtitle">On .bg-default</h5>
+                  <div class="bg-default specimen border">
+                    <small class="text-default">small.text-default</small>
                     <p class="h6 text-default">h6.text-default</p>
                     <p class="h5 text-default">h5.text-default</p>
                     <p class="h4 text-default">h4.text-default</p>
@@ -688,9 +706,9 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-default">h2.text-default</p>
                     <p class="h1 text-default">h1.text-default</p>
                   </div>
-                  <h5 class="card-subtitle">On .bg&#8209;dark</h5>
-                  <div class="bg-dark specimen">
-                    <small class="text-default">small.text-dark</small>
+                  <h5 class="card-subtitle">On .bg-dark</h5>
+                  <div class="bg-dark specimen border">
+                    <small class="text-default">small.text-default</small>
                     <p class="h6 text-default">h6.text-default</p>
                     <p class="h5 text-default">h5.text-default</p>
                     <p class="h4 text-default">h4.text-default</p>
@@ -703,8 +721,8 @@ of all or any part of the contents of this file is strictly prohibited.
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Dark Text (color:&nbsp;#000000;)</h4>
-                  <h5 class="card-subtitle">On .bg&#8209;white</h5>
-                  <div class="specimen border">
+                  <h5 class="card-subtitle">On .bg-light</h5>
+                  <div class="bg-light specimen border">
                     <small class="text-dark">small.text-dark</small>
                     <p class="h6 text-dark">h6.text-dark</p>
                     <p class="h5 text-dark">h5.text-dark</p>
@@ -713,8 +731,8 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-dark">h2.text-dark</p>
                     <p class="h1 text-dark">h1.text-dark</p>
                   </div>
-                  <h5 class="card-subtitle">On .bg&#8209;light</h5>
-                  <div class="bg-light specimen">
+                  <h5 class="card-subtitle">On .bg-default</h5>
+                  <div class="bg-default specimen border">
                     <small class="text-dark">small.text-dark</small>
                     <p class="h6 text-dark">h6.text-dark</p>
                     <p class="h5 text-dark">h5.text-dark</p>
@@ -723,8 +741,8 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p class="h2 text-dark">h2.text-dark</p>
                     <p class="h1 text-dark">h1.text-dark</p>
                   </div>
-                  <h5 class="card-subtitle">On .bg&#8209;dark</h5>
-                  <div class="bg-dark specimen">
+                  <h5 class="card-subtitle">On .bg-dark</h5>
+                  <div class="bg-dark specimen border">
                     <small class="text-dark">small.text-dark</small>
                     <p class="h6 text-dark">h6.text-dark</p>
                     <p class="h5 text-dark">h5.text-dark</p>
@@ -917,75 +935,201 @@ of all or any part of the contents of this file is strictly prohibited.
             <a href="#top" class="ml-3"><span class="icon fa fa-angle-double-up"></span></a>
           </h2>
         </header>
-        <div class="card-deck">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Grays</h3>
-              <div class="swatch bg-gray-100">
-                <div>.*&#8209;gray&#8209;100</div>
-                <div>.bg&#8209;light</div>
-                <div>#f1f2f3</div>
-              </div>
-              <div class="swatch bg-gray-200">
-                <div>.*&#8209;gray&#8209;200</div>
-                <div>#e4e5e7</div>
-              </div>
-              <div class="swatch bg-gray-300">
-                <div>.*&#8209;gray&#8209;300</div>
-                <div>(borders)</div>
-                <div>#d6d8db</div>
-              </div>
-              <div class="swatch bg-gray-400">
-                <div>.*&#8209;gray&#8209;400</div>
-                <div>#adb2b6</div>
-              </div>
-              <div class="swatch bg-gray-500 text-white">
-                <div>.*&#8209;gray&#8209;500</div>
-                <div>#989ea4</div>
-              </div>
-              <div class="swatch bg-gray-600 text-white">
-                <div>.*&#8209;gray&#8209;600</div>
-                <div>#838b92</div>
-              </div>
-              <div class="swatch bg-gray-700 text-white">
-                <div>.*&#8209;gray&#8209;700</div>
-                <div>.text&#8209;light</div>
-                <div>#5a656d</div>
-              </div>
-              <div class="swatch bg-gray-800 text-white">
-                <div>.*&#8209;gray&#8209;800</div>
-                <div>#333e47</div>
-              </div>
-              <div class="swatch bg-gray-900 text-white">
-                <div>.*&#8209;gray&#8209;900</div>
-                <div>(default text)</div>
-                <div>#1b2329</div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="card ramp">
+              <div class="card-body">
+                <h3 class="card-title">Grays</h3>
+                <div class="swatch bg-gray-100 text-black">
+                  <div>gray-100</div>
+                  <div>#f1f2f3</div>
+                </div>
+                <div class="swatch bg-gray-200 text-black">
+                  <div>gray-200</div>
+                  <div>#e4e5e7</div>
+                </div>
+                <div class="swatch bg-gray-300 text-black">
+                  <div>gray-300</div>
+                  <div>#d6d8db</div>
+                </div>
+                <div class="swatch bg-gray-400 text-black">
+                  <div>gray-400</div>
+                  <div>#adb2b6</div>
+                </div>
+                <div class="swatch bg-gray-500 text-white">
+                  <div>gray-500</div>
+                  <div>#989ea4</div>
+                </div>
+                <div class="swatch bg-gray-600 text-white">
+                  <div>gray-600</div>
+                  <div>#838b92</div>
+                </div>
+                <div class="swatch bg-gray-700 text-white">
+                  <div>gray-700</div>
+                  <div>#5a656d</div>
+                </div>
+                <div class="swatch bg-gray-800 text-white">
+                  <div>gray-800</div>
+                  <div>#333e47</div>
+                </div>
+                <div class="swatch bg-gray-850 text-white">
+                  <div>gray-850</div>
+                  <div>#273138</div>
+                </div>
+                <div class="swatch bg-gray-900 text-white">
+                  <div>gray-900</div>
+                  <div>#1b2329</div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Theme Colors</h3>
-              <div class="swatch bg-primary text-white">
-                <div>.*&#8209;primary</div>
-                <div>#0070bd</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Gray Usage</h3>
+                <div class="container">
+                  <div class="row mb-3 mx-0">
+                    <div class="col-3 text-center"></div>
+                    <div class="col-3 text-center"><h4>Hybrid Palette</h4></div>
+                    <div class="col-3 text-center"><h4>Dark Palette</h4></div>
+                    <div class="col-3 text-center"><h4>Accessible Palette</h4></div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Light Background <i class="icon icon-info" data-toggle="tooltip" title="Used for panels, etc."></i></div>
+                    <div class="col-3 swatch bg-white text-black">white</div>
+                    <div class="col-3 swatch bg-gray-850 text-white">gray-850</div>
+                    <div class="col-3 swatch bg-white text-black">white</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Default Background</div>
+                    <div class="col-3 swatch bg-gray-100 text-black">gray-100</div>
+                    <div class="col-3 swatch bg-gray-900 text-white">gray-900</div>
+                    <div class="col-3 swatch bg-white text-black">white</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Dark Background <i class="icon icon-info" data-toggle="tooltip" title="Also used for disabled elements"></i></div>
+                    <div class="col-3 swatch bg-gray-200 text-black">gray-200</div>
+                    <div class="col-3 swatch bg-gray-800 text-white">gray-800</div>
+                    <div class="col-3 swatch bg-gray-200 text-black">gray-200</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Light Border</div>
+                    <div class="col-3 swatch bg-gray-300 text-black">gray-300</div>
+                    <div class="col-3 swatch bg-gray-800 text-white">gray-800</div>
+                    <div class="col-3 swatch bg-gray-300 text-black">gray-300</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Default Border</div>
+                    <div class="col-3 swatch bg-gray-400 text-black">gray-400</div>
+                    <div class="col-3 swatch bg-gray-700 text-white">gray-700</div>
+                    <div class="col-3 swatch bg-gray-400 text-black">gray-400</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Default Color <i class="icon icon-info" data-toggle="tooltip" title="Used for many components, such as buttons, when they are not assigned a semantic color (primary, danger, etc.)"></i></div>
+                    <div class="col-3 swatch bg-gray-600 text-white">gray-600</div>
+                    <div class="col-3 swatch bg-gray-600 text-white">gray-600</div>
+                    <div class="col-3 swatch bg-gray-600 text-white">gray-600</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Disabled Text</div>
+                    <div class="col-3 swatch bg-gray-400 text-black">gray-400</div>
+                    <div class="col-3 swatch bg-gray-600 text-white">gray-600</div>
+                    <div class="col-3 swatch bg-gray-400 text-black">gray-400</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Light Text</div>
+                    <div class="col-3 swatch bg-gray-700 text-white">gray-700</div>
+                    <div class="col-3 swatch bg-gray-400 text-black">gray-400</div>
+                    <div class="col-3 swatch bg-gray-700 text-white">gray-700</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Default Text</div>
+                    <div class="col-3 swatch bg-gray-900 text-white">gray-900</div>
+                    <div class="col-3 swatch bg-gray-100 text-black">gray-100</div>
+                    <div class="col-3 swatch bg-gray-900 text-white">gray-900</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Dark Text</div>
+                    <div class="col-3 swatch bg-black text-white">black</div>
+                    <div class="col-3 swatch bg-white text-black">white</div>
+                    <div class="col-3 swatch bg-black text-white">black</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Navbar Text</div>
+                    <div class="col-3 swatch bg-gray-400 text-black">gray-400</div>
+                    <div class="col-3 swatch bg-gray-400 text-black">gray-400</div>
+                    <div class="col-3 swatch bg-gray-700 text-white">gray-700</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Navbar Background</div>
+                    <div class="col-3 swatch bg-gray-800 text-white">gray-800</div>
+                    <div class="col-3 swatch bg-gray-800 text-white">gray-800</div>
+                    <div class="col-3 swatch bg-gray-100 text-black">gray-100</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Brand Text</div>
+                    <div class="col-3 swatch bg-white text-black">white</div>
+                    <div class="col-3 swatch bg-white text-black">white</div>
+                    <div class="col-3 swatch bg-gray-800 text-white">gray-800</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Brand Background</div>
+                    <div class="col-3 swatch bg-gray-900 text-white">gray-900</div>
+                    <div class="col-3 swatch bg-gray-900 text-white">gray-900</div>
+                    <div class="col-3 swatch bg-gray-200 text-black">gray-200</div>
+                  </div>
+                </div>
               </div>
-              <div class="swatch bg-success text-white">
-                <div>.*&#8209;success</div>
-                <div>#008746</div>
-              </div>
-              <div class="swatch bg-warning text-white">
-                <div>.*&#8209;warning</div>
-                <div>#ff8300</div>
-              </div>
-              <div class="swatch bg-danger text-white">
-                <div>.*&#8209;danger</div>
-                <div>#d9150c</div>
-              </div>
-              <div class="swatch bg-info text-white">
-                <div>.*&#8209;info</div>
-                <div>links</div>
-                <div>#0070bd</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Theme Colors</h3>
+                <div class="container">
+                  <div class="row mb-3 mx-0">
+                    <div class="col-3 text-center"></div>
+                    <div class="col-3 text-center"><h4>Hybrid Palette</h4></div>
+                    <div class="col-3 text-center"><h4>Dark Palette</h4></div>
+                    <div class="col-3 text-center"><h4>Accessible Palette</h4></div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Primary/Brand</div>
+                    <div class="col-3 swatch bg-primary text-white">#006ee3</div>
+                    <div class="col-3 swatch bg-primary-dark text-white">#008cff</div>
+                    <div class="col-3 swatch bg-primary-accessible text-white">#006ee3</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Success</div>
+                    <div class="col-3 swatch bg-success text-white">#3a870e</div>
+                    <div class="col-3 swatch bg-success-dark text-white">#82c25d</div>
+                    <div class="col-3 swatch bg-success-accessible text-white">#3a870e</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Warning</div>
+                    <div class="col-3 swatch bg-warning text-white">#ff8400</div>
+                    <div class="col-3 swatch bg-warning-dark text-white">#ff8400</div>
+                    <div class="col-3 swatch bg-warning-accessible text-white">#ff8400</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Danger</div>
+                    <div class="col-3 swatch bg-danger text-white">#d9150c</div>
+                    <div class="col-3 swatch bg-danger-dark text-white">#f36d6b</div>
+                    <div class="col-3 swatch bg-danger-accessible text-white">#d9150c</div>
+                  </div>
+                  <div class="row mx-0">
+                    <div class="col-3 swatch">Info/Links</div>
+                    <div class="col-3 swatch bg-info text-white">#006ee3</div>
+                    <div class="col-3 swatch bg-info-dark text-white">#008cff</div>
+                    <div class="col-3 swatch bg-info-accessible text-white">#006ee3</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -2152,24 +2296,10 @@ of all or any part of the contents of this file is strictly prohibited.
                 <span class="sr-only">Loading...</span>
               </div>
               <h4 class="mt-3">.spinner-border-lg</h4>
-              <p>Can be used modally to indicate a full-screen loading state.
+              <p>Can be used to indicate a full-screen loading state.
               <div class="spinner-border spinner-border-lg" role="status">
                 <span class="sr-only">Loading...</span>
               </div>
-              <button class="btn btn-primary d-block mt-3" data-toggle="modal" data-target="#exampleModalLoading">Modal Loading Example</button>
-              <!-- Modal Loading Example -->
-              <div class="modal fade" id="exampleModalLoading" tabindex="-1" role="dialog" aria-labelledby="exampleModalLoadingTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-auto justify-content-center" role="document">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <div class="spinner-border spinner-border-lg" role="status">
-                        <span class="sr-only">Loading...</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Example -->
             </div>
           </div>
         </div>
@@ -2510,6 +2640,10 @@ of all or any part of the contents of this file is strictly prohibited.
                 <div>(table omitted)</div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
             <div class="card">
               <div class="card-body">
                 <h3 class="card-title">Table with filter control</h3>
@@ -2530,7 +2664,7 @@ of all or any part of the contents of this file is strictly prohibited.
                 <div class="input-group table-filter">
                   <div class="form-control filter-control" id="filter-input" data-placeholder="Filter"></div>
                 </div>
-                <div style="height: 300px; overflow: auto;">
+                <div style="height: 300px; margin-left: -16px; margin-right: -16px; margin-top: 16px; overflow: auto; padding: 16px; padding-top: 0; width: calc(100% + 32px);">
                   <table id="filterable-example" class="table table-hover">
                     <thead>
                       <tr>
@@ -3352,7 +3486,7 @@ of all or any part of the contents of this file is strictly prohibited.
         </div>
       </div>
     </section>
-    <section id="dashrows">
+    <!-- <section id="dashrows">
       <div class="container-fluid">
         <div class="row">
           <div class="col">
@@ -3371,7 +3505,6 @@ of all or any part of the contents of this file is strictly prohibited.
             <div class="card">
               <div class="card-body">
                 <h3 class="card-title">Dashrows</h3>
-                <!-- bOf Dashrows Component -->
                 <style>
                   .dashrows-column-one {
                     width: 100px !important;
@@ -3459,13 +3592,12 @@ of all or any part of the contents of this file is strictly prohibited.
                     <p style="margin-bottom: 0">Nullam egestas pulvinar iaculis. Fusce ut tincidunt sem, id egestas elit. Duis et facilisis lorem. Vestibulum posuere, tortor ut porttitor tincidunt, erat purus rhoncus orci, ut hendrerit lorem ante a turpis. Mauris vestibulum accumsan maximus. In vulputate magna at nunc semper, vitae cursus risus fermentum. Nunc a pulvinar nibh, eget tristique ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed massa egestas, iaculis diam hendrerit, sollicitudin ipsum. Suspendisse vehicula arcu tortor, eu malesuada leo tempor in. Mauris neque ipsum, condimentum sit amet molestie eget, dictum id diam. In laoreet ligula sapien. Aliquam maximus laoreet tempus. Morbi sed lobortis nunc. Morbi tincidunt porta iaculis. Sed sit amet nulla mattis, fringilla lorem ut, tristique enim.</p>
                   </div>
                 </div>
-                <!-- eOf Dashrows Component -->
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <section id="tabs">
       <div class="container-fluid">
         <div class="row">
@@ -3682,7 +3814,7 @@ of all or any part of the contents of this file is strictly prohibited.
             <div class="card">
               <div class="card-body">
                 <h3>Off-Page Wizards</h3>
-                <p><a href="wizard.html">Full Page Wizard</a></p>
+                <p><a href="wizard.html" onclick="pageChangeHandler(this)">Full Page Wizard</a></p>
                 <button class="btn btn-primary" onclick="modalWizard.goToStep(1)" data-toggle="modal" data-target="#wizardModal" data-backdrop="static" data-keyboard="false">Wizard in Modal</button>
               </div>
             </div>
