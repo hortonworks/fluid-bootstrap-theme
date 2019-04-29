@@ -30,6 +30,13 @@
   }
 }
 
+.alert-container-inline {
+
+  .alert:last-child {
+    margin-bottom: space(16);
+  }
+}
+
 .section-header {
   display: flex;
   justify-content: space-between;

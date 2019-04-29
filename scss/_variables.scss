@@ -738,46 +738,46 @@ $hr-margin-y:                 $spacer !default;
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
 
-$table-cell-padding:          px(6.5);
-$table-cell-padding-sm:       .3rem !default;
+$table-cell-padding:             px(6.5);
+$table-cell-padding-sm:          .3rem !default;
 
-$table-border-width:          $border-width !default;
+$table-border-width:             $border-width !default;
 
 $table-border-color:             $border-color-light;
 $table-border-color-dark:        $border-color-light-dark;
 $table-border-color-accessible:  $border-color-light-accessible;
 
-$table-color:             $text-default;
-$table-color-dark:        $text-default-dark;
-$table-color-accessible:  $text-default-accessible;
+$table-color:                    $text-default;
+$table-color-dark:               $text-default-dark;
+$table-color-accessible:         $text-default-accessible;
 
-$table-bg:                    transparent !default;
-$table-bg-dark:                    transparent !default;
-$table-bg-accessible:                    transparent !default;
+$table-bg:                       $bg-light;
+$table-bg-dark:                  $bg-light-dark;
+$table-bg-accessible:            $bg-light-accessible;
 
-$table-accent-bg:             rgba($black, .05) !default; // This is used for alternate row striping
-$table-accent-bg-dark:        rgba($black, .05) !default; // This is used for alternate row striping
-$table-accent-bg-accessible:  rgba($black, .05) !default; // This is used for alternate row striping
+$table-accent-bg:               rgba($black, .05) !default; // This is used for alternate row striping
+$table-accent-bg-dark:          rgba($black, .05) !default; // This is used for alternate row striping
+$table-accent-bg-accessible:    rgba($black, .05) !default; // This is used for alternate row striping
 
 $table-hover-color:             $table-color !default;
 $table-hover-color-dark:        $table-color-dark;
 $table-hover-color-accessible:  $table-color-accessible;
 
-$table-hover-bg:             rgba($blue, .075);
-$table-hover-bg-dark:        rgba($blue-dark, .075);
-$table-hover-bg-accessible:  rgba($blue-accessible, .075);
+$table-hover-bg:                rgba($blue, .075);
+$table-hover-bg-dark:           rgba($blue-dark, .075);
+$table-hover-bg-accessible:     rgba($blue-accessible, .075);
 
 $table-hover-border-color:             rgba($blue, .25);
 $table-hover-border-color-dark:        rgba($blue-dark, .25);
 $table-hover-border-color-accessible:  rgba($blue-dark, .25);
 
-$table-active-bg:             $table-border-color;
-$table-active-bg-dark:        $table-border-color-dark;
-$table-active-bg-accessible:  $table-border-color-accessible;
+$table-active-bg:              $table-border-color;
+$table-active-bg-dark:         $table-border-color-dark;
+$table-active-bg-accessible:   $table-border-color-accessible;
 
-$table-head-bg:             $gray-200 !default;
-$table-head-bg-dark:        $gray-200 !default;
-$table-head-bg-accessible:  $gray-200 !default;
+$table-head-bg:                $gray-200 !default;
+$table-head-bg-dark:           $gray-200 !default;
+$table-head-bg-accessible:     $gray-200 !default;
 
 $table-head-color:             $text-light;
 $table-head-color-dark:        $text-light-dark;
@@ -1870,7 +1870,7 @@ $alert-border-radius:               $border-radius !default;
 $alert-link-font-weight:            $font-weight-bold;
 $alert-border-width:                $border-width !default;
 
-$alert-bg-level:                    -10 !default;
+$alert-bg-level:                    -11;
 $alert-border-level:                0;
 $alert-color-level:                 0;
 
