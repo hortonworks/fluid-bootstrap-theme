@@ -1,32 +1,66 @@
-.status::before {
-  border-radius: 4px;
-  content: " ";
-  height: 8px;
-  margin-right: 5px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-}
+.status {
 
-@each $color, $value in $theme-colors {
-  .status-#{$color}::before {
-    background-color: $value;
+  &::before {
+    border-radius: 50%;
+    color: $navbar-bg;
+    font-family: $font-family-symbol;
+    height: space(16);
+    line-height: space(16);
+    margin-right: 5px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: space(16);
   }
-}
 
-.palette-dark {
-  @each $color, $value in $theme-colors-dark {
-    .status-#{$color}::before {
+  &.status-success::before {
+    content: "=";
+  }
+
+  &.status-warning::before {
+    content: "!";
+    font-family: $font-family-base;
+  }
+
+  &.status-danger::before {
+    content: "*";
+  }
+
+  &.status-info::before {
+    content: "i";
+    font-family: $font-family-base;
+  }
+
+  @each $color, $value in $theme-colors {
+    &.status-#{$color}::before {
       background-color: $value;
     }
   }
 }
 
+.palette-dark {
+
+  .status::before {
+    color: $navbar-bg-dark;
+
+    @each $color, $value in $theme-colors-dark {
+      &.status-#{$color}::before {
+        background-color: $value;
+      }
+    }
+  }
+}
+
 .palette-accessible {
-  @each $color, $value in $theme-colors-accessible {
-    .status-#{$color}::before {
-      background-color: $value;
+
+  .status::before {
+    color: $navbar-bg-accessible;
+
+    @each $color, $value in $theme-colors-accessible {
+      &.status-#{$color}::before {
+        background-color: $value;
+      }
     }
   }
 }
