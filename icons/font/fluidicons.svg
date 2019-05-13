@@ -30,7 +30,7 @@
 
 <glyph glyph-name="previous" unicode="&#x3c;" d="M694 656l-277-278 277-278v361z" horiz-adv-x="1000" />
 
-<glyph glyph-name="check" unicode="&#x3d;" d="M933 534q0-22-16-38l-404-404-76-76q-16-15-38-15t-38 15l-76 76-202 202q-15 16-15 38t15 38l76 76q16 16 38 16t38-16l164-165 366 367q16 16 38 16t38-16l76-76q16-15 16-38z" horiz-adv-x="1000" />
+<glyph glyph-name="check" unicode="&#x3d;" d="M375 176l-174 174-59-59 233-233 500 500-59 59z" horiz-adv-x="1000" />
 
 <glyph glyph-name="next" unicode="&#x3e;" d="M417 100l277 278-277 278v-556z" horiz-adv-x="1000" />
 

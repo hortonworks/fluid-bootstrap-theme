@@ -15,7 +15,7 @@
   }
 
   &::before {
-    font-family: fluidicons, system-ui;
+    font-family: $font-family-symbol;
     font-size: $alert-icon-font-size;
     height: $alert-icon-font-size;
     line-height: 1;

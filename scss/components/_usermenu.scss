@@ -58,7 +58,7 @@
       color: theme-color("primary");
       content: theme-icon("check");
       display: none;
-      font-family: fluidicons, system-ui;
+      font-family: $font-family-symbol;
       font-size: $palette-selector-icon-size;
       height: $palette-selector-icon-size;
       left: auto;

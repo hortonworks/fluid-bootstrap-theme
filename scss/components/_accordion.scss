@@ -22,7 +22,7 @@
       &::after {
         color: color("blue");
         content: theme-icon("collapse");
-        font-family: fluidicons, system-ui;
+        font-family: $font-family-symbol;
         font-size: $accordion-icon-font-size;
         height: 0;
         position: absolute;

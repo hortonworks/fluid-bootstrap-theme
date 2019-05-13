@@ -181,7 +181,7 @@
           position: relative;
           top: $navbar-nav-link-height-collapsed * -1;
           transition: none;
-          width: $navbar-width - 14px;
+          width: $navbar-width - 6px;
 
           &.show {
             display: none;
@@ -191,7 +191,7 @@
           .nav-item > .nav-link {
             height: $navbar-nav-link-height;
             overflow: hidden;
-            padding-left: 26px;
+            padding-left: 36px;
             padding-top: space(8);
 
             &.status::before {
@@ -220,7 +220,7 @@
           height: $navbar-nav-link-height-collapsed;
           overflow: visible;
           padding-left: ($navbar-width-sm - $navbar-nav-link-icon-size-collapsed) / 2;
-          padding-top:  ($navbar-nav-link-height-collapsed - $navbar-nav-link-icon-size-collapsed) / 2;
+          padding-top: ($navbar-nav-link-height-collapsed - $navbar-nav-link-icon-size-collapsed) / 2;
 
           &::after {
             opacity: 0;
@@ -235,6 +235,11 @@
 
             &::before {
               top: 0;
+            }
+
+            &.status-icon::after {
+              left: 36px;
+              top: space(4);
             }
           }
         }
@@ -269,7 +274,7 @@
 
           &::after {
             content: theme-icon("collapse");
-            font-family: fluidicons, system-ui;
+            font-family: $font-family-symbol;
             font-size: $accordion-icon-font-size;
             position: absolute;
             right: $navbar-nav-link-padding-left;
@@ -362,6 +367,10 @@
             position: relative;
             top: -2px;
           }
+
+          &.status-icon::after {
+            @include transition($transition-collapse-all);
+          }
         }
       }
 
@@ -383,7 +392,7 @@
           &::after {
             border: 0;
             content: ":";
-            font-family: fluidicons, system-ui;
+            font-family: $font-family-symbol;
             margin-left: space(4);
           }
         }
@@ -435,7 +444,7 @@
 
       &::after {
         content: theme-icon("up");
-        font-family: fluidicons, system-ui;
+        font-family: $font-family-symbol;
         font-size: $accordion-icon-font-size;
         line-height: space(64); // IE
         position: absolute;
@@ -530,7 +539,7 @@
         @include transition($transition-collapse-all);
         bottom: space(16) - 3px; // 3px adjustment for line-height ensures it is visually 16px from the bottom
         content: theme-icon("navbar-collapse");
-        font-family: fluidicons, system-ui;
+        font-family: $font-family-symbol;
         position: absolute; /* Firefox, Safari */
         right: space(16);
 
