@@ -6,7 +6,7 @@
 
   &::before {
     content: "*";
-    font-family: fluidicons, system-ui;
+    font-family: $font-family-symbol;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

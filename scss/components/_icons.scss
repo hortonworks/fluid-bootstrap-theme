@@ -16,6 +16,47 @@
     position: relative;
     top: -.5rem;
   }
+
+  &.status-icon {
+
+    &::after {
+      border-radius: 50%;
+      color: $navbar-bg;
+      font-family: $font-family-symbol;
+      font-size: 1rem;
+      height: space(16);
+      left: 28px;
+      line-height: space(16);
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: space(16);
+    }
+
+    &.status-success::after {
+      content: "=";
+    }
+
+    &.status-warning::after {
+      content: "!";
+      font-family: $font-family-base;
+    }
+
+    &.status-danger::after {
+      content: "*";
+    }
+
+    &.status-info::after {
+      content: "i";
+      font-family: $font-family-base;
+    }
+
+    @each $color, $value in $theme-colors {
+      &.status-#{$color}::after {
+        background-color: $value;
+      }
+    }
+  }
 }
 
 .icon-info {
@@ -51,6 +92,16 @@
   .icon-danger {
     color: theme-color-dark("danger");
   }
+
+  .status-icon::after {
+    color: $navbar-bg-dark;
+
+    @each $color, $value in $theme-colors-dark {
+      &.status-#{$color}::after {
+        background-color: $value;
+      }
+    }
+  }
 }
 
 .palette-accessible {
@@ -69,5 +120,15 @@
 
   .icon-danger {
     color: theme-color-accessible("danger");
+  }
+
+  .status-icon::after {
+    color: $navbar-bg-accessible;
+
+    @each $color, $value in $theme-colors-accessible {
+      &.status-#{$color}::after {
+        background-color: $value;
+      }
+    }
   }
 }

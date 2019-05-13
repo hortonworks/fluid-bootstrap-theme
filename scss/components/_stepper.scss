@@ -127,7 +127,7 @@
         border-color: theme-color("primary");
         color: color("white");
         content: "=";
-        font-family: fluidicons, system-ui;
+        font-family: $font-family-symbol;
       }
 
       &:not(:last-child)::after {
