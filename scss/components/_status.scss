@@ -41,8 +41,11 @@
 
 .palette-dark {
 
-  .status::before {
-    color: $navbar-bg-dark;
+  .status {
+
+    &::before {
+      color: $navbar-bg-dark;
+    }
 
     @each $color, $value in $theme-colors-dark {
       &.status-#{$color}::before {
@@ -54,8 +57,11 @@
 
 .palette-accessible {
 
-  .status::before {
-    color: $navbar-bg-accessible;
+  .status {
+
+    &::before {
+      color: $navbar-bg-accessible;
+    }
 
     @each $color, $value in $theme-colors-accessible {
       &.status-#{$color}::before {

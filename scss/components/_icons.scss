@@ -93,8 +93,11 @@
     color: theme-color-dark("danger");
   }
 
-  .status-icon::after {
-    color: $navbar-bg-dark;
+  .status-icon {
+
+    &::after {
+      color: $navbar-bg-dark;
+    }
 
     @each $color, $value in $theme-colors-dark {
       &.status-#{$color}::after {
@@ -122,8 +125,11 @@
     color: theme-color-accessible("danger");
   }
 
-  .status-icon::after {
-    color: $navbar-bg-accessible;
+  .status-icon {
+
+    &::after {
+      color: $navbar-bg-accessible;
+    }
 
     @each $color, $value in $theme-colors-accessible {
       &.status-#{$color}::after {
