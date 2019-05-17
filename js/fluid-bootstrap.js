@@ -10164,14 +10164,6 @@ var autoComplete = (function(){
         window.autoComplete = autoComplete;
 })();
 
-/**
- * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
- * Except as expressly permitted in a written agreement between you
- * or your company and Hortonworks, Inc, any use, reproduction,
- * modification, redistribution, sharing, lending or other exploitation
- * of all or any part of the contents of this file is strictly prohibited.
- */
-
 /*
   Based on "JavaScript fancySearch" created by P Kishor
   GitHub: https://github.com/punkish/fancysearch
@@ -10723,13 +10715,6 @@ var Filter = function Filter(container, data, options) {
 
 "use strict";
 
-/**
- * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
- * Except as expressly permitted in a written agreement between you
- * or your company and Hortonworks, Inc, any use, reproduction,
- * modification, redistribution, sharing, lending or other exploitation
- * of all or any part of the contents of this file is strictly prohibited.
- */
 var positionMenus = function positionMenus() {
   // Helper method for getting absolute top position
   var offsetTop = function offsetTop(el) {
@@ -10774,13 +10759,6 @@ $(function () {
 
 "use strict";
 
-/**
- * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
- * Except as expressly permitted in a written agreement between you
- * or your company and Hortonworks, Inc, any use, reproduction,
- * modification, redistribution, sharing, lending or other exploitation
- * of all or any part of the contents of this file is strictly prohibited.
- */
 if ($.fn.selectpicker) {
   $.fn.selectpicker.Constructor.DEFAULTS.style = ''; // remove .btn-light from default bootstrap-select styling
 }
@@ -10788,13 +10766,6 @@ if ($.fn.selectpicker) {
 
 "use strict";
 
-/**
- * Copyright (c) 2011-2018, Hortonworks Inc.  All rights reserved.
- * Except as expressly permitted in a written agreement between you
- * or your company and Hortonworks, Inc, any use, reproduction,
- * modification, redistribution, sharing, lending or other exploitation
- * of all or any part of the contents of this file is strictly prohibited.
- */
 var isTruncatedX = function isTruncatedX(element, tolerance) {
   var tol = tolerance || 2;
   return element.clientWidth + tol < element.scrollWidth;
