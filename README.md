@@ -15,4 +15,5 @@ Changing files will trigger a rebuild and the live preview will be refreshed.
 
 ## License
 
-MIT
+Copyright 2019 Cloudera, Inc.
+Licensed under the [Apache License](https://github.com/hortonworks/fluid-bootstrap-theme/blob/master/LICENSE).
